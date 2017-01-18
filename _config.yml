@@ -1,1 +1,13 @@
-theme: jekyll-theme-cayman
+# General Jekyll Config
+url: http://www.springboottutorial.com
+safe: true
+lsi: false
+exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
+kramdown:
+  input: GFM
+  hard_wrap: false
+poole:
+  default_layout: post
+gems:
+  - jekyll-redirect-from
+excerpt_separator: <!--more-->
