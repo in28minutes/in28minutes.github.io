@@ -24,7 +24,7 @@ Having a lot of fun
 
 First Snippet
 
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
@@ -48,7 +48,7 @@ First Snippet
 
 ### pom.xml
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -113,7 +113,7 @@ First Snippet
 
 ### src/main/java/com/in28minutes/springboot/Application.java
 
-```
+```java
 package com.in28minutes.springboot;
 
 import org.springframework.boot.SpringApplication;
@@ -131,7 +131,8 @@ public class Application {
 }
 ```
 ### src/main/java/com/in28minutes/springboot/controller/SurveyController.java
-```
+
+```java
 package com.in28minutes.springboot.controller;
 
 import java.net.URI;
