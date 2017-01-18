@@ -10,7 +10,7 @@ Having a lot of fun
  * First Post
  * First Github pages page
  
- ##What You Will Learn during this Step:
+## What You Will Learn during this Step:
 - Embedded servlet containers
  - Default Tomcat
  - We did not install Tomcat. Did we? Magic is done by Spring Boot!

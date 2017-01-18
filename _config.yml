@@ -3,6 +3,7 @@ url: http://www.springboottutorial.com
 safe: true
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
+markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
