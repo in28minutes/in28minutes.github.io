@@ -21,7 +21,9 @@ Having a lot of fun
  - Always review code : https://www.youtube.com/watch?v=hVJGu0xdXII
 
 ## Useful Snippets and References
+
 First Snippet
+
 ```
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -43,7 +45,9 @@ First Snippet
 - Find out from documentation (https://docs.spring.io/spring-boot/docs/current/reference/html/howto-embedded-servlet-containers.html) how to switch to undertow!
 
 ## Files List
+
 ### pom.xml
+
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -106,7 +110,9 @@ First Snippet
 	</build>
 </project>
 ```
+
 ### src/main/java/com/in28minutes/springboot/Application.java
+
 ```
 package com.in28minutes.springboot;
 
