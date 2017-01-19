@@ -6,9 +6,9 @@ summary:    Setting up a basic POST REST Service with Spring Boot. Its a cake wa
 categories: Spring Boot, REST Service, POST
 ---
 
-#Creating REST Service with Spring Boot
+# Creating REST Service with Spring Boot
 
-##Introduction to the REST Service
+## Introduction to the REST Service
 
 - We will create a POST REST Service for creating a question for a survey
  - We will use a component called SurveyService to create the question
@@ -22,7 +22,7 @@ categories: Spring Boot, REST Service, POST
  - Using Postman : https://www.getpostman.com
  - URL to POST to - http://localhost:8080/surveys/Survey1/questions
 
-##Background
+## Background
 - What is REST?
 - Architectural style for the web. REST specifies a set of constraints.
    - Client - Server : Server (service provider) should be different from a client (service consumer). 

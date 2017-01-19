@@ -6,9 +6,9 @@ summary:    Setting up a basic REST Service with Spring Boot. Its a cake walk.
 categories: Spring Boot, REST Service
 ---
 
-#Creating REST Service with Spring Boot
+# Creating REST Service with Spring Boot
 
-##Introduction to the REST Service
+## Introduction to the REST Service
 
 - We will create a REST Service for retrieving all questions for a survey
  - We will use a component called SurveyService to retrieve the data
@@ -16,7 +16,7 @@ categories: Spring Boot, REST Service
  - We will use @PathVariable String surveyId
 - By default, the service will be exposed at http://localhost:8080/surveys/Survey1/questions/
 
-##Background
+## Background
 - What is REST?
 - Architectural style for the web. REST specifies a set of constraints.
    - Client - Server : Server (service provider) should be different from a client (service consumer). 
