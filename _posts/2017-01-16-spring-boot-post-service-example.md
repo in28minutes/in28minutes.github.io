@@ -6,9 +6,7 @@ summary:    Setting up a basic POST REST Service with Spring Boot. Its a cake wa
 categories: Spring Boot, REST Service, POST
 ---
 
-# Creating REST Service with Spring Boot
-
-## Introduction to the REST Service
+## Introduction to REST Services
 
 - We will create a POST REST Service for creating a question for a survey
  - We will use a component called SurveyService to create the question

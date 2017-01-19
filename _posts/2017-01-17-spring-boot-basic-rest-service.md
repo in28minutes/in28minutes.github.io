@@ -6,9 +6,7 @@ summary:    Setting up a basic REST Service with Spring Boot. Its a cake walk.
 categories: Spring Boot, REST Service
 ---
 
-# Creating REST Service with Spring Boot
-
-## Introduction to the REST Service
+## Introduction to REST Services
 
 - We will create a REST Service for retrieving all questions for a survey
  - We will use a component called SurveyService to retrieve the data
