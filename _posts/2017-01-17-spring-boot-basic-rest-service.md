@@ -39,7 +39,7 @@ class SurveyController {
 ```
 - Add the method to handle the Get Request
 
-```
+```java
 @RestController
 class SurveyController {
 	@Autowired
