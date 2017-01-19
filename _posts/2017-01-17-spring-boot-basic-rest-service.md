@@ -8,15 +8,14 @@ categories: Spring Boot, REST Service
 
 ## Introduction to REST Services
 
-- We will create a REST Service for retrieving all questions for a survey
+- We will use Spring Boot to create a REST Service for retrieving all questions for a survey
  - We will use a component called SurveyService to retrieve the data
  - We will map a URL using @GetMapping("/surveys/{surveyId}/questions")
  - We will use @PathVariable String surveyId
 - By default, the service will be exposed at http://localhost:8080/surveys/Survey1/questions/
 
 ## Background
-- What is REST?
-- Architectural style for the web. REST specifies a set of constraints.
+- REST is the Architectural style for the web. REST specifies a set of constraints which compliant services should satisfy.
    - Client - Server : Server (service provider) should be different from a client (service consumer). 
      - Enables loose coupling and independent evolution of server and client as new technologies emerge. 
    - Each service should be stateless.
@@ -24,7 +23,36 @@ categories: Spring Boot, REST Service
    - It should be possible to cache response.
    - Consumer of the service may not have a direct connection to the Service Provider. Response might be sent from a middle layer cache.
    - A resource can have multiple representations. Resource can modified through a message in any of the these representations.
-   
+
+## Step By Step
+- Use Spring Initializr to create a basic application. Choose Web, Actuator and Developer Tools
+![Image](../images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")
+- Copy src/main/java/com/in28minutes/springboot/service/SurveyService.java to set up all the business services
+- Create SurveyController and autowire SurveyService
+```java
+@RestController
+class SurveyController {
+	@Autowired
+	private SurveyService surveyService;
+}
+```
+- Add the method to handle the Get Request
+```
+@RestController
+class SurveyController {
+	@Autowired
+	private SurveyService surveyService;
+
+	@GetMapping("/surveys/{surveyId}/questions")
+	public List<Question> retrieveQuestions(@PathVariable String surveyId) {
+		return surveyService.retrieveQuestions(surveyId);
+	}
+}
+```
+- Launch Application.java as a Java Application
+- Goto http://localhost:8080/surveys/Survey1/questions/ to see the data from the service!
+
+
 ## All Example Code
 
 ### pom.xml
