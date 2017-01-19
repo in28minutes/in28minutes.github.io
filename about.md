@@ -5,7 +5,6 @@ permalink: /about/
 tags: about
 ---
 
-## About in28Minutes
 - At in28Minutes, we ask ourselves one question everyday. How do we create more effective trainings?
 - We use Problem-Solution based Step-By-Step Hands-on Approach With Practical, Real World Application Examples. 
 - Our success on Udemy and Youtube (2 Million Views & 12K Subscribers) speaks volumes about the success of our approach.
