@@ -7,7 +7,7 @@ tags: about
 
 - At in28Minutes, we ask ourselves one question everyday. How do we create more effective trainings?
 - We use Problem-Solution based Step-By-Step Hands-on Approach With Practical, Real World Application Examples. 
-- Our success on Udemy and Youtube (2 Million Views & 12K Subscribers) speaks volumes about the success of our approach.
+- 50,000 Students on [Udemy](https://www.udemy.com/user/in28minutes/) and 30,000 Subscribers on [Youtube](https://www.youtube.com/user/rithustutorials/playlists) are proofs about the success of our approach.
 - While our primary expertise is on Development, Design & Architecture Java & Related Frameworks (Spring, Struts, Hibernate) we are expanding into the front-end world (Bootstrap, JQuery, Angular JS). 
 
 ### Our Beliefs
