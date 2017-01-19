@@ -29,6 +29,7 @@ categories: Spring Boot, REST Service
 ![Image](../images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")
 - Copy src/main/java/com/in28minutes/springboot/service/SurveyService.java to set up all the business services
 - Create SurveyController and autowire SurveyService
+
 ```java
 @RestController
 class SurveyController {
@@ -37,6 +38,7 @@ class SurveyController {
 }
 ```
 - Add the method to handle the Get Request
+
 ```
 @RestController
 class SurveyController {
