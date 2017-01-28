@@ -4,6 +4,7 @@ title:      Writing Unit Tests for Rest Services with Spring Boot and JUnit
 date:       2017-01-28 12:31:19
 summary:    Setting up a basic REST Service with Spring Boot is a cake walk. We will go one step further and add great unit tests! 
 categories: [Spring Boot, REST Service]
+permalink:  /unit-testing-for-spring-boot-rest-services
 ---
 
 This guide will help you write great unit tests for your Spring Boot Rest Service. We will use a simple code example creating couple of simple rest services. 
