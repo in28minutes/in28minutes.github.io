@@ -29,8 +29,8 @@ Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spri
 
 As shown in the image above, following steps have to be done
 
-- Choose com.in28minutes.springboot as Group
-- Choose student-services as Artifact
+- Choose `com.in28minutes.springboot` as Group
+- Choose `student-services` as Artifact
 - Choose following dependencies
   - Web
   - Actuator
@@ -50,271 +50,21 @@ A student can take multiple courses. A course has an id, name, description and a
 - `public Course retrieveCourse(String studentId, String courseId)` - Retrieve details of a specific course a student is registered for
 - `public Course addCourse(String studentId, Course course)` - Add a course to an existing student
 
-### src/main/java/com/in28minutes/springboot/model/Course.java
+ Refer to these files at the bottom of the article for exact implementation of the Service `StudentService` and the model objects `Course` and `Student`. 
 
-```java
-package com.in28minutes.springboot.model;
+- src/main/java/com/in28minutes/springboot/model/Course.java
+- src/main/java/com/in28minutes/springboot/model/Student.java
+- src/main/java/com/in28minutes/springboot/service/StudentService.java
 
-import java.util.List;
-
-public class Course {
-	private String id;
-	private String name;
-	private String description;
-	private List<String> steps;
-
-	// Needed by Caused by: com.fasterxml.jackson.databind.JsonMappingException:
-	// Can not construct instance of com.in28minutes.springboot.model.Course:
-	// no suitable constructor found, can not deserialize from Object value
-	// (missing default constructor or creator, or perhaps need to add/enable
-	// type information?)
-	public Course() {
-
-	}
-
-	public Course(String id, String name, String description, List<String> steps) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.steps = steps;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public List<String> getSteps() {
-		return steps;
-	}
-
-	@Override
-	public String toString() {
-		return String.format(
-				"Course [id=%s, name=%s, description=%s, steps=%s]", id, name,
-				description, steps);
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Course other = (Course) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
-
-}
-```
----
-
-### src/main/java/com/in28minutes/springboot/model/Student.java
-
-```java
-package com.in28minutes.springboot.model;
-
-import java.util.List;
-
-public class Student {
-	private String id;
-	private String name;
-	private String description;
-	private List<Course> courses;
-
-	public Student(String id, String name, String description,
-			List<Course> courses) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.courses = courses;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public List<Course> getCourses() {
-		return courses;
-	}
-
-	public void setCourses(List<Course> courses) {
-		this.courses = courses;
-	}
-
-	@Override
-	public String toString() {
-		return String.format(
-				"Student [id=%s, name=%s, description=%s, courses=%s]", id,
-				name, description, courses);
-	}
-}
-```
----
-
-### src/main/java/com/in28minutes/springboot/service/StudentService.java
-
-```java
-package com.in28minutes.springboot.service;
-
-import java.math.BigInteger;
-import java.security.SecureRandom;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import org.springframework.stereotype.Component;
-
-import com.in28minutes.springboot.model.Course;
-import com.in28minutes.springboot.model.Student;
-
-@Component
-public class StudentService {
-
-	private static List<Student> students = new ArrayList<>();
-
-	static {
-		//Initialize Data
-		Course course1 = new Course("Course1", "Spring", "10 Steps", Arrays
-				.asList("Learn Maven", "Import Project", "First Example",
-						"Second Example"));
-		Course course2 = new Course("Course2", "Spring MVC", "10 Examples",
-				Arrays.asList("Learn Maven", "Import Project", "First Example",
-						"Second Example"));
-		Course course3 = new Course("Course3", "Spring Boot", "6K Students",
-				Arrays.asList("Learn Maven", "Learn Spring",
-						"Learn Spring MVC", "First Example", "Second Example"));
-		Course course4 = new Course("Course4", "Maven",
-				"Most popular maven course on internet!", Arrays.asList(
-						"Pom.xml", "Build Life Cycle", "Parent POM",
-						"Importing into Eclipse"));
-
-		Student ranga = new Student("Student1", "Ranga Karanam",
-				"Hiker, Programmer and Architect", new ArrayList<>(Arrays
-						.asList(course1, course2, course3, course4)));
-
-		Student satish = new Student("Student2", "Satish T",
-				"Hiker, Programmer and Architect", new ArrayList<>(Arrays
-						.asList(course1, course2, course3, course4)));
-
-		students.add(ranga);
-		students.add(satish);
-	}
-
-	public List<Student> retrieveAllStudents() {
-		return students;
-	}
-
-	public Student retrieveStudent(String studentId) {
-		for (Student student : students) {
-			if (student.getId().equals(studentId)) {
-				return student;
-			}
-		}
-		return null;
-	}
-
-	public List<Course> retrieveCourses(String studentId) {
-		Student student = retrieveStudent(studentId);
-
-		if (student == null) {
-			return null;
-		}
-
-		return student.getCourses();
-	}
-
-	public Course retrieveCourse(String studentId, String courseId) {
-		Student student = retrieveStudent(studentId);
-
-		if (student == null) {
-			return null;
-		}
-
-		for (Course course : student.getCourses()) {
-			if (course.getId().equals(courseId)) {
-				return course;
-			}
-		}
-
-		return null;
-	}
-
-	private SecureRandom random = new SecureRandom();
-
-	public Course addCourse(String studentId, Course course) {
-		Student student = retrieveStudent(studentId);
-
-		if (student == null) {
-			return null;
-		}
-
-		String randomId = new BigInteger(130, random).toString(32);
-		course.setId(randomId);
-
-		student.getCourses().add(course);
-
-		return course;
-	}
-}
-```
 
 ## Adding Couple of GET Rest Services
 
-The Rest Service StudentController exposes couple of get services.
+The Rest Service `StudentController` exposes couple of get services.
 
-- @Autowired private StudentService studentService : We are using Spring Autowiring to wire the student service into the StudentController.
-- @GetMapping("/students/{studentId}/courses"): Exposing a Get Service with studentId as a path variable 
-- @GetMapping("/students/{studentId}/courses/{courseId}"): Exposing a Get Service for retrieving specific course of a student. 
-- @PathVariable String studentId: Value of studentId from the uri will be mapped to this parameter.
+- `@Autowired private StudentService studentService` : We are using Spring Autowiring to wire the student service into the StudentController.
+- `@GetMapping("/students/{studentId}/courses")`: Exposing a Get Service with studentId as a path variable 
+- `@GetMapping("/students/{studentId}/courses/{courseId}")`: Exposing a Get Service for retrieving specific course of a student. 
+- `@PathVariable String studentId`: Value of studentId from the uri will be mapped to this parameter.
 
 ```java
 package com.in28minutes.springboot.controller;
@@ -357,14 +107,14 @@ TODO
 
 When we are unit testing a rest service, we would want to launch only the specific controller and the related MVC Components. WebMvcTest annotation is used for unit testing Spring MVC application. This Can be used when a test focuses only Spring MVC components. Using this annotation will disable full auto-configuration and only apply configuration relevant to MVC tests.
 
-- @RunWith(SpringRunner.class) : SpringRunner is short hand for SpringJUnit4ClassRunner which extends BlockJUnit4ClassRunner providing the functionality to launch a Spring TestContext Framework.
-- @WebMvcTest(value = StudentController.class, secure = false): WebMvcTest annotation is used for unit testing Spring MVC application. This Can be used when a test focuses only Spring MVC components. In this test, we want to launch only StudentController. All other controllers and mappings will not be launched when this unit test is executed. 
-- @Autowired private MockMvc mockMvc: MockMvc is the main entry point for server-side Spring MVC test support. It allows us to execute requests against the test context.
-- @MockBean private StudentService studentService: MockBean is used to add mocks to a Spring ApplicationContext. A mock of studentService is created and auto-wired into the StudentController.
-- Mockito.when(studentService.retrieveCourse(Mockito.anyString(),Mockito.anyString())).thenReturn(mockCourse): Mocking the method retrieveCourse to return the specific mockCourse when invoked.
-- MockMvcRequestBuilders.get("/students/Student1/courses/Course1").accept(MediaType.APPLICATION_JSON): Creating a Request builder to be able to execute a get request to uri "/students/Student1/courses/Course1" with accept header as "application/json"
-- mockMvc.perform(requestBuilder).andReturn(): mockMvc is used to perform the request and return the response back.
-- JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false): We are using org.skyscreamer.jsonassert.JSONAssert. This allows us to do partial asserts against a JSON String. We are passing strict as false since we do not want to check for all fields in the response.
+- `@RunWith(SpringRunner.class)` : SpringRunner is short hand for SpringJUnit4ClassRunner which extends BlockJUnit4ClassRunner providing the functionality to launch a Spring TestContext Framework.
+- `@WebMvcTest(value = StudentController.class, secure = false)`: WebMvcTest annotation is used for unit testing Spring MVC application. This Can be used when a test focuses only Spring MVC components. In this test, we want to launch only StudentController. All other controllers and mappings will not be launched when this unit test is executed. 
+- `@Autowired private MockMvc mockMvc`: MockMvc is the main entry point for server-side Spring MVC test support. It allows us to execute requests against the test context.
+- `@MockBean private StudentService studentService`: MockBean is used to add mocks to a Spring ApplicationContext. A mock of studentService is created and auto-wired into the StudentController.
+- `Mockito.when(studentService.retrieveCourse(Mockito.anyString(),Mockito.anyString())).thenReturn(mockCourse)`: Mocking the method retrieveCourse to return the specific mockCourse when invoked.
+- `MockMvcRequestBuilders.get("/students/Student1/courses/Course1").accept(MediaType.APPLICATION_JSON)`: Creating a Request builder to be able to execute a get request to uri "/students/Student1/courses/Course1" with accept header as "application/json"
+- `mockMvc.perform(requestBuilder).andReturn()`: mockMvc is used to perform the request and return the response back.
+- `JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false)`: We are using org.skyscreamer.jsonassert.JSONAssert. This allows us to do partial asserts against a JSON String. We are passing strict as false since we do not want to check for all fields in the response.
 
 ```
 package com.in28minutes.springboot.controller;
