@@ -103,7 +103,25 @@ public class StudentController {
 ```
 
 ## Executing the Get Service Using Postman
-TODO
+We will fire a request to http://localhost:8080/students/Student1/courses/Course1 to test the service. Response is as shown below.
+
+```json
+{
+  "id": "Course1",
+  "name": "Spring",
+  "description": "10 Steps",
+  "steps": [
+    "Learn Maven",
+    "Import Project",
+    "First Example",
+    "Second Example"
+  ]
+}
+```
+
+Below picture shows how we can execute this Get Service from Postman - my favorite tool to run rest services.
+![Image](/images/ExecutingGetRestServiceUsingPostman.png "Executing Rest Service From Postman")   
+
 
 ## Unit Testing the Get Rest Service
 
@@ -179,6 +197,92 @@ public class StudentControllerTest {
 	}
 
 }
+
+```
+
+## Adding a POST Rest Service
+
+A POST Service should return a status of created (201) when the resource creation is successful. 
+
+`@PostMapping("/students/{studentId}/courses")`: Mapping a url for the POST Request
+`@RequestBody Course newCourse`: Using Binding to bind the body of the request to Course object.
+`ResponseEntity.created(location).build()`: Return a status of created. Also return the location of created resource as a Response Header.
+
+```java
+	@PostMapping("/students/{studentId}/courses")
+	public ResponseEntity<Void> registerStudentForCourse(
+			@PathVariable String studentId, @RequestBody Course newCourse) {
+
+		Course course = studentService.addCourse(studentId, newCourse);
+
+		if (course == null)
+			return ResponseEntity.noContent().build();
+
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(
+				"/{id}").buildAndExpand(course.getId()).toUri();
+
+		return ResponseEntity.created(location).build();
+	}
+
+```
+
+## Executing a POST Rest Service
+
+Example Request is shown below. It contains all the details to register a course to a student. 
+```json
+{
+  "name": "Microservices",
+  "description": "10 Steps",
+  "steps": [
+    "Learn How to Break Things Up",
+    "Automate the hell out of everything",
+    "Have fun"
+  ]
+}
+```
+
+Below picture shows how we can execute this Post Service from Postman - my favorite tool to run rest services. Make sure you go to the Body tab and select raw. Select JSON from the dropdown. Copy above request into body.
+
+The URL we use is http://localhost:8080/students/Student1/courses.
+
+![Image](/images/ExecutingPostRestServiceUsingPostman.png "Executing Post Rest Service From Postman")   
+
+## Writing Unit Test for the POST Rest Service
+
+In the unit test, we would want to post the request body to the url `/students/Student1/courses`. In the response, we check for HttpStatus of Created and that the location header contains the url of the created resource.
+
+`MockMvcRequestBuilders.post("/students/Student1/courses").accept(MediaType.APPLICATION_JSON)`: Create a post request with an accept header for `application\json`
+`content(exampleCourseJson).contentType(MediaType.APPLICATION_JSON)`: Use the specified content as body of the request and set content type header.
+`assertEquals(HttpStatus.CREATED.value(), response.getStatus())`: Assert that the return status is CREATED.
+`response.getHeader(HttpHeaders.LOCATION)`: Get the location from response header and later assert that it contains the URI of the created resource.
+
+```java
+	@Test
+	public void createStudentCourse() throws Exception {
+		Course mockCourse = new Course("1", "Smallest Number", "1",
+				Arrays.asList("1", "2", "3", "4"));
+
+		// studentService.addCourse to respond back with mockCourse
+		Mockito.when(
+				studentService.addCourse(Mockito.anyString(),
+						Mockito.any(Course.class))).thenReturn(mockCourse);
+
+		// Send course as body to /students/Student1/courses
+		RequestBuilder requestBuilder = MockMvcRequestBuilders
+				.post("/students/Student1/courses")
+				.accept(MediaType.APPLICATION_JSON).content(exampleCourseJson)
+				.contentType(MediaType.APPLICATION_JSON);
+
+		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+
+		MockHttpServletResponse response = result.getResponse();
+
+		assertEquals(HttpStatus.CREATED.value(), response.getStatus());
+
+		assertEquals("http://localhost/students/Student1/courses/1",
+				response.getHeader(HttpHeaders.LOCATION));
+
+	}
 
 ```
 
