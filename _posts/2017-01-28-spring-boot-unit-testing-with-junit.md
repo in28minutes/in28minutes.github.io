@@ -2,11 +2,11 @@
 layout:     post
 title:      Writing Unit Tests for Rest Services with Spring Boot and JUnit
 date:       2017-01-28 12:31:19
-summary:    Setting up a basic REST Service with Spring Boot. Its a cake walk. 
+summary:    Setting up a basic REST Service with Spring Boot is a cake walk. We will go one step further and add great unit tests! 
 categories: [Spring Boot, REST Service]
 ---
 
-This guide will help you write a great unit test for your Spring Boot Rest Service. We would use a simple code example using simple rest services. 
+This guide will help you write a great unit tests for your Spring Boot Rest Service. We will use a simple code example creating couple of simple rest services. 
  
 ## You will learn
 - How to create a Get REST Service for retrieving the courses for a student?
@@ -29,18 +29,19 @@ Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spri
 
 As shown in the image above, following steps have to be done
 
-- Choose `com.in28minutes.springboot` as Group
-- Choose `student-services` as Artifact
-- Choose following dependencies
-  - Web
-  - Actuator
-  - DevTools
+- Launch Spring Initializr and choose the following
+  - Choose `com.in28minutes.springboot` as Group
+  - Choose `student-services` as Artifact
+  - Choose following dependencies
+    - Web
+    - Actuator
+    - DevTools
 - Click Generate Project.
 - Import the project into Eclipse.
 - If you want to understand all the files that are part of this project, you can go here.
 
 ## Implementing Business Service for your Application
-All applications need data. Instead of talking to a real database, we will use an arraylist - kind of an in-memory data store.
+All applications need data. Instead of talking to a real database, we will use an `ArrayList` - kind of an in-memory data store.
 
 A student can take multiple courses. A course has an id, name, description and a list of steps you need to complete to finish the course. A student has an id, name, description and a list of courses he/she is currently registered for. We have StudentService exposing methods to 
 
@@ -50,7 +51,7 @@ A student can take multiple courses. A course has an id, name, description and a
 - `public Course retrieveCourse(String studentId, String courseId)` - Retrieve details of a specific course a student is registered for
 - `public Course addCourse(String studentId, Course course)` - Add a course to an existing student
 
- Refer to these files at the bottom of the article for exact implementation of the Service `StudentService` and the model objects `Course` and `Student`. 
+ Refer to these files at the bottom of the article for exact implementation of the Service `StudentService` and the model classes `Course` and `Student`. 
 
 - src/main/java/com/in28minutes/springboot/model/Course.java
 - src/main/java/com/in28minutes/springboot/model/Student.java
