@@ -20,10 +20,14 @@ This guide with code example will help you write a great unit test for your Spri
 - JDK 1.8+
 
 ## Creating REST Services Application with Spring Initializr
-Create a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.  
-(Spring Initializr)[http://start.spring.io/] is great tool to bootstrap your Spring Boot projects.   
+
+Creating a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.  
+
+Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.   
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
 As shown in the image above, following steps have to be done
+
 - Choose com.in28minutes.springboot as Group
 - Choose student-services as Artifact
 - Choose following Dependencies
@@ -38,6 +42,7 @@ As shown in the image above, following steps have to be done
 All applications need data. Instead of talking to a real database, we will use an arraylist - kind of an in-memory data store.
 
 A student can take multiple courses. A course has an id, name, description and a list of steps you need to complete to finish the course. A student has an id, name, description and a list of courses he/she is currently registered for. We have StudentService exposing methods to 
+
 - public List<Student> retrieveAllStudents() - Retrieve details for all students
 - public Student retrieveStudent(String studentId) - Retrieve a specific student details
 - public List<Course> retrieveCourses(String studentId) - Retrieve all courses a student is registered for
