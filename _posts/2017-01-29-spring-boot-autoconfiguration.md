@@ -10,6 +10,7 @@ permalink:  /spring-boot-auto-configuration
 This guide will help you understand Spring Boot Auto Configuration with examples. We will use a simple code example creating couple of simple rest services. 
  
 ## You will learn
+- Why do we need Auto Configuration?
 - What is Auto Configuration?
   - We will look at a few examples!
 - How is Auto Configuration implemented in Spring Boot?
@@ -41,7 +42,7 @@ When we use Spring MVC, we need to configure component scan, dispatcher servlet,
     
 ```
 
-Below code show typical configuration of a dispatcher servlet in a web application.
+Below code snippet shows typical configuration of a dispatcher servlet in a web application.
 
 ```xml
     <servlet>
@@ -111,7 +112,7 @@ To understand Auto Configuration further, lets bootstrap a simple Spring Boot Ap
 
 ## Creating REST Services Application with Spring Initializr
 
-> Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.
+> Spring Initializr( [http://start.spring.io/] ) is great tool to bootstrap your Spring Boot projects.
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
@@ -268,7 +269,7 @@ Other way to debug auto configuration is to add spring boot actuator to your pro
 
 ```
 
-HAL Browser auto configuration (http://localhost:8080/actuator/#http://localhost:8080/autoconfig) would show the details of all the beans which are auto configured and those which are not.
+HAL Browser auto configuration ( [http://localhost:8080/actuator/#http://localhost:8080/autoconfig] ) would show the details of all the beans which are auto configured and those which are not.
 
 ![Image](/images/spring-boot-auto-configuration-actuator-negative-matches.png "Negative Matches Spring Boot Auto Configuration")
 
