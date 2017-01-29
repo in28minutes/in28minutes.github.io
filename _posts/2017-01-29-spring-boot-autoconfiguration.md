@@ -62,7 +62,7 @@ When we use Spring MVC, we need to configure component scan, dispatcher servlet,
   
 When we use Hibernate/JPA, we would need to configure a datasource, an entity manager factory, a transaction manager among a host of other things. 
 
-```
+```xml
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
         destroy-method="close">
         <property name="driverClass" value="${db.driver}" />
@@ -129,15 +129,17 @@ As shown in the image above, following steps have to be done
 When we run StudentServicesApplication.java as a Java Application, you will see a few important things in the log.
 
 ```
-2017-01-28 17:37:33.905  INFO 4311 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+Mapping servlet: 'dispatcherServlet' to [/]
 
-2017-01-28 17:37:34.653  INFO 4311 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
 
-2017-01-28 17:37:34.717  INFO 4311 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 
 ```
 
-Above log statements are good examples of `Spring Boot Auto Configuration` in action. As soon as we added in Spring Boot Starter Web, Spring Boot Autoconfiguration sees that Spring MVC is on the classpath. It autoconfigures dispatcherServlet, a default error page and webjars.
+Above log statements are good examples of `Spring Boot Auto Configuration` in action. 
+
+As soon as we added in Spring Boot Starter Web as a dependency in our project, Spring Boot Autoconfiguration sees that Spring MVC is on the classpath. It autoconfigures dispatcherServlet, a default error page and webjars.
 
 If you add Spring Boot Data JPA Starter, you will see that Spring Boot Auto Configuration auto configures a datasource and an Entity Manager. 
 
@@ -145,7 +147,7 @@ If you add Spring Boot Data JPA Starter, you will see that Spring Boot Auto Conf
 
 Good Question.
 
-All auto configuration logic is implemented in spring-boot-autoconfigure.jar. All auto configuration logic for mvc, data, jms and other frameworks is present in a single jar.  
+All auto configuration logic is implemented in `spring-boot-autoconfigure.jar`. All auto configuration logic for mvc, data, jms and other frameworks is present in a single jar.  
 
 ![Image](/images/spring-boot-autoconfigure-jar.png "Spring Boot Auto Configure Jar")
 
@@ -203,3 +205,68 @@ Embedded Database is configured only if there are no beans of type DataSource.cl
 	}
 
 ```
+
+## Debugging Auto Configuration
+
+There are two ways you can debug and find more information about auto configuration
+
+- Turning on debug logging
+- Use Spring Boot Actuator
+
+### Debug Logging
+
+You can turn debug logging by adding a simple property value to application.properties. In the example below, we are turning on Debug level for all logging from org.springframework package (and sub packages).
+
+```properties
+logging.level.org.springframework: DEBUG
+```
+
+When you restart the application, you would see an auto configuration report printed in the log. Similar to what you see below, a report is produced including all the auto configuration classes. The report separates the positive matches from negative matches. It will show why a specific bean is auto configured and also why something is not auto configured. 
+
+```log
+=========================
+AUTO-CONFIGURATION REPORT
+=========================
+
+Positive matches:
+-----------------
+DispatcherServletAutoConfiguration matched
+ - @ConditionalOnClass classes found: org.springframework.web.servlet.DispatcherServlet (OnClassCondition)
+ - found web application StandardServletEnvironment (OnWebApplicationCondition)
+
+
+Negative matches:
+-----------------
+ActiveMQAutoConfiguration did not match
+ - required @ConditionalOnClass classes not found: javax.jms.ConnectionFactory,org.apache.activemq.ActiveMQConnectionFactory (OnClassCondition)
+
+AopAutoConfiguration.CglibAutoProxyConfiguration did not match
+ - @ConditionalOnProperty missing required properties spring.aop.proxy-target-class (OnPropertyCondition)
+
+
+
+```
+
+### Spring Boot Actuator
+
+Other way to debug auto configuration is to add spring boot actuator to your project. We will also add in HAL Browser to make things easy.
+
+```xml
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-browser</artifactId>
+		</dependency>
+
+
+```
+
+HAL Browser auto configuration (http://localhost:8080/actuator/#http://localhost:8080/autoconfig) would show the details of all the beans which are auto configured and those which are not.
+
+![Image](/images/spring-boot-auto-configuration-actuator-negative-matches.png "Negative Matches Spring Boot Auto Configuration")
+
+![Image](/images/spring-boot-auto-configuration-actuator-positive-matches.png "Positive Matches Spring Boot Auto Configuration")
