@@ -20,7 +20,7 @@ This guide will help you understand Spring Boot Auto Configuration with examples
 - Your favorite IDE. We use Eclipse.
 - JDK 1.8+
 
-## Spring Boot Auto Configuration
+## Why do we need Spring Boot Auto Configuration?
 
 Spring based applications have a lot of configuration. 
 
@@ -42,6 +42,7 @@ When we use Spring MVC, we need to configure component scan, dispatcher servlet,
 ```
 
 Below code show typical configuration of a dispatcher servlet in a web application.
+
 ```xml
     <servlet>
         <servlet-name>dispatcher</servlet-name>
@@ -93,7 +94,7 @@ When we use Hibernate/JPA, we would need to configure a datasource, an entity ma
 
 ``` 
 
-Above examples are typical with any Spring framework implementation or integration with other frameworks. 
+Above examples are typical with any Spring framework implementation or integration with other frameworks.
 
 Spring Boot brings in new thought process around this. 
 
@@ -106,7 +107,7 @@ There would be provisions to override the default auto configuration.
 
 > This entire process of Spring Boot provide default configuration based on what classes are available on the CLASSPATH and what configuration is provided for the application is called Auto Configuration.  
 
-To understand Auto Configuration further, lets bootstrap a simple Spring Boot Application using Spring Initializr
+To understand Auto Configuration further, lets bootstrap a simple Spring Boot Application using Spring Initializr.
 
 ## Creating REST Services Application with Spring Initializr
 
@@ -114,7 +115,7 @@ To understand Auto Configuration further, lets bootstrap a simple Spring Boot Ap
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-As shown in the image above, following steps have to be done
+As shown in the image above, following steps have to be done.
 
 - Launch Spring Initializr and choose the following
   - Choose `com.in28minutes.springboot` as Group
@@ -211,10 +212,10 @@ protected static class EmbeddedDatabaseConfiguration {
 
 ## Debugging Auto Configuration
 
-There are two ways you can debug and find more information about auto configuration
+There are two ways you can debug and find more information about auto configuration.
 
 - Turning on debug logging
-- Use Spring Boot Actuator
+- Using Spring Boot Actuator
 
 ### Debug Logging
 
