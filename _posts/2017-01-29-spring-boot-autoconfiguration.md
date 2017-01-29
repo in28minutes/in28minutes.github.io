@@ -41,6 +41,7 @@ When we use Spring MVC, we need to configure component scan, dispatcher servlet,
     
 ```
 
+Below code show typical configuration of a dispatcher servlet in a web application.
 ```xml
     <servlet>
         <servlet-name>dispatcher</servlet-name>
@@ -96,18 +97,20 @@ Above examples are typical with any Spring framework implementation or integrati
 
 Spring Boot brings in new thought process around this. 
 
+> Can we bring more intelligence into this? When somebody adds spring mvc jar into application, can we auto configure the basic things based on this? 
+
 - How about auto configuring a Data Source if Hibernate jar is on the classpath? 
 - How about auto configuring a Dispatcher Servlet if Spring MVC jar is on the classpath?
 
 There would be provisions to override the default auto configuration. 
 
-This entire process of Spring Boot provide default configuration based on what classes are available on the CLASSPATH and what configuration is provided for the application is called Auto Configuration.  
+> This entire process of Spring Boot provide default configuration based on what classes are available on the CLASSPATH and what configuration is provided for the application is called Auto Configuration.  
 
 To understand Auto Configuration further, lets bootstrap a simple Spring Boot Application using Spring Initializr
 
 ## Creating REST Services Application with Spring Initializr
 
-Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.
+> Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
@@ -188,21 +191,21 @@ public class DataSourceAutoConfiguration {
 `@ConditionalOnMissingBean` : This bean is configured only if there is no other bean configured with the same name.
 
 ```
-	@Bean
-	@ConditionalOnMissingBean
-	public DataSourceInitializer dataSourceInitializer() {
-		return new DataSourceInitializer();
-	}
+@Bean
+@ConditionalOnMissingBean
+public DataSourceInitializer dataSourceInitializer() {
+	return new DataSourceInitializer();
+}
 ```
 
 Embedded Database is configured only if there are no beans of type DataSource.class or XADataSource.class already configured.
 
 ```
-	@Conditional(EmbeddedDatabaseCondition.class)
-	@ConditionalOnMissingBean({ DataSource.class, XADataSource.class })
-	@Import(EmbeddedDataSourceConfiguration.class)
-	protected static class EmbeddedDatabaseConfiguration {
-	}
+@Conditional(EmbeddedDatabaseCondition.class)
+@ConditionalOnMissingBean({ DataSource.class, XADataSource.class })
+@Import(EmbeddedDataSourceConfiguration.class)
+protected static class EmbeddedDatabaseConfiguration {
+}
 
 ```
 
@@ -244,7 +247,6 @@ AopAutoConfiguration.CglibAutoProxyConfiguration did not match
  - @ConditionalOnProperty missing required properties spring.aop.proxy-target-class (OnPropertyCondition)
 
 
-
 ```
 
 ### Spring Boot Actuator
@@ -252,15 +254,15 @@ AopAutoConfiguration.CglibAutoProxyConfiguration did not match
 Other way to debug auto configuration is to add spring boot actuator to your project. We will also add in HAL Browser to make things easy.
 
 ```xml
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
 
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-rest-hal-browser</artifactId>
-		</dependency>
+<dependency>
+	<groupId>org.springframework.data</groupId>
+	<artifactId>spring-data-rest-hal-browser</artifactId>
+</dependency>
 
 
 ```
