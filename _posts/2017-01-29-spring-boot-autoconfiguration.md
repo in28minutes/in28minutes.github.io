@@ -97,16 +97,18 @@ When we use Hibernate/JPA, we would need to configure a datasource, an entity ma
 
 Above examples are typical with any Spring framework implementation or integration with other frameworks.
 
+## Spring Boot : Can we think different?
+
 Spring Boot brings in new thought process around this. 
 
-> Can we bring more intelligence into this? When somebody adds spring mvc jar into application, can we auto configure the basic things based on this? 
+> Can we bring more intelligence into this? When a spring mvc jar is added into an application, can we auto configure some beans automatically? 
 
 - How about auto configuring a Data Source if Hibernate jar is on the classpath? 
 - How about auto configuring a Dispatcher Servlet if Spring MVC jar is on the classpath?
 
 There would be provisions to override the default auto configuration. 
 
-> This entire process of Spring Boot provide default configuration based on what classes are available on the CLASSPATH and what configuration is provided for the application is called Auto Configuration.  
+> Spring Boot looks at a) Frameworks available on the CLASSPATH b) Existing configuration for the application. Based on these, Spring Boot provides basic configuration needed to configure the application with these frameworks. This is called `Auto Configuration`.  
 
 To understand Auto Configuration further, lets bootstrap a simple Spring Boot Application using Spring Initializr.
 
