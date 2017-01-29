@@ -226,6 +226,7 @@ As we see from Spring Boot Starter Web, starter projects help us in quickly gett
 - spring-boot-starter-data-rest - Expose Simple REST Services using Spring Data REST
 
 There are a few starters for technical stuff as well
+
 - spring-boot-starter-actuator - To use advanced features like monitoring &amp; tracing to your application out of the box
 - spring-boot-starter-undertow, spring-boot-starter-jetty, spring-boot-starter-tomcat - To pick your specific choice of Embedded Servlet Container 
 - spring-boot-starter-logging - For Logging using logback
