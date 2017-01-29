@@ -7,7 +7,7 @@ categories: [Spring Boot, Spring Boot Basics]
 permalink:  /spring-boot-starter-projects
 ---
 
-This guide will help you understand how Spring Boot Starter Projects enable the key goal of Spring Boot - Quick Start to developing production ready applications. S 
+This guide will help you understand how Spring Boot Starter Projects enable the key goal of Spring Boot - Quick Start to developing production ready applications. 
  
 ## You will learn
 - What features are provided by Spring Boot Starter Projects?
@@ -225,3 +225,8 @@ As we see from Spring Boot Starter Web, starter projects help us in quickly gett
 - spring-boot-starter-cache - Enabling Spring Framework’s caching support
 - spring-boot-starter-data-rest - Expose Simple REST Services using Spring Data REST
 
+There are a few starters for technical stuff as well
+- spring-boot-starter-actuator - To use advanced features like monitoring &amp; tracing to your application out of the box
+- spring-boot-starter-undertow, spring-boot-starter-jetty, spring-boot-starter-tomcat - To pick your specific choice of Embedded Servlet Container 
+- spring-boot-starter-logging - For Logging using logback
+- spring-boot-starter-log4j2 - Logging using Log4j2
