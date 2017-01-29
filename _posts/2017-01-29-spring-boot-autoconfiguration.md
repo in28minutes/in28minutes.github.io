@@ -12,7 +12,7 @@ This guide will help you understand Spring Boot Auto Configuration with examples
 ## You will learn
 - Why do we need Auto Configuration?
 - What is Auto Configuration?
-  - We will look at a few examples!
+- A few examples of Auto Configuration
 - How is Auto Configuration implemented in Spring Boot?
 - How to debug Auto Configuration?
 
@@ -179,6 +179,8 @@ org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration,\
 ### Example Auto Configuration 
 
 We will take a look at DataSourceAutoConfiguration.
+
+Typically all Auto Configuration classes look at other classes available in the classpath. If specific classes are available in the classpath, then configuration for that functionality is enabled through auto configuration. Annotations like @ConditionalOnClass, @ConditionalOnMissingBean help in providing these features! 
 
 `@ConditionalOnClass({ DataSource.class, EmbeddedDatabaseType.class })` : This configuration is enabled only when these classes are available in the classpath.
 
