@@ -112,7 +112,7 @@ To understand Auto Configuration further, lets bootstrap a simple Spring Boot Ap
 
 ## Creating REST Services Application with Spring Initializr
 
-> Spring Initializr (http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.
+> Spring Initializr [http://start.spring.io/](http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
