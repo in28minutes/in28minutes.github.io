@@ -152,8 +152,6 @@ If you add Spring Boot Data JPA Starter, you will see that Spring Boot Auto Conf
 
 ## Where is Spring Boot Auto Configuration implemented?
 
-Good Question.
-
 All auto configuration logic is implemented in `spring-boot-autoconfigure.jar`. All auto configuration logic for mvc, data, jms and other frameworks is present in a single jar.  
 
 ![Image](/images/spring-boot-autoconfigure-jar.png "Spring Boot Auto Configure Jar")
@@ -271,7 +269,7 @@ Other way to debug auto configuration is to add spring boot actuator to your pro
 
 ```
 
-HAL Browser auto configuration ( [http://localhost:8080/actuator/#http://localhost:8080/autoconfig] ) would show the details of all the beans which are auto configured and those which are not.
+HAL Browser auto configuration [http://localhost:8080/actuator/#http://localhost:8080/autoconfig](http://localhost:8080/actuator/#http://localhost:8080/autoconfig){:target="_blank"} would show the details of all the beans which are auto configured and those which are not.
 
 ![Image](/images/spring-boot-auto-configuration-actuator-negative-matches.png "Negative Matches Spring Boot Auto Configuration")
 
