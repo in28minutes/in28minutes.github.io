@@ -7,7 +7,7 @@ categories: [Spring Initializr, Bootstrap Web Application]
 ---
 
 ## Log
-Following log is generate when you run StudentServicesApplication.java as a Java Applicaiton.
+Following log is generate when you run StudentServicesApplication.java as a Java Application.
 
 ```
 

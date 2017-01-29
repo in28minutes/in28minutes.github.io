@@ -10,7 +10,7 @@ permalink:  /unit-testing-for-spring-boot-rest-services
 This guide will help you write great unit tests for your Spring Boot Rest Service. We will use a simple code example creating couple of simple rest services. 
  
 ## You will learn
-- How to create a Get REST Service for retrieving the courses for a student?
+- How to create a Get REST Service for retrieving the courses that a student registered for?
 - How to write a unit test for Get REST Service?
 - How to create a Post REST Service for registering a course for student?
 - How to write a unit test for POST Service?
@@ -125,7 +125,7 @@ Below picture shows how we can execute this Get Service from Postman - my favori
 
 ## Unit Testing the Get Rest Service
 
-When we are unit testing a rest service, we would want to launch only the specific controller and the related MVC Components. WebMvcTest annotation is used for unit testing Spring MVC application. This can be used when a test focuses only Spring MVC components. Using this annotation will disable full auto-configuration and only apply configuration relevant to MVC tests.
+When we are unit testing a rest service, we would want to launch only the specific controller and the related MVC Components. WebMvcTest annotation is used for unit testing Spring MVC application. This can be used when a test focuses only Spring MVC components. Using this annotation will disable full auto-configuration and only apply configuration relevant to MVC tests. 
 
 - `@RunWith(SpringRunner.class)` : SpringRunner is short hand for SpringJUnit4ClassRunner which extends BlockJUnit4ClassRunner providing the functionality to launch a Spring TestContext Framework.
 - `@WebMvcTest(value = StudentController.class, secure = false)`: WebMvcTest annotation is used for unit testing Spring MVC application. This can be used when a test focuses only Spring MVC components. In this test, we want to launch only StudentController. All other controllers and mappings will not be launched when this unit test is executed. 
