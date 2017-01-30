@@ -7,7 +7,7 @@ categories: [Spring Boot, Spring Boot Basics, Spring Boot Starter Security]
 permalink:  /spring-boot-starter-security-with-example
 ---
 
-This guide will help you understand the different features Spring Boot Starter Security bring in. We will be using two example applications - A Rest service and a simple web application.
+This guide will help you understand the different features Spring Boot Starter Security bring in. We will be using two example applications - a REST service and a simple web application.
  
 ## You will learn
 - What is Spring Boot Starter Security?
@@ -80,6 +80,7 @@ public class LoginController {
 
 ### Adding welcome.jsp
 welcome.jsp is a simple jsp with a welcome message.
+
 ```
 <div class="container">
     Welcome ${name}!! 
@@ -97,7 +98,7 @@ spring.mvc.view.suffix=.jsp
 ### Run the web application
 Launch StudentServicesApplication as a java application. Following screenshot shows the application launched up at http://localhost:8080.
 
-![Image](/images/SpringBootSecuritySecurity-RestService.png "Spring Security - Rest Service") 
+![Image](/images/SpringBootSecuritySecurity-WebApplication.png "Spring Security - Web Application") 
 
 ## Add a Simple Rest Service
 
@@ -207,7 +208,7 @@ public class StudentController {
 
 Executing the Rest Service is easy. Go to the url http://localhost:8080/students/Student1/courses in your browser or your favorite rest client. I use Postman.
 
-![Image](/images/SpringBootSecuritySecurity-WebApplication.png "Spring Security - Web Application") 
+![Image](/images/SpringBootSecuritySecurity-RestService.png "Spring Security - Rest Service") 
 
 ## Add Spring Boot Starter Security
 
@@ -222,7 +223,8 @@ Let's now add Spring Boot Starter Security as a dependency to this project.
 ```
 
 ### New Dependencies
-Screenshot shows the new dependencies that the spring-boot-starter-security brings.
+Screenshot shows the new dependencies that the spring-boot-starter-security brings in.
+
 ![Image](/images/SpringBootSecuritySecurity-Depedencies.png "Dependencies of Spring Boot Security Starter")  
 
 ### Auto Configuration
@@ -247,7 +249,8 @@ All this magic is because of auto configuration:
 - Some filter chains are configured to enable security
 
 ### Executing Rest Service
-When we execute the Rest Service it return authentication failure. Status is 401 with message "Bad credentials". This is because our service is now protected.
+
+When we execute the Rest Service now at http://localhost:8080/students/Student1/courses it returns authentication failure. Status is 401 with message "Bad credentials". This is because our service is now protected by Spring Security.
 
 ```json
 {
@@ -259,16 +262,20 @@ When we execute the Rest Service it return authentication failure. Status is 401
 }
 ```
 
-![Image](/images/SpringBootSecuritySecurity-RestService-WithoutAuthentication.png "Spring Boot Security Starter - Executing Protected Rest Service without Authentication"
+Below image shows the execution of service in Postman:
+
+![Image](/images/SpringBootSecuritySecurity-RestService-WithoutAuthentication.png) "Spring Boot Security Starter - Executing Protected Rest Service without Authentication"
 
 ### Executing Rest Service with Basic Authentication
+
 Get the password from log by searching for `Using default security password:`. The userid is user. Use this combination to execute the service using Basic Authentication as shown in the screenshot below.
-![Image](/images/SpringBootSecuritySecurity-RestService-Authentication.png "Spring Boot Security Starter - Executing Rest Service with Basic Authentication"
+
+![Image](/images/SpringBootSecuritySecurity-RestService-Authentication.png) "Spring Boot Security Starter - Executing Rest Service with Basic Authentication"
 
 ### Running the Web Application
 When you launch the url http://localhost:8080 in the browser you get a popup asking for userid and password. You would need to enter same details that we provided for REST Service. 
 
-![Image](/images/SpringBootSecuritySecurity-WebApplication-Authentication.png "Spring Boot Security Starter - Providing authentication details for Web application"
+![Image](/images/SpringBootSecuritySecurity-WebApplication-Authentication.png) "Spring Boot Security Starter - Providing authentication details for Web application"
 
 That's really a lot of magic we turned on just by adding a simple dependency Spring Boot Starter Parent. 
 
