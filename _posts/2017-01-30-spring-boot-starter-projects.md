@@ -25,7 +25,7 @@ To understand what starter projects provide, let's consider an example project w
 
 ### What if we do not have starter projects?
 
-Let's say we want to develop a web application with Spring Boot.  
+Let's say we want to develop a web application with Spring MVC.  
 
 First of all we would need to identify the frameworks we want to use, which versions of frameworks to use and how to connect them together. 
 
