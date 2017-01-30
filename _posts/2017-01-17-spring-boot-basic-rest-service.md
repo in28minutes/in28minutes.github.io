@@ -42,6 +42,15 @@ Richardson Maturity Model is used to identify the maturity level of a Restful We
 - Level 2 : Resources use proper URI's + HTTP Methods. For example, to update an account, you do a PUT to . The create an account, you do a POST to . Uri’s look like posts/1/comments/5 and accounts/1/friends/1.
 - Level 3 : HATEOAS (Hypermedia as the engine of application state). You will tell not only about the information being requested but also about the next possible actions that the service consumer can do. When requesting information about a facebook user, a REST service can return user details along with information about how to get his recent posts, how to get his recent comments and how to retrieve his friend’s list.
 
+## Using appropriate Request Methods
+
+Always use HTTP Methods. Best practices with respect to each HTTP method is described below:
+
+- GET : Should not update anything. Should be idempotent (same result in multiple calls). Possible Return Codes 200 (OK) + 404 (NOT FOUND) +400 (BAD REQUEST)
+- POST : Should create new resource. Ideally return JSON with link to newly created resource. Same return codes as get possible. In addition : Return code 201 (CREATED) is possible.
+- PUT : Update a known resource. ex: update client details. Possible Return Codes : 200(OK)
+- DELETE : Used to delete a resource.
+
 ## Rest Services in this Guide
 
 In this guide, we will create services adhering to Level2. We will use proper URIs and use HTTP methods.
