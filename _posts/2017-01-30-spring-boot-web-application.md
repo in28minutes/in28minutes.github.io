@@ -4,10 +4,10 @@ title:      Creating a Web Application with Spring Boot
 date:       2017-02-01 12:31:19
 summary:    Setting up a basic web application with Spring Boot is a cake walk. We will create a simple web application using Spring Initializr and add JSP features to it. 
 categories: [Spring Boot, Spring Boot Web Application]
-permalink:  /creating-web-application-with-spring=boot
+permalink:  /creating-web-application-with-spring-boot
 ---
 
-This guide will help you create a simple web application with Spring Boot. We will develop a simple application with login logout functionality as the functionality to show a list of todo's. We will follow MVC pattern using JSP as the view.  
+This guide will help you create a simple web application with Spring Boot. We will develop a simple application with login functionality as well as the functionality to show a list of todo's. We will follow MVC pattern using JSP as the view.  
  
 ## You will learn
 - How to bootstrap a simple project with Spring Initializr?
@@ -34,11 +34,11 @@ Following screenshot shows eclipse project with all the files we would create.
 
 A brief overview of all files
 
-- LoginService, TodoService - Contain the business logic. LoginService has simple hardcoded validation for userid and password. TodoService contains a service method to retrieve a list of todos. 
-- login.jsp, welcome.jsp, list-todos.jsp - The name clearly explains what each of these views contain.
-- LoginController, TodoController - Act as Controllers in the MVC patter. LoginController has a little bit of flow. If user enters valid user id and password combination, he would be redirected to the welcome page. Otherwise, login page will be shown with the error message.
-- pom.xml - Important depedencies are Spring Boot Starter Web and  tomcat-embed-jasper. We will talk about these later.
-- application.properties - This is typically used to configure frameworks in Spring Boot. In this example, we would configure our view resolver in application.properties.
+- `LoginService, TodoService` - Contain the business logic. LoginService has simple hardcoded validation for userid and password. TodoService contains a service method to retrieve a list of todos. 
+- `login.jsp, welcome.jsp, list-todos.jsp` - The name clearly explains what each of these views contain.
+- `LoginController, TodoController` - Act as Controllers in the MVC patter. LoginController has a little bit of flow. If user enters valid user id and password combination, he would be redirected to the welcome page. Otherwise, login page will be shown with the error message.
+- `pom.xml` - Important depedencies are Spring Boot Starter Web and  tomcat-embed-jasper. We will talk about these later.
+- `application.properties` - This is typically used to configure frameworks in Spring Boot. In this example, we would configure our view resolver in application.properties.
 
 ### Screenshots of the application
 
@@ -102,7 +102,7 @@ We want to use JSP as the view. Default embedded servlet container for Spring Bo
 ```
 
 ### Spring Boot Starter Web Dependencies
-Following screenshot shows the different dependencies that are added in to our application 
+Following screenshot shows the different dependencies that are added in to our application because of Spring Boot Starter Web.
 
 ![Image](/images/SpringBootStarterWeb-Dependencies.png "Spring Boot Starter Web - Dependencies")
 
@@ -134,11 +134,6 @@ Spring Boot Starter Web auto-configures
 - Error Page
 - Web Jars to manage your static dependencies
 - Embedded Servlet Container - Tomcat is the default
-
-The image below shows the different things that might be auto configured by Spring Boot Starter Web
-
-![Image](/images/SpringBootStarterWeb-AutoConfiguration.png "Spring Boot Starter Web - Auto Configuration")
-
 
 ## Configuring a View Resolver
 
@@ -321,7 +316,7 @@ public class TodoService {
 }
 ```
 
-##List Todo JSP
+## List Todo JSP
 
 List todos pages shows the list of todo's. This is completely unformatted page. During the subsequest steps of our course, we beautify this page and add more functionality to add, delete and update todo's.
 
@@ -429,6 +424,5 @@ You can run this as a simple java application. When you run this you would see t
 2017-01-30 10:02:04.307  INFO 6070 --- [  restartedMain] c.i.s.web.SpringBootFirstWebApplication  : Started SpringBootFirstWebApplication in 7.204 seconds (JVM running for 9.191)
 
 ```
-
 
 ## Next Steps
