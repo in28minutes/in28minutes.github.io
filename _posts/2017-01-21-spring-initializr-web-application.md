@@ -75,9 +75,11 @@ Lets look at each of the file that is generated
 
 Three important things that are configured in pom.xml.
 
-- Spring Boot Parent Pom 
-- Spring Boot Starter Web
+- Spring Boot Parent Pom - You can read more about Spring Boot Starter Parent here - [http://www.springboottutorial.com/spring-boot-starter-parent](http://www.springboottutorial.com/spring-boot-starter-parent).
+- Spring Boot Starter Web - You can read more about Spring Boot Starter Web here - [http://www.springboottutorial.com/spring-boot-starter-projects](http://www.springboottutorial.com/spring-boot-starter-projects).
 - Spring Boot Starter Plugin
+
+
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -144,7 +146,7 @@ Three important things that are configured in pom.xml.
 
 ### /src/main/java/com/in28minutes/springboot/StudentServicesApplication.java
 
-- `@SpringBootApplication` - Initializes Spring Boot Auto Configuration and Spring application context.
+- `@SpringBootApplication` - Initializes Spring Boot Auto Configuration and Spring application context. Read more about Auto Configuration here - [http://www.springboottutorial.com/spring-boot-auto-configuration](http://www.springboottutorial.com/spring-boot-auto-configuration).
 - `SpringApplication.run` - Static method to launch a Spring Boot Application.
 
 ```java
@@ -170,7 +172,7 @@ public class StudentServicesApplication {
 ---
 
 ### /src/test/java/com/in28minutes/springboot/StudentServicesApplicationTests.java
-- Integration test launches the complete Spring Boot Application.
+- Integration test launches the complete Spring Boot Application. Read more about integration tests here - [http://www.springboottutorial.com/integration-testing-for-spring-boot-rest-services](http://www.springboottutorial.com/integration-testing-for-spring-boot-rest-services).
 
 ```java
 package com.in28minutes.springboot;
