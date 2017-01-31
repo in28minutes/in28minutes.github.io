@@ -16,6 +16,18 @@ This guide will help you create a simple REST service using Spring Boot.
 - How to create a Post REST Service for registering a course for student?
 - How to execute Rest Services from Postman?
 
+## References
+
+1 hour video courses on all popular frameworks!
+
+- Spring - [https://in28minutes.teachable.com/p/spring-framework-tutorial-for-beginners](https://in28minutes.teachable.com/p/spring-framework-tutorial-for-beginners)
+- Spring MVC - [https://www.youtube.com/watch?v=BjNhGaZDr0Y](https://www.youtube.com/watch?v=BjNhGaZDr0Y)
+- Spring Boot - [https://www.youtube.com/watch?v=PSP1-2cN7vM](https://www.youtube.com/watch?v=PSP1-2cN7vM)
+- Eclipse - [https://www.youtube.com/watch?v=s4ShbtOHMCA](https://www.youtube.com/watch?v=s4ShbtOHMCA)
+- Maven - [https://www.youtube.com/watch?v=0CFWeVgzsqY](https://www.youtube.com/watch?v=0CFWeVgzsqY)
+- JUnit - [https://www.youtube.com/watch?v=o5k9NOR9lrI](https://www.youtube.com/watch?v=o5k9NOR9lrI)
+- Mockito - [https://www.youtube.com/watch?v=d2KwvXQgQx4](https://www.youtube.com/watch?v=d2KwvXQgQx4)
+
 ## Rest Services in this Guide
 
 In this guide, we will create three services using proper URIs and HTTP methods:
@@ -221,18 +233,6 @@ Below picture shows how we can execute this Post Service from Postman - my favor
 The URL we use is http://localhost:8080/students/Student1/courses.
 
 ![Image](/images/ExecutingPostRestServiceUsingPostman.png "Executing Post Rest Service From Postman")   
-
-
-## References
-
-1 hour video courses on all popular frameworks!
-
-- Spring - [https://in28minutes.teachable.com/p/spring-framework-tutorial-for-beginners](https://in28minutes.teachable.com/p/spring-framework-tutorial-for-beginners)
-- Spring MVC - [https://www.youtube.com/watch?v=BjNhGaZDr0Y](https://www.youtube.com/watch?v=BjNhGaZDr0Y)
-- Eclipse - [https://www.youtube.com/watch?v=s4ShbtOHMCA](https://www.youtube.com/watch?v=s4ShbtOHMCA)
-- Maven - [https://www.youtube.com/watch?v=0CFWeVgzsqY](https://www.youtube.com/watch?v=0CFWeVgzsqY)
-- JUnit - [https://www.youtube.com/watch?v=o5k9NOR9lrI](https://www.youtube.com/watch?v=o5k9NOR9lrI)
-- Mockito - [https://www.youtube.com/watch?v=d2KwvXQgQx4](https://www.youtube.com/watch?v=d2KwvXQgQx4)
 
 ## Next Steps
 - Understand more about Unit Testing
