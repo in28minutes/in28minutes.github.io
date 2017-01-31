@@ -199,7 +199,7 @@ public class LoginController {
 
 Has the basic logic for authentication. Hardcoded business logic.
 
-```
+```java
 package com.in28minutes.springboot.web.service;
 
 import org.springframework.stereotype.Component;

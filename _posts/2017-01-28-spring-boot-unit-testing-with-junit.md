@@ -2,7 +2,7 @@
 layout:     post
 title:      Unit Testing Rest Services with Spring Boot and JUnit
 date:       2017-01-28 12:31:19
-summary:    Setting up a basic REST Service with Spring Boot is a cake walk. We will go one step further and add great unit tests! 
+summary:    Setting up a Basic REST Service with Spring Boot is a cake walk. We will go one step further and add great unit tests! 
 categories: [Spring Boot, REST Service, Unit Testing]
 permalink:  /unit-testing-for-spring-boot-rest-services
 ---
@@ -157,7 +157,7 @@ When we are unit testing a rest service, we would want to launch only the specif
 - `mockMvc.perform(requestBuilder).andReturn()`: mockMvc is used to perform the request and return the response back.
 - `JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false)`: We are using org.skyscreamer.jsonassert.JSONAssert. This allows us to do partial asserts against a JSON String. We are passing strict as false since we do not want to check for all fields in the response.
 
-```
+```java
 package com.in28minutes.springboot.controller;
 
 import java.util.Arrays;

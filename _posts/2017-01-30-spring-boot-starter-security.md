@@ -1,13 +1,16 @@
 ---
 layout:     post
-title:      Spring Boot Starter Security
+title:      Secure Rest Services and Web Applications with Spring Boot Security Starter
 date:       2017-01-30 12:31:19
 summary:    Spring Boot Starter Security is the recommended starter for enabling security on web application - including REST services. 
 categories: [Spring Boot, Spring Boot Basics, Spring Boot Starter Security]
-permalink:  /spring-boot-starter-security-with-example
+permalink:  /securing-rest-services-with-spring-boot-starter-security
 ---
 
-This guide will help you understand the different features Spring Boot Starter Security bring in. We will be using two example applications - a REST service and a simple web application.
+This guide will help you understand the different features Spring Boot Starter Security brings in using two examples
+
+- A REST Service 
+- A Simple Web Application Page
  
 ## You will learn
 - What is Spring Boot Starter Security?
@@ -58,7 +61,7 @@ We want to use JSP as the view. Default embedded servlet container for Spring Bo
 ### Adding Login Controller
 LoginController maps the root url "/" to showLoginPage method. A hardcoded name is populated into the model. It returns a view name of "welcome" which maps to welcome.jsp.
 
-```
+```java
 package com.in28minutes.springboot.web.controller;
 
 import org.springframework.stereotype.Controller;
@@ -81,7 +84,7 @@ public class LoginController {
 ### Adding welcome.jsp
 welcome.jsp is a simple jsp with a welcome message.
 
-```
+```html
 <div class="container">
     Welcome ${name}!! 
 </div>
@@ -177,7 +180,7 @@ public class StudentService {
 
 Rest Service `StudentController` exposes a simple Get service at URI mapping "/students/{studentId}/courses". The `StudentService` is auto-wired in.
 
-```
+```java
 package com.in28minutes.springboot.controller;
 
 import java.util.List;

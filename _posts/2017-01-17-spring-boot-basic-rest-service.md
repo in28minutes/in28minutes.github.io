@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Creating REST Service with Spring Boot
+title:      Creating a REST Service with Spring Boot
 date:       2017-01-30 12:31:19
 summary:    Setting up a basic REST Service with Spring Boot. Its a cake walk. 
 categories: Spring Boot, REST Service

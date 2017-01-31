@@ -12,7 +12,7 @@ This guide will help you understand Spring Boot Auto Configuration with examples
 ## You will learn
 - Why do we need Auto Configuration?
 - What is Auto Configuration?
-- A few examples of Auto Configuration
+- A few examples of Spring Boot Auto Configuration
 - How is Auto Configuration implemented in Spring Boot?
 - How to debug Auto Configuration?
 
@@ -194,7 +194,7 @@ public class DataSourceAutoConfiguration {
 
 `@ConditionalOnMissingBean` : This bean is configured only if there is no other bean configured with the same name.
 
-```
+```java
 @Bean
 @ConditionalOnMissingBean
 public DataSourceInitializer dataSourceInitializer() {
@@ -204,7 +204,7 @@ public DataSourceInitializer dataSourceInitializer() {
 
 Embedded Database is configured only if there are no beans of type DataSource.class or XADataSource.class already configured.
 
-```
+```java
 @Conditional(EmbeddedDatabaseCondition.class)
 @ConditionalOnMissingBean({ DataSource.class, XADataSource.class })
 @Import(EmbeddedDataSourceConfiguration.class)
