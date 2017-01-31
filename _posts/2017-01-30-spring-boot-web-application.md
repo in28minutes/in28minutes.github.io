@@ -13,9 +13,10 @@ This guide will help you create a simple web application with Spring Boot. We wi
 - How to bootstrap a simple project with Spring Initializr?
 - How to initialize a basic web application for Spring Boot?
 - How to add a JSP for web application?
-- How to build login/logout functionality?
+- How to build basic login functionality?
 - How to add functionality to show a list of todo's?
 - How to auto-wire components using Spring Framework?
+- What if you want to learn more?
 
 ## Tools you will need
 - Maven 3.0+ is your build tool

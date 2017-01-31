@@ -10,6 +10,7 @@ permalink:  /unit-testing-for-spring-boot-rest-services
 This guide will help you write great unit tests for your Spring Boot Rest Service. We will use a simple code example creating couple of simple rest services. 
  
 ## You will learn
+- What is Unit Testing?
 - How to create a Get REST Service for retrieving the courses that a student registered for?
 - How to write a unit test for Get REST Service?
 - How to create a Post REST Service for registering a course for student?
@@ -20,11 +21,21 @@ This guide will help you write great unit tests for your Spring Boot Rest Servic
 - Your favorite IDE. We use Eclipse.
 - JDK 1.8+
 
-## Creating REST Services Application with Spring Initializr
+## Unit Testing
+Following screenshot shows eclipse project with all the files we will create.
+![Image](/images/SpringBootRestService-ProjectStructure "Spring Boot Rest Services - Project Structure")
 
-Creating a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.  
+We want to create a unit test for `StudentController` which is a Rest Controller. `StudentController` exposes two service methods - one Get and one Post. We will write unit tests for both these service methods. 
 
-Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.
+In the unit test
+
+- We will mock out the StudentService using Mockito
+- We will use Mock MVC framework to launch only StudentController. 
+
+A key part of unit testing is to restrict the scope to a minimum. In this unit test, we want to test only the methods in `StudentController`
+
+## Bootstrap REST Services Application with Spring Initializr
+> Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 

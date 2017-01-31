@@ -1,10 +1,10 @@
 ---
 layout:     post
-title:      Spring Boot vs Spring - How do they compare?
+title:      Spring Boot vs Spring MVC vs Spring - How do they compare?
 date:       2017-02-01 12:31:19
-summary:    How does Spring Boot compare to Spring? 
+summary:    How does Spring Boot compare with Spring MVC and Spring? 
 categories: [Spring Boot, Spring Boot Web Application]
-permalink:  /creating-web-application-with-spring-boot
+permalink:  /spring-boot-vs-spring-mvc-vs-spring
 ---
 
 What is Spring Boot? What is Spring Framework? What are their goals? How do they compare?
@@ -12,10 +12,12 @@ What is Spring Boot? What is Spring Framework? What are their goals? How do they
 ## You will learn
 - Get an overview of Spring Framework
 - What are the problems that Spring Framework wanted to solve?
+- Get an overview of Spring MVC Framework
+- What are the problems that Spring MVC Framework wanted to solve?
 - Get an overview of Spring Boot Framework
 - What are the problems that Spring Boot wants to solve?
-- Compare Spring vs Spring Boot
-- Most important thing that you will learn is Spring Boot is not a competitor to Spring Framework. With starter projects and auto configuration Spring Boot adds on to the great work done by Spring Framework.
+- Compare Spring vs Spring Boot vs Spring MVC
+- Most important thing that you will learn is Spring, Spring MVC and Spring Boot are not competing for the same space. They solve different problems and they solve them very well.
 
 ## What is the core problem that Spring Framework solves?
 
@@ -96,17 +98,20 @@ Do these modules bring in any new functionality? No. We can do all this with J2E
 
 For example, you need much less code to use a JDBCTemplate or a JMSTemplate compared to traditional JDBC or JMS.
 
-### Problem 2 : Better MVC Framework
-Spring MVC is a much better MVC framework than all the ones before it!
-
-### Problem 3 : Good Integration with Other Frameworks.
+### Problem 2 : Good Integration with Other Frameworks.
 Great thing about Spring Framework is that it does not try to solve problems which are already solved. All that it does is to provide a great integration with frameworks which provide great solutions.
 
 - Hibernate for ORM
 - iBatis for Object Mapping
 - JUnit & Mockito for Unit Testing
 
+
+## What is the core problem that Spring MVC Framework solves?
+
+> Spring MVC Framework provides decoupled way of developing web applications. With simple concepts like Dispatcher Servlet, ModelAndView and View Resolver, it makes it easy to develop web applications. 
+
 ## Why do we need Spring Boot?
+
 Spring based applications have a lot of configuration. 
 
 When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, web jars(for delivering static content) among other things.

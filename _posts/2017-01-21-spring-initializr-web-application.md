@@ -1,12 +1,186 @@
 ---
 layout:     post
-title:      Spring Initializr - Bootstrapping a Web Application
+title:      Spring Initializr - Bootstrap Your Spring Boot Applications at F1 speed!
 date:       2017-01-21 12:31:19
-summary:    Learn how to Bootstrap a Spring Boot Web Application with Spring Initializr.
+summary:    Learn what is Spring Initializr and understand how to Bootstrap a Spring Boot Web Application quickly.
 categories: [Spring Initializr, Bootstrap Web Application]
+permalink : spring-initialzr-bootstrap-spring-boot-applications
 ---
 
-## Log
+Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
+
+It allows you to create varied range of Spring Boot based Applications from a very simple UI. Some of the types of applications you can bootstrap are:
+
+- Web Applications
+- Restful Applications
+- Batch Applications
+
+Spring Boot provides a wide range of starter projects. Spring Initializr suppports all of them and more. Among a varied range of starter projects and options supported are:
+
+- spring-boot-starter-web-services : For building applications exposing SOAP Web Services
+- spring-boot-starter-web - Build Web applications & RESTful applications
+- spring-boot-starter-test - Write great Unit  and Integration Tests
+- spring-boot-starter-jdbc - Traditional JDBC Applications
+- spring-boot-starter-hateoas - Make your services more RESTful by adding HATEOAS features
+- spring-boot-starter-security - Authentication and Authorization using Spring Security
+- spring-boot-starter-data-jpa -  Spring Data JPA with Hibernate
+- spring-boot-starter-cache - Enabling Spring Framework’s caching support
+- spring-boot-starter-data-rest - Expose Simple REST Services using Spring Data REST
+
+In this guide, lets consider creating a simple web application with Spring Initializr.
+
+## Bootstrapping a Web application with Spring Initializr
+Creating a Web application with Spring Initializr is very simple.
+
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
+As shown in the image above, following steps have to be done
+
+- Launch Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} and choose the following
+  - Choose `com.in28minutes.springboot` as Group
+  - Choose `student-services` as Artifact
+  - Choose following dependencies
+    - Web
+- Click Generate Project button at the bottom of the page.
+- Import the project into Eclipse.
+
+## Structure of the project created
+Screenshot shows the project structure of the imported maven project.
+
+![Image](/images/Spring-Initializr-Web-ApplicationStructure.png "Spring Initializr Web Application - Folder Structure")
+
+- StudentServicesApplication.java - Spring Boot Launcher. Initializes Spring Boot Auto Configuration and Spring Application Context.
+- application.properties - Application Configuration file.
+- StudentServicesApplicationTests.java - Simple launcher for use in unit tests.
+- pom.xml - Included dependencies for Spring Boot Starter Web. Uses Spring Boot Starter Parent as parent pom.
+
+
+## Complete Code Generated
+
+Lets look at each of the file that is generated
+
+### /pom.xml
+
+Three important things that are configured in pom.xml.
+
+- Spring Boot Parent Pom 
+- Spring Boot Starter Web
+- Spring Boot Starter Plugin
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.in28minutes.springboot</groupId>
+	<artifactId>student-services-initializr</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>student-services</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.4.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
+```
+---
+
+### /src/main/java/com/in28minutes/springboot/StudentServicesApplication.java
+
+- `@SpringBootApplication` - Initializes Spring Boot Auto Configuration and Spring application context.
+- `SpringApplication.run` - Static method to launch a Spring Boot Application.
+
+```java
+package com.in28minutes.springboot;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class StudentServicesApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(StudentServicesApplication.class, args);
+	}
+}
+```
+---
+
+### /src/main/resources/application.properties
+
+```
+```
+---
+
+### /src/test/java/com/in28minutes/springboot/StudentServicesApplicationTests.java
+- Integration test launches the complete Spring Boot Application.
+
+```java
+package com.in28minutes.springboot;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class StudentServicesApplicationTests {
+
+	@Test
+	public void contextLoads() {
+	}
+
+}
+```
+---
+
+## Running the application
 Following log is generate when you run StudentServicesApplication.java as a Java Application.
 
 ```

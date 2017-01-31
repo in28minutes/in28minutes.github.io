@@ -16,6 +16,16 @@ This guide will help you create a simple REST service using Spring Boot.
 - How to create a Post REST Service for registering a course for student?
 - How to execute Rest Services from Postman?
 
+## Rest Services in this Guide
+
+In this guide, we will create services adhering to Level2. We will use proper URIs and use HTTP methods.
+
+We will create three service methods:
+
+- `@GetMapping("/students/{studentId}/courses")`: You can ask the courses a specific student has registered for using request method Get and example uri /students/Student1/courses.
+- `@GetMapping("/students/{studentId}/courses/{courseId}")`: You can ask a specific course for a specific student using request method Get and example uri /students/Student1/courses/Course1.
+- `@PostMapping("/students/{studentId}/courses")` : You can register a student for a course by sending a POST request to URI /students/Student1/courses
+
 ## Tools you will need
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
@@ -50,16 +60,6 @@ Always use HTTP Methods. Best practices with respect to each HTTP method is desc
 - POST : Should create new resource. Ideally return JSON with link to newly created resource. Same return codes as get possible. In addition : Return code 201 (CREATED) is possible.
 - PUT : Update a known resource. ex: update client details. Possible Return Codes : 200(OK)
 - DELETE : Used to delete a resource.
-
-## Rest Services in this Guide
-
-In this guide, we will create services adhering to Level2. We will use proper URIs and use HTTP methods.
-
-We will create three service methods:
-
-- `@GetMapping("/students/{studentId}/courses")`: You can ask the courses a specific student has registered for using request method Get and example uri /students/Student1/courses.
-- `@GetMapping("/students/{studentId}/courses/{courseId}")`: You can ask a specific course for a specific student using request method Get and example uri /students/Student1/courses/Course1.
-- `@PostMapping("/students/{studentId}/courses")` : You can register a student for a course by sending a POST request to URI /students/Student1/courses
 
 ## Project Structure
 Following screenshot shows the structure of the project we will create.
