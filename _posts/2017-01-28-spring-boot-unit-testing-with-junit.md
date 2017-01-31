@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      Writing Unit Tests for Rest Services with Spring Boot and JUnit
+title:      Unit Testing Rest Services with Spring Boot and JUnit
 date:       2017-01-28 12:31:19
 summary:    Setting up a basic REST Service with Spring Boot is a cake walk. We will go one step further and add great unit tests! 
-categories: [Spring Boot, REST Service]
+categories: [Spring Boot, REST Service, Unit Testing]
 permalink:  /unit-testing-for-spring-boot-rest-services
 ---
 
@@ -22,6 +22,7 @@ This guide will help you write great unit tests for your Spring Boot Rest Servic
 - JDK 1.8+
 
 ## Unit Testing
+
 Following screenshot shows eclipse project with all the files we will create.
 ![Image](/images/SpringBootRestService-ProjectStructure "Spring Boot Rest Services - Project Structure")
 
@@ -32,7 +33,16 @@ In the unit test
 - We will mock out the StudentService using Mockito
 - We will use Mock MVC framework to launch only StudentController. 
 
-A key part of unit testing is to restrict the scope to a minimum. In this unit test, we want to test only the methods in `StudentController`
+A key part of unit testing is to restrict the scope to a minimum. In this unit test, we want to test only the methods in `StudentController`.
+
+## Overview
+
+Following is the order we do things in this guide:
+
+- Bootstrap a project using Spring Initializr.
+- Implement a Business Service for our API - StudentService.
+- Implement the API - using StudentController. First we implement the GET methods and then the POST methods. 
+- Unit Test the API.
 
 ## Bootstrap REST Services Application with Spring Initializr
 > Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.

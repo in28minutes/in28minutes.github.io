@@ -7,7 +7,7 @@ categories: [Spring Boot, Spring Boot Web Application]
 permalink:  /spring-boot-vs-spring-mvc-vs-spring
 ---
 
-What is Spring Boot? What is Spring Framework? What are their goals? How do they compare?
+What is Spring Boot? What is Spring MVC? What is Spring Framework? What are their goals? How do they compare?
  
 ## You will learn
 - Get an overview of Spring Framework
@@ -45,6 +45,7 @@ public class WelcomeController {
 }
 
 ```
+
 ### Same Example with Dependency Injection
 World looks much easier with dependency injection. You let the spring framework do the hard work. We just use two simple annotations: @Component and @Autowired.
 

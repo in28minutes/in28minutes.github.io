@@ -10,6 +10,7 @@ permalink:  /integration-testing-for-spring-boot-rest-services
 This guide will help you write great integration tests for your Spring Boot Rest Service. We will use a simple code example creating couple of simple rest services. 
  
 ## You will learn
+- What is Integration Testing?
 - How to create a Get REST Service for retrieving the courses that a student registered for?
 - How to write a integration test for Get REST Service?
 - How to create a Post REST Service for registering a course for student?
@@ -20,11 +21,34 @@ This guide will help you write great integration tests for your Spring Boot Rest
 - Your favorite IDE. We use Eclipse.
 - JDK 1.8+
 
+## Integration Testing
+
+Following screenshot shows eclipse project with all the files we will create.
+![Image](/images/SpringBootRestService-ProjectStructure "Spring Boot Rest Services - Project Structure")
+
+We want to create a integration test for `StudentController` which is a Rest Controller. `StudentController` exposes two service methods - one Get and one Post. We will write integration tests for both these service methods. 
+
+In the integration test
+
+- We will launch the complete Spring Boot application using `@SpringBootTest`
+- We will invoke the service methods using `TestRestTemplate`
+- We will assert the results using a great JSON assert framework - `org.skyscreamer.jsonassert.JSONAssert`
+
+A key part of integration testing is testing all the layers in the application.
+
+## Overview
+
+Following is the order we do things in this guide:
+
+- Bootstrap a project using Spring Initializr.
+- Implement a Business Service for our API - StudentService.
+- Implement the API - using StudentController. First we implement the GET methods and then the POST methods. 
+- Write Integration Tests for our API.
+
+
 ## Creating REST Services Application with Spring Initializr
 
-Creating a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.  
-
-Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.
+> Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
@@ -125,7 +149,7 @@ Below picture shows how we can execute this Get Service from Postman - my favori
 
 ## Integration Testing the Get Rest Service
 
-When we are writing an integration test for a rest service, we would want to launch the entire spring context. 
+> When we are writing an integration test for a rest service, we would want to launch the entire spring context. 
 
 - `@SpringBootTest(classes = StudentServicesApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)` : Launch the entire Spring Boot Application on a Random Port
 - `@LocalServerPort private int port;`: Autowire the random port into the variable so that we can use it create the url.
@@ -184,7 +208,7 @@ public class StudentControllerIT {
 
 ## Adding a POST Rest Service
 
-A POST Service should return a status of created (201) when the resource creation is successful. 
+> A POST Service should return a status of created (201) when the resource creation is successful. 
 
 `@PostMapping("/students/{studentId}/courses")`: Mapping a url for the POST Request
 `@RequestBody Course newCourse`: Using Binding to bind the body of the request to Course object.
@@ -231,7 +255,7 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 
 ## Writing Integration Test for the POST Rest Service
 
-When writing an integration test for a POST service we would want to check if the location header contains the uri of the created resource.
+> When writing an integration test for a POST service we would want to check if the location header contains the uri of the created resource.
 
 - `String actual = response.getHeaders().get(HttpHeaders.LOCATION).get(0);` : Get the Location header from the response.
 - `assertTrue(actual.contains("/students/Student1/courses/"))` : Assert that the header contains the uri of the newly created resource.
