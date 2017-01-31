@@ -19,6 +19,19 @@ What is Spring Boot? What is Spring MVC? What is Spring Framework? What are thei
 - Compare Spring vs Spring Boot vs Spring MVC
 - Most important thing that you will learn is Spring, Spring MVC and Spring Boot are not competing for the same space. They solve different problems and they solve them very well.
 
+## References
+
+1 hour video courses on all popular frameworks!
+
+- Spring - [spring-framework-tutorial-for-beginners](https://in28minutes.teachable.com/p/spring-framework-tutorial-for-beginners)
+- Spring MVC - [https://www.youtube.com/watch?v=BjNhGaZDr0Y](https://www.youtube.com/watch?v=BjNhGaZDr0Y)
+- Spring Boot - [https://www.youtube.com/watch?v=PSP1-2cN7vM](https://www.youtube.com/watch?v=PSP1-2cN7vM)
+- Eclipse - [https://www.youtube.com/watch?v=s4ShbtOHMCA](https://www.youtube.com/watch?v=s4ShbtOHMCA)
+- Maven - [https://www.youtube.com/watch?v=0CFWeVgzsqY](https://www.youtube.com/watch?v=0CFWeVgzsqY)
+- JUnit - [https://www.youtube.com/watch?v=o5k9NOR9lrI](https://www.youtube.com/watch?v=o5k9NOR9lrI)
+- Mockito - [https://www.youtube.com/watch?v=d2KwvXQgQx4](https://www.youtube.com/watch?v=d2KwvXQgQx4)
+
+
 ## What is the core problem that Spring Framework solves?
 
 Think long and hard. What's the problem Spring Framework solves?
