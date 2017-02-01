@@ -80,7 +80,7 @@ public class WelcomeService {
 public class WelcomeController {
 
     @Autowired
-    private WelcomeService service = new WelcomeService();
+    private WelcomeService service;
 
 	@RequestMapping("/welcome")
 	public String welcome() {
