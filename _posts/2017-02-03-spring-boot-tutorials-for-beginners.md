@@ -24,6 +24,13 @@ This guide will help you understand the different resources (tutorials, videos a
 - Web Application - [Create Basic Web Application with Spring Boot](http://www.springboottutorial.com/creating-web-application-with-spring-boot){:target="_blank"}
 - Spring Boot Starter Security - [Secure Your Rest Services with Spring Boot](http://www.springboottutorial.com/securing-rest-services-with-spring-boot-starter-security){:target="_blank"}
 
+## Code Examples - Maven Projects
+Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}
+- Rest Services with Unit and Integration Tests: Website-springbootrestservices-simplerestserviceswithunitandintegrationtests.zip
+- Spring Security Example: Website-SpringSecurityStarterWebApplication_Final.zip
+- All other examples related to Restful Web Services: Website-springbootrestservices-all-examples.zip
+
+
 ## Other References
 - Other great courses at [in28Minutes](http://www.in28minutes.com){:target="_blank"}
 - Spring - [spring-framework-tutorial-for-beginners](https://in28minutes.teachable.com/p/spring-framework-tutorial-for-beginners){:target="_blank"}
