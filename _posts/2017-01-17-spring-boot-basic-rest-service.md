@@ -88,7 +88,7 @@ A few details:
 
 Creating a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.  
 
-Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.
+Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
@@ -102,7 +102,7 @@ As shown in the image above, following steps have to be done
     - Actuator
     - DevTools
 - Click Generate Project.
-- Import the project into Eclipse.
+- Import the project into Eclipse. File -> Import -> Existing Maven Project.
 - If you want to understand all the files that are part of this project, you can go here.
 
 ## Implementing Business Service for your Application
@@ -216,6 +216,7 @@ A POST Service should return a status of created (201) when the resource creatio
 ## Executing a POST Rest Service
 
 Example Request is shown below. It contains all the details to register a course to a student. 
+
 ```json
 {
   "name": "Microservices",

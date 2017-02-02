@@ -36,7 +36,8 @@ This guide will help you write great integration tests for your Spring Boot Rest
 ## Integration Testing
 
 Following screenshot shows eclipse project with all the files we will create.
-![Image](/images/SpringBootRestService-ProjectStructure "Spring Boot Rest Services - Project Structure")
+
+![Image](/images/SpringBootRestService-ProjectStructure.png "Spring Boot Rest Services - Project Structure")
 
 We want to create a integration test for `StudentController` which is a Rest Controller. `StudentController` exposes two service methods - one Get and one Post. We will write integration tests for both these service methods. 
 
@@ -60,7 +61,7 @@ Following is the order we do things in this guide:
 
 ## Creating REST Services Application with Spring Initializr
 
-> Spring Initializr( http://start.spring.io/) is great tool to bootstrap your Spring Boot projects.
+> Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
