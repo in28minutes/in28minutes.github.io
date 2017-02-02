@@ -36,6 +36,11 @@ This guide will help you understand the different features Spring Boot Starter S
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
 - JDK 1.8+
+## Complete Maven Project With Code Examples
+> Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}
+
+- Spring Security Example
+    - Website-SpringSecurityStarterWebApplication_Final.zip
 
 ## Bootstrapping web application with Spring Initializr
 

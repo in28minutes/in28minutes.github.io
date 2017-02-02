@@ -33,6 +33,12 @@ This guide will help you write great integration tests for your Spring Boot Rest
 - Your favorite IDE. We use Eclipse.
 - JDK 1.8+
 
+## Complete Maven Project With Code Examples
+> Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}
+
+- Rest Services with Unit and Integration Tests
+    - Website-springbootrestservices-simplerestserviceswithunitandintegrationtests.zip
+
 ## Integration Testing
 
 Following screenshot shows eclipse project with all the files we will create.

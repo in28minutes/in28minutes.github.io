@@ -41,6 +41,12 @@ In this guide, we will create three services using proper URIs and HTTP methods:
 - Your favorite IDE. We use Eclipse.
 - JDK 1.8+
 
+## Complete Maven Project With Code Examples
+> Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}
+
+- Rest Services with Unit and Integration Tests
+    - Website-springbootrestservices-simplerestserviceswithunitandintegrationtests.zip
+
 ## What is REST?
 
 REST stands for REpresentational State Transfer. REST specifies a set of architectural constraints. Any service which satisfies these constraints is called RESTful Service.

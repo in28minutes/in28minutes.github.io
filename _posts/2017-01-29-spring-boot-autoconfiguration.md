@@ -33,6 +33,12 @@ This guide will help you understand Spring Boot Auto Configuration with examples
 - Your favorite IDE. We use Eclipse.
 - JDK 1.8+
 
+## Complete Maven Project With Code Examples
+> Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}
+
+- All other examples related to Restful Web Services
+    - Website-springbootrestservices-all-examples.zip
+
 ## Why do we need Spring Boot Auto Configuration?
 
 Spring based applications have a lot of configuration. 

@@ -32,6 +32,11 @@ This guide will help you write great unit tests for your Spring Boot Rest Servic
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
 - JDK 1.8+
+## Complete Maven Project With Code Examples
+> Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}
+
+- Rest Services with Unit and Integration Tests
+    - Website-springbootrestservices-simplerestserviceswithunitandintegrationtests.zip
 
 ## Unit Testing
 
