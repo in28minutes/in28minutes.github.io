@@ -27,9 +27,12 @@ This guide will help you understand the different resources (tutorials, videos a
 ## Code Examples - Maven Projects
 Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}
 
-- Rest Services with Unit and Integration Tests: Website-springbootrestservices-simplerestserviceswithunitandintegrationtests.zip
-- Spring Security Example: Website-SpringSecurityStarterWebApplication_Final.zip
-- All other examples related to Restful Web Services: Website-springbootrestservices-all-examples.zip
+- Rest Services with Unit and Integration Tests
+> Website-springbootrestservices-simplerestserviceswithunitandintegrationtests.zip
+- Spring Security Example
+> Website-SpringSecurityStarterWebApplication_Final.zip
+- All other examples related to Restful Web Services
+> Website-springbootrestservices-all-examples.zip
 
 
 ## Other References
