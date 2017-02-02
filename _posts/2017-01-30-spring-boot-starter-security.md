@@ -292,7 +292,7 @@ When you launch the url http://localhost:8080 in the browser you get a popup ask
 
 ![Image](/images/SpringBootSecuritySecurity-WebApplication-Authentication.png "Spring Boot Security Starter - Providing authentication details for Web application") 
 
-That's really a lot of magic we turned on just by adding a simple dependency Spring Boot Starter Parent. 
+That's really a lot of magic we turned on just by adding a simple dependency Spring Boot Starter Security. 
 
 ## Configuring Custom Users and Roles
 
