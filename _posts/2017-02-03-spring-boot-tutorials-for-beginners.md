@@ -18,11 +18,10 @@ This guide will help you understand the different resources (tutorials, videos a
 - 25 Videos Coming Soon
 
 ## Articles
-- [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"
+- [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}
 - Basics of Spring Boot - [Auto Configuration](http://www.springboottutorial.com/spring-boot-auto-configuration){:target="_blank"}, [Spring Boot Starter Projects](http://www.springboottutorial.com/spring-boot-starter-projects){:target="_blank"}, [Spring Boot Starter Parent](http://www.springboottutorial.com/spring-boot-starter-parent){:target="_blank"}, [Spring Boot Initializr](http://www.springboottutorial.com/spring-initialzr-bootstrap-spring-boot-applications){:target="_blank"}
 - Rest Services - [Basic Rest Service with Spring Boot](http://www.springboottutorial.com/creating-rest-service-with-spring-boot){:target="_blank"}, [Unit Testing](http://www.springboottutorial.com/unit-testing-for-spring-boot-rest-services){:target="_blank"}, [Integration Testing](http://www.springboottutorial.com/integration-testing-for-spring-boot-rest-services){:target="_blank"}
 - Web Application - [Create Basic Web Application with Spring Boot](http://www.springboottutorial.com/creating-web-application-with-spring-boot){:target="_blank"}
-1 hour video courses on all popular frameworks!
 - Spring Boot Starter Security - [Secure Your Rest Services with Spring Boot](http://www.springboottutorial.com/securing-rest-services-with-spring-boot-starter-security){:target="_blank"}
 
 ## Other References
