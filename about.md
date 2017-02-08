@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About in28Minutes
+title: About Us
 permalink: /about/
 tags: about
 ---

@@ -14,8 +14,8 @@ This guide will help you understand the different resources (tutorials, videos a
 - [First Application with Spring Boot](https://www.udemy.com/spring-boot-first-web-application/){:target="_blank"} - 3000 Students - 4.7 Average Review Rating
 - Restful Services with Spring Boot - Coming Soon!
 
-## Videos
-- 25 Videos Coming Soon
+## 25 Videos
+[![Image](/images/SpringBootTutorialForBeginnersPlaylist.png "Spring Boot Tutorial For Beginners - 25 Videos")](https://www.youtube.com/playlist?list=PLBBog2r6uMCRzaJqr-uUC8gakwSxkPSBh){:target="_blank"}
 
 ## Articles
 - [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}
