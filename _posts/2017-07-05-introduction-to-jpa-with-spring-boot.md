@@ -500,9 +500,6 @@ As shown in the image above, following steps have to be done
 - Import the project into Eclipse.
 
 ## Structure of the project created
-Screenshot shows the project structure of the imported maven project.
-
-![Image](/images/Spring-Initializr-Web-ApplicationStructure.png "Spring Initializr Web Application - Folder Structure")
 
 - H2InMemoryDbDemoApplication.java - Spring Boot Launcher. Initializes Spring Boot Auto Configuration and Spring Application Context.
 - application.properties - Application Configuration file.
@@ -563,14 +560,16 @@ public class User {
 }
 ```
 Important things to note:
- - @Entity:
- - @NamedQuery:
- - @Id:
- - @GeneratedValue:
- - protected User():
+ - @Entity: Specifies that the class is an entity. This annotation is applied to the entity class.
+ - @NamedQuery: Specifies a static, named query in the Java Persistence query language.
+ - @Id: Specifies the primary key of an entity.
+ - @GeneratedValue: Provides for the specification of generation strategies for the values of primary keys.
+ - protected User(): Default constructor to make JPA Happy
 
 
 ## User Service to talk to Entity Manager
+
+Typically with JPA we need to create a service to talk to the entity manager. In this example, we create a UserService to manage the persistence of user entity.
 
 ```java
 @Repository
@@ -597,13 +596,22 @@ public class UserService {
 }
 ```
 Important things to note
- - @Repository:
- - @Transactional:
- - @PersistenceContext:
- - entityManager.persist(user):
- - entityManager.createNamedQuery:
+ - @Repository: Spring Annotation to indicate that this component handles storing data to a data store.
+ - @Transactional: Spring annotation used to simplify transaction management
+ - @PersistenceContext: A persistence context handles a set of entities which hold data to be persisted in some persistence store (e.g. a database). In particular, the context is aware of the different states an entity can have (e.g. managed, detached) in relation to both the context and the underlying persistence store.
+ - EntityManager : Interface used to interact with the persistence context.
+ - entityManager.persist(user): Make user entity instance managed and persistent i.e. saved to database.
+ - entityManager.createNamedQuery: Creates an instance of TypedQuery for executing a Java Persistence query language named query. The second parameter indicates the type of result.
+
+Notes from http://docs.oracle.com/javaee/6/api/javax/persistence/EntityManager.html#createNamedQuery(java.lang.String)
+
+> An EntityManager instance is associated with a persistence context. A persistence context is a set of entity instances in which for any persistent entity identity there is a unique entity instance. Within the persistence context, the entity instances and their lifecycle are managed. The EntityManager API is used to create and remove persistent entity instances, to find entities by their primary key, and to query over entities.
+
+> The set of entities that can be managed by a given EntityManager instance is defined by a persistence unit. A persistence unit defines the set of all classes that are related or grouped by the application, and which must be colocated in their mapping to a single database.
 
 ## User Entity Manager Command Line Runner
+
+The code below is very simple. CommandLineRunner interface is used to indicate that this bean has to be run as soon as the Spring application context is initialized. We are executing a few simple methods on the UserService.
 
 ```java
 @Component
@@ -639,10 +647,49 @@ public class UserEntityManagerCommandLineRunner implements CommandLineRunner {
 ```
 
 Important things to note: 
- - @Autowired private UserService userService:
+ - @Autowired private UserService userService: Autowire the user service.
  - Rest of the stuff is straight forward.
 
 ## Spring Data JPA - JpaRepository
+
+Spring Data aims to provide a consistent model for accessing data from different kinds of data stores.
+
+As far as JPA is concerned there are two things that you would need to know
+ - Spring Data Commons - Defines the common concepts for all Spring Data Modules. 
+ - Spring Data JPA - Provides easy integration with JPA repositories.
+
+
+### CrudRepository
+CrudRepository is the pre-defined core repository class (in Spring Data Commons) enabling the basic CRUD functions on a repository. Important methods are shown below.
+
+```java
+public interface CrudRepository<T, ID extends Serializable>
+    extends Repository<T, ID> {
+
+    <S extends T> S save(S entity);
+
+    T findOne(ID primaryKey);       
+
+    Iterable<T> findAll();          
+
+    Long count();                   
+
+    void delete(T entity);          
+
+    boolean exists(ID primaryKey);  
+
+    // … more functionality omitted.
+}
+```
+
+JpaRepository (Defined in Spring Data JPA) is the JPA specific Repository interface.
+
+```java
+public interface JpaRepository<T, ID extends Serializable>
+		extends PagingAndSortingRepository<T, ID>, QueryByExampleExecutor<T> {
+```
+
+We will now use the JpaRepository to manage the User entity. Below snippet shows the important details.
 
 ```Java
 package com.example.h2.user;
@@ -654,6 +701,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
 ```
 
 ## User Repository CommandLineRunner
+The code below is very simple. CommandLineRunner interface is used to indicate that this bean has to be run as soon as the Spring application context is initialized. We are executing a few simple methods on the UserRepository.
+
+
 ```java
 package com.example.h2;
 
@@ -691,6 +741,17 @@ public class UserRepositoryCommandLineRunner implements CommandLineRunner {
 Important things to note: 
  - @Autowired private UserRepository userRepository:
  - Rest of the stuff is straight forward.
+
+## H2 Console
+We have enabled h2 console in /src/main/resources/application.properties
+
+```
+spring.h2.console.enabled=true
+```
+
+You can start the application by running H2InMemoryDbDemoApplication as a java application. You can also run the H2-Console on the browser
+- http://localhost:8080/h2-console
+- Use db url jdbc:h2:mem:testdb
 
 ## Complete Code Example
 
