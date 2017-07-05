@@ -121,7 +121,7 @@ CREATE TABLE employee
 
 ```
 
-#### Example 3 : Some times multiple classes are mapped to a single table and viceversa
+#### Example 3 : Some times multiple classes are mapped to a single table and vice-versa
 
 Objects
 
@@ -312,8 +312,8 @@ public class Todo {
 
 ```
 
-### Comparison with JPA
-- All the three approaches used queries.
+### Common features of DBC, Spring JDBC and myBatis
+- JDBC, Spring JDBC and myBatis involve writing queries.
 - In big application, queries can become complex. Especially when we retrieve data from multiple tables.
 - This creates a problem whenever there are changes in the structure of the database.
 
@@ -509,24 +509,26 @@ As shown in the image above, following steps have to be done
 Important dependencies are shown below:
 
 ```xml
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-web</artifactId>
+</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
 
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+<dependency>
+	<groupId>com.h2database</groupId>
+	<artifactId>h2</artifactId>
+	<scope>runtime</scope>
+</dependency>
 ```
 
 ## User Entity
+
+Lets define a bean User and add the appropriate JPA annotations.
 
 ```java
 package com.example.h2.user;
@@ -560,11 +562,11 @@ public class User {
 }
 ```
 Important things to note:
- - @Entity: Specifies that the class is an entity. This annotation is applied to the entity class.
- - @NamedQuery: Specifies a static, named query in the Java Persistence query language.
- - @Id: Specifies the primary key of an entity.
- - @GeneratedValue: Provides for the specification of generation strategies for the values of primary keys.
- - protected User(): Default constructor to make JPA Happy
+ - ```@Entity```: Specifies that the class is an entity. This annotation is applied to the entity class.
+ - ```@NamedQuery```: Specifies a static, named query in the Java Persistence query language.
+ - ```@Id```: Specifies the primary key of an entity.
+ - ```@GeneratedValue```: Provides for the specification of generation strategies for the values of primary keys.
+ - ```protected User()```: Default constructor to make JPA Happy
 
 
 ## User Service to talk to Entity Manager
