@@ -480,6 +480,217 @@ CREATE TABLE employee
 
 ```
 
+# Step by Step Code Example
+
+## Bootstrapping a Web application with Spring Initializr
+Creating a JPA application with Spring Initializr is very simple.
+
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
+As shown in the image above, following steps have to be done
+
+- Launch Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} and choose the following
+  - Choose `com.in28minutes.springboot` as Group
+  - Choose `H2InMemoryDbDemo` as Artifact
+  - Choose following dependencies
+    - Web
+    - JPA
+    - H2 - We use H2 as in memory database
+- Click Generate Project button at the bottom of the page.
+- Import the project into Eclipse.
+
+## Structure of the project created
+Screenshot shows the project structure of the imported maven project.
+
+![Image](/images/Spring-Initializr-Web-ApplicationStructure.png "Spring Initializr Web Application - Folder Structure")
+
+- H2InMemoryDbDemoApplication.java - Spring Boot Launcher. Initializes Spring Boot Auto Configuration and Spring Application Context.
+- application.properties - Application Configuration file.
+- H2InMemoryDbDemoApplicationTests.java - Simple launcher for use in unit tests.
+- pom.xml - Included dependencies for Spring Boot Starter Web and Data JPA. Uses Spring Boot Starter Parent as parent pom.
+
+Important dependencies are shown below:
+
+```xml
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+```
+
+## User Entity
+
+```java
+package com.example.h2.user;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+
+@Entity
+@NamedQuery(query = "select u from User u", name = "query_find_all_users")
+public class User {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
+	private String name;// Not perfect!! Should be a proper object!
+	private String role;// Not perfect!! An enum should be a better choice!
+
+	protected User() {
+	}
+
+	public User(String name, String role) {
+		super();
+		this.name = name;
+		this.role = role;
+	}
+
+}
+```
+Important things to note:
+ - @Entity:
+ - @NamedQuery:
+ - @Id:
+ - @GeneratedValue:
+ - protected User():
+
+
+## User Service to talk to Entity Manager
+
+```java
+@Repository
+@Transactional
+public class UserService {
+	
+	@PersistenceContext
+	private EntityManager entityManager;
+	
+	public long insert(User user) {
+		entityManager.persist(user);
+		return user.getId();
+	}
+
+	public User find(long id) {
+		return entityManager.find(User.class, id);
+	}
+	
+	public List<User> findAll() {
+		Query query = entityManager.createNamedQuery(
+				"query_find_all_users", User.class);
+		return query.getResultList();
+	}
+}
+```
+Important things to note
+ - @Repository:
+ - @Transactional:
+ - @PersistenceContext:
+ - entityManager.persist(user):
+ - entityManager.createNamedQuery:
+
+## User Entity Manager Command Line Runner
+
+```java
+@Component
+public class UserEntityManagerCommandLineRunner implements CommandLineRunner {
+
+	private static final Logger log = LoggerFactory.getLogger(UserEntityManagerCommandLineRunner.class);
+	
+	@Autowired
+	private UserService userService;
+
+	@Override
+	public void run(String... args) {
+
+		log.info("-------------------------------");
+		log.info("Adding Tom as Admin");
+		log.info("-------------------------------");
+		User tom = new User("Tom", "Admin");
+		userService.insert(tom);
+		log.info("Inserted Tom" + tom);
+
+		log.info("-------------------------------");
+		log.info("Finding user with id 1");
+		log.info("-------------------------------");
+		User user = userService.find(1L);
+		log.info(user.toString());
+
+		log.info("-------------------------------");
+		log.info("Finding all users");
+		log.info("-------------------------------");
+		log.info(userService.findAll().toString());
+	}
+}
+```
+
+Important things to note: 
+ - @Autowired private UserService userService:
+ - Rest of the stuff is straight forward.
+
+## Spring Data JPA - JpaRepository
+
+```Java
+package com.example.h2.user;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+}
+```
+
+## User Repository CommandLineRunner
+```java
+package com.example.h2;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.example.h2.user.User;
+import com.example.h2.user.UserRepository;
+
+@Component
+public class UserRepositoryCommandLineRunner implements CommandLineRunner {
+
+	private static final Logger log = LoggerFactory.getLogger(UserRepositoryCommandLineRunner.class);
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@Override
+	public void run(String... args) {
+		User harry = new User("Harry", "Admin");
+		userRepository.save(harry);
+		log.info("-------------------------------");
+		log.info("Finding all users");
+		log.info("-------------------------------");
+		for (User user : userRepository.findAll()) {
+			log.info(user.toString());
+		}
+	}
+
+}
+```
+Important things to note: 
+ - @Autowired private UserRepository userRepository:
+ - Rest of the stuff is straight forward.
 
 ## Complete Code Example
 
@@ -529,11 +740,13 @@ CREATE TABLE employee
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
