@@ -2,8 +2,8 @@
 layout:     post
 title:      Introduction to JPA using Spring Boot Data Jpa
 date:       2017-07-05 12:31:19
-summary:    Understand JPA and setup a simple JPA example using Spring Boot
-categories: JPA, Spring Boot, Hibernate
+summary:    Complete journey starting from JDBC to JPA to Spring Data JPA using an example with Spring Boot Data Jpa starter project
+categories: JPA, Spring Boot, Hibernate, Spring Data JPA
 permalink:  /introduction-to-jpa-with-spring-boot-data-jpa
 ---
 
@@ -14,6 +14,7 @@ This guide will help you understand what JPA is and setup a simple JPA example u
 - What is Object Relational Impedence?
 - What are the alternatives to JPA? 
 - What is Hibernate and How does it relate to JPA?
+- What is Spring Data JPA?
 - How to create a simple JPA project using Spring Boot Data JPA Starter?
 
 ## References
@@ -613,7 +614,9 @@ Notes from http://docs.oracle.com/javaee/6/api/javax/persistence/EntityManager.h
 
 ## User Entity Manager Command Line Runner
 
-The code below is very simple. CommandLineRunner interface is used to indicate that this bean has to be run as soon as the Spring application context is initialized. We are executing a few simple methods on the UserService.
+CommandLineRunner interface is used to indicate that this bean has to be run as soon as the Spring application context is initialized. 
+
+We are executing a few simple methods on the UserService.
 
 ```java
 @Component
@@ -656,6 +659,33 @@ Important things to note:
 
 Spring Data aims to provide a consistent model for accessing data from different kinds of data stores.
 
+UserService (which we created earlier) contains a lot of redundant code which can be easily generalized. Spring Data aims to simplify the code below.
+```java
+@Repository
+@Transactional
+public class UserService {
+	
+	@PersistenceContext
+	private EntityManager entityManager;
+	
+	public long insert(User user) {
+		entityManager.persist(user);
+		return user.getId();
+	}
+
+	public User find(long id) {
+		return entityManager.find(User.class, id);
+	}
+	
+	public List<User> findAll() {
+		Query query = entityManager.createNamedQuery(
+				"query_find_all_users", User.class);
+		return query.getResultList();
+	}
+}
+```
+
+
 As far as JPA is concerned there are two things that you would need to know
  - Spring Data Commons - Defines the common concepts for all Spring Data Modules. 
  - Spring Data JPA - Provides easy integration with JPA repositories.
@@ -691,9 +721,9 @@ public interface JpaRepository<T, ID extends Serializable>
 		extends PagingAndSortingRepository<T, ID>, QueryByExampleExecutor<T> {
 ```
 
-We will now use the JpaRepository to manage the User entity. Below snippet shows the important details.
+We will now use the JpaRepository to manage the User entity. Below snippet shows the important details. We would want the UserRepository to manage the User entity which has a primary key of type Long.
 
-```Java
+```java
 package com.example.h2.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -741,7 +771,7 @@ public class UserRepositoryCommandLineRunner implements CommandLineRunner {
 }
 ```
 Important things to note: 
- - @Autowired private UserRepository userRepository:
+ - @Autowired private UserRepository userRepository: Auto wiring the user repository.
  - Rest of the stuff is straight forward.
 
 ## H2 Console
