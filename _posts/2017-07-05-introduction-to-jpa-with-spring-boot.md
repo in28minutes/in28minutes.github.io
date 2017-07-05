@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Introduction to JPA using Spring Boot Data Jpa
-date:       2017-01-30 12:31:19
+date:       2017-07-05 12:31:19
 summary:    Understand JPA and setup a simple JPA example using Spring Boot
 categories: JPA, Spring Boot, Hibernate
 permalink:  /introduction-to-jpa-with-spring-boot-data-jpa
@@ -34,7 +34,7 @@ This guide will help you understand what JPA is and setup a simple JPA example u
 - JDK 1.8+
 - In memory database H2
 
-## What is Object Relational Impedence Mismatch
+## What is Object Relational Impedence Mismatch?
 
 Java is an object oriented programming language. In Java, all data is stored in objects.
 
@@ -154,3 +154,64 @@ CREATE TABLE employee
   ) 
 
 ```
+
+## Other approaches before JPA - JDBC, Spring JDBC & myBatis
+
+Other approaches before JPA focused on queries and how to translate results from queries to objects.
+
+### JDBC
+
+- JDBC stands for Java Database Connectivity
+- It used concepts like Statement, PreparedStatement and ResultSet
+- In the example below, the query used is ```Update todo set user=?, desc=?, target_date=?, is_done=? where id=?```
+- The values needed to execute the query are set into the query using different set methods on the PreparedStatement
+- Results from the query are populated into the ResultSet. We had to write code to liquidate the ResultSet into objects.
+
+```java
+Connection connection = datasource.getConnection();
+
+PreparedStatement st = connection.prepareStatement(
+		"Update todo set user=?, desc=?, target_date=?, is_done=? where id=?");
+
+st.setString(1, todo.getUser());
+st.setString(2, todo.getDesc());
+st.setTimestamp(3, new Timestamp(
+		todo.getTargetDate().getTime()));
+st.setBoolean(4, todo.isDone());
+st.setInt(5, todo.getId());
+
+st.execute();
+
+st.close();
+
+connection.close();
+```
+
+```java
+Connection connection = datasource.getConnection();
+
+PreparedStatement st = connection.prepareStatement(
+		"SELECT * FROM TODO where id=?");
+
+st.setInt(1, id);
+
+ResultSet resultSet = st.executeQuery();
+
+
+if (resultSet.next()) {
+
+    Todo todo = new Todo();
+	todo.setId(resultSet.getInt("id"));
+	todo.setUser(resultSet.getString("user"));
+	todo.setDesc(resultSet.getString("desc"));
+	todo.setTargetDate(resultSet.getTimestamp("target_date"));
+	return todo;
+}
+
+st.close();
+
+connection.close();
+
+return null;
+```
+
