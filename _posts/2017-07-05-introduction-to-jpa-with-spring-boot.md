@@ -36,6 +36,8 @@ This guide will help you understand what JPA is and setup a simple JPA example u
 
 ## What is Object Relational Impedence Mismatch?
 
+![Image](/images/JPA_01_Introduction.png "JPA Introduction")
+
 Java is an object oriented programming language. In Java, all data is stored in objects.
 
 Typically, Relational databases are used to store data (These days, a number of other NoSQL data stores are also becoming popular - We will stay away from them, for now).  Relational databases store data in tables.
@@ -232,13 +234,12 @@ return null;
 #### Update Todo
 ```java
 jdbcTemplate
-				.update("Update todo set user=?, desc=?, target_date=?, is_done=? where id=?",
-						todo.getUser(), 
-						todo.getDesc(),
-						new Timestamp(todo.getTargetDate().getTime()),
-						todo.isDone(), 
-						todo.getId()
-					);
+.update("Update todo set user=?, desc=?, target_date=?, is_done=? where id=?",
+	todo.getUser(), 
+	todo.getDesc(),
+	new Timestamp(todo.getTargetDate().getTime()),
+	todo.isDone(), 
+	todo.getId());
 ```
 
 #### Retrieve a Todo
@@ -318,9 +319,34 @@ public class Todo {
 
 ## How does JPA Work?
 
-![Image](/images/JPA_01_Introduction.png "JPA Introduction")
+JPA evolved as a result of a different thought process. How about mapping the objects directly to tables?
+	- Entities
+	- Attributes
+	- Relationships
+
+This is also called ORM - Object Relational Mapping. 
+
+## Important Concepts in JPA
 
 ![Image](/images/JPA_02_Architecture.png "JPA Architecuture")
 
+JPA allows to map application classes to tables in database.
+- Entity Manager - Once the mappings are defined, entity manager can manage your entities. Entity Manager handles all interactions with the database
+- JPQL (Java Persistence Query Language) - Provides ways to write queries to execute searches against entities. Important thing to understand is the these are different from SQL queries. JPQL queries already understand the mappings that are defined between entities. We can add additional conditions as needed.
+- Criteria API defines a Java based API to execute searches against databases.
 
+## JPA vs Hibernate
+
+Hibernate is one of the most popular ORM frameworks. 
+
+JPA defines the specification. It is an API. 
+ - How do you define entities?
+ - How do you map attributes?
+ - How do you map relationships between entities?
+ - Who manages the entities?
+
+Hibernate is one of the popular implementations of JPA.
+ - Hibernate understands the mappings that we add between objects and tables.
+ - It ensures that data is stored/retrieved from the database based on the mappings.
+ - Hibernate also provides additional features on top of JPA. But depending on them would mean a lock in to Hibernate. You cannot move to other JPA implementations like Toplink.
 
