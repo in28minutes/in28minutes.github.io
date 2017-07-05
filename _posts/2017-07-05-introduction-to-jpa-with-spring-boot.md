@@ -86,7 +86,6 @@ public class Employee {
    
      //Some other code
 	
-	@ManyToMany
 	private List<Task> tasks;
 }
 
@@ -122,6 +121,8 @@ CREATE TABLE employee
 
 #### Example 3 : Some times multiple classes are mapped to a single table and viceversa
 
+Objects
+
 ```java
 public  class Employee {	
     //Other Employee Attributes
@@ -136,6 +137,7 @@ public class PartTimeEmployee extends Employee {
 }
 ```
 
+Tables
 ```sql
 CREATE TABLE employee 
   ( 
@@ -167,6 +169,8 @@ Other approaches before JPA focused on queries and how to translate results from
 - The values needed to execute the query are set into the query using different set methods on the PreparedStatement
 - Results from the query are populated into the ResultSet. We had to write code to liquidate the ResultSet into objects.
 
+
+#### Update Todo
 ```java
 Connection connection = datasource.getConnection();
 
@@ -187,6 +191,7 @@ st.close();
 connection.close();
 ```
 
+#### Retrieve a Todo
 ```java
 Connection connection = datasource.getConnection();
 
@@ -214,4 +219,108 @@ connection.close();
 
 return null;
 ```
+
+### Spring JDBC
+
+- Spring JDBC provides a layer on top of JDBC
+- It used concepts like JDBCTemplate
+- Typically needs lesser number of lines compared to JDBC as following are simplified
+   - mapping parameters to queries
+   - liquidating resultsets to beans
+
+
+#### Update Todo
+```java
+jdbcTemplate
+				.update("Update todo set user=?, desc=?, target_date=?, is_done=? where id=?",
+						todo.getUser(), 
+						todo.getDesc(),
+						new Timestamp(todo.getTargetDate().getTime()),
+						todo.isDone(), 
+						todo.getId()
+					);
+```
+
+#### Retrieve a Todo
+
+```java
+@Override
+public Todo retrieveTodo(int id) {
+
+	return jdbcTemplate.queryForObject(
+			"SELECT * FROM TODO where id=?",
+			new Object[] { id }, new TodoMapper());
+
+}
+```
+
+Reusable Row Mapper
+
+```java
+// new BeanPropertyRowMapper(TodoMapper.class)
+class TodoMapper implements RowMapper<Todo> {
+	@Override
+	public Todo mapRow(ResultSet rs, int rowNum)
+			throws SQLException {
+		Todo todo = new Todo();
+
+		todo.setId(rs.getInt("id"));
+		todo.setUser(rs.getString("user"));
+		todo.setDesc(rs.getString("desc"));
+		todo.setTargetDate(
+				rs.getTimestamp("target_date"));
+		todo.setDone(rs.getBoolean("is_done"));
+		return todo;
+	}
+}	
+```
+
+### myBatis
+
+MyBatis removes the need for manually writing code to set parameters and retrieve results. It provides simple XML or Annotation based configuration to map Java POJOs to database.
+
+#### Update Todo and Retrieve Todo
+
+
+```java
+@Mapper
+public interface TodoMybatisService
+		extends TodoDataService {
+
+	@Override
+	@Update("Update todo set user=#{user}, desc=#{desc}, target_date=#{targetDate}, is_done=#{isDone} where id=#{id}")
+	public void updateTodo(Todo todo) throws SQLException;
+
+	@Override
+	@Select("SELECT * FROM TODO WHERE id = #{id}")
+	public Todo retrieveTodo(int id) throws SQLException;
+}
+
+public class Todo {
+
+	private int id;
+
+	private String user;
+
+	private String desc;
+
+	private Date targetDate;
+
+	private boolean isDone;
+}
+
+```
+
+### Comparison with JPA
+- All the three approaches used queries.
+- In big application, queries can become complex. Especially when we retrieve data from multiple tables.
+- This creates a problem whenever there are changes in the structure of the database.
+
+## How does JPA Work?
+
+![Image](/images/JPA_01_Introduction.png "JPA Introduction")
+
+![Image](/images/JPA_02_Architecture.png "JPA Architecuture")
+
+
 
