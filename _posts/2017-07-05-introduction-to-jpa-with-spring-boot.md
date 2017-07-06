@@ -811,6 +811,27 @@ You can also run the H2-Console on the browser
 - http://localhost:8080/h2-console
 - Use db url jdbc:h2:mem:testdb
 
+Questions
+- Where is the database created?
+- What schema is used to create the tables?
+- Where are the tables created?
+- Can I see the data in the database?
+   - http://localhost:8080/h2-console
+   - Use db url jdbc:h2:mem:testdb
+- Where is Hibernate coming in from?
+- How is a datasource created?
+
+Magic of Spring Boot and in Memory Database
+- Zero project setup or infrastructure
+- Zero Configuration
+- Zero Maintainance
+- Easy to use for Learning and Unit Tests
+- Simple Configuration to switch to a real database
+
+# Restrictions of using inmemory database
+- Data is not persisted between restarts
+
+
 ## Complete Code Example
 
 
