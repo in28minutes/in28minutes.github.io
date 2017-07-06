@@ -11,7 +11,7 @@ This guide will help you understand what JPA is and setup a simple JPA example u
  
 ## You will learn
 - What is JPA?
-- What is Object Relational Impedence?
+- What is the problem solved by JPA - Object Relational Impedence?
 - What are the alternatives to JPA? 
 - What is Hibernate and How does it relate to JPA?
 - What is Spring Data JPA?
@@ -164,8 +164,11 @@ CREATE TABLE employee
 
 Other approaches before JPA focused on queries and how to translate results from queries to objects.
 
-### JDBC
+Any approach using query typically does two things
+- Setting parameters to the query. We need to read values from objects and set them as parameters to the query.
+- Liquidation of results from the query. The results from the query need to be mapped to the beans.
 
+### JDBC
 - JDBC stands for Java Database Connectivity
 - It used concepts like Statement, PreparedStatement and ResultSet
 - In the example below, the query used is ```Update todo set user=?, desc=?, target_date=?, is_done=? where id=?```
@@ -281,8 +284,12 @@ class TodoMapper implements RowMapper<Todo> {
 
 MyBatis removes the need for manually writing code to set parameters and retrieve results. It provides simple XML or Annotation based configuration to map Java POJOs to database.
 
-#### Update Todo and Retrieve Todo
+We compare the approaches used to write queries below:
 
+- JDBC or Spring JDBC - ```Update todo set user=?, desc=?, target_date=?, is_done=? where id=?```
+- myBatis - ```Update todo set user=#{user}, desc=#{desc}, target_date=#{targetDate}, is_done=#{isDone} where id=#{id}```
+
+#### Update Todo and Retrieve Todo
 
 ```java
 @Mapper
@@ -325,7 +332,7 @@ JPA evolved as a result of a different thought process. How about mapping the ob
  - Attributes
  - Relationships
 
-This Mapping is also called ORM - Object Relational Mapping. 
+This Mapping is also called ORM - Object Relational Mapping. Before JPA, ORM was the term more commonly used to refer to these frameworks. Thats one of the reasons, Hibernate is called a ORM framework.
 
 ## Important Concepts in JPA
 
@@ -347,14 +354,21 @@ JPA defines the specification. It is an API.
  - Who manages the entities?
 
 Hibernate is one of the popular implementations of JPA.
- - Hibernate understands the mappings that we add between objects and tables.
- - It ensures that data is stored/retrieved from the database based on the mappings.
+ - Hibernate understands the mappings that we add between objects and tables. It ensures that data is stored/retrieved from the database based on the mappings.
  - Hibernate also provides additional features on top of JPA. But depending on them would mean a lock in to Hibernate. You cannot move to other JPA implementations like Toplink.
 
 ## Examples of JPA Mappings
 
-#### Example 1 : Task table below is mapped to Task Table. However, there are mismatches in column names.
+Lets look at a few examples to understand how JPA can be used to map objects to tables.
 
+#### Example 1
+
+Task table below is mapped to Task Table. However, there are mismatches in column names. We use a few JPA annotations to do the mapping
+ - @Table(name = "Task")
+ - @Id
+ - @GeneratedValue
+ - @Column(name = "description")
+ 
 ```java
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -368,7 +382,7 @@ import javax.persistence.Table;
 @Table(name = "Task")
 public class Task {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private int id;
 
 	@Column(name = "description")
@@ -380,8 +394,6 @@ public class Task {
 	@Column(name = "is_done")
 	private boolean isDone;
 
-	@ManyToMany(mappedBy = "tasks")
-	private List<Employee> employees;
 }
 ```
 
@@ -396,9 +408,11 @@ public class Task {
   ) 
 ```
 
-#### Example 2 : Relationships between objects are expressed in a different way compared with relationship between tables.
+#### Example 2
 
-Each Employee can have multiple Tasks. Each Task can be shared by multiple Employees. There is a Many to Many relationship between them.
+Relationships between objects are expressed in a different way compared to relationship between tables.
+
+Each Employee can have multiple Tasks. Each Task can be shared by multiple Employees. There is a Many to Many relationship between them. We use @ManyToMany annotation to establish the relationship.
 
 ```java
 public class Employee {
@@ -440,7 +454,9 @@ CREATE TABLE employee
 
 ```
 
-#### Example 3 : Some times multiple classes are mapped to a single table and viceversa
+#### Example 3
+
+Some times multiple classes are mapped to a single table and vice-versa. In these situations, we define a inheritance strategy. In this example, we use a strategy of InheritanceType.SINGLE_TABLE.
 
 Objects
 
@@ -462,6 +478,7 @@ public class PartTimeEmployee extends Employee {
 ```
 
 Tables
+
 ```sql
 CREATE TABLE employee 
   ( 
@@ -481,9 +498,10 @@ CREATE TABLE employee
 
 ```
 
-# Step by Step Code Example
+## Step by Step Code Example
 
-## Bootstrapping a Web application with Spring Initializr
+### Bootstrapping a Web application with Spring Initializr
+
 Creating a JPA application with Spring Initializr is very simple.
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
@@ -500,7 +518,7 @@ As shown in the image above, following steps have to be done
 - Click Generate Project button at the bottom of the page.
 - Import the project into Eclipse.
 
-## Structure of the project created
+#### Structure of the project created
 
 - H2InMemoryDbDemoApplication.java - Spring Boot Launcher. Initializes Spring Boot Auto Configuration and Spring Application Context.
 - application.properties - Application Configuration file.
@@ -527,7 +545,7 @@ Important dependencies are shown below:
 </dependency>
 ```
 
-## User Entity
+### User Entity
 
 Lets define a bean User and add the appropriate JPA annotations.
 
@@ -549,6 +567,7 @@ public class User {
 	private Long id;
 
 	private String name;// Not perfect!! Should be a proper object!
+
 	private String role;// Not perfect!! An enum should be a better choice!
 
 	protected User() {
@@ -599,12 +618,12 @@ public class UserService {
 }
 ```
 Important things to note
- - @Repository: Spring Annotation to indicate that this component handles storing data to a data store.
- - @Transactional: Spring annotation used to simplify transaction management
- - @PersistenceContext: A persistence context handles a set of entities which hold data to be persisted in some persistence store (e.g. a database). In particular, the context is aware of the different states an entity can have (e.g. managed, detached) in relation to both the context and the underlying persistence store.
- - EntityManager : Interface used to interact with the persistence context.
- - entityManager.persist(user): Make user entity instance managed and persistent i.e. saved to database.
- - entityManager.createNamedQuery: Creates an instance of TypedQuery for executing a Java Persistence query language named query. The second parameter indicates the type of result.
+ - ```@Repository```: Spring Annotation to indicate that this component handles storing data to a data store.
+ - ```@Transactional```: Spring annotation used to simplify transaction management
+ - ```@PersistenceContext```: A persistence context handles a set of entities which hold data to be persisted in some persistence store (e.g. a database). In particular, the context is aware of the different states an entity can have (e.g. managed, detached) in relation to both the context and the underlying persistence store.
+ - ```EntityManager``` : Interface used to interact with the persistence context.
+ - ```entityManager.persist(user)```: Make user entity instance managed and persistent i.e. saved to database.
+ - ```entityManager.createNamedQuery```: Creates an instance of TypedQuery for executing a Java Persistence query language named query. The second parameter indicates the type of result.
 
 Notes from http://docs.oracle.com/javaee/6/api/javax/persistence/EntityManager.html#createNamedQuery(java.lang.String)
 
@@ -655,11 +674,12 @@ Important things to note:
  - @Autowired private UserService userService: Autowire the user service.
  - Rest of the stuff is straight forward.
 
-## Spring Data JPA - JpaRepository
+## Spring Data JPA
 
 Spring Data aims to provide a consistent model for accessing data from different kinds of data stores.
 
 UserService (which we created earlier) contains a lot of redundant code which can be easily generalized. Spring Data aims to simplify the code below.
+
 ```java
 @Repository
 @Transactional
@@ -685,13 +705,14 @@ public class UserService {
 }
 ```
 
-
-As far as JPA is concerned there are two things that you would need to know
+As far as JPA is concerned there are two Spring Data modules that you would need to know
  - Spring Data Commons - Defines the common concepts for all Spring Data Modules. 
  - Spring Data JPA - Provides easy integration with JPA repositories.
 
 
+
 ### CrudRepository
+
 CrudRepository is the pre-defined core repository class (in Spring Data Commons) enabling the basic CRUD functions on a repository. Important methods are shown below.
 
 ```java
@@ -714,6 +735,8 @@ public interface CrudRepository<T, ID extends Serializable>
 }
 ```
 
+### JpaRepository
+
 JpaRepository (Defined in Spring Data JPA) is the JPA specific Repository interface.
 
 ```java
@@ -732,7 +755,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 }
 ```
 
-## User Repository CommandLineRunner
+### User Repository CommandLineRunner
+
 The code below is very simple. CommandLineRunner interface is used to indicate that this bean has to be run as soon as the Spring application context is initialized. We are executing a few simple methods on the UserRepository.
 
 
@@ -774,14 +798,16 @@ Important things to note:
  - @Autowired private UserRepository userRepository: Auto wiring the user repository.
  - Rest of the stuff is straight forward.
 
-## H2 Console
-We have enabled h2 console in /src/main/resources/application.properties
+### H2 Console
+We will enable h2 console in /src/main/resources/application.properties
 
 ```
 spring.h2.console.enabled=true
 ```
 
-You can start the application by running H2InMemoryDbDemoApplication as a java application. You can also run the H2-Console on the browser
+You can start the application by running H2InMemoryDbDemoApplication as a java application. 
+
+You can also run the H2-Console on the browser
 - http://localhost:8080/h2-console
 - Use db url jdbc:h2:mem:testdb
 
