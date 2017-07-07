@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Introduction to Web Services - Restful and SOAP
-date:       2017-07-05 12:31:19
+date:       2017-07-06 12:31:19
 summary:    Introduction to Web Services - Restful and SOAP
 categories: Web services, SOAP, REST
 permalink:  /introduction-to-web-services-with-soap-and-rest
@@ -40,11 +40,12 @@ This guide will help you understand what Web Services is and what are the differ
 Is this really a complete definition. Is everything thats delivered over the web "Web Service"?
 
 Let's consider a web application we developed for our Spring MVC Course to manage todo's.  
+
 ![Image](/images/Web_Services_Web_Application_To_Manage_Todos.png)
 
 Is this application a web service?
 
-Nope. The answer is no. This is a web application. Not a web service.
+> Nope. The answer is no. This is a web application. Not a web service.
 
 We are back to square one.
 
@@ -53,13 +54,13 @@ We are back to square one.
 
 To understand this, lets consider an example.
 
-Mark Zuckerberg likes my web application to manage todo's. He thinks that my todo application is a right fit to integrate into facebook to manage todo's. Can we use the existing application to do the integration? No.
+Mark Zuckerberg likes the web application we developed to manage todo's. He thinks that our todo application is a right fit to integrate into facebook to manage todo's. Can we use the existing application to do the integration? No.
 
 Why? Because the existing application is designed for humans - other individuals. The output of the application is html which is rendered by browser to the end user. This is not designed for other applications.
 
 What would be the difference in my thinking if I want to design the todo application so that other applications can interact with it?
 
-I would need to produce the output in the format that the consumers can understand. Then facebook can call my web service and integrate it.
+> I would need to produce the output in the format that the consumers can understand. Then facebook can call my web service and integrate it.
 
 That leads use to - W3C definition of a Web Service
 > Software system designed to support interoperable machine-to-machine interaction over a network.
@@ -69,40 +70,48 @@ The key things to understand is
 - Web services should be interoperable - Not platform dependent
 - Web services should allow communication over a network
 
-## Types of Web Services
+## Web Service Data Exchange Formats
 
-Facebook wants to talk to Todo Application. 
+Facebook wants to talk to Todo Application 
 - Facebook is built on a variety of languages - PHP is used for the front-end, Erlang is used for Chat, Java and C++ are also used. 
 - Todo Application is build on Java using Spring MVC
 
-This is how we see the basic interaction
+You can see that Facebook and the Todo Application use different implementation technologies. However, we would want them to talk to each other as shown in the picture below:
+
 ![Image](/images/Web_Service_Basic_Interaction.png)
 
-Both applications should be able to understand the request and response. So, what formats should we use for the request and response?
+Both applications should be able to understand the request and response. 
 
-They should be standard formats so that they can be used with varied kind of platforms. 
- - JSON and XML are quite popular Data Exchange formats.
+So, what formats should we use for the request and response?
+
+> They should be standard formats so that they can be used with varied kind of platforms. JSON and XML are quite popular Data Exchange formats.
+
+## Types of Web Services
 
 Not really types but a broad classification
 - SOAP
 - REST
 
-These are not really mutually exclusive. Some SOAP services can actually be RESTful. 
+These are not really mutually exclusive. Some SOAP services can actually be RESTful. So, the question is: 
 
-When does a web service become a SOAP Web service or a Restful web service?
+> When does a web service become a SOAP Web service or a RESTful web service?
 
 ### SOAP
 
-SOAP was earlier an abbreviation for Simple Object Access Protocol. In SOAP, the request and response are in XML format. However, not all types of XML are valid SOAP Requests. SOAP defines a standard XML format. We will use WSDL (Web Service Definition Language) to define the format of request xml and the response xml.
+SOAP was earlier an abbreviation for Simple Object Access Protocol. In SOAP, the request and response are in XML format. However, not all types of XML are valid SOAP Requests. 
 
-Now lets say Facebook wants to know how to call the TODO Service? What should I give to the Facebook developer? I will give him a WSDL. It will explain 
+SOAP defines a standard XML format. We will use WSDL (Web Service Definition Language) to define the format of request xml and the response xml.
+
+Now lets say Facebook wants to know how to call the TODO Service? What should I give to the Facebook developer? 
+
+I will give him a WSDL of the Todo service. It will explain: 
 - What are the different services (operations) exposed by the server?
 - How can a service (operation) be called? What url to use? (also called End Point).
 - What should the structure of request xml?
 - What should be the structure of response xml?
 
 SOAP format defines a SOAP-Envelope which envelopes the entire document. 
-- SOAP-Header (optional) contains any information needed to identify the request. Also, part of the Header is authentication, authorization information (signatures, encrypted information etc). 
+- SOAP-Header (optional) contains any information needed to identify the request. Also, part of the Header is authentication, authorization information (signatures, encrypted information etc).
 - SOAP-Body contains the real xml content of request or response.
 - In case of error response, server responds back with SOAP-Fault.
 
@@ -116,7 +125,7 @@ So, if it does not define a standard message exchange format, what is REST then?
 
 > REST is a style of software architecture for distributed hypermedia systems
 
-> REST stands for REpresentational State Transfer
+REST stands for REpresentational State Transfer. The definitions for REST can be vague. So, lets understand the important concepts.
 
 Key abstraction in REST is a Resource. There is no restriction on what can be a resource. A todo is a resource. A person on facebook is a resource. 
 
@@ -132,6 +141,8 @@ A resource will have representations
 A resource will have state. The representation of a resource should capture its current state.
 
 When a resource is requested, we provide the representation of the resource. 
+
+#### REST and HTTP
 
 REST builds on top of HTTP (Hypertext Transfer Protocol). HTTP is the language of the web. 
 
@@ -157,13 +168,17 @@ Restful Service Constraints
 - The service result should be Cacheable. HTTP cache, for example.
 - Service should assume a Layered architecture. Client should not assume direct connection to server - it might be getting info from a middle layer - cache.
 
+#### Richardson Maturity Model 
+
 Richardson Maturity Model defines the maturity level of a Restful Web Service. Following are the different levels and their characteristics.
 - Level 0 : Expose SOAP web services in REST style. Expose action based services (http://server/getPosts, http://server/deletePosts, http://server/doThis, http://server/doThat etc) using REST.
 - Level 1 : Expose Resources with proper URI’s (using nouns). Ex: http://server/accounts, http://server/accounts/10. However, HTTP Methods are not used.
 - Level 2 : Resources use proper URI's + HTTP Methods. For example, to update an account, you do a PUT to . The create an account, you do a POST to . Uri’s look like posts/1/comments/5 and accounts/1/friends/1.
 - Level 3 : HATEOAS (Hypermedia as the engine of application state). You will tell not only about the information being requested but also about the next possible actions that the service consumer can do. When requesting information about a facebook user, a REST service can return user details along with information about how to get his recent posts, how to get his recent comments and how to retrieve his friend’s list.
 
-Designing Restful APIs
+#### Designing RESTful APIs
+
+Following are the important things to consider when designing RESTful API's:
 - While designing any API, the most important thing is to think about the api consumer i.e. the client who is going to use the service. What are his needs? Does the service uri make sense to him? Does the request, response format make sense to him?
 - In Rest, we think Nouns (resources) and NOT Verbs (NOT actions). So, URI’s should represent resources. URI’s should be hierarchical and as self descriptive as possible. Prefer plurals.
 - Always use HTTP Methods. 
