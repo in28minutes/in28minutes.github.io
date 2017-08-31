@@ -10,9 +10,9 @@ permalink:  /spring-boot-tutorials-for-beginners
 This guide will help you understand the different resources (tutorials, videos and courses) we are creating for beginners to learn and gain expertise at Spring Boot. 
  
 ## Courses
-- [Spring Boot For Beginners](https://www.udemy.com/spring-boot-tutorial-for-beginners){:target="_blank"} - 2500 Students - 4.5 Average Review Rating
-- [First Application with Spring Boot](https://www.udemy.com/spring-boot-first-web-application/){:target="_blank"} - 3000 Students - 4.7 Average Review Rating
-- Restful Services with Spring Boot - Coming Soon!
+-[Learn Spring Boot in 100 Steps - Beginner to Expert](https://www.udemy.com/spring-boot-tutorial-for-beginners/?couponCode=SPRINGBOOTTUTRLCOM){:target="_blank"} - 3095 Students 
+-[Master RESTful Web Services with Spring Boot](https://www.udemy.com/spring-web-services-tutorial/?couponCode=SPRINGBOOTTUTRLCOM){:target="_blank"} - 4600 Students
+-[Spring Framework Interview Guide - 200+ Questions & Answers](https://www.udemy.com/spring-interview-questions-and-answers/?couponCode=SPRINGBOOTTUTRLCOM){:target="_blank"} - 2300 Students
 
 ## 25 Videos
 [![Image](/images/SpringBootTutorialForBeginnersPlaylist.png "Spring Boot Tutorial For Beginners - 25 Videos")](https://www.youtube.com/playlist?list=PLBBog2r6uMCRzaJqr-uUC8gakwSxkPSBh){:target="_blank"}
