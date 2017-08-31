@@ -50,7 +50,7 @@ Is this application a web service?
 We are back to square one.
 
 - What is a web service?
-- How is it differnent from a web application?
+- How is it different from a web application?
 
 To understand this, lets consider an example.
 
@@ -195,7 +195,7 @@ Let's compare the popular implementations of REST and SOAP styles.
 - RESTful Sample Implementation : JSON over HTTP
 - SOAP Sample Implementation : XML over SOAP over HTTP
 
-Following are the impotant things to consider:
+Following are the important things to consider:
 - REST is built over simple HTTP protocol. SOAP services are more complex to implement and more complex to consume.
 - REST has better performance and scalability. REST reads can be cached, SOAP based reads cannot be cached.
 - REST permits many different data formats (JSON is the most popular choice) where as SOAP only permits XML.

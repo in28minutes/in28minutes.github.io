@@ -314,5 +314,5 @@ There are a few starters for technical stuff as well
 Spring Boot aims to enable production ready applications in quick time. 
 
 - Actuator : Enables Advanced Monitoring and Tracing of applications.
-- Embedded Server Integrations - Since server is integrated into the application, I would need to have a separate application server installed on the server.
+- Embedded Server Integrations - Since server is integrated into the application, I would NOT need to have a separate application server installed on the server.
 - Default Error Handling
