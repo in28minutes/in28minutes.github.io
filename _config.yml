@@ -1,6 +1,6 @@
 # Site settings
 title:       Spring Boot Tutorial
-email:       in28minutes@gmail.com
+email:       
 author:      Ranga Karanam
 description: "Spring Boot Tutorials. Hands-on examples. - Basics of Spring Boot. Covers Spring Boot Starter Projects, Spring Initializr, Creating REST Services, Unit and Integration tests, Profiles, Spring Boot Data JPA, Actuator and Security"
 baseurl:     ""
@@ -17,7 +17,7 @@ google_tag_manager:
 bing_verification:
 
 # Optional features
-animated:             false
+animated:             true
 show_related_posts:   true
 show_post_footers:    true
 show_social_icons:    true
