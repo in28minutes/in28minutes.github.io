@@ -18,8 +18,8 @@ bing_verification:
 
 # Optional features
 animated:             false
-show_related_posts:   false
-show_post_footers:    false
+show_related_posts:   true
+show_post_footers:    true
 show_social_icons:    false
 ajaxify_contact_form: false
 enable_mathjax: false
