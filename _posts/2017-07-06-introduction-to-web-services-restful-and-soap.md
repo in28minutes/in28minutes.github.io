@@ -7,7 +7,7 @@ categories: Web services, SOAP, REST
 permalink:  /introduction-to-web-services-with-soap-and-rest
 ---
 
-This guide will help you understand what Web Services is and what are the different types of web services.
+This tutorial will help you understand the basics of web services and the different kinds of web services - REST and SOAP.
  
 ## You will learn
 - What is a web service?

@@ -61,5 +61,5 @@ tags: about
 
 # Credits
 
-This Website is built on a Jekyll theme  crafted with <3 by [John Otander](http://johnotander.com)
+This Website is built on Pixyll, a Jekyll theme  crafted with <3 by [John Otander](http://johnotander.com)
 ([@4lpine](https://twitter.com/4lpine)).
