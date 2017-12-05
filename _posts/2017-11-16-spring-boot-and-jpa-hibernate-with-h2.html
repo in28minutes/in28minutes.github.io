@@ -1,0 +1,1817 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="layout" content="post">
+<meta name="date" content="2017-11-15 12:31:19">
+<meta name="summary" content="Learn using Spring Boot Starter JPA to connect Spring Boot to H2 (in memory database) using Hibernate/JPA">
+<meta name="permalink" content="/hibernate-jpa-tutorial-with-spring-boot-starter-jpa">
+<meta name="categories" content="Spring Boot, Hibernate, JPA, Database, Spring Boot Starter JPA"><style>body {
+  max-width: 980px;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>Using Hibernate/JPA with Spring Boot - A Tutorial</title></head><body><article class="markdown-body"><p>This guide will help you create a simple project with Spring Boot and connect to a database using Hibernate/JPA. We will use Spring Boot Starter JPA and in memory database H2.</p>
+<h2 id="you-will-learn"><a name="user-content-you-will-learn" href="#you-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>You will learn</h2>
+<ul>
+<li>Basics of JPA/Hibernate</li>
+<li>How to create a project using Spring Boot, Spring Boot Starter JPA and H2?</li>
+<li>How to use Spring Boot Starter JPA?</li>
+<li>How to connect a Spring Boot project to database using JPA/Hibernate?</li>
+<li>How to create a simple JPA Entity with a primary key?</li>
+<li>How to write a simple repository interface extending JpaRepository interface?</li>
+<li>What are the basics of an in memory database?</li>
+</ul>
+<h2 id="references"><a name="user-content-references" href="#references" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>References</h2>
+<p>1 hour video courses on all popular frameworks!</p>
+<ul>
+<li>Spring - <a href="https://in28minutes.teachable.com/p/spring-framework-tutorial-for-beginners">spring-framework-tutorial-for-beginners</a></li>
+<li>Spring MVC - <a href="https://www.youtube.com/watch?v=BjNhGaZDr0Y"><a href="https://www.youtube.com/watch?v=BjNhGaZDr0Y"><a href="https://www.youtube.com/watch?v=BjNhGaZDr0Y">https://www.youtube.com/watch?v=BjNhGaZDr0Y</a></a></a></li>
+<li>Spring Boot - <a href="https://www.youtube.com/watch?v=PSP1-2cN7vM"><a href="https://www.youtube.com/watch?v=PSP1-2cN7vM"><a href="https://www.youtube.com/watch?v=PSP1-2cN7vM">https://www.youtube.com/watch?v=PSP1-2cN7vM</a></a></a></li>
+<li>Eclipse - <a href="https://www.youtube.com/watch?v=s4ShbtOHMCA"><a href="https://www.youtube.com/watch?v=s4ShbtOHMCA"><a href="https://www.youtube.com/watch?v=s4ShbtOHMCA">https://www.youtube.com/watch?v=s4ShbtOHMCA</a></a></a></li>
+<li>Maven - <a href="https://www.youtube.com/watch?v=0CFWeVgzsqY"><a href="https://www.youtube.com/watch?v=0CFWeVgzsqY"><a href="https://www.youtube.com/watch?v=0CFWeVgzsqY">https://www.youtube.com/watch?v=0CFWeVgzsqY</a></a></a></li>
+<li>JUnit - <a href="https://www.youtube.com/watch?v=o5k9NOR9lrI"><a href="https://www.youtube.com/watch?v=o5k9NOR9lrI"><a href="https://www.youtube.com/watch?v=o5k9NOR9lrI">https://www.youtube.com/watch?v=o5k9NOR9lrI</a></a></a></li>
+<li>Mockito - <a href="https://www.youtube.com/watch?v=d2KwvXQgQx4"><a href="https://www.youtube.com/watch?v=d2KwvXQgQx4"><a href="https://www.youtube.com/watch?v=d2KwvXQgQx4">https://www.youtube.com/watch?v=d2KwvXQgQx4</a></a></a></li>
+</ul>
+<h2 id="project-code-structure"><a name="user-content-project-code-structure" href="#project-code-structure" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Project Code Structure</h2>
+<p>Following screenshot shows the structure of the project we will create.<br />
+<img alt="Image" src="/images/SpringBootwithJPA-ProjectStructure.png" title="Spring Boot with JPA - Project Structure" /> </p>
+<p>A few details:</p>
+<ul>
+<li><code>Student.java</code> - Entity bean to store student details.</li>
+<li><code>StudentRepository.java</code> - Extends JpaRepository. Acts as a repository to update/retrieve Student entities.</li>
+<li><code>data.sql</code> - We use data.sql to populate the initial student data.</li>
+<li>SpringBoot2JPAWithHibernateAndH2Application.java - The main Spring Boot Application class which is used to launch up the application. We will extend <code>CommandLineRunner</code> interface and implement <code>public void run(String... args)</code> method to launch the spring jpa repository methods when the server launches up.</li>
+<li><code>pom.xml</code> - Contains all the dependencies needed to build this project. We will use Spring Boot Starter JPA and Web other than Developer Tools and H2 as in memory database.</li>
+</ul>
+<h2 id="tools-you-will-need"><a name="user-content-tools-you-will-need" href="#tools-you-will-need" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tools you will need</h2>
+<ul>
+<li>Maven 3.0+ is your build tool</li>
+<li>Your favorite IDE. We use Eclipse.</li>
+<li>JDK 1.8+</li>
+</ul>
+<h2 id="complete-maven-project-with-code-examples"><a name="user-content-complete-maven-project-with-code-examples" href="#complete-maven-project-with-code-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Complete Maven Project With Code Examples</h2>
+<blockquote>
+<p>Our Github repository has all the code examples - <a href="https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-jpa-with-hibernate-and-h2">https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-jpa-with-hibernate-and-h2</a></p>
+</blockquote>
+<h2 id="how-does-jpahibernate-work"><a name="user-content-how-does-jpahibernate-work" href="#how-does-jpahibernate-work" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How does JPA/Hibernate Work?</h2>
+<p>Databases are designed with Tables/Relations. Java objects are designed using OOPS. We would want to store the data from objects into tables and vice-versa.</p>
+<p>Earlier approaches involved writing SQL Queries. JDBC, Spring JDBC and myBatis were popular approaches.</p>
+<p>However, JPA evolved as a result of a different thought process. </p>
+<blockquote>
+<p>How about mapping the objects directly to tables/relationships?</p>
+</blockquote>
+<p>This Mapping is also called ORM - Object Relational Mapping. Before JPA, ORM was the term more commonly used to refer to these frameworks. Thats one of the reasons, Hibernate is called a ORM framework.</p>
+<h2 id="important-concepts-in-jpa"><a name="user-content-important-concepts-in-jpa" href="#important-concepts-in-jpa" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Important Concepts in JPA</h2>
+<p><img alt="Image" src="/images/JPA_02_Architecture.png" title="JPA Architecuture" /></p>
+<p>JPA allows to map application classes to tables in database.<br />
+- Entity Manager - Once the mappings are defined, entity manager can manage your entities. Entity Manager handles all interactions with the database<br />
+- JPQL (Java Persistence Query Language) - Provides ways to write queries to execute searches against entities. Important thing to understand is the these are different from SQL queries. JPQL queries already understand the mappings that are defined between entities. We can add additional conditions as needed.<br />
+- Criteria API defines a Java based API to execute searches against databases.</p>
+<h2 id="jpa-vs-hibernate"><a name="user-content-jpa-vs-hibernate" href="#jpa-vs-hibernate" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>JPA vs Hibernate</h2>
+<p>Hibernate is one of the most popular ORM frameworks. </p>
+<p>JPA defines the specification. It is an API. <br />
+ - How do you define entities?<br />
+ - How do you map attributes?<br />
+ - How do you map relationships between entities?<br />
+ - Who manages the entities?</p>
+<p>Hibernate is one of the popular implementations of JPA.<br />
+ - Hibernate understands the mappings that we add between objects and tables. It ensures that data is stored/retrieved from the database based on the mappings.<br />
+ - Hibernate also provides additional features on top of JPA. But depending on them would mean a lock in to Hibernate. You cannot move to other JPA implementations like Toplink.</p>
+<h2 id="creating-the-project-with-spring-initializr"><a name="user-content-creating-the-project-with-spring-initializr" href="#creating-the-project-with-spring-initializr" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Creating the Project with Spring Initializr</h2>
+<p>Creating a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.  </p>
+<p>Spring Initializr <a href="http://start.spring.io/" target="_blank"><a href="http://start.spring.io/"><a href="http://start.spring.io/">http://start.spring.io/</a></a></a> is great tool to bootstrap your Spring Boot projects.</p>
+<p><img alt="Image" src="/images/spring-initializer-web-h2-devtools-jpa.png" title="Web, JPA, H2 and Developer Tools" /></p>
+<p>As shown in the image above, following steps have to be done</p>
+<ul>
+<li>Launch Spring Initializr and choose the following</li>
+<li>Choose <code>com.in28minutes.springboot.rest.example</code> as Group</li>
+<li>Choose <code>spring-boot-2-jpa-with-hibernate-and-h2</code> as Artifact</li>
+<li>Choose following dependencies<ul>
+<li>Web</li>
+<li>JPA</li>
+<li>H2</li>
+<li>DevTools</li>
+</ul>
+</li>
+<li>Click Generate Project.</li>
+<li>Import the project into Eclipse. File -&gt; Import -&gt; Existing Maven Project.</li>
+</ul>
+<h2 id="starter-projects-in-pomxml"><a name="user-content-starter-projects-in-pomxml" href="#starter-projects-in-pomxml" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Starter Projects in pom.xml</h2>
+<p>Below is the list of starter projects in pom.xml. </p>
+<pre><code>        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-jpa&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+            &lt;artifactId&gt;h2&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+</code></pre>
+
+<h2 id="understanding-spring-boot-starter-jpa"><a name="user-content-understanding-spring-boot-starter-jpa" href="#understanding-spring-boot-starter-jpa" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Understanding Spring Boot Starter JPA</h2>
+<p>Below picture highlights some of the dependencies that are part of the imported JPA project.<br />
+<img alt="Image" src="/images/spring-boot-starter-jpa-dependencies.png" title="Spring Boot Starter JPA Dependencies" /></p>
+<blockquote>
+<p>Key Question : How did all these dependencies come in?</p>
+</blockquote>
+<p>All these dependencies are defined in spring-boot-starter-jpa. As soon as we include Spring Boot Starter JPA in our project (pom.xml), we get the following features from a wide variety of dependencies<br />
+- AOP<br />
+- Transaction Management<br />
+- JPA API<br />
+- JPA Implementation - Default Hibernate<br />
+- JDBC</p>
+<p>Extract below shows some code from pom.xml of spring-boot-starter-jpa.<br />
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-boot-starter-aop&lt;/artifactId&gt;
+  &lt;version&gt;2.0.0.M6&lt;/version&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;
+  &lt;version&gt;2.0.0.M6&lt;/version&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+  &lt;artifactId&gt;hibernate-core&lt;/artifactId&gt;
+  &lt;version&gt;5.2.12.Final&lt;/version&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;javax.transaction&lt;/groupId&gt;
+  &lt;artifactId&gt;javax.transaction-api&lt;/artifactId&gt;
+  &lt;version&gt;1.2&lt;/version&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-data-jpa&lt;/artifactId&gt;
+  &lt;version&gt;2.0.1.RELEASE&lt;/version&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-aspects&lt;/artifactId&gt;
+  &lt;version&gt;5.0.1.RELEASE&lt;/version&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre></p>
+<h2 id="enable-h2-console"><a name="user-content-enable-h2-console" href="#enable-h2-console" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Enable H2 Console</h2>
+<p>We will use H2 as the database. </p>
+<p>H2 provides a web interface called H2 Console to see the data. Let&rsquo;s enable h2 console in the application.properties.</p>
+<p>/src/main/resources/application.properties<br />
+<pre><code class="properties"># Enabling H2 Console
+spring.h2.console.enabled=true
+</code></pre></p>
+<p>When you reload the application, you can launch up H2 Console at <a href="http://localhost:8080/h2-console">http://localhost:8080/h2-console</a>.</p>
+<p><img alt="Image" src="/images/H2-Console-Login-Page.png" title="H2 Console Login PAge" /> </p>
+<blockquote>
+<p>Tip - Make sure that you use <code>jdbc:h2:mem:testdb</code> as JDBC URL.</p>
+</blockquote>
+<p>When you use the right JDBC URL given above, you should see an empty schema when you click <code>Connect</code> button.<br />
+<img alt="Image" src="/images/H2-Console-Empty-Schema.png" title="H2 Console Empty Page" /> </p>
+<h3 id="create-your-first-jpa-entity"><a name="user-content-create-your-first-jpa-entity" href="#create-your-first-jpa-entity" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Create Your First JPA Entity</h3>
+<p>The first step is to create a JPA Entity. Lets create a simple Student Entity with a primary key id.</p>
+<pre><code class="java">package com.in28minutes.springboot.jpa.hibernate.h2.example.student;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Student {
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String name;
+    private String passportNumber;
+
+    public Student() {
+        super();
+    }
+
+    public Student(Long id, String name, String passportNumber) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.passportNumber = passportNumber;
+    }
+
+    public Student(String name, String passportNumber) {
+        super();
+        this.name = name;
+        this.passportNumber = passportNumber;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassportNumber() {
+        return passportNumber;
+    }
+
+    public void setPassportNumber(String passportNumber) {
+        this.passportNumber = passportNumber;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(&quot;Student [id=%s, name=%s, passportNumber=%s]&quot;, id, name, passportNumber);
+    }
+
+}
+</code></pre>
+
+<p>Important things to note:<br />
+ - <code>@Entity</code>: Specifies that the class is an entity. This annotation is applied to the entity class.<br />
+ - <code>@Id</code>: Specifies the primary key of an entity.<br />
+ - <code>@GeneratedValue</code>: Provides for the specification of generation strategies for the values of primary keys.<br />
+ - <code>public Student()</code>: Default constructor to make JPA Happy</p>
+<p>When the application reloads, you can launch H2 console at <a href="http://localhost:8080/h2-console">http://localhost:8080/h2-console</a>.</p>
+<p>You will see that a new table called &lsquo;student&rsquo; is created in H2 Console.</p>
+<blockquote>
+<p>How did the Student table get created?</p>
+</blockquote>
+<p>Its because of Spring Boot Auto Configuration. We will talk about this a little later.</p>
+<p>Let&rsquo;s now populate some data into the student table.</p>
+<p>/src/main/resources/data.sql</p>
+<pre><code>insert into student
+values(10001,'Ranga', 'E1234567');
+
+insert into student
+values(10002,'Ravi', 'A1234568');
+</code></pre>
+
+<p>When the application reloads you would see following statements in the log indicating that the sql files are picked up<br />
+<pre><code>Executing SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring-boot-2-jdbc-with-h2/target/classes/data.sql]
+</code></pre></p>
+<p><After App Reload> When you login to H2 Console (<a href="http://localhost:8080/h2-console">http://localhost:8080/h2-console</a>) you can see that the student table is created and the data is populated.<br />
+<img alt="Image" src="/images/H2-Console-With-Student.png" title="H2 Console With Student" /></p>
+<h2 id="create-repository-class-to-read-student-information"><a name="user-content-create-repository-class-to-read-student-information" href="#create-repository-class-to-read-student-information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Create Repository class to Read Student information</h2>
+<p>/src/main/java/com/in28minutes/springboot/jpa/hibernate/h2/example/student/StudentRepository.java</p>
+<p>We create a simple interface StudentRepository extending JpaRepository.</p>
+<p><pre><code class="java">package com.in28minutes.springboot.jpa.hibernate.h2.example.student;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface StudentRepository extends JpaRepository&lt;Student, Long&gt;{
+
+}
+</code></pre><br />
+Notes<br />
+- We will talk about all the methods in the JpaRepository a little later.<br />
+- <code>public interface StudentRepository extends JpaRepository&lt;Student, Long&gt;</code> - We are extending JpaRepository using two generics - Student &amp; Long. Student is the entity that is being managed and the primary key of Student is Long.</p>
+<h3 id="jparepository"><a name="user-content-jparepository" href="#jparepository" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>JpaRepository</h3>
+<p>JpaRepository (Defined in Spring Data JPA) is the JPA specific Repository interface.</p>
+<pre><code class="java">public interface JpaRepository&lt;T, ID extends Serializable&gt;
+        extends PagingAndSortingRepository&lt;T, ID&gt;, QueryByExampleExecutor&lt;T&gt; {
+</code></pre>
+
+<blockquote>
+<p>JpaRepository extends PagingAndSortingRepository which in turn extends CrudRepository interface. So, JpaRepository inherits all the methods from the two interfaces shown below.</p>
+</blockquote>
+<p>PagingAndSortingRepository<br />
+<pre><code class="java">public abstract interface PagingAndSortingRepository extends CrudRepository {
+
+  public abstract Iterable findAll(Sort arg0);
+
+  public abstract Page findAll(Pageable arg0);
+
+}
+</code></pre></p>
+<p>CrudRepository<br />
+<pre><code class="java">public interface CrudRepository&lt;T, ID extends Serializable&gt;
+    extends Repository&lt;T, ID&gt; {
+
+    &lt;S extends T&gt; S save(S entity);
+
+    T findOne(ID primaryKey);       
+
+    Iterable&lt;T&gt; findAll();          
+
+    Long count();                   
+
+    void delete(T entity);          
+
+    boolean exists(ID primaryKey);  
+
+    // … more functionality omitted.
+}
+</code></pre></p>
+<h2 id="exploring-the-jparepository-methods"><a name="user-content-exploring-the-jparepository-methods" href="#exploring-the-jparepository-methods" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exploring the JpaRepository methods.</h2>
+<p>Before we go any further, let&rsquo;s enable logging for all queries generated by Hibernate. We also enable statistics and format generated sql statements.</p>
+<h3 id="srcmainresourcesapplicationproperties"><a name="user-content-srcmainresourcesapplicationproperties" href="#srcmainresourcesapplicationproperties" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/src/main/resources/application.properties</h3>
+<pre><code class="properties">#Turn Statistics on
+spring.jpa.properties.hibernate.generate_statistics=true
+logging.level.org.hibernate.stat=debug
+# Show all queries
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+logging.level.org.hibernate.type=trace
+</code></pre>
+
+<blockquote>
+<p>Spring Boot Auto Configuration sees H2 in the classpath. It understands that we would want to talk to an in memory database. It auto configures a datasource and also a JdbcTemplate connecting to that datasource.</p>
+</blockquote>
+<p>Let&rsquo;s create the findById method to retrieve a student by id in StudentJdbcRepository.<br />
+<pre><code class="java">    public Student findById(long id) {
+        return jdbcTemplate.queryForObject(&quot;select * from student where id=?&quot;, new Object[] { id },
+                new BeanPropertyRowMapper&lt;Student&gt;(Student.class));
+    }
+</code></pre></p>
+<p>Notes<br />
+- <code>JdbcTemplate</code> has a number of methods to execute queries. In this example, we are using the <code>queryForObject</code> method.<br />
+- <code>new Object[] { id }</code> - We are passing id as a parameter to the query<br />
+- <code>new BeanPropertyRowMapper&lt;Student&gt;(Student.class)</code> - We are using a BeanPropertyRowMapper to map the results from ResultSet to the Student bean.</p>
+<p>We would want to execute findById method. To keep things simple we will make the SpringBoot2JdbcWithH2Application class implement CommandLineRunner and implement run method to call the findById method on the repository.</p>
+<p>/src/main/java/com/in28minutes/springboot/jdbc/h2/example/SpringBoot2JdbcWithH2Application.java</p>
+<p><pre><code class="java">@SpringBootApplication
+public class SpringBoot2JdbcWithH2Application implements CommandLineRunner {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Autowired
+    StudentJdbcRepository repository;
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBoot2JdbcWithH2Application.class, args);
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+
+        logger.info(&quot;Student id 10001 -&gt; {}&quot;, repository.findById(10001L));
+    }
+}
+</code></pre><br />
+Notes<br />
+- <code>@Autowired StudentJdbcRepository repository;</code> - We will autowire StudentJdbcRepository we created earlier.<br />
+- <code>public void run(String... args) throws Exception {</code> - Implement the run method defined in the CommandLineRunner interface. This method is executed as soon as the application is launched up.<br />
+- <code>logger.info("Student id 10001 -&gt; {}", repository.findById(10001L))</code> - Log all the information about student id 10001.</p>
+<p>When the application reloads you will see this in the log. <br />
+<pre><code>Student id 10001 -&gt; Student [id=10001, name=Ranga, passportNumber=E1234567]
+</code></pre></p>
+<blockquote>
+<p>Congratulations on executing the first Spring JDBC method! You can see how easy it is with Spring Boot.</p>
+</blockquote>
+<p>Let&rsquo;s now add another method to retrieve details of all the students to StudentJdbcRepository.</p>
+<p><pre><code class="java">    class StudentRowMapper implements RowMapper&lt;Student&gt; {
+        @Override
+        public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+            Student student = new Student();
+            student.setId(rs.getLong(&quot;id&quot;));
+            student.setName(rs.getString(&quot;name&quot;));
+            student.setPassportNumber(rs.getString(&quot;passport_number&quot;));
+            return student;
+        }
+
+    }
+
+    public List&lt;Student&gt; findAll() {
+        return jdbcTemplate.query(&quot;select * from student&quot;, new StudentRowMapper());
+    }
+</code></pre><br />
+Notes<br />
+- <code>class StudentRowMapper implements RowMapper&lt;Student&gt;</code> - We are defining a custom row mapper to map the result set to student bean.<br />
+- <code>jdbcTemplate.query("select * from student", new StudentRowMapper())</code> - Since we want to return a list of students we use the <code>query</code> method in JdbcTemplate.</p>
+<p>We can add a call to find all method in the run method of <code>SpringBoot2JdbcWithH2Application.java</code></p>
+<pre><code class="java">
+logger.info(&quot;All users 1 -&gt; {}&quot;, repository.findAll());
+
+</code></pre>
+
+<p>You can see following output in the log when the project reloads.<br />
+<pre><code>All users 1 -&gt; [Student [id=10001, name=Ranga, passportNumber=E1234567], Student [id=10002, name=Ravi, passportNumber=A1234568]]
+</code></pre></p>
+<h2 id="implementing-spring-jdbc-delete-insert-and-update-methods"><a name="user-content-implementing-spring-jdbc-delete-insert-and-update-methods" href="#implementing-spring-jdbc-delete-insert-and-update-methods" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Implementing Spring JDBC delete, insert and update methods</h2>
+<p>The code below shows the delete, insert and update methods.</p>
+<pre><code class="java">    public int deleteById(long id) {
+        return jdbcTemplate.update(&quot;delete from student where id=?&quot;, new Object[] { id });
+    }
+
+    public int insert(Student student) {
+        return jdbcTemplate.update(&quot;insert into student (id, name, passport_number) &quot; + &quot;values(?,  ?, ?)&quot;,
+                new Object[] { student.getId(), student.getName(), student.getPassportNumber() });
+    }
+
+    public int update(Student student) {
+        return jdbcTemplate.update(&quot;update student &quot; + &quot; set name = ?, passport_number = ? &quot; + &quot; where id = ?&quot;,
+                new Object[] { student.getName(), student.getPassportNumber(), student.getId() });
+    }
+
+</code></pre>
+
+<p>Notes <br />
+- These methods are relatively straight forward.<br />
+- All methods use the <code>update</code> method in JdbcTemplate class and set the right query and parameters.</p>
+<p>We can add a call to all the above methods in the run method of <code>SpringBoot2JdbcWithH2Application.java</code></p>
+<pre><code class="java">
+logger.info(&quot;Inserting -&gt; {}&quot;, repository.insert(new Student(10010L, &quot;John&quot;, &quot;A1234657&quot;)));
+
+logger.info(&quot;Update 10001 -&gt; {}&quot;, repository.update(new Student(10001L, &quot;Name-Updated&quot;, &quot;New-Passport&quot;)));
+
+repository.deleteById(10002L);
+
+logger.info(&quot;All users 2 -&gt; {}&quot;, repository.findAll());
+
+</code></pre>
+
+<p>You can see following output in the log when the project reloads.<br />
+<pre><code>Inserting -&gt; 1
+Update 10001 -&gt; 1
+All users 2 -&gt; [Student [id=10001, name=Name-Updated, passportNumber=New-Passport], Student [id=10010, name=John, passportNumber=A1234657]]
+</code></pre></p>
+<blockquote>
+<p>Awesome ! You&rsquo;ve implemented all the CRUD methods using Spring JDBC and Spring Boot.</p>
+</blockquote>
+<p><img alt="Image" src="/images/H2-Console-JPA-Student-Updated.png" title="Student Table Data After Updates" /> </p>
+<h2 id="few-more-advanced-jpahibernate-orm-mappings"><a name="user-content-few-more-advanced-jpahibernate-orm-mappings" href="#few-more-advanced-jpahibernate-orm-mappings" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Few more advanced JPA/Hibernate ORM Mappings</h2>
+<p>Lets look at a few more examples to understand how JPA can be used to map objects to tables.</p>
+<h4 id="example-1-relationships-manytomany"><a name="user-content-example-1-relationships-manytomany" href="#example-1-relationships-manytomany" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example 1 - Relationships @ManyToMany</h4>
+<p>Relationships between objects are expressed in a different way compared to relationship between tables.</p>
+<p>Each Employee can have multiple Tasks. Each Task can be shared by multiple Employees. There is a Many to Many relationship between them. We use @ManyToMany annotation to establish the relationship.</p>
+<pre><code class="java">public class Employee {
+
+     //Some other code
+
+    @ManyToMany
+    private List&lt;Task&gt; tasks;
+}
+
+public class Task {
+
+     //Some other code
+
+    @ManyToMany(mappedBy = &quot;tasks&quot;)
+    private List&lt;Employee&gt; employees;
+}
+</code></pre>
+
+<pre><code class="sql">CREATE TABLE employee 
+  ( 
+     id            BIGINT NOT NULL, 
+     OTHER_COLUMNS
+  ) 
+
+
+  CREATE TABLE employee_tasks 
+  ( 
+     employees_id BIGINT NOT NULL, 
+     tasks_id     INTEGER NOT NULL 
+  ) 
+
+  CREATE TABLE task 
+  ( 
+     id          INTEGER GENERATED BY DEFAULT AS IDENTITY, 
+     OTHER_COLUMNS
+  ) 
+
+</code></pre>
+
+<h4 id="example-2-inheritance-startegies-inheritancetypesingle_table"><a name="user-content-example-2-inheritance-startegies-inheritancetypesingle_table" href="#example-2-inheritance-startegies-inheritancetypesingle_table" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example 2 - Inheritance Startegies - InheritanceType.SINGLE_TABLE</h4>
+<p>Some times multiple classes are mapped to a single table and vice-versa. In these situations, we define a inheritance strategy. In this example, we use a strategy of InheritanceType.SINGLE_TABLE.</p>
+<p>Objects</p>
+<pre><code class="java">@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = &quot;EMPLOYEE_TYPE&quot;)
+public  class Employee {    
+    //Other Employee Attributes
+}
+
+public class FullTimeEmployee extends Employee {
+    protected Integer salary;
+}
+
+public class PartTimeEmployee extends Employee {
+    protected Float hourlyWage;
+}
+</code></pre>
+
+<p>Tables</p>
+<pre><code class="sql">CREATE TABLE employee 
+  ( 
+     employee_type VARCHAR(31) NOT NULL, 
+     id            BIGINT NOT NULL, 
+     city          VARCHAR(255), 
+     state         VARCHAR(255), 
+     street        VARCHAR(255), 
+     zip           VARCHAR(255), 
+
+     hourly_wage   FLOAT,  --PartTimeEmployee
+
+     salary        INTEGER, --FullTimeEmployee
+
+     PRIMARY KEY (id) 
+  ) 
+
+</code></pre>
+
+<h2 id="next-steps"><a name="user-content-next-steps" href="#next-steps" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Next Steps</h2>
+<ul>
+<li>Learn Basics of Spring Boot - <a href="http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring" target="_blank">Spring Boot vs Spring vs Spring MVC</a>, <a href="http://www.springboottutorial.com/spring-boot-auto-configuration" target="_blank">Auto Configuration</a>, <a href="http://www.springboottutorial.com/spring-boot-starter-projects" target="_blank">Spring Boot Starter Projects</a>, <a href="http://www.springboottutorial.com/spring-boot-starter-parent" target="_blank">Spring Boot Starter Parent</a>, <a href="http://www.springboottutorial.com/spring-initialzr-bootstrap-spring-boot-applications" target="_blank">Spring Boot Initializr</a></li>
+<li><a href="https://www.udemy.com/spring-web-services-tutorial/?couponCode=SPRINGBOOTTUTRLCOM" target="_blank">Learn RESTful and SOAP Web Services with Spring Boot</a></li>
+<li><a href="https://www.udemy.com/microservices-with-spring-boot-and-spring-cloud/?couponCode=SPRINGBOOTTUTRLCOM" target="_blank">Learn Microservices with Spring Boot and Spring Cloud</a></li>
+<li><a href="https://www.udemy.com/spring-interview-questions-and-answers/?couponCode=SPRINGBOOTTUTRLCOM" target="_blank">Watch Spring Framework Interview Guide - 200+ Questions &amp; Answers</a></li>
+</ul>
+<p><a href="https://www.youtube.com/playlist?list=PLBBog2r6uMCRzaJqr-uUC8gakwSxkPSBh" target="_blank"><img alt="Image" src="/images/SpringBootTutorialForBeginnersPlaylist.png" title="Spring Boot Tutorial For Beginners - 25 Videos" /></a></p>
+<h2 id="complete-code-example"><a name="user-content-complete-code-example" href="#complete-code-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Complete Code Example</h2>
+<h3 id="pomxml"><a name="user-content-pomxml" href="#pomxml" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/pom.xml</h3>
+<h2 id="xml-version10-encodingutf-8-project-xmlnshttpmavenapacheorgpom400-xmlnsxsihttpwwww3org2001xmlschema-instance-xsischemalocationhttpmavenapacheorgpom400-httpmavenapacheorgxsdmaven-400xsd-modelversion400modelversion-groupidcomin28minutesspringbootrestexamplegroupid-artifactidspring-boot-2-jpa-with-hibernate-and-h2artifactid-version001-snapshotversion-packagingjarpackaging-namespring-boot-2-jpa-with-hibernate-and-h2name-descriptionspring-boot-2-hibernate-jpa-and-h2-example-projectdescription-parent-groupidorgspringframeworkbootgroupid-artifactidspring-boot-starter-parentartifactid-version200m6version-relativepath-lookup-parent-from-repository-parent-properties-projectbuildsourceencodingutf-8projectbuildsourceencoding-projectreportingoutputencodingutf-8projectreportingoutputencoding-javaversion18javaversion-properties-dependencies-dependency-groupidorgspringframeworkbootgroupid-artifactidspring-boot-starter-data-jpaartifactid-dependency-dependency-groupidorgspringframeworkbootgroupid-artifactidspring-boot-starter-webartifactid-dependency-dependency-groupidorgspringframeworkbootgroupid-artifactidspring-boot-devtoolsartifactid-scoperuntimescope-dependency-dependency-groupidcomh2databasegroupid-artifactidh2artifactid-scoperuntimescope-dependency-dependency-groupidorgspringframeworkbootgroupid-artifactidspring-boot-starter-testartifactid-scopetestscope-dependency-dependencies-build-plugins-plugin-groupidorgspringframeworkbootgroupid-artifactidspring-boot-maven-pluginartifactid-plugin-plugins-build-repositories-repository-idspring-snapshotsid-namespring-snapshotsname-urlhttpsrepospringiosnapshoturl-snapshots-enabledtrueenabled-snapshots-repository-repository-idspring-milestonesid-namespring-milestonesname-urlhttpsrepospringiomilestoneurl-snapshots-enabledfalseenabled-snapshots-repository-repositories-pluginrepositories-pluginrepository-idspring-snapshotsid-namespring-snapshotsname-urlhttpsrepospringiosnapshoturl-snapshots-enabledtrueenabled-snapshots-pluginrepository-pluginrepository-idspring-milestonesid-namespring-milestonesname-urlhttpsrepospringiomilestoneurl-snapshots-enabledfalseenabled-snapshots-pluginrepository-pluginrepositories-project"><a name="user-content-xml-version10-encodingutf-8-project-xmlnshttpmavenapacheorgpom400-xmlnsxsihttpwwww3org2001xmlschema-instance-xsischemalocationhttpmavenapacheorgpom400-httpmavenapacheorgxsdmaven-400xsd-modelversion400modelversion-groupidcomin28minutesspringbootrestexamplegroupid-artifactidspring-boot-2-jpa-with-hibernate-and-h2artifactid-version001-snapshotversion-packagingjarpackaging-namespring-boot-2-jpa-with-hibernate-and-h2name-descriptionspring-boot-2-hibernate-jpa-and-h2-example-projectdescription-parent-groupidorgspringframeworkbootgroupid-artifactidspring-boot-starter-parentartifactid-version200m6version-relativepath-lookup-parent-from-repository-parent-properties-projectbuildsourceencodingutf-8projectbuildsourceencoding-projectreportingoutputencodingutf-8projectreportingoutputencoding-javaversion18javaversion-properties-dependencies-dependency-groupidorgspringframeworkbootgroupid-artifactidspring-boot-starter-data-jpaartifactid-dependency-dependency-groupidorgspringframeworkbootgroupid-artifactidspring-boot-starter-webartifactid-dependency-dependency-groupidorgspringframeworkbootgroupid-artifactidspring-boot-devtoolsartifactid-scoperuntimescope-dependency-dependency-groupidcomh2databasegroupid-artifactidh2artifactid-scoperuntimescope-dependency-dependency-groupidorgspringframeworkbootgroupid-artifactidspring-boot-starter-testartifactid-scopetestscope-dependency-dependencies-build-plugins-plugin-groupidorgspringframeworkbootgroupid-artifactidspring-boot-maven-pluginartifactid-plugin-plugins-build-repositories-repository-idspring-snapshotsid-namespring-snapshotsname-urlhttpsrepospringiosnapshoturl-snapshots-enabledtrueenabled-snapshots-repository-repository-idspring-milestonesid-namespring-milestonesname-urlhttpsrepospringiomilestoneurl-snapshots-enabledfalseenabled-snapshots-repository-repositories-pluginrepositories-pluginrepository-idspring-snapshotsid-namespring-snapshotsname-urlhttpsrepospringiosnapshoturl-snapshots-enabledtrueenabled-snapshots-pluginrepository-pluginrepository-idspring-milestonesid-namespring-milestonesname-urlhttpsrepospringiomilestoneurl-snapshots-enabledfalseenabled-snapshots-pluginrepository-pluginrepositories-project" href="#xml-version10-encodingutf-8-project-xmlnshttpmavenapacheorgpom400-xmlnsxsihttpwwww3org2001xmlschema-instance-xsischemalocationhttpmavenapacheorgpom400-httpmavenapacheorgxsdmaven-400xsd-modelversion400modelversion-groupidcomin28minutesspringbootrestexamplegroupid-artifactidspring-boot-2-jpa-with-hibernate-and-h2artifactid-version001-snapshotversion-packagingjarpackaging-namespring-boot-2-jpa-with-hibernate-and-h2name-descriptionspring-boot-2-hibernate-jpa-and-h2-example-projectdescription-parent-groupidorgspringframeworkbootgroupid-artifactidspring-boot-starter-parentartifactid-version200m6version-relativepath-lookup-parent-from-repository-parent-properties-projectbuildsourceencodingutf-8projectbuildsourceencoding-projectreportingoutputencodingutf-8projectreportingoutputencoding-javaversion18javaversion-properties-dependencies-dependency-groupidorgspringframeworkbootgroupid-artifactidspring-boot-starter-data-jpaartifactid-dependency-dependency-groupidorgspringframeworkbootgroupid-artifactidspring-boot-starter-webartifactid-dependency-dependency-groupidorgspringframeworkbootgroupid-artifactidspring-boot-devtoolsartifactid-scoperuntimescope-dependency-dependency-groupidcomh2databasegroupid-artifactidh2artifactid-scoperuntimescope-dependency-dependency-groupidorgspringframeworkbootgroupid-artifactidspring-boot-starter-testartifactid-scopetestscope-dependency-dependencies-build-plugins-plugin-groupidorgspringframeworkbootgroupid-artifactidspring-boot-maven-pluginartifactid-plugin-plugins-build-repositories-repository-idspring-snapshotsid-namespring-snapshotsname-urlhttpsrepospringiosnapshoturl-snapshots-enabledtrueenabled-snapshots-repository-repository-idspring-milestonesid-namespring-milestonesname-urlhttpsrepospringiomilestoneurl-snapshots-enabledfalseenabled-snapshots-repository-repositories-pluginrepositories-pluginrepository-idspring-snapshotsid-namespring-snapshotsname-urlhttpsrepospringiosnapshoturl-snapshots-enabledtrueenabled-snapshots-pluginrepository-pluginrepository-idspring-milestonesid-namespring-milestonesname-urlhttpsrepospringiomilestoneurl-snapshots-enabledfalseenabled-snapshots-pluginrepository-pluginrepositories-project" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.in28minutes.springboot.rest.example&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-2-jpa-with-hibernate-and-h2&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+    &lt;packaging&gt;jar&lt;/packaging&gt;
+
+    &lt;name&gt;spring-boot-2-jpa-with-hibernate-and-h2&lt;/name&gt;
+    &lt;description&gt;Spring Boot 2, Hibernate, JPA and H2 - Example Project&lt;/description&gt;
+
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;2.0.0.M6&lt;/version&gt;
+        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+    &lt;/parent&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+            &lt;artifactId&gt;h2&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+    &lt;repositories&gt;
+        &lt;repository&gt;
+            &lt;id&gt;spring-snapshots&lt;/id&gt;
+            &lt;name&gt;Spring Snapshots&lt;/name&gt;
+            &lt;url&gt;https://repo.spring.io/snapshot&lt;/url&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/repository&gt;
+        &lt;repository&gt;
+            &lt;id&gt;spring-milestones&lt;/id&gt;
+            &lt;name&gt;Spring Milestones&lt;/name&gt;
+            &lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/repository&gt;
+    &lt;/repositories&gt;
+
+    &lt;pluginRepositories&gt;
+        &lt;pluginRepository&gt;
+            &lt;id&gt;spring-snapshots&lt;/id&gt;
+            &lt;name&gt;Spring Snapshots&lt;/name&gt;
+            &lt;url&gt;https://repo.spring.io/snapshot&lt;/url&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/pluginRepository&gt;
+        &lt;pluginRepository&gt;
+            &lt;id&gt;spring-milestones&lt;/id&gt;
+            &lt;name&gt;Spring Milestones&lt;/name&gt;
+            &lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/pluginRepository&gt;
+    &lt;/pluginRepositories&gt;
+
+
+&lt;/project&gt;
+</code></pre></h2>
+<h3 id="srcmainjavacomin28minutesspringbootjpahibernateh2examplespringboot2jpawithhibernateandh2applicationjava"><a name="user-content-srcmainjavacomin28minutesspringbootjpahibernateh2examplespringboot2jpawithhibernateandh2applicationjava" href="#srcmainjavacomin28minutesspringbootjpahibernateh2examplespringboot2jpawithhibernateandh2applicationjava" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/src/main/java/com/in28minutes/springboot/jpa/hibernate/h2/example/SpringBoot2JPAWithHibernateAndH2Application.java</h3>
+<h2 id="package-comin28minutesspringbootjpahibernateh2example-import-orgslf4jlogger-import-orgslf4jloggerfactory-import-orgspringframeworkbeansfactoryannotationautowired-import-orgspringframeworkbootcommandlinerunner-import-orgspringframeworkbootspringapplication-import-orgspringframeworkbootautoconfigurespringbootapplication-import-comin28minutesspringbootjpahibernateh2examplestudentstudent-import-comin28minutesspringbootjpahibernateh2examplestudentstudentrepository-springbootapplication-public-class-springboot2jpawithhibernateandh2application-implements-commandlinerunner-private-logger-logger-loggerfactorygetloggerthisgetclass-autowired-studentrepository-repository-public-static-void-mainstring-args-springapplicationrunspringboot2jpawithhibernateandh2applicationclass-args-override-public-void-runstring-args-throws-exception-loggerinfostudent-id-10001-repositoryfindbyid10001l-loggerinfoall-users-1-repositoryfindall-insert-loggerinfoinserting-repositorysavenew-studentjohn-a1234657-update-loggerinfoupdate-10001-repositorysavenew-student10001l-name-updated-new-passport-repositorydeletebyid10002l-loggerinfoall-users-2-repositoryfindall"><a name="user-content-package-comin28minutesspringbootjpahibernateh2example-import-orgslf4jlogger-import-orgslf4jloggerfactory-import-orgspringframeworkbeansfactoryannotationautowired-import-orgspringframeworkbootcommandlinerunner-import-orgspringframeworkbootspringapplication-import-orgspringframeworkbootautoconfigurespringbootapplication-import-comin28minutesspringbootjpahibernateh2examplestudentstudent-import-comin28minutesspringbootjpahibernateh2examplestudentstudentrepository-springbootapplication-public-class-springboot2jpawithhibernateandh2application-implements-commandlinerunner-private-logger-logger-loggerfactorygetloggerthisgetclass-autowired-studentrepository-repository-public-static-void-mainstring-args-springapplicationrunspringboot2jpawithhibernateandh2applicationclass-args-override-public-void-runstring-args-throws-exception-loggerinfostudent-id-10001-repositoryfindbyid10001l-loggerinfoall-users-1-repositoryfindall-insert-loggerinfoinserting-repositorysavenew-studentjohn-a1234657-update-loggerinfoupdate-10001-repositorysavenew-student10001l-name-updated-new-passport-repositorydeletebyid10002l-loggerinfoall-users-2-repositoryfindall" href="#package-comin28minutesspringbootjpahibernateh2example-import-orgslf4jlogger-import-orgslf4jloggerfactory-import-orgspringframeworkbeansfactoryannotationautowired-import-orgspringframeworkbootcommandlinerunner-import-orgspringframeworkbootspringapplication-import-orgspringframeworkbootautoconfigurespringbootapplication-import-comin28minutesspringbootjpahibernateh2examplestudentstudent-import-comin28minutesspringbootjpahibernateh2examplestudentstudentrepository-springbootapplication-public-class-springboot2jpawithhibernateandh2application-implements-commandlinerunner-private-logger-logger-loggerfactorygetloggerthisgetclass-autowired-studentrepository-repository-public-static-void-mainstring-args-springapplicationrunspringboot2jpawithhibernateandh2applicationclass-args-override-public-void-runstring-args-throws-exception-loggerinfostudent-id-10001-repositoryfindbyid10001l-loggerinfoall-users-1-repositoryfindall-insert-loggerinfoinserting-repositorysavenew-studentjohn-a1234657-update-loggerinfoupdate-10001-repositorysavenew-student10001l-name-updated-new-passport-repositorydeletebyid10002l-loggerinfoall-users-2-repositoryfindall" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a><pre><code class="java">package com.in28minutes.springboot.jpa.hibernate.h2.example;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.in28minutes.springboot.jpa.hibernate.h2.example.student.Student;
+import com.in28minutes.springboot.jpa.hibernate.h2.example.student.StudentRepository;
+
+@SpringBootApplication
+public class SpringBoot2JPAWithHibernateAndH2Application implements CommandLineRunner {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Autowired
+    StudentRepository repository;
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBoot2JPAWithHibernateAndH2Application.class, args);
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+
+        logger.info(&quot;Student id 10001 -&gt; {}&quot;, repository.findById(10001L));
+
+        logger.info(&quot;All users 1 -&gt; {}&quot;, repository.findAll());
+
+        //Insert
+        logger.info(&quot;Inserting -&gt; {}&quot;, repository.save(new Student(&quot;John&quot;, &quot;A1234657&quot;)));
+
+        //Update
+        logger.info(&quot;Update 10001 -&gt; {}&quot;, repository.save(new Student(10001L, &quot;Name-Updated&quot;, &quot;New-Passport&quot;)));
+
+        repository.deleteById(10002L);
+
+        logger.info(&quot;All users 2 -&gt; {}&quot;, repository.findAll());
+    }
+}
+</code></pre></h2>
+<h3 id="srcmainjavacomin28minutesspringbootjpahibernateh2examplestudentstudentjava"><a name="user-content-srcmainjavacomin28minutesspringbootjpahibernateh2examplestudentstudentjava" href="#srcmainjavacomin28minutesspringbootjpahibernateh2examplestudentstudentjava" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/src/main/java/com/in28minutes/springboot/jpa/hibernate/h2/example/student/Student.java</h3>
+<h2 id="package-comin28minutesspringbootjpahibernateh2examplestudent-import-javaxpersistenceentity-import-javaxpersistencegeneratedvalue-import-javaxpersistenceid-entity-public-class-student-id-generatedvalue-private-long-id-private-string-name-private-string-passportnumber-public-student-super-public-studentlong-id-string-name-string-passportnumber-super-thisid-id-thisname-name-thispassportnumber-passportnumber-public-studentstring-name-string-passportnumber-super-thisname-name-thispassportnumber-passportnumber-public-long-getid-return-id-public-void-setidlong-id-thisid-id-public-string-getname-return-name-public-void-setnamestring-name-thisname-name-public-string-getpassportnumber-return-passportnumber-public-void-setpassportnumberstring-passportnumber-thispassportnumber-passportnumber-override-public-string-tostring-return-stringformatstudent-ids-names-passportnumbers-id-name-passportnumber"><a name="user-content-package-comin28minutesspringbootjpahibernateh2examplestudent-import-javaxpersistenceentity-import-javaxpersistencegeneratedvalue-import-javaxpersistenceid-entity-public-class-student-id-generatedvalue-private-long-id-private-string-name-private-string-passportnumber-public-student-super-public-studentlong-id-string-name-string-passportnumber-super-thisid-id-thisname-name-thispassportnumber-passportnumber-public-studentstring-name-string-passportnumber-super-thisname-name-thispassportnumber-passportnumber-public-long-getid-return-id-public-void-setidlong-id-thisid-id-public-string-getname-return-name-public-void-setnamestring-name-thisname-name-public-string-getpassportnumber-return-passportnumber-public-void-setpassportnumberstring-passportnumber-thispassportnumber-passportnumber-override-public-string-tostring-return-stringformatstudent-ids-names-passportnumbers-id-name-passportnumber" href="#package-comin28minutesspringbootjpahibernateh2examplestudent-import-javaxpersistenceentity-import-javaxpersistencegeneratedvalue-import-javaxpersistenceid-entity-public-class-student-id-generatedvalue-private-long-id-private-string-name-private-string-passportnumber-public-student-super-public-studentlong-id-string-name-string-passportnumber-super-thisid-id-thisname-name-thispassportnumber-passportnumber-public-studentstring-name-string-passportnumber-super-thisname-name-thispassportnumber-passportnumber-public-long-getid-return-id-public-void-setidlong-id-thisid-id-public-string-getname-return-name-public-void-setnamestring-name-thisname-name-public-string-getpassportnumber-return-passportnumber-public-void-setpassportnumberstring-passportnumber-thispassportnumber-passportnumber-override-public-string-tostring-return-stringformatstudent-ids-names-passportnumbers-id-name-passportnumber" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a><pre><code class="java">package com.in28minutes.springboot.jpa.hibernate.h2.example.student;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Student {
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String name;
+    private String passportNumber;
+
+    public Student() {
+        super();
+    }
+
+    public Student(Long id, String name, String passportNumber) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.passportNumber = passportNumber;
+    }
+
+    public Student(String name, String passportNumber) {
+        super();
+        this.name = name;
+        this.passportNumber = passportNumber;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassportNumber() {
+        return passportNumber;
+    }
+
+    public void setPassportNumber(String passportNumber) {
+        this.passportNumber = passportNumber;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(&quot;Student [id=%s, name=%s, passportNumber=%s]&quot;, id, name, passportNumber);
+    }
+
+}
+</code></pre></h2>
+<h3 id="srcmainjavacomin28minutesspringbootjpahibernateh2examplestudentstudentrepositoryjava"><a name="user-content-srcmainjavacomin28minutesspringbootjpahibernateh2examplestudentstudentrepositoryjava" href="#srcmainjavacomin28minutesspringbootjpahibernateh2examplestudentstudentrepositoryjava" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/src/main/java/com/in28minutes/springboot/jpa/hibernate/h2/example/student/StudentRepository.java</h3>
+<h2 id="package-comin28minutesspringbootjpahibernateh2examplestudent-import-orgspringframeworkdatajparepositoryjparepository-import-orgspringframeworkstereotyperepository-repository-public-interface-studentrepository-extends-jparepositorystudent-long"><a name="user-content-package-comin28minutesspringbootjpahibernateh2examplestudent-import-orgspringframeworkdatajparepositoryjparepository-import-orgspringframeworkstereotyperepository-repository-public-interface-studentrepository-extends-jparepositorystudent-long" href="#package-comin28minutesspringbootjpahibernateh2examplestudent-import-orgspringframeworkdatajparepositoryjparepository-import-orgspringframeworkstereotyperepository-repository-public-interface-studentrepository-extends-jparepositorystudent-long" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a><pre><code class="java">package com.in28minutes.springboot.jpa.hibernate.h2.example.student;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface StudentRepository extends JpaRepository&lt;Student, Long&gt;{
+
+}
+</code></pre></h2>
+<h3 id="srcmainresourcesapplicationproperties_1"><a name="user-content-srcmainresourcesapplicationproperties_1" href="#srcmainresourcesapplicationproperties_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/src/main/resources/application.properties</h3>
+<h2 id="enabling-h2-console-springh2consoleenabledtrue-turn-statistics-on-springjpapropertieshibernategenerate_statisticstrue-logginglevelorghibernatestatdebug-show-all-queries-springjpashow-sqltrue-springjpapropertieshibernateformat_sqltrue-logginglevelorghibernatetypetrace"><a name="user-content-enabling-h2-console-springh2consoleenabledtrue-turn-statistics-on-springjpapropertieshibernategenerate_statisticstrue-logginglevelorghibernatestatdebug-show-all-queries-springjpashow-sqltrue-springjpapropertieshibernateformat_sqltrue-logginglevelorghibernatetypetrace" href="#enabling-h2-console-springh2consoleenabledtrue-turn-statistics-on-springjpapropertieshibernategenerate_statisticstrue-logginglevelorghibernatestatdebug-show-all-queries-springjpashow-sqltrue-springjpapropertieshibernateformat_sqltrue-logginglevelorghibernatetypetrace" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a><pre><code class="properties"># Enabling H2 Console
+spring.h2.console.enabled=true
+#Turn Statistics on
+spring.jpa.properties.hibernate.generate_statistics=true
+logging.level.org.hibernate.stat=debug
+# Show all queries
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+logging.level.org.hibernate.type=trace
+</code></pre></h2>
+<h3 id="srcmainresourcesdatasql"><a name="user-content-srcmainresourcesdatasql" href="#srcmainresourcesdatasql" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/src/main/resources/data.sql</h3>
+<h2 id="insert-into-student-values10001ranga-e1234567-insert-into-student-values10002ravi-a1234568"><a name="user-content-insert-into-student-values10001ranga-e1234567-insert-into-student-values10002ravi-a1234568" href="#insert-into-student-values10001ranga-e1234567-insert-into-student-values10002ravi-a1234568" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a><pre><code>insert into student
+values(10001,'Ranga', 'E1234567');
+
+insert into student
+values(10002,'Ravi', 'A1234568');
+</code></pre></h2>
+<h3 id="srctestjavacomin28minutesspringbootjpahibernateh2examplespringboot2jpawithhibernateandh2applicationtestsjava"><a name="user-content-srctestjavacomin28minutesspringbootjpahibernateh2examplespringboot2jpawithhibernateandh2applicationtestsjava" href="#srctestjavacomin28minutesspringbootjpahibernateh2examplespringboot2jpawithhibernateandh2applicationtestsjava" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/src/test/java/com/in28minutes/springboot/jpa/hibernate/h2/example/SpringBoot2JPAWithHibernateAndH2ApplicationTests.java</h3>
+<h2 id="package-comin28minutesspringbootjpahibernateh2example-import-orgjunittest-import-orgjunitrunnerrunwith-import-orgspringframeworkboottestcontextspringboottest-import-orgspringframeworktestcontextjunit4springrunner-runwithspringrunnerclass-springboottest-public-class-springboot2jpawithhibernateandh2applicationtests-test-public-void-contextloads"><a name="user-content-package-comin28minutesspringbootjpahibernateh2example-import-orgjunittest-import-orgjunitrunnerrunwith-import-orgspringframeworkboottestcontextspringboottest-import-orgspringframeworktestcontextjunit4springrunner-runwithspringrunnerclass-springboottest-public-class-springboot2jpawithhibernateandh2applicationtests-test-public-void-contextloads" href="#package-comin28minutesspringbootjpahibernateh2example-import-orgjunittest-import-orgjunitrunnerrunwith-import-orgspringframeworkboottestcontextspringboottest-import-orgspringframeworktestcontextjunit4springrunner-runwithspringrunnerclass-springboottest-public-class-springboot2jpawithhibernateandh2applicationtests-test-public-void-contextloads" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a><pre><code class="java">package com.in28minutes.springboot.jpa.hibernate.h2.example;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SpringBoot2JPAWithHibernateAndH2ApplicationTests {
+
+    @Test
+    public void contextLoads() {
+    }
+
+}
+</code></pre></h2></article></body></html>

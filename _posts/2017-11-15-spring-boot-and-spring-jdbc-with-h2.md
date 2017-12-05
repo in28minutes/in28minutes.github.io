@@ -194,10 +194,8 @@ values(10002,'Ravi', 'A1234568');
 
 When the application reloads you would see following statements in the log indicating that the sql files are picked up
 ```
-2017-11-29 21:12:20.780  INFO 20747 --- [  restartedMain] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring-boot-2-jdbc-with-h2/target/classes/schema.sql]
-2017-11-29 21:12:20.801  INFO 20747 --- [  restartedMain] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring-boot-2-jdbc-with-h2/target/classes/schema.sql] in 20 ms.
-2017-11-29 21:12:20.804  INFO 20747 --- [  restartedMain] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring-boot-2-jdbc-with-h2/target/classes/data.sql]
-2017-11-29 21:12:20.807  INFO 20747 --- [  restartedMain] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring-boot-2-jdbc-with-h2/target/classes/data.sql] in 2 ms.
+Executing SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring-boot-2-jdbc-with-h2/target/classes/schema.sql]
+Executing SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring-boot-2-jdbc-with-h2/target/classes/data.sql]
 ```
 
 When you login to H2 Console (http://localhost:8080/h2-console) you can see that the student table is created and the data is populated.
