@@ -10,7 +10,6 @@ permalink:  /spring-boot-and-iBatis-with-h2-tutorial
 This guide will help you create a simple project with Spring Boot. You will add code to the project to connect to H2 Database using myBatis. You will learn to write all the basic CRUD methods using myBatis.
  
 ## You will learn
-- How to use Spring Boot Started JDBC?
 - How to connect a Spring Boot project to database using myBatis?
 - How to write a simple repository class with all the CRUD methods to execute queries using myBatis?
 - How to execute basic queries using myBatis?
