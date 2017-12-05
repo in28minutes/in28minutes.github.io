@@ -88,8 +88,6 @@ Hibernate is one of the popular implementations of JPA.
 
 ## Creating the Project with Spring Initializr
 
-Creating a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.  
-
 Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
 ![Image](/images/spring-initializer-web-h2-devtools-jpa.png "Web, JPA, H2 and Developer Tools")
