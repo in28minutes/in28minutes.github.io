@@ -309,12 +309,14 @@ insert into student
 values(10002,'Ravi', 'A1234568');
 ```
 
-When the application reloads you would see following statements in the log indicating that the sql files are picked up
+When the application reloads you would see following statements in the log indicating that the sql files are picked up.
+
 ```
 Executing SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring-boot-2-jdbc-with-h2/target/classes/data.sql]
 ```
 
-<After App Reload> When you login to H2 Console (http://localhost:8080/h2-console) you can see that the student table is created and the data is populated.
+After App Reload, When you login to H2 Console (http://localhost:8080/h2-console) you can see that the student table is created and the data is populated.
+
 ![Image](/images/H2-Console-With-Student.png "H2 Console With Student")
 
 ## Create Repository class to Read Student information
