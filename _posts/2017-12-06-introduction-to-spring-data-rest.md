@@ -121,7 +121,7 @@ The response contains the href of the newly created resource.
 
 #### GET
 
-URI - http://localhost:8080/todos
+- URI - http://localhost:8080/todos
 
 Response
 ```json
@@ -377,8 +377,8 @@ In this section, lets look at some of the Resource URIs that are exposed by Spri
 
 ### Spring Data Rest API - Get All Data for Resource
 
-URI - http://localhost:8080/students
-Request Method - GET
+  localhost:8080/students
+- Request Method - GET
 Response
 ```json
 {
@@ -433,9 +433,10 @@ Notes:
 
 ### Student RESTful API - POST Method
 
-URI - http://localhost:8080/students
-Request Method - POST
-Content-Type - application/json
+- URI - http://localhost:8080/students
+- Request Method - POST
+- Content-Type - application/json
+
 Request Body Content
 ```
 {
@@ -446,6 +447,7 @@ Request Body Content
 ```
 
 When we execute the above request, a new student is created.
+
 Response
 ```
 {
@@ -469,10 +471,11 @@ Screenshot below shows a screenshot of executing the POST request using POSTMan
 
 ### Student RESTful API - GET Method
 
-URI - http://localhost:8080/students
-Request Method - GET
+- URI - http://localhost:8080/students
+- Request Method - GET
 
 When we execute the above request, details of a student are retrieved.
+
 Response
 ```
 {
@@ -493,9 +496,10 @@ Response
 
 Used to update the details of a Student
 
-URI - http://localhost:8080/students/1
-Request Method - PUT
-Content-Type - application/json
+- URI - http://localhost:8080/students/1
+- Request Method - PUT
+- Content-Type - application/json
+
 Request Body Content
 ```
 {
@@ -506,6 +510,7 @@ Request Body Content
 ```
 
 When we execute the above request, student details are updated.
+
 Response
 ```
 {
@@ -525,8 +530,8 @@ The response contains the URI to the updated resource.
 
 ### Student RESTful API - Delete Method
 
-URI - http://localhost:8080/students/1
-Request Method - DELETE
+- URI - http://localhost:8080/students/1
+- Request Method - DELETE
 
 Student 1 is deleted.
 
@@ -534,7 +539,7 @@ Student 1 is deleted.
 
 > ALPS is a data format for defining simple descriptions of application-level semantics, similar in complexity to HTML microformats. An ALPS document can be used as a profile to explain the application semantics of a document with an application-agnostic media type (such as HTML, HAL, Collection+JSON, Siren, etc.). This increases the reusability of profile documents across media types.
 
-URI - http://localhost:8080/profile/students 
+- URI - http://localhost:8080/profile/students 
 
 Response
 ```

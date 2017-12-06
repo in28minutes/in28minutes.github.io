@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:   Introduction to Spring Data - A tutorial for beginners
+title:   Introduction to Spring Data - Spring Data JPA, Spring Data REST and MongoDB
 date:       2017-12-07 12:31:19
 summary:  Spring Data's mission is to provide a familiar and consistent, Spring-based programming model for data access. In this tutorial, we will explore the different interfaces provided by Spring Data. We will take a quick peek into Spring Data JPA and Spring Data for MongoDB.
 categories: Spring Boot, Spring Data, Hibernate, JPA, Database, Spring Boot Starter JPA
@@ -194,7 +194,7 @@ void deleteAllInBatch();
 
 ```
 
-Recommended Reading for Spring Data JPA - http://www.springboottutorial.com/introduction-to-jpa-with-spring-boot-data-jpa
+> Recommended Reading for Spring Data JPA - http://www.springboottutorial.com/introduction-to-jpa-with-spring-boot-data-jpa
 
 
 ### Spring Data REST
@@ -325,7 +325,7 @@ Spring Data REST supports
 - Spring Data GemFire
 - Spring Data Cassandra
 
-Recommended Reading for Spring Data Rest - http://www.springboottutorial.com/introduction-to-spring-data-rest-using-spring-boot
+> Recommended Reading for Spring Data Rest - http://www.springboottutorial.com/introduction-to-spring-data-rest-using-spring-boot
 
 ### Spring Data MongoDB
 Spring Data MongoDB provides support for using MongoDB as data store.
