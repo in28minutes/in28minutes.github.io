@@ -33,6 +33,26 @@ Setting up a basic project with Spring Boot is a cake walk. In this article, we 
 
 ## Introduction to Maven
 
+### Q :  Why Maven?
+
+You don’t want to store all the libraries in your project!
+
+You want to tell I need A, B, C and you would want the tool to download the libraries and make them available to you.
+
+That's Maven. The tool which you use to manage the libraries.
+
+If you need a new version of the library, you can change the version and your project is ready!
+
+Also, You don't need to worry about what libraries your library needs to work. For example, Spring might need other libaries - logging, xml etc. 
+
+Once you declare a dependency on Spring, Maven would download
+- Spring
+- And all dependencies of Spring
+
+Isn't that cool?
+
+## Big Picture of Maven
+
 Defining what Maven does is very difficult.
 
 Every Day Developer does a lot of things
@@ -52,7 +72,15 @@ Every Day Developer does a lot of things
 
 #### Naming a project
 
-How can other projects use our project? By using our project groupId and artifactId. We give a name to the project in the pom.xml as shown below:
+You define dependencies in your pom.xml. 
+
+Maven would download the dependencies and make them available for use in your project.
+
+But, how does Maven know what dependency to download?
+
+You need to tell it by giving the details of the dependency. 
+
+Just like you can identify a Java class with a class name and a package name, you can identify a maven artifact by a GroupId and an ArtifactId.
 
 ```
     <groupId>com.in28minutes.learning.maven</groupId>

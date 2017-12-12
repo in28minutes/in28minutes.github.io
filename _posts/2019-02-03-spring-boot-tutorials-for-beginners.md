@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Spring Boot Tutorials for Beginners
-date:       2018-01-30 12:31:19
-summary:    At in28Minutes, we are creating a number of videos, articles &amp; courses on Spring Boot for Beginners and experienced developers. 
+date:       2019-02-03 12:31:19
+summary:    At in28Minutes, we are creating a number of tutorials with videos, articles &amp; courses on Spring Boot for Beginners and Experienced Developers. This resources will help you learn and gain expertise at Spring Boot.
 categories: Spring Boot, REST Service
 permalink:  /spring-boot-tutorials-for-beginners
 ---

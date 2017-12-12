@@ -178,7 +178,7 @@ First thing you would need to understand is Spring Boot Auto Configuration.
 Here’s a good read 
 - http://www.springboottutorial.com/spring-boot-auto-configuration
 
-As far as H2 is concerned, as soon as Spring Boot sees H2 in the class path, it auto configures something similar to what you see below:
+As far as H2 is concerned, as soon as Spring Boot sees H2 in the class path, it auto configures a data source similar to what you see below:
 
 ```
 spring.datasource.url=jdbc:h2:mem:testdb
@@ -188,7 +188,8 @@ spring.datasource.password=
 
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ```
-It knows that you are using an inmemory database H2 and It knows the default url if you don’t provide one.
+
+It knows that you are using an inmemory database H2 and it uses the default url if you don’t provide one.
 
 
 ### Q :  Where is the database connection info specified? How does it know to automatically connect to H2?
@@ -197,7 +198,7 @@ Thats Spring Boot Autoconfiguration magic.
 
 From https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-auto-configuration.html
 
-> Spring Boot auto-configuration attempts to automatically configure your Spring application based on the jar dependencies that you have added. For example, If HSQLDBis on your classpath, and you have not manually configured any database connection beans, then we will auto-configure an in-memory database.
+> Spring Boot auto-configuration attempts to automatically configure your Spring application based on the jar dependencies that you have added. For example, If HSQLDB is on your classpath, and you have not manually configured any database connection beans, then Spring Boot will auto-configure an in-memory database.
 
 Recommended Reading
 - http://www.springboottutorial.com/spring-boot-auto-configuration
@@ -218,7 +219,7 @@ Add H2 to the pom.xml and Restart your server
 </dependency>
 ```
 
-### Q :  Why the data lost between restart?
+### Q :  Why is the data lost between restart?
 
 H2 is an in memory database. Its not a persisted database. 
 
@@ -243,6 +244,7 @@ spring.h2.console.enabled=true
 ```
 
 ### Q :  How did the insert query from data.sql run at application startup? 
+
 That's part of the Spring Boot startup routine. Any queries in data.sql are run at application startup. You can read more here. 
 - https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html
 
@@ -306,6 +308,8 @@ spring.datasource.url=jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
 spring.datasource.username=sa
 spring.datasource.password=sa
 ```
+
+> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
 ## Next Steps
 - Learn Basics of Spring Boot - [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}, [Auto Configuration](http://www.springboottutorial.com/spring-boot-auto-configuration){:target="_blank"}, [Spring Boot Starter Projects](http://www.springboottutorial.com/spring-boot-starter-projects){:target="_blank"}, [Spring Boot Starter Parent](http://www.springboottutorial.com/spring-boot-starter-parent){:target="_blank"}, [Spring Boot Initializr](http://www.springboottutorial.com/spring-initialzr-bootstrap-spring-boot-applications){:target="_blank"}

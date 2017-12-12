@@ -245,7 +245,7 @@ The response contains the href of the newly created resource.
 
 #### GET
 
-URI - http://localhost:8080/todos
+- URI - http://localhost:8080/todos
 
 Response
 ```json
@@ -354,6 +354,8 @@ Some of the important methods (provided in addition to PagingAndSortingRepositor
 	@Override
 	<S extends T> List<S> findAll(Example<S> example, Sort sort);
 ```
+
+> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
 ## Next Steps
 - Learn Basics of Spring Boot - [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}, [Auto Configuration](http://www.springboottutorial.com/spring-boot-auto-configuration){:target="_blank"}, [Spring Boot Starter Projects](http://www.springboottutorial.com/spring-boot-starter-projects){:target="_blank"}, [Spring Boot Starter Parent](http://www.springboottutorial.com/spring-boot-starter-parent){:target="_blank"}, [Spring Boot Initializr](http://www.springboottutorial.com/spring-initialzr-bootstrap-spring-boot-applications){:target="_blank"}

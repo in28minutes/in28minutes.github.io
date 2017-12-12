@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Spring Boot Starter Projects
+title:      Initializing Projects with Spring Boot Starters - Web and JPA
 date:       2017-01-28 12:31:19
 summary:    Key goal of Spring Boot is to enable a quick start to developing production ready applications. Most important components behind the features of Spring Boot are the Spring Boot Starter Projects. 
 categories: [Spring Boot, Spring Boot Basics]
@@ -12,6 +12,7 @@ This guide will help you understand how Spring Boot Starter Projects enable the 
 ## You will learn
 - What features are provided by Spring Boot Starter Projects?
 - We will look at an example of Starter Projects
+- We will look at Spring Boot Starter Web
 - Get an overview of different starter projects provided by Spring Boot.
 
 ## References
@@ -243,6 +244,8 @@ There are a few starters for technical stuff as well
 - spring-boot-starter-undertow, spring-boot-starter-jetty, spring-boot-starter-tomcat - To pick your specific choice of Embedded Servlet Container 
 - spring-boot-starter-logging - For Logging using logback
 - spring-boot-starter-log4j2 - Logging using Log4j2
+
+> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
 ## Next Steps
 - Learn Basics of Spring Boot - [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}, [Auto Configuration](http://www.springboottutorial.com/spring-boot-auto-configuration){:target="_blank"}, [Spring Boot Starter Projects](http://www.springboottutorial.com/spring-boot-starter-projects){:target="_blank"}, [Spring Boot Starter Parent](http://www.springboottutorial.com/spring-boot-starter-parent){:target="_blank"}, [Spring Boot Initializr](http://www.springboottutorial.com/spring-initialzr-bootstrap-spring-boot-applications){:target="_blank"}

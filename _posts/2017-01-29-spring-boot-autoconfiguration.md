@@ -2,7 +2,7 @@
 layout:     post
 title:      What is Spring Boot Auto Configuration?
 date:       2017-01-28 12:31:19
-summary:    Auto Configuration is the most important feature in Spring Boot. We will learn important concepts about Auto Configuration with a couple of examples. 
+summary:    Auto Configuration is the most important feature in Spring Boot. In this tutorial, we will learn important concepts about Auto Configuration with a couple of examples. 
 categories: [Spring Boot, Spring Boot Basics]
 permalink:  /spring-boot-auto-configuration
 ---
@@ -294,6 +294,8 @@ HAL Browser auto configuration [http://localhost:8080/actuator/#http://localhost
 ![Image](/images/spring-boot-auto-configuration-actuator-negative-matches.png "Negative Matches Spring Boot Auto Configuration")
 
 ![Image](/images/spring-boot-auto-configuration-actuator-positive-matches.png "Positive Matches Spring Boot Auto Configuration")
+
+> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
 ## Next Steps
 - Learn Basics of Spring Boot - [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}, [Auto Configuration](http://www.springboottutorial.com/spring-boot-auto-configuration){:target="_blank"}, [Spring Boot Starter Projects](http://www.springboottutorial.com/spring-boot-starter-projects){:target="_blank"}, [Spring Boot Starter Parent](http://www.springboottutorial.com/spring-boot-starter-parent){:target="_blank"}, [Spring Boot Initializr](http://www.springboottutorial.com/spring-initialzr-bootstrap-spring-boot-applications){:target="_blank"}

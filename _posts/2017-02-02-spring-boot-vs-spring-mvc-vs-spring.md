@@ -2,7 +2,7 @@
 layout:     post
 title:      Spring Boot vs Spring MVC vs Spring - How do they compare?
 date:       2017-02-01 12:31:19
-summary:    How does Spring Boot compare with Spring MVC and Spring? 
+summary:    How does Spring Boot compare with Spring MVC and Spring? What is Spring Boot? What is Spring MVC? What is Spring Framework? What are their goals? How do they compare?
 categories: [Spring Boot, Spring Boot Web Application]
 permalink:  /spring-boot-vs-spring-mvc-vs-spring
 ---
@@ -316,6 +316,8 @@ Spring Boot aims to enable production ready applications in quick time.
 - Actuator : Enables Advanced Monitoring and Tracing of applications.
 - Embedded Server Integrations - Since server is integrated into the application, I would NOT need to have a separate application server installed on the server.
 - Default Error Handling
+
+> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
 ## Next Steps
 - Learn Basics of Spring Boot - [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}, [Auto Configuration](http://www.springboottutorial.com/spring-boot-auto-configuration){:target="_blank"}, [Spring Boot Starter Projects](http://www.springboottutorial.com/spring-boot-starter-projects){:target="_blank"}, [Spring Boot Starter Parent](http://www.springboottutorial.com/spring-boot-starter-parent){:target="_blank"}, [Spring Boot Initializr](http://www.springboottutorial.com/spring-initialzr-bootstrap-spring-boot-applications){:target="_blank"}

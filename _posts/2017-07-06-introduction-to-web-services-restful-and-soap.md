@@ -2,7 +2,7 @@
 layout:     post
 title:      Introduction to Web Services - Restful and SOAP
 date:       2017-07-06 12:31:19
-summary:    Introduction to Web Services - Restful and SOAP
+summary:    Introduction to Web Services - Restful and SOAP, This tutorial will help you understand the basics of web services and the different kinds of web services - REST and SOAP.
 categories: Web services, SOAP, REST
 permalink:  /introduction-to-web-services-with-soap-and-rest
 ---
@@ -322,6 +322,8 @@ Webservices form the building blocks of SOA and microservices architectures.
   </wsdl:service>
 </wsdl:definitions>
 ```
+
+> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
 ## Next Steps
 - Learn Basics of Spring Boot - [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}, [Auto Configuration](http://www.springboottutorial.com/spring-boot-auto-configuration){:target="_blank"}, [Spring Boot Starter Projects](http://www.springboottutorial.com/spring-boot-starter-projects){:target="_blank"}, [Spring Boot Starter Parent](http://www.springboottutorial.com/spring-boot-starter-parent){:target="_blank"}, [Spring Boot Initializr](http://www.springboottutorial.com/spring-initialzr-bootstrap-spring-boot-applications){:target="_blank"}

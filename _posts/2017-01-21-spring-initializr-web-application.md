@@ -4,7 +4,7 @@ title:      Spring Initializr - Bootstrap Your Spring Boot Applications at F1 sp
 date:       2017-01-21 12:31:19
 summary:    Learn what is Spring Initializr and understand how to Bootstrap a Spring Boot Web Application quickly.
 categories: [Spring Initializr, Bootstrap Web Application]
-permalink : spring-initialzr-bootstrap-spring-boot-applications
+permalink : /spring-initialzr-bootstrap-spring-boot-applications
 ---
 
 Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
@@ -250,6 +250,8 @@ Following log is generate when you run StudentServicesApplication.java as a Java
 2017-01-28 17:37:36.111  INFO 4311 --- [  restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
 2017-01-28 17:37:36.119  INFO 4311 --- [  restartedMain] c.i.s.StudentServicesApplication         : Started StudentServicesApplication in 8.193 seconds (JVM running for 10.023)
 ```
+
+> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
 ## Next Steps
 - Learn Basics of Spring Boot - [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}, [Auto Configuration](http://www.springboottutorial.com/spring-boot-auto-configuration){:target="_blank"}, [Spring Boot Starter Projects](http://www.springboottutorial.com/spring-boot-starter-projects){:target="_blank"}, [Spring Boot Starter Parent](http://www.springboottutorial.com/spring-boot-starter-parent){:target="_blank"}

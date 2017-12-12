@@ -2,7 +2,7 @@
 layout:     post
 title:   Introduction to Spring Data Rest - Create RESTful APIs at F1 Speed
 date:       2017-12-06 12:31:19
-summary: Learn to create RESTful Services with Spring Data Rest and Spring Boot. We will create a JPA Project connecting to H2 (in memory database) and add Spring Dat a JPA Rest Starter to expose API.
+summary: Learn to create RESTful Services with Spring Data Rest and Spring Boot. We will create a JPA Project connecting to H2 (in memory database) and add Spring Data JPA Rest Starter to expose API.
 categories: Spring Boot, Hibernate, JPA, Database, Spring Boot Data REST Starter
 permalink:  /introduction-to-spring-data-rest-using-spring-boot
 ---
@@ -70,7 +70,9 @@ An example is shown below
 ```java
 interface TodoRepository extends CrudRepository<Todo, Long> {
 ```
-You can define a simple repository and use it to insert, update, delete and retrieve todo entities from the database - without writing a lot of code.
+
+Core idea is that
+> You can define a simple repository and use it to insert, update, delete and retrieve todo entities from the database - without writing a lot of code.
 
 
 ### Spring Data REST
@@ -85,9 +87,10 @@ public interface TodoRepository
 		extends PagingAndSortingRepository<Todo, Long> {
 
 ```
-Without writing a lot of code, we can expose RESTful API around Spring Data Repositories.
 
-A few example REST Services are shown below:
+> Without writing a lot of code, we can expose RESTful API around Spring Data Repositories.
+
+A few example REST Services that are automatically exposed are shown below:
 
 #### POST 
 - URL : http://localhost:8080/todos
@@ -177,11 +180,11 @@ As shown in the image above, following steps have to be done
     - JPA
     - H2
     - DevTools
-    - Data Rest
+    - Rest Repositories
 - Click Generate Project.
 - Import the project into Eclipse. File -> Import -> Existing Maven Project.
 
-> Do not forget to add the dependency on Data Rest i.e. Spring Boot Data Rest Starter.
+> Do not forget to add the dependency on "Rest Repositories" i.e. Spring Boot Data Rest Starter.
 
 ## Starter Projects in pom.xml
 
@@ -639,6 +642,8 @@ Some of the other features of spring data rest include
 - CORS Configurability
 
 > Refer to official documentation of Spring Data Rest for more details - https://docs.spring.io/spring-data/rest/docs/3.0.2.RELEASE/reference/html/
+
+> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
 ## Next Steps
 - Learn Basics of Spring Boot - [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}, [Auto Configuration](http://www.springboottutorial.com/spring-boot-auto-configuration){:target="_blank"}, [Spring Boot Starter Projects](http://www.springboottutorial.com/spring-boot-starter-projects){:target="_blank"}, [Spring Boot Starter Parent](http://www.springboottutorial.com/spring-boot-starter-parent){:target="_blank"}, [Spring Boot Initializr](http://www.springboottutorial.com/spring-initialzr-bootstrap-spring-boot-applications){:target="_blank"}

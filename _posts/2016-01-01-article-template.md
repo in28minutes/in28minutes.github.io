@@ -38,9 +38,8 @@ Following screenshot shows the structure of the project we will create.
 ![Image](/images/TODO.png "TODO-DESC") 
 
 A few details:
-
-- 
-- `pom.xml` - Contains all the dependencies needed to build this project. We will use Spring Boot Starter Web.
+- SpringBootTutorialBasicsApplication.java - The Spring Boot Application class generated with Spring Initializer. This class acts as the launching point for application.
+- `pom.xml` - Contains all the dependencies needed to build this project. We will use Spring Boot Starter AOP.
 
 
 ## Tools you will need
@@ -49,7 +48,7 @@ A few details:
 - JDK 1.8+
 
 ## Complete Maven Project With Code Examples
-> Our Github repository has all the code examples - TODO_URL
+> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/TODO_URL
 
 ## Article Begins
 Some theory
@@ -95,6 +94,8 @@ Example Request is shown below.
 Below picture shows how we can execute this Post Service from Postman - my favorite tool to run rest services. Make sure you go to the Body tab and select raw. Select JSON from the dropdown. Copy above request into body.
 
 ![Image](/images/ExecutingPostRestServiceUsingPostman.png "Executing Post Rest Service From Postman")   
+
+> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
 ## Next Steps
 - Learn Basics of Spring Boot - [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}, [Auto Configuration](http://www.springboottutorial.com/spring-boot-auto-configuration){:target="_blank"}, [Spring Boot Starter Projects](http://www.springboottutorial.com/spring-boot-starter-projects){:target="_blank"}, [Spring Boot Starter Parent](http://www.springboottutorial.com/spring-boot-starter-parent){:target="_blank"}, [Spring Boot Initializr](http://www.springboottutorial.com/spring-initialzr-bootstrap-spring-boot-applications){:target="_blank"}

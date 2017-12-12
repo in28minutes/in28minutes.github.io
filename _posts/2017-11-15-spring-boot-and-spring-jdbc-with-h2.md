@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:   Spring Boot and Spring JDBC with H2 - Using Spring Boot Starter JDBC
+title:   Integrating Spring Boot and Spring JDBC with H2 and Starter JDBC
 date:       2017-11-15 12:31:19
-summary:    Learn using Spring Boot Starter JDBC to connect Spring Boot to H2 (in memory database) using Spring JDBC
+summary:    Learn using Spring Boot Starter JDBC to connect Spring Boot to H2 (in memory database) using Spring JDBC. You will create a simple project with Spring Boot. You will add code to the project to connect to a database using Spring JDBC. You will learn to implement the basic CRUD methods.
 categories: Spring Boot, Spring JDBC, Database, Spring Boot Starter
 permalink:  /spring-boot-and-spring-jdbc-with-h2
 ---
@@ -403,6 +403,8 @@ Update 10001 -> 1
 All users 2 -> [Student [id=10001, name=Name-Updated, passportNumber=New-Passport], Student [id=10010, name=John, passportNumber=A1234657]]
 ```
 > Awesome ! You've implemented all the CRUD methods using Spring JDBC and Spring Boot.
+
+> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
 ## Next Steps
 - Learn Basics of Spring Boot - [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}, [Auto Configuration](http://www.springboottutorial.com/spring-boot-auto-configuration){:target="_blank"}, [Spring Boot Starter Projects](http://www.springboottutorial.com/spring-boot-starter-projects){:target="_blank"}, [Spring Boot Starter Parent](http://www.springboottutorial.com/spring-boot-starter-parent){:target="_blank"}, [Spring Boot Initializr](http://www.springboottutorial.com/spring-initialzr-bootstrap-spring-boot-applications){:target="_blank"}
