@@ -15,7 +15,7 @@ This guide will help you understand the different resources (tutorials, videos a
 - [Spring Framework Interview Guide - 200+ Questions & Answers](https://www.udemy.com/spring-interview-questions-and-answers/?couponCode=SPRINGBOOTTUTRLCOM){:target="_blank"}
 - [Spring Boot in 100 Steps - Beginner to Expert](https://www.udemy.com/spring-boot-tutorial-for-beginners/?couponCode=SPRINGBOOTTUTRLCOM){:target="_blank"}
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}

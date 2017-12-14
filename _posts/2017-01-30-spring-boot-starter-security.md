@@ -20,7 +20,7 @@ This guide will help you understand the different features Spring Boot Starter S
 - How do you invoke a REST Service using Basic Authentication?
 - We will look at an example of security a simple web application as well as security a REST service with Basic Authentication.
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}

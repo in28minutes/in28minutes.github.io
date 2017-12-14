@@ -14,7 +14,7 @@ Setting up a basic project with Spring Boot is a cake walk. In this article, we 
 - How to use Spring Starter Eclipse Plugin to create a simple project with Spring Boot, Maven and Eclipse? 
 - How to create a Spring Boot Project manually step by step?
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}

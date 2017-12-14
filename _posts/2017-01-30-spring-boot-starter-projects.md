@@ -15,7 +15,7 @@ This guide will help you understand how Spring Boot Starter Projects enable the 
 - We will look at Spring Boot Starter Web
 - Get an overview of different starter projects provided by Spring Boot.
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}

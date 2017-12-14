@@ -16,7 +16,7 @@ This guide will help you write great integration tests for your Spring Boot Rest
 - How to create a Post REST Service for registering a course for student?
 - How to write a integration test for the POST Service?
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}

@@ -16,7 +16,7 @@ This guide will help you create great unit tests with JUnit and Mockito for your
 - How to write unit tests with Mockito using @Mock and @InjectMocks without launching up a Spring Context?
 - How to write a unit test with mocking and launching up the complete Spring Context using @MockBean?
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}

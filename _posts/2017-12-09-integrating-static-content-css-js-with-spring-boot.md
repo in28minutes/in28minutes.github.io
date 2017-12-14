@@ -15,7 +15,7 @@ This guide will help you create a simple web application with Spring Boot. We wi
 - How to add a JSP for web application?
 - How to add static content - JS and CSS?
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}

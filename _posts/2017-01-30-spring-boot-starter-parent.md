@@ -14,7 +14,7 @@ This guide will help you understand how Spring Boot Starter Parent helps with ma
 - What are the important features of Spring Boot Starter Parent?
 - When do you use Spring Boot Starter Parent?
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}

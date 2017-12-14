@@ -16,7 +16,7 @@ This guide will help you expose RESTful API using a combination of Spring Boot, 
 - How to create a simple JPA Entity with a primary key?
 - How to write a simple repository interface extending JpaRepository interface?
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}

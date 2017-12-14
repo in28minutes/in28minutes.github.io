@@ -17,7 +17,7 @@ This guide will help you understand what JPA is and setup a simple JPA example u
 - What is Spring Data JPA?
 - How to create a simple JPA project using Spring Boot Data JPA Starter?
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}

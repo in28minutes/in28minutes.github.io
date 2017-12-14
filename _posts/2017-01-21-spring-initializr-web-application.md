@@ -29,7 +29,7 @@ Spring Boot provides a wide range of starter projects. Spring Initializr supppor
 
 In this guide, lets consider creating a simple web application with Spring Initializr.
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}

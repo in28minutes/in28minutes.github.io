@@ -15,7 +15,7 @@ This guide will help you understand the basics of Spring Data. We will look at t
 - What are the different interfaces provided by Spring Data?
 - How to get started with Spring Data?
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}

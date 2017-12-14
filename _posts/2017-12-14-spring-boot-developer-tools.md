@@ -14,7 +14,7 @@ When we develop web applications with Java, we had to restart the server to pick
 - What kind of changes does Spring Boot Developer Tools pick up automatically?
 - How can you use Live Reload to be more productive?
 
-## Free 10 Step Courses
+## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
 - [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}
