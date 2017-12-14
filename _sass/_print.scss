@@ -1,0 +1,53 @@
+@media print {
+  body {
+    p {
+      font-family: $font-family;
+    }
+    header nav.site-nav, footer, post-footer, #disqus_thread, .ml2, .related-post-title, .share-page, .post-meta, {
+      display: none !important;
+    }
+    header {
+      h1 {
+         font-size: 24px;
+         line-height: 1em !important;
+      }
+    }
+    div.measure {
+      max-width: 80%;
+    }
+    h1 {
+      line-height: 1em !important;
+    }
+    h2, h3, h4, h5, h6 {
+      line-height: 1em !important;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    span.label {
+      display: none !important;
+    }
+    .unpublished {
+      display: none !important;
+    }
+    .subnav {
+      display: none !important;
+    }
+    blockquote {
+      padding: 0 0 0 15px;
+      p {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+    ul {
+      margin: 0 0 7px 25px;
+      li {
+        line-height: 18px;
+      }
+    }
+    .page-break-before {
+      page-break-before: always !important;
+    }
+  }
+}
