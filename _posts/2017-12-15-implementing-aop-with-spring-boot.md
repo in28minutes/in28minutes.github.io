@@ -1,0 +1,742 @@
+---
+layout:     post
+title:      Implementing AOP with Spring Boot and AspectJ
+date:       2017-12-15 12:31:19
+summary:    Learn how to implement AOP with Spring Boot Starter AOP and AspectJ. You will understand cross cutting concerns and the basics of AOP - Aspect, Pointcut, JoinPoint, Advice and more.
+categories: Spring Boot, REST Service
+permalink:  /spring-boot-and-aop-with-spring-boot-starter-aop
+---
+
+This guide will help you implement AOP with Spring Boot Starter AOP. We will implement 4 different advices using AspectJ and also create a custom annotation to track execution time of a method.
+ 
+## You will learn
+- What are cross cutting concerns?
+- How do you implement cross cutting concerns in an application?
+	- If you would want to log every request to a web application, what are the options you can think of?
+	- If you would want to track performance of every request, what options can you think of?
+- What is an Aspect and Pointcut in AOP?
+- What are the different types of AOP advices?
+- How do you implement AOP with Spring Boot?
+- How to use Spring AOP and AspectJ to implement your aspects?
+- What are the AOP Best Practices?
+
+## 10 Step Reference Courses
+
+- [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
+- [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}
+- [Spring MVC in 10 Steps](https://www.youtube.com/watch?v=BjNhGaZDr0Y){:target="_blank"}
+- [JPA and Hibernate in 10 Steps](https://courses.in28minutes.com/p/jpa-and-hibernate-tutorial-for-beginners-with-spring-boot){:target="_blank"}
+- [Eclipse Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/eclipse-tutorial-for-beginners){:target="_blank"}
+- [Maven Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/maven-tutorial-for-beginners-in-5-steps){:target="_blank"}
+- [JUnit Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/junit-tutorial-for-beginners){:target="_blank"}
+- [Mockito Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/mockito-for-beginner-in-5-steps){:target="_blank"}
+- [Complete in28Minutes Course Guide](https://courses.in28minutes.com/p/in28minutes-course-guide){:target="_blank"}
+
+
+## Project Code Structure
+
+Following screenshot shows the structure of the project we will create.
+![Image](/images/SpringBootAOPProjectStructure.png "Spring Boot AOP Project Structure") 
+
+A few details:
+
+- SpringBootTutorialBasicsApplication.java - The Spring Boot Application class generated with Spring Initializer. This class acts as the launching point for application.
+- `pom.xml` - Contains all the dependencies needed to build this project. We will use Spring Boot Starter AOP.
+- `Business1.java`, `Business2.java`, `Dao1.java`, `Dao2.java` - Business classes are dependent on Dao classes. We would write aspects to intercept calls to these business and dao classes.
+- `AfterAopAspect.java` - Implements a few After advices.
+- `UserAccessAspect.java` - Implements a before advice to do an access check.
+- BusinessAopSpringBootTest.java - The unit test which invokes the business methods.
+
+## Tools you will need
+- Maven 3.0+ is your build tool
+- Your favorite IDE. We use Eclipse.
+- JDK 1.8+
+
+## Complete Maven Project With Code Examples
+> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-tutorial-basics
+
+
+## Introduction to AOP
+
+Applications are generally developed with multiple layers. A typical Java application has 
+- Web Layer - Exposing the services to outside world using REST or a web application
+- Business Layer - Business Logic
+- Data Layer - Persistence Logic 
+
+While the responsibilities of each of these layers are different, there are a few common aspects that apply to all layers
+- Logging
+- Security
+
+These common aspects are called Cross Cutting Concerns.
+
+One option of implementing cross cutting concerns is to implement it seperately in every layer. However, that would mean that the code becomes difficult to maintain.
+
+Aspect Oriented Programming provides a solution to implement Cross Cutting Concerns. 
+- Implement the cross cutting concern as an aspect.
+- Define point cuts to indicate where the aspect has to be applied.
+
+This ensures that the cross cutting concerns are defined in one cohesive code component and can be applied as needed.
+
+## Setting up Spring Boot AOP Project
+
+Creating a Spring AOP Project with Spring Initializr is a cake walk. 
+
+> Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
+
+Notes
+- Launch Spring Initializr and choose the following
+  - Choose `com.in28minutes.springboot.tutorial.basics.example` as Group
+  - Choose `spring-boot-tutorial-basics` as Artifact
+  - Choose the following Dependencies
+    - AOP
+- Click Generate Project.
+- Import the project into Eclipse.
+
+## Spring Boot AOP Starter
+
+> Starter for aspect-oriented programming with Spring AOP and AspectJ
+
+Key dependencies in the Spring Boot AOP Starter are listed below 
+- Spring AOP provides basic AOP Capabilities.
+- AspectJ provides a complete AOP framework.
+
+```
+<dependency>
+  <groupId>org.springframework</groupId>
+  <artifactId>spring-aop</artifactId>
+  <version>5.0.1.RELEASE</version>
+  <scope>compile</scope>
+</dependency>
+<dependency>
+  <groupId>org.aspectj</groupId>
+  <artifactId>aspectjweaver</artifactId>
+  <version>1.8.12</version>
+  <scope>compile</scope>
+</dependency>
+
+```
+
+## Setting up AOP Example
+
+Let's add a couple of business classes Business1 and Business2. These business classes are dependent on a couple of data classes Data1 and Data2.
+
+```java
+@Service
+public class Business1 {
+	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@Autowired
+	private Dao1 dao1;
+	
+	public String calculateSomething(){
+		String value = dao1.retrieveSomething();
+		logger.info("In Business - {}", value);
+		return value;
+	}
+}
+```
+
+```java
+@Service
+public class Business2 {
+	
+	@Autowired
+	private Dao2 dao2;
+	
+	public String calculateSomething(){
+		//Business Logic
+		return dao2.retrieveSomething();
+	}
+}
+```
+
+```java
+@Repository
+public class Dao1 {
+
+	public String retrieveSomething(){
+		return "Dao1";
+	}
+
+}
+```
+
+```java
+@Repository
+public class Dao2 {
+
+	public String retrieveSomething(){
+		return "Dao2";
+	}
+
+}
+```
+
+Notes
+- `@Autowired private Dao1 dao1` - The Dao's are autowired as dependencies into the Business classes.
+- `public String calculateSomething(){` - Each of the business classes have a simple calculate method.
+
+#### Simple Unit Test to Test AOP
+
+Let's write a simple unit test to invoke the business classes created below.
+
+```
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class BusinessAopSpringBootTest {
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@Autowired
+	private Business1 business1;
+
+	@Autowired
+	private Business2 business2;
+
+	@Test
+	public void invokeAOPStuff() {
+		logger.info(business1.calculateSomething());
+		logger.info(business2.calculateSomething());
+	}
+}
+```
+
+Notes
+- `@RunWith(SpringRunner.class) @SpringBootTest public class BusinessAopSpringBootTest` - We are launching up the complete Spring Boot Application in the Unit Test.
+- `@Autowired private Business1 business1` and `@Autowiredprivate Business2 business2` - Autowire the business classes into the test from the launched up Spring Context
+- `@Test public void invokeAOPStuff() {` - Invoke the methods on the business services.
+
+At this point, we have no AOP logic implemented. So, the output would be the simple messages from the Dao and Business classes.
+
+```
+c.i.s.t.b.e.a.BusinessAopSpringBootTest  : In Business - Dao1
+c.i.s.t.b.e.a.BusinessAopSpringBootTest  : Dao1
+```
+
+## Implementing @Before advice
+
+Typically when we implement security using AOP, we would want to intercept the call to the method and apply your check. This is typically done using @Before advice.
+
+An implementation is shown below.
+
+
+```java
+
+@Aspect
+@Configuration
+public class UserAccessAspect {
+	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	//What kind of method calls I would intercept
+	//execution(* PACKAGE.*.*(..))
+	//Weaving & Weaver
+	@Before("execution(* com.in28minutes.springboot.tutorial.basics.example.aop.data.*.*(..))")
+	public void before(JoinPoint joinPoint){
+		//Advice
+		logger.info(" Check for user access ");
+		logger.info(" Allowed execution for {}", joinPoint);
+	}
+}
+```
+
+Notes
+- `@Aspect` - Indicates that this is an Aspect
+- `@Configuration` - Indicates that this file contains Spring Bean Configuration for an Aspect.
+- `@Before` - We would want to execute the Aspect before execution of the method
+- `("execution(* com.in28minutes.springboot.tutorial.basics.example.aop.data.*.*(..))")` - This defines the point cut - We would want to intercept all method calls made to any methods in the package `com.in28minutes.springboot.tutorial.basics.example.aop.data`
+
+
+When you run the unit test, you will see that before executing the DAO method the user access check code is executed.
+```
+Check for user access 
+Allowed execution for execution(String com.in28minutes.springboot.tutorial.basics.example.aop.data.Dao1.retrieveSomething())
+c.i.s.t.b.e.a.BusinessAopSpringBootTest  : In Business - Dao1
+c.i.s.t.b.e.a.BusinessAopSpringBootTest  : Dao1
+
+Check for user access 
+Allowed execution for execution(String com.in28minutes.springboot.tutorial.basics.example.aop.data.Dao2.retrieveSomething())
+c.i.s.t.b.e.a.BusinessAopSpringBootTest  : Dao2
+```
+
+#### Understanding AOP Terminology - Pointcut, Advice, Aspect, Join Point
+
+Let's spend some time understanding the AOP Terminology
+- Pointcut - Pointcut is the expression used to define when a call to a method should be intercepted. In the above example, `execution(* com.in28minutes.springboot.tutorial.basics.example.aop.data.*.*(..))` is the pointcut.
+- Advice - What do you want to do? It is the logic that you would want to invoke when you intercept a method. In the above example, it is the code inside the `before(JoinPoint joinPoint)` method.
+- Aspect - A combination of defining when you want to intercept a method call (Pointcut) and what to do (Advice) is called an Aspect.
+- Join Point - When the code is executed and the condition for pointcut is met, the advice is executed. The Join Point is a specific execution instance of an advice.
+- Weaver - Weaver is the framework which implements AOP - AspectJ or Spring AOP.
+
+####Using @After, @AfterReturning, @AfterThrowing advices
+
+Let's now the other interception options AOP provides.
+- `@After` - Executed in two situations - when a method executes successfully or it throws an exception.
+- `@AfterReturning` - Executed only when a method executes successfully.
+- `@AfterThrowing` - Executed only when a method throws an exception.
+
+Let's create a simple Aspect with a couple of these variations.
+
+```
+@Aspect
+@Configuration
+public class AfterAopAspect {
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@AfterReturning(value = "execution(* com.in28minutes.springboot.tutorial.basics.example.aop.business.*.*(..))", 
+			returning = "result")
+	public void afterReturning(JoinPoint joinPoint, Object result) {
+		logger.info("{} returned with value {}", joinPoint, result);
+	}
+	
+	@After(value = "execution(* com.in28minutes.springboot.tutorial.basics.example.aop.business.*.*(..))")
+	public void after(JoinPoint joinPoint) {
+		logger.info("after execution of {}", joinPoint);
+	}
+}
+```
+
+The code is self explanatory. 
+
+Output from execution is shown below:
+```
+Check for user access 
+Allowed execution for execution(String com.in28minutes.springboot.tutorial.basics.example.aop.data.Dao1.retrieveSomething())
+In Business - Dao1
+after execution of execution(String com.in28minutes.springboot.tutorial.basics.example.aop.business.Business1.calculateSomething())
+execution(String com.in28minutes.springboot.tutorial.basics.example.aop.business.Business1.calculateSomething()) returned with value Dao1
+c.i.s.t.b.e.a.BusinessAopSpringBootTest  : Dao1
+Check for user access 
+Allowed execution for execution(String com.in28minutes.springboot.tutorial.basics.example.aop.data.Dao2.retrieveSomething())
+after execution of execution(String com.in28minutes.springboot.tutorial.basics.example.aop.business.Business2.calculateSomething())
+execution(String com.in28minutes.springboot.tutorial.basics.example.aop.business.Business2.calculateSomething()) returned with value Dao2
+c.i.s.t.b.e.a.BusinessAopSpringBootTest  : Dao2
+
+```
+
+As you can see, just before returning the values to the calling business methods, the after advices are executed.
+
+## Other AOP Features - @Around and Annotations
+
+One of the other features you can implement using AOP are custom annotations for intercepting method calls.
+
+Example below shows a simple `TrackTime` annotation.
+```java
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface TrackTime {
+```
+
+We can add an aspect defining what should be done when `TrackTime` annotation is used. MethodExecutionCalculationAspect implements a simple time tracking.
+```java
+@Aspect
+@Configuration
+public class MethodExecutionCalculationAspect {
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@Around("@annotation(com.in28minutes.springboot.tutorial.basics.example.aop.TrackTime)")
+	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
+		long startTime = System.currentTimeMillis();
+
+		joinPoint.proceed();
+
+		long timeTaken = System.currentTimeMillis() - startTime;
+		logger.info("Time Taken by {} is {}", joinPoint, timeTaken);
+	}
+}
+```
+Notes
+- `@Around` - Uses an around advice. Intercepts the method call and uses `joinPoint.proceed()` to execute the method.
+- `@annotation(com.in28minutes.springboot.tutorial.basics.example.aop.TrackTime)
+` - Pointcut to define interception based on an annotation - @annotation followed by the complete type name of the annotation.
+
+Once we define the annotation and the advice, we can use the annotation on methods which we would want to track as shown below.
+
+```
+@Service
+public class Business1 {
+		
+	@TrackTime
+	public String calculateSomething(){
+```
+
+## AOP Best Practices
+
+One of the AOP Best Practices is to deine a Common Class to store all the Pointcuts. This helps in maintaining the pointcuts at one place.
+
+```java
+public class CommonJoinPointConfig {
+	
+	@Pointcut("execution(* com.in28minutes.spring.aop.springaop.data.*.*(..))")
+	public void dataLayerExecution(){}
+	
+	@Pointcut("execution(* com.in28minutes.spring.aop.springaop.business.*.*(..))")
+	public void businessLayerExecution(){}
+
+}
+```
+The above common definition can be used when defining point cuts in other aspects.
+
+```java
+@Around("com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
+```
+
+> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
+
+## Next Steps
+- Learn Basics of Spring Boot - [Spring Boot vs Spring vs Spring MVC](http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring){:target="_blank"}, [Auto Configuration](http://www.springboottutorial.com/spring-boot-auto-configuration){:target="_blank"}, [Spring Boot Starter Projects](http://www.springboottutorial.com/spring-boot-starter-projects){:target="_blank"}, [Spring Boot Starter Parent](http://www.springboottutorial.com/spring-boot-starter-parent){:target="_blank"}, [Spring Boot Initializr](http://www.springboottutorial.com/spring-initialzr-bootstrap-spring-boot-applications){:target="_blank"}
+- [Learn RESTful and SOAP Web Services with Spring Boot](https://www.udemy.com/spring-web-services-tutorial/?couponCode=SPRINGBOOTTUTRLCOM){:target="_blank"}
+- [Learn Microservices with Spring Boot and Spring Cloud](https://www.udemy.com/microservices-with-spring-boot-and-spring-cloud/?couponCode=SPRINGBOOTTUTRLCOM){:target="_blank"}
+- [Watch Spring Framework Interview Guide - 200+ Questions & Answers](https://www.udemy.com/spring-interview-questions-and-answers/?couponCode=SPRINGBOOTTUTRLCOM){:target="_blank"}
+
+[![Image](/images/SpringBootTutorialForBeginnersPlaylist.png "Spring Boot Tutorial For Beginners - 25 Videos")](https://www.youtube.com/playlist?list=PLBBog2r6uMCRzaJqr-uUC8gakwSxkPSBh){:target="_blank"}
+
+<!---
+-->
+
+## Complete Code Example
+
+
+### /pom.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.in28minutes.springboot.tutorial.basics.example</groupId>
+	<artifactId>spring-boot-tutorial-basics</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>spring-boot-tutorial-basics</name>
+	<description>Spring Boot Tutorial - Basic Concept Examples</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.0.M6</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+</project>
+```
+---
+
+### /src/main/java/com/in28minutes/springboot/tutorial/basics/example/aop/AfterAopAspect.java
+
+```java
+package com.in28minutes.springboot.tutorial.basics.example.aop;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Aspect;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Configuration;
+
+//AOP
+//Configuration
+@Aspect
+@Configuration
+public class AfterAopAspect {
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@AfterReturning(value = "execution(* com.in28minutes.springboot.tutorial.basics.example.aop.business.*.*(..))", 
+			returning = "result")
+	public void afterReturning(JoinPoint joinPoint, Object result) {
+		logger.info("{} returned with value {}", joinPoint, result);
+	}
+	
+	@After(value = "execution(* com.in28minutes.springboot.tutorial.basics.example.aop.business.*.*(..))")
+	public void after(JoinPoint joinPoint) {
+		logger.info("after execution of {}", joinPoint);
+	}
+}
+```
+---
+
+### /src/main/java/com/in28minutes/springboot/tutorial/basics/example/aop/business/Business1.java
+
+```java
+package com.in28minutes.springboot.tutorial.basics.example.aop.business;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.in28minutes.springboot.tutorial.basics.example.aop.data.Dao1;
+
+@Service
+public class Business1 {
+	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	private Dao1 dao1;
+	
+	public String calculateSomething(){
+		//Business Logic
+		String value = dao1.retrieveSomething();
+		logger.info("In Business - {}", value);
+		return value;
+	}
+}
+```
+---
+
+### /src/main/java/com/in28minutes/springboot/tutorial/basics/example/aop/business/Business2.java
+
+```java
+package com.in28minutes.springboot.tutorial.basics.example.aop.business;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.in28minutes.springboot.tutorial.basics.example.aop.data.Dao2;
+
+@Service
+public class Business2 {
+	
+	@Autowired
+	private Dao2 dao2;
+	
+	public String calculateSomething(){
+		//Business Logic
+		return dao2.retrieveSomething();
+	}
+}
+```
+---
+
+### /src/main/java/com/in28minutes/springboot/tutorial/basics/example/aop/data/Dao1.java
+
+```java
+package com.in28minutes.springboot.tutorial.basics.example.aop.data;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class Dao1 {
+	
+	public String retrieveSomething(){
+		return "Dao1";
+	}
+
+}
+```
+---
+
+### /src/main/java/com/in28minutes/springboot/tutorial/basics/example/aop/data/Dao2.java
+
+```java
+package com.in28minutes.springboot.tutorial.basics.example.aop.data;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class Dao2 {
+
+	public String retrieveSomething(){
+		return "Dao2";
+	}
+
+}
+```
+---
+
+### /src/main/java/com/in28minutes/springboot/tutorial/basics/example/aop/UserAccessAspect.java
+
+```java
+package com.in28minutes.springboot.tutorial.basics.example.aop;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Configuration;
+
+//AOP
+//Configuration
+@Aspect
+@Configuration
+public class UserAccessAspect {
+	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	//What kind of method calls I would intercept
+	//execution(* PACKAGE.*.*(..))
+	//Weaving & Weaver
+	@Before("execution(* com.in28minutes.springboot.tutorial.basics.example.aop.data.*.*(..))")
+	public void before(JoinPoint joinPoint){
+		//Advice
+		logger.info(" Check for user access ");
+		logger.info(" Allowed execution for {}", joinPoint);
+	}
+}
+```
+
+### /src/main/java/com/in28minutes/springboot/tutorial/basics/example/SpringBootTutorialBasicsApplication.java
+
+```java
+package com.in28minutes.springboot.tutorial.basics.example;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootApplication
+public class SpringBootTutorialBasicsApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext applicationContext = SpringApplication.run(SpringBootTutorialBasicsApplication.class, args);
+
+		for (String name : applicationContext.getBeanDefinitionNames()) {
+			System.out.println(name);
+		}
+	}
+}
+```
+---
+
+### /src/test/java/com/in28minutes/springboot/tutorial/basics/example/aop/BusinessAopSpringBootTest.java
+
+```java
+package com.in28minutes.springboot.tutorial.basics.example.aop;
+
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.in28minutes.springboot.tutorial.basics.example.aop.business.Business1;
+import com.in28minutes.springboot.tutorial.basics.example.aop.business.Business2;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class BusinessAopSpringBootTest {
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@Autowired
+	private Business1 business1;
+
+	@Autowired
+	private Business2 business2;
+
+	@Test
+	public void invokeAOPStuff() {
+		logger.info(business1.calculateSomething());
+		logger.info(business2.calculateSomething());
+	}
+}
+```
+---
+
+### /src/test/java/com/in28minutes/springboot/tutorial/basics/example/SpringBootTutorialBasicsApplicationTests.java
+
+```java
+package com.in28minutes.springboot.tutorial.basics.example;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SpringBootTutorialBasicsApplicationTests {
+
+	@Test
+	public void contextLoads() {
+	}
+
+}
+```
+---
