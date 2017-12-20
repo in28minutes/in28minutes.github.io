@@ -39,7 +39,7 @@ Configuration for applications vary from one environment to another
 - You would want to configure less logging in production
 - You might want to have different custom configuration
 
-## Applicaiton Configuration with Spring Boot application.properties
+## Application Configuration with Spring Boot application.properties
 
 Spring Boot allows you to configure your application configuration using a file named `application.properties`
 
