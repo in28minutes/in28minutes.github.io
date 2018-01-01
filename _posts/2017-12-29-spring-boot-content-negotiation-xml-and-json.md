@@ -1,19 +1,20 @@
 ---
 layout:     post
-title:      Spring Boot - HATEOAS for RESTful Services
-date:       2017-12-28 12:31:19
-summary:    HATEOAS stands for "Hypermedia as the engine of application state". Its a complicated acronym. In this article, we decode HATEOAS for you and help you learn how to implement HATEOAS for a REST API/Service with Spring Boot.
+title:      Spring Boot and Content Negotiation - XML and JSON Representations 
+date:       2017-12-29 12:31:19
+summary:    Learn how to implement Content Negotiation for a REST API/Service with Spring Boot. Content Negotiation helps the Consumer and Provider interact about the data exchange format. In this article, we will expose both XML and JSON representations.
 categories: Spring Boot, REST Service, HATEOAS
-permalink:  /spring-boot-hateoas-for-rest-services
+permalink:  /spring-boot-content-negotiation-with-xml-json-representations
 ---
 
-This guide will help you implement HATEOAS for a REST API/Service with Spring Boot.
+This guide will help you implement Content Negotiation for a REST API/Service with Spring Boot. Content Negotiation helps the Consumer and Provider interact about the data exchange format. In this article, we will expose both XML and JSON representations.
  
 ## You will learn
-- What is HATEOAS?
-- Why do you need HATEOAS?
-- How do you implement HATEOAS with Spring Boot?
-- What are the HATEOAS best practices?
+- What is Content Negotiation?
+- Why do you need Content Negotiation?
+- How do you implement Content Negotiation with Spring Boot?
+- How do you use XML representation for request and response with Spring Boot RESTful Services?
+- How do you use JSON representation for request and response with Spring Boot RESTful Services?
 
 ## 10 Step Reference Courses
 
@@ -46,147 +47,199 @@ A few details:
 - JDK 1.8+
 
 ## Complete Maven Project With Code Examples
-> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-hateoas
+> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-content-negotiation
 
-## Richardson Maturity Model 
+## What is Content Negotiation?
 
-Richardson Maturity Model defines the maturity level of a Restful Web Service. Following are the different levels and their characteristics.
-- Level 0 : Expose SOAP web services in REST style. Expose action based services (http://server/getPosts, http://server/deletePosts, http://server/doThis, http://server/doThat etc) using REST.
-- Level 1 : Expose Resources with proper URI’s (using nouns). Ex: http://server/accounts, http://server/accounts/10. However, HTTP Methods are not used.
-- Level 2 : Resources use proper URI's + HTTP Methods. For example, to update an account, you do a PUT to . The create an account, you do a POST to . Uri’s look like posts/1/comments/5 and accounts/1/friends/1.
-- Level 3 : HATEOAS (Hypermedia as the engine of application state). You will tell not only about the information being requested but also about the next possible actions that the service consumer can do. When requesting information about a facebook user, a REST service can return user details along with information about how to get his recent posts, how to get his recent comments and how to retrieve his friend’s list.
+> REST stands for REpresentational State Transfer.
 
-## What is HATEOAS?
+Key abstraction in REST is a Resource. There is no restriction on what can be a resource. A todo is a resource. A person on facebook is a resource. 
 
-> HATEOAS stands for "Hypermedia as the engine of application state"
+A resource can have multiple representations
+- XML
+- HTML
+- JSON
 
-Its a complicated acronym. Let's decode it for you.
+When a resource is requested, we provide the representation of the resource.
 
-What do you see when you visit a web page?
+When a consumer sends a request, it can specify two HTTP Headers related to Content Negotiation
+- Accept and
+- Content-Type
 
-The data that you would want to see. Is that all? You would also see links and buttons to see related data.
+Content-Type indicates the content type of the body of the request.
 
-For example, if you go to a student page, you will see 
-- Student profile
-- Links to Edit and Delete Student details
-- Links to see details of other students
-- Link to see details of the courses and grades of the student
+Accept indicates the expected content type of the response.
 
-HATEOAS brings the same concepts to RESTful Web Services.
+## Example of Content Negotiation
 
-When some details of a resource are requested, you will provide the resource details as well as details of related resources and the possible actions you can perform on the resource. For example, when requesting information about a facebook user, a REST service can return the following
-- User details 
-- Links to get his recent posts
-- Links to get his recent comments 
-- Links to retrieve his friend’s list.
+Following screenshot shows how you can specify these headers in a request using Postman.
+![Image](/images/ContentNegotiationHeaders-AcceptAndContentType.png "Content Negotiation Headers - Accept and Content-Type") 
 
-## Bootstrapping a Project with a REST Resource
+The server is expected to respond based on the Accept header.
 
-In the previous article in the series - http://www.springboottutorial.com/spring-boot-crud-rest-service-with-jpa-hibernate, we set up a simple restful service with a resource exposing CRUD methods. 
-
-> We will use the same example to discuss about HATEOAS.
-
-## Implementing HATEOAS with Spring Boot
-
-Spring Boot provides a Starter for HATEOAS. Include the dependency in your pom.xml
-```
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-hateoas</artifactId>
-    </dependency>
-```
-
-### Components in Spring Boot HATEOAS Starter
-
-Listed below are some of the important dependencies from `spring-boot-starter-hateoas`.
+For example, if a consumer sends a request to `http://localhost:8080/students/10001` with Accept header as 'application/xml', we need to provide the xml representation of the resource.
 
 ```
-  <dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
-    <version>2.0.0.M6</version>
-    <scope>compile</scope>
-  </dependency>
-  <dependency>
-    <groupId>org.springframework.hateoas</groupId>
-    <artifactId>spring-hateoas</artifactId>
-    <version>0.24.0.RELEASE</version>
-    <scope>compile</scope>
-  </dependency>
-  <dependency>
-    <groupId>org.springframework.plugin</groupId>
-    <artifactId>spring-plugin-core</artifactId>
-    <version>1.2.0.RELEASE</version>
-    <scope>compile</scope>
-  </dependency>
-
+<Student>
+    <id>10001</id>
+    <name>Ranga</name>
+    <passportNumber>E1234567</passportNumber>
+</Student>
 ```
 
-Most important dependency is `spring-hateoas`.
-
-### Enhancing the resource to return HATEOAS response
-
-To implement HATEOAS, we would need to include related resources in the response.
-
-Instead of Student we use a return type of `Resource<Student>`. 
-
-> Resource is a simple class wrapping a domain object and allows adding links to it.
-
-```
-@GetMapping("/students/{id}")
-public Resource<Student> retrieveStudent(@PathVariable long id) {
-  Optional<Student> student = studentRepository.findById(id);
-
-  if (!student.isPresent())
-    throw new StudentNotFoundException("id-" + id);
-
-  Resource<Student> resource = new Resource<Student>(student.get());
-
-  ControllerLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllStudents());
-
-  resource.add(linkTo.withRel("all-students"));
-
-  return resource;
-}
-```
-
-We create a new resource.
-```
-  Resource<Student> resource = new Resource<Student>(student.get());
-```
-
-We add the link to retrieve all students method to the links.
-```
-  ControllerLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllStudents());
-
-  resource.add(linkTo.withRel("all-students"));
-```
-
-The response when we execute a GET request to `http://localhost:8080/students/10001` is shown below:
+If a consumer sends a request with Accept header as 'application/json', we need to provide the JSON representation of the resource.
 
 ```
 {
   "id": 10001,
   "name": "Ranga",
-  "passportNumber": "E1234567",
-  "_links": {
-    "all-students": {
-      "href": "http://localhost:8080/students"
-    }
-  }
+  "passportNumber": "E1234567"
 }
 ```
 
-You can see that there is a new section `_links` with a link to all students Resource.
+Similar concept applies to the Response Body Content based on the Content-Type.
 
-### Enhance Other Resources with HATEOAS
+A consumer can send a POST request to `http://localhost:8080/students` with Content-Type header as 'application/xml', and provide the XML representation of the resource to be created.
 
-Above example covers important concepts in enhancing resources with HATEOAS. 
+```
+<Student>
+    <name>Ranga</name>
+    <passportNumber>E1234567</passportNumber>
+</Student>
+```
 
-However, you have to make the important decision: 
-- What are the important resources related to a specific resource?
+A consumer can also send a POST request to `http://localhost:8080/students` with Content-Type header as 'application/json', and provide the JSON representation of the resource to be created.
 
-Go ahead and enhance the application with more HATEOAS links.
+```
+{
+  "name": "Ranga",
+  "passportNumber": "E1234567"
+}
+```
+
+> This dialogue which happens between the Consumer and Service Provider is called Content Negotiation.
+
+## Bootstrapping a Project with a REST Resource
+
+In the previous article in the series - http://www.springboottutorial.com/spring-boot-crud-rest-service-with-jpa-hibernate, we set up a simple restful service with a resource exposing CRUD methods. 
+
+> We will use the same example to discuss about Content Negotiation.
+
+## Implementing Content Negotiation with Spring Boot
+
+Let's execute a few requests to discover that content negotiation is not provided by default by the project we created with Spring Boot Starter Web and move on the adding content negotiation to our application.
+
+### Executing a request with Accept Header 'application/xml'
+
+Send a request to `http://localhost:8080/students/10001` with Accept header as 'application/xml'. 
+
+You are expecting to get an XML representation of the resource.
+
+However you would get a response with status -> 406 Not Acceptable. This indicates that application does not support providing a response with content type 'application/xml'. 
+
+However if you send a request to `http://localhost:8080/students/10001` with Accept header as 'application/json', you would get the response back as expected.
+
+```
+{
+  "id": 10001,
+  "name": "Ranga",
+  "passportNumber": "E1234567"
+}
+```
+
+### Implementing XML Representation for Spring Boot Services
+
+Its simple. All that you would need to do is to add a simple dependency to your pom.xml.
+
+```
+<dependency>
+  <groupId>com.fasterxml.jackson.dataformat</groupId>
+  <artifactId>jackson-dataformat-xml</artifactId>
+</dependency>
+```
+
+Restart your application. 
+
+Send a request to `http://localhost:8080/students/10001` with Accept header as 'application/xml'. 
+
+Response
+```
+<Student>
+    <id>10001</id>
+    <name>Ranga</name>
+    <passportNumber>E1234567</passportNumber>
+</Student>
+```
+
+Cool! Your application now supports both XML and JSON representations of the student resource.
+
+You can use 
+- Content-Type to indicate content type of the body  for POST and PUT requests.
+- Accept indicates the expected content type of the response for GET requests.
+
+### Playing with Content Negotiation
+
+#### GET Request
+
+- URL - http://localhost:8080/students
+- Request Method - GET
+- Request Headers
+  - Accept - application/xml
+
+Response
+```xml
+<List>
+    <item>
+        <id>10001</id>
+        <name>Ranga</name>
+        <passportNumber>E1234567</passportNumber>
+    </item>
+    <item>
+        <id>10002</id>
+        <name>Ravi</name>
+        <passportNumber>A1234568</passportNumber>
+    </item>
+</List>
+```
+
+#### POST Request
+
+- URL - http://localhost:8080/students
+- Request Method - POST
+- Request Headers
+  - Content-Type - application/xml
+  
+Request
+```json
+    <item>
+        <name>Tom</name>
+        <passportNumber>Z1234567</passportNumber>
+    </item>
+```
+
+Response 
+- Status 201 - CREATED
+- Header Location →http://localhost:8080/students/2
+
+#### PUT Request
+
+- URL → http://localhost:8080/students/10002
+- Request 
+    - Method → PUT
+- Request Headers
+  - Content-Type - application/xml
+
+Request
+
+```xml
+<item>
+    <name>Tom</name>
+    <passportNumber>Z1234567</passportNumber>
+</item>
+```
+
+Response with status 204 - No Content
+
 
 > Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
@@ -197,10 +250,6 @@ Go ahead and enhance the application with more HATEOAS links.
 - [Watch Spring Framework Interview Guide - 200+ Questions & Answers](https://www.udemy.com/spring-interview-questions-and-answers/?couponCode=SPRINGBOOTTUTRLCOM){:target="_blank"}
 
 [![Image](/images/SpringBootTutorialForBeginnersPlaylist.png "Spring Boot Tutorial For Beginners - 25 Videos")](https://www.youtube.com/playlist?list=PLBBog2r6uMCRzaJqr-uUC8gakwSxkPSBh){:target="_blank"}
-
-<!---
-Current Directory : /in28Minutes/git/spring-boot-examples/spring-boot-2-rest-service-with-hateoas
--->
 
 ## Complete Code Example
 
@@ -214,7 +263,7 @@ Current Directory : /in28Minutes/git/spring-boot-examples/spring-boot-2-rest-ser
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.in28minutes.springboot.rest.example</groupId>
-  <artifactId>spring-boot-2-rest-service-hateoas</artifactId>
+  <artifactId>spring-boot-2-rest-service-content-negotiation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -225,7 +274,7 @@ Current Directory : /in28Minutes/git/spring-boot-examples/spring-boot-2-rest-ser
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.0.0.M6</version>
-    <relativePath/> <!-- lookup parent from repository -->
+    <relativePath /> <!-- lookup parent from repository -->
   </parent>
 
   <properties>
@@ -247,9 +296,11 @@ Current Directory : /in28Minutes/git/spring-boot-examples/spring-boot-2-rest-ser
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+
+
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-hateoas</artifactId>
+      <groupId>com.fasterxml.jackson.dataformat</groupId>
+      <artifactId>jackson-dataformat-xml</artifactId>
     </dependency>
 
     <dependency>
@@ -424,18 +475,11 @@ public interface StudentRepository extends JpaRepository<Student, Long>{
 ```java
 package com.in28minutes.springboot.rest.example.student;
 
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
-
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.hateoas.Resource;
-import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -458,19 +502,13 @@ public class StudentResource {
   }
 
   @GetMapping("/students/{id}")
-  public Resource<Student> retrieveStudent(@PathVariable long id) {
+  public Student retrieveStudent(@PathVariable long id) {
     Optional<Student> student = studentRepository.findById(id);
 
     if (!student.isPresent())
       throw new StudentNotFoundException("id-" + id);
 
-    Resource<Student> resource = new Resource<Student>(student.get());
-
-    ControllerLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllStudents());
-
-    resource.add(linkTo.withRel("all-students"));
-
-    return resource;
+    return student.get();
   }
 
   @DeleteMapping("/students/{id}")
