@@ -32,10 +32,7 @@ This guide will help you implement effective validations for a REST API/Service 
 
 ## Project Code Structure
 
-Following screenshot shows the structure of the project we will create.
-![Image](/images/SpringBootValidation-ProjectStructure.png "CRUDServiceWithHibernate") 
-
-A few details:
+Following files contain the important components of the project we will create. A few details:
 - `SpringBoot2RestServiceApplication.java` - The Spring Boot Application class generated with Spring Initializer. This class acts as the launching point for application.
 - `pom.xml` - Contains all the dependencies needed to build this project. We will use Spring Boot Starter AOP.
 - `Student.java` - Student JPA Entity

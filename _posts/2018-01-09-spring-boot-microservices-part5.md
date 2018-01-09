@@ -53,7 +53,7 @@ That means every time there is a new instance of FS, we would need to change the
 
 In this part, we will use Eureka Naming Server to fix this problem.
 
-![Image](Spring-Boot-Microservice-6-EurekaNamingServer-Deployment.png "Spring-Boot-Microservice-6-EurekaNamingServer-Deployment")
+![Image](/images/Spring-Boot-Microservice-6-EurekaNamingServer-Deployment.png "Spring-Boot-Microservice-6-EurekaNamingServer-Deployment")
 
 ## Tools you will need
 - Maven 3.0+ is your build tool
