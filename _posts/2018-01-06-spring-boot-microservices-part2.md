@@ -4,7 +4,7 @@ title:      Microservices with Spring Boot - Part 2 - Creating Forex Microservic
 date:       2018-01-06 12:31:19
 summary:    Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. In part 2 of this series, we will focus on Creating Forex Microservice.
 permalink:  /creating-microservices-with-spring-boot-part-2-forex-microservice
-------
+---
 
 Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. 
 

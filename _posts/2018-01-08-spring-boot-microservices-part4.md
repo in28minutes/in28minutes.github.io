@@ -4,7 +4,7 @@ title:      Microservices with Spring Boot - Part 4 - Using Ribbon for Load Bala
 date:       2018-01-08 12:31:19
 summary:    Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. In part 4 of this series, we will focus on using Ribbon to do Load Balancing.
 permalink:  /microservices-with-spring-boot-part-4-ribbon-for-load-balancing
-------
+---
 
 Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. 
 
