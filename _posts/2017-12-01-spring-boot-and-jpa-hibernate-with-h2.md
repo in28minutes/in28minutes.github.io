@@ -155,13 +155,13 @@ Extract below shows some code from pom.xml of spring-boot-starter-jpa.
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-aop</artifactId>
-  <version>2.0.0.M6</version>
+  <version>2.0.0.RELEASE</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-jdbc</artifactId>
-  <version>2.0.0.M6</version>
+  <version>2.0.0.RELEASE</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
@@ -627,7 +627,7 @@ CREATE TABLE employee
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.M6</version>
+		<version>2.0.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 

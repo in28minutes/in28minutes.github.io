@@ -104,7 +104,7 @@ Listed below are some of the important dependencies from `spring-boot-starter-ha
   <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
-    <version>2.0.0.M6</version>
+    <version>2.0.0.RELEASE</version>
     <scope>compile</scope>
   </dependency>
   <dependency>
@@ -224,7 +224,7 @@ Current Directory : /in28Minutes/git/spring-boot-examples/spring-boot-2-rest-ser
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.0.0.M6</version>
+    <version>2.0.0.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 

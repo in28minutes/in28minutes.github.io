@@ -74,7 +74,7 @@ Let's take a quick look at the dependencies for `spring-boot-starter-web`
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-tomcat</artifactId>
-  <version>2.0.0.M6</version>
+  <version>2.0.0.RELEASE</version>
   <scope>compile</scope>
 </dependency>
 ```

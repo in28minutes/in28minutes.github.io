@@ -243,13 +243,13 @@ Extract below shows some code from pom.xml of spring-boot-starter-data-rest.
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-json</artifactId>
-      <version>2.0.0.M6</version>
+      <version>2.0.0.RELEASE</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-      <version>2.0.0.M6</version>
+      <version>2.0.0.RELEASE</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -675,7 +675,7 @@ Some of the other features of spring data rest include
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.M6</version>
+		<version>2.0.0.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 

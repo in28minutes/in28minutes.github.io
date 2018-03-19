@@ -320,7 +320,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	// Authentication : User --> Roles
 	protected void configure(AuthenticationManagerBuilder auth)
 			throws Exception {
-		auth.inMemoryAuthentication().withUser("user1").password("secret1")
+		auth.inMemoryAuthentication().passwordEncoder(org.springframework.security.crypto.password.NoOpPasswordEncoder.getInstance()).withUser("user1").password("secret1")
 				.roles("USER").and().withUser("admin1").password("secret1")
 				.roles("USER", "ADMIN");
 	}
@@ -395,10 +395,10 @@ We need to use admin1/secret1 combination in the popup to launch the web applica
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
@@ -650,7 +650,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	// Authentication : User --> Roles
 	protected void configure(AuthenticationManagerBuilder auth)
 			throws Exception {
-		auth.inMemoryAuthentication().withUser("user1").password("secret1")
+		auth.inMemoryAuthentication().passwordEncoder(org.springframework.security.crypto.password.NoOpPasswordEncoder.getInstance()).withUser("user1").password("secret1")
 				.roles("USER").and().withUser("admin1").password("secret1")
 				.roles("USER", "ADMIN");
 	}
