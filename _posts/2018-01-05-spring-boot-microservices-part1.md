@@ -49,14 +49,6 @@ In part 1 of this series, lets get introduced to the concept of microservices an
 - [Mockito Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/mockito-for-beginner-in-5-steps){:target="_blank"}
 - [Complete in28Minutes Course Guide](https://courses.in28minutes.com/p/in28minutes-course-guide){:target="_blank"}
 
-## Resources Overview
-
-In this guide, we will create a Student Resource exposing three services using proper URIs and HTTP methods:
-- Retrieve all Students - @GetMapping("/students")
-- Get details of specific student - @GetMapping("/students/{id}")
-- Delete a student - @DeleteMapping("/students/{id}")
-- Create a new student - @PostMapping("/students")
-- Update student details - @PutMapping("/students/{id}")
 
 ## Microservices Overview - A Big Picture
 
