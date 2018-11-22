@@ -1,0 +1,14 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    {% for post in site.posts %}
+      <item>
+        <title>{{ post.title | xml_escape }}</title>
+        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+      </item>
+    {% endfor %}
+</items>
