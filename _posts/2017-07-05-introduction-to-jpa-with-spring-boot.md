@@ -377,7 +377,7 @@ Lets look at a few examples to understand how JPA can be used to map objects to 
 
 #### Example 1
 
-Task table below is mapped to Task Table. However, there are mismatches in column names. We use a few JPA annotations to do the mapping
+Task class below is mapped to Task table. However, there are mismatches in column names. We use a few JPA annotations to do the mapping
  - @Table(name = "Task")
  - @Id
  - @GeneratedValue
