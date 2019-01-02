@@ -334,7 +334,7 @@ public class Todo {
 
 ```
 
-### Common features of DBC, Spring JDBC and myBatis
+### Common features of JDBC, Spring JDBC and myBatis
 - JDBC, Spring JDBC and myBatis involve writing queries.
 - In big application, queries can become complex. Especially when we retrieve data from multiple tables.
 - This creates a problem whenever there are changes in the structure of the database.
