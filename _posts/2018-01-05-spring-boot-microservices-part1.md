@@ -120,7 +120,7 @@ What needs to happen in the above situation is load should be uniformly distribu
 ![Image](/images/Spring-Boot-Microservice-5-CCSToFS5instances.png "Spring-Boot-Microservice-5-CCSToFS5instances.png")
 
 In this series of articles, we will use Ribbon for Load Balancing and Eureka Naming server for registering all microservices.
-![Image](Spring-Boot-Microservice-6-EurekaNamingServer-Deployment.png "Spring-Boot-Microservice-6-EurekaNamingServer-Deployment.png")
+![Image](/images/Spring-Boot-Microservice-6-EurekaNamingServer-Deployment.png "Spring-Boot-Microservice-6-EurekaNamingServer-Deployment.png")
 
 > Do not worry if you are not clear about a few things. The idea is to give a big picture before we get our hands dirty and create the microservices step by step
 
