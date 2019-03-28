@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      Spring Boot and React Full Stack CRUD Application with Maven
+title:      Spring Boot and React CRUD Full Stack Application with Maven
 date:       2019-03-27 12:31:19
-summary:    This guide will help you create a full stack application with all the CRUD (Create, Read, Update and Delete) features using React as Frontend framework and  Spring Boot as the backend REST API.
+summary:    This guide will help you create a full stack application with all the CRUD (Create, Read, Update and Delete) features using React as Frontend framework and  Spring Boot as the backend REST API. We will use Maven as the build tool.
 categories: Spring Boot, REST API, Full Stack Application, React, Angular, Frontend, CRUD, Maven
 permalink:  /spring-boot-react-full-stack-crud-maven-application
 ---
@@ -30,11 +30,19 @@ This guide will help you create a full stack application with all the CRUD (Crea
 - [Complete in28Minutes Course Guide](https://courses.in28minutes.com/p/in28minutes-course-guide){:target="_blank"}
 
 
-## Full Stack Application Overview
+## Step 0 : Get an overview of the Full Stack Application
 
-Following screenshot shows the application we would like to build: It is a basic instructor portal allowing instructors to maintain their courses.
+### Understanding Basic Features of the Application
+
+Following screenshot shows the application we would like to build: 
+
+It is a basic instructor portal allowing instructors to maintain their courses.
 
 ![Image](/images/full-stack-application-with-spring-boot-screenshot.png "Spring Boot Full Stack Application") 
+
+![Image](/images/full-stack-application-with-spring-boot-screenshot-2.png "Spring Boot Full Stack Application") 
+
+### Understanding Full Stack Architecture
 
 Following Screenshot shows the architecture of the application we would create:
 
@@ -47,25 +55,25 @@ Important points to note:
 
 You can find more details about Full Stack Architecture here - [Full Stack Application Architecture - Spring Boot and React](https://youtu.be/TTWH_Q7uSlY){:target="_blank"}
 
-## Resources Overview
+### Getting an overview of Spring Boot REST API Resources
 
-In this guide, we will create three services using proper URIs and HTTP methods:
+In this guide, we will create these services using proper URIs and HTTP methods:
 
-- @GetMapping("/instructors/{username}/courses") : Get Request Method exposing the list of courses taught by a specific instructor
-- @GetMapping("/instructors/{username}/courses/{id}") : Get Request Method exposing the details of a specific course taught by a specific instructor
-- @DeleteMapping("/instructors/{username}/courses/{id}") : Delete Request Method to delete a course belonging to a specific instructor
-- @PutMapping("/instructors/{username}/courses/{id}") : Put Request Method to update the course details of a specific course taught by a specific instructor
-- @PostMapping("/instructors/{username}/courses") : Post Request Method to create a new course for a specific instructor
+- ```@GetMapping("/instructors/{username}/courses")``` : Get Request Method exposing the list of courses taught by a specific instructor
+- ```@GetMapping("/instructors/{username}/courses/{id}")``` : Get Request Method exposing the details of a specific course taught by a specific instructor
+- ```@DeleteMapping("/instructors/{username}/courses/{id}")``` : Delete Request Method to delete a course belonging to a specific instructor
+- ```@PutMapping("/instructors/{username}/courses/{id}")``` : Put Request Method to update the course details of a specific course taught by a specific instructor
+- ```@PostMapping("/instructors/{username}/courses")``` : Post Request Method to create a new course for a specific instructor
 
 > The REST API can be enhanced to interact with other microservices infrastructure components and act as microservices.
 
-## Complete Maven Project With Code Examples
+### Downloading the Complete Maven Project With Code Examples
 
 Complete frontend and backend projects are hosted in the following folder in github repository - https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-crud-full-stack-with-maven
 
 > Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-react-examples/
 
-## Spring Boot REST API Project Structure
+### Understanding Spring Boot REST API Project Structure
 
 Following screenshot shows the structure of the Spring Boot project we will create.
 ![Image](/images/project-structure-spring-boot-fullstack-crud-maven.png "Spring Boot Rest Service - Project Structure") 
@@ -78,7 +86,7 @@ A few details:
 - `pom.xml` - Contains all the dependencies needed to build this project. We will use Spring Boot Starter Web and Spring Boot DevTools.
 
 
-## React Frontend Project Structure
+## Understanding React Frontend Project Structure
 
 Following screenshot shows the structure of the React project we will create.
 ![Image](/images/project-structure-react-fullstack-crud-maven.png "React Frontend - Project Structure") 
@@ -92,7 +100,7 @@ A few details:
 - `CourseDataService.js` - Service using axios framework to make the Backend REST API Calls.
 
 
-## Tools you will need
+### Understanding the tools you will need to build this project
 
 - Maven 3.0+ for building Spring Boot API Project
 - npm, webpack for building frontend
@@ -119,7 +127,7 @@ A few details:
   - 3 - Using Embedded Maven in Eclipse
   - 4 - Troubleshooting Java, Eclipse and Maven
 
-## Creating Full Stack CRUD application with React and Spring Boot
+### Creating Full Stack CRUD application with React and Spring Boot - Step By Step Approach
 
 We will use a step by step approach to create the full stack application
 - Create a Spring Boot Application with Spring Boot Initializr
@@ -131,7 +139,7 @@ We will use a step by step approach to create the full stack application
 
 > You can get an introduction to REST down here - http://www.springboottutorial.com/creating-rest-service-with-spring-boot
 
-## Bootstrapping Spring Boot REST API with Spring Initializr
+## Step 1 : Bootstrapping Spring Boot REST API with Spring Initializr
 
 Creating a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.  
 
@@ -148,11 +156,15 @@ As shown in the image above, following steps have to be done
     - Web
     - DevTools
 - Click Generate Project.
-- Import the project into Eclipse. File -> Import -> Existing Maven Project.
+- Import the project into Eclipse. File -> Import -> Existing Maven Project. For more details about creating Spring Boot Projects, you can read - [Creating Spring Boot Projects](http://www.springboottutorial.com/creating-spring-boot-project-with-eclipse-and-maven){:target="_blank"}
 
-## Bootstrapping React Frontend with Create React App
+## Step 2 - Bootstrapping React Frontend with Create React App
+
+[Create React App](https://github.com/facebook/create-react-app){:target="_blank"} is an amazing tool to bootstrap your React applications. 
 
 Creating React Frontend Applications with Create React App is very simple. 
+
+Launch up your terminal/command prompt. Make sure that you have node installed.
 
 ```
 npx create-react-app frontend-spring-boot-react-crud-full-stack-with-maven
@@ -185,13 +197,26 @@ You can import the created project into Visual Studio Code by using ```File > Op
 
 Cool! You are all set to rock and roll with React.
 
-### Making a few changes to the React Frontend
+## Step 3 - Creating REST API for Retrieve All Courses and Connecting React Frontend
 
-Open up public/index.html and change the title to '<title>My Full Stack Application with Spring Boot and React</title>'. The change would be autoloaded into the Browser.
+We would want to start building the screen shown below:
 
-## Creating REST API for Retrieve All Courses and Connecting React Frontend
+![Image](/images/full-stack-application-with-spring-boot-screenshot.png "Spring Boot Full Stack Application") 
 
-Let's start with creating REST API for Retrieve All Courses.
+Let's start with building the basic screen showing a listing of all courses.
+
+To be able to do that, we need to
+- Create REST API for retrieving a list of courses.
+- Connect the React Frontend to the backend REST API
+
+### Create REST API for retrieving a list of courses
+
+Web Services, REST and Designing REST API are pretty deep concepts. We would recommend to check this out for more - [Designing Great REST API](https://www.youtube.com/watch?v=NzgFdEGI8sI){:target="_blank"}
+
+We will create
+- A model object  ```Course.java```
+- A Hardcoded Business Service ```CoursesHardcodedService.java```
+- A Resource to expose the REST API ```CourseResource.java```
 
 We will start with create a model object ```Course.java```. Snippet below shows the content of the model class. For complete listing, refer ```course/Course.java``` in complete code example at the end of this article.
 
@@ -200,6 +225,10 @@ public class Course {
   private Long id;
   private String username;
   private String description;
+  //no arg constructor
+  //constructor with 3 args
+  //getters and setters
+  //hashcode and equals
 ```
 
 Next, let's create a Business Service. In this article, we will use hardcoded data.
@@ -224,6 +253,9 @@ public class CoursesHardcodedService {
   }
 }
 ```
+Few things to note
+- Data is hardcoded
+- findAll returns the complete list of courses
 
 Next, let create the REST Resource to retrieve the list of courses for an instructor.
 
@@ -241,7 +273,11 @@ public class CourseResource {
 }
 ```
 
-If you launch up ```http://localhost:8080/instructors/in28minutes/courses``` in the browser, you would see the response from the API.
+Few things to note:
+- ```@RestController : Combination of @Controller and @ResponseBody``` - Beans returned are converted to/from JSON/XML.
+- ```@Autowired private CoursesHardcodedService courseManagementService``` - Autowire the CoursesHardcodedService so that we can retrieve details from business service.
+
+If you launch up the Spring boot application and go to ```http://localhost:8080/instructors/in28minutes/courses``` in the browser, you would see the response from the API.
 
 ```
 [
@@ -267,18 +303,24 @@ If you launch up ```http://localhost:8080/instructors/in28minutes/courses``` in 
    }
 ]
 ```
+
 We have the REST API up and running. Its time to focus on the Frontend.
 
 ### Enhancing React App to consume the REST API
 
-One of the first things you would need to understand about React is the concept of component. You can find more about a react component here - [React Components](https://youtu.be/OmwcVGZWM98){:target="_blank"}
-
+To be able to enhance the React Application to consume the REST API, we would need to 
+- Create an Application Component - to represent the structure of the complete application and include it in ```App.jsx``` - ```InstructorApp.jsx```
+- Add the frameworks need to call the REST API - axios, display a form - formik and support routing - react-router-dom
+- Create a view component for showing a list of course details and include it in the Application Component - ```ListCoursesComponent.jsx```
+- Invoking Retrieve Courses REST API from React Component - To enable this we will create a service to call the REST API using axios framework - ```CourseDataService.js```. ```ListCoursesComponent.jsx``` will make use of ```CourseDataService.js```
 
 Let's start with creating an Application Component - ```InstructorApp.jsx```
 
 /src/component/InstructorApp.jsx
 
 ```
+import React, { Component } from 'react';
+
 class InstructorApp extends Component {
     render() {
         return (
@@ -289,6 +331,13 @@ class InstructorApp extends Component {
 
 export default InstructorApp
 ```
+
+Few things to note:
+- One of the first things you would need to understand about React is the concept of component. You can find more about a react component here - [React Components](https://youtu.be/OmwcVGZWM98){:target="_blank"}
+- ```class InstructorApp extends Component``` - Every React Class Component should extend a class called Component.
+- ```render()``` - The render() method of a component returns what needs to be displayed as part of the component
+- ```export default InstructorApp``` - Each javascript file is a module. If you would want elements from a JavaScript module to be used in other JavaScript modules, we would need to export them. Here, we are making ```InstructorApp``` available for import in other components.
+
 
 Let's update the ```App.js``` to display the InstructorApp component.
 
@@ -311,6 +360,10 @@ class App extends Component {
 
 export default App;
 ```
+
+Few things to note:
+- ```import InstructorApp from './component/InstructorApp'``` - Importing the InstructorApp component class
+- ```<InstructorApp />``` - Display the Instructor App component.
 
 Let's update the App.css to use Bootstrap framework:
 
@@ -350,7 +403,7 @@ If these commands are executed successfully, you would see new entries in ```pac
 
 You can run 'npm start' to run the front end app again.
 
-#### Adding Hardcoded List Courses Component to Frontend
+#### Creating a List Courses Component
 
 Let's create a new component for showing the List of courses - `ListCoursesComponent.jsx`. For now, let's hardcode the course list.
 
@@ -386,6 +439,8 @@ class ListCoursesComponent extends Component {
 
 export default ListCoursesComponent
 ```
+Things to Note:
+- Its a simple component. Returning a hardcoded table displaying a list of courses.
 
 Let's update the InstructorApp component to display the ListCoursesComponent.
 
@@ -405,12 +460,15 @@ class InstructorApp extends Component {
 export default InstructorApp
 ```
 
+We are importing the ListCoursesComponent and displaying it in the InstructorApp.
+
 When you launch the React app in the browser, it will appear as shown below:
 
 ![Image](/images/react-second-stage-hardcoded-instructor-component.png "Hardcoded Instructor Component")
 
-#### Invoking Retrieve Courses REST API from React
+#### Invoking Retrieve Courses REST API from React Component
 
+We had created the REST API for retrieving the list of courses earlier. In order to call the REST API we would need to use a framework called axios. Let's create a data service method to call the REST API.
 
 /src/service/CourseDataService.js
 
@@ -424,15 +482,88 @@ const INSTRUCTOR_API_URL = `${COURSE_API_URL}/instructors/${INSTRUCTOR}`
 class CourseDataService {
 
     retrieveAllCourses(name) {
-        //console.log('executed service')
         return axios.get(`${INSTRUCTOR_API_URL}/courses`);
     }
 }
 
+export default new CourseDataService()
+
 ```
+
+Important points to note:
+- ```const INSTRUCTOR_API_URL = `${COURSE_API_URL}/instructors/${INSTRUCTOR}` ``` - We are forming the url to call in a reusable way.
+- ```axios.get(`${INSTRUCTOR_API_URL}/courses`)``` - Call the REST API with GET method. 
+- ```export default new CourseDataService()``` - We are creating an instance of CourseDataService and making it available for other components.
+
+To make the REST API call, we would need to call the CourseDataService - retrieveAllCourses method from the ListCoursesComponent
+
+Important snippets are shown below:
 
 ```
 class ListCoursesComponent extends Component {
+
+    constructor(props) {
+        super(props)
+        this.refreshCourses = this.refreshCourses.bind(this)
+    }
+
+    componentDidMount() {
+        this.refreshCourses();
+    }
+
+    refreshCourses() {
+        CourseDataService.retrieveAllCourses(INSTRUCTOR)//HARDCODED
+            .then(
+                response => {
+                    console.log(response);
+                }
+            )
+    }
+    ....
+}
+
+```
+
+Things to note:
+- ```componentDidMount()``` - React defines a component lifecycle. componentDidMount will be called as soon as component is mounted. We are calling refreshCourses as soon as a component is mounted.
+- ```this.refreshCourses = this.refreshCourses.bind(this)``` - Any method in a react component should be bound to this.
+-```CourseDataService.retrieveAllCourses(INSTRUCTOR).then``` - This would make the call to the REST API. You can define how to process the response in the then method.
+
+
+When you run the react app in the browser right now, you would see the following errors in the console
+```
+[Error] Origin http://localhost:3000 is not allowed by Access-Control-Allow-Origin.
+[Error] XMLHttpRequest cannot load http://localhost:8080/instructors/in28minutes/courses due to access control checks.
+[Error] Failed to load resource: Origin http://localhost:3000 is not allowed by Access-Control-Allow-Origin. (courses, line 0)
+[Error] Unhandled Promise Rejection: Error: Network Error
+  (anonymous function) (0.chunk.js:1097)
+  promiseReactionJob
+```
+
+The backend Spring Boot REST API is running on http://localhost:8080 and it is not allowing requests from other servers - http://localhost:3000, in this example. 
+
+Let's configure Rest Resource to allow access from specific servers.
+
+
+```
+@CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
+@RestController
+public class CourseResource {
+
+```
+Important thing to note
+- @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" }) - Allow requests from specific origins
+- We will use 3000 to run React and Vue JS apps and we use 4200 to run Angular apps. Hence we are allowing requests from both ports.
+
+If you refresh the page again, you would see the response from server printed in the console. 
+
+We would need to use the data from response and show it on the component. In react, we use state to do that.
+
+Following snippet highlights the important changes
+
+```
+class ListCoursesComponent extends Component {
+
     constructor(props) {
         super(props)
         this.state = {
@@ -450,7 +581,7 @@ class ListCoursesComponent extends Component {
         CourseDataService.retrieveAllCourses(INSTRUCTOR)//HARDCODED
             .then(
                 response => {
-                    //console.log(response);
+                    console.log(response);
                     this.setState({ courses: response.data })
                 }
             )
@@ -460,12 +591,11 @@ class ListCoursesComponent extends Component {
 
 ```
 
-```
-@CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
-@RestController
-public class CourseResource {
+Important things to note:
+- ```this.state = {courses: [],message: null}``` - To display courses, we need to make them available to the component. We add courses to the state of the component and initialize it in the constructor.
+- ```response => {this.setState({ courses: response.data })}``` - When the response comes back with data, we update the state.
 
-```
+Ok. We have data in the state. How do we display it? We need to update the render method.
 
 ```
     render() {
@@ -499,17 +629,32 @@ public class CourseResource {
 
 ```
 
+Important things to note
+- ```this.state.courses.map(``` - Allow you to loop around a list of items and define how each item should be displayed.
+- ```key={course.id}``` - A key is used to uniquely identify a row.
+- ```{course.id}``` - In JSX, we use {} to execute JavaScript code.
+
 When you launch the React app in the browser, it will appear as shown below:
 
 ![Image](/images/react-third-stage-getting-course-listing-from-rest-api.png "Course Listing Component Retrieving from REST API")
 
+Congratulations!
+
+## Step 4 : Adding Delete Feature to List Courses Page
+
+To be able to do this
+- We need a REST API in Spring Boot Backend for deleting a course
+- We would need to update React frontend to use the API
+
 ### Adding Delete Method in the Backend REST API
+
+It should be easy.
+
+Snippets below show how we create a simple deleteById method in CoursesHardcodedService and expose it from CourseResource. 
 
 ```
 @Service
 public class CoursesHardcodedService {
-
-
 
   public Course deleteById(long id) {
     Course course = findById(id);
@@ -541,6 +686,15 @@ public class CourseResource {
     return ResponseEntity.notFound().build();
   }
 ```
+
+Important things to note:
+- ```@DeleteMapping("/instructors/{username}/courses/{id}")``` - We are mapping the Delete Request Method with two path variables
+- ```@PathVariable String username, @PathVariable long id``` - Defining the variables for Path Variables
+- ```ResponseEntity.noContent().build()``` - If Request is successful, return no content back
+- ```ResponseEntity.notFound().build()``` - If delete failed, return error - resource not found.
+
+
+### Enhancing React app with Delete Course Feature
 
 ```
 class CourseDataService {
