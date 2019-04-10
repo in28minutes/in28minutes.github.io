@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      Spring Boot and React CRUD Full Stack Application with Maven
+title:      Creating Spring Boot and React CRUD Full Stack Application with Maven
 date:       2019-03-27 12:31:19
-summary:    This guide will help you create a full stack application with all the CRUD (Create, Read, Update and Delete) features using React as Frontend framework and  Spring Boot as the backend REST API. We will use Maven as the build tool.
+summary:    This guide helps you create a full stack application with all the CRUD (Create, Read, Update and Delete) features using React as Frontend framework and  Spring Boot as the backend REST API. We use Maven as the build tool.
 categories: Spring Boot, REST API, Full Stack Application, React, Angular, Frontend, CRUD, Maven
 permalink:  /spring-boot-react-full-stack-crud-maven-application
 ---
 
-This guide will help you create a full stack application with all the CRUD (Create, Read, Update and Delete) features using React as Frontend framework and  Spring Boot as the backend REST API. We will be using JavaScript as the frontend language and Java as the backend language.
+This guide helps you create a full stack application with all the CRUD (Create, Read, Update and Delete) features using React as Frontend framework and  Spring Boot as the backend REST API. We will be using JavaScript as the frontend language and Java as the backend language.
  
 ## You will learn
 
@@ -15,7 +15,7 @@ This guide will help you create a full stack application with all the CRUD (Crea
 - Why do we create full stack applications?
 - How do you use React as a Frontend Framework?
 - How do you use Spring to create Backend REST Service API?
-- How to you call Spring Boot REST API from React using axios framework?
+- How do you call Spring Boot REST API from React using the axios framework?
 - How and When to use different REST API Request Methods - GET, POST, PUT and DELETE?
 - How do you perform CRUD (Create, Read, Update and Delete) operations using React as Frontend framework and  Spring Boot as the backend REST API?
 - How do you create a form in React using Formik?
@@ -30,13 +30,13 @@ This guide will help you create a full stack application with all the CRUD (Crea
 - [Complete in28Minutes Course Guide](https://courses.in28minutes.com/p/in28minutes-course-guide){:target="_blank"}
 
 
-## Step 0 : Get an overview of the Full Stack Application
+## Step 0: Get an overview of the Full Stack Application
 
 ### Understanding Basic Features of the Application
 
 Following screenshot shows the application we would like to build: 
 
-It is a basic instructor portal allowing instructors to maintain their courses.
+It is a primary instructor portal allowing instructors to maintain their courses.
 
 ![Image](/images/full-stack-application-with-spring-boot-screenshot.png "Spring Boot Full Stack Application") 
 
@@ -50,8 +50,8 @@ Following Screenshot shows the architecture of the application we would create:
 
 Important points to note:
 - REST API is exposed using Spring Boot
-- REST API is consumed from React Frontend to expose the UI
-- The Database, in this example, is a hardcoded in memory static list.
+- REST API is consumed from React Frontend to present the UI
+- The Database, in this example, is a hardcoded in-memory static list.
 
 You can find more details about Full Stack Architecture here - [Full Stack Application Architecture - Spring Boot and React](https://youtu.be/TTWH_Q7uSlY){:target="_blank"}
 
@@ -69,38 +69,38 @@ In this guide, we will create these services using proper URIs and HTTP methods:
 
 ### Downloading the Complete Maven Project With Code Examples
 
-Complete frontend and backend projects are hosted in the following folder in github repository - https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-crud-full-stack-with-maven
+Following GitHub repository hosts the complete frontend and backend projects - https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-crud-full-stack-with-maven
 
 > Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-react-examples/
 
 ### Understanding Spring Boot REST API Project Structure
 
-Following screenshot shows the structure of the Spring Boot project we will create.
+Following screenshot shows the structure of the Spring Boot project we create.
 ![Image](/images/project-structure-spring-boot-fullstack-crud-maven.png "Spring Boot Rest Service - Project Structure") 
 
 A few details:
 
 - `CourseResource.java` - Rest Resource exposing all the service methods discussed above.
 - `Course.java, CoursesHardcodedService.java` - Business Logic for the application. CoursesHardcodedService exposes a few methods we would invoke from our Rest Resource.
-- `SpringBootFullStackCrudFullStackWithMavenApplication.java` - Launcher for the Spring Boot Application. To run the application, just launch this file as Java Application.
-- `pom.xml` - Contains all the dependencies needed to build this project. We will use Spring Boot Starter Web and Spring Boot DevTools.
+- `SpringBootFullStackCrudFullStackWithMavenApplication.java` - Launcher for the Spring Boot Application. To run the application, launch this file as Java Application.
+- `pom.xml` - Contains all the dependencies needed to build this project. We use Spring Boot Starter Web and Spring Boot DevTools.
 
 
 ## Understanding React Frontend Project Structure
 
-Following screenshot shows the structure of the React project we will create.
+Following screenshot shows the structure of the React project we create.
 ![Image](/images/project-structure-react-fullstack-crud-maven.png "React Frontend - Project Structure") 
 
-> Quick Tip : You can get a high level overview of all files in the React Project Structure here [React Project Structure](https://youtu.be/wI5G8FNFrto){:target="_blank"}
+> Quick Tip: You can get a high-level overview of all files in the React Project Structure here [React Project Structure](https://youtu.be/wI5G8FNFrto){:target="_blank"}
 
 A few details:
-- `InstructorApp.jsx` : React Component representing the high level structure of the application. Routing is defined in this file.
+- `InstructorApp.jsx` : React Component representing the high-level structure of the application. Routing is defined in this file.
 - `ListCoursesComponent.jsx` - React Component for listing all the courses for an instructor.
 - `CourseComponent.jsx` - React Component for editing Course Details and creating a new course
 - `CourseDataService.js` - Service using axios framework to make the Backend REST API Calls.
 
 
-### Understanding the tools you will need to build this project
+### Understanding the tools you need to build this project
 
 - Maven 3.0+ for building Spring Boot API Project
 - npm, webpack for building frontend
@@ -115,7 +115,7 @@ A few details:
 - Steps
   - Step 01 - Installing NodeJs and NPM - Node Package Manager
   - Step 02 - Quick Introduction to NPM
-  - Step 03 - Installing Visual Studio Code - Front End Java Script Editor
+  - Step 03 - Installing Visual Studio Code - Front End JavaScript Editor
 
 #### Installing Java, Eclipse & Embedded Maven
 
@@ -129,17 +129,17 @@ A few details:
 
 ### Creating Full Stack CRUD application with React and Spring Boot - Step By Step Approach
 
-We will use a step by step approach to create the full stack application
+We will use a step by step approach to creating the full stack application
 - Create a Spring Boot Application with Spring Boot Initializr
 - Create a React application using Create React App
-- Create the Retrieve Courses REST API and Enhance the React Front end to retrieve the courses using axios framework
+- Create the Retrieve Courses REST API and Enhance the React Front end to retrieve the courses using the axios framework
 - Add feature to delete a course in React front end and Spring Boot REST API
-- Add feature to update course details in React front end and Spring Boot REST API
+- Add functionality to update course details in React front end and Spring Boot REST API
 - Add feature to create a course in React front end and Spring Boot REST API
 
 > You can get an introduction to REST down here - http://www.springboottutorial.com/creating-rest-service-with-spring-boot
 
-## Step 1 : Bootstrapping Spring Boot REST API with Spring Initializr
+## Step 1: Bootstrapping Spring Boot REST API with Spring Initializr
 
 Creating a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.  
 
@@ -147,7 +147,7 @@ Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_b
 
 ![Image](/images/spring-boot-full-stack-with-web-and-dev-tools.png "Spring Boot Project with Web and Developer Tools")
 
-As shown in the image above, following steps have to be done
+As shown in the image above, the following steps have to be done
 
 - Launch Spring Initializr and choose the following
   - Choose `com.in28minutes.fullstack.springboot.maven.crud` as Group
@@ -172,7 +172,7 @@ npx create-react-app frontend-spring-boot-react-crud-full-stack-with-maven
 
 You can find more information about using Create React App here - [Create React App - Create and Launch a React Application](https://youtu.be/PR1pXhesetg){:target="_blank"}
 
-You can get a high level overview of all files in the React Project Structure here [React Project Structure](https://youtu.be/wI5G8FNFrto){:target="_blank"}
+You can get a high-level overview of all files in the React Project Structure here [React Project Structure](https://youtu.be/wI5G8FNFrto){:target="_blank"}
 
 
 
@@ -203,7 +203,7 @@ We would want to start building the screen shown below:
 
 ![Image](/images/full-stack-application-with-spring-boot-screenshot.png "Spring Boot Full Stack Application") 
 
-Let's start with building the basic screen showing a listing of all courses.
+Let's start with building the course listing screen.
 
 To be able to do that, we need to
 - Create REST API for retrieving a list of courses.
@@ -211,14 +211,14 @@ To be able to do that, we need to
 
 ### Create REST API for retrieving a list of courses
 
-Web Services, REST and Designing REST API are pretty deep concepts. We would recommend to check this out for more - [Designing Great REST API](https://www.youtube.com/watch?v=NzgFdEGI8sI){:target="_blank"}
+Web Services, REST and Designing REST API, are pretty deep concepts. We would recommend to check this out for more - [Designing Great REST API](https://www.youtube.com/watch?v=NzgFdEGI8sI){:target="_blank"}
 
 We will create
 - A model object  ```Course.java```
 - A Hardcoded Business Service ```CoursesHardcodedService.java```
 - A Resource to expose the REST API ```CourseResource.java```
 
-We will start with create a model object ```Course.java```. Snippet below shows the content of the model class. For complete listing, refer ```course/Course.java``` in complete code example at the end of this article.
+We will start with creating a model object ```Course.java```. The snippet below shows the content of the model class. For the complete listing, refer ```course/Course.java``` in the complete code example at the end of this article.
 
 ```
 public class Course {
@@ -312,7 +312,7 @@ To be able to enhance the React Application to consume the REST API, we would ne
 - Create an Application Component - to represent the structure of the complete application and include it in ```App.jsx``` - ```InstructorApp.jsx```
 - Add the frameworks need to call the REST API - axios, display a form - formik and support routing - react-router-dom
 - Create a view component for showing a list of course details and include it in the Application Component - ```ListCoursesComponent.jsx```
-- Invoking Retrieve Courses REST API from React Component - To enable this we will create a service to call the REST API using axios framework - ```CourseDataService.js```. ```ListCoursesComponent.jsx``` will make use of ```CourseDataService.js```
+- Invoking Retrieve Courses REST API from React Component - To enable this we will create a service to call the REST API using the axios framework - ```CourseDataService.js```. ```ListCoursesComponent.jsx``` will make use of ```CourseDataService.js```
 
 Let's start with creating an Application Component - ```InstructorApp.jsx```
 
@@ -333,10 +333,10 @@ export default InstructorApp
 ```
 
 Few things to note:
-- One of the first things you would need to understand about React is the concept of component. You can find more about a react component here - [React Components](https://youtu.be/OmwcVGZWM98){:target="_blank"}
+- One of the first things you would need to understand about React is the concept of the component. You can find more about a react component here - [React Components](https://youtu.be/OmwcVGZWM98){:target="_blank"}
 - ```class InstructorApp extends Component``` - Every React Class Component should extend a class called Component.
 - ```render()``` - The render() method of a component returns what needs to be displayed as part of the component
-- ```export default InstructorApp``` - Each javascript file is a module. If you would want elements from a JavaScript module to be used in other JavaScript modules, we would need to export them. Here, we are making ```InstructorApp``` available for import in other components.
+- ```export default InstructorApp``` - Each javascript file is a module. If you wanted elements from a JavaScript module to be used in other JavaScript modules, we would need to export them. Here, we are making ```InstructorApp``` available for import in other components.
 
 
 Let's update the ```App.js``` to display the InstructorApp component.
@@ -393,7 +393,7 @@ npm add react-router-dom
 npm add formik
 ```
 
-If these commands are executed successfully, you would see new entries in ```package.json```
+When commands execute successfully, you would see new entries in ```package.json```
 
 ```
     "axios": "^0.18.0",
@@ -401,7 +401,7 @@ If these commands are executed successfully, you would see new entries in ```pac
     "react-router-dom": "^5.0.0",
 ```
 
-You can run 'npm start' to run the front end app again.
+You can run 'npm start' to rerun the front end app.
 
 #### Creating a List Courses Component
 
@@ -440,7 +440,7 @@ class ListCoursesComponent extends Component {
 export default ListCoursesComponent
 ```
 Things to Note:
-- Its a simple component. Returning a hardcoded table displaying a list of courses.
+- It's a simple component. Returning a hardcoded table displaying a list of courses.
 
 Let's update the InstructorApp component to display the ListCoursesComponent.
 
@@ -468,7 +468,7 @@ When you launch the React app in the browser, it will appear as shown below:
 
 #### Invoking Retrieve Courses REST API from React Component
 
-We had created the REST API for retrieving the list of courses earlier. In order to call the REST API we would need to use a framework called axios. Let's create a data service method to call the REST API.
+We had created the REST API for retrieving the list of courses earlier. To call the REST API we would need to use a framework called axios. Let's create a data service method to call the REST API.
 
 /src/service/CourseDataService.js
 
@@ -491,8 +491,8 @@ export default new CourseDataService()
 ```
 
 Important points to note:
-- ```const INSTRUCTOR_API_URL = `${COURSE_API_URL}/instructors/${INSTRUCTOR}` ``` - We are forming the url to call in a reusable way.
-- ```axios.get(`${INSTRUCTOR_API_URL}/courses`)``` - Call the REST API with GET method. 
+- ```const INSTRUCTOR_API_URL = `${COURSE_API_URL}/instructors/${INSTRUCTOR}` ``` - We are forming the URL to call in a reusable way.
+- ```axios.get(`${INSTRUCTOR_API_URL}/courses`)``` - Call the REST API with the GET method. 
 - ```export default new CourseDataService()``` - We are creating an instance of CourseDataService and making it available for other components.
 
 To make the REST API call, we would need to call the CourseDataService - retrieveAllCourses method from the ListCoursesComponent
@@ -525,7 +525,7 @@ class ListCoursesComponent extends Component {
 ```
 
 Things to note:
-- ```componentDidMount()``` - React defines a component lifecycle. componentDidMount will be called as soon as component is mounted. We are calling refreshCourses as soon as a component is mounted.
+- ```componentDidMount()``` - React defines a component lifecycle. componentDidMount will be called as soon as the component is mounted. We are calling refreshCourses as soon as a component is mounted.
 - ```this.refreshCourses = this.refreshCourses.bind(this)``` - Any method in a react component should be bound to this.
 -```CourseDataService.retrieveAllCourses(INSTRUCTOR).then``` - This would make the call to the REST API. You can define how to process the response in the then method.
 
@@ -540,7 +540,7 @@ When you run the react app in the browser right now, you would see the following
   promiseReactionJob
 ```
 
-The backend Spring Boot REST API is running on http://localhost:8080 and it is not allowing requests from other servers - http://localhost:3000, in this example. 
+The Backend Spring Boot REST API is running on http://localhost:8080, and it is not allowing requests from other servers - http://localhost:3000, in this example. 
 
 Let's configure Rest Resource to allow access from specific servers.
 
@@ -551,15 +551,15 @@ Let's configure Rest Resource to allow access from specific servers.
 public class CourseResource {
 
 ```
-Important thing to note
+An important thing to note
 - @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" }) - Allow requests from specific origins
-- We will use 3000 to run React and Vue JS apps and we use 4200 to run Angular apps. Hence we are allowing requests from both ports.
+- We will use 3000 to run React and Vue JS apps, and we use 4200 to run Angular apps. Hence we are allowing requests from both ports.
 
 If you refresh the page again, you would see the response from server printed in the console. 
 
-We would need to use the data from response and show it on the component. In react, we use state to do that.
+We would need to use the data from the response and show it on the component. In React, we use the state to do that.
 
-Following snippet highlights the important changes
+Following snippet highlights the significant changes
 
 ```
 class ListCoursesComponent extends Component {
@@ -640,7 +640,7 @@ When you launch the React app in the browser, it will appear as shown below:
 
 Congratulations!
 
-## Step 4 : Adding Delete Feature to List Courses Page
+## Step 4: Adding Delete Feature to List Courses Page
 
 To be able to do this
 - We need a REST API in Spring Boot Backend for deleting a course
@@ -766,12 +766,12 @@ When you launch the React app in the browser, it will appear as shown below:
 
 ![Image](/images/react-course-listing-with-delete.png "Course Listing Component Retrieving from REST API and Delete Button")
 
-When you click the delete button you would see that the course is deleted.
+When you click the delete button, the course will be deleted.
 
 
 ### Updating Course Details
 
-To be able to update course details, we would need to create a new component to represent the form. Let's create a simple
+To be able to update the course details, we would need to create a new component to represent the form. Let's create a simple
 
 /src/component/CourseComponent.jsx
 ```
@@ -789,7 +789,7 @@ export default CourseComponent
 
 #### Implementing Routing
 
-When user clicks the update course button on the course listing page, we would want to route to the course component. How do we do it? That's where Routing comes into picture.
+When the user clicks the update course button on the course listing page, we would want to route to the course component. How do we do it? That's where Routing comes into the picture.
 
 /src/component/InstructorApp.jsx
 
@@ -814,13 +814,13 @@ class InstructorApp extends Component {
 export default InstructorApp
 ```
 
-When you launch the React app in the browser using this url ```http://localhost:3000/courses/2```, it will appear as shown below:
+When you launch the React app in the browser using this URL ```http://localhost:3000/courses/2```, it will appear as shown below:
 
 ![Image](/images/react-1-course-details.png "Course Component First Version")
 
 #### Adding Update Button to Course Listing Page
 
-Let's add update button to the course listing page
+Let's add update button to the course listing page.
 
 /src/component/ListCoursesComponent.jsx
 ```
@@ -832,7 +832,7 @@ Let's add update button to the course listing page
 <td><button className="btn btn-success" onClick={() => this.updateCourseClicked(course.id)}>Update</button></td>
 ```
 
-We can create the add ```updateCourseClicked``` method to redirect to Course Component and add the binding in the constructor method
+We can create the add ```updateCourseClicked``` method to redirect to Course Component and add the binding in the constructor method.
 
 ```
 ...
@@ -847,7 +847,7 @@ updateCourseClicked(id) {
 
 #### Adding Add button to Course Listing Page
 
-Let's add an Add button at the bottom of Course Listing Page
+Let's add an Add button at the bottom of Course Listing Page.
 
 /src/component/ListCoursesComponent.jsx
 ```
@@ -866,7 +866,7 @@ addCourseClicked() {
 }
 ```
 
-When you launch the React app in the browser using this url ```http://localhost:3000```, it will appear as shown below:
+When you launch the React app in the browser using this URL ```http://localhost:3000```, it will appear as shown below:
 
 ![Image](/images/full-stack-application-with-spring-boot-screenshot.png "Course listing page final version")
 
@@ -879,7 +879,7 @@ public class CoursesHardcodedService {
 
 ```
   public Course findById(long id) {
-    for (Course course : courses) {
+    for (Course course: courses) {
       if (course.getId() == id) {
         return course;
       }
@@ -960,11 +960,11 @@ class CourseComponent extends Component {
 export default CourseComponent
 ```
 
-When you try to update a course, you would see the screen below
+When you try to update a course, you would see the screen below.
 
 ![Image](/images/react-2-course-details-update.png "Course Component Second Version")
 
-When you try to create a course, you would see the screen below
+When you try to create a course, you would see the screen below.
 
 ![Image](/images/react-3-course-details-create.png "Course Component Second Version")
 
@@ -1006,7 +1006,7 @@ render() {
 }
 ```
 
-When you try to update a course, you would see the screen below
+When you try to update a course, you would see the screen below.
 
 ![Image](/images/react-4-course-details-form.png "Course Component Fourth Version")
 
@@ -1029,7 +1029,7 @@ onSubmit(values) {
                     >
 ```
 
-When you click Submit, the form details are printed to the console.s
+When you click Submit, the form details are printed to the console.
 
 ```
 {id: "2", description: "Learn Microservices"}
@@ -1070,20 +1070,20 @@ validate(values) {
 
 ```
 
-You can see that validations prevent form from getting submitted. But, how do we see validation messages on the screen? Formik provides ErrorMessage.
+You can see that validations prevent the form from getting submitted. But, how do we see validation messages on the screen? Formik provides ErrorMessage.
 
 ```
 <ErrorMessage name="description" component="div"
     className="alert alert-warning" />
 ```
 
-When you try to update a course, you would see the screen below
+When you try to update a course, you would see the screen below.
 
 ![Image](/images/react-5-course-details-validation-error.png "Course Component Fifth Version")
 
 ### Updating Course Details on click of submit
 
-Before we are able to update the course details, we need the API for it. Let's quickly create the API to Update and Create Courses.
+Before we can update the course details, we need the API for it. Let's quickly create the API to Update and Create Courses.
 
 #### Create API to Update Course
 
@@ -1149,7 +1149,7 @@ class CourseDataService {
   }
 ```
 
-Let's update the CourseComponent to invoke the right service on the click of submit button.
+Let's update the CourseComponent to invoke the right service on the click of the submit button.
 
 ```
     onSubmit(values) {
@@ -1174,7 +1174,7 @@ Let's update the CourseComponent to invoke the right service on the click of sub
 
 ```
 
-> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
+> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete set of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
 ## Next Steps
 [![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://www.udemy.com/full-stack-application-with-spring-boot-and-react/?couponCode=SBT-2019){:target="_blank"}
