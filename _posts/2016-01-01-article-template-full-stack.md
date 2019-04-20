@@ -3,7 +3,7 @@ layout:     post
 title:      TODO
 date:       2019-01-01 12:31:19
 summary:    TODO
-categories: Spring Boot, REST API, Full Stack Application, React, Angular, Frontend
+categories: Spring Boot, REST API, Full Stack, React, Angular, Frontend
 permalink:  /url
 ---
 
