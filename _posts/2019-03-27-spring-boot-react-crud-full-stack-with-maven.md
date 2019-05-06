@@ -111,16 +111,16 @@ A few details:
 
 #### Installing Node Js (npm) & Visual Studio Code 
 
-- Playlist - https://www.youtube.com/playlist?list=PLBBog2r6uMCQN4X3Aa_jM9qVjgMCHMWx6
-- Steps
+- [Click to see video Playlist](https://www.youtube.com/playlist?list=PLBBog2r6uMCQN4X3Aa_jM9qVjgMCHMWx6
+- Steps){:target="_blank"}
   - Step 01 - Installing NodeJs and NPM - Node Package Manager
   - Step 02 - Quick Introduction to NPM
   - Step 03 - Installing Visual Studio Code - Front End JavaScript Editor
 
 #### Installing Java, Eclipse & Embedded Maven
 
-- Playlist - https://www.youtube.com/playlist?list=PLBBog2r6uMCSmMVTW_QmDLyASBvovyAO3
-- Steps
+- [Click to see video Playlist](https://www.youtube.com/playlist?list=PLBBog2r6uMCSmMVTW_QmDLyASBvovyAO3
+- Steps){:target="_blank"}
   - 0 - Overview - Installation Java, Eclipse and Maven
   - 1 - Installing Java JDK
   - 2 - Installing Eclipse IDE
@@ -137,7 +137,7 @@ We will use a step by step approach to creating the full stack application
 - Add functionality to update course details in React front end and Spring Boot REST API
 - Add feature to create a course in React front end and Spring Boot REST API
 
-> You can get an introduction to REST down here - http://www.springboottutorial.com/creating-rest-service-with-spring-boot
+> You can get an introduction to REST down here - [Introduction to REST API](http://www.springboottutorial.com/creating-rest-service-with-spring-boot){:target="_blank"}
 
 ## Step 1: Bootstrapping Spring Boot REST API with Spring Initializr
 
@@ -174,9 +174,9 @@ Launch up your terminal/command prompt. Make sure that you have node installed.
 npx create-react-app frontend-spring-boot-react-crud-full-stack-with-maven
 ```
 
-You can find more information about using Create React App here - [Create React App - Create and Launch a React Application](https://youtu.be/PR1pXhesetg){:target="_blank"}
+> You can find more information about using Create React App here - [Create React App - Create and Launch a React Application](https://youtu.be/PR1pXhesetg){:target="_blank"}
 
-> You can get a high-level overview of all files in the React Project Structure here [React Project Structure](https://youtu.be/wI5G8FNFrto){:target="_blank"}
+> You can get a high-level overview of all files in the React Project Structure here - [React Project Structure](https://youtu.be/wI5G8FNFrto){:target="_blank"}
 
 
 
@@ -712,15 +712,51 @@ Important things to note:
 
 ### Enhancing React app with Delete Course Feature
 
-```
-class CourseDataService {
-
-    deleteCourse(name, id) {
-        //console.log('executed service')
-        return axios.delete(`${INSTRUCTOR_API_URL}/courses/${id}`);
-    }
+Let's add `deleteCourse` method to `CourseDataService`. As you can see it execute the delete request to specific course api url.
 
 ```
+deleteCourse(name, id) {
+    //console.log('executed service')
+    return axios.delete(`${INSTRUCTOR_API_URL}/courses/${id}`);
+}
+```
+
+We can add a delete button corresponding to each of the courses:
+
+```
+<td><button className="btn btn-warning" onClick={() => this.deleteCourseClicked(course.id)}>Delete</button></td>
+```
+
+On click of the button we are calling the `deleteCourseClicked` method passing the course `id`. The implementation for `deleteCourseClicked` is shown below:
+
+When we get a successful response for delete API call, we set a `message` into state and refresh the courses list.
+
+```
+deleteCourseClicked(id) {
+    CourseDataService.deleteCourse(INSTRUCTOR, id)
+        .then(
+            response => {
+                this.setState({ message: `Delete of course ${id} Successful` })
+                this.refreshCourses()
+            }
+        )
+
+}
+```
+We display the message just below the header
+
+```
+<h3>All Courses</h3>
+{this.state.message && <div class="alert alert-success">{this.state.message}</div>}
+```                
+
+Of course - we have to  ensure that the method is bound to `this` in the constructor.
+
+```
+this.deleteCourseClicked = this.deleteCourseClicked.bind(this)
+```
+
+Complete `ListCoursesComponent`, at this stage, is shown below:
 
 ```
 class ListCoursesComponent extends Component {
@@ -730,18 +766,7 @@ class ListCoursesComponent extends Component {
             courses: [],
             message: null
         }
-        this.deleteCourseClicked = this.deleteCourseClicked.bind(this)
-    }
-
-    deleteCourseClicked(id) {
-        CourseDataService.deleteCourse(INSTRUCTOR, id)
-            .then(
-                response => {
-                    this.setState({ message: `Delete of course ${id} Successful` })
-                    this.refreshCourses()
-                }
-            )
-
+        
     }
 
     render() {
@@ -927,7 +952,7 @@ public Course getCourse(@PathVariable String username, @PathVariable long id) {
 
 #### Invoking the API from Course Component
 
-How do we invoke the retrieve course details from the React frontend?
+> How do we invoke the retrieve course details from the React frontend?
 
 Let's add `retrieveCourse` method to `CourseDataService`
 
@@ -938,9 +963,9 @@ retrieveCourse(name, id) {
 ```
 We would want to call the retrieveCourse method in CourseDataService on the load of CourseComponent.
 
-How do we do it?
+> How do we do it?
 
-Yes. componentDidMount is the right solution.
+> Yes. componentDidMount is the right solution.
 
 Before we get to it we would need to be able to get the course id from the URL. In the course details page, we are redirecting to the url `/courses/${id}`. From the path parameter, we would want to capture the id. We can use `this.props.match.params.id` to get the id from path parameters.
 
