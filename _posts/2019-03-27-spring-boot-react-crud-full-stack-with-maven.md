@@ -91,7 +91,7 @@ A few details:
 Following screenshot shows the structure of the React project we create.
 ![Image](/images/project-structure-react-fullstack-crud-maven.png "React Frontend - Project Structure") 
 
-> Quick Tip: You can get a high-level overview of all files in the React Project Structure here [React Project Structure](https://youtu.be/wI5G8FNFrto){:target="_blank"}
+> Quick Tip: You can get a high-level overview of all files in the React Project Structure watching this video [React Project Structure](https://youtu.be/wI5G8FNFrto){:target="_blank"}
 
 A few details:
 - `InstructorApp.jsx` : React Component representing the high-level structure of the application. Routing is defined in this file.
@@ -158,6 +158,10 @@ As shown in the image above, the following steps have to be done
 - Click Generate Project.
 - Import the project into Eclipse. File -> Import -> Existing Maven Project. For more details about creating Spring Boot Projects, you can read - [Creating Spring Boot Projects](http://www.springboottutorial.com/creating-spring-boot-project-with-eclipse-and-maven){:target="_blank"}
 
+
+> If you are new to Spring Boot, we recommend watching this video - [Spring Boot in 10 Steps](https://www.youtube.com/watch?v=PSP1-2cN7vM){:target="_blank"}
+
+
 ## Step 2 - Bootstrapping React Frontend with Create React App
 
 [Create React App](https://github.com/facebook/create-react-app){:target="_blank"} is an amazing tool to bootstrap your React applications. 
@@ -172,7 +176,7 @@ npx create-react-app frontend-spring-boot-react-crud-full-stack-with-maven
 
 You can find more information about using Create React App here - [Create React App - Create and Launch a React Application](https://youtu.be/PR1pXhesetg){:target="_blank"}
 
-You can get a high-level overview of all files in the React Project Structure here [React Project Structure](https://youtu.be/wI5G8FNFrto){:target="_blank"}
+> You can get a high-level overview of all files in the React Project Structure here [React Project Structure](https://youtu.be/wI5G8FNFrto){:target="_blank"}
 
 
 
@@ -195,7 +199,7 @@ When you launch up the application in the browser at ```http://localhost:3000/``
 You can import the created project into Visual Studio Code by using ```File > Open > Select the project created earlier```. You can find more details here - [Importing React App into Visual Studio Code](https://youtu.be/Cw-bSD6Q8xI){:target="_blank"}
 
 
-Cool! You are all set to rock and roll with React.
+> Cool! You are all set to rock and roll with React.
 
 ## Step 3 - Creating REST API for Retrieve All Courses and Connecting React Frontend
 
@@ -256,6 +260,7 @@ public class CoursesHardcodedService {
 Few things to note
 - Data is hardcoded
 - findAll returns the complete list of courses
+- You can see that the API of the Service is modelled around the Spring Data Repository interfaces. If you are familiar with JPA and Spring Data, you can easily replace this with a Service talking to a database.
 
 Next, let create the REST Resource to retrieve the list of courses for an instructor.
 
@@ -336,8 +341,7 @@ Few things to note:
 - One of the first things you would need to understand about React is the concept of the component. You can find more about a react component here - [React Components](https://youtu.be/OmwcVGZWM98){:target="_blank"}
 - ```class InstructorApp extends Component``` - Every React Class Component should extend a class called Component.
 - ```render()``` - The render() method of a component returns what needs to be displayed as part of the component
-- ```export default InstructorApp``` - Each javascript file is a module. If you wanted elements from a JavaScript module to be used in other JavaScript modules, we would need to export them. Here, we are making ```InstructorApp``` available for import in other components.
-
+- ```export default InstructorApp``` - Each JavaScript file is a module. If you wanted elements from a JavaScript module to be used in other JavaScript modules, we would need to export them. Here, we are making ```InstructorApp``` available for import in other components.
 
 Let's update the ```App.js``` to display the InstructorApp component.
 
@@ -401,11 +405,11 @@ When commands execute successfully, you would see new entries in ```package.json
     "react-router-dom": "^5.0.0",
 ```
 
-You can run 'npm start' to rerun the front end app.
+You can run 'npm start' to relaunch the front end app loading up all the new frameworks.
 
 #### Creating a List Courses Component
 
-Let's create a new component for showing the List of courses - `ListCoursesComponent.jsx`. For now, let's hardcode the course list.
+Let's create a new component for showing the List of courses - `ListCoursesComponent.jsx`. For now, let's hardcode a course into the course list.
 
 /src/component/ListCoursesComponent.jsx
 
@@ -468,7 +472,15 @@ When you launch the React app in the browser, it will appear as shown below:
 
 #### Invoking Retrieve Courses REST API from React Component
 
-We had created the REST API for retrieving the list of courses earlier. To call the REST API we would need to use a framework called axios. Let's create a data service method to call the REST API.
+We had created the REST API for retrieving the list of courses earlier. To call the REST API we would need to use a framework called axios. 
+
+> Axios is a Promise based HTTP client for the browser and node.js
+
+Axios is a frontend framework that helps you make
+- REST API calls with different request methods including GET, POST, PUT, DELETE etc
+- Intercept Front end REST API calls and add headers and request content
+
+Let's create a data service method to call the REST API.
 
 /src/service/CourseDataService.js
 
@@ -557,7 +569,9 @@ An important thing to note
 
 If you refresh the page again, you would see the response from server printed in the console. 
 
-We would need to use the data from the response and show it on the component. In React, we use the state to do that.
+We would need to use the data from the response and show it on the component. 
+
+> In React, we use the state to do that.
 
 Following snippet highlights the significant changes
 
@@ -595,7 +609,9 @@ Important things to note:
 - ```this.state = {courses: [],message: null}``` - To display courses, we need to make them available to the component. We add courses to the state of the component and initialize it in the constructor.
 - ```response => {this.setState({ courses: response.data })}``` - When the response comes back with data, we update the state.
 
-Ok. We have data in the state. How do we display it? We need to update the render method.
+We have data in the state. How do we display it? 
+
+We need to update the render method.
 
 ```
     render() {
@@ -638,7 +654,7 @@ When you launch the React app in the browser, it will appear as shown below:
 
 ![Image](/images/react-third-stage-getting-course-listing-from-rest-api.png "Course Listing Component Retrieving from REST API")
 
-Congratulations!
+> Congratulations! You have successfully integrated React with a REST API. Time to celebrate!
 
 ## Step 4: Adding Delete Feature to List Courses Page
 
@@ -771,7 +787,9 @@ When you click the delete button, the course will be deleted.
 
 ### Updating Course Details
 
-To be able to update the course details, we would need to create a new component to represent the form. Let's create a simple
+To be able to update the course details, we would need to create a new component to represent the todo form. 
+
+Let's start with creating a simple component.
 
 /src/component/CourseComponent.jsx
 ```
@@ -789,7 +807,7 @@ export default CourseComponent
 
 #### Implementing Routing
 
-When the user clicks the update course button on the course listing page, we would want to route to the course component. How do we do it? That's where Routing comes into the picture.
+When the user clicks the update course button on the course listing page, we would want to route to the course page. How do we do it? That's where Routing comes into the picture.
 
 /src/component/InstructorApp.jsx
 
@@ -813,6 +831,11 @@ class InstructorApp extends Component {
 
 export default InstructorApp
 ```
+
+We are defining a Router around all the components and configuring paths to each of them.
+- ```http://localhost:3000/``` takes you to home page
+- ```http://localhost:3000/courses``` takes you to course listing page
+- ```http://localhost:3000/courses/2``` takes you to course page
 
 When you launch the React app in the browser using this URL ```http://localhost:3000/courses/2```, it will appear as shown below:
 
@@ -859,8 +882,11 @@ Let's add an Add button at the bottom of Course Listing Page.
 Let's add the appropriate binding and the method to handle click of Add button.
 
 ```
+//In constructor
 this.addCourseClicked = this.addCourseClicked.bind(this)
+```
 
+```
 addCourseClicked() {
     this.props.history.push(`/courses/-1`)
 }
@@ -872,42 +898,53 @@ When you launch the React app in the browser using this URL ```http://localhost:
 
 Clicking any of the Update or Add buttons would take you to the Course Component.
 
-
 #### Create API to Retrieve Specific Course Details
 
-public class CoursesHardcodedService {
+Now that we have the course component beinging rendered on the click of update button, let's start focusing on getting the course details from the REST API.
+
+Let's add `findById` method to `CoursesHardcodedService`. It retrieves the details of a specific course based on it.
 
 ```
-  public Course findById(long id) {
-    for (Course course: courses) {
-      if (course.getId() == id) {
-        return course;
-      }
+public Course findById(long id) {
+  for (Course course: courses) {
+    if (course.getId() == id) {
+      return course;
     }
-    return null;
   }
+  return null;
+}
 ```
 
-public class CourseResource {
-
+Let's add `getCourse` method to `CourseResource` class. It exposes the GET method to get the details of a specific course based on id.
 
 ```
-  @GetMapping("/instructors/{username}/courses/{id}")
-  public Course getCourse(@PathVariable String username, @PathVariable long id) {
-    return courseManagementService.findById(id);
-  }
+@GetMapping("/instructors/{username}/courses/{id}")
+public Course getCourse(@PathVariable String username, @PathVariable long id) {
+  return courseManagementService.findById(id);
+}
 
 ```
 
 #### Invoking the API from Course Component
 
-```
-class CourseDataService {
+How do we invoke the retrieve course details from the React frontend?
 
-    retrieveCourse(name, id) {
-        return axios.get(`${INSTRUCTOR_API_URL}/courses/${id}`);
-    }
+Let's add `retrieveCourse` method to `CourseDataService`
+
 ```
+retrieveCourse(name, id) {
+    return axios.get(`${INSTRUCTOR_API_URL}/courses/${id}`);
+}
+```
+We would want to call the retrieveCourse method in CourseDataService on the load of CourseComponent.
+
+How do we do it?
+
+Yes. componentDidMount is the right solution.
+
+Before we get to it we would need to be able to get the course id from the URL. In the course details page, we are redirecting to the url `/courses/${id}`. From the path parameter, we would want to capture the id. We can use `this.props.match.params.id` to get the id from path parameters.
+
+The code listing below shows the updated CourseComponent.
 
 ```
 import React, { Component } from 'react'
@@ -960,6 +997,50 @@ class CourseComponent extends Component {
 export default CourseComponent
 ```
 
+We are setting the details of the course into state.  
+
+We are initializing state in the constructor.
+
+```
+this.state = {
+    id: this.props.match.params.id,
+    description: ''
+}
+```
+
+In `componentDidMount`, we are calling the `CourseDataService.retrieveCourse` to get the details for a course. Once we have the details, we are updating the state.
+
+```
+CourseDataService.retrieveCourse(INSTRUCTOR, this.state.id)
+    .then(response => this.setState({
+        description: response.data.description
+    }))
+```
+
+We are updating the `render` method to show the course details from component `state`.
+
+```
+render() {
+
+    let { description, id } = this.state
+
+    return (
+        <div>
+            <h3>Course</h3>
+            <div>{id}</div>
+            <div>{description}</div>
+        </div>
+    )
+}
+```
+
+`let { description, id } = this.state` is called destructing. This is similar to writing code shown below.
+
+```
+let description = this.state.description
+let id = this.state.id
+```
+
 When you try to update a course, you would see the screen below.
 
 ![Image](/images/react-2-course-details-update.png "Course Component Second Version")
@@ -968,7 +1049,20 @@ When you try to create a course, you would see the screen below.
 
 ![Image](/images/react-3-course-details-create.png "Course Component Second Version")
 
+This is because of the logic in `componentDidMount` to not invoke the course API for a new todo.
+
+```
+if (this.state.id == -1) {
+    return
+}
+```
+
 #### Create a Form using Formik
+
+Now that we have loaded up the details of a specific course, let's shift out our attention to editing them and saving them back to the database.
+
+To edit course details, we need a form. The most popular form framework with React is formik. We already added formik to our `package.json` using the command `npm add formik`.
+
 Let's now create a simple form using formik.
 
 ```
@@ -1006,30 +1100,45 @@ render() {
 }
 ```
 
+Following are some of the important details:
+- `let { description, id } = this.state` - Creating local variable using destructuring
+- `<Formik initialValues={{ id, description }}>` - Initialing Formik with the values loaded from state
+- `<Field className="form-control" type="text" name="id" disabled />` - Creating a disabled text element for id. The name of element should match the name in state.
+- `<Field className="form-control" type="text" name="description" />` - Creating a text element for description. The name of element should match the name in state.
+- `<button className="btn btn-success" type="submit">Save</button>` - Adding a submit button.
+
 When you try to update a course, you would see the screen below.
 
 ![Image](/images/react-4-course-details-form.png "Course Component Fourth Version")
 
 #### Adding Handling of Submit Event
 
+Let's try to handle the Submit event now.
+
+Let's create an onSubmit method to log the values
+
 ```
-this.onSubmit = this.onSubmit.bind(this)
-...
-
-
-
 onSubmit(values) {
     console.log(values);
 }
+```
 
-...
+Let's bind the `onSubmit` method to `this` in the constructor.
+
+```
+this.onSubmit = this.onSubmit.bind(this)
+```
+
+It's time to tie up the form with the onSubmit method. The key snippet is `onSubmit={this.onSubmit}`.
+
+```
 <Formik
       initialValues={{ id, description }}
       onSubmit={this.onSubmit}
                     >
 ```
 
-When you click Submit, the form details are printed to the console.
+When you click Submit, the form details are now printed to the console.
 
 ```
 {id: "2", description: "Learn Microservices"}
@@ -1037,15 +1146,10 @@ When you click Submit, the form details are printed to the console.
 
 #### Adding Validation using Formik
 
-Let's add validations to the form.
+What's a form without validation?
 
+Let's add a validate method.
 ```
-....
-
-this.validate = this.validate.bind(this)
-
-....
-
 validate(values) {
     let errors = {}
     if (!values.description) {
@@ -1055,11 +1159,25 @@ validate(values) {
     }
 
     return errors
-
 }
+```
 
-....
+We are adding two validations:
+- check for empty description
+- check for a minimum length of 5
 
+You can add other validations as you need.
+
+
+As usual, let's bind it to `this` in the constructor.
+
+```
+this.validate = this.validate.bind(this)
+```
+
+Let's ties this up with the form. The key snippet is `validate={this.validate}`. We do not want to validate on change of value or on blur of the field. Let's keep things simple. `enableReinitialize={true}` is needed to ensure that we can reload the form for existing todo.
+
+```
 <Formik
       initialValues={{ id, description }}
       onSubmit={this.onSubmit}
@@ -1070,7 +1188,13 @@ validate(values) {
 
 ```
 
-You can see that validations prevent the form from getting submitted. But, how do we see validation messages on the screen? Formik provides ErrorMessage.
+If you run the page right now and submit invalid description, you would see that validations prevent the form from getting submitted. 
+
+> How do we see validation messages on the screen? 
+
+Formik provides ErrorMessage.
+
+Let's add error message to the field:
 
 ```
 <ErrorMessage name="description" component="div"
@@ -1083,27 +1207,28 @@ When you try to update a course, you would see the screen below.
 
 ### Updating Course Details on click of submit
 
-Before we can update the course details, we need the API for it. Let's quickly create the API to Update and Create Courses.
+Now that the form is ready, we would want to call the backend API to save the course details.
+
+Let's quickly create the API to Update and Create Courses.
 
 #### Create API to Update Course
 
-```
-@Service
-public class CoursesHardcodedService {
+Let's add a `save` method to `CoursesHardcodedService` to handle creation and updation of course.
 
-  public Course save(Course course) {
-    if (course.getId() == -1 || course.getId() == 0) {
-      course.setId(++idCounter);
-      courses.add(course);
-    } else {
-      deleteById(course.getId());
-      courses.add(course);
-    }
-    return course;
+```
+public Course save(Course course) {
+  if (course.getId() == -1 || course.getId() == 0) {
+    course.setId(++idCounter);
+    courses.add(course);
+  } else {
+    deleteById(course.getId());
+    courses.add(course);
   }
-
+  return course;
+}
 ```
 
+Let's add a method to the Resource class to update the course. We are using PUT method to update the course. On course updation, we are returning 200 status with updaated course details in the body.
 
 ```
   @PutMapping("/instructors/{username}/courses/{id}")
@@ -1112,11 +1237,13 @@ public class CoursesHardcodedService {
 
     Course courseUpdated = courseManagementService.save(course);
 
-    return new ResponseEntity<Course>(course, HttpStatus.OK);
+    return new ResponseEntity<Course>(courseUpdated, HttpStatus.OK);
   }
 ```
 
 #### Adding API to Create Course
+
+Let's add a method to the Resource class to create the course. We are using POST method to create the course. On course updation, we are returning a status of CREATED.
 
 ```
   @PostMapping("/instructors/{username}/courses")
@@ -1136,7 +1263,9 @@ public class CoursesHardcodedService {
 
 #### Invoking Update and Create APIs from Course Screen
 
-Let's create respective methods in the CourseDataService.
+Now that the REST API is ready, let's create the frontend methods to call them.
+
+Let's create respective methods in the `CourseDataService`. `updateCourse` uses a `put` and `createCourse` uses `post`.
 
 ```
 class CourseDataService {
@@ -1149,7 +1278,7 @@ class CourseDataService {
   }
 ```
 
-Let's update the CourseComponent to invoke the right service on the click of the submit button.
+Let's update the `CourseComponent` to invoke the right service on the click of the submit button.
 
 ```
     onSubmit(values) {
@@ -1174,9 +1303,14 @@ Let's update the CourseComponent to invoke the right service on the click of the
 
 ```
 
+We are creating a course object with the updated details and calling the appropriate method on the `CourseDataService`. Once the request is successful, we are redirecting the user to the course listing page using `this.props.history.push('/courses')`.
+
 > Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete set of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
 
 ## Next Steps
+
+You can pursue our amazing courses on Full Stack Development and Microservices. You get 30 day No Questions asked Refund if you do not like these courses!
+
 [![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://www.udemy.com/full-stack-application-with-spring-boot-and-react/?couponCode=SBT-2019){:target="_blank"}
 
 [![Image](/images/Course-Go-Full-Stack-With-SpringBoot-And-Angular.png "Go Full Stack with Spring Boot and Angular")](https://www.udemy.com/full-stack-application-development-with-spring-boot-and-angular/?couponCode=SBT-2019){:target="_blank"}
@@ -1668,7 +1802,7 @@ function checkValidServiceWorker(swUrl, config) {
       const contentType = response.headers.get('content-type');
       if (
         response.status === 404 ||
-        (contentType != null && contentType.indexOf('javascript') === -1)
+        (contentType != null && contentType.indexOf('JavaScript') === -1)
       ) {
         // No service worker found. Probably a different app. Reload the page.
         navigator.serviceWorker.ready.then(registration => {
