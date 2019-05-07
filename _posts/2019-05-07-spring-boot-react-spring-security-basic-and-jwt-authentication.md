@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Integration Spring Boot and React Full Stack Application with Spring Security - Basic and JWT Authentication
+title:      Integration Spring Boot and React with Spring Security - Basic and JWT Authentication
 date:       2019-05-06 12:31:19
 summary:    This guide helps you create a full stack application secured with Basic and JWT Authentication using React as Frontend framework, Spring Boot as the backend REST API and Spring Security as the security framework.
 categories: Spring Boot, REST API, Full Stack Application, React, Angular, Frontend, Maven, Basic Authentication, Basic Authentication
