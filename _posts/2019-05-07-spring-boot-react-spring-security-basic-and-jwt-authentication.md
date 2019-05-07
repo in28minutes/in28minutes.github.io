@@ -2,7 +2,7 @@
 layout:     post
 title:      Integration Spring Boot and React Full Stack Application with Spring Security - Basic and JWT Authentication
 date:       2019-05-06 12:31:19
-summary:    This guide helps you create a full stack application secured with Basic and JWT Authentication using React as Frontend framework and  Spring Boot as the backend REST API. We use Maven as the build tool.
+summary:    This guide helps you create a full stack application secured with Basic and JWT Authentication using React as Frontend framework, Spring Boot as the backend REST API and Spring Security as the security framework.
 categories: Spring Boot, REST API, Full Stack Application, React, Angular, Frontend, Maven, Basic Authentication, Basic Authentication
 permalink:  /spring-boot-react-full-stack-with-spring-security-basic-and-jwt-authentication
 ---
@@ -45,10 +45,6 @@ Once user is authenticated using Basic Authentication or JWT Authentication, we 
 
 User would be able to logout by click the logout button.
 
-As you can see the application has 
-- Menu Component and
-- Footer Component
-
 ### Understanding Full Stack Architecture
 
 Following Screenshot shows the architecture of the application we would create:
@@ -57,14 +53,15 @@ Following Screenshot shows the architecture of the application we would create:
 
 Important points to note:
 - REST API is exposed using Spring Boot
+- REST API is secured using Spring Security. We discuss two approaches - Basic Auth and JWT.
 - REST API is consumed from React Frontend to present the UI
 - The Database, in this example, is a hardcoded in-memory static list.
 
 You can find more details about Full Stack Architecture here - [Full Stack Application Architecture - Spring Boot and React](https://youtu.be/TTWH_Q7uSlY){:target="_blank"}
 
-### Getting an overview of Spring Boot REST API Resources
+### Getting an overview of Spring Boot and Spring Security REST API Resources
 
-In this guide, we will create these services using proper URIs and HTTP methods:
+In this guide, we will create these services:
 
 - ```@GetMapping("/instructors/{username}/courses")``` : Get Request Method exposing the list of courses taught by a specific instructor
 
@@ -80,21 +77,24 @@ In this guide, we will create these services using proper URIs and HTTP methods:
 ### Downloading the Complete Maven Project With Code Examples
 
 In this example, the BACKEND Spring Boot projects are different for JWT Authentication and Basic Authentication
-- For Basic Authentication - https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-basic-auth-login-logout/backend-spring-boot-react-basic-auth-login-logout
-- For JWT Authentication - https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-jwt-auth-login-logout/backend-spring-boot-react-jwt-auth-login-logout
+- For Basic Authentication  - [Project](https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-basic-auth-login-logout/backend-spring-boot-react-basic-auth-login-logout){:target="_blank"}
+- For JWT Authentication - [Project](https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-jwt-auth-login-logout/backend-spring-boot-react-jwt-auth-login-logout){:target="_blank"}
 
-FRONTEND React projects are almost the same exception for a minor change. The Frontend project can be used from https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-basic-auth-login-logout/frontend-spring-boot-react-basic-auth-login-logout. For JWT, a minor change needs to be done which is explained at https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-jwt-auth-login-logout/frontend-spring-boot-react-jwt-auth-login-logout
+FRONTEND React projects are almost the same exception for a minor change. The Frontend project can be used from [Project](https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-basic-auth-login-logout/frontend-spring-boot-react-basic-auth-login-logout){:target="_blank"}. For JWT, a minor change needs to be done which is explained at [Project](https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-jwt-auth-login-logout/frontend-spring-boot-react-jwt-auth-login-logout){:target="_blank"}
 
 Complete Code Example shows all the code.
 
-> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-react-examples/
+> Our Github repository has all the code examples - [Github Repo](https://github.com/in28minutes/spring-boot-react-examples/){:target="_blank"}
+
 
 ### Understanding Spring Boot REST API Project Structure
 
 Following screenshot shows the structure of the Spring Boot project we create for Basic Authentication.
+
 ![Image](/images/project-structure-spring-boot-fullstack-basic-auth.png "Spring Boot Basic Auth - Project Structure") 
 
 Following screenshot shows the structure of the Spring Boot project we create for JWT Authentication.
+
 ![Image](/images/project-structure-spring-boot-fullstack-jwt-auth.png "Spring Boot JWT - Project Structure") 
 
 
@@ -155,16 +155,14 @@ A few details:
 
 #### Installing Node Js (npm) & Visual Studio Code 
 
-- [Click to see video Playlist](https://www.youtube.com/playlist?list=PLBBog2r6uMCQN4X3Aa_jM9qVjgMCHMWx6
-- Steps){:target="_blank"}
+- [Click to see video Playlist](https://www.youtube.com/playlist?list=PLBBog2r6uMCQN4X3Aa_jM9qVjgMCHMWx6){:target="_blank"}
   - Step 01 - Installing NodeJs and NPM - Node Package Manager
   - Step 02 - Quick Introduction to NPM
   - Step 03 - Installing Visual Studio Code - Front End JavaScript Editor
 
 #### Installing Java, Eclipse & Embedded Maven
 
-- [Click to see video Playlist](https://www.youtube.com/playlist?list=PLBBog2r6uMCSmMVTW_QmDLyASBvovyAO3
-- Steps){:target="_blank"}
+- [Click to see video Playlist](https://www.youtube.com/playlist?list=PLBBog2r6uMCSmMVTW_QmDLyASBvovyAO3){:target="_blank"}
   - 0 - Overview - Installation Java, Eclipse and Maven
   - 1 - Installing Java JDK
   - 2 - Installing Eclipse IDE
@@ -694,7 +692,7 @@ Implementing JWT Authentication for Spring Boot is complex. Following are some o
 
 I would recommend to check out the code for these components in the `Complete Code Example` at the end of this article.
 
-> For setting up the JWT Backend Spring Boot API , I would recommend to download the project at this URL - https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-jwt-auth-login-logout/backend-spring-boot-react-jwt-auth-login-logout. Once you import the project, you can launch `SpringBootFullStackJwtAuthLoginLogoutApplication`.
+> For setting up the JWT Backend Spring Boot API , I would recommend to download the project at this URL - [Github Repo](https://github.com/in28minutes/spring-boot-react-fullstack-examples/tree/master/spring-boot-react-jwt-auth-login-logout/backend-spring-boot-react-jwt-auth-login-logout){:target="_blank"}. Once you import the project, you can launch `SpringBootFullStackJwtAuthLoginLogoutApplication` as a Java Application.
 
 ### JWT Authentication URLs
 
