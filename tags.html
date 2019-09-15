@@ -13,8 +13,7 @@ tags: about
     {% endfor %}
   {% endcapture %}
 
-  {% assign sortedtags = tags | sort %}
-
+  {% assign sortedtags = tags | split:' ' | sort %}
   {% for tag in sortedtags %}
     <h4 id="{{ tag }}">{{ tag }}</h4>
     <ul>
