@@ -1,6 +1,5 @@
 ---
-layout:  post
-title:  Java Tools and Frameworks : Introduction To Maven
+title:  Java Tools and Frameworks - Introduction To Maven
 date:    2019-09-04 12:31:19
 summary: In this article, we experience a brief introduction to Maven, and will see how it helps in managing your project dependencies.
 categories: Java Tools and Frameworks
