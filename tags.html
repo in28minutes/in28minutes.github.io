@@ -17,7 +17,7 @@ tags: about
   {% for tag in sortedtags %}
     <h4 id="{{ tag }}">{{ tag }}</h4>
     <ul>
-    {% for post in site.categories[tag] %}
+    {% for post in site.categories.tag %}
       <li><a href="{{ post.url | prepend: site.baseurl }}" class="post-link">{{ post.title }}</a></li>
     {% endfor %}
     </ul>
