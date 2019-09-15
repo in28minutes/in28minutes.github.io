@@ -3,7 +3,7 @@ layout:     post
 title:      Logging with Spring Boot - Logback, SLF4j and LOG4j2
 date:       2017-12-12 12:31:19
 summary:    Learn how to log effectively with Spring Boot. We will look at Spring Boot Starter for Logging and Spring Boot starter for log4j2.
-categories: [Spring Initializr, Spring Boot Logging, Logging, Spring Boot]
+categories: Spring Initializr, Spring Boot Logging, Logging, Spring Boot
 permalink : /logging-with-spring-boot-logback-slf4j-and-log4j
 ---
 

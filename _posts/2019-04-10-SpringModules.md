@@ -3,7 +3,7 @@ layout:  post
 title:  Architecture of Spring Framework - Modularity and Spring Modules
 date:   2019-04-10 12:31:19
 summary: One of the most important features of the Spring framework is its modularity. It is not one big monolith framework. What are Spring Modules? How are they organized? What is the architecture of Spring Framework?
-categories: Spring Basics
+categories: Spring Framework
 permalink:  /spring-framework-architectures-and-modules
 ---
 

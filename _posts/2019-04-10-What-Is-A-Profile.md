@@ -3,7 +3,7 @@ layout:  post
 title:  Spring Boot Basics - What Is A Profile?
 date:   2019-04-10 12:31:19
 summary: When we develop applications, we would want to be able to provide different application configuration in different environments? How do you achieve it with Profiles?
-categories: Spring Boot Basics
+categories: Spring Boot
 permalink:  /spring-boot-profiles
 ---
 
