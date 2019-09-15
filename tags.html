@@ -7,8 +7,8 @@ tags: about
 
 <div class="home">
 
-  {% capture tags %}
-    {% for tag in site.tags %}
+  {% capture tag %}
+    {% for tag in site.categories %}
       {{ tag[0] }}
     {% endfor %}
   {% endcapture %}
