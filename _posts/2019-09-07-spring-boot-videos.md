@@ -10,7 +10,6 @@ permalink:  /spring-boot-video-tutorials-for-beginners
 This guide will help you understand the different resources (tutorials, videos and courses) we are creating for beginners to learn and gain expertise at Spring, Spring Boot and other topics.
 
 # Videos
-
 ### 5 Minute Introductions - Tools and Terminology
 - [Introduction to Web Services in 5 minutes](https://www.youtube.com/watch?v=vim2_LSqcvE)
 - [Introduction to Spring Initializr in 5 Minutes](https://www.youtube.com/watch?v=pLn0WLCdNx0)
