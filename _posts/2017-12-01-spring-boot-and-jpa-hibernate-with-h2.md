@@ -3,7 +3,7 @@ layout:     post
 title:   Integrating Hibernate and JPA with Spring Boot
 date:       2017-12-01 12:31:19
 summary:    Learn using Spring Boot Starter JPA to connect Spring Boot to H2 (in memory database) using Hibernate/JPA. You will learn the basics of JPA and Hibernate - Entities and Keys. We will create a simple repository extending JPARepository and explore different methods it exposes.
-categories: SpringBootJPA
+categories:  SpringBootJPA
 permalink:  /hibernate-jpa-tutorial-with-spring-boot-starter-jpa
 ---
 

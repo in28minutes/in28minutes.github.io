@@ -3,7 +3,7 @@ layout:     post
 title:      Implementing AOP with Spring Boot and AspectJ
 date:       2017-12-15 12:31:19
 summary:    Learn how to implement AOP with Spring Boot Starter AOP and AspectJ. You will understand cross cutting concerns and the basics of AOP - Aspect, Pointcut, JoinPoint, Advice and more.
-categories: SpringBoot
+categories:  SpringBoot
 permalink:  /spring-boot-and-aop-with-spring-boot-starter-aop
 ---
 

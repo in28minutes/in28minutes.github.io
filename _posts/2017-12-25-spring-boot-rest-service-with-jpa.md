@@ -3,7 +3,7 @@ layout:     post
 title:      Creating a CRUD REST API/Service with Spring Boot, JPA and Hibernate
 date:       2017-12-25 12:31:19
 summary:    Creating a complete CRUD API with GET, POST, PUT and DELETE is the first step to developing RESTful Services, In this tutorial, let's learn to create an awesome CRUD REST API with Spring Boot, Spring MVC, JPA and Hibernate.
-categories: SpringBoot
+categories:  SpringBoot
 permalink:  /spring-boot-crud-rest-service-with-jpa-hibernate
 ---
 

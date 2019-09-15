@@ -3,7 +3,7 @@ layout:  post
 title:  Microservices Architectures - What is Fault Tolerance?
 date:    2019-05-23 12:31:19
 summary:  In this article, we discuss an important property of microservices, called fault tolerance
-categories: SpringBootMicroservices
+categories:  SpringBootMicroservices
 permalink:  /fault-tolerance-in-microservices
 ---
 

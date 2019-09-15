@@ -3,7 +3,7 @@ layout:  post
 title: The 12 Factor App - Best Practices In Cloud Native Applications and Microservices
 date:    2019-06-07 12:31:19
 summary: In order that an application be deployed in the cloud and enjoy features such as auto scaling, it first needs to be cloud native. In this article, we have a close look at the best practices for cloud native applications, popularly known as The 12 Factor App. 
-categories: SpringBootMicroservices
+categories:  SpringBootMicroservices
 permalink:  /12-factor-app-cloud-native-microservices-best-practices
 ---
 

@@ -3,7 +3,7 @@ layout:     post
 title:      Microservices with Spring Boot - Part 1 - Getting Started
 date:       2018-01-05 12:31:19
 summary:    Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. In part 1 of this series, lets get introduced to the concept of microservices and understand how to create great microservices with Spring Boot and Spring Cloud.
-categories: SpringBootMicroservices
+categories:  SpringBootMicroservices
 permalink:  /creating-microservices-with-spring-boot-part-1-getting-started
 ---
 

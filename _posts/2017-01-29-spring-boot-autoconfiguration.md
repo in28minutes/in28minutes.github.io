@@ -3,7 +3,7 @@ layout:     post
 title:      What is Spring Boot Auto Configuration?
 date:       2017-01-28 12:31:19
 summary:    Auto Configuration is the most important feature in Spring Boot. In this tutorial, we will learn important concepts about Auto Configuration with a couple of examples. 
-categories: SpringBoot
+categories:  SpringBoot
 permalink:  /spring-boot-auto-configuration
 ---
 

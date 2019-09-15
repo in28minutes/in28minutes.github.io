@@ -3,7 +3,7 @@ layout:  post
 title:  Programming Basics - Unit Testing - What Is Mocking?
 date:    2019-08-28 12:30:19
 summary: Mocking is an important concept that is made use of, when writing unit tests. In this article, we explore what mocking is all about, and explore some of the popular Java mocking frameworks in use.
-categories: SpringBootUnitTesting
+categories:  SpringBootUnitTesting
 permalink:  /programming-basics-introduction-to-mocking-in-unit-tests
 ---
 

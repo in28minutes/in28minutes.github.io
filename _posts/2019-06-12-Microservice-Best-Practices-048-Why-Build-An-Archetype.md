@@ -3,7 +3,7 @@ layout:  post
 title:  Microservice Best Practice - Build an Archetype
 date:    2019-06-11 12:31:19
 summary:  In this article, we focus on learning why creating proper archetypes is important for successful microservices architecture. 
-categories: SpringBootMicroservices
+categories:  SpringBootMicroservices
 permalink:  /creating-archetypes-in-microservices-architectures-best-practices
 ---
 

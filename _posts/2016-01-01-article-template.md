@@ -3,7 +3,7 @@ layout:     post
 title:      TODO
 date:       2016-01-01 12:31:19
 summary:    TODO
-categories: Spring Boot Microservices
+categories:  Spring Boot Microservices
 permalink:  /url
 ---
 

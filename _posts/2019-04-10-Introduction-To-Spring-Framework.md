@@ -3,7 +3,7 @@ layout:  post
 title:  Spring Basics - Introduction To Spring Framework
 date:   2019-04-10 12:31:19
 summary: In this article, we look to get an introduction to what the Spring framework is, and why it is so widely used.
-categories: SpringFramework
+categories:  SpringFramework
 permalink:  /introduction-to-the-spring-framework
 ---
 

@@ -3,7 +3,7 @@ layout:  post
 title:  Spring Framework Basics - What Is Inversion Of Control?
 date:   2019-04-10 12:31:19
 summary: Developers starting with the Spring framework often get confused with terminology - Dependency, Dependency Injection and Inversion Of Control. In this article, we introduce you to the concept of Inversion of Control.
-categories: SpringFramework
+categories:  SpringFramework
 permalink:  /spring-framework-what-is-inversion-of-control
 ---
 

@@ -3,7 +3,7 @@ layout:  post
 title:  What is an In Memory Database?
 date:    2019-09-06 12:31:19
 summary: In this article, we understand what the term "In-Memory Database" actually means. We see what scenarios they can be used, and why they are important.
-categories:SWJavaProgrammers
+categories: SWJavaProgrammers
 permalink:  /java-programmer-essentials-what-is-an-in-memory-database
 ---
 

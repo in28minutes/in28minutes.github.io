@@ -3,7 +3,7 @@ layout:  post
 title:  Microservices Architectures - What is Service Discovery?
 date:    2019-05-19 12:31:19
 summary:  In this article, we talk about Service Discovery. Why is Service Discovery important in microservices architecture, and how to set it up for your application.
-categories: SpringBoot
+categories:  SpringBoot
 permalink:  /service-discovery-in-microservices
 ---
 

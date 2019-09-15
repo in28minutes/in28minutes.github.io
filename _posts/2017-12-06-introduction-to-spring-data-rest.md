@@ -3,7 +3,7 @@ layout:     post
 title:   Introduction to Spring Data Rest - Create RESTful APIs at F1 Speed
 date:       2017-12-06 12:31:19
 summary: Learn to create RESTful Services with Spring Data Rest and Spring Boot. We will create a JPA Project connecting to H2 (in memory database) and add Spring Data JPA Rest Starter to expose API.
-categories: SpringBoot
+categories:  SpringBoot
 permalink:  /introduction-to-spring-data-rest-using-spring-boot
 ---
 
