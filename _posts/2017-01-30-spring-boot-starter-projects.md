@@ -3,7 +3,7 @@ layout:     post
 title:      Initializing Projects with Spring Boot Starters - Web and JPA
 date:       2017-01-28 12:31:19
 summary:    Key goal of Spring Boot is to enable a quick start to developing production ready applications. Most important components behind the features of Spring Boot are the Spring Boot Starter Projects. 
-categories: Spring Boot
+categories: SpringBoot
 permalink:  /spring-boot-starter-projects
 ---
 

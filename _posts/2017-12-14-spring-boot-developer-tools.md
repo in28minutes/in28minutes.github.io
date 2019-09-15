@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Boot Developer Tools and Live Reload - Maximize productivity with Hot Swapping
 date:       2017-12-14 12:31:19
 summary:    When we develop web applications with Java, we had to restart the server to pick up all changes. This kills productivity. Spring Boot Developers Tools provides solutions to automatically pick up changes without a complete server restart. Lets get productive with Spring Boot Developer Tools.
-categories: Spring Boot
+categories: SpringBoot
 permalink:  /spring-boot-developer-tools-and-live-reload
 ---
 

@@ -3,7 +3,7 @@ layout:     post
 title:      Introduction to JPA and Hibernate using Spring Boot Data Jpa
 date:       2017-07-05 12:31:19
 summary:    Complete journey starting from JDBC to JPA to Spring Data JPA using an example with Spring Boot Data Jpa starter project. We use Hibernate as the JPA Implementation.
-categories: Spring Boot JPA
+categories: SpringBootJPA
 permalink:  /introduction-to-jpa-with-spring-boot-data-jpa
 ---
 

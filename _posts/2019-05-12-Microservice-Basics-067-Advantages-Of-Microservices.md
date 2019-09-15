@@ -3,7 +3,7 @@ layout:  post
 title:  Microservices Architectures - Advantages Of Microservices
 date:    2019-05-12 12:31:19
 summary: Microservices architectures are very popular today. In this article, we discuss the three main advantages of having a microservices architecture.
-categories: Spring Boot Microservices
+categories: SpringBootMicroservices
 permalink:  /microservice-architectures-advantages-of-microservices
 ---
 

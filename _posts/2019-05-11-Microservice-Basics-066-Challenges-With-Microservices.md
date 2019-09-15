@@ -3,7 +3,7 @@ layout:  post
 title:  Microservice Architectures - Challenges with building Microservices
 date:    2019-05-11 12:31:19
 summary: Microservices architectures are very popular today. In this article, we discuss the important challenges in developing a microservices architecture.
-categories: Spring Boot Microservices
+categories: SpringBootMicroservices
 permalink:  /microservice-architectures-challenges-with-microservices
 ---
 

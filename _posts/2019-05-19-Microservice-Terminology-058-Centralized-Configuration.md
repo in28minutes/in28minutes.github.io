@@ -3,7 +3,7 @@ layout:  post
 title:  Microservices Architectures - Centralized Configuration and Config Server
 date:    2019-05-19 12:31:19
 summary:  In this article, we explore the concept of centralized configuration, in the context of microservices. 
-categories: Spring Boot Microservices
+categories: SpringBootMicroservices
 permalink:  /introduction-to-centralized-configuration-with-spring-cloud-config-server
 ---
 

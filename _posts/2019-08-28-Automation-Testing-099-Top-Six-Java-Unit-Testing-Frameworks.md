@@ -3,7 +3,7 @@ layout:  post
 title:  Best Java Unit Testing Frameworks - With Examples of JUnit, Mockito and More...
 date:    2019-06-27 12:31:19
 summary: Unit Testing is an important skill for programmers. What are the frameworks you can use to write great unit tests in the Java World?
-categories: Unit Testing
+categories: SpringBootUnitTesting
 permalink:  /java-unit-testing-frameworks-with-examples-junit-mockito
 ---
 

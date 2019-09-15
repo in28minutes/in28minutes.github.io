@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Boot Profiles - Application Configuration made easy
 date:       2017-12-20 12:31:19
 summary:    Different environments have different application configuration. Profiles help you to configure different configuration for different environments. In this tutorial, lets understand how to use Profiles with Spring Boot. Let's learn how to make your Application Configuration simple and dynamic.
-categories: Spring Boot
+categories: SpringBoot
 permalink:  /spring-boot-profiles
 ---
 

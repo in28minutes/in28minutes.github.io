@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Initializr - Bootstrap Your Spring Boot Applications at F1 speed!
 date:       2017-01-21 12:31:19
 summary:    Learn what is Spring Initializr and understand how to Bootstrap a Spring Boot Web Application quickly.
-categories: Spring Boot
+categories: SpringBoot
 permalink : /spring-initialzr-bootstrap-spring-boot-applications
 ---
 

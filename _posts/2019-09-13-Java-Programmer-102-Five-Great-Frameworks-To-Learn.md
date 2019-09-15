@@ -3,7 +3,7 @@ layout:  post
 title:  Five Great Frameworks To Try for Java Programmers
 date:   2019-09-01 12:31:19
 summary: As a programmer you want to explore new languages and frameworks. What would be the best frameworks to explore in 2019 for Java Programmers?
-categories: SW Java Programmers
+categories:SWJavaProgrammers
 permalink:  /five-frameworks-for-java-programmers
 ---
 

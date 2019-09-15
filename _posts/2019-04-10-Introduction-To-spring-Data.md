@@ -3,7 +3,7 @@ layout:  post
 title:  Spring Boot Basics - Introduction To Spring Data and Spring Data JPA
 date:   2019-04-10 12:31:19
 summary: In this article, we take a look at Spring Data and Spring Data JPA.
-categories: Spring Boot
+categories: SpringBoot
 permalink:  /introduction-to-spring-data-and-spring-data-jpa
 ---
 

@@ -3,7 +3,7 @@ layout:  post
 title:  Microservices Architectures - Importance of Centralized Logging
 date:   2019-05-21 12:31:19
 summary: In this article, we explore the concept of centralized logging, in the context of microservices. 
-categories: Spring Boot Microservices
+categories: SpringBootMicroservices
 permalink: /introduction-to-centralized-logging-with-microservices
 ---
 

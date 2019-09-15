@@ -3,7 +3,7 @@ layout:  post
 title:  Microservices Architectures - Introduction to API Gateway
 date:    2019-05-20 12:31:19
 summary:  In this article, we look at what an API Gateway is, in the context of microservices.
-categories: Spring Boot Microservices
+categories: SpringBootMicroservices
 permalink:  /introduction-to-api-gateways-with-microservices
 ---
 

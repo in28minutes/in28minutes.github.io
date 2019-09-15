@@ -3,7 +3,7 @@ layout:  post
 title:  Spring Basics - Introduction To Spring Batch
 date:   2019-04-10 12:31:19
 summary: Spring Batch is a lightweight, comprehensive batch framework that is designed for use in developing robust batch applications. 
-categories: Spring Boot
+categories: SpringBoot
 permalink:  /spring-basics-introduction-to-spring-batch
 ---
 

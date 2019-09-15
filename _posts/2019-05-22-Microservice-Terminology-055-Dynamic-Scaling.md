@@ -3,7 +3,7 @@ layout:  post
 title:  Microservices Architectures - Introduction to Auto Scaling
 date:    2019-05-22 12:31:19
 summary:  In this article, we focus our attention on the Dynamic Scaling or Auto Scaling. Why do we need applications that can auto scale?
-categories: Spring Boot Microservices
+categories: SpringBootMicroservices
 permalink:  /introduction-to-auto-scaling-or-dynamic-scaling-in-cloud
 ---
 

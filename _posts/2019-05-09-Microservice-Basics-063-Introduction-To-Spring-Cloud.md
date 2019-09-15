@@ -3,7 +3,7 @@ layout:  post
 title:  Microservice Architectures - Introduction to Spring Cloud
 date:    2019-05-09 12:31:19
 summary:  In this article, we focus on Spring Cloud. We talk about the various components under its umbrella. 
-categories: Spring Boot Microservices
+categories: SpringBootMicroservices
 permalink:  /introduction-to-spring-cloud
 ---
 

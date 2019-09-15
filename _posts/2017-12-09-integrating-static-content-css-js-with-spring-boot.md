@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Boot - Integrating Static Content -  Javascript (JS) and CSS files 
 date:       2017-12-09 12:31:19
 summary:    Learn how to integrate Spring Boot with Static Content -  Javascript (JS) and CSS files . We will set up a simple web application and add the static content for these frameworks. 
-categories: Spring Boot
+categories: SpringBoot
 permalink:  /spring-boot-with-static-content-css-and-javascript-js
 ---
 

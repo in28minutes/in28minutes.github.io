@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Boot Exception(Error) Handling for RESTful Services
 date:       2017-12-26 12:31:19
 summary:    Great REST APIs have Great Exception Handling. You don't want to leave your API consumer hanging not knowing what to do when an error occurs. Let's learn how to implement effective exception handling for a REST API/Service with Spring Boot. You will understand and implement HTTP Error Response statuses based on the type of error.
-categories: Spring Boot
+categories: SpringBoot
 permalink:  /spring-boot-exception-handling-for-rest-services
 ---
 

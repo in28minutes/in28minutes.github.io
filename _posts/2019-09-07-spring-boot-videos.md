@@ -3,7 +3,7 @@ layout:     post
 title:      Spring and Spring Boot Video Tutorials for Beginners
 date:       2020-02-03 12:30:19
 summary:    At in28Minutes, we are creating a number of tutorials with videos, articles &amp; courses on Spring Boot for Beginners and Experienced Developers. Here's a list of video tutorials and courses for you
-categories: Spring Boot
+categories: SpringBoot
 permalink:  /spring-boot-video-tutorials-for-beginners
 ---
 

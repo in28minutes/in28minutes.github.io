@@ -3,7 +3,7 @@ layout:     post
 title:      Creating a Web Application with Spring Boot with JSP
 date:       2017-02-01 12:31:19
 summary:    Setting up a basic web application with Spring Boot is a cake walk. We will create a simple web application using Spring Initializr and add JSP features to it. 
-categories: Spring Boot
+categories: SpringBoot
 permalink:  /creating-web-application-with-spring-boot
 ---
 
