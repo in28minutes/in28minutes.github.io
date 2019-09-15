@@ -7,12 +7,14 @@ tags: about
 
 <div class="home">
     <table>
-      <tr>
+      
     {% for post in site.posts %}
-      <td>{{ post.categories }}</td>
-      <td><a href="{{ post.url | prepend: site.baseurl }}" class="post-link">{{ post.title }}</a></td>
-    {% endfor %}
+      <tr>
+        <td>{{ post.categories }}</td>
+        <td><a href="{{ post.url | prepend: site.baseurl }}" class="post-link">{{ post.title }}</a></td>
       </tr>
+    {% endfor %}
+      
     </table>
 
 </div>
