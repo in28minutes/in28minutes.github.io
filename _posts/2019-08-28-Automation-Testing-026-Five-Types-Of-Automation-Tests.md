@@ -3,7 +3,7 @@ layout:  post
 title:  Automation Testing in Microservices - Five Types Of Automation tests
 date:    2019-08-26 12:31:19
 summary: Automation tests are a very important requirement to have highly successful microservice architectures. In order to take things live on a frequent basis, it is imperative to have great automation tests. In this article, we talk of the five kinds of automation tests that you can write, for your microservices.
-categories: Microservice Basics
+categories: Unit Testing
 permalink:  /microservice-and-automation-testing
 ---
 

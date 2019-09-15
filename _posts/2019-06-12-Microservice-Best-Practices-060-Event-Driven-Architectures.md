@@ -3,7 +3,7 @@ layout:  post
 title:  Microservices Architectures - Event Driven Approach
 date:    2019-06-08 12:31:19
 summary:  In this article, we talk about event driven approach, in the context of microservices architectures. We also discuss what are the advantages of using an event driven approach.
-categories: Microservices
+categories: Spring Boot Microservices
 permalink:  /introduction-to-event-driven-architectures-with-microservices
 ---
 

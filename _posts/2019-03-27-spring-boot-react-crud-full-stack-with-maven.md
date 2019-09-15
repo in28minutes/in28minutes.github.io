@@ -3,7 +3,7 @@ layout:     post
 title:      Creating Spring Boot and React CRUD Full Stack Application with Maven
 date:       2019-03-27 12:31:19
 summary:    This guide helps you create a full stack application with all the CRUD (Create, Read, Update and Delete) features using React as Frontend framework and  Spring Boot as the backend REST API. We use Maven as the build tool.
-categories: Spring Boot, REST API, Full Stack Application, React, Angular, Frontend, CRUD, Maven
+categories: Spring Boot Full Stack
 permalink:  /spring-boot-react-full-stack-crud-maven-application
 ---
 

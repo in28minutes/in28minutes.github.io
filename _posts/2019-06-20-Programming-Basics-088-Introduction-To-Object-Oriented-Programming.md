@@ -3,7 +3,7 @@ layout:  post
 title:  Programming Basics - Introduction To Object Oriented Programming
 date:    2019-06-20 12:31:19
 summary: Object oriented programming (OOP) is all about thinking in terms of objects. Let's dig deeper.
-categories: Programming Basics
+categories: SW Programming
 permalink:  /programming-basics-introduction-to-object-oriented-programming
 ---
 

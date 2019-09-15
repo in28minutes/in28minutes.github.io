@@ -3,7 +3,7 @@ layout:  post
 title: Asynchronous communication with queues and microservices - A perfect combination?
 date:    2019-06-12 12:31:19
 summary:  In this article, we throw some light on what asynchronous messaging is all about and discuss why you should consider it for your microservices architectures.
-categories: Microservices
+categories: Spring Boot Microservices
 permalink:  /asynchronous-communication-with-queues-in-microservices
 ---
 
