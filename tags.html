@@ -6,10 +6,13 @@ tags: about
 ---
 
 <div class="home">
-    <ul>
+    <table>
+      <tr>
     {% for post in site.posts %}
-      <li><a href="{{ post.url | prepend: site.baseurl }}" class="post-link">{{ post.title }}</a></li>
+      <td>{{ post.categories }}</td>
+      <td><a href="{{ post.url | prepend: site.baseurl }}" class="post-link">{{ post.title }}</a></td>
     {% endfor %}
-    </ul>
+      </tr>
+    </table>
 
 </div>
