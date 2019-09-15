@@ -3,7 +3,7 @@ layout:     post
 title:   Spring Boot and H2 in memory database - Why, What and How?
 date:       2017-12-03 12:31:19
 summary:  Learn how to connect a Spring Boot application to H2 in memory database. Understand why in memory databases are needed and the best practices in using them with Spring Boot.
-categories: Spring Boot, H2, in memory database, Database
+categories: Spring Boot JPA
 permalink:  /spring-boot-and-h2-in-memory-database
 ---
 

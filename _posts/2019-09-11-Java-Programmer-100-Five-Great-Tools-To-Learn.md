@@ -3,7 +3,7 @@ layout:  post
 title:  Five Tools To Learn as a Java Developer
 date:    2019-09-03 12:31:19
 summary: In this article, we introduce you to five great tools that we recommend every Java Developer to learn.
-categories: Java Programmers
+categories: SW Java Programmers
 permalink:  /five-tools-to-learn-for-java-programmers
 ---
 

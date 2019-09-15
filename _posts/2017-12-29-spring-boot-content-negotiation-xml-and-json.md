@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Boot and Content Negotiation - XML and JSON Representations 
 date:       2017-12-29 12:31:19
 summary:    Learn how to implement Content Negotiation for a REST API/Service with Spring Boot. Content Negotiation helps the Consumer and Provider interact about the data exchange format. In this article, we will expose both XML and JSON representations.
-categories: Spring Boot, REST Service, HATEOAS
+categories: Spring Boot
 permalink:  /spring-boot-content-negotiation-with-xml-json-representations
 ---
 

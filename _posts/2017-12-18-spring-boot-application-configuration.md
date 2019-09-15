@@ -3,7 +3,7 @@ layout:     post
 title:      Application Configuration with Spring Boot
 date:       2017-12-18 12:31:19
 summary:    Externalizing Application Configuration is a key challenge in developing great Application. Spring Boot provides a variety of options to expose Application Configuration. In this tutorial, we explore the basics of application.properties, @Value and @ConfigurationProperties.
-categories: Spring Boot, Application Configuration
+categories: Spring Boot
 permalink:  /spring-boot-application-configuration
 ---
 

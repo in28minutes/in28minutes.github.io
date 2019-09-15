@@ -3,7 +3,7 @@ layout:     post
 title:   Spring Boot - Unit Testing and Mocking with Mockito and JUnit
 date:       2017-12-13 12:31:19
 summary:    Learn the basics of JUnit and Mockito. We will Spring Boot to create a Business Service and Data Services. We will unit test the Business Service using Spring Boot, Mockito and JUnit in two different approaches. 
-categories: Spring Boot, Unit Testing, JUnit, Mockito
+categories: Spring Boot Unit Testing
 permalink:  /spring-boot-unit-testing-and-mocking-with-mockito-and-junit
 ---
 

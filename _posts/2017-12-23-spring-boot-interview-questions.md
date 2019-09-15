@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Boot Interview Questions
 date:       2017-12-23 12:31:19
 summary:    Let's take a quick look at some of the important Spring Boot concepts with examples to get ready for a Spring Boot Interview. We will understand all the basics of Spring Boot - Auto Configuration, Starter Parent, a variety of Starter Projects - Web, JPA, Data REST and Test.
-categories: Spring Boot Interview Questions
+categories: Spring Boot
 permalink:  /spring-boot-interview-questions
 ---
 

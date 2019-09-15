@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Boot - HATEOAS for RESTful Services
 date:       2017-12-28 12:31:19
 summary:    HATEOAS stands for "Hypermedia as the engine of application state". Its a complicated acronym. In this article, we decode HATEOAS for you and help you learn how to implement HATEOAS for a REST API/Service with Spring Boot.
-categories: Spring Boot, REST Service, HATEOAS
+categories: Spring Boot
 permalink:  /spring-boot-hateoas-for-rest-services
 ---
 

@@ -3,7 +3,7 @@ layout:  post
 title:  Five Languages To Learn as a Java Programmer
 date:    2019-09-02 12:31:19
 summary: As a programmer, you want to explore new things. Learning a new language gives you a different perspective when solving problems. What are the 5 languages that a Java developer should explore? 
-categories: Java Programmers
+categories: SW Java Programmers
 permalink:  /five-great-languages-to-learn-as-a-java-programmer
 ---
 

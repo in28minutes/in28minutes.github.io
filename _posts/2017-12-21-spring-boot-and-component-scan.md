@@ -3,7 +3,7 @@ layout:     post
 title:      Spring, Spring Boot and Component Scan
 date:       2017-12-21 12:31:19
 summary:    Understand the most important concept in Spring Framework - Component Scan. Let's see how you can configure a Component Scan in Spring and Spring Boot. We will also look at how you can debug problems related to Component Scan.
-categories: Spring Boot, REST Service
+categories: Spring Boot
 permalink:  /spring-boot-and-component-scan
 ---
 

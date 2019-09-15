@@ -3,7 +3,7 @@ layout:     post
 title:      Writing Integration Tests for Rest Services with Spring Boot
 date:       2017-01-28 12:31:19
 summary:    Setting up a basic REST Service with Spring Boot is a cake walk. We will go one step further and add great integration tests! 
-categories: [Spring Boot, REST Service, Integration Testing]
+categories: Spring Boot Unit Testing
 permalink:  /integration-testing-for-spring-boot-rest-services
 ---
 

@@ -3,7 +3,7 @@ layout:     post
 title:      Introduction to Spring Boot Starter Parent
 date:       2017-01-30 02:31:19
 summary:    Key goal of Spring Boot is to enable a quick start to developing production ready applications. Spring Boot Starter Parent plays a key role in managing dependency versions and having the right plug-ins configured.  
-categories: [Spring Boot, Spring Boot Basics]
+categories: Spring Boot
 permalink:  /spring-boot-starter-parent
 ---
 
