@@ -3,7 +3,7 @@ layout:  post
 title:  What is an Embedded Server?
 date:    2019-09-05 12:31:19
 summary: In this article, we focus in exploring what an embedded server is, and how they help make application deployment simpler.
-categories: SWJavaProgrammers
+categories: SwJavaProgrammers
 permalink:  /java-programmer-essentials-what-is-an-embedded-server
 ---
 

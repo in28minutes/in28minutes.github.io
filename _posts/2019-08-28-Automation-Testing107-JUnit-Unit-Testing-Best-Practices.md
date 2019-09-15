@@ -3,7 +3,7 @@ layout: post
 title: Unit Testing Best Practices - with Java and Junit Examples
 date:    2019-08-28 12:31:19
 summary: Unit Testing is often underrated. As far as I am concerned, having good unit tests seperates good projects from bad. In this article, let's look at unit testing best practices in depth. We use examples from Java and JUnit to illustrate the concepts. However, the best practices are applicable irrespective of the programming language used.
-categories:  SWProgramming
+categories:  SwProgramming
 permalink:  /unit-testing-best-practices-with-java-and-junit-examples
 ---
 

@@ -3,7 +3,7 @@ layout:  post
 title:  Programming Basics - Five Things To Think About While Programming
 date:    2019-06-19 12:31:19
 summary: You would obviously want to write code that meets your core requirements and provide good performance - choosing right data structures and algorithms to use is the fundamental part of programming.  What are the other things that you need to worry about? Here are five things that we think are essential.
-categories:  SWProgramming
+categories:  SwProgramming
 permalink:  /programming-basics-five-things-to-think-about-while-programming
 ---
 
