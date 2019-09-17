@@ -14,14 +14,6 @@ Setting up a basic project with Spring Boot is a cake walk. In this article, we 
 - How to use Spring Starter Eclipse Plugin to create a simple project with Spring Boot, Maven and Eclipse? 
 - How to create a Spring Boot Project manually step by step?
 
-## Spring Boot Courses
-
-[![Image](/images/Course-Master-Java-Web-Services-and-REST-API-with-Spring-Boot.png "Master Java Web Services and REST API with Spring Boot")](https://www.udemy.com/spring-web-services-tutorial/?couponCode=SBT-2019){:target="_blank"}
-
-[![Image](/images/Course-Spring-Framework-Interview-Guide-200-Questions-Answers.png "Spring Framework Interview Guide - 200+ Questions & Answers")](https://www.udemy.com/spring-interview-questions-and-answers/?couponCode=SBT-2019){:target="_blank"}
-
-[![Image](/images/Course-Learn-Spring-Boot-in-100-Steps---Beginner-to-Expert.png "Learn Spring Boot in 100 Steps - Beginner to Expert")](https://www.udemy.com/spring-boot-tutorial-for-beginners/?couponCode=SBT-2019){:target="_blank"}
-
 ## 10 Step Reference Courses
 
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
@@ -327,6 +319,13 @@ When you launch this class a java application, you would see that an embedded to
 ## Summary
 
 In this article, we looked at the different options to creating Spring Boot Projects with Maven and Eclipse. I love option 2 of creating the project directly from Eclipse using STS plugin. But, you might have your own preference.
+
+Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
+
+<blockquote>
+    <H2>Join 300,000 Learners!</H2>
+    <p><a href="https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps" target="_blank">Learn Spring Boot in 10 Steps - FREE Course</a></p>
+</blockquote>
 
 ## Next Steps
 [![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://www.udemy.com/full-stack-application-with-spring-boot-and-react/?couponCode=SBT-2019){:target="_blank"}
