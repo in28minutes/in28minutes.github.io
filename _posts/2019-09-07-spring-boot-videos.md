@@ -9,8 +9,6 @@ permalink:  /spring-boot-video-tutorials-for-beginners
 
 This guide will help you understand the different resources (tutorials, videos and courses) we are creating for beginners to learn and gain expertise at Spring, Spring Boot and other topics.
 
-## Videos
-
 ### 5 Minute Introductions - Tools and Terminology
 - [Introduction to Web Services in 5 minutes](https://www.youtube.com/watch?v=vim2_LSqcvE)
 - [Introduction to Spring Initializr in 5 Minutes](https://www.youtube.com/watch?v=pLn0WLCdNx0)
@@ -166,7 +164,9 @@ This guide will help you understand the different resources (tutorials, videos a
 - [Code Quality - An Overview](https://www.youtube.com/watch?v=aGQda_tlfdw)
 - [Code Quality - 5 Things to think about while Programming](https://www.youtube.com/watch?v=svJ_htqB12E)
 
-### Spring and Other FAQ
+## Spring and Spring Boot Videos
+
+### Spring
 - [Spring Tip : Why Is Spring Popular?](https://www.youtube.com/watch?v=T8rJ_jU9W8k)
 - [Spring Framework - What is Inversion of Control (IOC)?](https://www.youtube.com/watch?v=oLxsTnH_peI)
 - [Spring Framework - What is Dependency Injection?](https://www.youtube.com/watch?v=4sD_3BzxJOo)
@@ -174,7 +174,12 @@ This guide will help you understand the different resources (tutorials, videos a
 - [Spring Framework - What is a Dependency?](https://www.youtube.com/watch?v=4VajgnSHwOw)
 - [Spring Framework - What are Spring Projects?](https://www.youtube.com/watch?v=gsqYVsVh7iM)
 - [Spring Framework - What are Spring Modules?](https://www.youtube.com/watch?v=Lbz7yGXe_EM)
+
+### Spring Boot
+- [Spring Boot Vs Spring - A Comparison](https://www.youtube.com/watch?v=bNFoN956P2A)
+- [Spring Boot Vs Spring MVC - A Comparison](https://www.youtube.com/watch?v=ILRmPKEL4U0)
 - [Spring Boot Interview Questions](https://www.youtube.com/watch?v=OBFjJKT0DIw)
+- [Spring Boot Auto Configuration - Understand The Magic](https://www.youtube.com/watch?v=J_kTukE7hr8)
 - [Spring Boot - What is Spring Boot Starter Parent?](https://www.youtube.com/watch?v=vPvHRZwY8l0)
 - [Spring Boot - What is Spring Boot Data Rest?](https://www.youtube.com/watch?v=8_bEl0zME0k)
 - [Spring Boot - What is Auto Configuration?](https://www.youtube.com/watch?v=-jwd-9PKr5Y)
@@ -183,14 +188,11 @@ This guide will help you understand the different resources (tutorials, videos a
 - [Spring Framework Tutorial For Beginners](https://www.youtube.com/watch?v=edgZo2g-LTM)
 - [Spring Boot Tutorial For Beginners](https://www.youtube.com/watch?v=pcdpk3Yd1EA)
 - [Spring Boot Starter Projects And Spring Boot Starter Web](https://www.youtube.com/watch?v=y1uHFZ4PKwU)
-- [Spring Boot Vs Spring - A Comparison](https://www.youtube.com/watch?v=bNFoN956P2A)
 - [Spring Boot Starter Security - Secure Your Rest Services And Web Applications](https://www.youtube.com/watch?v=4x-HgnJ31cg)
 - [Spring Boot Integration Testing - For Rest Web Services](https://www.youtube.com/watch?v=Psei7F7KsDw)
-- [Spring Boot Auto Configuration - Understand The Magic](https://www.youtube.com/watch?v=J_kTukE7hr8)
 - [Spring Boot Unit Testing - For Rest Web Services](https://www.youtube.com/watch?v=RbZvXCAtMus)
 - [Spring Boot Profiles & Configuration Management - Application Properties](https://www.youtube.com/watch?v=vHnOwhSUTAo)
 - [Exception Handling With Spring Boot](https://www.youtube.com/watch?v=2o7LJLTIgdE)
-- [Spring Boot Vs Spring MVC - A Comparison](https://www.youtube.com/watch?v=ILRmPKEL4U0)
 - [Rest Web Services With Spring Boot](https://www.youtube.com/watch?v=YEEUn5JZ9t0)
 - [Spring Boot Tutorial For Beginners](https://www.youtube.com/watch?v=PSP1-2cN7vM)
 
