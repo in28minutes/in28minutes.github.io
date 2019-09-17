@@ -9,19 +9,6 @@ permalink:  /spring-boot-video-tutorials-for-beginners
 
 This guide will help you understand the different resources (tutorials, videos and courses) we are creating for beginners to learn and gain expertise at Spring, Spring Boot and other topics.
 
-### 5 Minute Introductions - Tools and Terminology
-- [Introduction to Web Services in 5 minutes](https://www.youtube.com/watch?v=vim2_LSqcvE)
-- [Introduction to Spring Initializr in 5 Minutes](https://www.youtube.com/watch?v=pLn0WLCdNx0)
-- [Introduction to Spring Framework in 10 Minutes](https://www.youtube.com/watch?v=6xB-uXqbOqo)
-- [Introduction to Spring Data Rest in 5 Minutes](https://www.youtube.com/watch?v=prtat_cKUVA)
-- [Introduction to Spring Data in 5 Minutes](https://www.youtube.com/watch?v=bg0_9FsOI64)
-- [Introduction to Spring Cloud in 10 Minutes](https://www.youtube.com/watch?v=hgp6dlJJaCI)
-- [Introduction to Spring Boot in 10 Minutes](https://www.youtube.com/watch?v=sKdD3wYP9SM)
-- [Introduction to Spring Batch in 5 Minutes](https://www.youtube.com/watch?v=eohUc-kRUPw)
-- [Introduction to Maven in 7 Minutes](https://www.youtube.com/watch?v=EjymtpicGtg)
-- [Eclipse Quick Start](https://www.youtube.com/watch?v=0s2l_t70x50)
-- [JUnit Quick Start](https://www.youtube.com/watch?v=bdc5WbKKbK4)
-
 ### 10 Step Quick Introductions to Frameworks
 
 - [Learn Docker in 5 Steps](https://www.youtube.com/watch?v=Rt5G5Gj7RP0)
@@ -35,6 +22,80 @@ This guide will help you understand the different resources (tutorials, videos a
 - [Mockito Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/mockito-for-beginner-in-5-steps)
 - [Full Stack with Spring Boot and React](https://www.youtube.com/watch?v=SWXuXhZkNQc)
 - [Full Stack with Spring Boot and Angular](https://www.youtube.com/watch?v=8ueiZf988qY)
+
+## Spring and Spring Boot Videos
+
+### Spring
+- [Spring Tip : Why Is Spring Popular?](https://www.youtube.com/watch?v=T8rJ_jU9W8k)
+- [Spring Framework - What is Inversion of Control (IOC)?](https://www.youtube.com/watch?v=oLxsTnH_peI)
+- [Spring Framework - What is Dependency Injection?](https://www.youtube.com/watch?v=4sD_3BzxJOo)
+- [Spring Framework - What is Component Scan?](https://www.youtube.com/watch?v=L1Y5pwy09Vw)
+- [Spring Framework - What is a Dependency?](https://www.youtube.com/watch?v=4VajgnSHwOw)
+- [Spring Framework - What are Spring Projects?](https://www.youtube.com/watch?v=gsqYVsVh7iM)
+- [Spring Framework - What are Spring Modules?](https://www.youtube.com/watch?v=Lbz7yGXe_EM)
+
+### Spring Boot
+- [Spring Boot Vs Spring - A Comparison](https://www.youtube.com/watch?v=bNFoN956P2A)
+- [Spring Boot Vs Spring MVC - A Comparison](https://www.youtube.com/watch?v=ILRmPKEL4U0)
+- [Spring Boot Interview Questions](https://www.youtube.com/watch?v=OBFjJKT0DIw)
+- [Spring Boot Auto Configuration - Understand The Magic](https://www.youtube.com/watch?v=J_kTukE7hr8)
+- [Spring Boot - What is Spring Boot Starter Parent?](https://www.youtube.com/watch?v=vPvHRZwY8l0)
+- [Spring Boot - What is Spring Boot Data Rest?](https://www.youtube.com/watch?v=8_bEl0zME0k)
+- [Spring Boot - What is Auto Configuration?](https://www.youtube.com/watch?v=-jwd-9PKr5Y)
+- [Spring Boot - What are Spring Boot Starter Projects - Web and JPA?](https://www.youtube.com/watch?v=itMb3Hf8F_w)
+- [Spring Boot - What are Profiles?](https://www.youtube.com/watch?v=XXCNe4HiLYI)
+- [Spring Framework Tutorial For Beginners](https://www.youtube.com/watch?v=edgZo2g-LTM)
+- [Spring Boot Tutorial For Beginners](https://www.youtube.com/watch?v=pcdpk3Yd1EA)
+- [Spring Boot Starter Projects And Spring Boot Starter Web](https://www.youtube.com/watch?v=y1uHFZ4PKwU)
+- [Spring Boot Starter Security - Secure Your Rest Services And Web Applications](https://www.youtube.com/watch?v=4x-HgnJ31cg)
+- [Spring Boot Integration Testing - For Rest Web Services](https://www.youtube.com/watch?v=Psei7F7KsDw)
+- [Spring Boot Unit Testing - For Rest Web Services](https://www.youtube.com/watch?v=RbZvXCAtMus)
+- [Spring Boot Profiles & Configuration Management - Application Properties](https://www.youtube.com/watch?v=vHnOwhSUTAo)
+- [Exception Handling With Spring Boot](https://www.youtube.com/watch?v=2o7LJLTIgdE)
+- [Rest Web Services With Spring Boot](https://www.youtube.com/watch?v=YEEUn5JZ9t0)
+- [Spring Boot Tutorial For Beginners](https://www.youtube.com/watch?v=PSP1-2cN7vM)
+
+
+### Interview Preparation
+- [Servlets Interview Questions and Answers](https://www.youtube.com/watch?v=ov2zrhUxDxQ)
+- [JSP Interview Questions and Answers](https://www.youtube.com/watch?v=ouml01jXi8M)
+- [JDBC Interview Questions and Answers](https://www.youtube.com/watch?v=uYc6RKwLb0o)
+- [OOPS Interview Questions and Answers](https://www.youtube.com/watch?v=ot9kXA3PK4w)
+- [J2EE (Java EE) Interview Questions and Answers](https://www.youtube.com/watch?v=kxpGuw02TJU)
+- [Eclipse Interview Questions and Answers](https://www.youtube.com/watch?v=IuUuKwwXtK8)
+- [Design Patterns Interview Questions and Answers](https://www.youtube.com/watch?v=W9gz3NGeojU)
+- [Maven Interview Questions and Answers](https://www.youtube.com/watch?v=6cWWrTVn0mg)
+- [Java Collections Interview Questions and Answers -  New Version](https://www.youtube.com/watch?v=3hgYHXDVh-o)
+- [Java Interview Questions and Answers - New Version](https://www.youtube.com/watch?v=5aHZABb1Iwk)
+- [Java Multithreading Interview Questions](https://www.youtube.com/watch?v=AfVbJDr-8ic)
+- [Java Instructors Interview - Ankush Gorav from Gontu Series](https://www.youtube.com/watch?v=GO4_3AP0yfg)
+- [Java Exception Handling Interview Questions and Answers](https://www.youtube.com/watch?v=wj3UmzeyrvE)
+- [Spring Interview Questions and Answers](https://www.youtube.com/watch?v=2prdt2byiTs)
+- [Hibernate Interview Questions](https://www.youtube.com/watch?v=nb4kKVDc4cE)
+- [Core Java Interview Questions](https://www.youtube.com/watch?v=r2BAVRRB-1I)
+- [Design Patterns - An introduction](https://www.youtube.com/watch?v=0jjNjXcYmAU)
+- [Structural Design Patterns - in Java](https://www.youtube.com/watch?v=ACrzAB4ncfo)
+- [Facade Design Pattern](https://www.youtube.com/watch?v=K80P1NlQ4Gc)
+- [Factory Method Design Pattern](https://www.youtube.com/watch?v=rUisbJExtFM)
+- [Creational Design Patterns](https://www.youtube.com/watch?v=uCkZemGbsJ4)
+- [Builder Design Pattern](https://www.youtube.com/watch?v=UEPFYWfQe5Y)
+- [Java interview questions for Freshers  - Part 2](https://www.youtube.com/watch?v=xyXuo0y-xoU)
+- [Introduction To Transaction Management](https://www.youtube.com/watch?v=HcjHJLEbtRs)
+- [Java Interview Questions and Answers : A guide for experienced](https://www.youtube.com/watch?v=0xcgzUdTO5M)
+- [Java Interview Questions and Answers : A Freshers Guide - Part 1](https://www.youtube.com/watch?v=njZ48YVkei0)
+
+### 5 Minute Introductions - Tools and Terminology
+- [Introduction to Web Services in 5 minutes](https://www.youtube.com/watch?v=vim2_LSqcvE)
+- [Introduction to Spring Initializr in 5 Minutes](https://www.youtube.com/watch?v=pLn0WLCdNx0)
+- [Introduction to Spring Framework in 10 Minutes](https://www.youtube.com/watch?v=6xB-uXqbOqo)
+- [Introduction to Spring Data Rest in 5 Minutes](https://www.youtube.com/watch?v=prtat_cKUVA)
+- [Introduction to Spring Data in 5 Minutes](https://www.youtube.com/watch?v=bg0_9FsOI64)
+- [Introduction to Spring Cloud in 10 Minutes](https://www.youtube.com/watch?v=hgp6dlJJaCI)
+- [Introduction to Spring Boot in 10 Minutes](https://www.youtube.com/watch?v=sKdD3wYP9SM)
+- [Introduction to Spring Batch in 5 Minutes](https://www.youtube.com/watch?v=eohUc-kRUPw)
+- [Introduction to Maven in 7 Minutes](https://www.youtube.com/watch?v=EjymtpicGtg)
+- [Eclipse Quick Start](https://www.youtube.com/watch?v=0s2l_t70x50)
+- [JUnit Quick Start](https://www.youtube.com/watch?v=bdc5WbKKbK4)
 
 
 ### Microservices
@@ -164,37 +225,6 @@ This guide will help you understand the different resources (tutorials, videos a
 - [Code Quality - An Overview](https://www.youtube.com/watch?v=aGQda_tlfdw)
 - [Code Quality - 5 Things to think about while Programming](https://www.youtube.com/watch?v=svJ_htqB12E)
 
-## Spring and Spring Boot Videos
-
-### Spring
-- [Spring Tip : Why Is Spring Popular?](https://www.youtube.com/watch?v=T8rJ_jU9W8k)
-- [Spring Framework - What is Inversion of Control (IOC)?](https://www.youtube.com/watch?v=oLxsTnH_peI)
-- [Spring Framework - What is Dependency Injection?](https://www.youtube.com/watch?v=4sD_3BzxJOo)
-- [Spring Framework - What is Component Scan?](https://www.youtube.com/watch?v=L1Y5pwy09Vw)
-- [Spring Framework - What is a Dependency?](https://www.youtube.com/watch?v=4VajgnSHwOw)
-- [Spring Framework - What are Spring Projects?](https://www.youtube.com/watch?v=gsqYVsVh7iM)
-- [Spring Framework - What are Spring Modules?](https://www.youtube.com/watch?v=Lbz7yGXe_EM)
-
-### Spring Boot
-- [Spring Boot Vs Spring - A Comparison](https://www.youtube.com/watch?v=bNFoN956P2A)
-- [Spring Boot Vs Spring MVC - A Comparison](https://www.youtube.com/watch?v=ILRmPKEL4U0)
-- [Spring Boot Interview Questions](https://www.youtube.com/watch?v=OBFjJKT0DIw)
-- [Spring Boot Auto Configuration - Understand The Magic](https://www.youtube.com/watch?v=J_kTukE7hr8)
-- [Spring Boot - What is Spring Boot Starter Parent?](https://www.youtube.com/watch?v=vPvHRZwY8l0)
-- [Spring Boot - What is Spring Boot Data Rest?](https://www.youtube.com/watch?v=8_bEl0zME0k)
-- [Spring Boot - What is Auto Configuration?](https://www.youtube.com/watch?v=-jwd-9PKr5Y)
-- [Spring Boot - What are Spring Boot Starter Projects - Web and JPA?](https://www.youtube.com/watch?v=itMb3Hf8F_w)
-- [Spring Boot - What are Profiles?](https://www.youtube.com/watch?v=XXCNe4HiLYI)
-- [Spring Framework Tutorial For Beginners](https://www.youtube.com/watch?v=edgZo2g-LTM)
-- [Spring Boot Tutorial For Beginners](https://www.youtube.com/watch?v=pcdpk3Yd1EA)
-- [Spring Boot Starter Projects And Spring Boot Starter Web](https://www.youtube.com/watch?v=y1uHFZ4PKwU)
-- [Spring Boot Starter Security - Secure Your Rest Services And Web Applications](https://www.youtube.com/watch?v=4x-HgnJ31cg)
-- [Spring Boot Integration Testing - For Rest Web Services](https://www.youtube.com/watch?v=Psei7F7KsDw)
-- [Spring Boot Unit Testing - For Rest Web Services](https://www.youtube.com/watch?v=RbZvXCAtMus)
-- [Spring Boot Profiles & Configuration Management - Application Properties](https://www.youtube.com/watch?v=vHnOwhSUTAo)
-- [Exception Handling With Spring Boot](https://www.youtube.com/watch?v=2o7LJLTIgdE)
-- [Rest Web Services With Spring Boot](https://www.youtube.com/watch?v=YEEUn5JZ9t0)
-- [Spring Boot Tutorial For Beginners](https://www.youtube.com/watch?v=PSP1-2cN7vM)
 
 ### Best Practices and Tips
 - [REST API Web Service Best Practices](https://www.youtube.com/watch?v=NzgFdEGI8sI)
@@ -237,34 +267,6 @@ This guide will help you understand the different resources (tutorials, videos a
 - [Java Exception Handling Tutorial 1](https://www.youtube.com/watch?v=34ttwuxHtAE)
 - [Java Functional Programming Tutorial - 01](https://www.youtube.com/watch?v=aFCNPHfvqEU)
 - [Java Functional Programming Tutorial - 02](https://www.youtube.com/watch?v=5Xw1_IREXQs)
-
-### Interview Preparation
-- [Servlets Interview Questions and Answers](https://www.youtube.com/watch?v=ov2zrhUxDxQ)
-- [JSP Interview Questions and Answers](https://www.youtube.com/watch?v=ouml01jXi8M)
-- [JDBC Interview Questions and Answers](https://www.youtube.com/watch?v=uYc6RKwLb0o)
-- [OOPS Interview Questions and Answers](https://www.youtube.com/watch?v=ot9kXA3PK4w)
-- [J2EE (Java EE) Interview Questions and Answers](https://www.youtube.com/watch?v=kxpGuw02TJU)
-- [Eclipse Interview Questions and Answers](https://www.youtube.com/watch?v=IuUuKwwXtK8)
-- [Design Patterns Interview Questions and Answers](https://www.youtube.com/watch?v=W9gz3NGeojU)
-- [Maven Interview Questions and Answers](https://www.youtube.com/watch?v=6cWWrTVn0mg)
-- [Java Collections Interview Questions and Answers -  New Version](https://www.youtube.com/watch?v=3hgYHXDVh-o)
-- [Java Interview Questions and Answers - New Version](https://www.youtube.com/watch?v=5aHZABb1Iwk)
-- [Java Multithreading Interview Questions](https://www.youtube.com/watch?v=AfVbJDr-8ic)
-- [Java Instructors Interview - Ankush Gorav from Gontu Series](https://www.youtube.com/watch?v=GO4_3AP0yfg)
-- [Java Exception Handling Interview Questions and Answers](https://www.youtube.com/watch?v=wj3UmzeyrvE)
-- [Spring Interview Questions and Answers](https://www.youtube.com/watch?v=2prdt2byiTs)
-- [Hibernate Interview Questions](https://www.youtube.com/watch?v=nb4kKVDc4cE)
-- [Core Java Interview Questions](https://www.youtube.com/watch?v=r2BAVRRB-1I)
-- [Design Patterns - An introduction](https://www.youtube.com/watch?v=0jjNjXcYmAU)
-- [Structural Design Patterns - in Java](https://www.youtube.com/watch?v=ACrzAB4ncfo)
-- [Facade Design Pattern](https://www.youtube.com/watch?v=K80P1NlQ4Gc)
-- [Factory Method Design Pattern](https://www.youtube.com/watch?v=rUisbJExtFM)
-- [Creational Design Patterns](https://www.youtube.com/watch?v=uCkZemGbsJ4)
-- [Builder Design Pattern](https://www.youtube.com/watch?v=UEPFYWfQe5Y)
-- [Java interview questions for Freshers  - Part 2](https://www.youtube.com/watch?v=xyXuo0y-xoU)
-- [Introduction To Transaction Management](https://www.youtube.com/watch?v=HcjHJLEbtRs)
-- [Java Interview Questions and Answers : A guide for experienced](https://www.youtube.com/watch?v=0xcgzUdTO5M)
-- [Java Interview Questions and Answers : A Freshers Guide - Part 1](https://www.youtube.com/watch?v=njZ48YVkei0)
 
 ### Web Application Security
 - [Web Application Security and OWASP - Top 10 Security Flaws](https://www.youtube.com/watch?v=j5PuYFCS0Iw)
