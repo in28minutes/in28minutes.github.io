@@ -10,6 +10,7 @@ permalink:  /spring-boot-video-tutorials-for-beginners
 This guide will help you understand the different resources (tutorials, videos and courses) we are creating for beginners to learn and gain expertise at Spring, Spring Boot and other topics.
 
 # Videos
+
 ### 5 Minute Introductions - Tools and Terminology
 - [Introduction to Web Services in 5 minutes](https://www.youtube.com/watch?v=vim2_LSqcvE)
 - [Introduction to Spring Initializr in 5 Minutes](https://www.youtube.com/watch?v=pLn0WLCdNx0)
@@ -22,6 +23,21 @@ This guide will help you understand the different resources (tutorials, videos a
 - [Introduction to Maven in 7 Minutes](https://www.youtube.com/watch?v=EjymtpicGtg)
 - [Eclipse Quick Start](https://www.youtube.com/watch?v=0s2l_t70x50)
 - [JUnit Quick Start](https://www.youtube.com/watch?v=bdc5WbKKbK4)
+
+### 10 Step Introductions to Frameworks
+
+- [Learn Docker in 5 Steps](https://www.youtube.com/watch?v=Rt5G5Gj7RP0)
+- [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners)
+- [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps)
+- [Spring MVC in 10 Steps](https://www.youtube.com/watch?v=BjNhGaZDr0Y)
+- [JPA and Hibernate in 10 Steps](https://courses.in28minutes.com/p/jpa-and-hibernate-tutorial-for-beginners-with-spring-boot)
+- [Eclipse Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/eclipse-tutorial-for-beginners)
+- [Maven Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/maven-tutorial-for-beginners-in-5-steps)
+- [JUnit Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/junit-tutorial-for-beginners)
+- [Mockito Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/mockito-for-beginner-in-5-steps)
+- [Full Stack with Spring Boot and React](https://www.youtube.com/watch?v=SWXuXhZkNQc)
+- [Full Stack with Spring Boot and Angular](https://www.youtube.com/watch?v=8ueiZf988qY)
+
 
 ### Microservices
 - [Introduction To Microservice Architectures for Beginners](https://www.youtube.com/watch?v=DGid-3LhBG4)
