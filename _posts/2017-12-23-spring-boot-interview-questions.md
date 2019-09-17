@@ -554,9 +554,10 @@ If you are using an H2 in-memory database, thats exactly the name that Spring Bo
 ### Q :  What happens if H2 is not in the classpath?
 
 You get this error
+
 ```
 Cannot determine embedded database driver class for database type NONE
-````
+```
 
 Add H2 to the pom.xml and Restart your server
 ```
