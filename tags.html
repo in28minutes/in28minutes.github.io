@@ -15,7 +15,8 @@ tags: about
 
   {% assign sortedtags = tags | split:' ' | sort %}
   {% for tag in sortedtags %}
-    <h2 id="{{ tag }}"><a name="{{ tag }}">{{ tag }}</a></h2>
+    <a name="{{ tag }}"></a>
+    <h2 id="{{ tag }}">{{ tag }}</h2>
     <ul>
     {% for post in site.categories[tag] %}
       <li><a href="{{ post.url | prepend: site.baseurl }}" class="post-link">{{ post.title }}</a></li>
