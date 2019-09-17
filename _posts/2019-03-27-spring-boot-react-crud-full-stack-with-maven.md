@@ -1330,7 +1330,12 @@ Let's update the `CourseComponent` to invoke the right service on the click of t
 
 We are creating a course object with the updated details and calling the appropriate method on the `CourseDataService`. Once the request is successful, we are redirecting the user to the course listing page using `this.props.history.push('/courses')`.
 
-> Congratulations! You are reading an article from a series of 50+ articles on Spring Boot and Microservices. We also have 20+ projects on our Github repository. For the complete set of 50+ articles and code examples, [click here](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners).
+Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
+
+<blockquote>
+  <H2>Join 300,000 Learners!</H2>
+  <p><a href="https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps" target="_blank">Learn Spring Boot in 10 Steps - FREE Course</a></p>
+</blockquote>
 
 ## Next Steps
 

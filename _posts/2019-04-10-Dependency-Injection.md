@@ -176,15 +176,15 @@ In this article, we talked about dependency injection. Dependency injection has 
 
 Dependency injection is a mechanism based on dependency inversion. The Spring framework identifies beans and dependencies, and autowires the dependencies into beans.
 
-	> Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
+> Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
 
-	<blockquote>
-		<H2>Join 300,000 Learners!</H2>
-		<p><a href="https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps" target="_blank">Learn Spring Boot in 10 Steps - FREE Course</a></p>
-	</blockquote>
+<blockquote>
+	<H2>Join 300,000 Learners!</H2>
+	<p><a href="https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps" target="_blank">Learn Spring Boot in 10 Steps - FREE Course</a></p>
+</blockquote>
 
 
-## Spring Boot Courses
+## Next Steps
 
 [![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://www.udemy.com/full-stack-application-with-spring-boot-and-react/?couponCode=SBT-2019){:target="_blank"}
 

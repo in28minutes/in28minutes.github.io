@@ -45,7 +45,7 @@ This guide will help you understand the different resources (tutorials, videos a
     - Website-springbootrestservices-all-examples.zip
 
 
-## Spring Boot Courses
+## Next Steps
 
 [![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://www.udemy.com/full-stack-application-with-spring-boot-and-react/?couponCode=SBT-2019){:target="_blank"}
 
