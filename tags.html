@@ -7,6 +7,8 @@ tags: about
 
 <div class="home">
 
+  <H1> Index of Spring Boot Articles and Videos </H1>
+
   {% capture tags %}
     {% for tag in site.categories %}
       {{ tag[0] }}
@@ -15,7 +17,7 @@ tags: about
 
   {% assign sortedtags = tags | split:' ' | sort %}
   {% for tag in sortedtags %}
-    <a name="{{ tag }}"><h4 id="{{ tag }}">{{ tag }}</h4></a>
+    <h4 id="{{ tag }}"><a name="{{ tag }}">{{ tag }}</a></h4>
     <ul>
     {% for post in site.categories[tag] %}
       <li><a href="{{ post.url | prepend: site.baseurl }}" class="post-link">{{ post.title }}</a></li>
