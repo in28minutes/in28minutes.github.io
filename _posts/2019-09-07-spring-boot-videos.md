@@ -24,7 +24,7 @@ This guide will help you understand the different resources (tutorials, videos a
 - [Eclipse Quick Start](https://www.youtube.com/watch?v=0s2l_t70x50)
 - [JUnit Quick Start](https://www.youtube.com/watch?v=bdc5WbKKbK4)
 
-### 10 Step Introductions to Frameworks
+### 10 Step Quick Introductions to Frameworks
 
 - [Learn Docker in 5 Steps](https://www.youtube.com/watch?v=Rt5G5Gj7RP0)
 - [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners)
