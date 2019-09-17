@@ -15,7 +15,7 @@ tags: about
 
   {% assign sortedtags = tags | split:' ' | sort %}
   {% for tag in sortedtags %}
-    <a name="{{ tag }}"></a>
+    <a name="{{ tag }}"><p></p></a>
     <h2 id="{{ tag }}">{{ tag }}</h2>
     <ul>
     {% for post in site.categories[tag] %}
