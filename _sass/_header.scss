@@ -4,8 +4,8 @@
   position: fixed;
   top: 0;
   width: 100%;
-  height: 75px;
-  background-color: #fff;
+  height: 30px;
+  background-color: #fffff9;
 }
 
 .site-header a {
@@ -21,6 +21,7 @@
 
 .site-nav {
   margin-top: $space-2;
+  height: 65px;
 }
 
 .site-header nav a {
