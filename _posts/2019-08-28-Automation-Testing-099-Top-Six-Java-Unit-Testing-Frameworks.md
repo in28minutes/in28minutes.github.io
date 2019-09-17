@@ -498,7 +498,7 @@ In this article, we looked at a wide variety of unit testing fraemworks present 
 
 We then had a feel of powerful assertion frameworks such as AsserJ and Hamcrest. Spring Unit framework provides MockMVC as the mocking framework for the web layer and DataJPATest for the data layer. Finally, we explored JSONAssert and JSONPath, used to assert JSON responses in a unit test.   
 
-	Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
+	> Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
 
 	<blockquote>
 		<H2>Join 300,000 Learners!</H2>

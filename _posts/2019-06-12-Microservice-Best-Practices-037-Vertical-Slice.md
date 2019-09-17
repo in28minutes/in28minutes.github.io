@@ -72,7 +72,7 @@ Do check out our video on this:
 
 In this article, we had a look at what are the technical risks involved in starting application development. We then saw how creating a vertical slice, using a complex use case, helps in exploring solutions to these risks, and acts as a reference point for the development team. We explored the best practices for creating a vertical slice, and looked at the challenges involved. 
 
-	Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
+	> Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
 
 	<blockquote>
 		<H2>Join 300,000 Learners!</H2>

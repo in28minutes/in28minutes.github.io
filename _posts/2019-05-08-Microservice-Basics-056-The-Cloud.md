@@ -109,7 +109,7 @@ Do check out our video on this:
 
 In this article, we had a good look at the cloud. We saw that a cloud helps ease the infrastructure management of online businesses by making provisioning dynamic. A cloud could be public, or private. Using a cloud has many advantages to offer, such as agility, cost reduction and reliability.
 
-	Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
+	> Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
 
 	<blockquote>
 		<H2>Join 300,000 Learners!</H2>

@@ -144,7 +144,7 @@ In this article, we talked about Spring Data, and Spring Data JPA.
 
 Spring Data offers common abstractions, which allows us to talk to different data stores, both relational and otherwise. It is independent of any kind of data store. Spring Data JPA is an Spring Data Extension to work with JPA relational data stores.
 
-	Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
+	> Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
 
 	<blockquote>
 		<H2>Join 300,000 Learners!</H2>

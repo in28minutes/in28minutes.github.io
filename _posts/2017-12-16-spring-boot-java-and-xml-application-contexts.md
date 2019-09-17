@@ -199,7 +199,7 @@ If you are creating a new project and if the configuration is specific to autowi
 However, when it comes to - one time - application related configuration or a common configuration like @ComponentScan, I do not really have a preference. I would leave it to the team to choose. However, I would definitely want the entire team to discuss and agree what they would want to use in a specific project. 
 
 
-Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
+> Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
 
 <blockquote>
 	<H2>Join 300,000 Learners!</H2>

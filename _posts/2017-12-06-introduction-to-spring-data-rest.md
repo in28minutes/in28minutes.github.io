@@ -16,10 +16,6 @@ This guide will help you expose RESTful API using a combination of Spring Boot, 
 - How to create a simple JPA Entity with a primary key?
 - How to write a simple repository interface extending JpaRepository interface?
 
-## Recommended Course
-
-[![Image](/images/Course-Learn-Spring-Boot-in-100-Steps---Beginner-to-Expert.png "Learn Spring Boot in 100 Steps - Beginner to Expert")](https://www.udemy.com/spring-boot-tutorial-for-beginners/?couponCode=SBT-2019){:target="_blank"}
-
 
 ## 10 Step Reference Courses
 
@@ -648,12 +644,13 @@ Some of the other features of spring data rest include
 
 > Refer to official documentation of Spring Data Rest for more details - https://docs.spring.io/spring-data/rest/docs/3.0.2.RELEASE/reference/html/
 
-Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
+> Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
 
 <blockquote>
 	<H2>Join 300,000 Learners!</H2>
 	<p><a href="https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps" target="_blank">Learn Spring Boot in 10 Steps - FREE Course</a></p>
 </blockquote>
+
 ## Next Steps
 
 ![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://www.udemy.com/full-stack-application-with-spring-boot-and-react/?couponCode=SBT-2019){:target="_blank"}

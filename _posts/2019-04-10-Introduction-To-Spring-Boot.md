@@ -111,7 +111,7 @@ Do check out our video on the same topic:
 
 In this article, we had a quick look at the Spring Boot Framework. We saw that the Spring framework is very useful to developers, but Spring projects had a large configuration overhead. Spring Boot adds some intelligence with autoconfiguration. It greatly reduces project startup time and provides easier mechanism - called starter projects - for developing different kinds of applications.
 
-	Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
+	> Congratulations! You are reading an article from a series of 50+ articles on Spring, Spring Boot , Hibernate, Full Stack, Cloud and Microservices. We also have 20+ projects on our Github repository. For the complete series of 50+ articles and code examples, [click here](https://www.springboottutorial.com/tags/#SpringBoot).
 
 	<blockquote>
 		<H2>Join 300,000 Learners!</H2>
