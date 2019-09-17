@@ -5,7 +5,7 @@
   top: 0;
   width: 100%;
   height: 35px;
-  background-color: #ffffff;
+  background-color: #000;
 }
 
 .site-header a {
@@ -26,8 +26,9 @@
 }
 
 .site-header nav a {
-  color: #666;
+  color: #fff;
   font-size: $h6;
+  text-shadow: none;
 }
 
 .site-header nav a:hover,
