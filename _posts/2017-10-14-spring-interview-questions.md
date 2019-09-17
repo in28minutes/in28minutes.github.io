@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Interview Questions and Answers - Course
 date:       2017-10-14 12:31:19
 summary:    Preparing for Spring Interview is tricky. There are wide variety of Spring Modules and Spring Projects you would need to recollect and be prepared to answer questions on.You would need to get a good understanding of the new features of Spring and have firm grasp of the  concepts you implemented in your projects. This course helps you prepare for Spring Interview with code examples covering 200+ Spring Interview Questions and Answers on Spring, Spring Boot, Spring MVC, Spring JDBC, JPA, AOP, RESTful Services and SOAP Web Services. 
-categories: Spring Boot, Spring Framework, Spring Interview, Spring Boot Interview
+categories: SpringBoot
 permalink:  /spring-and-spring-boot-interview-guide
 ---
 

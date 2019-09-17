@@ -3,7 +3,7 @@ layout:     post
 title:      JSP Servlets Tutorial for Beginners - Build Java Web Application in 25 Steps
 date:       2017-11-18 12:31:19
 summary:    In this course, you will learn the basics developing a Basic Todo Management Application using Java Servlets and JSP with Login and Logout functionalities.
-categories: Java EE, JSP, Servlets, Web Application
+categories: SpringFramework
 permalink:  /first-java-web-application-with-jsp-and-servlets-in-25-steps
 ---
 

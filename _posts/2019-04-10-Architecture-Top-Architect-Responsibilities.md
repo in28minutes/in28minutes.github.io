@@ -3,7 +3,7 @@ layout:  post
 title:  5 Important Responsibilities of a Software Architect
 date:    2019-04-09 12:31:19
 summary:  In this article, we look at some of the important responsibilities that an architect is expected to handle. Although we chiefly focus on application architects, most of these also hold true for enterprise architects as well.
-categories: Architecture
+categories: SwArchitecture
 permalink:  /five-important-responsibilities-of-a-software-architect
 ---
 

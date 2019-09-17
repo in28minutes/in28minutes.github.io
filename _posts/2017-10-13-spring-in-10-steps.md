@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Framework Tutorial for Beginners - Your First 10 Steps
 date:       2017-01-30 12:31:19
 summary:    Learn the basics of Spring Framework setting up a very simple example.
-categories: Spring Framework, Spring Boot
+categories: SpringFramework
 permalink:  /spring-tutorial-for-beginners
 ---
 

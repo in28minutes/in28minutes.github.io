@@ -3,7 +3,7 @@ layout:     post
 title:      25 in28Minutes Courses with 3000,000+ Learners
 date:       2017-11-19 12:31:19
 summary:    Get Amazing Offers on all in28Minutes Udemy Courses.
-categories: Udemy, Courses, Spring Boot, Spring Framework
+categories: zzCourses
 permalink:  /p/in28minutes-udemy-courses-discount-codes.html
 ---
 

@@ -3,7 +3,7 @@ layout:  post
 title:  Software Design - How do you keep your design simple?
 date:    2019-04-16 12:31:19
 summary: With extreme programming and agile, the focus is being lean and keeping your design simple. In this context, how do you ensure that your design remains good and evolves along with the application requirements? Here are a five tips you can focus on.
-categories: Software Design
+categories: SwDesign
 permalink:  /software-design-keep-your-design-simple
 ---
 

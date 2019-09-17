@@ -3,7 +3,7 @@ layout:  post
 title:  Software Design - Five Things To Look Out For In A Design Review
 date:    2019-04-16 12:31:19
 summary: Doing a software design review is never a straightforward task, with a number of things to look out for. In this short article, we look at five such aspects, which will help you structure your review process in a better way.
-categories: Software Design
+categories: SwDesign
 permalink:  /software-design-five-things-design-review
 ---
 

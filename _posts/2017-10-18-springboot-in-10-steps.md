@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Boot Tutorial For Beginners in 10 Steps
 date:       2017-01-30 12:31:19
 summary:    Introduction to Spring Boot in 10 Steps. Learn the basics of Spring Boot setting up a basic project example with Spring Boot.
-categories: Spring Boot, REST Service
+categories: SpringBoot
 permalink:  /spring-boot-introduction-in-10-steps
 ---
 

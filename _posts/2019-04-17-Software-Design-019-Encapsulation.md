@@ -3,7 +3,7 @@ layout:  post
 title:  Software Design - Encapsulation - with examples
 date:    2019-04-16 12:31:19
 summary: Encapsulation is one of the important goals of Software Design. What is Encapsulation? Why is it important? Let's get started.
-categories: Software Design
+categories: SwDesign
 permalink:  /software-design-encapsulation-with-examples
 ---
 

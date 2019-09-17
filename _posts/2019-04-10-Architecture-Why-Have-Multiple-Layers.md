@@ -3,7 +3,7 @@ layout:  post
 title:  Software Architecture - Why do we use Layered Architectures?
 date:    2019-04-09 12:31:19
 summary:  In this article, we explore the reasons why we build applications with several layers. We also look at different options for each layer in the Java world.
-categories: Architecture
+categories: SwArchitecture
 permalink:  /software-architecture-why-should-we-use-layered-architecture
 ---
 

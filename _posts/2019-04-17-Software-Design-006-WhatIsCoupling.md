@@ -3,7 +3,7 @@ layout:  post
 title:  Software Design - Coupling - with examples
 date:    2019-04-16 12:31:19
 summary: Software architects and programmers love low coupling. What is coupling? Why is coupling important? Let's get started.
-categories: Software Design
+categories: SwDesign
 permalink:  /software-design-coupling-with-examples
 ---
 

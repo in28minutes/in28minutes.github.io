@@ -3,7 +3,7 @@ layout:  post
 title:  Quick Introduction To Software Architecture - What, Why and How?
 date:    2019-04-09 12:31:19
 summary: Good Software Architecture is essential to building great software. What is Software Architecture all about?
-categories: Software Architecture
+categories: SwArchitecture
 permalink:  /introduction-to-software-architecture
 ---
 

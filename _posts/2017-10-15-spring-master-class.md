@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Framework Tutorial For Beginners - 100 Steps
 date:       2017-10-15 12:31:19
 summary:    Learn the magic of Spring Framework. From IOC (Inversion of Control), DI (Dependency Injection), Application Context to the world of Spring Boot, AOP, JDBC and JPA. Get set for an incredible journey. 
-categories: Spring Boot, Spring Framework
+categories: SpringFramework
 permalink:  /spring-master-class
 ---
 

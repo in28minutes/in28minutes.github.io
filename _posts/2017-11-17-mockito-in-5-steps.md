@@ -3,7 +3,7 @@ layout:     post
 title:      Mockito Tutorial for Beginner in 5 Steps
 date:       2017-11-17 12:31:19
 summary:    Mockito tutorial for Beginner in 5 Steps. Understand the basics of mocking with the most popular Java mocking framework with a simple mock example in 5 easy steps. 
-categories: Spring Boot, REST Service
+categories: SpringBootUnitTesting
 permalink:  /mockito-tutorial-for-beginners
 ---
 

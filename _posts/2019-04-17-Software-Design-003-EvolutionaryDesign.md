@@ -3,7 +3,7 @@ layout:  post
 title:  Software Design - Introduction to Evolutionary Design
 date:    2019-04-16 12:31:19
 summary: With extreme programming and agile, the focus is being lean and doing just in time design. In this context, how do you ensure that your design remains good and evolves along with the application requirements? 
-categories: Software Design
+categories: SwDesign
 permalink:  /software-design-introduction-to-evolutionary-design
 ---
 

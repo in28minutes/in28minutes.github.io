@@ -3,7 +3,7 @@ layout:     post
 title:      JUnit Tutorial for Beginners in 5 Steps
 date:       2017-11-15 12:31:19
 summary:    JUnit Tutorial for Beginners in 5 Steps. Setting up a basic JUnit example and understanding the basics of junit. 
-categories: JUnit, Unit Testing
+categories: SpringBootUnitTesting
 permalink:  /junit-tutorial-for-beginners
 ---
 

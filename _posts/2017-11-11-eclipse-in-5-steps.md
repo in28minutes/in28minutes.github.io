@@ -3,7 +3,7 @@ layout:     post
 title:      Eclipse Tutorial for Beginners in 5 Steps
 date:       2017-11-11 12:31:19
 summary:    Eclipse Tutorial for Beginners in 5 Steps
-categories: Eclipse
+categories: SwEclipse
 permalink:  /eclipse-tutorial-for-beginners
 ---
 

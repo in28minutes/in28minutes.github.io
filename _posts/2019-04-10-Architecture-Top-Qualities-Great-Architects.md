@@ -3,7 +3,7 @@ layout:  post
 title:  5 Qualities of a Great Software Architect
 date:    2019-04-09 12:31:19
 summary:  In this article, we look at some of the important qualities of a great software architect. While we focus on application architects, most of these are applicable for enterprise architects as well.
-categories: Architecture
+categories: SwArchitecture
 permalink:  /five-important-qualities-of-a-software-architect
 ---
 
