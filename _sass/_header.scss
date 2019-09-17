@@ -22,11 +22,12 @@
 .site-nav {
   margin-top: $space-2;
   height: 65px;
-  font-size: 15px;
+  font-size: $h6;
 }
 
 .site-header nav a {
   color: #666;
+  font-size: $h6;
 }
 
 .site-header nav a:hover,
