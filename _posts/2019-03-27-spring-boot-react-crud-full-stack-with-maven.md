@@ -1100,7 +1100,7 @@ render() {
             <h3>Course</h3>
             <div className="container">
                 <Formik
-                    initialValues={{ id, description }}
+                    initialValues={% raw %}{{ id, description }}{% endraw %}
                 >
                     {
                         (props) => (
@@ -1127,7 +1127,7 @@ render() {
 
 Following are some of the important details:
 - `let { description, id } = this.state` - Creating local variable using destructuring
-- `<Formik initialValues={{ id, description }}>` - Initialing Formik with the values loaded from state
+- `{% raw %}<Formik initialValues={{ id, description }}>{% endraw %}` - Initialing Formik with the values loaded from state
 - `<Field className="form-control" type="text" name="id" disabled />` - Creating a disabled text element for id. The name of element should match the name in state.
 - `<Field className="form-control" type="text" name="description" />` - Creating a text element for description. The name of element should match the name in state.
 - `<button className="btn btn-success" type="submit">Save</button>` - Adding a submit button.
@@ -1158,7 +1158,7 @@ It's time to tie up the form with the onSubmit method. The key snippet is `onSub
 
 ```
 <Formik
-      initialValues={{ id, description }}
+      initialValues={% raw %}{{ id, description }}{% endraw %}
       onSubmit={this.onSubmit}
                     >
 ```
@@ -1204,7 +1204,7 @@ Let's ties this up with the form. The key snippet is `validate={this.validate}`.
 
 ```
 <Formik
-      initialValues={{ id, description }}
+      initialValues={% raw %}{{ id, description }}{% endraw %}
       onSubmit={this.onSubmit}
       validateOnChange={false}
       validateOnBlur={false}
@@ -1645,7 +1645,7 @@ class CourseComponent extends Component {
                 <h3>Course</h3>
                 <div className="container">
                     <Formik
-                        initialValues={{ id, description }}
+                        initialValues={% raw %}{{ id, description }}{% endraw %}
                         onSubmit={this.onSubmit}
                         validateOnChange={false}
                         validateOnBlur={false}
