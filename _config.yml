@@ -20,7 +20,7 @@ bing_verification:
 animated:             false
 show_related_posts:   true
 show_post_footers:    true
-show_social_icons:    true
+show_social_icons:    false
 ajaxify_contact_form: false
 enable_mathjax: false
 extended_fonts: false
@@ -113,5 +113,6 @@ sass:
 gems:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-feed
 # https://github.com/jekyll/jekyll/issues/2938
 exclude: [vendor]
