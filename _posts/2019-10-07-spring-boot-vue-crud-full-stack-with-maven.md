@@ -107,16 +107,14 @@ A few details:
 
 #### Installing Node Js (npm) & Visual Studio Code
 
-- [Click to see video Playlist](https://www.youtube.com/playlist?list=PLBBog2r6uMCQN4X3Aa_jM9qVjgMCHMWx6
-- Steps){:target="\_blank"}
+- [Click to see video Playlist](https://www.youtube.com/playlist?list=PLBBog2r6uMCQN4X3Aa_jM9qVjgMCHMWx6){:target="_blank"}
   - Step 01 - Installing NodeJs and NPM - Node Package Manager
   - Step 02 - Quick Introduction to NPM
   - Step 03 - Installing Visual Studio Code - Front End JavaScript Editor
 
 #### Installing Java, Eclipse & Embedded Maven
 
-- [Click to see video Playlist](https://www.youtube.com/playlist?list=PLBBog2r6uMCSmMVTW_QmDLyASBvovyAO3
-- Steps){:target="\_blank"}
+- [Click to see video Playlist](https://www.youtube.com/playlist?list=PLBBog2r6uMCSmMVTW_QmDLyASBvovyAO3){:target="_blank"}
   - 0 - Overview - Installation Java, Eclipse and Maven
   - 1 - Installing Java JDK
   - 2 - Installing Eclipse IDE
@@ -324,7 +322,7 @@ Let's start with creating an Application Component - `InstructorApp.vue`
 
 /src/components/InstructorApp.vue
 
-```
+```vue
 <template>
     <div>
         This is instructors test!
@@ -588,6 +586,7 @@ We would need to use the data from the response and show it on the component.
 Following snippet highlights the significant changes
 
 ```js
+
 <script>
 import CourseDataService from '../service/CourseDataService';
 export default {
