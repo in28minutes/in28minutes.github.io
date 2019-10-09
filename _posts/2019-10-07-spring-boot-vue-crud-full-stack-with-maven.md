@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Creating Spring Boot and Vue CRUD Full Stack Application with Maven
+title: Creating Spring Boot and Vue JS CRUD Full Stack Application with Maven
 date: 2019-10-07 12:31:19
-summary: This guide helps you create a full stack application with all the CRUD (Create, Read, Update and Delete) features using Vue as Frontend framework and  Spring Boot as the backend REST API. We use Maven as the build tool.
+summary: This guide helps you create a full stack application with all the CRUD (Create, Read, Update and Delete) features using Vue JS as Frontend framework and  Spring Boot as the backend REST API. We use Maven as the build tool.
 categories: Spring Boot, REST API, Full Stack Application, Vue, Frontend, CRUD, Maven
 permalink: /spring-boot-vue-full-stack-crud-maven-application
 ---
@@ -84,7 +84,7 @@ A few details:
 
 ## Understanding Vue Frontend Project Structure
 
-Following screenshot shows the structure of the React project we create.
+Following screenshot shows the structure of the Vue JS project we create.
 ![Image](/images/project-structure-vue-fullstack-crud.png "Vue Frontend - Project Structure")
 
 A few details:
@@ -100,7 +100,7 @@ A few details:
 
 - Maven 3.0+ for building Spring Boot API Project
 - npm, webpack for building frontend
-- Your favorite IDE. We use Eclipse for Java and Visual Studio Code for Frontend - JavaScript, TypeScript, Angular and React.
+- Your favorite IDE. We use Eclipse for Java and Visual Studio Code for Frontend - JavaScript, TypeScript, Angular, Vue JS and React.
 - JDK 1.8+
 - Node v8+
 - Embedded Tomcat, built into Spring Boot Starter Web
@@ -157,7 +157,7 @@ As shown in the image above, the following steps have to be done
 
 > If you are new to Spring Boot, we recommend watching this video - [Spring Boot in 10 Steps](https://www.youtube.com/watch?v=PSP1-2cN7vM){:target="\_blank"}
 
-## Step 2 - Bootstrapping React Frontend with Vue CLI
+## Step 2 - Bootstrapping Vue JS Frontend with Vue CLI
 
 [Vue CLI](https://github.com/vuejs/vue-cli){:target="\_blank"} is an amazing tool to bootstrap your Vue applications.
 
@@ -186,7 +186,7 @@ npm run serve
 
 You would see the screen below:
 
-![Image](/images/npm-start-new-vue-app.png "Starting a React Project")
+![Image](/images/npm-start-new-vue-app.png "Starting a Vue JS Project")
 
 When you launch up the application in the browser at `http://localhost:8080/`, you would see the following welcome screen.
 
@@ -207,7 +207,7 @@ Let's start with building the course listing screen.
 To be able to do that, we need to
 
 - Create REST API for retrieving a list of courses.
-- Connect the React Frontend to the backend REST API
+- Connect the Vue JS Frontend to the backend REST API
 
 ### Create REST API for retrieving a list of courses
 
@@ -478,11 +478,11 @@ export default {
 
 We are importing the ListCoursesComponent and displaying it in the InstructorApp.
 
-When you launch the React app in the browser, it will appear as shown below:
+When you launch the Vue JS app in the browser, it will appear as shown below:
 
 ![Image](/images/vue-second-stage-hardcoded-instructor-component.png "Hardcoded Instructor Component")
 
-#### Invoking Retrieve Courses REST API from React Component
+#### Invoking Retrieve Courses REST API from Vue JS Component
 
 We had created the REST API for retrieving the list of courses earlier. To call the REST API we would need to use a framework called axios.
 
@@ -577,7 +577,7 @@ public class CourseResource {
 An important thing to note
 
 - @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200", "http://localhost:8081" }) - Allow requests from specific origins
-- We will use 3000 to run React, and 8081 to run Vue JS apps, and we use 4200 to run Angular apps. Hence we are allowing requests from both ports.
+- We will use 3000 to run React, and 8081 to run Vue JS apps, and we use 4200 to run Angular apps. Hence we are allowing requests from all ports.
 
 If you refresh the page again, you would see the response from server printed in the console.
 
