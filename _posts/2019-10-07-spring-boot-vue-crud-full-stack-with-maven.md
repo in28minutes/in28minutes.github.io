@@ -1367,7 +1367,7 @@ We are creating a course object with the updated details and calling the appropr
 
 ## Next Steps
 
-You can pursue our amazing courses on Full Stack Development and Microservices. You get 30 day No Questions asked Refund if you do not like these courses!
+You can pursue our amazing courses on Full Stack Development and Microservices. 
 
 [![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://www.udemy.com/course/full-stack-application-with-spring-boot-and-react/?couponCode=OCTOBER-2019){:target="\_blank"}
 

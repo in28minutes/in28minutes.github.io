@@ -14,7 +14,7 @@ Each of these courses come with
 - ✔ Friendly Support in the Q&A section
 - ✔ Free Udemy Certificate of Completion on Completion of Course
 
-> Zero risk. 30 day money-back guarantee with every purchase of the course. You have nothing to lose!
+
 
 [![Image](/images/Course-pivotal-cloud-foundry-pcf-deploying-spring-boot-apps.png "Deploying Spring Boot Microservices to PCF Pivotal Cloud Foundry")](https://www.udemy.com/course/learn-pivotal-cloud-foundry-pcf-deploying-spring-boot-apps/?couponCode=OCTOBER-2019){:target="_blank"}
 
@@ -83,7 +83,7 @@ Each of these courses come with
 [![Image](/images/Course-Learn-JShell-Step-By-Step.png "Learn JShell with Java 9 - Step by Step ")](http://udemy.com/jshell-tutorial-for-beginners-with-java-9/?couponCode=OCTOBER-2019){:target="_blank"}
 
 
-Zero risk. 30 day money-back guarantee with every purchase of the course. You have nothing to lose!
+
 
 Start Learning Now. 
 
