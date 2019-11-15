@@ -674,7 +674,7 @@ There is support in Swagger for both a contract-first approach, and a code-first
 
 Do check out our video on the same topic:
 
-[![image info](images/Capture-098-01.png)](https://www.youtube.com/watch?v=-jwd-9PKr5Y)
+[![image info](images/Capture-098-01.png)](https://www.youtube.com/watch?v=NzgFdEGI8sI)
 
 ### Summary
 
