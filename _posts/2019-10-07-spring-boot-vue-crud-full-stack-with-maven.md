@@ -3,7 +3,7 @@ layout: post
 title: Creating Spring Boot and Vue JS CRUD Full Stack Application with Maven
 date: 2019-10-07 12:31:19
 summary: This guide helps you create a full stack application with all the CRUD (Create, Read, Update and Delete) features using Vue JS as Frontend framework and  Spring Boot as the backend REST API. We use Maven as the build tool.
-categories: Spring Boot, REST API, Full Stack Application, Vue, Frontend, CRUD, Maven
+categories: SpringBootFullStack
 permalink: /spring-boot-vue-full-stack-crud-maven-application
 ---
 
