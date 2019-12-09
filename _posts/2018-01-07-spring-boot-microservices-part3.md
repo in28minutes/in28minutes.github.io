@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Microservices with Spring Boot - Part 3 - Creating Currency Conversion Microservice
+title:      Microservices with Spring Boot and Java - Part 3 - Example 2 - Creating Currency Conversion Microservice
 date:       2018-01-07 12:31:19
 summary:    Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. In part 3 of this series, we will focus on Creating Currency Conversion Microservice.
 categories:  SpringBootMicroservices

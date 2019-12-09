@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Microservices with Spring Boot - Part 5 - Using Eureka Naming Server
+title:      Microservices with Spring Boot - Part 5 - Example using Eureka Naming Server
 date:       2018-01-09 12:31:19
 summary:    Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. In part 5 of this series, we will focus on enabling Eureka Naming Server and have the microservices communicate with it.
 categories:  SpringBootMicroservices
