@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Microservices with Spring Boot and Java - Part 1 - Getting Started
-date:       2018-01-05 12:31:19
+date:       2020-02-03 12:31:19
 summary:    Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. In part 1 of this series, lets get introduced to the concept of microservices and understand how to create great microservices with Spring Boot and Spring Cloud.
 categories:  SpringBootMicroservices
 permalink:  /creating-microservices-with-spring-boot-part-1-getting-started
@@ -257,11 +257,13 @@ All instances of the components (CCS and FS) register with the Eureka Naming Ser
 A high level sequence diagram of what would happen when there is a request from CCS to FS is shown below:
 ![Image](/images/Spring-Boot-Microservice-7-Eureka-Sequence-Diagram.png "Spring-Boot-Microservice-7-Eureka-Sequence-Diagram.png")
 
-Here are the next series of Articles
-- Creating a Forex Microservice - We will create a simple rest service based on Spring Boot Starter Web and Spring Boot Started JPA. We will use Hibernate as JPA implmentation and connect to H2 database.
-- Create the CCS - Currency Conversion Service - We will create a simple rest service using feign to invoke the Forex Microservice
-- Use Ribbon for Load Balancing
-- Implement Eureka Naming Service and connect FS and CCS through Eureka.
+Microservices with Spring Boot 
+- Current Part - Part 1 - Getting Started with Microservices Architecture
+- Part 2 - [Creating Forex Microservice](http://www.springboottutorial.com/creating-microservices-with-spring-boot-part-2-forex-microservice){:target="_blank"}
+- Part 3 - [Creating Currency Conversion Microservice](http://www.springboottutorial.com/creating-microservices-with-spring-boot-part-3-currency-conversion-microservice){:target="_blank"}
+- Part 4 - [Using Ribbon for Load Balancing](http://www.springboottutorial.com/microservices-with-spring-boot-part-4-ribbon-for-load-balancing){:target="_blank"}
+- Part 5 - [Using Eureka Naming Server](http://www.springboottutorial.com/microservices-with-spring-boot-part-5-eureka-naming-server){:target="_blank"}
+
 
 ## Top 5 Recommended in28Minutes Courses
 [![Image](/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png "Master Microservices with Spring Boot and Spring Cloud")](https://www.udemy.com/course/microservices-with-spring-boot-and-spring-cloud/?couponCode=NOVEMBER-2019){:target="_blank"}
