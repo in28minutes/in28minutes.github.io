@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      20+ Spring Boot Projects with Code Examples
-date:       2020-02-03 12:31:19
+date:       2020-02-05 12:31:19
 summary:    At in28Minutes, we have created more than 20 projects with code examples on Github. We have 50+ articles explaining these projects. These code examples will you learn and gain expertise at Spring Boot.
 categories:  SpringBoot
 permalink:  /spring-boot-projects-with-code-examples
@@ -9,8 +9,6 @@ permalink:  /spring-boot-projects-with-code-examples
 
 This guide will help you understand our 20+ projects with code examples on Github. We have 50+ articles explaining these projects.  These code examples will help beginners and experts to learn and gain expertise at Spring Boot. 
  
-## 25 Videos
-[![Image](/images/SpringBootTutorialForBeginnersPlaylist.png "Spring Boot Tutorial For Beginners - 25 Videos")](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}
 
 ## Spring Boot Projects - Code Examples on Github
 
@@ -81,3 +79,6 @@ This guide will help you understand our 20+ projects with code examples on Githu
 [![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://www.udemy.com/course/full-stack-application-with-spring-boot-and-react/?couponCode=NOVEMBER-2019){:target="_blank"}
 
 > in28Minutes is creating amazing solutions for you to learn full stack and the cloud - Docker, Kubernetes, AWS, React, Angular etc. [Click here ](https://github.com/in28minutes/learn#aws-and-cloud-courses){:target="_blank"} for the complete catalogue of 30 Courses.
+
+## 25 Videos
+[![Image](/images/SpringBootTutorialForBeginnersPlaylist.png "Spring Boot Tutorial For Beginners - 25 Videos")](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps){:target="_blank"}
