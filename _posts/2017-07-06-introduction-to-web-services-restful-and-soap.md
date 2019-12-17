@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Introduction to Web Services - Restful and SOAP
-date:       2017-07-06 12:31:19
+date:       2020-02-02 12:31:19
 summary:    Introduction to Web Services - Restful and SOAP, This tutorial will help you understand the basics of web services and the different kinds of web services - REST and SOAP.
 categories:  SwArchitecture
 permalink:  /introduction-to-web-services-with-soap-and-rest
