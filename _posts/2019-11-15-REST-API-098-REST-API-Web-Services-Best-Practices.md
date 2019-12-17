@@ -1,7 +1,7 @@
 ---
 layout:  post
 title:  REST API Best Practices - With Design Examples from Java and Spring Web Services
-date:    2019-11-14 12:31:19
+date:       2020-01-02 12:31:19
 summary: Designing Great REST API is important to have great microservices. How do you design your REST API? What are the best practices?
 categories: SwJavaProgrammers
 permalink:  /rest-api-best-practices-with-java-and-spring

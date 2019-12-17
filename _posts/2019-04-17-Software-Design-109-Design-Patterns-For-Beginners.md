@@ -1,7 +1,7 @@
 ---
 layout:  post
 title:  Design Patterns For Beginners - with Java Examples
-date:    2019-04-16 12:31:19
+date:    2019-12-16 12:31:19
 summary: In this guide, we give you an introduction to the world of design patterns.For each pattern, we understand 1) the pattern a2) the context in which it is applicable -  with a real-world example.
 categories: SwDesign
 permalink:  /design-patterns-for-beginners-with-java-examples

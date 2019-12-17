@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Creating a SOAP Web Service with Spring Boot Starter Web Services
-date:       2018-01-01 12:31:19
+date:       2020-01-02 12:31:19
 summary:    Let's learn how to create a SOAP Web Service with Spring Boot Starter Web Services. We will take a Contract First approach by definining an XSD and exposing a WSDL from it.
 categories:  SpringBoot
 permalink:  /creating-soap-web-service-with-spring-boot-web-services-starter
