@@ -92,6 +92,15 @@ You declare a component scan by passing in a list of packages where the scan nee
 
 The packages mentioned above are the locations where the beans and their dependencies are defined. This ```@ComponentScan``` gives a clue to the Spring framework on where to search. 
 
+## Free Courses - Learn in 10 Steps
+
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
+- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
+- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
+
+
+
 ### Component Scan With XML Configuration
 
 The thing is, component scan an also be done with XML configuration:

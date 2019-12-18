@@ -9,6 +9,15 @@ permalink:  /spring-boot-projects-with-code-examples
 
 This guide will help you understand our 20+ projects with code examples on Github. We have 50+ articles explaining these projects.  These code examples will help beginners and experts to learn and gain expertise at Spring Boot. 
  
+## Free Courses - Learn in 10 Steps
+
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
+- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
+- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
+
+
+
 
 ## Spring Boot Projects - Code Examples on Github
 
@@ -57,11 +66,4 @@ This guide will help you understand our 20+ projects with code examples on Githu
 |Spring Boot and Swagger - Documenting RESTful Services|REST API|[URL](http://www.springboottutorial.com/spring-boot-swagger-documentation-for-rest-services){: target='_blank'}  |[Project Code on Github](https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-with-swagger){:target='_blank'} |
 |Versioning RESTful Services|REST API|[URL](http://www.springboottutorial.com/spring-boot-versioning-for-rest-services){: target='_blank'}  |[Project Code on Github](https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-versioning){:target='_blank'} |
 |Creating a SOAP Web Service with Spring Boot Starter Web Services|SOAP Web Services|[URL](http://www.springboottutorial.com/creating-soap-web-service-with-spring-boot-web-services-starter){: target='_blank'}  |[Project Code on Github](https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-tutorial-soap-web-services){:target='_blank'} |
-
-## Free Courses - Learn in 10 Steps
-
-- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
-- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
-- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
 

@@ -44,6 +44,7 @@ Advantages
 - Easy to use for Learning, POCs and Unit Tests
 - Spring Boot provides Simple Configuration to switch between a real database and an in memory database like H2
 
+
 ## H2
 
 H2 is one of the popular in memory databases. Spring Boot has very good integration for H2.
@@ -101,6 +102,14 @@ public class Student {
 	private String name;
 	private String passportNumber;
 ```
+
+## Free Courses - Learn in 10 Steps
+
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
+- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
+- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
+
 
 
 ## H2 - A Few Tips
