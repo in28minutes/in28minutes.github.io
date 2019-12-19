@@ -148,6 +148,7 @@ While there is no single accepted definition for microservices, for me, there ar
 - Small Well Chosen Deployable Units - Bounded Contexts
 - Cloud Enabled - Dynamic Scaling
 
+
 ## How does Microservice Architecture look like?
 
 This is how a monolith would look like. One application for everything.
@@ -180,6 +181,12 @@ Lets look at some of the challenges:
 - Pack of Cards : If a microservice at the bottom of the call chain fails, it can have knock on effects on all other microservices. Microservices should be fault tolerant by Design.
 - Debugging : When there is a problem that needs investigation, you might need to look into multiple services across different components. Centralized Logging and Dashboards are essential to make it easy to debug problems.
 - Consistency : You cannot have a wide range of tools solving the same problem. While it is important to foster innovation, it is also important to have some decentralized governance around the languages, platforms, technology and tools used for implementing/deploying/monitoring microservices.
+
+---
+
+***85,000*** subscribers are learning AWS, Docker, Kubernetes, Spring Boot and Microservices on our ***Youtube Channel***. ***[SUBSCRIBE NOW AND KEEP LEARNING!](https://rebrand.ly/in28minute-YT-Subscribe)***
+
+---
 
 ## Solutions to Challenges with Microservice Architectures
 
