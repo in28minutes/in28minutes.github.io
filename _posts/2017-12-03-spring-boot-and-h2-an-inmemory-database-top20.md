@@ -117,6 +117,17 @@ public class Student {
 - This is not how you want your real world applications to behave.
 - We explain how to connect to a database of your choice in the answer to the question "How do we connect to a external database?".
 
+---
+
+***85,000 subscribers*** are learning AWS, Docker, Kubernetes, Spring Boot and Microservices on our ***Youtube Channel***.
+
+
+&nbsp;
+***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+
+---
+
+
 ## Spring Boot and H2 Magic
 
 H2 provides a web interface called H2 Console to see the data. Let's enable h2 console in the application.properties.

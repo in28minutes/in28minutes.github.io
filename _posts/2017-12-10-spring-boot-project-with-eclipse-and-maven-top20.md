@@ -139,12 +139,16 @@ The jar dependencies are stored on your machine in a folder called maven local r
 - dependency:sources -> Download source code for all dependencies
 - --debug -> Debug flag. Can be used with all the above commands
 
-## Free Courses - Learn in 10 Steps
+---
 
-- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
-- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
-- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
+***85,000 subscribers*** are learning AWS, Docker, Kubernetes, Spring Boot and Microservices on our ***Youtube Channel***.
+
+
+&nbsp;
+***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+
+---
+
 
 
 

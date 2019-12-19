@@ -200,6 +200,18 @@ After App Reload, When you login to H2 Console (http://localhost:8080/h2-console
 
 ![Image](/images/H2-Console-With-Student.png "H2 Console With Student")
 
+
+---
+
+***85,000 subscribers*** are learning AWS, Docker, Kubernetes, Spring Boot and Microservices on our ***Youtube Channel***.
+
+
+&nbsp;
+***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+
+---
+
+
 ## Create JPA Repository class to Read Student from Database
 
 /src/main/java/com/in28minutes/springboot/jpa/hibernate/h2/example/student/StudentRepository.java

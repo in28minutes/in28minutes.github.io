@@ -122,6 +122,17 @@ When your run the application again, you would see couple of new entries in the 
 someDummyBean1
 someDummyBean2
 ```
+
+---
+
+***85,000 subscribers*** are learning AWS, Docker, Kubernetes, Spring Boot and Microservices on our ***Youtube Channel***.
+
+
+&nbsp;
+***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+
+---
+
 ## Loading Beans from XML Configuration
 
 Let's start with defining a simple XML Configuration.

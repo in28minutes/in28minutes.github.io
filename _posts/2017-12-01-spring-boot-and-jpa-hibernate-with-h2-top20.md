@@ -130,6 +130,18 @@ Below is the list of starter projects in pom.xml.
 			<scope>test</scope>
 		</dependency>
 ```
+
+---
+
+***85,000 subscribers*** are learning AWS, Docker, Kubernetes, Spring Boot and Microservices on our ***Youtube Channel***.
+
+
+&nbsp;
+***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+
+---
+
+
 ## Understanding Spring Boot Starter JPA
 
 Below picture highlights some of the dependencies that are part of the imported JPA project.

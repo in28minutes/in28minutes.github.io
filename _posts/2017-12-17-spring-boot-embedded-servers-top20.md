@@ -117,6 +117,18 @@ This jar can be used to run the application on any machine where Java 8 is insta
 > The tomcat embedded server is also packaged inside this jar
 
 
+---
+
+***85,000 subscribers*** are learning AWS, Docker, Kubernetes, Spring Boot and Microservices on our ***Youtube Channel***.
+
+
+&nbsp;
+***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+
+---
+
+
+
 ## Using Jetty as Embedded Server with Spring Boot
 
 Remove the existing dependency on spring-boot-starter-web and add these in.

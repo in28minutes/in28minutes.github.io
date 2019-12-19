@@ -141,6 +141,17 @@ We get Hibernate Validator for free when we use Spring Boot Starter Web.
 
 So, we can get started with implementing the validations.
 
+---
+
+***85,000 subscribers*** are learning AWS, Docker, Kubernetes, Spring Boot and Microservices on our ***Youtube Channel***.
+
+
+&nbsp;
+***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+
+---
+
+
 ### Implementing Validations on the Bean
 
 Let's add a few validations to the Student bean. We are using `@Size` to specify the minimum length and also a message when a validation error occurs.

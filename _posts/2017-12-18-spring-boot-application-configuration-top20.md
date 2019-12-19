@@ -227,6 +227,17 @@ When you browse to http://localhost:8080/dynamic-configuration, you see the foll
 {"number":100,"message":"Dynamic Message","key":true}
 ```
 
+---
+
+***85,000 subscribers*** are learning AWS, Docker, Kubernetes, Spring Boot and Microservices on our ***Youtube Channel***.
+
+
+&nbsp;
+***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+
+---
+
+
 ### Understand Type Safety
 
 @ConfigurationProperties is type safe. If you configure any property with a value of an invalid type, the application fails at startup.

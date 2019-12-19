@@ -118,6 +118,18 @@ Heres what happens when you fire a request to a non existent resource `http://lo
 
 Thats a cool error response. It contains all the details that are typically needed.
 
+
+---
+
+***85,000 subscribers*** are learning AWS, Docker, Kubernetes, Spring Boot and Microservices on our ***Youtube Channel***.
+
+
+&nbsp;
+***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+
+---
+
+
 ### What happens when you throw an Exception?
 
 Let's see what Spring Boot does when an exception is thrown from a Resource.
