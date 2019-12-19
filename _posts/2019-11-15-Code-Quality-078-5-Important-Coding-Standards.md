@@ -92,4 +92,10 @@ The other 3 standards can be enforced by using an automated tool such as SonarQu
 ***300,000*** learners re-skill and learn every day with our amazing courses. ***[TRY A FREE COURSE NOW!](https://rebrand.ly/in28minutes-try-free-course)***
 ---
 
+---
+***300,000*** learners re-skill and learn every day with our amazing courses. ***[TRY A FREE COURSE NOW!](https://rebrand.ly/in28minutes-try-free-course)***
+---
+
+
+
 

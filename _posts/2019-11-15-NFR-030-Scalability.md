@@ -131,4 +131,10 @@ Scalalbility of an application can be improved by designing it in a more modular
 ***300,000*** learners re-skill and learn every day with our amazing courses. ***[TRY A FREE COURSE NOW!](https://rebrand.ly/in28minutes-try-free-course)***
 ---
 
+---
+***300,000*** learners re-skill and learn every day with our amazing courses. ***[TRY A FREE COURSE NOW!](https://rebrand.ly/in28minutes-try-free-course)***
+---
+
+
+
 
