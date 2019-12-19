@@ -87,5 +87,15 @@ In this article, we had a look at centralized logging. We saw that there is a ne
 ---
 
 
+---
+
+***300,000*** learners re-skill and learn every day with our amazing courses. ***[TRY A FREE COURSE NOW!](https://rebrand.ly/in28minutes-try-free-course)***
+
+---
+---
+
+***300,000*** learners re-skill and learn every day with our amazing courses. ***[TRY A FREE COURSE NOW!](https://rebrand.ly/in28minutes-try-free-course)***
+
+---
 
 
