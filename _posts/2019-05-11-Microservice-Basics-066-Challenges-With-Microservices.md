@@ -23,6 +23,7 @@ This is the fourth article in a series of five articles on cloud and microservic
 - [4 - Microservice Architectures - Challenges with building Microservices](/microservice-architectures-challenges-with-microservices){:target='_blank'}
 - [5 - Microservices Architectures - Microservices vs SOA](/microservice-architectures-soa-vs-microservices){:target='_blank'}
 
+
 ### Identifying Microservice Boundaries - Implementing Bounded Context
 
 We are aware that in a microservices architecture, instead of single big monolith application, we build a number of independent microservices talking with each other:

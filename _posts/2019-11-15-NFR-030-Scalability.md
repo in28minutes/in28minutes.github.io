@@ -31,6 +31,7 @@ This is the part of a series of articles on Non Functional Requirements:
 - [10 - Availability](/availability-non-functional-requirement-in-microservices){:target='_blank'}
 - [11 - Portability](/non-functional-requirements-in-microservices-introduction-to-portability){:target='_blank'}
 
+
 #### What Is Scalabiity?
 
 Let's say we have an application A, that supports N number of users with its current infrastructure. 
@@ -95,7 +96,6 @@ Another option would be to have a **built-in cache** for each of the microservic
 
 A **distributed cache** caching data across different instances of a microservice might also be an option. 
  
-
 Do check out our video on this:
 
 [![image info](/images/Capture-030-01.png)](https://www.youtube.com/watch?v=-aO7GNzvol4)

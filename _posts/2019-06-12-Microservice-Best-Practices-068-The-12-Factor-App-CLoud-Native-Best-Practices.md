@@ -19,6 +19,7 @@ This is the first article in a series of six articles on best practices with clo
 - [5 - Build an Archetype](/creating-archetypes-in-microservices-architectures-best-practices){:target='_blank'}
 - [6 - Asynchronous communication with queues and microservices - A perfect combination?](/asynchronous-communication-with-queues-in-microservices){:target='_blank'}
 
+
 ## The 12 Factor App
 
 12 Factor App is a set of best practices that guide you to build a great cloud native application. These were framed by Heroku, based on their experiences with building cloud native applications. 

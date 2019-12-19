@@ -25,6 +25,7 @@ This is the second article in a series of six articles on best practices with cl
 - [5 - Microservice Best Practice - Build an Archetype](/creating-archetypes-in-microservices-architectures-best-practices){:target='_blank'}
 - [6 - Asynchronous communication with queues and microservices - A perfect combination?](/asynchronous-communication-with-queues-in-microservices){:target='_blank'}
 
+
 ### The Need For Event Driven Architecture
 
 Microservices architectures have multiple small-sized microservices talking to each other. Here is one such architecture:

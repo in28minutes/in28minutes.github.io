@@ -205,9 +205,6 @@ The idea behind these series of 5 articles was to give a flavor of Spring Boot a
 
 There is a lot more ground to conver with Microservices. Until next time, Cheers!
 
-
-
-
 ## Complete Code Example
 
 

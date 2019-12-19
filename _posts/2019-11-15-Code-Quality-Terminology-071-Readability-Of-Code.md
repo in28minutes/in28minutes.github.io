@@ -138,5 +138,3 @@ Do check out our video on the same topic:
 ### Summary
 
 In this article, we discussed readability of code and why it is important. We saw an example of code that has poor readability, and what it looked like after refactoring.
-
-

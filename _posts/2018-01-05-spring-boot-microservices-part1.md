@@ -245,11 +245,11 @@ All instances of the components (CCS and FS) register with the Eureka Naming Ser
 A high level sequence diagram of what would happen when there is a request from CCS to FS is shown below:
 ![Image](/images/Spring-Boot-Microservice-7-Eureka-Sequence-Diagram.png "Spring-Boot-Microservice-7-Eureka-Sequence-Diagram.png")
 
-Microservices with Spring Boot 
+## Next Steps
+
+Continue Learning Microservices with Spring Boot 
 - Current Part - Part 1 - Getting Started with Microservices Architecture
 - Part 2 - [Creating Forex Microservice](http://www.springboottutorial.com/creating-microservices-with-spring-boot-part-2-forex-microservice){:target="_blank"}
 - Part 3 - [Creating Currency Conversion Microservice](http://www.springboottutorial.com/creating-microservices-with-spring-boot-part-3-currency-conversion-microservice){:target="_blank"}
 - Part 4 - [Using Ribbon for Load Balancing](http://www.springboottutorial.com/microservices-with-spring-boot-part-4-ribbon-for-load-balancing){:target="_blank"}
 - Part 5 - [Using Eureka Naming Server](http://www.springboottutorial.com/microservices-with-spring-boot-part-5-eureka-naming-server){:target="_blank"}
-
-

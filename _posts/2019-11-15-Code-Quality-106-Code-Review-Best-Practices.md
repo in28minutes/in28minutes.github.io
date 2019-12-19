@@ -182,5 +182,3 @@ Do check out our video on the same topic:
 ### Summary
 
 In this article, we had a good overview of code review best practices for a team, or organization. The core principle behind doing code reviews is to add value - to the system, to the people involved, and to the best practices as a whole.
-
-

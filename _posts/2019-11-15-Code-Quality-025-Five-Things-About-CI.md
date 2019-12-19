@@ -77,5 +77,3 @@ Do check out our video on this:
 ### Summary
 
 In this article, we explored the five important questions that a team using a CI infrastructure, to ask about its development process.
-
-

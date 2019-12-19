@@ -89,4 +89,3 @@ Do check out our video on this:
 ### Summary
 
 In this article, we talked about the need for an in memory database, and how it is good for quick prototyping and learning. We focused on what such a database is, and how it is different from a real world database. We then took the example of H2 and described how to use an in-memory database.Finally, we showed you how easy it is to use an in-memory database, such as H2.
-

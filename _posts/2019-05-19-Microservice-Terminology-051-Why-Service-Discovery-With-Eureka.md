@@ -25,6 +25,7 @@ This is the first article in a series of six articles on terminology used with c
 - [5 - Microservices Architectures - Introduction to Auto Scaling](/introduction-to-auto-scaling-or-dynamic-scaling-in-cloud){:target='_blank'}
 - [6 - Microservices Architectures - What is Fault Tolerance?](/fault-tolerance-in-microservices){:target='_blank'}
 
+
 ### What Is Service Discovery?
 
 When we talk about a microservices architecture, we refer to a system with a large number of small services, working with each other:

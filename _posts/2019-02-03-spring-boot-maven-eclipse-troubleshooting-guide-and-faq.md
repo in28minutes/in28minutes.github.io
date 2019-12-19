@@ -62,23 +62,6 @@ This will be the best 20 minute investment you made in your programming career. 
 
 Happy Troubleshooting.
 
-## Java and Spring Interview Guides
-
-[![Image](/images/Course-Spring-Framework-Interview-Guide-200-Questions-Answers.png "Spring Framework Interview Guide - 200+ Questions & Answers")](https://www.udemy.com/course/spring-interview-questions-and-answers/?couponCode=NOVEMBER-2019)
-
-[![Image](/images/Course-Java-Interview-Guide-200-Interview-Questions-and-Answers.png "Java Interview Guide : 200+ Interview Questions and Answers")](https://www.udemy.com/course/java-interview-questions-and-answers/?couponCode=NOVEMBER-2019)
-
-## Spring, Spring Boot and Spring Cloud - REST & Microservices
-
-[![Image](/images/Course-Your-First-Steps-From-Programmer-To-Software-Architect.png "Your First Steps from Programmer to Software Architect")](https://www.udemy.com/course/software-architect-course-first-steps/?couponCode=NOVEMBER-2019)
-
-[![Image](/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png "Master Microservices with Spring Boot and Spring Cloud")](https://www.udemy.com/course/microservices-with-spring-boot-and-spring-cloud/?couponCode=NOVEMBER-2019)
-
-[![Image](/images/Course-Master-Hibernate-and-JPA-with-Spring-Boot-in-100-Steps.png "Master Hibernate and JPA with Spring Boot in 100 Steps")](https://www.udemy.com/course/hibernate-jpa-tutorial-for-beginners-in-100-steps/?couponCode=NOVEMBER-2019)
-
-[![Image](/images/Course-Spring-Framework-Master-Class---Beginner-to-Expert.png "Spring Master Class - Beginner to Expert")](https://www.udemy.com/course/spring-tutorial-for-beginners/?couponCode=NOVEMBER-2019)
-
-
 - [Basics](#basics)
 	- [Tip :  Ensure you have the right version of Java Installed](#tip---ensure-you-have-the-right-version-of-java-installed)
 	- [Tip : Ensure you have the right version of Eclipse Installed](#tip--ensure-you-have-the-right-version-of-eclipse-installed)
@@ -3023,37 +3006,3 @@ There are three ways - Practice, Practice and More Practice.
 
 I would suggest joining a programming contest like CodeChef or TopCoder for a start. Once you start being active there, you will understand everything else.
 
-### You are awesome
-
-Wow! You are incredible! If you got here, you must be a 28Minuter and you should understand "The in28Minutes Way"
-- https://github.com/in28minutes/in28minutes-initiatives/tree/master/The-in28Minutes-Way
-
-## The End
-
-Wow! Wasn't it a wonderful read? We would love to hear your thoughts.  
-To find out more about our courses visit http://www.in28minutes.com
-
-Share on Twitter - https://twitter.com/home?status=Having%20a%20great%20time!%20%0A%20%23in28Minutes%20%23ImLearningIn28Minutes
-
-#in28Minutes #ImLearningIn28Minutes #ImLovingIn28Minutes 
-
-Good Luck and Keep Learning in28Minutes
-- Linked In : https://www.linkedin.com/in/rangakaranam/​
-- Facebook  : https://www.facebook.com/in28Minutes​
-- Twitter   : https://twitter.com/in28Minutes​
-- YouTube   : https://www.youtube.com/rithustutorials​
-​
-
-### 10 Step Quick Introductions to Frameworks
-
-- [Learn Docker in 5 Steps](https://www.youtube.com/watch?v=Rt5G5Gj7RP0)
-- [Spring Framework for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners)
-- [Spring Boot for Beginners in 10 Steps](https://courses.in28minutes.com/p/spring-boot-for-beginners-in-10-steps)
-- [Spring MVC in 10 Steps](https://www.youtube.com/watch?v=BjNhGaZDr0Y)
-- [JPA and Hibernate in 10 Steps](https://courses.in28minutes.com/p/jpa-and-hibernate-tutorial-for-beginners-with-spring-boot)
-- [Eclipse Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/eclipse-tutorial-for-beginners)
-- [Maven Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/maven-tutorial-for-beginners-in-5-steps)
-- [JUnit Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/junit-tutorial-for-beginners)
-- [Mockito Tutorial for Beginners in 5 Steps](https://courses.in28minutes.com/p/mockito-for-beginner-in-5-steps)
-- [Full Stack with Spring Boot and React](https://www.youtube.com/watch?v=SWXuXhZkNQc)
-- [Full Stack with Spring Boot and Angular](https://www.youtube.com/watch?v=8ueiZf988qY)

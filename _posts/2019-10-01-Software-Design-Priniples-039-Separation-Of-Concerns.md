@@ -87,4 +87,3 @@ Do check out our video on this:
 ### Summary
 
 In this article, we looked at separation of concerns, and several examples of it in action - such as in a layered architecture, in the way microservices are split and organized, and in the way common components and infrastructure are identified and extracted out in a microservices architecture.
-

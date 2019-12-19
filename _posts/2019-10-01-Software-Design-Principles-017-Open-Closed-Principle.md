@@ -10,6 +10,7 @@ permalink:  /software-design-open-closed-principle
 Open Closed Principle is one of the SOLID Principles. You want your code to be extensible. How do you achieve it with minimum fuss? Let's get started.
 
 ### We learn
+
 * What is the Open Closed Principle?
 * How do you apply this principle in developing and designing software applications?
 
@@ -23,6 +24,7 @@ This is the fifth article in a series of articles on important Software Design P
 - [4 - Software Design - Single Responsibility Principle - with examples](/software-design-single-responsibility-principle){:target='_blank'}
 - [5 - Software Design - Open Closed Principle - with examples](/software-design-open-closed-principle){:target='_blank'}
 - [6 - Software Design - What is Dependency Inversion Principle?](/software-design-dependency-inversion-principle){:target='_blank'}
+
 
 ## Open Closed Principle
 
@@ -137,7 +139,4 @@ Do check out our video on this:
 
 ### Summary
 
-In this article, we focused on Open Closed Principle. 
-
-Design should be open for extension, but closed for modification.
-
+In this article, we focused on Open Closed Principle. Design should be open for extension, but closed for modification.

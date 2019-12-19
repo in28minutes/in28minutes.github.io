@@ -128,4 +128,3 @@ Do check out our video on the same topic:
 ### Summary
 
 **Continuous Refactoring**, aided by tests, leads to clean code. To be able to continuously refactor, you need good tests. With exprerience, you get better at refactoring, and will figure out a good sequence of steps to approach refactoring, in general.
-

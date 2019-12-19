@@ -87,4 +87,3 @@ Do check out our video on the same topic:
 ### Summary
 
 In this video, we looked at five languages that we also recommend you to pick up, if interested in a learning a new programming language. These languages are Java Functional Programming, Python, JavaScript, Kotlin and Scala.
-

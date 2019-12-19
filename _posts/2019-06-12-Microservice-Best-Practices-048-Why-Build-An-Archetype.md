@@ -26,6 +26,7 @@ This is the fifth article in a series of six articles on best practices with clo
 - [5 - Microservice Best Practice - Build an Archetype](/creating-archetypes-in-microservices-architectures-best-practices){:target='_blank'}
 - [6 - Asynchronous communication with queues and microservices - A perfect combination?](/asynchronous-communication-with-queues-in-microservices){:target='_blank'}
 
+
 ### Why Do We Need Archetypes?
 
 In microservices architectures, we have a number of microservices interacting with each other. And, we keep adding microservices as we evolve.

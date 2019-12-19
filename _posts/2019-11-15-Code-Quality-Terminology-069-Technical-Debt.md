@@ -116,4 +116,3 @@ Do check out our video on the same topic:
 In this article, we had a reasonably close look at the concept of technical debt. It is a qualitative measure of the amount of effort required to take the current design state of an application, close to an ideal application. Technical debt can arise due to reasons such as bad design standards, design shortcuts, incorrect technology and bad coding practices. 
 
 Technical debt slows down productivity. It is important to measure technical debt using static analysis tools such as SonarQube. Measuring technical debt needs to be a continuous process. Once monitored and measured, specific steps can be taken to ensure it is reduced and that new debt does not pile up.
-

@@ -69,4 +69,3 @@ Do check out our video on the same topic:
 In this article, we introduced you to five programming related tools that we believe will make you more productive, and the application you develop, a better one.
 
 Do you have any tools that you recommend? Leave a comment.
-

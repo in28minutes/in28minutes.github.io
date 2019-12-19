@@ -251,7 +251,7 @@ GET to http://localhost:8000/currency-exchange/from/EUR/to/INR
 }
 ```
 
-## Continue The Series of Articles
+## Next Steps
 
 Microservices with Spring Boot 
 - Part 1 - [Getting Started with Microservices Architecture](http://www.springboottutorial.com/creating-microservices-with-spring-boot-part-1-getting-started){:target="_blank"}

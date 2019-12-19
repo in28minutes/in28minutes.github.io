@@ -15,6 +15,7 @@ This is first article in a series of 4 articles on Automation Testing in Microse
 - [3 - Programming Basics - Unit Testing - What Is Mocking?](/programming-basics-introduction-to-mocking-in-unit-tests){:target='_blank'}
 - [4 - Unit Testing Best Practices - with Java and Junit Examples](/unit-testing-best-practices-with-java-and-junit-examples){:target='_blank'}
 
+
 #### Unit Tests
 
 When you develop an application, it could contain a large number of classes, each of which probably has several methods. You normally write a test case for a particular **unit** of code. A unit could be a method, a group of methods, or  the entire code of a class. Typically, you want to keep the individual unit tests as independent as possible. 

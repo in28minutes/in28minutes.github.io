@@ -222,11 +222,3 @@ Do check out our video on the same topic:
 ### Summary
 
 In this article, we talked about component scan in the context of Spring and Spring Boot frameworks.The ```@ComponentScan``` annotation is used to specify packages to locate components in Spring. This is automatically done in the default package, in the case of Spring Boot.
-
-## Free Courses - Learn in 10 Steps
-
-- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
-- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
-- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
-

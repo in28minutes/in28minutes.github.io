@@ -159,9 +159,9 @@ However, we are hardcoding the urls of both instances of  FS in CCS. That means 
 
 In the next part, we will use Eureka Naming Server to fix this problem.
 
-## Continue the Microservice Series
+## Next Steps
 
-Microservices with Spring Boot 
+Continue the Microservice Series - Microservices with Spring Boot 
 - Part 1 - [Getting Started with Microservices Architecture](http://www.springboottutorial.com/creating-microservices-with-spring-boot-part-1-getting-started){:target="_blank"}
 - Part 2 - [Creating Forex Microservice](http://www.springboottutorial.com/creating-microservices-with-spring-boot-part-2-forex-microservice){:target="_blank"}
 - Part 3 - [Creating Currency Conversion Microservice](http://www.springboottutorial.com/creating-microservices-with-spring-boot-part-3-currency-conversion-microservice){:target="_blank"}

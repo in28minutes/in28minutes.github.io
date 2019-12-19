@@ -30,6 +30,7 @@ This is the part of a series of articles on Non Functional Requirements:
 - [10 - Availability](/availability-non-functional-requirement-in-microservices){:target='_blank'}
 - [11 - Portability](/non-functional-requirements-in-microservices-introduction-to-portability){:target='_blank'}
 
+
 ### What Is Reusability?
 
 Suppose you have worked on a project to create a microservice - Microservice A - and you are now working on a new project - Microservice B. 

@@ -24,6 +24,7 @@ This is the third article in a series of six articles on best practices with clo
 - [5 - Microservice Best Practice - Build an Archetype](/creating-archetypes-in-microservices-architectures-best-practices){:target='_blank'}
 - [6 - Asynchronous communication with queues and microservices - A perfect combination?](/asynchronous-communication-with-queues-in-microservices){:target='_blank'}
 
+
 ### Need For A Vertical Slice
 
 Let's say you want to start off writing a new microservice, or developing any new application. There are several technical risks that need to be addressed , such as deciding what framework to use, identifying the layers of the architecture, figuring out communication with other systems, and so on. 

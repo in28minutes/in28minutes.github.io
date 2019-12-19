@@ -24,6 +24,7 @@ This is the fourth article in a series of six articles on best practices with cl
 - [5 - Microservice Best Practice - Build an Archetype](/creating-archetypes-in-microservices-architectures-best-practices){:target='_blank'}
 - [6 - Asynchronous communication with queues and microservices - A perfect combination?](/asynchronous-communication-with-queues-in-microservices){:target='_blank'}
 
+
 ### Why Asynchronous Messaging?
 
 Why is asynchronous messaging important? 

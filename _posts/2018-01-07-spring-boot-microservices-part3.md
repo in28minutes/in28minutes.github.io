@@ -276,6 +276,9 @@ We have now created two microservices and established communication between them
 
 However, we are hardcoding the url for FS in CCS. That means when new instances of FS are launched up we have no way to distribute load between them.
 
+
+## Next Steps
+
 In the next part, we will enable client side load distribution using Ribbon.
 
 Microservices with Spring Boot 

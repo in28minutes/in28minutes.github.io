@@ -109,4 +109,3 @@ Do check out our video on the same topic:
 
 Having the right coding standards is an important starting point to having great code. Having great process around static analysis and peer reviews will help your project meet its coding standards. 
 
-

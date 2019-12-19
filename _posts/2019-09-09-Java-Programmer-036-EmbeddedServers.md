@@ -87,4 +87,3 @@ Do check out our video on this:
 ### Summary
 
 In this article, we talked about the need for embedded servers as a concept. We discussed how an embedded server works, and how it sits inside an application image. We also saw an example with the Spring Boot framework, which uses Tomcat by default, as the embedded server. 
-

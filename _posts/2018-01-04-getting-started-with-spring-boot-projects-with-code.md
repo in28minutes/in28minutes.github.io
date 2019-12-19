@@ -207,6 +207,7 @@ Following article explores more about Embedded Servers.
 | -------------------- |:------------------:|---------------:|--------------|
 |Spring Boot and Embedded Servers - Tomcat, Jetty and Undertow|Spring Boot Basics|[URL](http://www.springboottutorial.com/spring-boot-with-embedded-servers-tomcat-jetty){: target='_blank'}  |[Project Code on Github](https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-tutorial-basics){:target='_blank'} |
 
+
 ## Spring Data
 
 From http://projects.spring.io/spring-data/
@@ -224,6 +225,4 @@ Following articles digs deeper into Spring Data.
 |Title|Category|URL|Github|
 | -------------------- |:------------------:|---------------:|--------------|
 |Introduction to Spring Data - Spring Data JPA, Spring Data REST and MongoDB|Spring Data|[URL](http://www.springboottutorial.com/introduction-to-spring-data-with-spring-boot){: target='_blank'}  | |
-
-
 

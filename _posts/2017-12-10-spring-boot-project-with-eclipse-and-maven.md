@@ -14,14 +14,6 @@ Setting up a basic project with Spring Boot is a cake walk. In this article, we 
 - How to use Spring Starter Eclipse Plugin to create a simple project with Spring Boot, Maven and Eclipse? 
 - How to create a Spring Boot Project manually step by step?
 
-## Free Courses - Learn in 10 Steps
-
-- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
-- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
-- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
-
-
 ## Tools you will need
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
@@ -323,11 +315,3 @@ When you launch this class a java application, you would see that an embedded to
 ## Summary
 
 In this article, we looked at the different options to creating Spring Boot Projects with Maven and Eclipse. I love option 2 of creating the project directly from Eclipse using STS plugin. But, you might have your own preference.
-
-## Free Courses - Learn in 10 Steps
-
-- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
-- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
-- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
-

@@ -10,6 +10,7 @@ permalink:  /fault-tolerance-in-microservices
 In this article, we discuss an important property of microservices, called fault tolerance.
 
 ## You will learn
+
 - What is Fault Tolerance?
 - Why is fault tolerance important in microservices architecture?
 - How do you achieve fault tolerance?

@@ -148,4 +148,3 @@ You can check out our video on the same topic here
 ### Summary
 
 In this article, we had a close look at the best practices involved in ensuring good code quality in your application. We saw that static analysis is a very good tool to make use of. 
-

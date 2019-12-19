@@ -68,4 +68,3 @@ Do check out our video on the same topic:
 In this article, we has a look at the five most important coding standards. Of these 5 coding standards, the first and the last, namely naming and readability standards, are the most difficult to achieve. 
 
 The other 3 standards can be enforced by using an automated tool such as SonarQube. SonarQube can measure code complexity, estimate the sizes of methods and classes, and check for code duplication as well. These checks can be run as part of continuous integration builds.
-

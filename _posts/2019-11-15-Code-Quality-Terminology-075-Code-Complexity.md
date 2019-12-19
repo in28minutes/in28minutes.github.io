@@ -86,5 +86,3 @@ Do check out our video on the same topic:
 ### Summary
 
 Code complexity is a measure of how difficult it is to understand your code. Generally, large method and classes are code smells. There are different measures for code complexity, and various tools to measure them as well. Keep Refactoring code to reduce complexity.
-
-

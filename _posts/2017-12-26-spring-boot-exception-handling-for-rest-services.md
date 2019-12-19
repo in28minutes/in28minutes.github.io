@@ -264,14 +264,6 @@ public final ResponseEntity<ErrorDetails> handleAllExceptions(Exception ex, WebR
 
 ```
 
-## Free Courses - Learn in 10 Steps
-
-- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
-- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
-- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
-
-
 
 ## Complete Code Example
 

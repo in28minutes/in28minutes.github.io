@@ -88,6 +88,3 @@ Do check out our video on this:
 In this article, we looked at how you can do a quick design review for a new project.
 
 Do you look for anything else in a quick review? Leave a comment.
-
-
-

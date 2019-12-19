@@ -17,8 +17,6 @@ This guide will help you understand our 20+ projects with code examples on Githu
 - [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
 
 
-
-
 ## Spring Boot Projects - Code Examples on Github
 
 |Title|Category|URL|Github|

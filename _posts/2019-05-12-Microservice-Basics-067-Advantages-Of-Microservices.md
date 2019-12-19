@@ -58,4 +58,3 @@ Do check out our video on the same topic:
 
 [![image info](images/Capture-067-01.png)](https://www.youtube.com/watch?v=nfLll9Ep9DI)
 
-

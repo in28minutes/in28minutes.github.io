@@ -86,4 +86,3 @@ Do check out our video on the same topic:
 
 Code smells are patterns in code that could indicate hidden bugs. The two ways to detect code smells are static analysis, and manual code reviews. It is important to do both systematically, to keep the application free of code smells. 
 
-

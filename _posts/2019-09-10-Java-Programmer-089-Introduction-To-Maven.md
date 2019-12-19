@@ -86,4 +86,3 @@ In this article, we had an introduction on Maven. Maven is primarily used as a d
 Do check out our video on the same topic:
 
 [![image info](images/Capture-089-01.png)](https://www.youtube.com/watch?v=EjymtpicGtg)
-
