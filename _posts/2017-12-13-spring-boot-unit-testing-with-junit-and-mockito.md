@@ -16,15 +16,6 @@ This guide will help you create great unit tests with JUnit and Mockito for your
 - How to write unit tests with Mockito using @Mock and @InjectMocks without launching up a Spring Context?
 - How to write a unit test with mocking and launching up the complete Spring Context using @MockBean?
 
-## Free Courses - Learn in 10 Steps
-
-- [Learn JUnit in 5 Steps](https://rebrand.ly/in28minutes-10steps-junit){:target="_blank"}
-- [Learn Mockito in 5 Steps](https://rebrand.ly/in28minutes-10steps-mockito){:target="_blank"}
-- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
-- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
-- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
-
 
 ## Project Code Structure
 
@@ -497,14 +488,6 @@ Notes
 
 Launching the entire spring context makes the unit test slower. Unit tests will also start failing if there are errors in other beans in the contexts. So, the MockitoJUnitRunner approach is preferred.
 
-## Free Courses - Learn in 10 Steps
-
-- [Learn JUnit in 5 Steps](https://rebrand.ly/in28minutes-10steps-junit){:target="_blank"}
-- [Learn Mockito in 5 Steps](https://rebrand.ly/in28minutes-10steps-mockito){:target="_blank"}
-- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
-- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
-- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
 
 
 

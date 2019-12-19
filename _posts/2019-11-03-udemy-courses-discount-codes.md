@@ -14,31 +14,12 @@ Each of these courses come with
 - ✔ Friendly Support in the Q&A section
 - ✔ Free Udemy Certificate of Completion on Completion of Course
 
-## Top 5 Recommended in28Minutes Courses
-[![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://www.udemy.com/course/full-stack-application-with-spring-boot-and-react/?couponCode=NOVEMBER-2019){:target="_blank"}
-[![Image](/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png "Master Microservices with Spring Boot and Spring Cloud")](https://www.udemy.com/course/microservices-with-spring-boot-and-spring-cloud/?couponCode=NOVEMBER-2019){:target="_blank"}
-[![Image](/images/Course-Spring-Framework-Master-Class---Beginner-to-Expert.png "Spring Master Class - Beginner to Expert")](https://www.udemy.com/course/spring-tutorial-for-beginners/?couponCode=NOVEMBER-2019){:target="_blank"}
-[![Image](/images/Course-KubernetesCrashCourse.png "Kubernetes Crash Course for Java Spring Boot Developers")](https://www.udemy.com/course/kubernetes-crash-course-for-java-developers/?couponCode=NOVEMBER-2019){:target="_blank"}
-[![Image](/images/Course-DockerCrashCourseForJavaSpringBootDevelopers.png "Docker Crash Course for Java Spring Boot Developers")](https://www.udemy.com/course/docker-course-with-java-and-spring-boot-for-beginners/?couponCode=NOVEMBER-2019){:target="_blank"}
+# Recommended Learning Paths
 
----
-***300,000*** learners re-skill and learn every day with our amazing courses. ***[TRY A FREE COURSE NOW!](https://rebrand.ly/in28minutes-try-free-course)***
----
+> Skills, Learning Path, Videos and Course Recommendations
 
----
-***300,000*** learners re-skill and learn every day with our amazing courses. ***[TRY A FREE COURSE NOW!](https://rebrand.ly/in28minutes-try-free-course)***
----
-
-
----
-
-***300,000*** learners re-skill and learn every day with our amazing courses. ***[TRY A FREE COURSE NOW!](https://rebrand.ly/in28minutes-try-free-course)***
-
----
----
-
-***300,000*** learners re-skill and learn every day with our amazing courses. ***[TRY A FREE COURSE NOW!](https://rebrand.ly/in28minutes-try-free-course)***
-
----
-
-
+ - [Learning Path 01 - Spring and Spring Boot Web Applications and API Developer](https://rebrand.ly/in28minutes-LP-01)
+ - [Learning Path 02 - Full Stack Java Developer with Spring Boot, React and Angular]https://rebrand.ly/in28minutes-LP-02)
+ - [Learning Path 03 - Java Cloud Microservices Developer with Spring Boot, Docker and Kubernetes](https://rebrand.ly/in28minutes-LP-03)
+ - [Learning Path 04 - Java Cloud Web Developer with Spring Boot, AWS, Azure and PCF](https://rebrand.ly/in28minutes-LP-04)
+ - [Learning Path 05 - Java AWS Expert with Microservices, Docker and Kubernetes](https://rebrand.ly/in28minutes-LP-05)
