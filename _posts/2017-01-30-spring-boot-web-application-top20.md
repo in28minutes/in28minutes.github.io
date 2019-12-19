@@ -151,7 +151,7 @@ spring.mvc.view.suffix=.jsp
 
 
 &nbsp;
-***[SUBSCRIBE and Start Learning Now!](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+[***SUBSCRIBE*** and Start Learning Now!](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}
 
 ---
 

@@ -145,7 +145,7 @@ The jar dependencies are stored on your machine in a folder called maven local r
 
 
 &nbsp;
-***[SUBSCRIBE and Start Learning Now!](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+[***SUBSCRIBE*** and Start Learning Now!](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}
 
 ---
 

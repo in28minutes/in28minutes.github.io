@@ -125,7 +125,7 @@ Thats a cool error response. It contains all the details that are typically need
 
 
 &nbsp;
-***[SUBSCRIBE and Start Learning Now!](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+[***SUBSCRIBE*** and Start Learning Now!](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}
 
 ---
 

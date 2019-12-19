@@ -207,7 +207,7 @@ After App Reload, When you login to H2 Console (http://localhost:8080/h2-console
 
 
 &nbsp;
-***[SUBSCRIBE and Start Learning Now!](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+[***SUBSCRIBE*** and Start Learning Now!](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}
 
 ---
 
