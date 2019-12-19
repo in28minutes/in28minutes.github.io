@@ -123,7 +123,7 @@ This jar can be used to run the application on any machine where Java 8 is insta
 
 
 &nbsp;
-***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+***[SUBSCRIBE and Start Learning Now!](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
 
 ---
 

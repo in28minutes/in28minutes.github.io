@@ -183,7 +183,7 @@ https://github.com/spring-projects/spring-framework/wiki/What%27s-New-in-the-Spr
 
 
 &nbsp;
-***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+***[SUBSCRIBE and Start Learning Now!](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
 
 ---
 

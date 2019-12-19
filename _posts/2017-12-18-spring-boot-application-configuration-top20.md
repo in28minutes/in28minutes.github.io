@@ -233,7 +233,7 @@ When you browse to http://localhost:8080/dynamic-configuration, you see the foll
 
 
 &nbsp;
-***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+***[SUBSCRIBE and Start Learning Now!](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
 
 ---
 

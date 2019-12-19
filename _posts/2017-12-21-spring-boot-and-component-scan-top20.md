@@ -125,7 +125,7 @@ public class SpringConfiguration {
 
 
 &nbsp;
-***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
+***[SUBSCRIBE and Start Learning Now!](https://rebrand.ly/in28minute-YT-Subscribe){:target="_blank"}***
 
 ---
 
