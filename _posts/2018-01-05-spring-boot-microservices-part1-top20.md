@@ -184,7 +184,7 @@ Lets look at some of the challenges:
 
 ---
 
-***85,000*** subscribers are learning AWS, Docker, Kubernetes, Spring Boot and Microservices on our ***Youtube Channel***. ***[SUBSCRIBE NOW AND KEEP LEARNING!](https://rebrand.ly/in28minute-YT-Subscribe)***
+***85,000 subscribers*** are learning AWS, Docker, Kubernetes, Spring Boot and Microservices on our ***Youtube Channel***. ***[SUBSCRIBE NOW](https://rebrand.ly/in28minute-YT-Subscribe)***
 
 ---
 
