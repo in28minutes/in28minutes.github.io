@@ -15,6 +15,16 @@ This guide will help you understand why embedded servers are gaining popularity.
 - What are the different embedded servers that Spring Boot supports?
 - How do you switch from one embedded server to another?
 
+## Free Courses - Learn in 10 Steps
+
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
+- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
+- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
+
+
+
 ## What is an Embedded Server?
 
 Think about what you would need to be able to deploy your application (typically) on a virtual machine.

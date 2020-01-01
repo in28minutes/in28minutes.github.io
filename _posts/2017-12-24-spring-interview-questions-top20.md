@@ -478,3 +478,8 @@ As far as Java is concerned, more method calls does not mean bad performance.
 - PATCH: When you want to update specific details of the resource. All other details remain unchanged. 
 
 
+## Java and Spring Interview Guides
+
+[![Image](https://www.springboottutorial.com/images/Course-Spring-Framework-Interview-Guide-200-Questions-Answers.png "Spring Framework Interview Guide - 200+ Questions & Answers")](https://rebrand.ly/in28minutes-spring-interview)
+
+[![Image](https://www.springboottutorial.com/images/Course-Java-Interview-Guide-200-Interview-Questions-and-Answers.png "Java Interview Guide : 200+ Interview Questions and Answers")](https://rebrand.ly/in28minutes-java-interview)

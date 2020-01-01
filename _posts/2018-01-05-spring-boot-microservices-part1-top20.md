@@ -31,6 +31,15 @@ In part 1 of this series, lets get introduced to the concept of microservices an
 - How to implement a Naming Server (Eureka Naming Server)?
 - How to connect the microservices with Naming Server and Ribbon?
 
+## Free Courses - Learn in 10 Steps
+
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
+- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
+- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
+
+
 
 ## Microservices Overview - A Big Picture
 
@@ -39,6 +48,8 @@ In this series of articles, we would create two microservices:
 - Currency Conversion Service - Abbreviated as CCS
 
 > Do not worry if you are not clear about a few things. The idea is to give a big picture before we get our hands dirty and create the microservices step by step
+
+
 
 
 ### Forex Service

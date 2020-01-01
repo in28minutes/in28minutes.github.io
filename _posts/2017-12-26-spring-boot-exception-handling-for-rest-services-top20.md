@@ -18,7 +18,6 @@ This guide will help you implement effective exception/error handling for a REST
 - How/What to think when you design error handling for REST API?
 
 
-
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
@@ -84,6 +83,7 @@ Let's consider a few HTTP Methods:
 
 ## Free Courses - Learn in 10 Steps
 
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
 - [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
 - [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
 - [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
