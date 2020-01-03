@@ -9,6 +9,16 @@ permalink:  /microservices-with-spring-boot-part-5-eureka-naming-server
 
 Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. 
 
+## Free Courses - Learn in 10 Steps
+
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn Docker in 10 Steps](https://rebrand.ly/in28minutes-10steps-docker){:target="_blank"}
+- [Learn Kubernetes in 10 Steps](https://rebrand.ly/in28minutes-10steps-k8s){:target="_blank"}
+- [Learn AWS in 10 Steps](https://rebrand.ly/in28minutes-10steps-aws-beanstalk){:target="_blank"}
+
+
+
 Here is the Microservice Series Outline:
 Microservices with Spring Boot 
 - Part 1 - [Getting Started with Microservices Architecture](http://www.springboottutorial.com/creating-microservices-with-spring-boot-part-1-getting-started){:target="_blank"}

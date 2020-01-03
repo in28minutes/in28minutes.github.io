@@ -14,6 +14,16 @@ This guide will help you understand how to connect Spring Boot with databases li
 - What should you configure in application.properties?
 - How to setup the database schema?
 
+## Free Courses - Learn in 10 Steps
+
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn Docker in 10 Steps](https://rebrand.ly/in28minutes-10steps-docker){:target="_blank"}
+- [Learn Kubernetes in 10 Steps](https://rebrand.ly/in28minutes-10steps-k8s){:target="_blank"}
+- [Learn AWS in 10 Steps](https://rebrand.ly/in28minutes-10steps-aws-beanstalk){:target="_blank"}
+
+
+
 ## Updating the Spring Boot Project Step By Step
 
 Let's look at the 5 steps involved in connecting a Spring Boot application to a database.

@@ -9,10 +9,20 @@ permalink:  /rest-api-what-is-hateoas
 
 While viewing a web page, you can see data in the page and perform actions with it. How about a REST API? Typically when you ask for a REST Resource, you get the details of the resource back. How about sending the operations that you can do with the resource in the response?
 
-### We learn
+### What will you learn?
 * What is HATEOAS?
 * Why do you need to use HATEOAS?
 * When do you make use of HATEOAS?
+
+## Free Courses - Learn in 10 Steps
+
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn Docker in 10 Steps](https://rebrand.ly/in28minutes-10steps-docker){:target="_blank"}
+- [Learn Kubernetes in 10 Steps](https://rebrand.ly/in28minutes-10steps-k8s){:target="_blank"}
+- [Learn AWS in 10 Steps](https://rebrand.ly/in28minutes-10steps-aws-beanstalk){:target="_blank"}
+
+
 
 ### REST API
 

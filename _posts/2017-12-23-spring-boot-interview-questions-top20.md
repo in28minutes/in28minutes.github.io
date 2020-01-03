@@ -13,9 +13,9 @@ This guide will help you understand the most important concepts in Spring Boot i
 
 - [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
 - [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn JPA and Hibernate in 10 Steps](https://rebrand.ly/in28minutes-10steps-jpa){:target="_blank"}
-- [Learn Spring Framework in 10 Steps](https://rebrand.ly/in28minutes-10steps-spring){:target="_blank"}
-- [Learn Spring MVC in 10 Steps](https://rebrand.ly/in28minutes-10steps-springmvc){:target="_blank"}
+- [Learn Docker in 10 Steps](https://rebrand.ly/in28minutes-10steps-docker){:target="_blank"}
+- [Learn Kubernetes in 10 Steps](https://rebrand.ly/in28minutes-10steps-k8s){:target="_blank"}
+- [Learn AWS in 10 Steps](https://rebrand.ly/in28minutes-10steps-aws-beanstalk){:target="_blank"}
 
 
  

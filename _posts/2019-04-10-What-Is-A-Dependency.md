@@ -17,6 +17,15 @@ Most important feature of Spring Framework is Dependency Injection. To understan
 
 In this article, we have a look at what a dependency is in general terms, and then in the context of the Spring framework.
 
+## Free Courses - Learn in 10 Steps
+
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn Docker in 10 Steps](https://rebrand.ly/in28minutes-10steps-docker){:target="_blank"}
+- [Learn Kubernetes in 10 Steps](https://rebrand.ly/in28minutes-10steps-k8s){:target="_blank"}
+- [Learn AWS in 10 Steps](https://rebrand.ly/in28minutes-10steps-aws-beanstalk){:target="_blank"}
+
+
 ### Spring Framework
 
 This is the second article in a series of articles on Spring Framework:

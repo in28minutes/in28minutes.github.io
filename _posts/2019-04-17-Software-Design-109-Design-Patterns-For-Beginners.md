@@ -17,6 +17,16 @@ In this guide, we give you an introduction to the world of design patterns.For e
 - How do you implement different Design Patterns in Java?
 - What are the real world examples for Design Patterns?
 
+## Free Courses - Learn in 10 Steps
+
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn Docker in 10 Steps](https://rebrand.ly/in28minutes-10steps-docker){:target="_blank"}
+- [Learn Kubernetes in 10 Steps](https://rebrand.ly/in28minutes-10steps-k8s){:target="_blank"}
+- [Learn AWS in 10 Steps](https://rebrand.ly/in28minutes-10steps-aws-beanstalk){:target="_blank"}
+
+
+
 ### Software Design
 
 This is the second article in a series of articles on Software Design:

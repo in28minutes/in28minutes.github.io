@@ -9,6 +9,16 @@ permalink:  /spring-boot-rest-api-projects-with-code-examples
 
 This guide will help you understand the REST API projects with code examples on Github. We have a number of articles explaining these projects.  These code examples will help beginners and experts to learn and gain expertise at developing RESTful Services with Spring Boot. 
  
+## Free Courses - Learn in 10 Steps
+
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn Docker in 10 Steps](https://rebrand.ly/in28minutes-10steps-docker){:target="_blank"}
+- [Learn Kubernetes in 10 Steps](https://rebrand.ly/in28minutes-10steps-k8s){:target="_blank"}
+- [Learn AWS in 10 Steps](https://rebrand.ly/in28minutes-10steps-aws-beanstalk){:target="_blank"}
+
+
+ 
 ## Spring Boot REST API Projects - Code Examples on Github
 
 Let's look at the articles in the following sections

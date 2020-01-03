@@ -11,9 +11,19 @@ For me, Single Responsibility Principle (SRP) is the most important design princ
 
 What is Single Responsibility Principle? How do you use it? How does it help with making your software better? Let's get started.
 
-### We learn
+### What will you learn?
 * What is the Single Responsibility Principle?
 * How do you apply this principle in developing and designing software applications?
+
+## Free Courses - Learn in 10 Steps
+
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn Docker in 10 Steps](https://rebrand.ly/in28minutes-10steps-docker){:target="_blank"}
+- [Learn Kubernetes in 10 Steps](https://rebrand.ly/in28minutes-10steps-k8s){:target="_blank"}
+- [Learn AWS in 10 Steps](https://rebrand.ly/in28minutes-10steps-aws-beanstalk){:target="_blank"}
+
+
 
 ### Software Design Principles
 
@@ -194,5 +204,3 @@ In general, **Single Responsibility ensures high cohesion, low coupling and enha
 Do check out our video on this:
 
 [![image info](/images/Capture-05-01.png)](	https://www.youtube.com/watch?v=eympIQPQLx4) 
-
-

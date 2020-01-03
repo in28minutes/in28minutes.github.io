@@ -24,6 +24,16 @@ This is second article in a series of 4 articles on Automation Testing in Micros
 - How do you write unit tests with Junit, Mockito, AssertJ and other frameworks? 
 - What are the best java unit testing frameworks for writing great asserts?
 
+## Free Courses - Learn in 10 Steps
+
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn Docker in 10 Steps](https://rebrand.ly/in28minutes-10steps-docker){:target="_blank"}
+- [Learn Kubernetes in 10 Steps](https://rebrand.ly/in28minutes-10steps-k8s){:target="_blank"}
+- [Learn AWS in 10 Steps](https://rebrand.ly/in28minutes-10steps-aws-beanstalk){:target="_blank"}
+
+
+
 ### The Base Unit Testing Framework - JUnit / TestNG
 
 Whenever you write a unit test, you execute some code, and then check its output. You need a basic framework in place to run a large number of tests in a similar manner. 

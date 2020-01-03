@@ -9,6 +9,16 @@ permalink:  /five-tips-on-continuous-integration-best-practices
 
 Almost everybody does Continuous Integration today. But the question is : How effective is your Continuous Integration? In this short article, let's explore five important questions we need to ask about **Continuous Integration** (**CI**).
 
+## Free Courses - Learn in 10 Steps
+
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
+- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn Docker in 10 Steps](https://rebrand.ly/in28minutes-10steps-docker){:target="_blank"}
+- [Learn Kubernetes in 10 Steps](https://rebrand.ly/in28minutes-10steps-k8s){:target="_blank"}
+- [Learn AWS in 10 Steps](https://rebrand.ly/in28minutes-10steps-aws-beanstalk){:target="_blank"}
+
+
+
 ### Article Series
 
 This is the last article in a series of eight articles on Code Quality
