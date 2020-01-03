@@ -20,7 +20,7 @@ This guide will help you create a simple project with Spring Boot and connect to
 
 ## Spring Boot and Hibernate Course
 
-[![Image](/images/Course-Master-Hibernate-and-JPA-with-Spring-Boot-in-100-Steps.png "Master Hibernate and JPA with Spring Boot in 100 Steps")](https://www.udemy.com/course/hibernate-jpa-tutorial-for-beginners-in-100-steps/?couponCode=NOVEMBER-2019){:target="_blank"}
+[![Image](/images/Course-Master-Hibernate-and-JPA-with-Spring-Boot-in-100-Steps.png "Master Hibernate and JPA with Spring Boot in 100 Steps")](https://rebrand.ly/MISC-JPA){:target="_blank"}
 
 
 

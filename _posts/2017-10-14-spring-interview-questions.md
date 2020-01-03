@@ -270,6 +270,6 @@ List of questions discussed about each topic is listed below.
 
 ## Java and Spring Interview Guides
 
-[![Image](/images/Course-Spring-Framework-Interview-Guide-200-Questions-Answers.png "Spring Framework Interview Guide - 200+ Questions & Answers")](https://www.udemy.com/course/spring-interview-questions-and-answers/?couponCode=NOVEMBER-2019){:target="_blank"}
+[![Image](/images/Course-Spring-Framework-Interview-Guide-200-Questions-Answers.png "Spring Framework Interview Guide - 200+ Questions & Answers")](https://rebrand.ly/MISC-SPRING-INTERVIEW){:target="_blank"}
 
 

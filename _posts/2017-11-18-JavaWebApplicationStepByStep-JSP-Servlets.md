@@ -13,7 +13,7 @@ In this course, you will learn the basics developing a Basic Todo Management App
 
 You will build a Dynamic Website using the Core technologies of Java Web Programming. You will understand the basic concepts of Java Web Application Development - HTTP protocol, Request-Response cycle, Java Servlets, JSPs.
 
-[![Image](/images/Course-Java-Servlets-and-JSP-BuildJavaEEAppIn25Steps.png "Java Servlets and JSP - Build Java EE(JEE) app in 25 Steps")](https://www.udemy.com/course/learn-java-servlets-and-jsp-web-application-in-25-steps/?couponCode=NOVEMBER-2019)
+[![Image](/images/Course-Java-Servlets-and-JSP-BuildJavaEEAppIn25Steps.png "Java Servlets and JSP - Build Java EE(JEE) app in 25 Steps")](https://www.udemy.com/course/learn-java-servlets-and-jsp-web-application-in-25-steps/)
 
 ## You will learn
 - To build a Basic Todo Management Application piece by piece in 25 Steps

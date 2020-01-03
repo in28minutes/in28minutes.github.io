@@ -16,7 +16,7 @@ You will build the website step by step - in more than 25 steps. This course wou
 You will be using Spring (Dependency Management), Spring MVC, Spring Security (Authentication and Authorization), BootStrap (Styling Pages), Maven (dependencies management), Eclipse (IDE) and Tomcat Web Server. We will help you set up each one of these.
 
 ## Course Link
-[![Image](/images/Course-Spring-MVC-For-Beginners-Build-Java-Web-App-in-25-Steps.png "Spring MVC For Beginners : Build Java Web App in 25 Steps")](https://www.udemy.com/course/spring-mvc-tutorial-for-beginners-step-by-step/?couponCode=NOVEMBER-2019){:target="_blank"}
+[![Image](/images/Course-Spring-MVC-For-Beginners-Build-Java-Web-App-in-25-Steps.png "Spring MVC For Beginners : Build Java Web App in 25 Steps")](https://rebrand.ly/MISC-SPRING-MVC){:target="_blank"}
 
 
 ## Free Courses - Learn in 10 Steps

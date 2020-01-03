@@ -15,7 +15,7 @@ Spring Boot makes it easy to create stand-alone, production-grade Spring based A
 
 > In this course, you will learn the cool things about Spring Boot and Spring Boot Starter Projects. 
 
-[![Image](/images/Course-Learn-Spring-Boot-in-100-Steps---Beginner-to-Expert.png "Learn Spring Boot in 100 Steps - Beginner to Expert")](https://www.udemy.com/course/spring-boot-tutorial-for-beginners/?couponCode=NOVEMBER-2019){:target="_blank"}
+[![Image](/images/Course-Learn-Spring-Boot-in-100-Steps---Beginner-to-Expert.png "Learn Spring Boot in 100 Steps - Beginner to Expert")](https://rebrand.ly/MISC-SPRING-BOOT){:target="_blank"}
 
 
 ## What You will learn

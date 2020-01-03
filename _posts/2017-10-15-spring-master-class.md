@@ -15,7 +15,7 @@ Spring Framework remains as popular today as it was when I first used it 12 year
 
 ## Course Link
 
-[![Image](/images/Course-Spring-Framework-Master-Class---Beginner-to-Expert.png "Spring Master Class - Beginner to Expert")](https://www.udemy.com/course/spring-tutorial-for-beginners/?couponCode=NOVEMBER-2019){:target="_blank"}
+[![Image](/images/Course-Spring-Framework-Master-Class---Beginner-to-Expert.png "Spring Master Class - Beginner to Expert")](https://rebrand.ly/MISC-SPRING){:target="_blank"}
 
 ## Free Courses - Learn in 10 Steps
 

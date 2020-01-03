@@ -105,9 +105,9 @@ A few details:
 - Node v8+
 - Embedded Tomcat, built into Spring Boot Starter Web
 
-[![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://www.udemy.com/course/full-stack-application-with-spring-boot-and-react/?couponCode=NOVEMBER-2019){:target="\_blank"}
+[![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://rebrand.ly/MISC-REACT){:target="_blank"}
 
-[![Image](/images/Course-Go-Full-Stack-With-SpringBoot-And-Angular.png "Go Full Stack with Spring Boot and Angular")](https://www.udemy.com/course/full-stack-application-development-with-spring-boot-and-angular/?couponCode=NOVEMBER-2019){:target="\_blank"}
+[![Image](/images/Course-Go-Full-Stack-With-SpringBoot-And-Angular.png "Go Full Stack with Spring Boot and Angular")](https://rebrand.ly/MISC-ANGULAR){:target="_blank"}
 
 #### Installing Node Js (npm) & Visual Studio Code
 
@@ -136,13 +136,13 @@ We will use a step by step approach to creating the full stack application
 - Add functionality to update course details in Vue front end and Spring Boot REST API
 - Add feature to create a course in Vue front end and Spring Boot REST API
 
-> You can get an introduction to REST down here - [Introduction to REST API](http://www.springboottutorial.com/creating-rest-service-with-spring-boot){:target="\_blank"}
+> You can get an introduction to REST down here - [Introduction to REST API](http://www.springboottutorial.com/creating-rest-service-with-spring-boot){:target="_blank"}
 
 ## Step 1: Bootstrapping Spring Boot REST API with Spring Initializr
 
 Creating a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.
 
-Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="\_blank"} is great tool to bootstrap your Spring Boot projects.
+Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
 ![Image](/images/spring-boot-full-stack-with-web-and-dev-tools.png "Spring Boot Project with Web and Developer Tools")
 
@@ -155,13 +155,13 @@ As shown in the image above, the following steps have to be done
     - Web
     - DevTools
 - Click Generate Project.
-- Import the project into Eclipse. File -> Import -> Existing Maven Project. For more details about creating Spring Boot Projects, you can read - [Creating Spring Boot Projects](http://www.springboottutorial.com/creating-spring-boot-project-with-eclipse-and-maven){:target="\_blank"}
+- Import the project into Eclipse. File -> Import -> Existing Maven Project. For more details about creating Spring Boot Projects, you can read - [Creating Spring Boot Projects](http://www.springboottutorial.com/creating-spring-boot-project-with-eclipse-and-maven){:target="_blank"}
 
-> If you are new to Spring Boot, we recommend watching this video - [Spring Boot in 10 Steps](https://www.youtube.com/watch?v=PSP1-2cN7vM){:target="\_blank"}
+> If you are new to Spring Boot, we recommend watching this video - [Spring Boot in 10 Steps](https://www.youtube.com/watch?v=PSP1-2cN7vM){:target="_blank"}
 
 ## Step 2 - Bootstrapping Vue JS Frontend with Vue CLI
 
-[Vue CLI](https://github.com/vuejs/vue-cli){:target="\_blank"} is an amazing tool to bootstrap your Vue applications.
+[Vue CLI](https://github.com/vuejs/vue-cli){:target="_blank"} is an amazing tool to bootstrap your Vue applications.
 
 Creating Vue Frontend Applications with Vue CLI is very simple.
 
@@ -213,7 +213,7 @@ To be able to do that, we need to
 
 ### Create REST API for retrieving a list of courses
 
-Web Services, REST and Designing REST API, are pretty deep concepts. We would recommend to check this out for more - [Designing Great REST API](https://www.youtube.com/watch?v=NzgFdEGI8sI){:target="\_blank"}
+Web Services, REST and Designing REST API, are pretty deep concepts. We would recommend to check this out for more - [Designing Great REST API](https://www.youtube.com/watch?v=NzgFdEGI8sI){:target="_blank"}
 
 We will create
 
@@ -1372,9 +1372,9 @@ We are creating a course object with the updated details and calling the appropr
 ## Next Steps
 
 You can pursue our amazing courses on Full Stack Development and Microservices. 
-[![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://www.udemy.com/course/full-stack-application-with-spring-boot-and-react/?couponCode=NOVEMBER-2019){:target="\_blank"}
-[![Image](/images/Course-Go-Full-Stack-With-SpringBoot-And-Angular.png "Go Full Stack with Spring Boot and Angular")](https://www.udemy.com/course/full-stack-application-development-with-spring-boot-and-angular/?couponCode=NOVEMBER-2019){:target="\_blank"}
-[![Image](/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png "Master Microservices with Spring Boot and Spring Cloud")](https://www.udemy.com/course/microservices-with-spring-boot-and-spring-cloud/?couponCode=NOVEMBER-2019){:target="\_blank"}
+[![Image](/images/Course-Go-Full-Stack-With-Spring-Boot-and-React.png "Go Full Stack with Spring Boot and React")](https://rebrand.ly/MISC-REACT){:target="_blank"}
+[![Image](/images/Course-Go-Full-Stack-With-SpringBoot-And-Angular.png "Go Full Stack with Spring Boot and Angular")](https://rebrand.ly/MISC-ANGULAR){:target="_blank"}
+[![Image](/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png "Master Microservices with Spring Boot and Spring Cloud")](https://rebrand.ly/MISC-MICROSERVICES){:target="_blank"}
 
 ## Complete Code Example
 

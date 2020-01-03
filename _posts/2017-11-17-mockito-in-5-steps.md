@@ -268,7 +268,7 @@ public void testGet_GenericParameter() {
 
 ## Unit Testing Courses
 
-[![Image](/images/Course-Master-Java-Unit-Testing-with-Spring-Boot-Mockito.png "Master Java Unit Testing with Spring Boot & Mockito")](https://www.udemy.com/course/learn-unit-testing-with-spring-boot/?couponCode=NOVEMBER-2019)
+[![Image](/images/Course-Master-Java-Unit-Testing-with-Spring-Boot-Mockito.png "Master Java Unit Testing with Spring Boot & Mockito")](https://rebrand.ly/MISC-SBT-UT)
 
 
 
