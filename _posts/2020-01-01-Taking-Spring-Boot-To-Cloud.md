@@ -21,11 +21,11 @@ In this article, we focus our attention on the cloud. Why do we need the cloud? 
 
 ## Free Courses - Learn in 10 Steps
 
-- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://rebrand.ly/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
-- [Learn Spring Boot in 10 Steps](https://rebrand.ly/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn Docker in 10 Steps](https://rebrand.ly/in28minutes-10steps-docker){:target="_blank"}
-- [Learn Kubernetes in 10 Steps](https://rebrand.ly/in28minutes-10steps-k8s){:target="_blank"}
-- [Learn AWS in 10 Steps](https://rebrand.ly/in28minutes-10steps-aws-beanstalk){:target="_blank"}
+- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://links.in28minutes.com/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
+- [Learn Spring Boot in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-springboot){:target="_blank"}
+- [Learn Docker in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-docker){:target="_blank"}
+- [Learn Kubernetes in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-k8s){:target="_blank"}
+- [Learn AWS in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-aws-beanstalk){:target="_blank"}
 
 
 ## Introduction
@@ -162,7 +162,7 @@ Docker is the No 1 Tool to Containerize your Java Spring Boot Applications. Lear
 
 The first course we are going to talk about is "Docker for Java Developers - with Spring Boot Microservices".
 
-[![Image](https://www.springboottutorial.com/images/Course-DockerCrashCourseForJavaSpringBootDevelopers.png "Docker Crash Course for Java Spring Boot Developers")](https://rebrand.ly/MISC-DOCKER)
+[![Image](https://www.springboottutorial.com/images/Course-DockerCrashCourseForJavaSpringBootDevelopers.png "Docker Crash Course for Java Spring Boot Developers")](https://links.in28minutes.com/MISC-DOCKER)
 
 In this hands-on course, you will containerize - create docker images and create containers - a variety of Spring Boot Applications:
 - REST APIs - Hello World and Todo - Jar
@@ -183,7 +183,7 @@ AWS is the most popular cloud and AWS Elastic Beanstalk makes it easy to deploy 
 
 "Learn AWS - Deploy Java Spring Boot to AWS Elastic Beanstalk" is another amazing hands-on course on AWS to help you deploy Spring Boot applications to AWS.
 
-[![Image](https://www.springboottutorial.com/images/Course-Deploy-Java-Spring-Boot-Apps-To-AWS.png "Deploying Spring Boot Apps to AWS using Elastic Beanstalk")](https://rebrand.ly/MISC-AWS-BEANSTALK)
+[![Image](https://www.springboottutorial.com/images/Course-Deploy-Java-Spring-Boot-Apps-To-AWS.png "Deploying Spring Boot Apps to AWS using Elastic Beanstalk")](https://links.in28minutes.com/MISC-AWS-BEANSTALK)
 
 In this course, you will learn to deploy a variety of Spring Boot Applications to the Cloud:
 - REST APIs - Hello World and Todo - Jar
@@ -205,7 +205,7 @@ We learnt about docker earlier. AWS Elastic Container Service and AWS Fargate ar
 
 "Master AWS Fargate & ECS with Java Spring Boot Microservices" is another awesome course to help you learn AWS and container orchestration.
 
-[![Image](https://www.springboottutorial.com/images/Course-Deploy-Java-Spring-Boot-Microservices-To-ECS.png "Deploying Spring Boot Microservices to AWS using ECS and AWS Fargate")](https://rebrand.ly/MISC-FARGATE)
+[![Image](https://www.springboottutorial.com/images/Course-Deploy-Java-Spring-Boot-Microservices-To-ECS.png "Deploying Spring Boot Microservices to AWS using ECS and AWS Fargate")](https://links.in28minutes.com/MISC-FARGATE)
 
 This course would be a perfect first step as an introduction to Amazon Web Services - AWS and the Cloud.
 
@@ -237,7 +237,7 @@ Pivotal Cloud Foundry (PCF) provides a great cloud-native platform to deploy Spr
 
 Master Pivotal Cloud Foundry with Spring Boot Microservices is a great course to learn about PCF and get a feel for how you deploy application to Cloud using PCF.
 
-[![Image](https://www.springboottutorial.com/images/Course-pivotal-cloud-foundry-pcf-deploying-spring-boot-apps.png "Deploying Spring Boot Microservices to PCF Pivotal Cloud Foundry")](https://rebrand.ly/MISC-PCF)
+[![Image](https://www.springboottutorial.com/images/Course-pivotal-cloud-foundry-pcf-deploying-spring-boot-apps.png "Deploying Spring Boot Microservices to PCF Pivotal Cloud Foundry")](https://links.in28minutes.com/MISC-PCF)
 
 In this course, you will learn the basics of Pivotal Cloud Foundry by deploying several full featured Spring Boot applications to PCF. You will deploy a REST API, a web application, a full stack application built using Spring Boot and React. You will learn to deploy Java Spring Boot applications containerized using Docker to PCF. 
 
@@ -253,7 +253,7 @@ Microsoft Azure is the second most popular cloud platform today. Azure Web App i
 
 Master Azure Web Apps - Take Java Spring Boot Apps to Azure is an amazing course to help you get started with Azure.
 
-[![Image](https://www.springboottutorial.com/images/Course-Deploy-SpringBoot-To-Azure-Web-Apps.png "Azure Crash Course for Java Spring Boot Developers")](https://rebrand.ly/MISC-AZURE)
+[![Image](https://www.springboottutorial.com/images/Course-Deploy-SpringBoot-To-Azure-Web-Apps.png "Azure Crash Course for Java Spring Boot Developers")](https://links.in28minutes.com/MISC-AZURE)
 
 In this course, you will deploy a variety of Spring Boot Applications to the Cloud:
 - REST APIs - Hello World and Todo - Jar
@@ -276,7 +276,7 @@ How about getting them all together and deploying Spring Boot Microservices to K
 
 Kubernetes Crash Course for Java Developers on Google Cloud is an amazing course to help you get started with Kubernetes.
 
-[![Image](https://www.springboottutorial.com/images/Course-KubernetesCrashCourse.png "Kubernetes Crash Course for Java Spring Boot Developers")](https://rebrand.ly/MISC-KUBERNETES)
+[![Image](https://www.springboottutorial.com/images/Course-KubernetesCrashCourse.png "Kubernetes Crash Course for Java Spring Boot Developers")](https://links.in28minutes.com/MISC-KUBERNETES)
 
 In this hands-on course, you will use Docker and Kubernetes to deploy a variety of Spring Boot Applications on Google Cloud using Google Kubernetes Engine:
 - REST APIs - Hello World
