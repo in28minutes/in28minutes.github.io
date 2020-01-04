@@ -288,4 +288,3 @@ You will implement Service Discovery, Centralized Configuration, Distributed Tra
 You will learn to use Helm Charts, Istio Service Mesh, Google Stackdriver, and Spring Cloud Kubernetes to play with Spring Boot Java Microservices on Kubernetes.
 
 This course would be a perfect first step as an introduction to Kubernetes.
-
