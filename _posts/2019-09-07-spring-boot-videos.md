@@ -57,7 +57,7 @@ Here's the **index of 500+ FREE Videos** on Spring Boot, JPA, Hibernate, REST AP
 
 ---
 
-Join our amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in28minute-YT-Subscribe)
+Learn Every Day With Our Amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in28minute-YT-Subscribe)
 
 ---
 
