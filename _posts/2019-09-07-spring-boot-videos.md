@@ -24,11 +24,6 @@ Here's the **index of 500+ FREE Videos** on Spring Boot, JPA, Hibernate, REST AP
 - [Learn Full Stack with Spring Boot and Angular](https://www.youtube.com/watch?v=8ueiZf988qY){:target="_blank"}
 
 
----
-
-Join our amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in28minute-YT-Subscribe)
-
----
 
 ### Spring
 - [Spring Tip : Why Is Spring Popular?](https://www.youtube.com/watch?v=T8rJ_jU9W8k)
