@@ -10,6 +10,10 @@ permalink:  /spring-boot-video-tutorials-for-beginners
 Here's the **index of 500+ FREE Videos** on Spring Boot, JPA, Hibernate, REST API, Microservices and Cloud. Have a wonderful time watching these amazing videos. 
 
 
+---
+Join our amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in28minute-YT-Subscribe)!
+---
+
 ### Learn in 10 Steps - Free Video Courses
 
 - [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://links.in28minutes.com/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
@@ -17,11 +21,11 @@ Here's the **index of 500+ FREE Videos** on Spring Boot, JPA, Hibernate, REST AP
 - [Learn Docker in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-docker){:target="_blank"}
 - [Learn Kubernetes in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-k8s){:target="_blank"}
 - [Learn AWS in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-aws-beanstalk){:target="_blank"}
-- [Learn Spring in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners)
-- [Learn Spring MVC in 10 Steps](https://www.youtube.com/watch?v=BjNhGaZDr0Y)
-- [Learn JPA and Hibernate in 10 Steps](https://courses.in28minutes.com/p/jpa-and-hibernate-tutorial-for-beginners-with-spring-boot)
-- [Learn Full Stack with Spring Boot and React](https://www.youtube.com/watch?v=SWXuXhZkNQc)
-- [Learn Full Stack with Spring Boot and Angular](https://www.youtube.com/watch?v=8ueiZf988qY)
+- [Learn Spring in 10 Steps](https://courses.in28minutes.com/p/spring-framework-for-beginners){:target="_blank"}
+- [Learn Spring MVC in 10 Steps](https://www.youtube.com/watch?v=BjNhGaZDr0Y){:target="_blank"}
+- [Learn JPA and Hibernate in 10 Steps](https://courses.in28minutes.com/p/jpa-and-hibernate-tutorial-for-beginners-with-spring-boot){:target="_blank"}
+- [Learn Full Stack with Spring Boot and React](https://www.youtube.com/watch?v=SWXuXhZkNQc){:target="_blank"}
+- [Learn Full Stack with Spring Boot and Angular](https://www.youtube.com/watch?v=8ueiZf988qY){:target="_blank"}
 
 ## Watch Spring and Spring Boot Videos
 
@@ -55,6 +59,9 @@ Here's the **index of 500+ FREE Videos** on Spring Boot, JPA, Hibernate, REST AP
 - [Rest Web Services With Spring Boot](https://www.youtube.com/watch?v=YEEUn5JZ9t0)
 - [Spring Boot Tutorial For Beginners](https://www.youtube.com/watch?v=PSP1-2cN7vM)
 
+---
+Join our amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in28minute-YT-Subscribe)!
+---
 
 ### Interview Preparation
 - [Servlets Interview Questions and Answers](https://www.youtube.com/watch?v=ov2zrhUxDxQ)
