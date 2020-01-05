@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Index - 500+ Videos 
-date:       2020-02-02 12:31:19
+date:       2020-01-02 12:31:19
 summary:    At in28Minutes, we are creating a number of tutorials with videos, articles &amp; courses on Spring Boot for Beginners and Experienced Developers. Here's a list of video tutorials and courses for you
 categories:  SpringBoot
 permalink:  /spring-boot-video-tutorials-for-beginners

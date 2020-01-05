@@ -1,7 +1,7 @@
 ---
 layout:  post
 title: Deploy Java Spring Boot Applications to AWS, Azure, GCP with Docker and Kubernetes
-date:    2020-02-03 12:31:19
+date:    2020-01-03 12:31:19
 summary:  In this article, we focus our attention on the cloud. How to learn the cloud and deploy Java Spring Boot Applications to AWS, Azure, GCP with Docker and Kubernetes?
 categories:  SpringBootMicroservices
 permalink:  /spring-boot-applications-to-aws-azure-gcp-docker-kubernetes
