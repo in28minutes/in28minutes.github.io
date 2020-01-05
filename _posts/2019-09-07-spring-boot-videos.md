@@ -10,10 +10,6 @@ permalink:  /spring-boot-video-tutorials-for-beginners
 Here's the **index of 500+ FREE Videos** on Spring Boot, JPA, Hibernate, REST API, Microservices and Cloud. Have a wonderful time watching these amazing videos. 
 
 
----
-Join our amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in28minute-YT-Subscribe)!
----
-
 ### Learn in 10 Steps - Free Video Courses
 
 - [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://links.in28minutes.com/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
@@ -27,7 +23,10 @@ Join our amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in2
 - [Learn Full Stack with Spring Boot and React](https://www.youtube.com/watch?v=SWXuXhZkNQc){:target="_blank"}
 - [Learn Full Stack with Spring Boot and Angular](https://www.youtube.com/watch?v=8ueiZf988qY){:target="_blank"}
 
-## Watch Spring and Spring Boot Videos
+
+---
+Join our amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in28minute-YT-Subscribe)!
+---
 
 ### Spring
 - [Spring Tip : Why Is Spring Popular?](https://www.youtube.com/watch?v=T8rJ_jU9W8k)
