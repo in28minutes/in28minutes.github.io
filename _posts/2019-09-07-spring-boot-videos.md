@@ -25,7 +25,9 @@ Here's the **index of 500+ FREE Videos** on Spring Boot, JPA, Hibernate, REST AP
 
 
 ---
-Join our amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in28minute-YT-Subscribe)!
+
+Join our amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in28minute-YT-Subscribe)
+
 ---
 
 ### Spring
@@ -59,7 +61,9 @@ Join our amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in2
 - [Spring Boot Tutorial For Beginners](https://www.youtube.com/watch?v=PSP1-2cN7vM)
 
 ---
-Join our amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in28minute-YT-Subscribe)!
+
+Join our amazing [85,000+ YouTube Subscribers](https://links.in28minutes.com/in28minute-YT-Subscribe)
+
 ---
 
 ### Interview Preparation
