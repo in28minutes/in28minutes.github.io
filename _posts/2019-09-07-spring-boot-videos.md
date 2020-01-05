@@ -11,7 +11,9 @@ Our goal is to help you **learn and re-skill** Spring Boot, Microservices, Full 
 
 We have build amazing solutions to help you learn Cloud, Full Stack and Microservices in 1-3 Months.
 
-Here's the **index of 500+ FREE Videos** on Spring Boot, JPA, Hibernate, REST API, Microservices and Cloud. Have a wonderful time reading this. Do not forget to checkout our **100+ articles** and **30+ Courses**. Good Luck and Keep Learning in28Minutes.
+Here's the **index of 500+ FREE Videos** on Spring Boot, JPA, Hibernate, REST API, Microservices and Cloud. 
+
+Have a wonderful time reading this. Do not forget to checkout our **100+ articles** and **30+ Courses**. Good Luck and Keep Learning in28Minutes.
 
 ### Learn in 10 Steps - Free Video Courses
 
