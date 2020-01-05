@@ -1,13 +1,17 @@
 ---
 layout:     post
-title:      Spring and Spring Boot Video Tutorials for Beginners
+title:      Index - 500+ Videos 
 date:       2020-02-02 12:31:19
 summary:    At in28Minutes, we are creating a number of tutorials with videos, articles &amp; courses on Spring Boot for Beginners and Experienced Developers. Here's a list of video tutorials and courses for you
 categories:  SpringBoot
 permalink:  /spring-boot-video-tutorials-for-beginners
 ---
 
-This guide will help you understand the different resources (tutorials, videos and courses) we are creating for beginners to learn and gain expertise at Spring, Spring Boot and other topics.
+Our goal is to help you **learn and re-skill** Spring Boot, Microservices, Full Stack, Cloud (AWS), Docker and Kubernetes with **hands-on, practical courses**.
+
+We have build amazing solutions to help you learn Cloud, Full Stack and Microservices in 1-3 Months.
+
+Here's the **index of 100+ Articles** on Spring Boot, JPA, Hibernate, REST API, Microservices and Cloud. Have a wonderful time reading this. Do not forget to checkout our **500+ FREE videos** and **30+ Courses**. Good Luck and Keep Learning in28Minutes.
 
 ### Learn in 10 Steps - Free Video Courses
 
