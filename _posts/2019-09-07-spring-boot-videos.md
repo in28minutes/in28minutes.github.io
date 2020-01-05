@@ -9,11 +9,12 @@ permalink:  /spring-boot-video-tutorials-for-beginners
 
 Our goal is to help you **learn and re-skill** Spring Boot, Microservices, Full Stack, Cloud (AWS), Docker and Kubernetes with **hands-on, practical courses**.
 
-We have build amazing solutions to help you learn Cloud, Full Stack and Microservices in 1-3 Months.
+We have build amazing solutions to help you learn Cloud, Full Stack and Microservices in **1-3 Months**.
 
-Here's the **index of 500+ FREE Videos** on Spring Boot, JPA, Hibernate, REST API, Microservices and Cloud. 
+Do not forget to checkout our **100+ articles**, **500+ Videos** and **30+ Courses**. 
 
-Have a wonderful time reading this. Do not forget to checkout our **100+ articles** and **30+ Courses**. Good Luck and Keep Learning in28Minutes.
+Here's the **index of 500+ FREE Videos** on Spring Boot, JPA, Hibernate, REST API, Microservices and Cloud. Have a wonderful time watching these amazing videos. 
+
 
 ### Learn in 10 Steps - Free Video Courses
 
