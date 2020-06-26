@@ -216,6 +216,17 @@ If you now want to add another shape, then you need to extend the ```Shape``` cl
 
 Here, ```Shape``` class is open to extension, and ```calculateArea()``` is closed to modification.
 
+
+---
+
+<a href="https://links.in28minutes.com/aws-architect-associate-certification" ><img src="https://www.springboottutorial.com/images/Course-aws-architect-associate-certification.png" alt="Image" title="AWS Architect Associate Certification"></a>
+<a href="https://links.in28minutes.com/DevOps-SBT"><img src="https://www.springboottutorial.com/images/Course-DevOps.png" alt="Image" title="DevOps Course"></a>
+<a href="https://links.in28minutes.com/in28minutes-Microservices" ><img src="https://www.springboottutorial.com/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png" alt="Image" title="Master Microservices with Spring Boot and Spring Cloud"></a>
+
+---
+
+
+
 ### Liskov Substitution Principle (LSP)
 
 According to this principle:

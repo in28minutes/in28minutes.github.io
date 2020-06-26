@@ -118,6 +118,17 @@ If you give importance to the implementation early on, then technical details cr
 
 You need your service definition to be independent of the platform being used, be it Java, .NET or whatever.
 
+
+---
+
+<a href="https://links.in28minutes.com/aws-architect-associate-certification" ><img src="https://www.springboottutorial.com/images/Course-aws-architect-associate-certification.png" alt="Image" title="AWS Architect Associate Certification"></a>
+<a href="https://links.in28minutes.com/DevOps-SBT"><img src="https://www.springboottutorial.com/images/Course-DevOps.png" alt="Image" title="DevOps Course"></a>
+<a href="https://links.in28minutes.com/in28minutes-Microservices" ><img src="https://www.springboottutorial.com/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png" alt="Image" title="Master Microservices with Spring Boot and Spring Cloud"></a>
+
+---
+
+
+
 ### Define Organizational Standards For REST API
 
 An important reference for your organizational standards is YARAS. 

@@ -75,7 +75,7 @@ Why not leave the "Undifferentiated Heavy Lifting" to the cloud providers?
 
 #### Improved Latency and Availability
 
-Each of the cloud providers have mutliple data centers available in multiple continents and multiple countries.
+Each of the cloud providers have multiple data centers available in multiple continents and multiple countries.
 
 It would be difficult for businesses to set up such wide spread infrastructure. 
 
@@ -103,14 +103,25 @@ Different clouds provide differerent IAAS Services. The virtual servers are also
 
 Approach 2 is called PAAS - Platform as a Service. You are only responsible for your application deployable unit. The cloud provider is responsible for Platform Upgrades, Runtime Upgrades and OS Upgrades.
 
-PAAS Examples are Managed Services provided by different cloud providers. A good examples are the database management sevices provided.
+PAAS Examples are Managed Services provided by different cloud providers. A good examples are the database management services provided.
 - AWS provides RDS - Relational Database Service
 - Azure provides DB for MySQL
 
-Great thing about these managed services is that the cloud provider would take care of most non functional requirments.
+Great thing about these managed services is that the cloud provider would take care of most non functional requirements.
 - Reliability
 - Availability
 - Backups
+
+
+
+---
+
+<a href="https://links.in28minutes.com/aws-architect-associate-certification" ><img src="https://www.springboottutorial.com/images/Course-aws-architect-associate-certification.png" alt="Image" title="AWS Architect Associate Certification"></a>
+<a href="https://links.in28minutes.com/DevOps-SBT"><img src="https://www.springboottutorial.com/images/Course-DevOps.png" alt="Image" title="DevOps Course"></a>
+<a href="https://links.in28minutes.com/in28minutes-Microservices" ><img src="https://www.springboottutorial.com/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png" alt="Image" title="Master Microservices with Spring Boot and Spring Cloud"></a>
+
+---
+
 
 
 ### Platform as a Service in Depth

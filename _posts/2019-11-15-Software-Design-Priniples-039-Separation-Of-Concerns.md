@@ -2,12 +2,12 @@
 layout:  post
 title:  Software Design - Separation Of Concerns - with examples
 date:    2019-11-14 12:31:19
-summary: Software architects and programmers love having Seperation of Concerns. What is it? Why is it important? Let's get started.
+summary: Software architects and programmers love having Separation of Concerns. What is it? Why is it important? Let's get started.
 categories: SwDesign
 permalink:  /software-design-seperation-of-concerns-with-examples
 ---
 
-Software architects and programmers love having Seperation of Concerns. What is it? Why is it important? Let's get started.
+Software architects and programmers love having Separation of Concerns. What is it? Why is it important? Let's get started.
 
 ### You will learn
 
@@ -75,7 +75,7 @@ All the microservices shown are part of a movie application. But each one of the
 
 #### Identifying Common Components
 
-Seperation of concerns is also an important factor in building common application and infrastructure components.
+Separation of concerns is also an important factor in building common application and infrastructure components.
 
 Since a large part of the functionality of microservices is common to all of them, it makes sense to extract out the common components. Here is an example:
 
@@ -85,10 +85,10 @@ All microservices need features such as security and logging. By identifying com
 
 The same is the case with common infrastructure components. Any microservice can interact with them and use their functionality. 
 
-A few examples of Seperation of Concern in infrastructure components
+A few examples of Separation of Concern in infrastructure components
 - Naming Server - Microservice3 can locate the identity of Microservice2.
 - API Gateway - Centralized access to all microservices. You can implement cross cutting microservice concerns here.
-- Distributed Tracing and Centralized Logging - You can trace microservices and find out what's happending behind the scenes.
+- Distributed Tracing and Centralized Logging - You can trace microservices and find out what's happening behind the scenes.
 
 Do check out our video on this:
 
