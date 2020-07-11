@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Implementing AOP with Spring Boot and AspectJ
-date:       2017-12-15 12:31:19
-summary:    Learn how to implement AOP with Spring Boot Starter AOP and AspectJ. You will understand cross cutting concerns and the basics of AOP - Aspect, Pointcut, JoinPoint, Advice and more.
+date:       2020-07-06 12:31:19
+summary:    Learn how to implement AOP with Spring Boot Starter AOP and AspectJ. You will understand cross cutting concerns and the basics of AOP - Aspect, Point cut, JoinPoint, Advice and more.
 categories:  SpringBoot
 permalink:  /spring-boot-and-aop-with-spring-boot-starter-aop
 ---
@@ -14,7 +14,7 @@ This guide will help you implement AOP with Spring Boot Starter AOP. We will imp
 - How do you implement cross cutting concerns in an application?
 	- If you would want to log every request to a web application, what are the options you can think of?
 	- If you would want to track performance of every request, what options can you think of?
-- What is an Aspect and Pointcut in AOP?
+- What is an Aspect and Point cut in AOP?
 - What are the different types of AOP advices?
 - How do you implement AOP with Spring Boot?
 - How to use Spring AOP and AspectJ to implement your aspects?
@@ -100,13 +100,11 @@ Key dependencies in the Spring Boot AOP Starter are listed below
 <dependency>
   <groupId>org.springframework</groupId>
   <artifactId>spring-aop</artifactId>
-  <version>5.0.1.RELEASE</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.aspectj</groupId>
   <artifactId>aspectjweaver</artifactId>
-  <version>1.8.12</version>
   <scope>compile</scope>
 </dependency>
 
@@ -403,7 +401,7 @@ The above common definition can be used when defining point cuts in other aspect
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -411,6 +409,7 @@ The above common definition can be used when defining point cuts in other aspect
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>

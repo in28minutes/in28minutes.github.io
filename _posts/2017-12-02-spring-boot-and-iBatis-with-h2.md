@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:   Spring Boot and iBatis with H2 - A Tutorial
-date:       2017-12-02 12:31:19
+date:       2020-07-07 12:31:19
 summary:    Learn using Spring Boot Starter myBatis to connect Spring Boot to H2 (in memory database) using Object Mapping Framework - myBatis (iBatis).
 categories:  SpringBootJPA
 permalink:  /spring-boot-and-iBatis-with-h2-tutorial
@@ -159,6 +159,8 @@ H2 provides a web interface called H2 Console to see the data. Let's enable h2 c
 ```properties
 # Enabling H2 Console
 spring.h2.console.enabled=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 ```
 When you reload the application, you can launch up H2 Console at http://localhost:8080/h2-console.
 
@@ -415,7 +417,7 @@ All users 2 -> [Student [id=10001, name=Name-Updated, passportNumber=New-Passpor
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -423,6 +425,7 @@ All users 2 -> [Student [id=10001, name=Name-Updated, passportNumber=New-Passpor
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -655,6 +658,8 @@ spring.jpa.properties.hibernate.generate_statistics=true
 logging.level.org.hibernate.stat=debug
 # Show all queries
 spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 spring.jpa.properties.hibernate.format_sql=true
 logging.level.org.hibernate.type=trace
 ```

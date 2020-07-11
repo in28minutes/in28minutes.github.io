@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Spring Boot Profiles - Application Configuration made easy
-date:       2017-12-20 12:31:19
+date:       2020-07-05 12:31:19
 summary:    Different environments have different application configuration. Profiles help you to configure different configuration for different environments. In this tutorial, lets understand how to use Profiles with Spring Boot. Let's learn how to make your Application Configuration simple and dynamic.
 categories:  SpringBoot
 permalink:  /spring-boot-profiles
@@ -54,17 +54,17 @@ Spring Boot would pick up the application configuration based on the active prof
 
 ## Project Code Structure
 
-Following screenshot shows the structure of the project we will create.
+Following screen shot shows the structure of the project we will create.
 ![Image](/images/SpringBootApplicationConfiguration-ProjectStructure.png "Spring Boot Application Configuration Project Structure")
 
 A few details:
 - SpringBootTutorialBasicsConfigurationApplication.java - The Spring Boot Application class generated with Spring Initializer. This class acts as the launching point for application. In this example, a few profile based beans are also created in the Application class.
 - `pom.xml` - Contains all the dependencies needed to build this project.
-- BasicConfiguration.java - We will use this component to define application configuration using @ConfigurationProperties
-- WelcomeResource.java - Example of a resource using @Value
-- application.properties - Configuration for application. Active profile is set in application.properties in this example
-- application-dev.properties - Configuration Overrides for dev profile
-- application-prod.properties - Configuration Overrides for prod profile
+- `BasicConfiguration.java` - We will use this component to define application configuration using @ConfigurationProperties
+- `WelcomeResource.java` - Example of a resource using @Value
+- `application.properties` - Configuration for application. Active profile is set in application.properties in this example
+- `application-dev.properties` - Configuration Overrides for dev profile
+- `application-prod.properties` - Configuration Overrides for prod profile
 
 ## Tools you will need
 - Maven 3.0+ is your build tool
@@ -184,7 +184,7 @@ basic.message= Dynamic Message
 basic.number= 100
 ```
 
-We would want to customize the application.properties for dev profile. We would need to create a file with name application-dev.properties and override the properties that we would want to customize.
+We would want to customize the application.properties for DEV profile. We would need to create a file with name application-dev.properties and override the properties that we would want to customize.
 
 application-dev.properties
 ```
@@ -327,7 +327,7 @@ You would see that the devBean is created. However, the beans shown below are no
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -335,6 +335,7 @@ You would see that the devBean is created. However, the beans shown below are no
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>

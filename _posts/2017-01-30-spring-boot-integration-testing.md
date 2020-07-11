@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Writing Integration Tests for Rest Services with Spring Boot
-date:       2017-01-28 12:31:19
+date:       2020-07-09 12:31:19
 summary:    Setting up a basic REST Service with Spring Boot is a cake walk. We will go one step further and add great integration tests! 
 categories:  SpringBootUnitTesting
 permalink:  /integration-testing-for-spring-boot-rest-services
@@ -32,10 +32,7 @@ This guide will help you write great integration tests for your Spring Boot Rest
 - JDK 1.8+
 
 ## Complete Maven Project With Code Examples
-> Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}
-
-- Rest Services with Unit and Integration Tests
-    - Website-springbootrestservices-simplerestserviceswithunitandintegrationtests.zip
+> Our Github repository has all the code examples - [https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-rest-services-with-unit-and-integration-tests](https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-rest-services-with-unit-and-integration-tests)
 
 ## Integration Testing
 
@@ -151,7 +148,7 @@ We will fire a request to http://localhost:8080/students/Student1/courses/Course
 {
   "id": "Course1",
   "name": "Spring",
-  "description": "10 Steps",
+  "description": "10Steps",
   "steps": [
     "Learn Maven",
     "Import Project",
@@ -212,7 +209,7 @@ public class StudentControllerIT {
 				createURLWithPort("/students/Student1/courses/Course1"),
 				HttpMethod.GET, entity, String.class);
 
-		String expected = "{id:Course1,name:Spring,description:10 Steps}";
+		String expected = "{id:Course1,name:Spring,description:10Steps}";
 
 		JSONAssert.assertEquals(expected, response.getBody(), false);
 	}
@@ -255,7 +252,7 @@ Example Request is shown below. It contains all the details to register a course
 ```json
 {
   "name": "Microservices",
-  "description": "10 Steps",
+  "description": "10Steps",
   "steps": [
     "Learn How to Break Things Up",
     "Automate the hell out of everything",
@@ -281,7 +278,7 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 	@Test
 	public void addCourse() {
 
-		Course course = new Course("Course1", "Spring", "10 Steps",
+		Course course = new Course("Course1", "Spring", "10Steps",
 				Arrays.asList("Learn Maven", "Import Project", "First Example",
 						"Second Example"));
 
@@ -323,7 +320,7 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.4.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -331,6 +328,7 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -598,7 +596,7 @@ public class StudentService {
 
 	static {
 		//Initialize Data
-		Course course1 = new Course("Course1", "Spring", "10 Steps", Arrays
+		Course course1 = new Course("Course1", "Spring", "10Steps", Arrays
 				.asList("Learn Maven", "Import Project", "First Example",
 						"Second Example"));
 		Course course2 = new Course("Course2", "Spring MVC", "10 Examples",
@@ -751,7 +749,7 @@ public class StudentControllerIT {
 				createURLWithPort("/students/Student1/courses/Course1"),
 				HttpMethod.GET, entity, String.class);
 
-		String expected = "{id:Course1,name:Spring,description:10 Steps}";
+		String expected = "{id:Course1,name:Spring,description:10Steps}";
 
 		JSONAssert.assertEquals(expected, response.getBody(), false);
 	}
@@ -759,7 +757,7 @@ public class StudentControllerIT {
 	@Test
 	public void addCourse() {
 
-		Course course = new Course("Course1", "Spring", "10 Steps",
+		Course course = new Course("Course1", "Spring", "10Steps",
 				Arrays.asList("Learn Maven", "Import Project", "First Example",
 						"Second Example"));
 

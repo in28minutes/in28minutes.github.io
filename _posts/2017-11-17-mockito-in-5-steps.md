@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Mockito Tutorial for Beginner in 5 Steps
-date:       2017-11-17 12:31:19
+date:       2020-07-07 12:31:19
 summary:    Mockito tutorial for Beginner in 5 Steps. Understand the basics of mocking with the most popular Java mocking framework with a simple mock example in 5 easy steps. 
 categories: SpringBootUnitTesting
 permalink:  /mockito-tutorial-for-beginners
@@ -295,7 +295,7 @@ public void testGet_GenericParameter() {
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -303,6 +303,7 @@ public void testGet_GenericParameter() {
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>

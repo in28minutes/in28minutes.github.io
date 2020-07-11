@@ -243,7 +243,7 @@ Creating a Spring Project with Spring Initializr is a cake walk.
 ![Image](/images/Spring-Initializr-soap-web-service.png "Spring Initializr")   
 
 - Launch Spring Initializr and choose the following
-  - Choose Version 2.0.0.RELEASE or greater
+  - Choose Version 2.3.1.RELEASE or greater
   - Choose Group as shown in the figure
   - Choose Artifact as shown in the figure
   - Choose Dependencies as shown in the figure
@@ -270,7 +270,7 @@ Creating a Spring Project with Spring Initializr is a cake walk.
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -278,6 +278,7 @@ Creating a Spring Project with Spring Initializr is a cake walk.
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>

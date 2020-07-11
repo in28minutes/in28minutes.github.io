@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:   Integrating Hibernate and JPA with Spring Boot
-date:       2020-01-02 12:31:19
+date:       2020-07-07 12:31:19
 summary:    Learn using Spring Boot Starter JPA to connect Spring Boot to H2 (in memory database) using Hibernate/JPA. You will learn the basics of JPA and Hibernate - Entities and Keys. We will create a simple repository extending JPARepository and explore different methods it exposes.
 categories:  SpringBootJPA
 permalink:  /hibernate-jpa-tutorial-with-spring-boot-starter-jpa
@@ -171,37 +171,33 @@ Extract below shows some code from pom.xml of spring-boot-starter-jpa.
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-aop</artifactId>
-  <version>2.0.0.RELEASE</version>
+  <version>2.3.1.RELEASE</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-jdbc</artifactId>
-  <version>2.0.0.RELEASE</version>
+  <version>2.3.1.RELEASE</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.hibernate</groupId>
   <artifactId>hibernate-core</artifactId>
-  <version>5.2.12.Final</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>javax.transaction</groupId>
   <artifactId>javax.transaction-api</artifactId>
-  <version>1.2</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.springframework.data</groupId>
   <artifactId>spring-data-jpa</artifactId>
-  <version>2.0.1.RELEASE</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.springframework</groupId>
   <artifactId>spring-aspects</artifactId>
-  <version>5.0.1.RELEASE</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -409,6 +405,8 @@ spring.jpa.properties.hibernate.generate_statistics=true
 logging.level.org.hibernate.stat=debug
 # Show all queries
 spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 spring.jpa.properties.hibernate.format_sql=true
 logging.level.org.hibernate.type=trace
 ```

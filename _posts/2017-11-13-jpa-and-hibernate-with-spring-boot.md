@@ -545,6 +545,8 @@ spring.jpa.properties.hibernate.generate_statistics=true
 logging.level.org.hibernate.stat=debug
 # Show all queries
 spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 spring.jpa.properties.hibernate.format_sql=true
 logging.level.org.hibernate.type=trace
 ```
@@ -2785,7 +2787,7 @@ query.setMaxResults(10);
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.0.0.RELEASE</version>
+    <version>2.3.1.RELEASE</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
 
@@ -2793,6 +2795,7 @@ query.setMaxResults(10);
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
   </properties>
 
   <dependencies>
@@ -3729,6 +3732,8 @@ spring.h2.console.enabled=true
 spring.jpa.properties.hibernate.generate_statistics=true
 logging.level.org.hibernate.stat=debug
 spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 spring.jpa.properties.hibernate.format_sql=true
 #logging.level.org.hibernate.type=TRACE
 spring.jpa.properties.hibernate.cache.use_second_level_cache=true

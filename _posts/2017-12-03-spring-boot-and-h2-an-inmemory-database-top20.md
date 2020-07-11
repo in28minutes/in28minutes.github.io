@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:   Spring Boot and H2 in memory database - Why, What and How?
-date:       2017-12-03 12:31:19
+date:       2020-07-07 12:31:19
 summary:  Learn how to connect a Spring Boot application to H2 in memory database. Understand why in memory databases are needed and the best practices in using them with Spring Boot.
 categories:  SpringBootJPA
 permalink:  /spring-boot-and-h2-in-memory-database
@@ -135,6 +135,8 @@ H2 provides a web interface called H2 Console to see the data. Let's enable h2 c
 ```properties
 # Enabling H2 Console
 spring.h2.console.enabled=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 ```
 > When you start the application up now, you would see a lot of magic unfold!
 
@@ -197,12 +199,12 @@ spring.datasource.password=
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ```
 
-It knows that you are using an inmemory database H2 and it uses the default url if you don’t provide one.
+It knows that you are using an in-memory database H2 and it uses the default url if you don’t provide one.
 
 
 ### Q :  Where is the database connection info specified? How does it know to automatically connect to H2?
 
-Thats Spring Boot Autoconfiguration magic.
+Thats Spring Boot Auto-configuration magic.
 
 From https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-auto-configuration.html
 
@@ -214,11 +216,13 @@ Recommended Reading
 ### Q :  What happens if H2 is not in the classpath?
 
 You get this error
+
 ```
 Cannot determine embedded database driver class for database type NONE
-````
+```
 
 Add H2 to the pom.xml and Restart your server
+
 ```
 <dependency>
 	<groupId>com.h2database</groupId>
@@ -233,11 +237,11 @@ H2 is an in memory database. Its not a persisted database.
 
 H2 is a great tool for learning because you need zero setup.
 
-### Error :  Table is not created automatically in h2 embedded db or I'm unable to see the tables
+### Error :  Table is not created automatically in H2 embedded db or I'm unable to see the tables
 
-Usually, the table's are created but the url used in H2 GUI Console is wrong.
+Usually, the table's are created but the URL used in H2 GUI Console is wrong.
 
-In the browser, change the database url to jdbc:h2:mem:testdb (Shown in the screen below).
+In the browser, change the database URL to jdbc:h2:mem:testdb (Shown in the screen below).
 
 ![](/images/h2-solution-image.png)
 

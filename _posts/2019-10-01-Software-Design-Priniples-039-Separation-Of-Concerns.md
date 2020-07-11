@@ -2,12 +2,12 @@
 layout:  post
 title:  Software Design - Separation Of Concerns - with examples
 date:    2019-10-01 12:31:19
-summary: Software architects and programmers love having Seperation of Concerns. What is it? Why is it important? Let's get started.
+summary: Software architects and programmers love having Separation of Concerns. What is it? Why is it important? Let's get started.
 categories: SwDesign
 permalink:  /software-design-seperation-of-concerns-with-examples
 ---
 
-Software architects and programmers love having Seperation of Concerns. What is it? Why is it important? Let's get started.
+Software architects and programmers love having Separation of Concerns. What is it? Why is it important? Let's get started.
 
 ### You will learn
 

@@ -234,7 +234,7 @@ pom.xml
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.3.RELEASE</version> 
-		<!-- We will upgrade to 2.0.0.RELEASE in Step 33: Upgrading to Spring Boot 2 and Spring 5 ->
+		<!-- We will upgrade to 2.3.1.RELEASE in Step 33: Upgrading to Spring Boot 2 and Spring 5 ->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -242,6 +242,7 @@ pom.xml
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -2191,6 +2192,7 @@ An exception occurred! Please contact Support!
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -2766,6 +2768,8 @@ spring.mvc.view.suffix=.jsp
 logging.level.org.springframework.web=INFO
 
 spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 spring.h2.console.enabled=true
 ```
 ---
@@ -2963,7 +2967,7 @@ public class SpringBootFirstWebApplicationTests {
 ### /pom.xml Modified
 New Lines
 ```
-		<version>2.0.0.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 ```
 ### /src/main/java/com/in28minutes/springboot/web/controller/TodoController.java Modified
 New Lines
@@ -3130,6 +3134,7 @@ pom.xml
 
 	<properties>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -3478,6 +3483,7 @@ pom.xml New
 
 	<properties>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -4624,6 +4630,8 @@ basic.number=200
  - spring.datasource.initialize=true 
  - spring.jpa.hibernate.ddl-auto=update
  - spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 
 #### Useful Snippets and References
 First Snippet - Add H2 Later after showing the error
@@ -4865,6 +4873,8 @@ public interface UserRepository extends CrudRepository<User, Long> {
  - spring.datasource.initialize=true 
  - spring.jpa.hibernate.ddl-auto=update
  - spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 
 #### Useful Snippets and References
 
@@ -5072,6 +5082,7 @@ public interface UserRestRepository extends
 
     <properties>
         <java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
     </properties>
 
     <build>
@@ -5940,6 +5951,7 @@ pom.xml New
 
 	<properties>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>

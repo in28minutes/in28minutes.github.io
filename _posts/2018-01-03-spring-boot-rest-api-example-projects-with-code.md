@@ -1,13 +1,15 @@
 ---
 layout:     post
 title:      Spring Boot REST API Projects with Code Examples
-date:       2018-01-03 12:31:19
+date:       2020-07-02 12:31:19
 summary:    At in28Minutes, we have created 8 Spring Boot REST API projects with code examples on Github. We have 10+ tutorial articles explaining these projects.  These code examples will help beginners and experts to learn and gain expertise at developing RESTful Services with Spring Boot.
 categories:  SpringBoot
 permalink:  /spring-boot-rest-api-projects-with-code-examples
 ---
 
 This guide will help you understand the REST API projects with code examples on Github. We have a number of articles explaining these projects.  These code examples will help beginners and experts to learn and gain expertise at developing RESTful Services with Spring Boot. 
+
+All Articles updated to 2.3.1.RELEASE of Spring Boot.
  
 ## Free Courses - Learn in 10 Steps
 
@@ -103,7 +105,7 @@ At the next level, REST APIs have
     - Links to get his recent comments 
     - Links to retrieve his friend’s list.
 - Content Negotiation - Why should JSON be the only data exchange format to be supported? What if your consumer loves (or is stuck with) XML? Content Negotiation helps you support multiple data exchange formats for your RESTful API.
-- Versioning - As your API evolves with your and your consumer needs, you would have the need to have multiple versions of the same Resouce API. How do you handle that?
+- Versioning - As your API evolves with your and your consumer needs, you would have the need to have multiple versions of the same Resource API. How do you handle that?
 
 Articles below explore these features in depth.
 

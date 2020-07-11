@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Unit Testing Rest Services with Spring Boot and JUnit
-date:       2017-01-28 12:31:19
+date:       2020-07-08 12:31:19
 summary:    Setting up a Basic REST Service with Spring Boot is a cake walk. We will go one step further and add great unit tests to our RESTful Service! 
 categories:  SpringBootUnitTesting
 permalink:  /unit-testing-for-spring-boot-rest-services
@@ -148,7 +148,7 @@ We will fire a request to http://localhost:8080/students/Student1/courses/Course
 {
   "id": "Course1",
   "name": "Spring",
-  "description": "10 Steps",
+  "description": "10Steps",
   "steps": [
     "Learn Maven",
     "Import Project",
@@ -161,13 +161,22 @@ We will fire a request to http://localhost:8080/students/Student1/courses/Course
 Below picture shows how we can execute this Get Service from Postman - my favorite tool to run rest services.
 ![Image](/images/ExecutingGetRestServiceUsingPostman.png "Executing Rest Service From Postman")   
 
+## Add spring-security-test for disabling security in unit tests
+
+```
+<dependency>
+ 		    <groupId>org.springframework.security</groupId>
+ 		    <artifactId>spring-security-test</artifactId>
+ 		    <scope>test</scope>
+ 		</dependency>
+```
 
 ## Unit Testing the Get Rest Service
 
 When we are unit testing a rest service, we would want to launch only the specific controller and the related MVC Components. WebMvcTest annotation is used for unit testing Spring MVC application. This can be used when a test focuses only Spring MVC components. Using this annotation will disable full auto-configuration and only apply configuration relevant to MVC tests. 
 
 - `@RunWith(SpringRunner.class)` : SpringRunner is short hand for SpringJUnit4ClassRunner which extends BlockJUnit4ClassRunner providing the functionality to launch a Spring TestContext Framework.
-- `@WebMvcTest(value = StudentController.class, secure = false)`: WebMvcTest annotation is used for unit testing Spring MVC application. This can be used when a test focuses only Spring MVC components. In this test, we want to launch only StudentController. All other controllers and mappings will not be launched when this unit test is executed. 
+- `@WebMvcTest(value = StudentController.class)`: WebMvcTest annotation is used for unit testing Spring MVC application. This can be used when a test focuses only Spring MVC components. In this test, we want to launch only StudentController. All other controllers and mappings will not be launched when this unit test is executed. 
 - `@Autowired private MockMvc mockMvc`: MockMvc is the main entry point for server-side Spring MVC test support. It allows us to execute requests against the test context.
 - `@MockBean private StudentService studentService`: MockBean is used to add mocks to a Spring ApplicationContext. A mock of studentService is created and auto-wired into the StudentController.
 - `Mockito.when(studentService.retrieveCourse(Mockito.anyString(),Mockito.anyString())).thenReturn(mockCourse)`: Mocking the method retrieveCourse to return the specific mockCourse when invoked.
@@ -198,7 +207,8 @@ import com.in28minutes.springboot.model.Course;
 import com.in28minutes.springboot.service.StudentService;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(value = StudentController.class, secure = false)
+@WebMvcTest(value = StudentController.class)
+@WithMockUser
 public class StudentControllerTest {
 
 	@Autowired
@@ -207,11 +217,11 @@ public class StudentControllerTest {
 	@MockBean
 	private StudentService studentService;
 
-	Course mockCourse = new Course("Course1", "Spring", "10 Steps",
+	Course mockCourse = new Course("Course1", "Spring", "10Steps",
 			Arrays.asList("Learn Maven", "Import Project", "First Example",
 					"Second Example"));
 
-	String exampleCourseJson = "{\"name\":\"Spring\",\"description\":\"10 Steps\",\"steps\":[\"Learn Maven\",\"Import Project\",\"First Example\",\"Second Example\"]}";
+	String exampleCourseJson = "{\"name\":\"Spring\",\"description\":\"10Steps\",\"steps\":[\"Learn Maven\",\"Import Project\",\"First Example\",\"Second Example\"]}";
 
 	@Test
 	public void retrieveDetailsForCourse() throws Exception {
@@ -227,7 +237,7 @@ public class StudentControllerTest {
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
 		System.out.println(result.getResponse());
-		String expected = "{id:Course1,name:Spring,description:10 Steps}";
+		String expected = "{id:Course1,name:Spring,description:10Steps}";
 
 		// {"id":"Course1","name":"Spring","description":"10 Steps, 25 Examples and 10K Students","steps":["Learn Maven","Import Project","First Example","Second Example"]}
 
@@ -271,7 +281,7 @@ Example Request is shown below. It contains all the details to register a course
 ```json
 {
   "name": "Microservices",
-  "description": "10 Steps",
+  "description": "10Steps",
   "steps": [
     "Learn How to Break Things Up",
     "Automate the hell out of everything",
@@ -349,7 +359,7 @@ In the unit test, we would want to post the request body to the url `/students/S
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.4.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -357,6 +367,7 @@ In the unit test, we would want to post the request body to the url `/students/S
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -379,6 +390,11 @@ In the unit test, we would want to post the request body to the url `/students/S
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+ 		    <groupId>org.springframework.security</groupId>
+ 		    <artifactId>spring-security-test</artifactId>
+ 		    <scope>test</scope>
+ 		</dependency>
 	</dependencies>
 
 	<build>
@@ -624,7 +640,7 @@ public class StudentService {
 
 	static {
 		//Initialize Data
-		Course course1 = new Course("Course1", "Spring", "10 Steps", Arrays
+		Course course1 = new Course("Course1", "Spring", "10Steps", Arrays
 				.asList("Learn Maven", "Import Project", "First Example",
 						"Second Example"));
 		Course course2 = new Course("Course2", "Spring MVC", "10 Examples",
@@ -763,7 +779,8 @@ import com.in28minutes.springboot.model.Course;
 import com.in28minutes.springboot.service.StudentService;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(value = StudentController.class, secure = false)
+@WebMvcTest(value = StudentController.class)
+@WithMockUser
 public class StudentControllerTest {
 
 	@Autowired
@@ -772,11 +789,11 @@ public class StudentControllerTest {
 	@MockBean
 	private StudentService studentService;
 
-	Course mockCourse = new Course("Course1", "Spring", "10 Steps",
+	Course mockCourse = new Course("Course1", "Spring", "10Steps",
 			Arrays.asList("Learn Maven", "Import Project", "First Example",
 					"Second Example"));
 
-	String exampleCourseJson = "{\"name\":\"Spring\",\"description\":\"10 Steps\",\"steps\":[\"Learn Maven\",\"Import Project\",\"First Example\",\"Second Example\"]}";
+	String exampleCourseJson = "{\"name\":\"Spring\",\"description\":\"10Steps\",\"steps\":[\"Learn Maven\",\"Import Project\",\"First Example\",\"Second Example\"]}";
 
 	@Test
 	public void retrieveDetailsForCourse() throws Exception {
@@ -792,7 +809,7 @@ public class StudentControllerTest {
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
 		System.out.println(result.getResponse());
-		String expected = "{id:Course1,name:Spring,description:10 Steps}";
+		String expected = "{id:Course1,name:Spring,description:10Steps}";
 
 		// {"id":"Course1","name":"Spring","description":"10 Steps, 25 Examples and 10K Students","steps":["Learn Maven","Import Project","First Example","Second Example"]}
 

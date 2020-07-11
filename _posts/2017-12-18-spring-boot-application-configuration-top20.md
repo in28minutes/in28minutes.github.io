@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Application Configuration with Spring Boot
-date:       2017-12-18 12:31:19
+date:       2020-07-05 12:31:19
 summary:    Externalizing Application Configuration is a key challenge in developing great Application. Spring Boot provides a variety of options to expose Application Configuration. In this tutorial, we explore the basics of application.properties, @Value and @ConfigurationProperties.
 categories:  SpringBoot
 permalink:  /spring-boot-application-configuration
@@ -75,9 +75,9 @@ Following screenshot shows the structure of the project we will create.
 A few details:
 - SpringBootTutorialBasicsConfigurationApplication.java - The Spring Boot Application class generated with Spring Initializer. This class acts as the launching point for application.
 - `pom.xml` - Contains all the dependencies needed to build this project.
-- BasicConfiguration.java - We will use this component to define application configuration using @ConfigurationProperties
-- WelcomeResource.java - Example of a resource using @Value
-- application.properties - Configuration for application
+- `BasicConfiguration.java` - We will use this component to define application configuration using @ConfigurationProperties
+- `WelcomeResource.java` - Example of a resource using @Value
+- `application.properties` - Configuration for application
 
 ## Tools you will need
 - Maven 3.0+ is your build tool

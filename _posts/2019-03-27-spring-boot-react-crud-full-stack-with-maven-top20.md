@@ -1977,6 +1977,7 @@ export default App;
 
   <properties>
     <java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
   </properties>
 
   <dependencies>

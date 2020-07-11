@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Creating a Web Application with Spring Boot with JSP
-date:       2017-02-01 12:31:19
+date:       2020-07-08 12:31:19
 summary:    Setting up a basic web application with Spring Boot is a cake walk. We will create a simple web application using Spring Initializr and add JSP features to it. 
 categories:  SpringBoot
 permalink:  /creating-web-application-with-spring-boot
@@ -444,3 +444,5 @@ You can run this as a simple java application. When you run this you would see t
 2017-01-30 10:02:04.307  INFO 6070 --- [  restartedMain] c.i.s.web.SpringBootFirstWebApplication  : Started SpringBootFirstWebApplication in 7.204 seconds (JVM running for 9.191)
 
 ```
+
+Complete code is on Github repository : https://github.com/in28minutes/SpringBootWebApplicationStepByStep. You can download Step12.zip and import as a maven project to be able to run it.

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Secure Rest Services and Web Applications with Spring Boot Security Starter
-date:       2017-01-30 12:31:19
+date:       2020-07-07 12:31:19
 summary:    Spring Boot Starter Security is the recommended starter for enabling security on web application - including REST services. 
 categories:  SpringBoot
 permalink:  /securing-rest-services-with-spring-boot-starter-security
@@ -34,6 +34,7 @@ This guide will help you understand the different features Spring Boot Starter S
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
 - JDK 1.8+
+
 ## Complete Maven Project With Code Examples
 > Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}
 
@@ -362,7 +363,7 @@ We need to use admin1/secret1 combination in the popup to launch the web applica
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.4.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -370,6 +371,7 @@ We need to use admin1/secret1 combination in the popup to launch the web applica
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Maven Tutorial for Beginners in 5 Steps
-date:       2017-11-16 12:31:19
+date:       2020-07-07 12:31:19
 summary:    Maven Tutorial for Beginners in 5 Steps. Learn the basics of Maven setting up a basic example with Spring Initializr. 
 categories: SpringBoot
 permalink:  /maven-tutorial-for-beginners
@@ -83,7 +83,7 @@ Similar to Java Inheritance. We inherit a lot of things from starter parent.
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -177,7 +177,7 @@ The jar dependencies are stored on your machine in a folder called maven local r
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -185,6 +185,7 @@ The jar dependencies are stored on your machine in a folder called maven local r
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>

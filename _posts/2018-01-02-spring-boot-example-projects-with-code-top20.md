@@ -1,13 +1,15 @@
 ---
 layout:     post
 title:      20+ Spring Boot Projects with Code Examples
-date:       2020-01-03 12:31:19
+date:       2020-07-02 12:31:19
 summary:    At in28Minutes, we have created more than 20 projects with code examples on Github. We have 50+ articles explaining these projects. These code examples will you learn and gain expertise at Spring Boot.
 categories:  SpringBoot
 permalink:  /spring-boot-projects-with-code-examples
 ---
 
 This guide will help you understand our 20+ projects with code examples on Github. We have 50+ articles explaining these projects.  These code examples will help beginners and experts to learn and gain expertise at Spring Boot. 
+
+All projects updated to Spring Boot 2.3.1.RELEASE.
  
 ## Free Courses - Learn in 10 Steps
 

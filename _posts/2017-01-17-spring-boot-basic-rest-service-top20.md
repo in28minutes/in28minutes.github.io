@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Creating a REST Service with Spring Boot
-date:       2017-01-30 12:31:19
+date:       2020-07-07 12:31:19
 summary:    Setting up a basic example REST Service with Spring Boot. Its a cake walk. 
 categories:  SpringBoot
 permalink:  /creating-rest-service-with-spring-boot
@@ -130,7 +130,6 @@ A student can take multiple courses. A course has an id, name, description and a
 
 ---
 
-<a href="https://links.in28minutes.com/aws-architect-associate-certification" ><img src="https://www.springboottutorial.com/images/Course-aws-architect-associate-certification.png" alt="Image" title="AWS Architect Associate Certification"></a>
 <a href="https://links.in28minutes.com/DevOps-SBT"><img src="https://www.springboottutorial.com/images/Course-DevOps.png" alt="Image" title="DevOps Course"></a>
 <a href="https://links.in28minutes.com/in28minutes-Microservices" ><img src="https://www.springboottutorial.com/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png" alt="Image" title="Master Microservices with Spring Boot and Spring Cloud"></a>
 
@@ -253,6 +252,4 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 
 ## Complete Code Example
 
-Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}
-- Rest Services with Unit and Integration Tests
-    - Website-springbootrestservices-simplerestserviceswithunitandintegrationtests.zip
+Our Github repository has all the code examples - [https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-rest-services-with-unit-and-integration-tests](https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-rest-services-with-unit-and-integration-tests){:target="_blank"}

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Logging with Spring Boot - Logback, SLF4j and LOG4j2
-date:       2017-12-12 12:31:19
+date:       2020-07-06 12:31:19
 summary:    Learn how to log effectively with Spring Boot. We will look at Spring Boot Starter for Logging and Spring Boot starter for log4j2.
 categories:  SpringBoot
 permalink : /logging-with-spring-boot-logback-slf4j-and-log4j
@@ -30,25 +30,21 @@ Let's look at what is present in the Logging Starter.
 <dependency>
   <groupId>ch.qos.logback</groupId>
   <artifactId>logback-classic</artifactId>
-  <version>1.2.3</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.apache.logging.log4j</groupId>
   <artifactId>log4j-to-slf4j</artifactId>
-  <version>2.9.1</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.slf4j</groupId>
   <artifactId>jul-to-slf4j</artifactId>
-  <version>1.7.25</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.slf4j</groupId>
   <artifactId>log4j-over-slf4j</artifactId>
-  <version>1.7.25</version>
   <scope>compile</scope>
 </dependency>
 
@@ -119,25 +115,21 @@ Let's take a quick look at the dependencies in log4j2 starter.
 <dependency>
   <groupId>org.apache.logging.log4j</groupId>
   <artifactId>log4j-slf4j-impl</artifactId>
-  <version>2.9.1</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.apache.logging.log4j</groupId>
   <artifactId>log4j-api</artifactId>
-  <version>2.9.1</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.apache.logging.log4j</groupId>
   <artifactId>log4j-core</artifactId>
-  <version>2.9.1</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.slf4j</groupId>
   <artifactId>jul-to-slf4j</artifactId>
-  <version>1.7.25</version>
   <scope>compile</scope>
 </dependency>
 ```

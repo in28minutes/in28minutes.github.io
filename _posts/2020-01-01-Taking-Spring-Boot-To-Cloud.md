@@ -96,7 +96,7 @@ For example, if you are using AWS (Amazon Web Services), you have two options
 
 Approach 1 is typically called IAAS - Infrastructure as a Service. You are getting the infrastructure from the cloud provider and deploying the applications the usual way you do. The cloud provider is responsible only for providing the virtual servers. You are responsible for installing OS, OS Upgrades, Installing Runtime, Runtime upgrades and everything that goes along with them.
 
-Different clouds provide differerent IAAS Services. The virtual servers are also called differently in different clouds
+Different clouds provide different IAAS Services. The virtual servers are also called differently in different clouds
 - AWS calls them EC2 (Elastic Compute Cloud)
 - Azure Virtual Machines
 - Google Compute Engines
@@ -186,7 +186,7 @@ This course would be a perfect first step as an introduction to Docker.
 
 You will Learn Docker Architecture and the Fundamentals of Docker - Registry, Repository, Tag, Image, Container and Volumes and also learn the important Docker commands.
 
-You will learn to use Dockerfile to Automate Building of your Docker Image and also use various maven plugins - Dockerfile Spotify Plugin, JIB Plugin and Fabric8 Docker Maven Plugin - to create Docker images. You will also learn to follow the best practices with creating Docker Images - Improve Caching of Docker Images and create Multi Stage Docker Builds.
+You will learn to use `Dockerfile` to Automate Building of your Docker Image and also use various maven plugins - `Dockerfile` Spotify Plugin, JIB Plugin and Fabric8 Docker Maven Plugin - to create Docker images. You will also learn to follow the best practices with creating Docker Images - Improve Caching of Docker Images and create Multi Stage Docker Builds.
 
 ### Learn AWS - Deploy Java Spring Boot to AWS Elastic Beanstalk
 

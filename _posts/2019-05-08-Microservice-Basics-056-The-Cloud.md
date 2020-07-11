@@ -1,6 +1,6 @@
 ---
 layout:  post
-title:  Microservices Architecutres - Quick introduction to Cloud - Why, What and How?
+title:  Microservices Architectures - Quick introduction to Cloud - Why, What and How?
 date:    2019-05-08 12:31:19
 summary:  In this article, we focus our attention on the cloud. Why do we need the cloud?
 categories:  SpringBootMicroservices

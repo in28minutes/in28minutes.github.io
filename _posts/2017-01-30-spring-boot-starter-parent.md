@@ -61,7 +61,8 @@ First of all - Spring Boot Starter Parent defines spring-boot-dependencies as th
 
 ```
 
-Default java version is 1.6. A project can override this by specifying a property `<java.version>1.8</java.version>` in the project pom. A few other settings related to encoding and source, target version are also set in the parent pom.
+Default java version is 1.6. A project can override this by specifying a property `<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>` in the project pom. A few other settings related to encoding and source, target version are also set in the parent pom.
 
 ```
 <java.version>1.6</java.version>

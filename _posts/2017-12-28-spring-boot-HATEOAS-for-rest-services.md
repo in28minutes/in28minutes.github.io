@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Spring Boot - HATEOAS for RESTful Services
-date:       2017-12-28 12:31:19
+date:       2020-07-03 12:31:19
 summary:    HATEOAS stands for "Hypermedia as the engine of application state". Its a complicated acronym. In this article, we decode HATEOAS for you and help you learn how to implement HATEOAS for a REST API/Service with Spring Boot.
 categories:  SpringBoot
 permalink:  /spring-boot-hateoas-for-rest-services
@@ -102,7 +102,7 @@ Listed below are some of the important dependencies from `spring-boot-starter-ha
   <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
-    <version>2.0.0.RELEASE</version>
+    <version>2.3.1.RELEASE</version>
     <scope>compile</scope>
   </dependency>
   <dependency>
@@ -126,38 +126,39 @@ Most important dependency is `spring-hateoas`.
 
 To implement HATEOAS, we would need to include related resources in the response.
 
-Instead of Student we use a return type of `Resource<Student>`. 
+Instead of Student we use a return type of `EntityModel<Student>`. 
 
-> Resource is a simple class wrapping a domain object and allows adding links to it.
+> EntityModel is a simple class wrapping a domain object and allows adding links to it.
 
 ```
 @GetMapping("/students/{id}")
-public Resource<Student> retrieveStudent(@PathVariable long id) {
-  Optional<Student> student = studentRepository.findById(id);
+  public EntityModel<Student> retrieveStudent(@PathVariable long id) {
+    Optional<Student> student = studentRepository.findById(id);
 
-  if (!student.isPresent())
-    throw new StudentNotFoundException("id-" + id);
+    if (!student.isPresent())
+      throw new StudentNotFoundException("id-" + id);
 
-  Resource<Student> resource = new Resource<Student>(student.get());
+    EntityModel<Student> resource = EntityModel.of(student.get());
 
-  ControllerLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllStudents());
+    WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllStudents());
 
-  resource.add(linkTo.withRel("all-students"));
+    resource.add(linkTo.withRel("all-students"));
 
-  return resource;
-}
+    return resource;
+  }
 ```
 
 We create a new resource.
 ```
-  Resource<Student> resource = new Resource<Student>(student.get());
+  EntityModel<Student> resource = EntityModel.of(student.get());
 ```
 
 We add the link to retrieve all students method to the links.
 ```
-  ControllerLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllStudents());
+      WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllStudents());
 
-  resource.add(linkTo.withRel("all-students"));
+    resource.add(linkTo.withRel("all-students"));
+
 ```
 
 The response when we execute a GET request to `http://localhost:8080/students/10001` is shown below:
@@ -187,6 +188,8 @@ However, you have to make the important decision:
 Go ahead and enhance the application with more HATEOAS links.
 
 
+## Complete Maven Project With Code Examples
+> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-hateoas
 
 
 ## Complete Code Example
@@ -211,7 +214,7 @@ Go ahead and enhance the application with more HATEOAS links.
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.0.0.RELEASE</version>
+    <version>2.3.1.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
@@ -219,6 +222,7 @@ Go ahead and enhance the application with more HATEOAS links.
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
   </properties>
 
   <dependencies>
@@ -411,18 +415,16 @@ public interface StudentRepository extends JpaRepository<Student, Long>{
 ```java
 package com.in28minutes.springboot.rest.example.student;
 
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.hateoas.Resource;
-import org.springframework.hateoas.mvc.ControllerLinkBuilder;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -445,15 +447,15 @@ public class StudentResource {
   }
 
   @GetMapping("/students/{id}")
-  public Resource<Student> retrieveStudent(@PathVariable long id) {
+  public EntityModel<Student> retrieveStudent(@PathVariable long id) {
     Optional<Student> student = studentRepository.findById(id);
 
     if (!student.isPresent())
       throw new StudentNotFoundException("id-" + id);
 
-    Resource<Student> resource = new Resource<Student>(student.get());
+    EntityModel<Student> resource = EntityModel.of(student.get());
 
-    ControllerLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllStudents());
+    WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllStudents());
 
     resource.add(linkTo.withRel("all-students"));
 
@@ -491,6 +493,7 @@ public class StudentResource {
     return ResponseEntity.noContent().build();
   }
 }
+
 ```
 ---
 

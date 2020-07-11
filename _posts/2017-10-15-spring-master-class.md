@@ -1869,6 +1869,8 @@ public class PersonJpaRepository {
 /src/main/resources/application.properties
 ```
 spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 ```
 /src/main/resources/data.sql - Comment Everything
 ```

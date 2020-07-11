@@ -35,6 +35,7 @@ This is the sixth article in a series of articles on Spring Framework:
 - [6 - What Are Spring Projects?](/spring-projects-with-examples){:target='_blank'}
 - [7 - Introduction To Spring Batch](/spring-basics-introduction-to-spring-batch){:target='_blank'}
 
+
 ### What Are Spring Projects?
 
 Within the Spring framework, there are a variety of different Spring modules - JDBC, AOP, Beans, Context. All Spring Modules share the same release version as the Spring framework. They are part of the same project.

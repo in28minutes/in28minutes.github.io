@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Microservices with Spring Boot - Part 5 - Example using Eureka Naming Server
-date:       2018-01-09 12:31:19
+date:       2020-07-01 12:31:19
 summary:    Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. In part 5 of this series, we will focus on enabling Eureka Naming Server and have the microservices communicate with it.
 categories:  SpringBootMicroservices
 permalink:  /microservices-with-spring-boot-part-5-eureka-naming-server
@@ -237,7 +237,7 @@ There is a lot more ground to conver with Microservices. Until next time, Cheers
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.0.0.RELEASE</version>
+    <version>2.3.1.RELEASE</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
 
@@ -245,6 +245,7 @@ There is a lot more ground to conver with Microservices. Until next time, Cheers
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
     <spring-cloud.version>Finchley.M8</spring-cloud.version>
   </properties>
 
@@ -587,7 +588,7 @@ public class SpringBootMicroserviceCurrencyConversionApplicationTests {
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.0.0.RELEASE</version>
+    <version>2.3.1.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
@@ -595,6 +596,7 @@ public class SpringBootMicroserviceCurrencyConversionApplicationTests {
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
     <spring-cloud.version>Finchley.M8</spring-cloud.version>
   </properties>
 
@@ -747,7 +749,7 @@ public class SpringBootMicroserviceEurekaNamingServerApplicationTests {
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.0.0.RELEASE</version>
+    <version>2.3.1.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
@@ -755,6 +757,7 @@ public class SpringBootMicroserviceEurekaNamingServerApplicationTests {
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
     <spring-cloud.version>Finchley.M8</spring-cloud.version>
   </properties>
 
@@ -996,6 +999,8 @@ spring.application.name=forex-service
 server.port=8000
 
 spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 spring.h2.console.enabled=true
 
 eureka.client.service-url.default-zone=http://localhost:8761/eureka

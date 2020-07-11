@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Implementing Validation for RESTful Services with Spring Boot
-date:       2017-12-27 12:31:19
+date:       2020-07-03 12:31:19
 summary:    Validating a request is a critical component of a Great REST API. In this tutorial, Let's explore how to do implement effective validation for a RESTful Service with Spring Boot. We will use Bean Validation API and Hibernate Validator as the implementation.
 categories:  SpringBoot
 permalink:  /spring-boot-validation-for-rest-services
@@ -161,6 +161,15 @@ So, we can get started with implementing the validations.
 
 
 ### Implementing Validations on the Bean
+
+Before we add validations, we need to add a dependency.
+
+```
+<dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+```
 
 Let's add a few validations to the Student bean. We are using `@Size` to specify the minimum length and also a message when a validation error occurs.
 

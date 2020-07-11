@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Spring Boot - Integrating with Bootstrap & jQuery using Web Jars
-date:       2017-12-08 12:31:19
+date:       2020-07-07 12:31:19
 summary:    Learn how to integrate Spring Boot with Bootstrap & jQuery using Web Jars. We will set up a simple web application and add the web jars for these frameworks. 
 categories:  SpringBoot
 permalink:  /spring-boot-with-jquery-and-bootstrap-web-jars
@@ -285,7 +285,7 @@ Spring Boot would auto configure the webjars resource mapping. So you DON'T need
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.0.RELEASE</version>
+        <version>2.3.1.RELEASE</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
@@ -293,6 +293,7 @@ Spring Boot would auto configure the webjars resource mapping. So you DON'T need
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
     </properties>
 
     <dependencies>

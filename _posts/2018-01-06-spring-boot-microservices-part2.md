@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Microservices with Spring Boot and Java - Part 2 - Architecture of Forex Microservice
-date:       2018-01-06 12:31:19
+date:       2020-07-01 12:31:19
 summary:    Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. In part 2 of this series, we will focus on Creating Forex Microservice.
 categories:  SpringBootMicroservices
 permalink:  /creating-microservices-with-spring-boot-part-2-forex-microservice
@@ -224,6 +224,8 @@ spring.application.name=forex-service
 server.port=8000
 
 spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 spring.h2.console.enabled=true
 
 ```
@@ -292,7 +294,7 @@ Microservices with Spring Boot
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.0.0.RELEASE</version>
+    <version>2.3.1.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
@@ -300,6 +302,7 @@ Microservices with Spring Boot
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
     <spring-cloud.version>Finchley.M8</spring-cloud.version>
   </properties>
 
@@ -535,6 +538,8 @@ spring.application.name=forex-service
 server.port=8000
 
 spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 spring.h2.console.enabled=true
 
 ```

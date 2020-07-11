@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      What is Spring Boot Auto Configuration?
-date:       2017-01-28 12:31:19
+date:       2020-07-08 12:31:19
 summary:    Auto Configuration is the most important feature in Spring Boot. In this tutorial, we will learn important concepts about Auto Configuration with a couple of examples. 
 categories:  SpringBoot
 permalink:  /spring-boot-auto-configuration
@@ -41,7 +41,7 @@ This guide will help you understand Spring Boot Auto Configuration with examples
 
 Spring based applications have a lot of configuration. 
 
-When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, web jars(for delivering static content) among other things.
+When we use Spring MVC, we need to configure component scan, Dispatcher Servlet, a view resolver, web jars(for delivering static content) among other things.
 
 ```xml
   <bean
@@ -58,7 +58,7 @@ When we use Spring MVC, we need to configure component scan, dispatcher servlet,
     
 ```
 
-Below code snippet shows typical configuration of a dispatcher servlet in a web application.
+Below code snippet shows typical configuration of a Dispatcher Servlet in a web application.
 
 ```xml
     <servlet>
@@ -79,7 +79,7 @@ Below code snippet shows typical configuration of a dispatcher servlet in a web 
     </servlet-mapping>
 ```
   
-When we use Hibernate/JPA, we would need to configure a datasource, an entity manager factory, a transaction manager among a host of other things. 
+When we use Hibernate/JPA, we would need to configure a data source, an entity manager factory, a transaction manager among a host of other things. 
 
 ```xml
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
@@ -119,8 +119,8 @@ Spring Boot brings in new thought process around this.
 
 > Can we bring more intelligence into this? When a spring mvc jar is added into an application, can we auto configure some beans automatically? 
 
-- How about auto configuring a Data Source if Hibernate jar is on the classpath? 
-- How about auto configuring a Dispatcher Servlet if Spring MVC jar is on the classpath?
+- How about auto configuring a Data Source if Hibernate jar is on the class-path? 
+- How about auto configuring a Dispatcher Servlet if Spring MVC jar is on the class-path?
 
 There would be provisions to override the default auto configuration. 
 

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:   Integrating Spring Boot and Spring JDBC with H2 and Starter JDBC
-date:       2017-11-15 12:31:19
+date:       2020-07-08 12:31:19
 summary:    Learn using Spring Boot Starter JDBC to connect Spring Boot to H2 (in memory database) using Spring JDBC. You will create a simple project with Spring Boot. You will add code to the project to connect to a database using Spring JDBC. You will learn to implement the basic CRUD methods.
 categories:  SpringBootJPA
 permalink:  /spring-boot-and-spring-jdbc-with-h2
@@ -152,6 +152,8 @@ H2 provides a web interface called H2 Console to see the data. Let's enable h2 c
 ```properties
 # Enabling H2 Console
 spring.h2.console.enabled=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 ```
 When you reload the application, you can launch up H2 Console at http://localhost:8080/h2-console.
 
@@ -424,7 +426,7 @@ All users 2 -> [Student [id=10001, name=Name-Updated, passportNumber=New-Passpor
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -432,6 +434,7 @@ All users 2 -> [Student [id=10001, name=Name-Updated, passportNumber=New-Passpor
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -689,6 +692,8 @@ spring.jpa.properties.hibernate.generate_statistics=true
 logging.level.org.hibernate.stat=debug
 # Show all queries
 spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 spring.jpa.properties.hibernate.format_sql=true
 logging.level.org.hibernate.type=trace
 ```

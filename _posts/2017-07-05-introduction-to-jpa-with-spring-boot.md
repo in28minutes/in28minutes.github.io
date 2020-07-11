@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      Introduction to JPA and Hibernate using Spring Boot Data Jpa
-date:       2017-07-05 12:31:19
-summary:    Complete journey starting from JDBC to JPA to Spring Data JPA using an example with Spring Boot Data Jpa starter project. We use Hibernate as the JPA Implementation.
+title:      JPA and Hibernate Tutorial using Spring Boot Data JPA
+date:       2020-07-08 12:31:19
+summary:    Complete journey starting from JDBC to JPA to Spring Data JPA using an example with Spring Boot Data JPA starter project. We use Hibernate as the JPA Implementation.
 categories:  SpringBootJPA
 permalink:  /introduction-to-jpa-with-spring-boot-data-jpa
 ---
@@ -11,7 +11,7 @@ This guide will help you understand what JPA is and setup a simple JPA example u
  
 ## You will learn
 - What is JPA?
-- What is the problem solved by JPA - Object Relational Impedence?
+- What is the problem solved by JPA - Object Relational Impedance?
 - What are the alternatives to JPA? 
 - What is Hibernate and How does it relate to JPA?
 - What is Spring Data JPA?
@@ -33,7 +33,7 @@ This guide will help you understand what JPA is and setup a simple JPA example u
 - JDK 1.8+
 - In memory database H2
 
-## What is Object Relational Impedence Mismatch?
+## What is Object Relational Impedance Mismatch?
 
 ![Image](/images/JPA_01_Introduction.png "JPA Introduction")
 
@@ -41,15 +41,15 @@ Java is an object oriented programming language. In Java, all data is stored in 
 
 Typically, Relational databases are used to store data (These days, a number of other NoSQL data stores are also becoming popular - We will stay away from them, for now).  Relational databases store data in tables.
 
-The way we design objects is different from the way the relational databases are designed. This results in an impedence mismatch.
+The way we design objects is different from the way the relational databases are designed. This results in an impedance mismatch.
  - Object Oriented programming consists of concepts like encapsulation, inheritance, interfaces and polymorphism 
  - Relational databases are made up of Tables with concepts like normalization 
 
-### Examples of Object Relational Impedence Mismatch
+### Examples of Object Relational Impedance Mismatch
 
 Lets consider a simple example - Employees and Tasks.
 
-Each Employee can have multiple Tasks. Each Task can be shared by multiple Employees. There is a Many to Many relationship between them. Let's consider a few examples of impedence mismatch.
+Each Employee can have multiple Tasks. Each Task can be shared by multiple Employees. There is a Many to Many relationship between them. Let's consider a few examples of impedance mismatch.
 
 #### Example 1 : Task table below is mapped to Task Table. However, there are mismatches in column names.
 
@@ -859,7 +859,7 @@ You can also run the H2-Console on the browser
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -867,6 +867,7 @@ You can also run the H2-Console on the browser
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -1158,6 +1159,8 @@ public class UserRepositoryCommandLineRunner implements CommandLineRunner {
 spring.h2.console.enabled=true
 #logging.level.org.hibernate=debug
 spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
 ```
 ---
 

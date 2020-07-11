@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Versioning RESTful Services
-date:       2017-12-31 12:31:19
+title:      Versioning RESTful Services - Spring Boot REST API
+date:       2020-07-02 12:31:19
 summary:    Learn why versioning is needed and how you can version your REST API. We will look at 4 ways of versioning and also compare the different approaches.
 categories:  SpringBoot
 permalink:  /spring-boot-versioning-for-rest-services
@@ -356,7 +356,7 @@ The list below shows Major API providers using different versioning approaches.
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.0.0.RELEASE</version>
+    <version>2.3.1.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
@@ -364,6 +364,7 @@ The list below shows Major API providers using different versioning approaches.
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
   </properties>
 
   <dependencies>

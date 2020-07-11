@@ -1,6 +1,6 @@
 ---
 layout:  post
-title:  Introduction to Spring Cloud
+title:  Introduction to Spring Cloud - Java Microservices with Spring Boot
 date:    2019-02-19 00:00:00
 summary:  In this article, we focus on Spring Cloud. We will talk about the various components under its umbrella. 
 categories:  SpringBootMicroservices

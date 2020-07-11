@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Getting Started with Spring Boot - 7 things a beginner should know!
-date:       2020-01-01 12:31:19
+date:       2020-07-01 12:31:19
 summary:    Spring Boot is a tricky framework to understand. In this tutorial for beginnners with Spring Boot, we will look at the basics of Spring Boot and help you understand the important concepts - Architecture, Starter Projects, Auto Configuration and Starter Parent. We will look at the architecture of Spring Boot and explore a variety of resources - tutorials, courses and videos - we created to help you get started with Spring Boot effectively.
 categories:  SpringBoot
 permalink:  /introduction-to-spring-boot-for-beginners
@@ -144,7 +144,7 @@ All Spring Boot projects typically use spring-boot-starter-parent as the parent 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.0.RELEASE</version>
+        <version>2.3.1.RELEASE</version>
     </parent>
 ```
 
@@ -202,7 +202,7 @@ Let's take a quick look at the dependencies for `spring-boot-starter-web`
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-tomcat</artifactId>
-  <version>2.0.0.RELEASE</version>
+  <version>2.3.1.RELEASE</version>
   <scope>compile</scope>
 </dependency>
 ```

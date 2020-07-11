@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Spring Initializr - Bootstrap Your Spring Boot Applications at F1 speed!
-date:       2017-01-21 12:31:19
+date:       2020-01-21 12:31:19
 summary:    Learn what is Spring Initializr and understand how to Bootstrap a Spring Boot Web Application quickly.
 categories:  SpringBoot
 permalink : /spring-initialzr-bootstrap-spring-boot-applications
@@ -25,7 +25,7 @@ It allows you to create varied range of Spring Boot based Applications from a ve
 
 
 
-Spring Boot provides a wide range of starter projects. Spring Initializr suppports all of them and more. Among a varied range of starter projects and options supported are:
+Spring Boot provides a wide range of starter projects. Spring Initializr supports all of them and more. Among a varied range of starter projects and options supported are:
 
 - spring-boot-starter-web-services : For building applications exposing SOAP Web Services
 - spring-boot-starter-web - Build Web applications & RESTful applications
@@ -96,7 +96,7 @@ Three important things that are configured in pom.xml.
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.4.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -104,6 +104,7 @@ Three important things that are configured in pom.xml.
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -273,7 +274,7 @@ Following log is generate when you run StudentServicesApplication.java as a Java
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.4.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -281,6 +282,7 @@ Following log is generate when you run StudentServicesApplication.java as a Java
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>

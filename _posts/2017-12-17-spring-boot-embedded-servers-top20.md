@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Spring Boot and Embedded Servers - Tomcat, Jetty and Undertow
-date:       2017-12-17 12:31:19
+date:       2020-07-05 12:31:19
 summary:    Let's understand the need for embedded servers. We will understand the default embedded server provided by Spring Boot i.e. Tomcat and discuss the other options that Spring Boot supports - Jetty and Undertow.
 categories:  SpringBoot
 permalink:  /spring-boot-with-embedded-servers-tomcat-jetty
@@ -72,7 +72,7 @@ Let's take a quick look at the dependencies for `spring-boot-starter-web`
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-tomcat</artifactId>
-  <version>2.0.0.RELEASE</version>
+  <version>2.3.1.RELEASE</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -85,19 +85,16 @@ Starter Tomcat has the following dependencies.
 <dependency>
   <groupId>org.apache.tomcat.embed</groupId>
   <artifactId>tomcat-embed-core</artifactId>
-  <version>8.5.23</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.apache.tomcat.embed</groupId>
   <artifactId>tomcat-embed-el</artifactId>
-  <version>8.5.23</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.apache.tomcat.embed</groupId>
   <artifactId>tomcat-embed-websocket</artifactId>
-  <version>8.5.23</version>
   <scope>compile</scope>
 </dependency>
 ```

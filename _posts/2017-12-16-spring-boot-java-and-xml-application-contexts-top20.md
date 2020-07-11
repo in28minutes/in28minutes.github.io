@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Java Annotation and XML Bean Configurations with Spring Boot
-date:       2017-12-16 12:31:19
+date:       2020-07-06 12:31:19
 summary:    Spring allows you to configure your beans using Java Annotations and XML definitions. In this guide, we will explore how to use XML and Java Annotations to configure your beans with Spring Boot. We will understand how to load these configurations into a Spring Application Context. 
 categories:  SpringFramework
 permalink:  /spring-boot-java-xml-context-configuration
@@ -13,7 +13,7 @@ Spring allows you to configure your beans using Java and XML. In this guide, we 
 - How to define a Java bean configuration in a Spring Application?
 - How to define a XML bean configuration in a Spring Application?
 - How to load a XML Bean Configuration file into a Spring Application context?
-- How to load a Java Annotaiton based Bean Configuration file into a Spring Application context?
+- How to load a Java Annotation based Bean Configuration file into a Spring Application context?
 - What are the best practices in using XML and Java bean configurations?
 - How do you choose between XML and Java Bean Configurations?
 
@@ -36,9 +36,9 @@ Following screenshot shows the structure of the project we will create.
 A few details:
 - SpringBootTutorialBasicsApplication.java - The Spring Boot Application class generated with Spring Initializer. This class acts as the launching point for application.
 - `pom.xml` - Contains all the dependencies needed to build this project. We will use Spring Boot Starter AOP.
-- JavaConfiguration.java - Java Configuration file that contains the bean definitions.
-- XmlConfiguration.java - Defines Configuration based on the applicationContext.xml
-- applicationContext.xml - XML Configuration file that contains the bean definitions. 
+- `JavaConfiguration.java` - Java Configuration file that contains the bean definitions.
+- `XmlConfiguration.java` - Defines Configuration based on the applicationContext.xml
+- `applicationContext.xml` - XML Configuration file that contains the bean definitions. 
 
 ## Tools you will need
 - Maven 3.0+ is your build tool
@@ -200,9 +200,9 @@ Which is better depends on
 - context 
 - preference of the team.
 
-If you are maintaining an old project with xml bean definitions, the choice is already made for you.
+If you are maintaining an old project with XML bean definitions, the choice is already made for you.
 
-If you are creating a new project and if the configuration is specific to autowiring or declaring a bean - for example @Service, @Component, @Autowired - I prefer annotations.
+If you are creating a new project and if the configuration is specific to auto-wiring or declaring a bean - for example `@Service`, `@Component`, `@Autowired` - I prefer annotations.
 
 However, when it comes to - one time - application related configuration or a common configuration like @ComponentScan, I do not really have a preference. I would leave it to the team to choose. However, I would definitely want the entire team to discuss and agree what they would want to use in a specific project. 
 

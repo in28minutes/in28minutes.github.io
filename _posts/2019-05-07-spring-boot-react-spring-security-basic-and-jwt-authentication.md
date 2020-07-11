@@ -796,6 +796,7 @@ When you login, you should the REST API request to `/authenticate` returning wit
 
   <properties>
     <java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
   </properties>
 
   <dependencies>
@@ -1681,6 +1682,7 @@ public class SpringBootFullStackJwtAuthLoginLogoutApplication {
 
   <properties>
     <java.version>1.8</java.version>
+<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
   </properties>
 
   <dependencies>
