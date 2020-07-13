@@ -1,0 +1,101 @@
+@import "compass/css3";
+
+.float-nav {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+  
+  > a.menu-btn {
+    text-decoration: none;
+    display: block;
+    background-color: #cc3333;
+    color: white;
+    padding: 17px 19px 12px 19px;
+    text-align: center;
+    box-shadow: 2px 2px 8px #777;
+    border-radius: 300px;
+    
+    &.active {
+      transition: background-color 250ms linear;
+      background-color: transparent;
+      box-shadow: none;
+      
+      > ul > li.line {
+        
+        &:nth-child(1) {
+          border-width: 2px;
+          @include transform(rotate(45deg) translate(4px, 6px));
+        }
+        
+        &:nth-child(2) {
+          visibility: hidden;
+        }
+        
+        &:nth-child(3) {
+          border-width: 2px;
+          @include transform(rotate(-45deg) translate(8px, -10px));
+        }        
+        
+      }
+    }
+    
+    > ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      > li.line {
+        border: 1px solid white;
+        width: 100%;
+        margin-bottom: 7px;
+        @include transition-duration(0.1s);
+      }
+    }
+    
+    > .menu-txt {
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      font-family: sans-serif;
+    }
+  }
+}
+
+.main-nav {
+  display: none;
+  opacity: 0;
+  font-family: sans-serif;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transition: opacity 250ms;
+  
+  &.active {
+    display: block;
+    opacity: 1;
+    transition: opacity 250ms;
+  }
+  
+  > ul {
+    width: 100%;
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #cc3333;
+    box-shadow: 2px 2px 8px #777;
+    border-radius: 3px 3px 33.5px 3px;
+    
+    > li > a {
+      text-decoration: none;
+      display: block;
+      font-weight: 200;
+      padding: 18px 80px 18px 18px;
+      color: white;
+      
+      &:hover {
+        font-weight: 400;
+      }
+    }
+  }
+}
