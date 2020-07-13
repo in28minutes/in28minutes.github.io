@@ -23,7 +23,6 @@
         
         &:nth-child(1) {
           border-width: 2px;
-          @include transform(rotate(45deg) translate(4px, 6px));
         }
         
         &:nth-child(2) {
@@ -32,7 +31,6 @@
         
         &:nth-child(3) {
           border-width: 2px;
-          @include transform(rotate(-45deg) translate(8px, -10px));
         }        
         
       }
@@ -46,7 +44,6 @@
         border: 1px solid white;
         width: 100%;
         margin-bottom: 7px;
-        @include transition-duration(0.1s);
       }
     }
     
