@@ -1,3 +1,39 @@
+<!-- <div class="float-nav">
+  <a href="#" class="menu-btn active">
+    <ul>
+      <li class="line"></li>
+      <li class="line"></li>
+      <li class="line"></li>
+    </ul>
+    <div class="menu-txt">menu</div>
+  </a>
+</div>
+
+<div class="main-nav active">
+  <ul>
+    <li><a href="https://www.springboottutorial.com/tags/#SpringFramework">Spring Framework</a></li>
+    <li><a href="https://www.springboottutorial.com/tags/">Spring Boot</a></li>
+    <li><a href="https://www.springboottutorial.com/tags/#SpringBootJPA">JPA and Hibernate</a></li>
+    <li><a href="https://www.springboottutorial.com/tags/#SpringBootMicroservices">Microservices</a></li>
+    <li><a href="https://www.springboottutorial.com/tags/#SpringBootFullStack">Full Stack - React and Angular</a></li>
+    <li><a href="https://cloud.in28minutes.com/">AWS Certification</a></li>
+    <li><a href="https://www.springboottutorial.com/spring-boot-applications-to-aws-azure-gcp-docker-kubernetes">Deploy to AWS and AZURE</a></li>
+    <li><a href="https://www.springboottutorial.com/devops-tutorial-with-docker-kubenetes-and-azure-devops">DEVOPS - Docker and Kubernetes</a></li>
+    <li><a href="https://github.com/in28minutes/learn/tree/master/learning-paths#learning-paths">TOP 5 LEARNING PATHS</a></li>
+    <li><a href="https://www.youtube.com/watch?v=ysoC8S96pZU">WHAT TO LEARN NEXT?</a></li>
+    <li><a href="/spring-boot-video-tutorials-for-beginners#spring-and-spring-boot-videos">TOP 10 VIDEOS</a></li>
+    <li><a href="https://github.com/in28minutes/learn#best-selling-courses">TOP 10 COURSES</a></li>
+  </ul>
+</div>
+
+<footer class="center">
+  <div class="measure">
+    <small>
+     300,000 Learners are doing our awesome <a href="https://github.com/in28minutes/learn#best-selling-courses" target="_blank">best selling courses</a>.
+    </small>
+  </div>
+</footer> -->
+
 
 <script>
   
@@ -18,112 +54,6 @@
     node.parentNode.insertBefore(sc, node);
   }(document, 'sitekit-sdk'));
 </script>
-
-<style type="text/css">
-
-@import "compass/css3";
-
-.float-nav {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  z-index: 2;
-  
-  > a.menu-btn {
-    text-decoration: none;
-    display: block;
-    background-color: #cc3333;
-    color: white;
-    padding: 17px 19px 12px 19px;
-    text-align: center;
-    box-shadow: 2px 2px 8px #777;
-    border-radius: 300px;
-    
-    &.active {
-      transition: background-color 250ms linear;
-      background-color: transparent;
-      box-shadow: none;
-      
-      > ul > li.line {
-        
-        &:nth-child(1) {
-          border-width: 2px;
-          @include transform(rotate(45deg) translate(4px, 6px));
-        }
-        
-        &:nth-child(2) {
-          visibility: hidden;
-        }
-        
-        &:nth-child(3) {
-          border-width: 2px;
-          @include transform(rotate(-45deg) translate(8px, -10px));
-        }        
-        
-      }
-    }
-    
-    > ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      > li.line {
-        border: 1px solid white;
-        width: 100%;
-        margin-bottom: 7px;
-        @include transition-duration(0.1s);
-      }
-    }
-    
-    > .menu-txt {
-      width: 100%;
-      text-align: center;
-      font-size: 12px;
-      font-family: sans-serif;
-    }
-  }
-}
-
-.main-nav {
-  display: none;
-  opacity: 0;
-  font-family: sans-serif;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  transition: opacity 250ms;
-  
-  &.active {
-    display: block;
-    opacity: 1;
-    transition: opacity 250ms;
-  }
-  
-  > ul {
-    width: 100%;
-    display: block;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background-color: #cc3333;
-    box-shadow: 2px 2px 8px #777;
-    border-radius: 3px 3px 33.5px 3px;
-    
-    > li > a {
-      text-decoration: none;
-      display: block;
-      font-weight: 200;
-      padding: 18px 80px 18px 18px;
-      color: white;
-      
-      &:hover {
-        font-weight: 400;
-      }
-    }
-  }
-}
-
-</style>
 
 <!--
 <script>
