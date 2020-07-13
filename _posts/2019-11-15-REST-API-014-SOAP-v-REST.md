@@ -2,7 +2,7 @@
 layout:  post
 title:  REST v SOAP - A few perspectives
 date:    2019-11-14 12:31:19
-summary: In this article, we look at the major differences between SOAP and REST. OOPS.. actually, comparing the two is a little like comparing apples to oranges, as SOAP is a protocol format based on XML, whereas REST is an architectural approach.
+summary: In this article, we look at the major differences between SOAP and REST. OOPS actually, comparing the two is a little like comparing apples to oranges, as SOAP is a protocol format based on XML, whereas REST is an architectural approach.
 categories: RestAPI
 permalink:  /rest-vs-soap-web-services
 ---

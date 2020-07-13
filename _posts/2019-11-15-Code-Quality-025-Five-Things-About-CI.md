@@ -2,7 +2,7 @@
 layout:  post
 title:  Continuous Integration - 5 Important Questions or Tips
 date:    2019-11-14 12:31:19
-summary: Almost everybody does Continuous Integration today. But the question is : How effective is your Continuous Integration? In this short article, let's explore five important questions we need to ask about Continuous Integration (CI).
+summary: Almost everybody does Continuous Integration today. But the question is - How effective is your Continuous Integration? In this short article, let's explore five important questions we need to ask about Continuous Integration (CI).
 categories: SwBestPractices
 permalink:  /five-tips-on-continuous-integration-best-practices
 ---
