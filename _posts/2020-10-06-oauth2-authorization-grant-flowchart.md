@@ -45,6 +45,4 @@ It is an open authorization protocol that allows accessing the resource owner re
 
 Now we will describe the authorization code flow.
 
-![](/images/oauth2-markdowns/OAUTH2.0 - Authorization grant workflow.jpeg)
-
- 
+![](/images/oauth2-markdowns/authorization-grant-flowchart.jpeg)

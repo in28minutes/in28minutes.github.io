@@ -1,13 +1,13 @@
 ﻿---
 layout:  post
-title: Oauth2.0 - Implicit grant workflow
+title: Oauth2.0 - Client Credentials grant workflow
 date:    2020-10-07 19:40:00
-summary:  Let us understand the Oauth2.0 implicit grant workflow
+summary:  Let us understand the Oauth2.0 client credentials grant workflow
 categories:  SpringBootMicroservices
 permalink:  /oauth2-client-credentials-grant-workflow
 ---
 
-# OAUTH2.0 - Implicit Grant Workflow
+# OAUTH2.0 - Client Credentials Grant Workflow
 
 Greetings from [in28minutes.com](https://courses.in28minutes.com/).
 
@@ -46,4 +46,4 @@ https://someoauth2.somecompany.com/token?grant_type=client_credentials&client_id
 
 Let us understand this via a workflow diagram.
 
-![](/images/oauth2-markdowns/OAUTH2.0 - Client credentials grant workflow.jpeg)
+![](/images/oauth2-markdowns/client-credentials-grant-flowchart.jpeg)
