@@ -221,7 +221,6 @@ After App Reload, When you login to H2 Console (http://localhost:8080/h2-console
 
 <a target='_blank' href="https://links.in28minutes.com/aws-dev-associate-sbt" ><img src="https://www.springboottutorial.com/images/Course-aws-certified-developer-assoiciate.png" alt="Image" title="AWS Developer Associate Certification"></a>
 
-<a target='_blank' href="https://links.in28minutes.com/aws-dev-associate-sbt" ><img src="https://www.springboottutorial.com/images/Course-aws-certified-developer-assoiciate.png" alt="Image" title="AWS Developer Associate Certification"></a>
 <a href="https://links.in28minutes.com/in28minutes-Microservices" ><img src="https://www.springboottutorial.com/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png" alt="Image" title="Master Microservices with Spring Boot and Spring Cloud"></a>
 
 ---
