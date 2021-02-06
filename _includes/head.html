@@ -17,6 +17,7 @@
     {% if page.meta_robots %}<meta name="robots" content="{{ page.meta_robots }}">
     {% else %}<meta name="robots" content="all">{% endif %}
     <meta name="author" content="{{ site.author }}">
+    <meta name="google-site-verification" content="RMUCXIFgckv7PM8ZZQoNgwAEn2u99Rz6i8M5O_QGSuw" />
     {% if site.fb_page %}<meta property="fb:pages" content="{{ site.fb_page_id }}" />{% endif %}
     {% if page.categories %}<meta name="keywords" content="{{ page.categories | join: ', ' }}">{% endif %}
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
