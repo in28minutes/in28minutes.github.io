@@ -68,7 +68,11 @@ blockquote p {
 h1,
 .h1 {
   font-size: $h1;
-  margin-top: 2em;
+}
+
+h2,
+.h2 {
+  font-size: $h2;
 }
 
 h3,
