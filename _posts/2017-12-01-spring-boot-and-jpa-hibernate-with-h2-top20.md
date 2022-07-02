@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Integrating Hibernate and JPA with Spring Boot
-date:       2020-07-07 12:31:19
+date:       2022-07-02 07:55:19
 summary:    Learn using Spring Boot Starter JPA to connect Spring Boot to H2 (in memory database) using Hibernate/JPA. You will learn the basics of JPA and Hibernate - Entities and Keys. We will create a simple repository extending JPARepository and explore different methods it exposes.
 categories:  SpringBootJPA
 permalink:  /hibernate-jpa-tutorial-with-spring-boot-starter-jpa
@@ -40,7 +40,7 @@ A few details:
 ## Tools you will need
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
-- JDK 1.8+
+- JDK 17+
 
 ## Complete Maven Project With Code Examples
 > Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-jpa-with-hibernate-and-h2
@@ -175,13 +175,13 @@ Extract below shows some code from pom.xml of spring-boot-starter-jpa.
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-aop</artifactId>
-  <version>2.3.1.RELEASE</version>
+  <version>3.0.0-M3</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-jdbc</artifactId>
-  <version>2.3.1.RELEASE</version>
+  <version>3.0.0-M3</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
@@ -190,8 +190,8 @@ Extract below shows some code from pom.xml of spring-boot-starter-jpa.
   <scope>compile</scope>
 </dependency>
 <dependency>
-  <groupId>javax.transaction</groupId>
-  <artifactId>javax.transaction-api</artifactId>
+  <groupId>jakarta.transaction</groupId>
+  <artifactId>jakarta.transaction-api</artifactId>
   <scope>compile</scope>
 </dependency>
 <dependency>
@@ -216,6 +216,8 @@ H2 provides a web interface called H2 Console to see the data. Let's enable h2 c
 ```properties
 # Enabling H2 Console
 spring.h2.console.enabled=true
+spring.data.jpa.repositories.bootstrap-mode=default
+spring.jpa.defer-datasource-initialization=true
 ```
 
 When you reload the application, you can launch up H2 Console at http://localhost:8080/h2-console.
@@ -235,9 +237,10 @@ The first step is to create a JPA Entity. Lets create a simple Student Entity wi
 ```java
 package com.in28minutes.springboot.jpa.hibernate.h2.example.student;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+// Changed from javax to jakarta
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
 @Entity
 public class Student {
@@ -413,6 +416,9 @@ spring.datasource.url=jdbc:h2:mem:testdb
 spring.data.jpa.repositories.bootstrap-mode=default
 spring.jpa.properties.hibernate.format_sql=true
 logging.level.org.hibernate.type=trace
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
+spring.jpa.defer-datasource-initialization=true
 ```
 
 Some of the log that is generated (later when we execute queries) when we turn statistics on is shown below.
@@ -459,7 +465,7 @@ Code belows shows the SpringBoot2JPAWithHibernateAndH2Application class extended
 @SpringBootApplication
 public class SpringBoot2JPAWithHibernateAndH2Application implements CommandLineRunner {
 
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	StudentRepository repository;
