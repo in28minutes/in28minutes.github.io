@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Creating a REST Service with Spring Boot
-date:       2020-07-07 12:31:19
+date:       2022-07-09 07:14:13
 summary:    Setting up a basic example REST Service with Spring Boot. Its a cake walk.
 categories:  SpringBoot
 permalink:  /creating-rest-service-with-spring-boot
@@ -37,7 +37,7 @@ In this guide, we will create three services using proper URIs and HTTP methods:
 ## Tools you will need
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
-- JDK 1.8+
+- JDK 17
 
 ## Complete Maven Project With Code Examples
 > Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}
@@ -70,9 +70,9 @@ Richardson Maturity Model is used to identify the maturity level of a Restful We
 
 Always use HTTP Methods. Best practices with respect to each HTTP method is described below:
 
-- GET : Should not update anything. Should be idempotent (same result in multiple calls). Possible Return Codes 200 (OK) + 404 (NOT FOUND) +400 (BAD REQUEST)
+- GET : Should not update anything. Should be idempotent (same result in multiple calls). Possible Return Codes 200 (OK) + 404 (NOT FOUND) + 400 (BAD REQUEST)
 - POST : Should create new resource. Ideally return JSON with link to newly created resource. Same return codes as get possible. In addition : Return code 201 (CREATED) is possible.
-- PUT : Update a known resource. ex: update client details. Possible Return Codes : 200(OK)
+- PUT : Update a known resource. for example: update client details. Possible Return Codes : 200(OK)
 - DELETE : Used to delete a resource.
 
 ## Project Structure
@@ -183,8 +183,8 @@ public class StudentController {
 
 ```
 
-## Executing the Get Service Using Postman
-We will fire a request to http://localhost:8080/students/Student1/courses/Course1 to test the service. Response is as shown below.
+## Executing the Http Get Operation Using Postman
+We will access a request to http://localhost:8080/students/Student1/courses/Course1 to test the service. And will receive the following response shown in the below.
 
 ```json
 {
@@ -203,9 +203,9 @@ We will fire a request to http://localhost:8080/students/Student1/courses/Course
 Below picture shows how we can execute this Get Service from Postman - my favorite tool to run rest services.
 ![Image](/images/ExecutingGetRestServiceUsingPostman.png "Executing Rest Service From Postman")   
 
-## Adding a POST Rest Service
+## Adding a Http POST Operation Rest Service
 
-A POST Service should return a status of created (201) when the resource creation is successful. 
+A Http POST Operation should return a status of created (201) when the resource creation is successful. 
 
 `@PostMapping("/students/{studentId}/courses")`: Mapping a url for the POST Request
 `@RequestBody Course newCourse`: Using Binding to bind the body of the request to Course object.
@@ -229,9 +229,9 @@ A POST Service should return a status of created (201) when the resource creatio
 
 ```
 
-## Executing a POST Rest Service
+## Executing a Http POST Operation Rest Service
 
-Example Request is shown below. It contains all the details to register a course to a student. 
+Example request is shown below. It contains all the details to register a course to a student. 
 
 ```json
 {
@@ -245,7 +245,7 @@ Example Request is shown below. It contains all the details to register a course
 }
 ```
 
-Below picture shows how we can execute this Post Service from Postman - my favorite tool to run rest services. Make sure you go to the Body tab and select raw. Select JSON from the dropdown. Copy above request into body.
+Below picture shows how we can execute this Post operation from Postman - my favorite tool to run rest services. Make sure you go to the Body tab and select raw. Select JSON from the dropdown. Copy above request into body.
 
 The URL we use is http://localhost:8080/students/Student1/courses.
 
