@@ -88,12 +88,12 @@ Spring Boot Starter Parent specifies the default configuration for a host of plu
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-failsafe-plugin</artifactId>
 	<executions>
-	<execution>
-		<goals>
-		<goal>integration-test</goal>
-		<goal>verify</goal>
-		</goals>
-	</execution>
+		<execution>
+			<goals>
+				<goal>integration-test</goal>
+				<goal>verify</goal>
+			</goals>
+		</execution>
 	</executions>
 	<configuration>
 	   <classesDirectory>${project.build.outputDirectory}</classesDirectory>
@@ -117,7 +117,7 @@ Spring Boot Starter Parent specifies the default configuration for a host of plu
 	<configuration>
 		<archive>
 			<manifest>
-			<mainClass>${start-class}</mainClass>
+		    <mainClass>${start-class}</mainClass>
 			<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 			</manifest>
 		</archive>
