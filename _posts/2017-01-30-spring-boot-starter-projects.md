@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Initializing Projects with Spring Boot Starters - Web and JPA
-date:       2017-01-28 12:31:19
+date:       2022-07-09 12:31:19
 summary:    Key goal of Spring Boot is to enable a quick start to developing production ready applications. Most important components behind the features of Spring Boot are the Spring Boot Starter Projects. 
 categories:  SpringBoot
 permalink:  /spring-boot-starter-projects
@@ -28,7 +28,7 @@ This guide will help you understand how Spring Boot Starter Projects enable the 
 ## Tools you will need
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
-- JDK 1.8+
+- JDK 17
 
 ## Why do we need Spring Boot Starter Projects?
 
@@ -46,25 +46,27 @@ Listed below are some of the dependencies we use in our Spring MVC Course. These
 <dependency>
    <groupId>org.springframework</groupId>
    <artifactId>spring-webmvc</artifactId>
-   <version>4.2.2.RELEASE</version>
+   <version>6.0.0-M4</version>
 </dependency>
 
 <dependency>
     <groupId>com.fasterxml.jackson.core</groupId>
     <artifactId>jackson-databind</artifactId>
-    <version>2.5.3</version>
+    <version>2.13.3</version>
 </dependency>
 
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-validator</artifactId>
-    <version>5.0.2.Final</version>
+    <version>7.0.4.Final</version>
 </dependency>
 
 <dependency>
-    <groupId>log4j</groupId>
-    <artifactId>log4j</artifactId>
-    <version>1.2.17</version>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-bom</artifactId>
+    <version>2.17.2</version>
+    <type>pom</type>
+    <scope>import</scope>
 </dependency>
     
 ```
@@ -164,6 +166,8 @@ As shown in the image above, following steps have to be done.
   - Choose `student-services` as Artifact
   - Choose following dependencies
     - Web
+    - Actuator
+    - DevTools
 - Click Generate Project.
 - Import the project into Eclipse.
 - If you want to understand all the files that are part of this project, you can go here.

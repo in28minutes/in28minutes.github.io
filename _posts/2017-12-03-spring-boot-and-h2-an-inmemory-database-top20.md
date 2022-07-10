@@ -201,6 +201,7 @@ spring.datasource.username=sa
 spring.datasource.password=
 
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.defer-datasource-initialization=true
 ```
 
 It knows that you are using an in-memory database H2 and it uses the default url if you don’t provide one.
