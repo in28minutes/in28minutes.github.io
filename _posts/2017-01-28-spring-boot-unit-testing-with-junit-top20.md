@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Unit Testing Rest Services with Spring Boot and JUnit
-date:       2020-07-08 12:31:19
+date:       2022-07-10 12:31:19
 summary:    Setting up a Basic REST Service with Spring Boot is a cake walk. We will go one step further and add great unit tests to our RESTful Service.
 categories:  SpringBootUnitTesting
 permalink:  /unit-testing-for-spring-boot-rest-services
@@ -29,7 +29,7 @@ This guide will help you write great unit tests for your Spring Boot Rest Servic
 ## Tools you will need
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
-- JDK 1.8+
+- JDK 17
 
 ## Complete Maven Project With Code Examples
 
@@ -98,7 +98,7 @@ A student can take multiple courses. A course has an id, name, description and a
 - src/main/java/com/in28minutes/springboot/service/StudentService.java
 
 
-## Adding Couple of GET Rest Services
+## Adding the couple of Http GET Operations
 
 The Rest Service `StudentController` exposes couple of get services.
 
@@ -141,7 +141,7 @@ public class StudentController {
 
 ```
 
-## Executing the Get Service Using Postman
+## Executing the Http Get Operation Using Postman
 We will fire a request to http://localhost:8080/students/Student1/courses/Course1 to test the service. Response is as shown below.
 
 ```json
@@ -158,24 +158,25 @@ We will fire a request to http://localhost:8080/students/Student1/courses/Course
 }
 ```
 
-Below picture shows how we can execute this Get Service from Postman - my favorite tool to run rest services.
+Below picture shows how we can execute this Get Operation from Postman - my favorite tool to run rest services.
 ![Image](/images/ExecutingGetRestServiceUsingPostman.png "Executing Rest Service From Postman")   
 
 ## Add spring-security-test for disabling security in unit tests
 
 ```
 <dependency>
- 		    <groupId>org.springframework.security</groupId>
- 		    <artifactId>spring-security-test</artifactId>
- 		    <scope>test</scope>
- 		</dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-test</artifactId>
+	<scope>test</scope>
+</dependency>
 ```
 
-## Unit Testing the Get Rest Service
+## Unit Testing Http Get Operation
 
 When we are unit testing a rest service, we would want to launch only the specific controller and the related MVC Components. WebMvcTest annotation is used for unit testing Spring MVC application. This can be used when a test focuses only Spring MVC components. Using this annotation will disable full auto-configuration and only apply configuration relevant to MVC tests. 
 
-- `@RunWith(SpringRunner.class)` : SpringRunner is short hand for SpringJUnit4ClassRunner which extends BlockJUnit4ClassRunner providing the functionality to launch a Spring TestContext Framework.
+- `@ExtendWith(SpringExtension.class)` : `@ExtendWith` is a repeatable annotation that is used to register extensions for the annotated test class, test interface/method/parameter/field. Annotated parameters are supported in test class constructors, in test methods, and in @BeforeAll, @BeforeEach, @AfterAll, and @AfterEach.
+`SpringExtension` integrates the Spring TestContext Framework into JUnit 5's Jupiter programming model.
 - `@WebMvcTest(value = StudentController.class)`: WebMvcTest annotation is used for unit testing Spring MVC application. This can be used when a test focuses only Spring MVC components. In this test, we want to launch only StudentController. All other controllers and mappings will not be launched when this unit test is executed. 
 - `@Autowired private MockMvc mockMvc`: MockMvc is the main entry point for server-side Spring MVC test support. It allows us to execute requests against the test context.
 - `@MockBean private StudentService studentService`: MockBean is used to add mocks to a Spring ApplicationContext. A mock of studentService is created and auto-wired into the StudentController.
@@ -186,6 +187,8 @@ When we are unit testing a rest service, we would want to launch only the specif
 
 ```java
 package com.in28minutes.springboot.controller;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 
@@ -206,7 +209,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.in28minutes.springboot.model.Course;
 import com.in28minutes.springboot.service.StudentService;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @WebMvcTest(value = StudentController.class)
 @WithMockUser
 public class StudentControllerTest {
@@ -218,16 +221,14 @@ public class StudentControllerTest {
 	private StudentService studentService;
 
 	Course mockCourse = new Course("Course1", "Spring", "10Steps",
-			Arrays.asList("Learn Maven", "Import Project", "First Example",
-					"Second Example"));
+			Arrays.asList("Learn Maven", "Import Project", "First Example", "Second Example"));
 
 	String exampleCourseJson = "{\"name\":\"Spring\",\"description\":\"10Steps\",\"steps\":[\"Learn Maven\",\"Import Project\",\"First Example\",\"Second Example\"]}";
 
 	@Test
 	public void retrieveDetailsForCourse() throws Exception {
 
-		Mockito.when(
-				studentService.retrieveCourse(Mockito.anyString(),
+		Mockito.when(studentService.retrieveCourse(Mockito.anyString(),
 						Mockito.anyString())).thenReturn(mockCourse);
 
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
@@ -237,7 +238,8 @@ public class StudentControllerTest {
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
 		System.out.println(result.getResponse());
-		String expected = "{id:Course1,name:Spring,description:10Steps}";
+		String expected = "{\"id\":\"Course1\",\"name\":\"Spring\",\"description\":\"10 Steps\"}";
+
 
 		// {"id":"Course1","name":"Spring","description":"10 Steps, 25 Examples and 10K Students","steps":["Learn Maven","Import Project","First Example","Second Example"]}
 
@@ -249,9 +251,9 @@ public class StudentControllerTest {
 
 ```
 
-## Adding a POST Rest Service
+## Adding Http POST Operation
 
-A POST Service should return a status of created (201) when the resource creation is successful. 
+A Http POST Operation should return a status of created (201) when the resource creation is successful. 
 
 `@PostMapping("/students/{studentId}/courses")`: Mapping a url for the POST Request
 `@RequestBody Course newCourse`: Using Binding to bind the body of the request to Course object.
@@ -275,9 +277,9 @@ A POST Service should return a status of created (201) when the resource creatio
 
 ```
 
-## Executing a POST Rest Service
+## Executing the Http POST Operation
 
-Example Request is shown below. It contains all the details to register a course to a student. 
+Example request is shown below. It contains all the details to register a course to a student. 
 ```json
 {
   "name": "Microservices",
@@ -290,13 +292,13 @@ Example Request is shown below. It contains all the details to register a course
 }
 ```
 
-Below picture shows how we can execute this Post Service from Postman - my favorite tool to run rest services. Make sure you go to the Body tab and select raw. Select JSON from the dropdown. Copy above request into body.
+The below picture shows how we can execute this Http POST Operation from Postman - my favorite tool to run rest services. Make sure you go to the Body tab and select raw. Select JSON from the dropdown. Copy above request into body.
 
 The URL we use is http://localhost:8080/students/Student1/courses.
 
 ![Image](/images/ExecutingPostRestServiceUsingPostman.png "Executing Post Rest Service From Postman")   
 
-## Writing Unit Test for the POST Rest Service
+## Writing Unit Test for the Http POST Operation
 
 In the unit test, we would want to post the request body to the url `/students/Student1/courses`. In the response, we check for HttpStatus of Created and that the location header contains the url of the created resource.
 
@@ -312,8 +314,7 @@ In the unit test, we would want to post the request body to the url `/students/S
 				Arrays.asList("1", "2", "3", "4"));
 
 		// studentService.addCourse to respond back with mockCourse
-		Mockito.when(
-				studentService.addCourse(Mockito.anyString(),
+		Mockito.when(studentService.addCourse(Mockito.anyString(),
 						Mockito.any(Course.class))).thenReturn(mockCourse);
 
 		// Send course as body to /students/Student1/courses
@@ -334,7 +335,6 @@ In the unit test, we would want to post the request body to the url `/students/S
 	}
 
 ```
-
 
 
 ## Complete Code Example
@@ -359,15 +359,12 @@ In the unit test, we would want to post the request body to the url `/students/S
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.1.RELEASE</version>
+		<version>3.0.0-M3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<dependencies>
@@ -405,6 +402,27 @@ In the unit test, we would want to post the request body to the url `/students/S
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 
 </project>
@@ -476,8 +494,11 @@ import java.util.List;
 
 public class Course {
 	private String id;
+
 	private String name;
+
 	private String description;
+	
 	private List<String> steps;
 
 	// Needed by Caused by: com.fasterxml.jackson.databind.JsonMappingException:
@@ -562,12 +583,14 @@ import java.util.List;
 
 public class Student {
 	private String id;
+
 	private String name;
+
 	private String description;
+
 	private List<Course> courses;
 
-	public Student(String id, String name, String description,
-			List<Course> courses) {
+	public Student(String id, String name, String description, List<Course> courses) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -628,39 +651,37 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.in28minutes.springboot.model.Course;
 import com.in28minutes.springboot.model.Student;
 
-@Component
+@Service
 public class StudentService {
 
-	private static List<Student> students = new ArrayList<>();
+	private static final List<Student> students = new ArrayList<>();
+
+	private final SecureRandom random = new SecureRandom();
 
 	static {
 		//Initialize Data
-		Course course1 = new Course("Course1", "Spring", "10Steps", Arrays
-				.asList("Learn Maven", "Import Project", "First Example",
-						"Second Example"));
-		Course course2 = new Course("Course2", "Spring MVC", "10 Examples",
-				Arrays.asList("Learn Maven", "Import Project", "First Example",
-						"Second Example"));
-		Course course3 = new Course("Course3", "Spring Boot", "6K Students",
-				Arrays.asList("Learn Maven", "Learn Spring",
-						"Learn Spring MVC", "First Example", "Second Example"));
-		Course course4 = new Course("Course4", "Maven",
-				"Most popular maven course on internet!", Arrays.asList(
-						"Pom.xml", "Build Life Cycle", "Parent POM",
-						"Importing into Eclipse"));
+		Course courseOne = new Course("Course1", "Spring", "10Steps", Arrays.asList("Learn Maven", "Import Project", "First Example", "Second Example"));
+
+		Course courseTwo = new Course("Course2", "Spring MVC", "10 Examples",
+				Arrays.asList("Learn Maven", "Import Project", "First Example", "Second Example"));
+		
+		Course courseThree = new Course("Course3", "Spring Boot", "6K Students",
+				Arrays.asList("Learn Maven", "Learn Spring", "Learn Spring MVC", "First Example", "Second Example"));
+		
+		Course courseFour = new Course("Course4", "Maven", "Most popular maven course on internet!", Arrays.asList("Pom.xml", "Build Life Cycle", "Parent POM","Importing into Eclipse"));
 
 		Student ranga = new Student("Student1", "Ranga Karanam",
 				"Hiker, Programmer and Architect", new ArrayList<>(Arrays
-						.asList(course1, course2, course3, course4)));
+						.asList(courseOne, courseTwo, courseThree, courseFour)));
 
 		Student satish = new Student("Student2", "Satish T",
 				"Hiker, Programmer and Architect", new ArrayList<>(Arrays
-						.asList(course1, course2, course3, course4)));
+						.asList(courseOne, courseTwo, courseThree, courseFour)));
 
 		students.add(ranga);
 		students.add(satish);
@@ -682,11 +703,7 @@ public class StudentService {
 	public List<Course> retrieveCourses(String studentId) {
 		Student student = retrieveStudent(studentId);
 
-		if (student == null) {
-			return null;
-		}
-
-		return student.getCourses();
+	    return student == null ? null : student.getCourses();
 	}
 
 	public Course retrieveCourse(String studentId, String courseId) {
@@ -704,8 +721,6 @@ public class StudentService {
 
 		return null;
 	}
-
-	private SecureRandom random = new SecureRandom();
 
 	public Course addCourse(String studentId, Course course) {
 		Student student = retrieveStudent(studentId);
@@ -754,12 +769,12 @@ public class StudentServicesApplication {
 ```java
 package com.in28minutes.springboot.controller;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -769,7 +784,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
@@ -778,7 +793,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.in28minutes.springboot.model.Course;
 import com.in28minutes.springboot.service.StudentService;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @WebMvcTest(value = StudentController.class)
 @WithMockUser
 public class StudentControllerTest {
@@ -809,7 +824,7 @@ public class StudentControllerTest {
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
 		System.out.println(result.getResponse());
-		String expected = "{id:Course1,name:Spring,description:10Steps}";
+		String expected = "{\"id\":\"Course1\",\"name\":\"Spring\",\"description\":\"10 Steps\"}";
 
 		// {"id":"Course1","name":"Spring","description":"10 Steps, 25 Examples and 10K Students","steps":["Learn Maven","Import Project","First Example","Second Example"]}
 
@@ -823,8 +838,7 @@ public class StudentControllerTest {
 				Arrays.asList("1", "2", "3", "4"));
 
 		// studentService.addCourse to respond back with mockCourse
-		Mockito.when(
-				studentService.addCourse(Mockito.anyString(),
+		Mockito.when(studentService.addCourse(Mockito.anyString(),
 						Mockito.any(Course.class))).thenReturn(mockCourse);
 
 		// Send course as body to /students/Student1/courses
@@ -853,12 +867,12 @@ public class StudentControllerTest {
 ```java
 package com.in28minutes.springboot;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class StudentServicesApplicationTests {
 
