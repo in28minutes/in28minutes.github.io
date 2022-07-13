@@ -98,7 +98,7 @@ A student can take multiple courses. A course has an id, name, description and a
 - src/main/java/com/in28minutes/springboot/service/StudentService.java
 
 
-## Adding Couple of GET Rest Services
+## Adding Couple of Http GET Operations
 
 The Rest Service `StudentController` exposes couple of get services.
 
@@ -158,7 +158,7 @@ public class StudentController {
 
 ```
 
-## Executing the Get Service Using Postman
+## Executing the Http Get Operation Using Postman
 We will fire a request to http://localhost:8080/students/Student1/courses/Course1 to test the service. Response is as shown below.
 
 ```json
@@ -178,7 +178,7 @@ We will fire a request to http://localhost:8080/students/Student1/courses/Course
 Below picture shows how we can execute this Get Service from Postman - my favorite tool to run rest services.
 ![Image](/images/ExecutingGetRestServiceUsingPostman.png "Executing Rest Service From Postman")   
 
-## Integration Testing the Get Rest Service
+## Integration Testing with the Http Get Operation
 
 > When we are writing an integration test for a rest service, we would want to launch the entire spring context. 
 
@@ -237,7 +237,7 @@ public class StudentControllerIT {
 }
 ```
 
-## Adding a POST Rest Service
+## Adding Http POST Operation
 
 > A POST Service should return a status of created (201) when the resource creation is successful. 
 
@@ -260,7 +260,7 @@ public class StudentControllerIT {
 	}
 ```
 
-## Executing a POST Rest Service
+## Executing Http POST Operation
 
 Example Request is shown below. It contains all the details to register a course to a student. 
 ```json
@@ -275,13 +275,13 @@ Example Request is shown below. It contains all the details to register a course
 }
 ```
 
-Below picture shows how we can execute this Post Service from Postman - my favorite tool to run rest services. Make sure you go to the Body tab and select raw. Select JSON from the dropdown. Copy above request into body.
+Below picture shows how we can execute this Http Post Operation from Postman - my favorite tool to run rest services. Make sure you go to the Body tab and select raw. Select JSON from the dropdown. Copy above request into body.
 
 The URL we use is http://localhost:8080/students/Student1/courses.
 
 ![Image](/images/ExecutingPostRestServiceUsingPostman.png "Executing Post Rest Service From Postman")   
 
-## Writing Integration Test for the POST Rest Service
+## Writing Integration Test for the Http POST Operation 
 
 > When writing an integration test for a POST service we would want to check if the location header contains the uri of the created resource.
 
