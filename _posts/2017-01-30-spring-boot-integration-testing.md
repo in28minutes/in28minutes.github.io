@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Writing Integration Tests for Rest Services with Spring Boot
-date:       2020-07-09 12:31:19
+date:       2022-07-12 12:31:19
 summary:    Setting up a basic REST Service with Spring Boot is a cake walk. We will go one step further and add great integration tests! 
 categories:  SpringBootUnitTesting
 permalink:  /integration-testing-for-spring-boot-rest-services
@@ -29,7 +29,7 @@ This guide will help you write great integration tests for your Spring Boot Rest
 ## Tools you will need
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
-- JDK 1.8+
+- JDK 17
 
 ## Complete Maven Project With Code Examples
 > Our Github repository has all the code examples - [https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-rest-services-with-unit-and-integration-tests](https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-rest-services-with-unit-and-integration-tests)
@@ -110,34 +110,51 @@ The Rest Service `StudentController` exposes couple of get services.
 ```java
 package com.in28minutes.springboot.controller;
 
+import java.net.URI;
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.in28minutes.springboot.model.Course;
 import com.in28minutes.springboot.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 public class StudentController {
 
-	@Autowired
-	private StudentService studentService;
+    @Autowired
+    private StudentService studentService;
 
-	@GetMapping("/students/{studentId}/courses")
-	public List<Course> retrieveCoursesForStudent(@PathVariable String studentId) {
-		return studentService.retrieveCourses(studentId);
-	}
-	
+    @GetMapping("/students/{studentId}/courses")
+    public List<Course> retrieveCoursesForStudent(@PathVariable String studentId) {
+        return studentService.retrieveCourses(studentId);
+    }
+
 	@GetMapping("/students/{studentId}/courses/{courseId}")
-	public Course retrieveDetailsForCourse(@PathVariable String studentId,
-			@PathVariable String courseId) {
+	public Course retrieveDetailsForCourse(@PathVariable String studentId, @PathVariable String courseId) {
 		return studentService.retrieveCourse(studentId, courseId);
 	}
 
+    @PostMapping("/students/{studentId}/courses")
+    public ResponseEntity<Void> registerStudentForCourse(@PathVariable String studentId, @RequestBody Course newCourse) {
+
+        Course course = studentService.addCourse(studentId, newCourse);
+
+        if (course == null)
+            return ResponseEntity.noContent().build();
+
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(course.getId()).toUri();
+
+        return ResponseEntity.created(location).build();
+    }
+
 }
+
 
 ```
 
@@ -175,49 +192,49 @@ Below picture shows how we can execute this Get Service from Postman - my favori
 ```java
 package com.in28minutes.springboot.controller;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.json.JSONException;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.skyscreamer.jsonassert.JSONAssert;
-import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.in28minutes.springboot.StudentServicesApplication;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = StudentServicesApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class StudentControllerIT {
+    @LocalServerPort
+    private int port;
 
-	@LocalServerPort
-	private int port;
+    TestRestTemplate restTemplate = new TestRestTemplate();
 
-	TestRestTemplate restTemplate = new TestRestTemplate();
+    HttpHeaders headers = new HttpHeaders();
 
-	HttpHeaders headers = new HttpHeaders();
+    @Test
+    public void testRetrieveStudentCourse() throws JSONException {
 
-	@Test
-	public void testRetrieveStudentCourse() {
+        HttpEntity<String> entity = new HttpEntity<>(null, headers);
 
-		HttpEntity<String> entity = new HttpEntity<String>(null, headers);
+        ResponseEntity<String> response = restTemplate.exchange(
+                createURLWithPort("/students/Student1/courses/Course1"),
+                HttpMethod.GET, entity, String.class);
 
-		ResponseEntity<String> response = restTemplate.exchange(
-				createURLWithPort("/students/Student1/courses/Course1"),
-				HttpMethod.GET, entity, String.class);
+        String expected = "{\"id\":\"Course1\",\"name\":\"Spring\",\"description\":\"10 Steps\"}";
 
-		String expected = "{id:Course1,name:Spring,description:10Steps}";
+        JSONAssert.assertEquals(expected, response.getBody(), false);
+    }
 
-		JSONAssert.assertEquals(expected, response.getBody(), false);
-	}
-
-	private String createURLWithPort(String uri) {
-		return "http://localhost:" + port + uri;
-	}
-
+    private String createURLWithPort(String uri) {
+        return "http://localhost:" + port + uri;
+    }
+}
 ```
 
 ## Adding a POST Rest Service
@@ -230,20 +247,17 @@ public class StudentControllerIT {
 
 ```java
 	@PostMapping("/students/{studentId}/courses")
-	public ResponseEntity<Void> registerStudentForCourse(
-			@PathVariable String studentId, @RequestBody Course newCourse) {
+	public ResponseEntity<Void> registerStudentForCourse(@PathVariable String studentId, @RequestBody Course newCourse) {
 
 		Course course = studentService.addCourse(studentId, newCourse);
 
 		if (course == null)
 			return ResponseEntity.noContent().build();
 
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(
-				"/{id}").buildAndExpand(course.getId()).toUri();
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(course.getId()).toUri();
 
 		return ResponseEntity.created(location).build();
 	}
-
 ```
 
 ## Executing a POST Rest Service
@@ -278,9 +292,8 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 	@Test
 	public void addCourse() {
 
-		Course course = new Course("Course1", "Spring", "10Steps",
-				Arrays.asList("Learn Maven", "Import Project", "First Example",
-						"Second Example"));
+		Course course = new Course("Course1", "Spring", "10 Steps",
+				List.of("Learn Maven", "Import Project", "First Example", "Second Example"));
 
 		HttpEntity<Course> entity = new HttpEntity<Course>(course, headers);
 
@@ -288,13 +301,13 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 				createURLWithPort("/students/Student1/courses"),
 				HttpMethod.POST, entity, String.class);
 
-		String actual = response.getHeaders().get(HttpHeaders.LOCATION).get(0);
+		String actual = response.getHeaders()
+		.get(HttpHeaders.LOCATION)
+		.get(0);
 
 		assertTrue(actual.contains("/students/Student1/courses/"));
 
 	}
-
-
 ```
 
 
@@ -320,15 +333,12 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.1.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>3.0.0-M3</version>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<dependencies>
@@ -351,6 +361,11 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-test</artifactId>
+		    <scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -362,6 +377,27 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 		</plugins>
 	</build>
 
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>
 ```
@@ -375,6 +411,8 @@ package com.in28minutes.springboot.controller;
 import java.net.URI;
 import java.util.List;
 
+import com.in28minutes.springboot.model.Course;
+import com.in28minutes.springboot.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -384,40 +422,42 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.in28minutes.springboot.model.Course;
-import com.in28minutes.springboot.service.StudentService;
-
 @RestController
 public class StudentController {
 
-	@Autowired
-	private StudentService studentService;
+    @Autowired
+    private StudentService studentService;
 
-	@GetMapping("/students/{studentId}/courses")
-	public List<Course> retrieveCoursesForStudent(@PathVariable String studentId) {
-		return studentService.retrieveCourses(studentId);
-	}
-	
+    @GetMapping("/students/{studentId}/courses")
+    public List<Course> retrieveCoursesForStudent(
+		@PathVariable String studentId) {
+        return studentService.retrieveCourses(studentId);
+    }
+
 	@GetMapping("/students/{studentId}/courses/{courseId}")
-	public Course retrieveDetailsForCourse(@PathVariable String studentId,
-			@PathVariable String courseId) {
+	public Course retrieveDetailsForCourse(
+		@PathVariable String studentId,
+	    @PathVariable String courseId) {
 		return studentService.retrieveCourse(studentId, courseId);
 	}
-	
-	@PostMapping("/students/{studentId}/courses")
-	public ResponseEntity<Void> registerStudentForCourse(
-			@PathVariable String studentId, @RequestBody Course newCourse) {
 
-		Course course = studentService.addCourse(studentId, newCourse);
+    @PostMapping("/students/{studentId}/courses")
+    public ResponseEntity<Void> registerStudentForCourse(
+		@PathVariable String studentId,
+		@RequestBody Course newCourse) {
 
-		if (course == null)
-			return ResponseEntity.noContent().build();
+        Course course = studentService.addCourse(studentId, newCourse);
 
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(
-				"/{id}").buildAndExpand(course.getId()).toUri();
+        if (course == null)
+            return ResponseEntity.noContent().build();
 
-		return ResponseEntity.created(location).build();
-	}
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(course.getId())
+                .toUri();
+
+        return ResponseEntity.created(location).build();
+    }
 
 }
 ```
@@ -581,42 +621,35 @@ package com.in28minutes.springboot.service;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import org.springframework.stereotype.Component;
 
 import com.in28minutes.springboot.model.Course;
 import com.in28minutes.springboot.model.Student;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class StudentService {
 
-	private static List<Student> students = new ArrayList<>();
+	private static final List<Student> students = new ArrayList<>();
+
+	private final SecureRandom random = new SecureRandom();
 
 	static {
 		//Initialize Data
-		Course course1 = new Course("Course1", "Spring", "10Steps", Arrays
-				.asList("Learn Maven", "Import Project", "First Example",
-						"Second Example"));
-		Course course2 = new Course("Course2", "Spring MVC", "10 Examples",
-				Arrays.asList("Learn Maven", "Import Project", "First Example",
-						"Second Example"));
-		Course course3 = new Course("Course3", "Spring Boot", "6K Students",
-				Arrays.asList("Learn Maven", "Learn Spring",
-						"Learn Spring MVC", "First Example", "Second Example"));
-		Course course4 = new Course("Course4", "Maven",
-				"Most popular maven course on internet!", Arrays.asList(
-						"Pom.xml", "Build Life Cycle", "Parent POM",
-						"Importing into Eclipse"));
+		Course courseOne = new Course("Course1", "Spring", "10 Steps",
+				List.of("Learn Maven", "Import Project", "First Example", "Second Example"));
 
-		Student ranga = new Student("Student1", "Ranga Karanam",
-				"Hiker, Programmer and Architect", new ArrayList<>(Arrays
-						.asList(course1, course2, course3, course4)));
+		Course courseTwo = new Course("Course2", "Spring MVC", "10 Examples", 
+		        List.of("Learn Maven", "Import Project", "First Example", "Second Example"));
 
-		Student satish = new Student("Student2", "Satish T",
-				"Hiker, Programmer and Architect", new ArrayList<>(Arrays
-						.asList(course1, course2, course3, course4)));
+		Course courseThree = new Course("Course3", "Spring Boot", "6K Students",
+				List.of("Learn Maven", "Learn Spring", "Learn Spring MVC", "First Example", "Second Example"));
+
+		Course courseFour = new Course("Course4", "Maven", "Most popular maven course on internet!", List.of("Pom.xml", "Build Life Cycle", "Parent POM", "Importing into Eclipse"));
+
+		Student ranga = new Student("Student1", "Ranga Karanam", "Hiker, Programmer and Architect", new ArrayList<>(List.of(courseOne, courseTwo, courseThree, courseFour)));
+
+		Student satish = new Student("Student2", "Satish T", "Hiker, Programmer and Architect", new ArrayList<>(List.of(courseOne, courseTwo, courseThree, courseFour)));
 
 		students.add(ranga);
 		students.add(satish);
@@ -638,11 +671,7 @@ public class StudentService {
 	public List<Course> retrieveCourses(String studentId) {
 		Student student = retrieveStudent(studentId);
 
-		if (student == null) {
-			return null;
-		}
-
-		return student.getCourses();
+		return student == null ? null : student.getCourses();
 	}
 
 	public Course retrieveCourse(String studentId, String courseId) {
@@ -660,8 +689,6 @@ public class StudentService {
 
 		return null;
 	}
-
-	private SecureRandom random = new SecureRandom();
 
 	public Course addCourse(String studentId, Course course) {
 		Student student = retrieveStudent(studentId);
@@ -710,74 +737,71 @@ public class StudentServicesApplication {
 ```java
 package com.in28minutes.springboot.controller;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.Arrays;
+import java.util.List;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import com.in28minutes.springboot.StudentServicesApplication;
+import com.in28minutes.springboot.model.Course;
+import org.json.JSONException;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.skyscreamer.jsonassert.JSONAssert;
-import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.in28minutes.springboot.StudentServicesApplication;
-import com.in28minutes.springboot.model.Course;
-
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = StudentServicesApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class StudentControllerIT {
+    @LocalServerPort
+    private int port;
 
-	@LocalServerPort
-	private int port;
+    TestRestTemplate restTemplate = new TestRestTemplate();
 
-	TestRestTemplate restTemplate = new TestRestTemplate();
+    HttpHeaders headers = new HttpHeaders();
 
-	HttpHeaders headers = new HttpHeaders();
+    @Test
+    public void testRetrieveStudentCourse() throws JSONException {
 
-	@Test
-	public void testRetrieveStudentCourse() {
+        HttpEntity<String> entity = new HttpEntity<>(null, headers);
 
-		HttpEntity<String> entity = new HttpEntity<String>(null, headers);
+        ResponseEntity<String> response = restTemplate.exchange(
+                createURLWithPort("/students/Student1/courses/Course1"),
+                HttpMethod.GET, entity, String.class);
 
-		ResponseEntity<String> response = restTemplate.exchange(
-				createURLWithPort("/students/Student1/courses/Course1"),
-				HttpMethod.GET, entity, String.class);
+        String expected = "{\"id\":\"Course1\",\"name\":\"Spring\",\"description\":\"10 Steps\"}";
 
-		String expected = "{id:Course1,name:Spring,description:10Steps}";
+        JSONAssert.assertEquals(expected, response.getBody(), false);
+    }
 
-		JSONAssert.assertEquals(expected, response.getBody(), false);
-	}
+    @Test
+    public void addCourse() {
 
-	@Test
-	public void addCourse() {
+        Course course = new Course("Course1", "Spring", "10Steps",
+                List.of("Learn Maven", "Import Project", "First Example",
+                        "Second Example"));
 
-		Course course = new Course("Course1", "Spring", "10Steps",
-				Arrays.asList("Learn Maven", "Import Project", "First Example",
-						"Second Example"));
+        HttpEntity<Course> entity = new HttpEntity<>(course, headers);
 
-		HttpEntity<Course> entity = new HttpEntity<Course>(course, headers);
+        ResponseEntity<String> response = restTemplate.exchange(
+                createURLWithPort("/students/Student1/courses"),
+                HttpMethod.POST, entity, String.class);
 
-		ResponseEntity<String> response = restTemplate.exchange(
-				createURLWithPort("/students/Student1/courses"),
-				HttpMethod.POST, entity, String.class);
+        String actual = response.getHeaders().get(HttpHeaders.LOCATION).get(0);
 
-		String actual = response.getHeaders().get(HttpHeaders.LOCATION).get(0);
+        assertTrue(actual.contains("/students/Student1/courses/"));
 
-		assertTrue(actual.contains("/students/Student1/courses/"));
+    }
 
-	}
-
-	private String createURLWithPort(String uri) {
-		return "http://localhost:" + port + uri;
-	}
-
+    private String createURLWithPort(String uri) {
+        return "http://localhost:" + port + uri;
+    }
 }
-
 ```
 ---
