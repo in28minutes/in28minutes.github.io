@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Spring Boot vs Spring MVC vs Spring - How do they compare?
-date:       2022-07-20 12:31:19
+date:       2022-07-19 12:31:19
 summary:    How does Spring Boot compare with Spring MVC and Spring? What is Spring Boot? What is Spring MVC? What is Spring Framework? What are their goals? How do they compare?
 categories:  SpringBoot
 permalink:  /spring-boot-vs-spring-mvc-vs-spring
