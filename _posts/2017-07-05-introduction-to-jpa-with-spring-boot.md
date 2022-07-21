@@ -1,19 +1,19 @@
 ---
 layout:     post
 title:      JPA and Hibernate Tutorial using Spring Boot Data JPA
-date:       2020-07-08 12:31:19
+date:       2022-07-20 12:31:19
 summary:    Complete journey starting from JDBC to JPA to Spring Data JPA using an example with Spring Boot Data JPA starter project. We use Hibernate as the JPA Implementation.
 categories:  SpringBootJPA
 permalink:  /introduction-to-jpa-with-spring-boot-data-jpa
 ---
 
-This guide will help you understand what JPA is and setup a simple JPA example using Spring Boot.
+This guide will help you understand what JPA is and how to setup a simple JPA example using Spring Boot.
  
 ## You will learn
 - What is JPA?
-- What is the problem solved by JPA - Object Relational Impedance?
+- What is the problem solved by JPA-Object Relational Impedance?
 - What are the alternatives to JPA? 
-- What is Hibernate and How does it relate to JPA?
+- What is Hibernate and how does it relate to JPA?
 - What is Spring Data JPA?
 - How to create a simple JPA project using Spring Boot Data JPA Starter?
 
@@ -27,31 +27,31 @@ This guide will help you understand what JPA is and setup a simple JPA example u
 
 
 
-## Tools you will need
+## You will require the following tools:
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
-- JDK 1.8+
+- JDK 17
 - In memory database H2
 
 ## What is Object Relational Impedance Mismatch?
 
 ![Image](/images/JPA_01_Introduction.png "JPA Introduction")
 
-Java is an object oriented programming language. In Java, all data is stored in objects.
+Java is an object-oriented programming language. In Java, all data is stored in objects.
 
-Typically, Relational databases are used to store data (These days, a number of other NoSQL data stores are also becoming popular - We will stay away from them, for now).  Relational databases store data in tables.
+Typically, relational databases are used to store data (these days, a number of other NoSQL data stores are also becoming popular; we will stay away from them, for now). Relational databases store data in tables.
 
-The way we design objects is different from the way the relational databases are designed. This results in an impedance mismatch.
- - Object Oriented programming consists of concepts like encapsulation, inheritance, interfaces and polymorphism 
- - Relational databases are made up of Tables with concepts like normalization 
+The way we design objects is different from the way relational databases are designed. This results in an impedance mismatch.
+ - Object-oriented programming consists of concepts like encapsulation, inheritance, interfaces, and polymorphism.
+ - Relational databases are made up of tables with concepts like normalization.
 
 ### Examples of Object Relational Impedance Mismatch
 
-Lets consider a simple example - Employees and Tasks.
+Let's consider a simple example: Employees and Tasks.
 
-Each Employee can have multiple Tasks. Each Task can be shared by multiple Employees. There is a Many to Many relationship between them. Let's consider a few examples of impedance mismatch.
+Each `Employee` can have multiple tasks. Each `Task`can be shared by multiple Employees. There is a many-to-many relationship between them. Let's consider a few examples of impedance mismatch.
 
-#### Example 1 : Task table below is mapped to Task Table. However, there are mismatches in column names.
+#### Example 1: The task table below is mapped to the task table. However, there are mismatches in column names.
 
 ```java
 public class Task {
@@ -78,9 +78,9 @@ public class Task {
   ) 
 ```
 
-#### Example 2 : Relationships between objects are expressed in a different way compared with relationship between tables.
+#### Example 2: Relationships between objects are expressed in a different way compared with those between tables.
 
-Each Employee can have multiple Tasks. Each Task can be shared by multiple Employees. There is a Many to Many relationship between them.
+Each `Employee` can have multiple `Tasks`. Each `Task` can be shared by multiple employees. There is a many-to-many relationship between them.
 
 ```java
 public class Employee {
@@ -120,7 +120,7 @@ CREATE TABLE employee
 
 ```
 
-#### Example 3 : Some times multiple classes are mapped to a single table and vice-versa
+#### Example 3: Sometimes multiple classes are mapped to a single table and vice-versa.
 
 Objects
 
@@ -158,20 +158,20 @@ CREATE TABLE employee
 
 ```
 
-## Other approaches before JPA - JDBC, Spring JDBC & myBatis
+## Other approaches before JPA-JDBC, Spring JDBC & myBatis
 
 Other approaches before JPA focused on queries and how to translate results from queries to objects.
 
-Any approach using query typically does two things
-- Setting parameters to the query. We need to read values from objects and set them as parameters to the query.
-- Liquidation of results from the query. The results from the query need to be mapped to the beans.
+Any approach using a query typically does two things.
+- Setting parameters to the query requires us to read values from objects and set them as parameters to the query.
+- Liquidation of results from the query: the results from the query need to be mapped to the beans.
 
 ### JDBC
-- JDBC stands for Java Database Connectivity
-- It used concepts like Statement, PreparedStatement and ResultSet
+- JDBC stands for Java Database Connectivity.
+- It used concepts like Statement, PreparedStatement, and ResultSet.
 - In the example below, the query used is ```Update todo set user=?, desc=?, target_date=?, is_done=? where id=?```
-- The values needed to execute the query are set into the query using different set methods on the PreparedStatement
-- Results from the query are populated into the ResultSet. We had to write code to liquidate the ResultSet into objects.
+- The values needed to execute the query are set into the query using different set methods on the PreparedStatement.
+- Results from the query are populated into the ResultSet. We had to write code to liquidate the result set into objects.
 
 
 #### Update Todo
@@ -183,8 +183,7 @@ PreparedStatement st = connection.prepareStatement(
 
 st.setString(1, todo.getUser());
 st.setString(2, todo.getDesc());
-st.setTimestamp(3, new Timestamp(
-		todo.getTargetDate().getTime()));
+st.setTimestamp(3, new Timestamp(todo.getTargetDate().getTime()));
 st.setBoolean(4, todo.isDone());
 st.setInt(5, todo.getId());
 
@@ -195,7 +194,7 @@ st.close();
 connection.close();
 ```
 
-#### Retrieve a Todo
+#### Retrieved by Todo
 ```java
 Connection connection = datasource.getConnection();
 
@@ -227,9 +226,9 @@ return null;
 ### Spring JDBC
 
 - Spring JDBC provides a layer on top of JDBC
-- It used concepts like JDBCTemplate
-- Typically needs lesser number of lines compared to JDBC as following are simplified
-   - mapping parameters to queries
+- It used concepts like JDBCTemplate.
+- typically needs a lesser number of lines compared to JDBC as the following are simplified.
+   - mapping parameters to queries.
    - liquidating resultsets to beans
 
 
@@ -280,14 +279,14 @@ class TodoMapper implements RowMapper<Todo> {
 
 ### myBatis
 
-MyBatis removes the need for manually writing code to set parameters and retrieve results. It provides simple XML or Annotation based configuration to map Java POJOs to database.
+MyBatis removes the need for manually writing code to set parameters and retrieve results. It provides a simple XML or annotation based configuration to map Java POJOs to the database.
 
-We compare the approaches used to write queries below:
+Below, we compare the approaches used to write queries.
 
 - JDBC or Spring JDBC - ```Update todo set user=?, desc=?, target_date=?, is_done=? where id=?```
 - myBatis - ```Update todo set user=#{user}, desc=#{desc}, target_date=#{targetDate}, is_done=#{isDone} where id=#{id}```
 
-#### Update Todo and Retrieve Todo
+#### Todo Update and Todo Retrieve
 
 ```java
 @Mapper
@@ -318,27 +317,27 @@ public class Todo {
 
 ```
 
-### Common features of JDBC, Spring JDBC and myBatis
-- JDBC, Spring JDBC and myBatis involve writing queries.
-- In big application, queries can become complex. Especially when we retrieve data from multiple tables.
+### Common features of JDBC, Spring JDBC, and myBatis
+- JDBC, Spring JDBC, and myBatis involve writing queries.
+- Queries in a large application can become complex, especially when retrieving data from multiple tables.
 - This creates a problem whenever there are changes in the structure of the database.
 
-## How does JPA Work?
+## How does JPA work?
 
 JPA evolved as a result of a different thought process. How about mapping the objects directly to tables?
  - Entities
  - Attributes
  - Relationships
 
-This Mapping is also called ORM - Object Relational Mapping. Before JPA, ORM was the term more commonly used to refer to these frameworks. Thats one of the reasons, Hibernate is called a ORM framework.
+This mapping is also called ORM-Object Relational Mapping. Before JPA, ORM was the term more commonly used to refer to these frameworks. That's one of the reasons Hibernate is called an ORM framework.
 
 ## Important Concepts in JPA
 
 ![Image](/images/JPA_02_Architecture.png "JPA Architecuture")
 
-JPA allows to map application classes to tables in database.
-- Entity Manager - Once the mappings are defined, entity manager can manage your entities. Entity Manager handles all interactions with the database
-- JPQL (Java Persistence Query Language) - Provides ways to write queries to execute searches against entities. Important thing to understand is the these are different from SQL queries. JPQL queries already understand the mappings that are defined between entities. We can add additional conditions as needed.
+JPA allows you to map application classes to tables in a database.
+- Once the mappings are defined, the entity manager can manage your entities. The Entity Manager handles all interactions with the database.
+- JPQL (Java Persistence Query Language) -Provides ways to write queries to execute searches against entities. The important thing to understand is that these are different from SQL queries. JPQL queries already understand the mappings that are defined between entities. We can add additional conditions as needed.
 - Criteria API defines a Java based API to execute searches against databases.
 
 ## JPA vs Hibernate
@@ -352,29 +351,29 @@ JPA defines the specification. It is an API.
  - Who manages the entities?
 
 Hibernate is one of the popular implementations of JPA.
- - Hibernate understands the mappings that we add between objects and tables. It ensures that data is stored/retrieved from the database based on the mappings.
- - Hibernate also provides additional features on top of JPA. But depending on them would mean a lock in to Hibernate. You cannot move to other JPA implementations like Toplink.
+ - Hibernate understands the mappings that we add between objects and tables. It ensures that data is stored and retrieved from the database based on the mappings.
+ - Hibernate also provides additional features on top of JPA. But depending on them would mean a lock-in to Hibernate. You can not move to other JPA implementations like Toplink.
 
 ## Examples of JPA Mappings
 
-Lets look at a few examples to understand how JPA can be used to map objects to tables.
+Let's look at a few examples to understand how JPA can be used to map objects to tables.
 
 #### Example 1
 
-Task class below is mapped to Task table. However, there are mismatches in column names. We use a few JPA annotations to do the mapping
+The Task class below is mapped to the Task table. However, there are mismatches in column names. We use a few JPA annotations to do the mapping.
  - @Table(name = "Task")
  - @Id
  - @GeneratedValue
  - @Column(name = "description")
  
 ```java
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Task")
@@ -408,9 +407,9 @@ public class Task {
 
 #### Example 2
 
-Relationships between objects are expressed in a different way compared to relationship between tables.
+Relationships between objects are expressed in a different way compared to those between tables.
 
-Each Employee can have multiple Tasks. Each Task can be shared by multiple Employees. There is a Many to Many relationship between them. We use @ManyToMany annotation to establish the relationship.
+Each `Employee` can have multiple `Tasks`. Each `Task` can be shared by multiple Employees. There is a many-to-many relationship between them. We use @ManyToMany annotation to establish the relationship.
 
 ```java
 public class Employee {
@@ -454,7 +453,7 @@ CREATE TABLE employee
 
 #### Example 3
 
-Some times multiple classes are mapped to a single table and vice-versa. In these situations, we define a inheritance strategy. In this example, we use a strategy of InheritanceType.SINGLE_TABLE.
+Sometimes multiple classes are mapped to a single table and vice-versa. In these situations, we define a inheritance strategy. In this example, we use a strategy of InheritanceType.SINGLE_TABLE.
 
 Objects
 
@@ -504,7 +503,7 @@ Creating a JPA application with Spring Initializr is very simple.
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-As shown in the image above, following steps have to be done
+As shown in the image above, the following steps have to be taken.
 
 - Launch Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} and choose the following
   - Choose `com.in28minutes.springboot` as Group
@@ -513,17 +512,17 @@ As shown in the image above, following steps have to be done
     - Web
     - JPA
     - H2 - We use H2 as in memory database
-- Click Generate Project button at the bottom of the page.
+- Click the "Generate" button at the bottom of the page.
 - Import the project into Eclipse.
 
-#### Structure of the project created
+#### The structure of the project created
 
-- H2InMemoryDbDemoApplication.java - Spring Boot Launcher. Initializes Spring Boot Auto Configuration and Spring Application Context.
+- H2InMemoryDbDemoApplication.java-Spring Boot Launcher. It initialises Spring Boot Auto Configuration and Spring Application Context.
 - application.properties - Application Configuration file.
-- H2InMemoryDbDemoApplicationTests.java - Simple launcher for use in unit tests.
-- pom.xml - Included dependencies for Spring Boot Starter Web and Data JPA. Uses Spring Boot Starter Parent as parent pom.
+- H2InMemoryDbDemoApplicationTests.java - A straightforward launcher for use in unit tests.
+- pom.xml - I included dependencies for Spring Boot Starter Web and Data JPA. It uses Spring Boot Starter Parent as the parent pom.
 
-Important dependencies are shown below:
+Important dependencies are shown below.
 
 ```xml
 <dependency>
@@ -545,16 +544,16 @@ Important dependencies are shown below:
 
 ### User Entity
 
-Lets define a bean User and add the appropriate JPA annotations.
+Let's define a bean user and add the appropriate JPA annotations.
 
 ```java
 package com.example.h2.user;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
 
 @Entity
 @NamedQuery(query = "select u from User u", name = "query_find_all_users")
@@ -581,15 +580,15 @@ public class User {
 ```
 Important things to note:
  - ```@Entity```: Specifies that the class is an entity. This annotation is applied to the entity class.
- - ```@NamedQuery```: Specifies a static, named query in the Java Persistence query language.
- - ```@Id```: Specifies the primary key of an entity.
+ - ```@NamedQuery```: In the Java Persistence query language, specifies a static, named query.
+ - ```@Id```: Specifies an entity's primary key.
  - ```@GeneratedValue```: Provides for the specification of generation strategies for the values of primary keys.
- - ```protected User()```: Default constructor to make JPA Happy
+ - ```protected User()```: Default constructor to make JPA Happy.
 
 
 ## User Service to talk to Entity Manager
 
-Typically with JPA we need to create a service to talk to the entity manager. In this example, we create a UserService to manage the persistence of user entity.
+Typically, with JPA, we need to create a service to talk to the entity manager. In this example, we create a UserService to manage the persistence of a user entity.
 
 ```java
 @Repository
@@ -616,12 +615,12 @@ public class UserService {
 }
 ```
 Important things to note
- - ```@Repository```: Spring Annotation to indicate that this component handles storing data to a data store.
- - ```@Transactional```: Spring annotation used to simplify transaction management
+ - ```@Repository```: This is a Spring Annotation to indicate that this component handles storing data to a data store.
+ - ```@Transactional```: Spring annotations are used to simplify transaction management.
  - ```@PersistenceContext```: A persistence context handles a set of entities which hold data to be persisted in some persistence store (e.g. a database). In particular, the context is aware of the different states an entity can have (e.g. managed, detached) in relation to both the context and the underlying persistence store.
- - ```EntityManager``` : Interface used to interact with the persistence context.
- - ```entityManager.persist(user)```: Make user entity instance managed and persistent i.e. saved to database.
- - ```entityManager.createNamedQuery```: Creates an instance of TypedQuery for executing a Java Persistence query language named query. The second parameter indicates the type of result.
+ - ```EntityManager``` : The interface is used to interact with the persistence context.
+ - ```entityManager.persist(user)```: Make user entity instances managed and persistent, i.e., saved to the database.
+ - ```entityManager.createNamedQuery```: It creates an instance of TypedQuery for executing a Java Persistence query language named query. The second parameter indicates the type of result.
 
 Notes from http://docs.oracle.com/javaee/6/api/javax/persistence/EntityManager.html#createNamedQuery(java.lang.String)
 
@@ -629,9 +628,9 @@ Notes from http://docs.oracle.com/javaee/6/api/javax/persistence/EntityManager.h
 
 > The set of entities that can be managed by a given EntityManager instance is defined by a persistence unit. A persistence unit defines the set of all classes that are related or grouped by the application, and which must be colocated in their mapping to a single database.
 
-## User Entity Manager Command Line Runner
+## Command Line Runner for User Entity Manager
 
-CommandLineRunner interface is used to indicate that this bean has to be run as soon as the Spring application context is initialized. 
+The CommandLineRunner interface is used to indicate that this bean has to be run as soon as the Spring application context is initialized.
 
 We are executing a few simple methods on the UserService.
 
@@ -669,8 +668,8 @@ public class UserEntityManagerCommandLineRunner implements CommandLineRunner {
 ```
 
 Important things to note: 
- - @Autowired private UserService userService: Autowire the user service.
- - Rest of the stuff is straight forward.
+ - `@Autowired` private UserService userService: The user service is autowired.
+ - The rest of the stuff is straight-forward.
 
 ## Spring Data JPA
 
@@ -703,15 +702,14 @@ public class UserService {
 }
 ```
 
-As far as JPA is concerned there are two Spring Data modules that you would need to know
- - Spring Data Commons - Defines the common concepts for all Spring Data Modules. 
+As far as JPA is concerned, there are two Spring Data modules that you would need to know about.
+ - Spring Data Commons defines the concepts that are shared by all Spring Data Modules. 
  - Spring Data JPA - Provides easy integration with JPA repositories.
-
 
 
 ### CrudRepository
 
-CrudRepository is the pre-defined core repository class (in Spring Data Commons) enabling the basic CRUD functions on a repository. Important methods are shown below.
+CrudRepository is the Spring Data Commons pre-defined core repository class that enables the basic CRUD functions on a repository. Important methods are shown below.
 
 ```java
 public interface CrudRepository<T, ID extends Serializable>
@@ -735,14 +733,14 @@ public interface CrudRepository<T, ID extends Serializable>
 
 ### JpaRepository
 
-JpaRepository (Defined in Spring Data JPA) is the JPA specific Repository interface.
+JpaRepository (defined in Spring Data JPA) is the JPA-specific repository interface.
 
 ```java
 public interface JpaRepository<T, ID extends Serializable>
 		extends PagingAndSortingRepository<T, ID>, QueryByExampleExecutor<T> {
 ```
 
-We will now use the JpaRepository to manage the User entity. Below snippet shows the important details. We would want the UserRepository to manage the User entity which has a primary key of type Long.
+We will now use the JpaRepository to manage the user entity. The below snippet shows the important details. We would want the UserRepository to manage the User entity which has a primary key of type Long.
 
 ```java
 package com.example.h2.user;
@@ -753,9 +751,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
 }
 ```
 
-### User Repository CommandLineRunner
+### User Repository: CommandLineRunner
 
-The code below is very simple. CommandLineRunner interface is used to indicate that this bean has to be run as soon as the Spring application context is initialized. We are executing a few simple methods on the UserRepository.
+The code below is very simple. The CommandLineRunner interface is used to indicate that this bean has to be run as soon as the Spring application context is initialized. We are executing a few simple methods on the UserRepository.
 
 
 ```java
@@ -793,8 +791,8 @@ public class UserRepositoryCommandLineRunner implements CommandLineRunner {
 }
 ```
 Important things to note: 
- - @Autowired private UserRepository userRepository: Auto wiring the user repository.
- - Rest of the stuff is straight forward.
+ - @Autowired private UserRepository userRepository: The user repository is autowired.
+ - The rest of the stuff is straight-forward.
 
 ### H2 Console
 We will enable h2 console in /src/main/resources/application.properties
@@ -803,37 +801,37 @@ We will enable h2 console in /src/main/resources/application.properties
 spring.h2.console.enabled=true
 ```
 
-You can start the application by running H2InMemoryDbDemoApplication as a java application. 
+You can start the application by running H2InMemoryDbDemoApplication as a Java application.
 
-You can also run the H2-Console on the browser
+The H2-Console can also be accessed via the web browser.
 - http://localhost:8080/h2-console
 - Use db url jdbc:h2:mem:testdb
 
 ### Questions
-- Where is the database created?
+- Where was the database created?
   - In Memory - Using H2
 - What schema is used to create the tables?
-  - Created based on the entities defined
+  - created based on the entities defined
 - Where are the tables created?
   - Created based on the entities defined
   - In Memory - Using H2
 - Can I see the data in the database?
    - http://localhost:8080/h2-console
    - Use db url jdbc:h2:mem:testdb
-- Where is Hibernate coming in from?
-  - Through Spring Data JPA Starter
-- How is a datasource created?
+- Where is Hibernate coming from?
+  - Through the Spring Data JPA Starter
+- How is a data source created?
   - Through Spring Boot Auto Configuration 
 
-### Magic of Spring Boot and in Memory Database
+### Spring Boot's magic and in-memory databases
 - Zero project setup or infrastructure
 - Zero Configuration
 - Zero Maintainance
 - Easy to use for Learning and Unit Tests
 - Simple Configuration to switch to a real database
 
-### Restrictions of using inmemory database
-- Data is not persisted between restarts
+### Restrictions on using in-memory databases
+- Data is not persisted between restarts.
 
 
 
@@ -859,15 +857,12 @@ You can also run the H2-Console on the browser
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.1.RELEASE</version>
+		<version>3.0.0-M3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		<java.version>1.7</java.version>
 	</properties>
 
 	<dependencies>
@@ -906,14 +901,6 @@ You can also run the H2-Console on the browser
 
 	<repositories>
 		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
@@ -925,14 +912,6 @@ You can also run the H2-Console on the browser
 
 	<pluginRepositories>
 		<pluginRepository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
@@ -941,7 +920,6 @@ You can also run the H2-Console on the browser
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
 
 </project>
 ```
@@ -970,11 +948,11 @@ public class H2InMemoryDbDemoApplication {
 ```java
 package com.example.h2.user;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
 
 @Entity
 @NamedQuery(query = "select u from User u", name = "query_find_all_users")
@@ -1036,10 +1014,10 @@ package com.example.h2.user;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.transaction.Transactional;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
+import jakarta.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
@@ -1159,8 +1137,9 @@ public class UserRepositoryCommandLineRunner implements CommandLineRunner {
 spring.h2.console.enabled=true
 #logging.level.org.hibernate=debug
 spring.jpa.show-sql=true
-spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.url=jdbc:h2:mem:testdb;NON_KEYWORDS=USER
 spring.data.jpa.repositories.bootstrap-mode=default
+spring.jpa.defer-datasource-initialization=true
 ```
 ---
 
@@ -1178,12 +1157,12 @@ insert into user (id, name, role) values (103, 'Satish', 'Admin');
 ```java
 package com.example.h2;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class H2InMemoryDbDemoApplicationTests {
 
@@ -1202,17 +1181,17 @@ package com.example.h2.user;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.example.h2.user.UserRepository;
 
 @DataJpaTest
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public class UserRepositoryTest {
 
 	@Autowired
