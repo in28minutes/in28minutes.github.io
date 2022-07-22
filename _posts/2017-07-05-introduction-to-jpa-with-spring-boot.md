@@ -49,7 +49,7 @@ The way we design objects is different from the way relational databases are des
 
 Let's consider a simple example: Employees and Tasks.
 
-Each `Employee` can have multiple tasks. Each `Task`can be shared by multiple Employees. There is a many-to-many relationship between them. Let's consider a few examples of impedance mismatch.
+Each `Employee` can have multiple tasks. Each `Task` can be shared by multiple Employees. There is a many-to-many relationship between them. Let's consider a few examples of impedance mismatch.
 
 #### Example 1: The task table below is mapped to the task table. However, there are mismatches in column names.
 
@@ -862,7 +862,7 @@ The H2-Console can also be accessed via the web browser.
 	</parent>
 
 	<properties>
-		<java.version>1.7</java.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<dependencies>
