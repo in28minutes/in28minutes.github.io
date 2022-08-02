@@ -1,22 +1,22 @@
 ---
 layout:     post
 title:      Spring Boot Tutorial For Beginners in 10 Steps
-date:       2020-07-08 12:31:19
-summary:    Introduction to Spring Boot in 10 Steps. Learn the basics of Spring Boot setting up a basic project example with Spring Boot.
+date:       2022-08-02 12:31:19
+summary:    An Introduction to Spring Boot in 10 Steps Learn the basics of Spring Boot by setting up a basic project example with Spring Boot.
 categories: SpringBoot
 permalink:  /spring-boot-introduction-in-10-steps
 ---
 
-## Spring Boot Goals
+## Spring Boot Goals:
 
-- Enable building production ready applications quickly
-- Provide common non-functional features 
-	- embedded servers
-	- metrics
-	- health checks
-	- externalized configuration
+- Enables building production-ready applications quickly.
+- It provides common non-functional features.
+	- Embedded servers
+	- Metrics
+	- Health checks
+	- Externalized configuration
 
-## Free Courses - Learn in 10 Steps
+## Free Courses: Learn in 10 Steps
 
 - [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://links.in28minutes.com/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
 - [Learn Spring Boot in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-springboot){:target="_blank"}
@@ -27,8 +27,8 @@ permalink:  /spring-boot-introduction-in-10-steps
 
 
 ## What Spring Boot is NOT!
-- ZERO code generation
-- Neither an application server nor a web server
+- ZERO code generation.
+- There is no application server or web server.
 
 ## Features
 - Quick Starter Projects with Auto Configuration
@@ -37,53 +37,53 @@ permalink:  /spring-boot-introduction-in-10-steps
 - Embedded Servers 
 	- Tomcat, Jetty or Undertow
 - Production-ready features
-	- metrics and health checks 
-	- externalized configuration
+	- Metrics and health checks 
+	- Externalized configuration
  
 ## URLs
 - http://localhost:8080/books => Few hardcoded books 
 
 
-## Step By Step Details
-- Step 1 : Introduction to Spring Boot - Goals and Important Features
-- Step 2 : Developing Spring Applications before Spring Boot
-- Step 3 : Using Spring Initializr to create a Spring Boot Application
+## Step by Step Details
+- Step 1 : Introduction to Spring Boot—Goals and Important Features
+- Step 2: Create Spring Applications Prior to Spring Boot
+- Step 3: Creating a Spring Boot Application with Spring Initializr
 - Step 4 : Creating a Simple REST Controller
 - Step 5 : What is Spring Boot Auto Configuration?
-	- Recommended Reading - http://www.springboottutorial.com/spring-boot-auto-configuration
-	- Spring based applications have a lot of configuration. When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, web jars(for delivering static content) among other things. When we use Hibernate/JPA, we would need to configure a datasource, an entity manager factory, a transaction manager among a host of other things. Spring Boot brings in new thought process around this - Can we bring more intelligence into this? When a spring mvc jar is added into an application, can we auto configure some beans automatically?
-- Step 6 : Spring Boot vs Spring vs Spring MVC
-	- Recommended Reading - http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring
-	- Spring is about Dependency Injection. It makes it easy to develop loosely coupled applications. It makes applications testable.
-	- Spring MVC brings loose coupling to web mvc application development with features like Dispatcher Servlet, View Resolver etc
+	- Recommended Reading-http://www.springboottutorial.com/spring-boot-auto-configuration
+	- Spring-based applications have a lot of configuration. When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, and web jars(for delivering static content), among other things. When we use Hibernate/JPA, we would need to configure a datasource, an entity manager factory, and a transaction manager, among a host of other things. The Spring Boot brings in a new thought process around this: Can we bring more intelligence into this? When a spring mvc jar is added into an application, can we auto configure some beans automatically?
+- Step 6 : Spring Boot vs. Spring vs. Spring MVC
+	- Recommended Reading-http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring
+	- Spring is about `Dependency Injection`. It makes it easy to develop *loosely coupled applications*. It makes applications *testable*.
+	- Spring MVC brings loose coupling to web MVC application development with features like `Dispatcher Servlet, View Resolver`, etc.
 	- Spring Boot eliminates the need for manual configuration with Spring and Spring MVC. You can use Spring and Spring MVC without needing a lot of configuration. 
-	- Spring Boot aims to enable production ready applications in quick time.
-		- Actuator : Enables Advanced Monitoring and Tracing of applications.
-		- Embedded Server Integrations - Since server is integrated into the application, I would NOT need to have a separate application server installed on the server.
+	- Spring Boot aims to enable production-ready applications in quick time.
+		- **Actuator** : Enables Advanced `Monitoring and Tracing` of applications.
+		- **Embedded Server Integrations** : Because the server is built into the application, I don't need to install a separate application server on the server.
 		- Default Error Handling
-- Step 7 : Spring Boot Starter Projects - Starter Web and Starter JPA
-	- Recommended Reading - http://www.springboottutorial.com/spring-boot-starter-projects
-	- Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop-shop for all the Spring and related technology that you need, without having to hunt through sample code and copy paste loads of dependency descriptors. For example, if you want to get started using Spring and JPA for database access, just include the spring-boot-starter-data-jpa dependency in your project, and you are good to go.
-- Step 8 : Overview of different Spring Boot Starter Projects
-	- As we see from Spring Boot Starter Web, starter projects help us in quickly getting started with developing specific types of applications.
-	- spring-boot-starter-web-services - SOAP Web Services
-	- spring-boot-starter-web - Web & RESTful applications
-	- spring-boot-starter-test - Unit testing and Integration Testing
-	- spring-boot-starter-jdbc - Traditional JDBC
-	- spring-boot-starter-hateoas - Add HATEOAS features to your services
-	- spring-boot-starter-security - Authentication and Authorization using Spring Security
-	- spring-boot-starter-data-jpa - Spring Data JPA with Hibernate
-	- spring-boot-starter-cache - Enabling Spring Framework’s caching support
-	- spring-boot-starter-data-rest - Expose Simple REST Services using Spring Data REST
-	- spring-boot-starter-actuator - To use advanced features like monitoring & tracing to your application out of the box
-	- spring-boot-starter-undertow, spring-boot-starter-jetty, spring-boot-starter-tomcat - To pick your specific choice of Embedded Servlet Container
-	- spring-boot-starter-logging - For Logging using logback
-	- spring-boot-starter-log4j2 - Logging using Log4j2
+- Step 7 : Spring Boot Starter Projects: Starter Web and Starter JPA
+	- Recommended Reading-http://www.springboottutorial.com/spring-boot-starter-projects
+	- `Starters` are a set of convenient `dependency descriptors` that you can include in your application. You get a one-stop-shop for all the Spring and related technology that you need, without having to hunt through sample code and copy-paste loads of dependency descriptors. *For example*, if you want to get started using Spring and JPA for database access, just include the `spring-boot-starter-data-jpa` dependency in your project, and you are good to go.
+- Step 8: A Summary of the Different Spring Boot Starter Projects
+	- As we see from Spring Boot Starter Web, starter projects help us to quickly get started with developing specific types of applications.
+	- `spring-boot-starter-web-services`-*SOAP Web Services*
+	- `spring-boot-starter-web`-*Web & RESTful applications*
+	- `spring-boot-starter-test`-*Unit Testing and Integration Testing*
+	- `spring-boot-starter-jdbc`-*Traditional JDBC*
+	- `spring-boot-starter-hateoas`-*Add HATEOAS features to your services.*
+	- `spring-boot-starter-security`-*Authentication and Authorization using Spring Security*
+	- `spring-boot-starter-data-jpa`-*Spring Data JPA with Hibernate*
+	- `spring-boot-starter-cache`-*Enabling Spring Framework’s caching support*
+	- `spring-boot-starter-data-rest`-*Expose Simple REST Services using Spring Data REST*
+	- `spring-boot-starter-actuator`-*To add advanced features such as monitoring and tracing to your application right away.*
+	- `spring-boot-starter-undertow, spring-boot-starter-jetty, spring-boot-starter-tomcat`-*To pick your specific choice of Embedded Servlet Container*
+	- `spring-boot-starter-logging`-*For Logging using Logback*
+	- `spring-boot-starter-log4j2`-*Logging using Log4j2*
 - Step 9 : Spring Boot Actuator
-	- Spring Boot starter actuator actually exposes a lot of REST services and these services are compliant with the standard called HAL standard. And we would use a hal browser so that we can browse through the data which is provided by these services.Spring Boot Actuator exposes a lot of data -  application info, metrics, dump, beans, env, config properties, audit events, heap dump, loggers, trace, health mappings and auto config.  Actuator provides more metadata about your application. 
+	- The Spring Boot starter actuator actually exposes a lot of REST services, and these services are compliant with the standard called the HAL standard. And we would use a hal explorer so that we can browse through the data which is provided by these services. The Spring Boot Actuator exposes a lot of data-application info: `metrics, dump, beans, env, config properties, audit events, heap dump, loggers, trace, health mappings, and auto config`. *The Actuator provides more metadata about your application.* 
 - Step 10 : Spring Boot Developer Tools
-	- Why do you need to restart your server for every java and jsp change?
-	- Spring Boot Developer Tools enables dynamic reloading of modified changes.
+	- Why do you need to restart your server for every Java and JSP change?
+	- The Spring Boot Developer Tools enable dynamic reloading of modified changes.
 - Spring Boot - Conclusion
 
 
@@ -108,15 +108,12 @@ permalink:  /spring-boot-introduction-in-10-steps
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.1.RELEASE</version>
+		<version>3.0.0-M4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<dependencies>
@@ -132,7 +129,7 @@ permalink:  /spring-boot-introduction-in-10-steps
 
 		<dependency>
 			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-rest-hal-browser</artifactId>
+			<artifactId>spring-data-rest-hal-explorer</artifactId>
 		</dependency>
 
 <!-- 
@@ -166,14 +163,6 @@ permalink:  /spring-boot-introduction-in-10-steps
 
 	<repositories>
 		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
@@ -181,17 +170,9 @@ permalink:  /spring-boot-introduction-in-10-steps
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-	</repositories>
+   </repositories>
 
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
+   <pluginRepositories>
 		<pluginRepository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
@@ -201,8 +182,6 @@ permalink:  /spring-boot-introduction-in-10-steps
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
-
 </project>
 ```
 ---
@@ -212,37 +191,25 @@ permalink:  /spring-boot-introduction-in-10-steps
 ```java
 package com.in28minutes.springboot.basics.springbootin10steps;
 
-public class Book {
-	long id;
-	String name;
-	String author;
+public record Book(long id, String name, String author) {
+	public static String UNKNOWN_AUTHOR = "Unknown";
+    public static String UNNAMED = "Unnamed";
 
-	public Book(long id, String name, String author) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.author = author;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public String getAuthor() {
-		return author;
-	}
-
-	@Override
-	public String toString() {
-		return String.format("Book [id=%s, name=%s, author=%s]", id, name, author);
-	}
+	  public Book {
+		    Objects.requireNonNull(name);
+		    Objects.requireNonNull(author);
+	  }
+	
+	  public Book(String name) {
+		 this(name, UNKNOWN_AUTHOR);
+	  }
+	
+	  public static Book unnamed(String author) {
+		return new Book(UNNAMED, author);
+	  }
 
 }
-```
+``` 
 ---
 
 ### /src/main/java/com/in28minutes/springboot/basics/springbootin10steps/BooksController.java
@@ -260,8 +227,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BooksController {
 	@GetMapping("/books")
 	public List<Book> getAllBooks() {
-		return Arrays.asList(
-				new Book(1l, "Mastering Spring 5.2", "Ranga Karanam"));
+		return List.of(new Book(1L, "Mastering Spring 5.2", "Ranga Karanam"));
 	}
 }
 ```
@@ -284,9 +250,9 @@ public class SpringbootIn10StepsApplication {
 		ApplicationContext applicationContext = 
 				SpringApplication.run(SpringbootIn10StepsApplication.class, args);
 		
-		for (String name : applicationContext.getBeanDefinitionNames()) {
-			System.out.println(name);
-		}
+		
+		applicationContext.getBeanDefinitionNames()
+		                  .forEach(System.out::println)
 	}
 }
 ```
@@ -305,12 +271,12 @@ management.endpoints.web.exposure.include=*
 ```java
 package com.in28minutes.springboot.basics.springbootin10steps;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class SpringbootIn10StepsApplicationTests {
 
