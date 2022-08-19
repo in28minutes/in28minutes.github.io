@@ -1,25 +1,25 @@
 ---
 layout:     post
 title:      Spring MVC Tutorial for Beginners - in 25 Easy Steps
-date:       2022-08-01 12:31:19
-summary:    In this course, you will learn the basics of developing a basic todo management application using Spring MVC with login and logout functionalities.
+date:       2017-10-19 12:31:19
+summary:    In this course, you will learn the basics developing a Basic Todo Management Application using Spring MVC with Login and Logout functionalities.
 categories: SpringFramework
 permalink:  /spring-mvc-tutorial-for-beginners
 ---
 
-Developing your first Spring MVC Web application is fun.
+Developing your first Spring MVC Web Application is fun.
 
-In this course, you will learn the basics of developing a basic todo management application using Spring MVC with login and logout functionalities.
+In this course, you will learn the basics developing a Basic Todo Management Application using Spring MVC with Login and Logout functionalities.
 
-You will build the website step by step—more than 25 steps. This course would be a perfect first step as an introduction to Java Web Application Development.
+You will build the website step by step - in more than 25 steps. This course would be a perfect first step as an introduction to Java Web Application Development.
 
-You will be using Spring (Dependency Management), Spring MVC, Spring Security (Authentication and Authorization), BootStrap (Styling Pages), Maven (dependency management), Eclipse (IDE), and Tomcat Web Server. We will help you set up each one of these.
+You will be using Spring (Dependency Management), Spring MVC, Spring Security (Authentication and Authorization), BootStrap (Styling Pages), Maven (dependencies management), Eclipse (IDE) and Tomcat Web Server. We will help you set up each one of these.
 
 ## Course Link
 [![Image](/images/Course-Spring-MVC-For-Beginners-Build-Java-Web-App-in-25-Steps.png "Spring MVC For Beginners : Build Java Web App in 25 Steps")](https://links.in28minutes.com/MISC-SPRING-MVC){:target="_blank"}
 
 
-## Free Courses: Learn in 10 Steps
+## Free Courses - Learn in 10 Steps
 
 - [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://links.in28minutes.com/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
 - [Learn Spring Boot in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-springboot){:target="_blank"}
@@ -32,10 +32,10 @@ You will be using Spring (Dependency Management), Spring MVC, Spring Security (A
 
 You will learn about
 - DispatcherServlet
-- Basic Todo Management Application with Login and Logout
-- Model, Controllers, ViewResolver, and Filters
-- Forms-DataBinding, Validation
-- Annotation based approach-`@RequestParam, @PathVariable, @ModelAttribute, @SessionAttributes` etc.
+- Basic Todo Management Application with Login/Logout
+- Model, Controllers, ViewResolver and Filters
+- Forms - DataBinding, Validation
+- Annotation based approach - @RequestParam, @PathVariable, @ModelAttribute, @SessionAttributes etc
 - Bootstrap to style the page
 - Spring Security
 - Internationalization
@@ -44,46 +44,46 @@ You will learn about
 
 ## Step Wise Details
 
-- Step 11: Set up the app to use Spring MVC.
-- Step 12: Create the Spring MVC Controller, `@ResponseBody`, and `@Controller` objects.
-- Step 13: Redirect to Login JSP-LoginController, `@ResponseBody`-and `View Resolver`
-- Step 14: DispatcherServlet and Log4j.
-- Step 15: Show userid and password on the welcome page-ModelMap and `@RequestParam`
-- Step 16: LoginService and Remove all JEE Servlet-based Code
-- Step 17: Spring Auto-wiring and Dependency Management-`@Autowired` and `@Service`
-- Step 18: Create a TodoController and a list-todos view. Make TodoService a `@Service` and inject it.
-- Step 19: Web Application Architecture
-- Step 20: More about the Spring Framework
-- Step 21: Session vs. Model vs. Request-`@SessionAttributes`
-- Step 22: New Todo and redirect to a Controller
-- Step 23: JSTL
-- Step 24: Bootstrap-using Webjars
-- Step 25: Let's delete a Todo
-- Step 26: Format and add HTML5 Validations with Bootstrap.
-- Step 27: Introduce JSR 349 Validations using the Hibernate Validator First Command Bean.
-- Step 28: Let's update a Todo
-- Step 29: Let's add a Target Date for Todo—Use initBinder to Handle Date Fields
-- Step 30: The navigation bar and JSP Fragments
-- Step 31: Let's prepare for spring security.
-- Step 32: Initial Setup for Spring Security
-- Step 33: Spring Security was used to refactor and add Logout functionality.
-- Step 34: Exception Handling in Spring MVC-`@ControllerAdvice`, `@ExceptionHandler` and error-page in web.xml
-- Step 35: Let's add Internationalization-i18n
-- Step 36: Basic Spring Rest Services-`@RestController` and jackson-databind
-- Step 37: More Rest Services-`@PathVariable`
+- Step 11 : Configure application to use Spring MVC
+- Step 12 : First Spring MVC Controller, @ResponseBody, @Controller
+- Step 13 : Redirect to Login JSP - LoginController, @ResponseBody - and View Resolver
+- Step 14 : DispatcherServlet and Log4j
+- Step 15 : Show userid and password on the welcome page - ModelMap and @RequestParam
+- Step 16 : LoginService and Remove all JEE Servlets based code
+- Step 17 : Spring Auto-wiring and Dependency Management - @Autowired and @Service
+- Step 18 : Create TodoController and list-todos view. Make TodoService a @Service and inject it.
+- Step 19 : Web Application Architecture
+- Step 20 : More about Spring Framework
+- Step 21 : Session vs Model vs Request - @SessionAttributes
+- Step 22 : New Todo and redirect to a Controller
+- Step 23 : JSTL
+- Step 24 : Bootstrap - using Webjars
+- Step 25 : Let's delete a Todo
+- Step 26 : Use Bootstrap to format and add HTML5 Validations
+- Step 27 : Introduce JSR 349 Validations using Hibernate Validator First Command Bean.
+- Step 28 : Let's update a Todo
+- Step 29 : Let's add a Target Date for Todo - Use initBinder to Handle Date Fields
+- Step 30 : Navigation bar and JSP Fragments
+- Step 31 : Let's prepare for Spring Security
+- Step 32 : Initial Setup for Spring Security
+- Step 33 : Refactor and add Logout Functionality using Spring Security
+- Step 34 : Exception Handling in Spring MVC - @ControllerAdvice, @ExceptionHandler and error-page in web dot xml
+- Step 35 : Let's add Internationalization - i18n
+- Step 36 : Basic Spring Rest Services - @RestController and jackson-databind
+- Step 37 : More Rest Services - @PathVariable
 
 
-## Step by Step Details
+## Step By Step Details
 
 ### Step 01 : Up and running with a Web Application in Tomcat
 
 In this step, we will quickly setup a running web application.
 
-> Tip : This is one of the few steps where you copy the code! We would want to ensure that you have a running web application without any mistakes.
+> Tip : This is one of the few steps where you copy code in! We would want to ensure that you have a running web application without any mistakes.
 
 You can run the project using Run as > Maven build > tomcat7:run.
 
-You can copy the code from 
+You can copy code from 
 - [Step 01 on Github Repository](https://github.com/in28minutes/JavaWebApplicationStepByStep/blob/master/Step01.md)
 
 \pom.xml
@@ -100,7 +100,7 @@ You can copy the code from
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
-			<version>8.0.1</version>
+			<version>6.0</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -110,22 +110,17 @@ You can copy the code from
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.8.1</version>
+					<version>3.2</version>
 					<configuration>
 						<verbose>true</verbose>
-						<source>17</source>
-						<target>17</target>
+						<source>1.7</source>
+						<target>1.7</target>
 						<showWarnings>true</showWarnings>
 					</configuration>
 				</plugin>
 				<plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>3.3.1</version>
-                </plugin>
-				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
-					<artifactId>tomcat8-maven-plugin</artifactId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
 					<version>2.2</version>
 					<configuration>
 						<path>/</path>
@@ -197,7 +192,7 @@ public class LoginServlet extends HttpServlet {
 ```
 Java Platform, Enterprise Edition (Java EE) JEE6
 
-A Servlet is a Java programming language class used to extend the capabilities of servers that host applications accessed by means of a request-response programming model.
+Servlet is a Java programming language class used to extend the capabilities of servers  that host applications accessed by means of a request-response programming model.
 
 Notes
 - ```extends javax.servlet.http.HttpServlet``` - All servlets should extend HttpServlet class
@@ -245,7 +240,7 @@ My First JSP!!!
 
 
 
-### Step 03 : Adding a Get Parameter Name
+### Step 03 : Adding a Get Parameter name
 
 [Complete code](https://github.com/in28minutes/JavaWebApplicationStepByStep/blob/master/Step03.md)
 
@@ -259,7 +254,8 @@ We read the request parameter and set it as a request attribute. Request attribu
 \src\main\java\webapp\LoginServlet.java
 
 ```java
-request.setAttribute("name", request.getParameter("name"));
+request.setAttribute("name", 
+		request.getParameter("name"));
 ```
 
 \src\main\webapp\WEB-INF\views\login.jsp
@@ -274,8 +270,9 @@ My First JSP!!! My name is ${name}
 #### Code Snippets and Examples
 
 \src\main\java\webapp\LoginServlet.java
-```java
-request.setAttribute("password", request.getParameter("password"));
+```
+request.setAttribute("password",
+                  request.getParameter("password"));
 ```
 
 \src\main\webapp\WEB-INF\views\login.jsp
@@ -290,11 +287,13 @@ My First JSP!!! My name is ${name} and password is ${password}
 #### Code Snippets and Examples
 
 \src\main\java\webapp\LoginServlet.java
-```java
+```
 @Override
-protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-	request.getRequestDispatcher("/WEB-INF/views/login.jsp")
-		   .forward(request, response);
+protected void doGet(HttpServletRequest request, HttpServletResponse response)
+		throws IOException, ServletException {
+	request
+		.getRequestDispatcher("/WEB-INF/views/login.jsp")
+		.forward(request, response);
 }
 ```
 
@@ -350,7 +349,7 @@ Welcome ${name}
 </html>
 ```
 
-### Step 07: Password Addition and User Id Validation
+### Step 07 : Adding Password and Validation of User Id
 
 [Complete code](https://github.com/in28minutes/JavaWebApplicationStepByStep/blob/master/Step07.md)
 
@@ -404,43 +403,43 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
 ```
 
 
-### Step 11: Set up the app to use Spring MVC.
+###  Step 11 : Configure application to use Spring MVC
 
 #### What we will do
 
-Before we start with the flows, we need to configure the application to use Spring MVC.
-- Let's do a little bit of refactoring. Rename the webapp package to com. in28minutes.jee
-- We need the Spring MVC Framework and its dependencies. Add the required jars to the project.
-- Spring MVC uses the Front Controller Pattern -> Dispatcher Servlet. Insert the Dispatcher Servlet into web.xml.
-- DispatcherServlet needs a Spring Application Context to launch. We will create an xml file (/WEB-INF/todo-servlet.xml). Step 4: Include Spring Context
+Before we start with the Flows, we need to configure application to use Spring MVC
+- Lets do a little bit of Refactoring. Mini Step 1: Rename package webapp to com.in28minutes.jee
+- We need Spring MVC Framework and its dependencies. Mini Step 2 : Add required jars to the project
+- Spring MVC uses Front Controller Pattern -> Dispatcher Servlet. Mini Step 3 : Add Dispatcher Servlet to web.xml
+- DispatcherServlet needs an Spring Application Context to launch. We will create an xml (/WEB-INF/todo-servlet.xml). Mini Step 4: Add Spring Context
 
 #### Useful Snippets
 pom.xml
 ```
-<dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-webmvc</artifactId>
-	<version>6.0.0-M5</version>
-</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.2.2.RELEASE</version>
+		</dependency>
 ```
 web.xml
 ```
-<servlet>
-	<servlet-name>dispatcher</servlet-name>
-	<servlet-class>
-		org.springframework.web.servlet.DispatcherServlet
-	</servlet-class>
-	<init-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/todo-servlet.xml</param-value>
-	</init-param>
-	<load-on-startup>1</load-on-startup>
-</servlet>
-
-<servlet-mapping>
-	<servlet-name>dispatcher</servlet-name>
-	<url-pattern>/spring-mvc/*</url-pattern>
-</servlet-mapping>
+	    <servlet>
+	        <servlet-name>dispatcher</servlet-name>
+	        <servlet-class>
+	            org.springframework.web.servlet.DispatcherServlet
+	        </servlet-class>
+	        <init-param>
+	            <param-name>contextConfigLocation</param-name>
+	            <param-value>/WEB-INF/todo-servlet.xml</param-value>
+	        </init-param>
+	        <load-on-startup>1</load-on-startup>
+	    </servlet>
+	
+	    <servlet-mapping>
+	        <servlet-name>dispatcher</servlet-name>
+	        <url-pattern>/spring-mvc/*</url-pattern>
+	    </servlet-mapping>
 ```
 todo-servlet.xml
 ```
@@ -489,14 +488,14 @@ todo-servlet.xml
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
-			<version>8.0.1</version>
+			<version>6.0</version>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>6.0.0-M5</version>
+			<version>4.2.2.RELEASE</version>
 		</dependency>
 	</dependencies>
 
@@ -506,17 +505,17 @@ todo-servlet.xml
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.8.1</version>
+					<version>3.2</version>
 					<configuration>
 						<verbose>true</verbose>
-						<source>17</source>
-						<target>17</target>
+						<source>1.8</source>
+						<target>1.8</target>
 						<showWarnings>true</showWarnings>
 					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
-					<artifactId>tomcat8-maven-plugin</artifactId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
 					<version>2.2</version>
 					<configuration>
 						<path>/</path>
@@ -554,7 +553,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
 
-	private final LoginService service = new LoginService();
+	private LoginService service = new LoginService();
 
 	@Override
 	protected void doGet(HttpServletRequest request,
@@ -652,14 +651,14 @@ Welcome ${name}
 </web-app>
 ```
 
-###  Step 12: Create the Spring MVC Controller, @ResponseBody, and @Controller objects.
+###  Step 12 : First Spring MVC Controller, @ResponseBody, @Controller
 
 #First Spring MVC Controller
-- @GetMapping("/login")
+- @RequestMapping(value = "/login", method = RequestMethod.GET)
 - http://localhost:8080/spring-mvc/login
 - web.xml - <url-pattern>/spring-mvc/*</url-pattern>
 - Why @ResponseBody?
-- Importance of GetMapping method
+- Importance of RequestMapping method
 - Can I have multiple urls rendered from Same Controller?
 
 #Snippets
@@ -667,13 +666,13 @@ Welcome ${name}
 package com.in28minutes.springmvc;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class LoginController {
 
-	@GetMapping("/login")
+	@RequestMapping(value = "/login")
 	@ResponseBody
 	public String sayHello() {
 		return "Hello World dummy";
@@ -682,19 +681,19 @@ public class LoginController {
 
 ```
 
-###  Step 13 : Redirect to Login JSP-LoginController, @ResponseBody-and View Resolver
+###  Step 13 : Redirect to Login JSP - LoginController, @ResponseBody - and View Resolver
 
 ##### /src/main/java/com/in28minutes/springmvc/login/LoginController.java New
 ```
 package com.in28minutes.springmvc.login;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class LoginController {
-	@GetMapping("/login")
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String showLoginPage() {
 		return "login";
 	}
@@ -703,15 +702,15 @@ public class LoginController {
 ##### /src/main/webapp/WEB-INF/todo-servlet.xml Modified
 New Lines
 ```
-<bean
-	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	<property name="prefix">
-		<value>/WEB-INF/views/</value>
-	</property>
-	<property name="suffix">
-		<value>.jsp</value>
-	</property>
-</bean>
+    <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/views/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
 ```
 
 #### Redirect to Login JSP
@@ -765,18 +764,18 @@ New Lines
 ```
 Welcome ${name}. 
 ```
-#### What we want to do
-- Understand the importance of DispatcherServlet
-- Add the Logging Framework Log4j to better understand the flow. 
+#### What we want to do:
+- Understand importance of DispatcherServlet.
+- Add Logging Framework Log4j to understand the flow much more. 
 
-#### Request Flow in Spring MVC
-- HTTP Request is received by DispatcherServlet. 
-- The DispatcherServlet identifies the right controller based on the URL.
-- The Controller executes business logic.
-- The Controller returns a) Model, b) View Name back to the DispatcherServlet.
+#### Spring MVC Request Flow
+- DispatcherServlet receives HTTP Request. 
+- DispatcherServlet identifies the right Controller based on the URL.
+- Controller executes Business Logic.
+- Controller returns a) Model b) View Name Back to DispatcherServlet.
 - DispatcherServlet identifies the correct view (ViewResolver).
-- The DispatcherServlet makes the model available to view and executes it.
-- DispatcherServlet responds with an HTTP response.
+- DispatcherServlet makes the model available to view and executes it.
+- DispatcherServlet returns HTTP Response Back.
 - Flow : http://docs.spring.io/spring-framework/docs/2.0.8/reference/images/mvc.png
 
 ###  Step 15 : Show userid and password on the welcome page - ModelMap and @RequestParam
@@ -785,8 +784,9 @@ Welcome ${name}.
 New Lines
 ```java
 
-	@PostMapping("/login")
-	public String handleUserLogin(ModelMap model, @RequestParam String name, @RequestParam String password) {
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String handleUserLogin(ModelMap model, @RequestParam String name,
+			@RequestParam String password) {
 		model.put("name", name);
 		model.put("password", password);
 		return "welcome";
@@ -798,13 +798,13 @@ New Lines
 ```
 Welcome ${name}. You entered ${password}
 ```
-#### What we will do
+#### What we will do:
 - Show userid and password on the welcome page.
-- For now, we will not use Spring Security.
+- We will not use Spring Security for now.
 - ModelMap model
 - @RequestParam String name
 
-###  Step 16 : LoginService and Remove all JEE Servlet-based Code
+###  Step 16 : LoginService and Remove all JEE Servlets based code
 
 ##### /src/main/java/com/in28minutes/jee/LoginService.java Deleted
 ##### /src/main/java/com/in28minutes/jee/LoginServlet.java Deleted
@@ -817,7 +817,7 @@ package com.in28minutes.login;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -828,13 +828,14 @@ public class LoginController {
 
 	private LoginService loginService = new LoginService();
 
-	@GetMapping("/login")
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String showLoginPage() {
 		return "login";
 	}
 
-	@PostMapping("/login")
-	public String handleUserLogin(ModelMap model, @RequestParam String name, @RequestParam String password) {
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String handleUserLogin(ModelMap model, @RequestParam String name,
+			@RequestParam String password) {
 
 		if (!loginService.validateUser(name, password)) {
 			model.put("errorMessage", "Invalid Credentials");
@@ -875,21 +876,20 @@ New Lines
 ```
         <url-pattern>/</url-pattern>
 ```
-#### What we will do
-- Use LoginService to validate your username and password.
-- Remove all the old controller code and let's use only Spring MVC here on. 
-- For now, we are not using Spring Autowiring for LoginService.
+#### What we will do:
+- Use LoginService to validate userid and password.
+- Remove all the old controller code and lets use only Spring MVC here on. 
+- For now : We are not using Spring Autowiring for LoginService.
 - Change URL to http://localhost:8080/login
 
-###  Step 17 : Spring Auto-wiring and Dependency Management-@Autowired and @Service
+###  Step 17 : Spring Auto-wiring and Dependency Management - @Autowired and @Service
 
 ##### /src/main/java/com/in28minutes/login/LoginController.java Modified
 New Lines
 ```
 import org.springframework.beans.factory.annotation.Autowired;
-
-@Autowired
-private LoginService loginService;
+	@Autowired
+	private LoginService loginService;
 ```
 ##### /src/main/java/com/in28minutes/login/LoginService.java Modified
 New Lines
@@ -898,27 +898,27 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoginService {
 ```
-#### What we will do
+#### What we will do:
 - Learn about Spring Auto-wiring and Dependency Management.
 - Use Auto-wiring to wire LoginService.
 - @Autowired, @Service
 
-###  Step 18 : Create a TodoController and a list-todos view. Make TodoService a @Service and inject it.
+###  Step 18 : Create TodoController and list-todos view. Make TodoService a @Service and inject it.
 
 ##### /src/main/java/com/in28minutes/model/Todo.java New
 ```
 package com.in28minutes.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Todo {
 	private int id;
 	private String user;
 	private String desc;
-	private LocalDate targetDate;
+	private Date targetDate;
 	private boolean isDone;
 
-	public Todo(int id, String user, String desc, LocalDate targetDate, boolean isDone) {
+	public Todo(int id, String user, String desc, Date targetDate, boolean isDone) {
 		super();
 		this.id = id;
 		this.user = user;
@@ -951,11 +951,11 @@ public class Todo {
 		this.desc = desc;
 	}
 
-	public LocalDate getTargetDate() {
+	public Date getTargetDate() {
 		return targetDate;
 	}
 
-	public void setTargetDate(LocalDate targetDate) {
+	public void setTargetDate(Date targetDate) {
 		this.targetDate = targetDate;
 	}
 
@@ -1005,7 +1005,7 @@ package com.in28minutes.todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.in28minutes.todo.service.TodoService;
@@ -1016,7 +1016,7 @@ public class TodoController {
 	@Autowired
 	private TodoService service;
 
-	@GetMapping("/list-todos")
+	@RequestMapping(value = "/list-todos", method = RequestMethod.GET)
 	public String showLoginPage(ModelMap model) {
 		model.addAttribute("todos", service.retrieveTodos("in28Minutes"));
 		return "list-todos";
@@ -1028,7 +1028,7 @@ public class TodoController {
 package com.in28minutes.todo.service;
 
 import java.util.ArrayList;
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -1038,13 +1038,15 @@ import com.in28minutes.model.Todo;
 
 @Service
 public class TodoService {
-	private static final List<Todo> todos = new ArrayList<Todo>();
+	private static List<Todo> todos = new ArrayList<Todo>();
 	private static int todoCount = 3;
 
 	static {
-		todos.add(new Todo(1, "in28Minutes", "Learn Spring MVC", LocalDate.now(), false));
-		todos.add(new Todo(2, "in28Minutes", "Learn Struts", LocalDate.now(), false));
-		todos.add(new Todo(3, "in28Minutes", "Learn Hibernate", LocalDate.now(), false));
+		todos.add(new Todo(1, "in28Minutes", "Learn Spring MVC", new Date(),
+				false));
+		todos.add(new Todo(2, "in28Minutes", "Learn Struts", new Date(), false));
+		todos.add(new Todo(3, "in28Minutes", "Learn Hibernate", new Date(),
+				false));
 	}
 
 	public List<Todo> retrieveTodos(String user) {
@@ -1056,7 +1058,7 @@ public class TodoService {
 		return filteredTodos;
 	}
 
-	public void addTodo(String name, String desc, LocalDate targetDate, boolean isDone) {
+	public void addTodo(String name, String desc, Date targetDate, boolean isDone) {
 		todos.add(new Todo(++todoCount, name, desc, targetDate, isDone));
 	}
 
@@ -1088,31 +1090,30 @@ New Lines
 ```
 Welcome ${name}. You are now authenticated. <a href="/list-todos">Click here</a> to start maintaining your todo's.
 ```
-#### What we will do
+#### What we will do:
 - Create TodoController and list-todos.jsp
 - Make TodoService a @Service and inject it
 
-### Pending for Next Step, New
+### Pending for Next Step New
 - ${name} is not available in list-todos.jsp
-- TodoController has a hardcoded value of in28Minutes.
+- in28Minutes is hardcoded in TodoController
 
 ###  Step 19 : Web Application Architecture
 
-#### What we will do
-- Let's discuss the architecture of web applications.
+#### What we will do:
+- Lets discuss about Architecture of web applications
 
-###  Step 20 : More about the Spring Framework
+###  Step 20 : More about Spring Framework
 
-#### What we will do
-- Let's discuss spring
+#### What we will do:
+- Lets discuss about Spring
 
-###  Step 21 : Session vs. Model vs. Request-@SessionAttributes
+###  Step 21 : Session vs Model vs Request - @SessionAttributes
 
 ##### /src/main/java/com/in28minutes/login/LoginController.java Modified
 New Lines
 ```
 import org.springframework.web.bind.annotation.SessionAttributes;
-
 @SessionAttributes("name")
 public class LoginController {
 ```
@@ -1126,7 +1127,7 @@ public class TodoController {
 	@Autowired
 	private TodoService service;
 
-	@GetMapping("/list-todos")
+	@RequestMapping(value = "/list-todos", method = RequestMethod.GET)
 	public String showLoginPage(ModelMap model, String name) {
 		String user = (String) model.get("name");
 		model.addAttribute("todos", service.retrieveTodos(user));
@@ -1134,31 +1135,31 @@ public class TodoController {
 	}
 }
 ```
-#### What we will do
-- Session vs. Model vs. Request
+#### What we will do:
+- Session vs Model vs Request.
 - Be cautious about what you use Session for.
-- @SessionAttributes("name") and how does it work?
-- Why use a model? "Adding elements directly to the HttpServletRequest (as request attributes) would seem to serve the same purpose." The reason for doing this is obvious when taking a look at one of the requirements we have set for the MVC framework: "It should be as view-agnostic as possible, which means we’d like to be able to incorporate view technologies not bound to the HttpServletRequest as well." -Rod Johnson et al’s book Professional Java Development with the Spring Framework
-- The Spring documentation states that the @SessionAttributes annotation "lists the names of model attributes which should be transparently stored in the session or some conversational storage." 
+- @SessionAttributes("name") and how it works?
+- Why use Model?  "adding elements directly to the HttpServletRequest (as request attributes) would seem to serve the same purpose.  The reason to do this is obvious when taking a look at one of the requirements we have set for the MVC framework:  It should be as view-agnostic as possible, which means we’d like to be able to incorporate view technologies not bound to the HttpServletRequest as well." - Rod Johnson et. al’s book Professional Java Development with the Spring Framework 
+- Spring documentation states that the @SessionAttributes annotation “list the names of model attributes which should be transparently stored in the session or some conversational storage.” 
 
 ###  Step 22 : New Todo and redirect to a Controller
 
 ##### /src/main/java/com/in28minutes/todo/TodoController.java Modified
 New Lines
 ```
-	@GetMapping("/list-todos")
+	@RequestMapping(value = "/list-todos", method = RequestMethod.GET)
 	public String showTodosList(ModelMap model) {
 		String user = (String) model.get("name");
 		model.addAttribute("todos", service.retrieveTodos(user));
 		return "list-todos";
 	}
 
-	@GetMapping("/add-todo")
+	@RequestMapping(value = "/add-todo", method = RequestMethod.GET)
 	public String showTodoPage() {
 		return "todo";
 	}
 
-	@PostMapping("/add-todo")
+	@RequestMapping(value = "/add-todo", method = RequestMethod.POST)
 	public String addTodo(ModelMap model, @RequestParam String desc) {
 		service.addTodo((String) model.get("name"), desc, new Date(), false);
 		model.clear();// to prevent request parameter "name" to be passed
@@ -1188,7 +1189,7 @@ New Lines
 </body>
 </html>
 ```
-#### What we will do
+#### What we will do:
 - Add Facility to add New Todo
 - todo.jsp
 - Importance of redirect:/list-todos
@@ -1237,8 +1238,8 @@ New Lines
 	<a class="button" href="/add-todo">Add</a>
 ```
 
-#### What we will do
-- Display Todos on a table using JSTL Tags
+#### What we will do:
+- Display Todos in a table using JSTL Tags
 - <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 - Add Dependency for jstl
 
@@ -1250,12 +1251,12 @@ New Lines
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
-            <version>5.1.3</version>
+            <version>3.3.6</version>
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
-            <version>3.6.0</version>
+            <version>1.9.1</version>
         </dependency>
         
 ```
@@ -1267,7 +1268,7 @@ New Lines
 ##### /src/main/webapp/WEB-INF/views/list-todos.jsp Modified
 New Lines
 ```
-<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
     rel="stylesheet">
 
 <div class="container">
@@ -1276,11 +1277,11 @@ New Lines
 
 <a class="button" href="/add-todo">Add</a>
 
-<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
-<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 ```
 #### What we will do:
-- Add bootstrap to give basic formatting to the page : We use bootstrap classes for container, table, and table-striped.
+- Add bootstrap to give basic formatting to the page : We use bootstrap classes container,table and table-striped.
 - We will use webjars
 
 #### Useful Snippets
@@ -1288,19 +1289,19 @@ New Lines
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
-            <version>5.1.3</version>
+            <version>3.3.6</version>
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
-            <version>3.6.0</version>
+            <version>1.9.1</version>
         </dependency>
         
   		<mvc:resources mapping="/webjars/**" location="/webjars/"/>
   
-		<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
-	    <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-		<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"
+		<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	    		rel="stylesheet">
 
 ```
@@ -1311,7 +1312,7 @@ New Lines
 New Lines
 ```
 
-	@GetMapping("/delete-todo")
+	@RequestMapping(value = "/delete-todo", method = RequestMethod.GET)
 	public String deleteTodo(@RequestParam int id) {
 		service.deleteTodo(id);
 
@@ -1347,13 +1348,13 @@ New Lines
 		href="/delete-todo?id=${todo.id}">Delete</a>
 ```
 
-###  Step 26 : To format and add HTML5 Validations, use Bootstrap.
+###  Step 26 : Use Bootstrap to format and add HTML5 Validations
 
 ##### /src/main/webapp/WEB-INF/views/todo.jsp Modified
 New Lines
 ```
 <title>Your Todo</title>
-<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 
 	<div class="container">
@@ -1366,8 +1367,8 @@ New Lines
 		</form>
 	</div>
 
-	<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
-	<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 ```
 #### What we will do:
@@ -1405,19 +1406,20 @@ New Lines
 ##### /src/main/java/com/in28minutes/todo/TodoController.java Modified
 New Lines
 ```
-	@GetMapping("/add-todo")
+	@RequestMapping(value = "/add-todo", method = RequestMethod.GET)
 	public String showAddTodoPage(ModelMap model) {
 		model.addAttribute("todo", new Todo());
 		return "todo";
 	}
 
-	@PostMapping("/add-todo")
+	@RequestMapping(value = "/add-todo", method = RequestMethod.POST)
 	public String addTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
 
 		if (result.hasErrors())
 			return "todo";
 
-		service.addTodo((String) model.get("name"), todo.getDesc(),  LocalDate.now(), false);
+		service.addTodo((String) model.get("name"), todo.getDesc(), new Date(),
+				false);
 		model.clear();// to prevent request parameter "name" to be passed
 		return "redirect:/list-todos";
 	}
@@ -1427,17 +1429,17 @@ New Lines
 New Lines
 ```
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-	<form:form method="post" commandName="todo">
-			<form:label path="desc">Description</form:label>
-			<form:input path="desc" type="text" class="form-control"
-				required="required"/>
-			<form:errors path="desc" cssClass="text-warning" />
-	</form:form>
+		<form:form method="post" commandName="todo">
+				<form:label path="desc">Description</form:label>
+				<form:input path="desc" type="text" class="form-control"
+					required="required"/>
+				<form:errors path="desc" cssClass="text-warning" />
+		</form:form>
 ```
-#### What we will do
-- Let's use a command bean for Todo.
+#### What we will do:
+- Lets use a command bean for Todo
 - Add Validations
-- The Bean Validation API specifications (versions 1.0 and 1.1, respectively) are defined by JSR 303 and JSR 349, with Hibernate Validator serving as the reference implementation.
+- The JSR 303 and JSR 349 defines specification for the Bean Validation API (version 1.0 and 1.1, respectively), and Hibernate Validator is the reference implementation.
 
 #### Useful Snippets
 ```     
@@ -1456,7 +1458,7 @@ New Lines
     			<version>5.0.2.Final</version>
  		</dependency>
 
-		@Size(min = 10, message = "Enter at least 10 characters.")
+		@Size(min = 10, message = "Enter atleast 10 Characters.")
 		
 		@Valid Todo todo, BindingResult result
 
@@ -1472,19 +1474,19 @@ New Lines
 New Lines
 ```
 
-	@GetMapping("/update-todo")
+	@RequestMapping(value = "/update-todo", method = RequestMethod.GET)
 	public String showUpdateTodoPage(ModelMap model, @RequestParam int id) {
 		model.addAttribute("todo", service.retrieveTodo(id));
 		return "todo";
 	}
 
-	@PostMapping("/update-todo")
+	@RequestMapping(value = "/update-todo", method = RequestMethod.POST)
 	public String updateTodo(ModelMap model, @Valid Todo todo,
 			BindingResult result) {
 		if (result.hasErrors())
 			return "todo";
 
-		todo.setUser("in28Minutes"); //TODO: Remove Hardcoding Later
+		todo.setUser("in28Minutes"); //TODO:Remove Hardcoding Later
 		service.updateTodo(todo);
 
 		model.clear();// to prevent request parameter "name" to be passed
@@ -1522,7 +1524,7 @@ New Lines
 	<form:hidden path="id"/>
 	<button type="submit" class="btn btn-success">Submit</button>
 ```
-#### What we will do
+#### What we will do:
 - Add Update Functionality
 - Lets Use the Same JSP as earlier.
 
@@ -1541,13 +1543,13 @@ New Lines
 		todos.add(todo);
 	}
    
-   todo.setUser("in28Minutes"); //TODO: Remove Hardcoding Later
+   todo.setUser("in28Minutes"); //TODO:Remove Hardcoding Later
    service.updateTodo(todo);
    
    <form:hidden path="id"/>  
 ```
 
-###  Step 29 : Let's add a Target Date for Todo—Use initBinder to Handle Date Fields
+###  Step 29 : Let's add a Target Date for Todo - Use initBinder to Handle Date Fields
 
 ##### /pom.xml Modified
 New Lines
@@ -1561,12 +1563,12 @@ New Lines
 ##### /src/main/java/com/in28minutes/todo/TodoController.java Modified
 New Lines
 ```
-@InitBinder
-protected void initBinder(WebDataBinder binder) {
-	SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-	binder.registerCustomEditor(Date.class, new CustomDateEditor(
-			dateFormat, false));
-}
+	@InitBinder
+	protected void initBinder(WebDataBinder binder) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		binder.registerCustomEditor(Date.class, new CustomDateEditor(
+				dateFormat, false));
+	}
 
 ```
 ##### /src/main/webapp/WEB-INF/views/list-todos.jsp Modified
@@ -1581,7 +1583,7 @@ New Lines
 	href="/update-todo?id=${todo.id}">Edit</a> <a type="button"
 	class="btn btn-warning" href="/delete-todo?id=${todo.id}">Delete</a>
 
-<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 ```
 
 ##### /src/main/webapp/WEB-INF/views/todo.jsp Modified
@@ -1605,8 +1607,8 @@ New Lines
             <button type="submit" class="btn btn-success">Submit</button>
         </form:form>
     </div>
-    <script src="webjars/jquery/3.6.0/jquery.min.js"></script>
-    <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script
         src="webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
     <script>
@@ -1615,8 +1617,8 @@ New Lines
         });
     </script>
 ```
-#### What we will do
-- Make real use of the Target Date Field.
+#### What we will do:
+- Make real use of the Target Date Field
 - initBinder method
 
 #### Useful Snippets
@@ -1655,7 +1657,7 @@ New Lines
 ##### /src/main/java/com/in28minutes/todo/TodoController.java Modified
 New Lines
 ```
-	@PostMapping("/add-todo")
+	@RequestMapping(value = "/add-todo", method = RequestMethod.POST)
 	public String addTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
 
 		if (result.hasErrors())
@@ -1670,8 +1672,8 @@ New Lines
 ##### /src/main/webapp/WEB-INF/views/common/footer.jspf New
 ```
 
-<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
-<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script
 	src="webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
 
@@ -1686,7 +1688,7 @@ New Lines
 <html>
 <head>
 <title>Todos Application</title>
-<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 </head>
 
@@ -1812,10 +1814,10 @@ New Lines
 
 <%@ include file="common/footer.jspf"%>
 ```
-#### What we will do
+#### What we will do:
 - Add a navigation bar
 - Use JSP Fragments
-- Exercise : Align the login and welcome pages.
+- Exercise : Align the login & welcome pages.
 - Exercise : Highlight the correct menu item.
 
 #### Useful Snippets
@@ -1834,12 +1836,12 @@ New Lines
 </nav>
 ```
 
-###  Step 31 : Let's prepare for spring security.
+###  Step 31 : Let's prepare for Spring Security
 
 ##### /src/main/java/com/in28minutes/login/LoginController.java Modified
 New Lines
 ```
-	@GetMapping("/")
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showWelcomePage(ModelMap model) {
 		model.put("name", "in28Minutes");
 		return "welcome";
@@ -1849,14 +1851,14 @@ New Lines
 New Lines
 ```
 
-	@GetMapping("/list-todos")
+	@RequestMapping(value = "/list-todos", method = RequestMethod.GET)
 	public String showTodosList(ModelMap model) {
 		String user = getLoggedInUserName(model);
 		model.addAttribute("todos", service.retrieveTodos(user));
 		return "list-todos";
 	}
 
-	@PostMapping("/add-todo")
+	@RequestMapping(value = "/add-todo", method = RequestMethod.POST)
 	public String addTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
 
 		if (result.hasErrors())
@@ -1880,11 +1882,11 @@ New Lines
 ```
 ##### /src/main/webapp/WEB-INF/views/login.jsp Deleted
 #### What we will do:
-- Prepare to Use Spring Security
-- Remove All Login-Related Functions
-- Make Welcome the default page—with some hardcoding to start with.
+- Prepare for Using Spring Security
+- Remove All the Login Related Functionality
+- Make Welcome the default page - with some hardcoding to start with.
 - Refactor getLoggedInUserName
-- Home PageUpdate Navigational link
+- Update Home Page Link in navigation
 
 #### Useful Snippets
 ```
@@ -1895,17 +1897,17 @@ New Lines
 ##### /pom.xml Modified
 New Lines
 ```
-	<dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-web</artifactId>
-		<version>6.0.0-M6</version>
-	</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>4.0.1.RELEASE</version>
+  		</dependency>
 
-	<dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-config</artifactId>
-		<version>6.0.0-M6</version>
-	</dependency>	
+       <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>4.0.1.RELEASE</version>
+        </dependency>	
 ```
 ##### /src/main/java/com/in28minutes/security/SecurityConfiguration.java New
 ```
@@ -1942,8 +1944,8 @@ New Lines
 ```
     
    <filter>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    		<filter-name>springSecurityFilterChain</filter-name>
+    		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
    </filter>
  
    <filter-mapping>
@@ -1952,7 +1954,7 @@ New Lines
    </filter-mapping> 
     
 ```
-#### What we will do
+#### What we will do:
 - Get Setup for Spring Security
 
 ###  Step 33 : Refactor and add Logout Functionality using Spring Security
@@ -1976,7 +1978,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LogoutController {
 
-	@GetMapping("/logout")
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest request,
 			HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext()
@@ -2002,7 +2004,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class WelcomeController {
 
-	@GetMapping("/")
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showWelcomePage(ModelMap model) {
 		model.put("name", getLoggedInUserName());
 		return "welcome";
@@ -2048,7 +2050,7 @@ New Lines
 - Add Logout Functionality
 
 
-###  Step 34 : Exception Handling in Spring MVC-@ControllerAdvice, @ExceptionHandler and error-page in web.xml
+###  Step 34 : Exception Handling in Spring MVC - @ControllerAdvice, @ExceptionHandler and error-page in web dot xml
 
 ##### /src/main/java/com/in28minutes/common/ExceptionController.java New
 ```
@@ -2092,7 +2094,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LogoutController {
 
-	@GetMapping("/logout")
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest request,
 			HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext()
@@ -2120,7 +2122,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class WelcomeController {
 
-	@GetMapping("/")
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showWelcomePage(ModelMap model) {
 		model.put("name", getLoggedInUserName());
 		return "welcome";
@@ -2156,13 +2158,13 @@ New Lines
 	    <location>/WEB-INF/views/error.jsp</location>
 	</error-page>
 ```
-#### What we will do
+#### What we will do:
 - Basic Exception Handling
 - Exception Handling is a cross cutting concern
-- Do not handle exceptions in controllers or services if you cannot add value to them.
-- Some controller refactoring is required.
+- Do not handle exceptions in Controllers or Services, if you cannot add value to them.
+- Bit of refactoring on the controllers
 - @ControllerAdvice and Controller Specific Exception Handling
-- Handling Errors thrown by Views
+- Handling Errors thrown from Views
 
 #### Useful Snippets
 ```
@@ -2180,11 +2182,11 @@ public class ExceptionController {
 }
 
 <error-page>
-	<location>/WEB-INF/views/jsp/error.jsp</location>
+	    <location>/WEB-INF/views/jsp/error.jsp</location>
 </error-page>
 ```
 
-###  Step 35 : Let's add Internationalization-i18n
+###  Step 35 : Let's add Internationalization - i18n
 
 ##### /src/main/resources/messages_en.properties New
 ```
@@ -2230,12 +2232,12 @@ New Lines
 ```
 	<spring:message code="welcome.message" /> ${name}.
 ```
-#### What we will do
+#### What we will do:
 - Let's i18n.
-- Exercise : Internationalize the Rest of the Stuff
+- Exercise : Internationalize Rest of the Stuff
 - http://localhost:8080/list-todos?language=en
 
-###  Step 36 : Basic Spring Rest Services --@RestController and jackson-databind
+###  Step 36 : Basic Spring Rest Services - @RestController and jackson-databind
 
 
 ##### /pom.xml Modified
@@ -2254,7 +2256,7 @@ package com.in28minutes.todo.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -2266,7 +2268,7 @@ public class TodoRestController {
 	@Autowired
 	private TodoService service;
 
-	@GetMapping("/todo/")
+	@RequestMapping(value = "/todo/", method = RequestMethod.GET)
 	public List<Todo> listAllTodos() {
 		List<Todo> users = service.retrieveTodos("in28Minutes");
 		return users;
@@ -2279,27 +2281,29 @@ New Lines
 ```
 log4j.rootLogger=DEBUG, Appender1
 ```
-#### What we will do
+#### What we will do:
 - Basic Spring Rest Services.
 
-###  Step 37 : More Rest Services-@PathVariable
+###  Step 37 : More Rest Services - @PathVariable
 
 ##### /src/main/java/com/in28minutes/todo/rest/TodoRestController.java Modified
 New Lines
 ```
-	@GetMapping("/todo/{id}")
+	@RequestMapping(value = "/todo/{id}", method = RequestMethod.GET)
 	public Todo retrieveTodo(@PathVariable("id") int id) {
 		return service.retrieveTodo(id);
 	}
 ```
-#### What we will do
-- One More Spring Rest Service
+#### What we will do:
+- One More Spring Rest Services.
 - @PathVariable("id") int id
 #### Useful Snippets
 
 ```
 produces = MediaType.APPLICATION_JSON_VALUE
 ```
+
+
 
 ## Spring MVC Exercises
 
@@ -2322,13 +2326,13 @@ https://start.spring.io
 - Architecture Diagram
 	- http://docs.spring.io/spring/docs/current/spring-framework-reference/html/images/mvc.png
 - Dispatcher Servlet
-	- Dispatches requests to handlers, with configurable handler mappings.
+	- Dispatches requests to handlers, with configurable handler mappings
 	- View Resolution
 	- Locale, time zone and theme resolution 
 	- Support for uploading files.
 - Flexible Data Binding
 	- Any POJO can be used as a command or form backing object
-	- Highly Flexible Data Binding. Databinding errors do not throw exceptions. They only cause validation errors.
+	- Highly Flexible Data Binding. Databinding Errors do not throw exceptions. They only cause validation errors.
 - Flexible View Resolution
 	- Controller can either
 		- Return a View
@@ -2343,22 +2347,22 @@ https://start.spring.io
 	- A ModelAndView object
 	- A Model object
 - @ModelAttribute Methods
-	- Indicates that the purpose of that method is to add one or more model attributes.
-	- Invoked before the @RequestMapping methods.
-	- Used to fill the model with commonly needed attributes.
+	- Indicates the purpose of that method is to add one or more model attributes.
+	- Invoked before @RequestMapping methods.
+	- Used to fill the model with commonly needed attributes 
 	  - Drop down values for form
 	  - Command or Form Backing Objects
 - Method Argument
 	- To automatically add/retrieve value from Model
-	- It can be stored in the session as well using @SessionAttributes.
+	- It can be stored in session as well using @SessionAttributes.
 - Validation
 	- Automatic
 	- @Valid annotation
 
 ##### Customized
-You can also invoke validation using your own custom validator. 
+You can also invoke validation using your own custom validator 
 ```
-@PostMapping("/something")
+@RequestMapping(path = "/something", method = RequestMethod.POST)
 public String processSubmit(@ModelAttribute("todo") Pet Todo, BindingResult result) {
     new TodoValidator().validate(todo, result);
     if (result.hasErrors()) {
@@ -2370,10 +2374,10 @@ public String processSubmit(@ModelAttribute("todo") Pet Todo, BindingResult resu
 
 ##### @ControllerAdvice
 
-- Can contain `@ExceptionHandler, @InitBinder, and @ModelAttribute` annotated methods.
-- These methods will apply to `@RequestMapping` methods across all controller hierarchies.
+- Can contain @ExceptionHandler, @InitBinder, and @ModelAttribute annotated methods
+- These methods will apply to @RequestMapping methods across all controller hierarchies
 
 ##### Hibernate Validator : JSR 349 Reference Implementation
-For more information, see http://docs.jboss.org/hibernate/validator/5.0/reference/en-US/html_single/#validator-defineconstraints-spec
+For more information refer http://docs.jboss.org/hibernate/validator/5.0/reference/en-US/html_single/#validator-defineconstraints-spec
 
 
