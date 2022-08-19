@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Integrating Spring Boot and Spring JDBC with H2 and Starter JDBC
-date:       2022-08-18 12:31:19
+date:       2022-08-18 01:12:27
 summary:    Learn to use Spring Boot Starter JDBC to connect Spring Boot to H2 (in-memory database) using Spring JDBC. You will create a simple project with Spring Boot. You will add code to the project to connect to a database using Spring JDBC. You will learn to implement the basic CRUD methods.
 categories:  SpringBootJPA
 permalink:  /spring-boot-and-spring-jdbc-with-h2
