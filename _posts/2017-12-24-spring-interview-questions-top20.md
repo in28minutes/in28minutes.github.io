@@ -58,13 +58,6 @@ Two Options
 - @ComponentScan is searching packages for Components. Trying to find out who all put their hands up.
 
 
-## Java and Spring Interview Guides
-
-[![Image](https://www.springboottutorial.com/images/Course-Spring-Framework-Interview-Guide-200-Questions-Answers.png "Spring Framework Interview Guide - 200+ Questions & Answers")](https://links.in28minutes.com/in28minutes-spring-interview)
-
-[![Image](https://www.springboottutorial.com/images/Course-Java-Interview-Guide-200-Interview-Questions-and-Answers.png "Java Interview Guide : 200+ Interview Questions and Answers")](https://links.in28minutes.com/in28minutes-java-interview)
-
-
 ### Q :  What is the use of an @Bean annotation?
 Within a Spring Configuration Class , @Bean is used to define beans with custom configuration. You define the beans to be created!
 
