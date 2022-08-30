@@ -18,8 +18,6 @@ Spring framework identifies the beans and their dependencies, creates the beans 
 In this article, we understand a little bit about component scan in the context of the Spring framework. We also see how component scan works with the Spring Boot framework.
 
 
-
-
 ### Spring Framework
 
 This is the fourth article in a series of articles on Spring Framework:

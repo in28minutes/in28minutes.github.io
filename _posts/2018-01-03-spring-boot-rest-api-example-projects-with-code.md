@@ -9,7 +9,7 @@ permalink:  /spring-boot-rest-api-projects-with-code-examples
 
 This guide will help you understand the REST API projects with code examples on Github. We have a number of articles explaining these projects.  These code examples will help beginners and experts to learn and gain expertise at developing RESTful Services with Spring Boot. 
 
-All Articles updated to 2.3.1.RELEASE of Spring Boot.
+
  
 
  

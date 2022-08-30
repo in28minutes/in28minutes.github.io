@@ -20,6 +20,7 @@ This guide will help you understand the different resources (tutorials, videos a
 - Web Application - [Create Basic Web Application with Spring Boot](http://www.springboottutorial.com/creating-web-application-with-spring-boot){:target="_blank"}
 - Spring Boot Starter Security - [Secure Your Rest Services with Spring Boot](http://www.springboottutorial.com/securing-rest-services-with-spring-boot-starter-security){:target="_blank"}
 
+
 ## Code Examples - Maven Projects
 
 > Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}

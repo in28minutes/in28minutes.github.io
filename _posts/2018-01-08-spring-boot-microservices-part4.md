@@ -171,3 +171,6 @@ Continue the Microservice Series - Microservices with Spring Boot
 - Part 5 - [Using Eureka Naming Server](http://www.springboottutorial.com/microservices-with-spring-boot-part-5-eureka-naming-server){:target="_blank"}
 
 
+
+## Complete Maven Project With Code Examples
+> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-basic-microservice
