@@ -9,11 +9,6 @@ permalink:  /spring-boot-projects-with-code-examples
 
 This guide will help you understand our 20+ projects with code examples on Github. We have 50+ articles explaining these projects.  These code examples will help beginners and experts to learn and gain expertise at Spring Boot. 
 
-All projects updated to Spring Boot 2.3.1.RELEASE.
- 
-
-
-
 ## Spring Boot Projects - Code Examples on Github
 
 |Title|Category|URL|Github|
