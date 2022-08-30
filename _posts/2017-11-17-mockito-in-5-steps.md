@@ -9,15 +9,6 @@ permalink:  /mockito-tutorial-for-beginners
 
 Mockito is the most popular mocking framework in Java.
 
-## Free Courses - Learn in 10 Steps
-
-- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://links.in28minutes.com/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
-- [Learn Mockito in 10 Steps](https://www.youtube.com/watch?v=d2KwvXQgQx4){:target="_blank"}
-- [Learn JUnit in 10 Steps](https://www.youtube.com/watch?v=bdc5WbKKbK4){:target="_blank"}
-- [Learn Kubernetes in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-k8s){:target="_blank"}
-- [Learn AWS in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-aws-beanstalk){:target="_blank"}
-
-
 
 ### Git Repository 
 - https://github.com/in28minutes/getting-started-in-5-steps/tree/master/mockito-in-5-steps

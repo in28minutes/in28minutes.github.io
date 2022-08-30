@@ -9,14 +9,6 @@ permalink:  /five-frameworks-for-java-programmers
 
 As a programmer you want to explore new languages and frameworks. What would be the best frameworks to explore in 2019 for Java Programmers?
  
-## Free Courses - Learn in 10 Steps
-
-- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://links.in28minutes.com/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
-- [Learn Spring Boot in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn Docker in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-docker){:target="_blank"}
-- [Learn Kubernetes in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-k8s){:target="_blank"}
-- [Learn AWS in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-aws-beanstalk){:target="_blank"}
-
 
 
 ### Java Programmer Essentials

@@ -9,14 +9,6 @@ permalink:  /spring-boot-interview-questions
 
 This guide will help you understand the most important concepts in Spring Boot in preparation for a Spring Boot Interview.
 
-## Free Courses - Learn in 10 Steps
-
-- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://links.in28minutes.com/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
-- [Learn Spring Boot in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn Docker in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-docker){:target="_blank"}
-- [Learn Kubernetes in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-k8s){:target="_blank"}
-- [Learn AWS in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-aws-beanstalk){:target="_blank"}
-
 
  
 ## Spring Boot
@@ -196,19 +188,6 @@ spring-boot-maven-plugin provides a few commands which enable you to package the
 - spring-boot:repackage repackages your jar/war to be executable.
 - spring-boot:start and spring-boot:stop to manage the lifecycle of your Spring Boot application (i.e. for integration tests).
 - spring-boot:build-info generates build information that can be used by the Actuator.
-
----
-
-<a href="https://links.in28minutes.com/aws-architect-associate-certification" ><img src="https://www.springboottutorial.com/images/Course-aws-architect-associate-certification.png" alt="Image" title="AWS Architect Associate Certification"></a>
-<a target='_blank' href="https://links.in28minutes.com/DevOps-SBT" ><img src="https://www.springboottutorial.com/images/Course-DevOps.png" alt="Image" title="DevOps Course"></a>
-<a target='_blank' href="https://links.in28minutes.com/serverless-sbt" ><img src="https://www.springboottutorial.com/images/Course-go-serverless.png" alt="Image" title="Go Serverless with AWS Lambda and Azure Functions"></a>
-
-<a target='_blank' href="https://links.in28minutes.com/aws-dev-associate-sbt" ><img src="https://www.springboottutorial.com/images/Course-aws-certified-developer-assoiciate.png" alt="Image" title="AWS Developer Associate Certification"></a>
-
-<a href="https://links.in28minutes.com/in28minutes-Microservices" ><img src="https://www.springboottutorial.com/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png" alt="Image" title="Master Microservices with Spring Boot and Spring Cloud"></a>
-
----
-
 
 ### Q :  How can I enable auto reload of my application with Spring Boot?
 

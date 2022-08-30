@@ -17,14 +17,6 @@ This guide will help you create a CRUD REST API/Service with Spring Boot, JPA, a
 - How to execute different kinds of REST API with Postman?
 - What are the differences between GET, POST, PUT, and DELETE request methods?
 
-## Free Courses - Learn in 10 Steps
-
-- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://links.in28minutes.com/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
-- [Learn Spring Boot in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn Docker in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-docker){:target="_blank"}
-- [Learn Kubernetes in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-k8s){:target="_blank"}
-- [Learn AWS in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-aws-beanstalk){:target="_blank"}
-
 ## Resources Overview
 
 In this guide, we will create a student resource exposing three services using proper URIs and HTTP methods:
@@ -207,19 +199,6 @@ Executing SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring
 After app reload, when you login to H2 Console (http://localhost:8080/h2-console), you can see that the student table is created and the data is populated.
 
 ![Image](/images/H2-Console-With-Student.png "H2 Console With Student")
-
-
----
-
-<a href="https://links.in28minutes.com/aws-architect-associate-certification" ><img src="https://www.springboottutorial.com/images/Course-aws-architect-associate-certification.png" alt="Image" title="AWS Architect Associate Certification"></a>
-<a target='_blank' href="https://links.in28minutes.com/DevOps-SBT" ><img src="https://www.springboottutorial.com/images/Course-DevOps.png" alt="Image" title="DevOps Course"></a>
-<a target='_blank' href="https://links.in28minutes.com/serverless-sbt" ><img src="https://www.springboottutorial.com/images/Course-go-serverless.png" alt="Image" title="Go Serverless with AWS Lambda and Azure Functions"></a>
-
-<a target='_blank' href="https://links.in28minutes.com/aws-dev-associate-sbt" ><img src="https://www.springboottutorial.com/images/Course-aws-certified-developer-assoiciate.png" alt="Image" title="AWS Developer Associate Certification"></a>
-
-<a href="https://links.in28minutes.com/in28minutes-Microservices" ><img src="https://www.springboottutorial.com/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png" alt="Image" title="Master Microservices with Spring Boot and Spring Cloud"></a>
-
----
 
 
 ## Make a JPA Repository class that reads students from a database.

@@ -17,14 +17,6 @@ Spring allows you to configure your beans using Java and XML. In this guide, we 
 - What are the best practices in using XML and Java bean configurations?
 - How do you choose between XML and Java Bean Configurations?
 
-## Free Courses - Learn in 10 Steps
-
-- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://links.in28minutes.com/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
-- [Learn Spring Boot in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn Docker in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-docker){:target="_blank"}
-- [Learn Kubernetes in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-k8s){:target="_blank"}
-- [Learn AWS in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-aws-beanstalk){:target="_blank"}
-
 
 
 
@@ -133,19 +125,6 @@ When your run the application again, you would see couple of new entries in the 
 someDummyBean1
 someDummyBean2
 ```
-
----
-
-<a href="https://links.in28minutes.com/aws-architect-associate-certification" ><img src="https://www.springboottutorial.com/images/Course-aws-architect-associate-certification.png" alt="Image" title="AWS Architect Associate Certification"></a>
-<a target='_blank' href="https://links.in28minutes.com/DevOps-SBT" ><img src="https://www.springboottutorial.com/images/Course-DevOps.png" alt="Image" title="DevOps Course"></a>
-<a target='_blank' href="https://links.in28minutes.com/serverless-sbt" ><img src="https://www.springboottutorial.com/images/Course-go-serverless.png" alt="Image" title="Go Serverless with AWS Lambda and Azure Functions"></a>
-
-<a target='_blank' href="https://links.in28minutes.com/aws-dev-associate-sbt" ><img src="https://www.springboottutorial.com/images/Course-aws-certified-developer-assoiciate.png" alt="Image" title="AWS Developer Associate Certification"></a>
-
-<a href="https://links.in28minutes.com/in28minutes-Microservices" ><img src="https://www.springboottutorial.com/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png" alt="Image" title="Master Microservices with Spring Boot and Spring Cloud"></a>
-
----
-
 ## Loading Beans from XML Configuration
 
 Let's start with defining a simple XML Configuration.

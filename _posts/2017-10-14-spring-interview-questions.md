@@ -13,14 +13,6 @@ Preparing for spring and spring boot interviews is tricky. There are a wide vari
 
 This course helps you prepare for the Spring Interview with code examples covering 200+ Spring Interview Questions and Answers on Spring, Spring Boot, Spring MVC, Spring JDBC, JPA, AOP, RESTful Services, and SOAP Web Services. 
 
-## Free Courses - Learn in 10 Steps
-
-- [FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot](https://links.in28minutes.com/SBT-Page-Top-LearningChallenge-SpringBoot){:target="_blank"}
-- [Learn Spring Boot in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-springboot){:target="_blank"}
-- [Learn Docker in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-docker){:target="_blank"}
-- [Learn Kubernetes in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-k8s){:target="_blank"}
-- [Learn AWS in 10 Steps](https://links.in28minutes.com/in28minutes-10steps-aws-beanstalk){:target="_blank"}
-
 
 
 ## Github Repository
