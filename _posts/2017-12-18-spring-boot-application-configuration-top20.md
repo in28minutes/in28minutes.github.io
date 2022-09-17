@@ -8,6 +8,8 @@ permalink:  /spring-boot-application-configuration
 ---
 
 This guide will introduce you to the various application configuration options that are present in Spring Boot. You will also learn how to create custom configuration for an application. 
+
+![Image](/images/SpringBootApplicationConfiguration-ProjectStructure.png "Spring Boot Application Configuration Project Structure")
  
 ## You will learn
 - What is application configuration?
@@ -62,6 +64,7 @@ In this guide, we will create three services using proper URIs and HTTP methods:
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootApplicationConfiguration-ProjectStructure.png "Spring Boot Application Configuration Project Structure")
 
 A few details:

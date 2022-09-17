@@ -7,8 +7,11 @@ categories:  SpringFramework
 permalink:  /spring-interview-questions
 ---
 
+![Image](/images/Spring-Initializr-Web-JPA.png "Web, JPA, Hibernate and Developer Tools")
+
 This guide will help you understand the most important concepts in Spring in preparation for a Spring Interview.
 
+![Image](/images/SpringBootApplicationConfiguration-ProjectStructure.png "Spring Boot Application Configuration Project Structure")
 
  
 ### Q :  What is the need for a Component Scan?

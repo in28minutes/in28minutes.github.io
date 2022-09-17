@@ -187,6 +187,7 @@ This would download a zip file to your local machine.
 Unzip the zip file and extract to a folder.
 
 In Eclipse, Click File -> Import -> Existing Maven Project as shown below.
+
 ![Image](/images/CreatingSpringBootProject-Option1-SpringInitializr-Screen2.png "CreatingSpringBootProject-Option1-SpringInitializr-Screen2")
 
 Navigate or type in the path of the folder where you extracted the zip file to in the next screen.
@@ -208,6 +209,7 @@ You should either download the complete installation of STS or You can install t
 > https://spring.io/tools/sts/all provides the complete download of STS as well as the Update Sites for STS Eclipse Plugin.
 
 In Eclipse/STS, start with File -> New -> Spring Starter Project as shown below.
+
 ![Image](/images/We 
 CreatingSpringBootProject-Option2-EclipsePluginSpringStarterProject-Screen1.png "CreatingSpringBootProject-Option2-EclipsePluginSpringStarterProject-Screen1")
 
@@ -240,6 +242,7 @@ The last option is to create the project manually.
 In Eclipse, start with File > New > Maven Project
 
 Choose Create a simple project as shown in the screenshot below:
+
 ![Image](/images/CreatingSpringBootProject-Option3-Manually.png "CreatingSpringBootProject-Option3-Manually")
 
 In the next screen, provide these details for your project and click Finish.

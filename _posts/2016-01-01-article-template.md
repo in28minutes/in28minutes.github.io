@@ -24,6 +24,7 @@ In this guide, we will create three services using proper URIs and HTTP methods:
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/TODO.png "TODO-DESC") 
 
 A few details:
@@ -71,6 +72,7 @@ As shown in the image above, following steps have to be done
 ## Step N : Executing the TODO Service 
 
 Below picture shows how we can execute this Get Service from Postman - my favorite tool to run rest services.
+
 ![Image](/images/ExecutingGetRestServiceUsingPostman.png "Executing Rest Service From Postman")   
 
 ## Executing a POST Rest Service

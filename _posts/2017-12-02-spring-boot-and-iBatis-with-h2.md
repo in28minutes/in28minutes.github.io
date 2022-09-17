@@ -20,6 +20,7 @@ This guide will help you create a simple project with Spring Boot. You will add 
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootwithmyBatis-ProjectStructure.png "Spring Boot with myBatis - Project Structure") 
 
 A few details:
@@ -139,6 +140,7 @@ myBatis is not a standard Spring Boot Starter project. We would need to add it m
 ```
 
 Rebuild the project to see all the dependencies related to myBatis.
+
 ![Image](/images/myBatisDependencies.png "my Batis Dependencies")
 
 ## Initialize H2 in-memory database with the schema
@@ -161,6 +163,7 @@ When you reload the application, you can launch up H2 Console at http://localhos
 > Tip - Make sure that you use `jdbc:h2:mem:testdb` as JDBC URL.
 
 When you use the right JDBC URL given above, you should see an empty schema when you click `Connect` button.
+
 ![Image](/images/H2-Console-Empty-Schema.png "H2 Console Empty Page") 
 
 ### Create Schema using schema.sql and Data using data.sql
@@ -198,6 +201,7 @@ Executing SQL script from URL [file:PATH/data.sql]
 ```
 
 When you login to H2 Console (http://localhost:8080/h2-console) you can see that the student table is created and the data is populated.
+
 ![Image](/images/H2-Console-With-Student.png "H2 Console With Student")
 
 ## Creating Student Bean

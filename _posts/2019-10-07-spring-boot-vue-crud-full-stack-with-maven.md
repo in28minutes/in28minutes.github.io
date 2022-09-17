@@ -65,6 +65,7 @@ Following GitHub repository hosts the complete frontend and backend projects - h
 ### Understanding Spring Boot REST API Project Structure
 
 Following screenshot shows the structure of the Spring Boot project we create.
+
 ![Image](/images/project-structure-spring-boot-fullstack-crud-maven.png "Spring Boot Rest Service - Project Structure")
 
 A few details:
@@ -77,6 +78,7 @@ A few details:
 ## Understanding Vue Frontend Project Structure
 
 Following screenshot shows the structure of the Vue JS project we create.
+
 ![Image](/images/project-structure-vue-fullstack-crud.png "Vue Frontend - Project Structure")
 
 A few details:

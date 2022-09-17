@@ -9,6 +9,8 @@ permalink:  /spring-boot-projects-with-code-examples
 
 This guide will help you understand our 20+ projects with code examples on Github. We have 50+ articles explaining these projects.  These code examples will help beginners and experts to learn and gain expertise at Spring Boot. 
 
+![Image](/images/Spring-Initializr-Web-JPA.png "Web, JPA, Hibernate and Developer Tools")
+
 ## Spring Boot Projects - Code Examples on Github
 
 |Title|Category|URL|Github|

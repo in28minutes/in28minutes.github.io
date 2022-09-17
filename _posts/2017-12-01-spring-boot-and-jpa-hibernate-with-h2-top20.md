@@ -31,6 +31,7 @@ This guide will help you create a simple project with Spring Boot and connect to
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootwithJPA-ProjectStructure.png "Spring Boot with JPA - Project Structure") 
 
 A few details:
@@ -142,6 +143,7 @@ Below is the list of starter projects in pom.xml.
 ## Understanding Spring Boot Starter JPA
 
 Below picture highlights some of the dependencies that are part of the imported JPA project.
+
 ![Image](/images/spring-boot-starter-jpa-dependencies.png "Spring Boot Starter JPA Dependencies")
 
 > Key Question : How did all these dependencies come in?
@@ -210,6 +212,7 @@ When you reload the application, you can launch up H2 Console at http://localhos
 > Tip - Make sure that you use `jdbc:h2:mem:testdb` as JDBC URL.
 
 When you use the right JDBC URL given above, you should see an empty schema when you click `Connect` button.
+
 ![Image](/images/H2-Console-Empty-Schema.png "H2 Console Empty Page") 
 
 ### Create Your First JPA Entity

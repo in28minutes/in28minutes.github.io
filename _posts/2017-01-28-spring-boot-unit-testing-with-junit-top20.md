@@ -35,6 +35,7 @@ This guide will help you write great unit tests for your Spring Boot Rest Servic
 ## Unit Testing
 
 Following screenshot shows eclipse project with all the files we will create.
+
 ![Image](/images/SpringBootRestService-ProjectStructure.png "Spring Boot Rest Services - Project Structure")
 
 We want to create a unit test for `StudentController` which is a Rest Controller. `StudentController` exposes two service methods - one Get and one Post. We will write unit tests for both these service methods. 
@@ -153,6 +154,7 @@ We will fire a request to http://localhost:8080/students/Student1/courses/Course
 ```
 
 Below picture shows how we can execute this Get Operation from Postman - my favorite tool to run rest services.
+
 ![Image](/images/ExecutingGetRestServiceUsingPostman.png "Executing Rest Service From Postman")   
 
 ## Add spring-security-test for disabling security in unit tests

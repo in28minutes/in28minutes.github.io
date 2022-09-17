@@ -23,6 +23,7 @@ This guide will help you use Swagger with Spring Boot to document your RESTful s
 ## Project Code Structure
 
 Following screen shot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootSwaggerDocumentation-ProjectStructure.png "SpringBootSwaggerDocumentation-ProjectStructure") 
 
 A few details:
@@ -538,12 +539,15 @@ Below screenshot shows the Home Page of Swagger UI. It shows a list of all the r
 
 
 Choosing the Student resource takes you to details of the resource. It shows all the request methods that can be used with a Resource.
+
 ![Image](/images/SwaggerDocumentation-2-ResourceDetails-Student.png "SwaggerDocumentation-2-ResourceDetails-Student") 
 
 You can also see the details for a Specific Request Method.
+
 ![Image](/images/SwaggerDocumentation-3-StudentGetMethodDetails.png "SwaggerDocumentation-3-StudentGetMethodDetails") 
 
 You can use the 'Try it out' button to execute a request and see the response.
+
 ![Image](/images/SwaggerDocumentation-4-TryItOut-Request-And-Response.png "SwaggerDocumentation-4-TryItOut-Request-And-Response") 
 
 ### Customizing Swagger Documentation with Annotations

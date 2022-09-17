@@ -7,7 +7,12 @@ categories:  SpringFramework
 permalink:  /spring-boot-java-xml-context-configuration
 ---
 
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
 Spring allows you to configure your beans using Java and XML. In this guide, we will explore how to use XML and Java Configurations with Spring Boot. We will understand how to load these configurations into a Spring Application Context. 
+
+![Image](/images/SpringBootXMLAndJavaApplicationContext-ProjectStructure.png "SpringBootXMLAndJavaApplicationContext-ProjectStructure") 
+
 
 ## You will learn
 - How to define a Java bean configuration in a Spring Application?
@@ -23,6 +28,7 @@ Spring allows you to configure your beans using Java and XML. In this guide, we 
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootXMLAndJavaApplicationContext-ProjectStructure.png "SpringBootXMLAndJavaApplicationContext-ProjectStructure") 
 
 A few details:

@@ -21,6 +21,7 @@ This guide will help you implement Content Negotiation for a REST API/Service wi
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/CRUDServiceWithHibernate.png "CRUDServiceWithHibernate") 
 
 A few details:
@@ -63,6 +64,7 @@ Accept indicates the expected content type of the response.
 ## Example of Content Negotiation
 
 Following screen shot shows how you can specify these headers in a request using Postman.
+
 ![Image](/images/ContentNegotiationHeaders-AcceptAndContentType.png "Content Negotiation Headers - Accept and Content-Type") 
 
 The server is expected to respond based on the Accept header.

@@ -47,6 +47,7 @@ Spring Boot would pick up the application configuration based on the active prof
 ## Project Code Structure
 
 Following screen shot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootApplicationConfiguration-ProjectStructure.png "Spring Boot Application Configuration Project Structure")
 
 A few details:

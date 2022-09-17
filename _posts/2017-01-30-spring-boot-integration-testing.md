@@ -168,6 +168,7 @@ We will fire a request to http://localhost:8080/students/Student1/courses/Course
 ```
 
 Below picture shows how we can execute this Get Service from Postman - my favorite tool to run rest services.
+
 ![Image](/images/ExecutingGetRestServiceUsingPostman.png "Executing Rest Service From Postman")   
 
 ## Integration Testing with the Http Get Operation

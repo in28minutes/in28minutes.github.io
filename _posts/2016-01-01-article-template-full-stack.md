@@ -42,6 +42,7 @@ In this guide, we will create TODO services.
 ## Project Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootRestService-ProjectStructure.png "Spring Boot Rest Service - Project Structure") 
 
 A few details:
@@ -155,6 +156,7 @@ Recommended Watch - Watch this video to understand about [React Components](http
 ## Step N : Executing the TODO Service 
 
 Below picture shows how we can execute this Get Service from Postman - my favorite tool to run rest services.
+
 ![Image](/images/ExecutingGetRestServiceUsingPostman.png "Executing Rest Service From Postman")   
 
 ## Executing a POST Rest Service

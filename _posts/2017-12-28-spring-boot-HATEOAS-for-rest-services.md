@@ -20,6 +20,7 @@ This guide will help you implement HATEOAS for a REST API/Service with Spring Bo
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/CRUDServiceWithHibernate.png "CRUDServiceWithHibernate") 
 
 A few details:

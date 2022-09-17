@@ -8,6 +8,9 @@ permalink:  /spring-boot-with-embedded-servers-tomcat-jetty
 ---
 
 This guide will help you understand why embedded servers are gaining popularity. We will discuss the different options that Spring Boot supports - Tomcat, Jetty and Undertow.
+
+![Image](/images/spring-initializer-web-h2-devtools-jdbc.png "Web, JDBC,H2 and Developer Tools")
+
  
 ## You will learn
 - What is an embedded server?

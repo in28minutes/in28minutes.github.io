@@ -8,6 +8,9 @@ permalink:  /spring-boot-exception-handling-for-rest-services
 ---
 
 This guide will help you implement effective exception/error handling for a REST API/Service with Spring Boot.
+
+![Image](/images/SpringBootExceptionHandling-ProjectStructure.png "CRUDServiceWithHibernate") 
+
  
 ## You will learn
 - What is exception handling?
@@ -22,6 +25,7 @@ This guide will help you implement effective exception/error handling for a REST
 ## Project Code Structure
 
 Following screen shot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootExceptionHandling-ProjectStructure.png "CRUDServiceWithHibernate") 
 
 A few details:

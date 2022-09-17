@@ -89,6 +89,7 @@ In this part of the course, you will be using Spring (Dependency Management), Sp
 > Is the Todo Management Application a Web Service?
 
 - It delivers HTML output - Not consumable by other applications.
+
 ![Image](/images/Web_Services_Application_Layers.png)
 
 - Can I reuse the Business Layer by creating a JAR?

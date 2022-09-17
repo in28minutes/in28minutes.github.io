@@ -21,6 +21,7 @@ This guide will help you expose RESTful API using a combination of Spring Boot, 
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/SpringDataRESTwithSpringBoot-ProjectStructure.png "Spring Data Rest with Spring Boot and JPA - Project Structure") 
 
 A few details:
@@ -215,6 +216,7 @@ Below is the list of starter projects in pom.xml.
 ## Understanding Spring Boot Starter Data Rest
 
 Below picture highlights some of the dependencies that are part of the imported Spring Boot project.
+
 ![Image](/images/spring-boot-starter-data-rest-dependencies.png "Spring Boot Starter Data Rest Dependencies")
 
 > Key Question : How did all these dependencies come in?
@@ -272,6 +274,7 @@ When you reload the application, you can launch up H2 Console at http://localhos
 > Tip - Make sure that you use `jdbc:h2:mem:testdb` as JDBC URL.
 
 When you use the right JDBC URL given above, you should see an empty schema when you click `Connect` button.
+
 ![Image](/images/H2-Console-Empty-Schema.png "H2 Console Empty Page") 
 
 ## Create Your First JPA Entity

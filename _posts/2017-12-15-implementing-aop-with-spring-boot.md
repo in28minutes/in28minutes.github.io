@@ -24,6 +24,7 @@ This guide will help you implement AOP with Spring Boot Starter AOP. We will imp
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootAOPProjectStructure.png "Spring Boot AOP Project Structure") 
 
 A few details:

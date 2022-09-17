@@ -132,9 +132,11 @@ Restart all the instances of CCS and FS. You would see that the CCS and FS micro
 ![Image](/images/Spring-Boot-Microservice-9-ConnectCCSandFSToEureka.png "Spring-Boot-Microservice-9-ConnectCCSandFSToEureka")
 
 Screenshot shows how to launch an additional instance of Forex Service on 8081.
+
 ![Image](/images/Spring-Boot-Microservice-91-LauchingFSOn8081.png "Spring-Boot-Microservice-91-LauchingFSOn8081")
 
 You would see that one instance of CCS and two instances of FS microservices are registered with Eureka Naming Server.
+
 ![Image](/images/Spring-Boot-Microservice-92-TwoinstancesofFSOnEureka.png "Spring-Boot-Microservice-92-TwoinstancesofFSOnEureka")
 
 ## Routing Ribbon Requests Through Eureka

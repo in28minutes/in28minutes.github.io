@@ -183,6 +183,7 @@ Let's now add in the webjars to our pom.xml
 Make sure that you restart the application and we are ready to use jquery and bootstrap in our project.
 
 If you expand your dependencies you should see the dependencies.
+
 ![Image](/images/bootstrap-and-jquery-in-dependencies.png "Bootstrap and jQuery in dependencies") 
 
 Referring to bootstrap css

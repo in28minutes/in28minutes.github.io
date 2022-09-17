@@ -71,6 +71,7 @@ Always use HTTP Methods. Best practices with respect to each HTTP method is desc
 
 ## Project Structure
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootRestService-ProjectStructure.png "Spring Boot Rest Service - Project Structure") 
 
 A few details:
@@ -184,6 +185,7 @@ We will access a request to http://localhost:8080/students/Student1/courses/Cour
 ```
 
 Below picture shows how we can execute this Get Service from Postman - my favorite tool to run rest services.
+
 ![Image](/images/ExecutingGetRestServiceUsingPostman.png "Executing Rest Service From Postman")   
 
 ## Adding a Http POST Operation Rest Service

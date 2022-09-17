@@ -56,6 +56,7 @@ The diagram below shows the communication between CCS and FS.
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/spring-boot-microservice-currency-conversion-service-project-structure.png "Project Structure") 
 
 A few details:

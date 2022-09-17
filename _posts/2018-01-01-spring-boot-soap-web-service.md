@@ -42,6 +42,7 @@ In this guide, we will create a Student Resource exposing three services using p
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/CRUDServiceWithHibernate.png "CRUDServiceWithHibernate") 
 
 A few details:
@@ -591,9 +592,11 @@ Once you install wizdler and launch the wsdl url `http://localhost:8080/ws/stude
 ![Image](/images/ExecutingSOAPRequestsWithWizdler-1.png "ExecutingSOAPRequestsWithWizdler-1") 
 
 This would launch a window to execute the request. Change the id to 1. Click Go button at the top right corner of the screen.
+
 ![Image](/images/ExecutingSOAPRequestsWithWizdler-2.png "ExecutingSOAPRequestsWithWizdler-2")
 
 You should see the response as shown below.
+
 ![Image](/images/ExecutingSOAPRequestsWithWizdler-3.png "ExecutingSOAPRequestsWithWizdler-3")
 
 Request

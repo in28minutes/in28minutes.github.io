@@ -7,8 +7,12 @@ categories:  SpringBoot
 permalink:  /spring-boot-crud-rest-service-with-jpa-hibernate
 ---
 
+![Image](/images/Spring-Initializr-Web-JPA.png "Web, JPA, Hibernate and Developer Tools")
+
 This guide will help you create a CRUD REST API/Service with Spring Boot, JPA, and Hibernate. We will create a JPA Repository for a Student Entity and expose it using a Student Resource.
  
+![Image](/images/H2-Console-With-Student.png "H2 Console With Student")
+
 ## You will learn
 - What is a RESTful Service?
 - Basics of designing a REST API.
@@ -29,6 +33,7 @@ In this guide, we will create a student resource exposing three services using p
 ## Project Code Structure
 
 The following screenshot shows the structure of the project we will create.
+
 ![Image](/images/CRUDServiceWithHibernate.png "CRUDServiceWithHibernate") 
 
 A few details
@@ -286,6 +291,7 @@ public List<Student> retrieveAllStudents() {
 ```
 
 The below picture shows how we can execute a Get Request Method on a resource using Postman, my favourite tool to run rest services.
+
 ![Image](/images/POSTMAN_Executing_Get_Request.png "Executing Get Rest Service From Postman")   
 
 - URL - http://localhost:8080/students
@@ -349,6 +355,7 @@ public void deleteStudent(@PathVariable long id) {
 ```
 
 The below picture shows how we can execute a DELETE Request method on a resource from Postman, my favourite tool to run rest services.
+
 ![Image](/images/POSTMAN_Executing_Delete_Request.png "Executing Delete Operation Rest Service From Postman")   
 
 - URL - http://localhost:8080/students/10002
@@ -375,6 +382,7 @@ public ResponseEntity<Object> createStudent(@RequestBody Student student) {
 ```
 
 The below picture shows how we can execute a POST Request method on a resource from Postman, my favourite tool to run rest services.
+
 ![Image](/images/POSTMAN_Executing_Post_Request.png "Executing Post Rest Service From Postman")   
 
 - URL - http://localhost:8080/students
@@ -414,6 +422,7 @@ public ResponseEntity<Object> updateStudent(@RequestBody Student student, @PathV
 ```
 
 The below picture shows how we can execute a PUT Request method on a resource from Postman, my favourite tool to run rest services.
+
 ![Image](/images/POSTMAN_Executing_Put_Request.png "Executing PUT Operation Rest Service From Postman")   
 
 - URL → http://localhost:8080/students/10002

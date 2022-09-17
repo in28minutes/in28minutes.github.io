@@ -7,6 +7,8 @@ categories:  SpringBoot
 permalink:  /spring-boot-validation-for-rest-services
 ---
 
+![Image](/images/Spring-Initializr-Web-JPA.png "Web, JPA, Hibernate and Developer Tools")
+
 This guide will help you implement effective validations for a REST API/Service with Spring Boot.
  
 ## You will learn

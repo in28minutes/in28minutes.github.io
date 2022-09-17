@@ -71,6 +71,7 @@ Following GitHub repository hosts the complete frontend and backend projects - h
 ### Understanding Spring Boot REST API Project Structure
 
 Following screenshot shows the structure of the Spring Boot project we create.
+
 ![Image](/images/project-structure-spring-boot-fullstack-crud-maven.png "Spring Boot Rest Service - Project Structure") 
 
 A few details:
@@ -84,6 +85,7 @@ A few details:
 ## Understanding React Frontend Project Structure
 
 Following screenshot shows the structure of the React project we create.
+
 ![Image](/images/project-structure-react-fullstack-crud-maven.png "React Frontend - Project Structure") 
 
 > Quick Tip: You can get a high-level overview of all files in the React Project Structure watching this video [React Project Structure](https://youtu.be/wI5G8FNFrto){:target="_blank"}

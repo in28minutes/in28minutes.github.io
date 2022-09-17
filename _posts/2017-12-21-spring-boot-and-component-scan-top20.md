@@ -8,6 +8,8 @@ permalink:  /spring-boot-and-component-scan
 ---
 
 This guide will help you understand the most important concept in Spring - Component Scan. Spring Boot does some magic around Component Scan. Let's understand that in this article.
+
+![Image](/images/SpringBootApplicationConfiguration-ProjectStructure.png "Spring Boot Application Configuration Project Structure")
  
 ## You will learn
 - What is Component Scan?

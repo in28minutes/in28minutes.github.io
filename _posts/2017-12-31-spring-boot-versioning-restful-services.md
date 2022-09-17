@@ -18,6 +18,7 @@ This guide will help you understand why versioning is needed and how you can ver
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootVersioningRESTAPI-ProjectStructure.png "SpringBootVersioningRESTAPI-ProjectStructure") 
 
 A few details:
@@ -229,6 +230,7 @@ Implementations are shown below:
 ```
 
 Below picture shows how we can execute a Get Request Method with Request Headers using Postman.
+
 ![Image](/images/Postman-ProvidingRequestHeaders.png "Postman-ProvidingRequestHeaders")   
 
 `http://localhost:8080/person/header` with a header
@@ -277,6 +279,7 @@ Examples
 ```
 
 Below picture shows how we can execute a Get Request Method with Request Headers using Postman.
+
 ![Image](/images/Postman-ProvidingRequestHeaders.png "Postman-ProvidingRequestHeaders")   
 
 `http://localhost:8080/person/produces` with a header

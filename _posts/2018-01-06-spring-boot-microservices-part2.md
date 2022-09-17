@@ -49,6 +49,7 @@ The request above is the currency exchange value for EUR to INR. In the response
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/spring-boot-microservice-forex-service-project-structure.png "Project Structure") 
 
 A few details:

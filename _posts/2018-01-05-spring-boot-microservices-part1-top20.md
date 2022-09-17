@@ -95,16 +95,21 @@ The diagram below shows the communication between CCS and FS.
 ### Eureka Naming Server and Ribbon
 
 Based on the load, we can have multiple instances of the Currency Conversion Service and the Forex Service running.
+
 ![Image](/images/Spring-Boot-Microservice-2-CCS.png "Spring-Boot-Microservice-2-CCS.png")
+
 ![Image](/images/Spring-Boot-Microservice-3-FSInstances.png "Spring-Boot-Microservice-3-FSInstances.png")
 
 And the number of instances for each service might vary with time. Below picture shows a specific instance where there are 5 instances of the Forex Service.
+
 ![Image](/images/Spring-Boot-Microservice-4-5FSInstances.png "Spring-Boot-Microservice-4-5FSInstances.png")
 
 What needs to happen in the above situation is load should be uniformly distributed among these 5 instances.
+
 ![Image](/images/Spring-Boot-Microservice-5-CCSToFS5instances.png "Spring-Boot-Microservice-5-CCSToFS5instances.png")
 
 In this series of articles, we will use Ribbon for Load Balancing and Eureka Naming server for registering all microservices.
+
 ![Image](/images/Spring-Boot-Microservice-6-EurekaNamingServer-Deployment.png "Spring-Boot-Microservice-6-EurekaNamingServer-Deployment.png")
 
 > Do not worry if you are not clear about a few things. The idea is to give a big picture before we get our hands dirty and create the microservices step by step
@@ -233,6 +238,7 @@ We would want to be able to dynamically scale up and scale down the number of in
 ![Image](/images/Spring-Boot-Microservice-3-FSInstances.png "Spring-Boot-Microservice-3-FSInstances.png")
 
 And the number of instances for each service might vary with time. Below picture shows a specific instance where there are 5 instances of the Forex Service.
+
 ![Image](/images/Spring-Boot-Microservice-4-5FSInstances.png "Spring-Boot-Microservice-4-5FSInstances.png")
 
 Implementing a solution for dynamic scale up and down needs to answer two questions

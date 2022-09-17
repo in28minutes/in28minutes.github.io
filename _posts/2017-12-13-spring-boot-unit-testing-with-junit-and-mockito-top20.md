@@ -7,6 +7,8 @@ categories:  SpringBootUnitTesting
 permalink:  /spring-boot-unit-testing-and-mocking-with-mockito-and-junit
 ---
 
+![Image](/images/SpringBootWithMockito-ProjectStructure.png "Spring Boot with Mockito - Project Structure") 
+
 This guide will help you create great unit tests with JUnit and Mockito for your Spring Boot Projects. We will use two difference approaches to write unit tests.
  
 ![Image](/images/spring-initializer-web-h2-devtools-jdbc.png "Web, JDBC,H2 and Developer Tools")
@@ -23,6 +25,7 @@ This guide will help you create great unit tests with JUnit and Mockito for your
 ## Project Code Structure
 
 Following screenshot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootWithMockito-ProjectStructure.png "Spring Boot with Mockito - Project Structure") 
 
 A few details:

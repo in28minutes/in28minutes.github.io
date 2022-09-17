@@ -20,6 +20,7 @@ This guide will help you create a simple project with Spring Boot. You will add 
 ## Project Code Structure
 
 The following screenshot shows the structure of the project we will create.
+
 ![Image](/images/SpringBootwithJDBC-ProjectStructure.png "Spring Boot with JDBC - Project Structure") 
 
 A few details
@@ -158,6 +159,7 @@ When you reload the application, you can launch up H2 Console at http://localhos
 > Tip - Make sure that you use `jdbc:h2:mem:testdb` as JDBC URL.
 
 When you use the right JDBC URL given above, you should see an empty schema when you click `Connect` button.
+
 ![Image](/images/H2-Console-Empty-Schema.png "H2 Console Empty Page") 
 
 ### Create Schema using schema.sql and Data using data.sql
@@ -192,6 +194,7 @@ Executing SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring
 ```
 
 When you login to H2 Console (http://localhost:8080/h2-console), you will see that the student table is created and the data is populated.
+
 ![Image](/images/H2-Console-With-Student.png "H2 Console With Student")
 
 ## Creating Student Bean

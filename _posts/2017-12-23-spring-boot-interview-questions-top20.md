@@ -9,6 +9,7 @@ permalink:  /spring-boot-interview-questions
 
 This guide will help you understand the most important concepts in Spring Boot in preparation for a Spring Boot Interview.
 
+![Image](/images/SpringBootApplicationConfiguration-ProjectStructure.png "Spring Boot Application Configuration Project Structure")
 
  
 ## Spring Boot
