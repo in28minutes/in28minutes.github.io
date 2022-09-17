@@ -7,7 +7,9 @@ categories:  SpringBoot
 permalink:  /creating-spring-boot-project-with-eclipse-and-maven
 ---
 
-Setting up a basic project with Spring Boot is a cake walk. In this article, we will explore the different options of creating Spring Boot Projects with Maven and Eclipse.   
+Setting up a basic project with Spring Boot is a cake walk. In this article, we will explore the different options of creating Spring Boot Projects with Maven and Eclipse. 
+
+![Image](/images/CreatingSpringBootProject-Option1-SpringInitializr-Screen2.png "CreatingSpringBootProject-Option1-SpringInitializr-Screen2")  
  
 ## You will learn
 - How to bootstrap a simple project with Spring Initializr?

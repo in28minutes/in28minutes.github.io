@@ -9,6 +9,9 @@ permalink:  /spring-boot-unit-testing-and-mocking-with-mockito-and-junit
 
 This guide will help you create great unit tests with JUnit and Mockito for your Spring Boot Projects. We will use two difference approaches to write unit tests.
  
+![Image](/images/spring-initializer-web-h2-devtools-jdbc.png "Web, JDBC,H2 and Developer Tools")
+
+
 ## You will learn
 - What is JUnit?
 - What is Mockito?
