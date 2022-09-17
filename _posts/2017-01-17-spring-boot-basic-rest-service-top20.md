@@ -8,6 +8,8 @@ permalink:  /creating-rest-service-with-spring-boot
 ---
 
 This guide will help you create a simple REST service using Spring Boot. 
+
+![Image](/images/SpringBootRestService-ProjectStructure.png "Spring Boot Rest Service - Project Structure") 
  
 ## You will learn
 - What is a REST Service?

@@ -8,6 +8,8 @@ permalink:  /unit-testing-for-spring-boot-rest-services
 ---
 
 This guide will help you write great unit tests for your Spring Boot Rest Service. We will use a simple code example creating couple of simple rest services. 
+
+![Image](/images/SpringBootRestService-ProjectStructure.png "Spring Boot Rest Services - Project Structure")
  
 ## You will learn
 - What is Unit Testing?
