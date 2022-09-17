@@ -8,6 +8,8 @@ permalink:  /introduction-to-the-spring-framework
 ---
 
 In this article, we look to get an introduction to what the Spring framework is, and why it is so widely used. 
+
+![image info](images/Capture-081-02.png)
  
 ## You will learn
 - What is Spring Framework?

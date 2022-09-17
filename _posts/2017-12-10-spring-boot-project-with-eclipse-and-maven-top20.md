@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Creating a Spring Boot Project with Eclipse and Maven
-date:       2020-07-06 12:31:19
+date:       2022-07-06 12:31:19
 summary:    Setting up a basic project with Spring Boot is a cake walk. In this article, we will explore the different options of creating Spring Boot Projects with Maven and Eclipse. 
 categories:  SpringBoot
 permalink:  /creating-spring-boot-project-with-eclipse-and-maven

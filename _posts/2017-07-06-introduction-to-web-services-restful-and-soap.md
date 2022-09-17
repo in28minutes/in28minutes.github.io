@@ -7,6 +7,8 @@ categories:  SwArchitecture
 permalink:  /introduction-to-web-services-with-soap-and-rest
 ---
 
+![Image](/images/Web_Service_Basic_Interaction.png)
+
 This tutorial will help you understand the basics of web services and the different kinds of web services—REST and SOAP. 
 
 ## You will learn

@@ -1,13 +1,15 @@
 ---
 layout:  post
 title:  Spring Data and Spring Data JPA - Quick Tutorial for Beginners
-date:   2019-04-10 12:31:19
+date:   2022-04-10 12:31:19
 summary: In this article, we take a look at Spring Data and Spring Data JPA.
 categories:  SpringBoot
 permalink:  /introduction-to-spring-data-and-spring-data-jpa
 ---
 
 In this article, we take a look at Spring Data and Spring Data JPA.
+
+![image info](images/Capture-081-02.png)
 
 ### You will Learn
 

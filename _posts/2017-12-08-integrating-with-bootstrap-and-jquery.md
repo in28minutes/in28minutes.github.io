@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Spring Boot - Integrating with Bootstrap & jQuery using Web Jars
-date:       2020-07-07 12:31:19
+date:       2022-07-07 12:31:19
 summary:    Learn how to integrate Spring Boot with Bootstrap and jQuery using Web Jars. We will set up a simple web application and add the web jars for these frameworks. 
 categories:  SpringBoot
 permalink:  /spring-boot-with-jquery-and-bootstrap-web-jars

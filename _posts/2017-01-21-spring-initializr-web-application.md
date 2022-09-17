@@ -7,10 +7,13 @@ categories:  SpringBoot
 permalink : /spring-initialzr-bootstrap-spring-boot-applications
 ---
 
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
 Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
-It allows you to create varied range of Spring Boot based Applications from a very simple UI. Some of the types of applications you can bootstrap are:
+![Image](/images/Spring-Initializr-Web-ApplicationStructure.png "Spring Initializr Web Application - Folder Structure")
 
+It allows you to create varied range of Spring Boot based Applications from a very simple UI. Some of the types of applications you can bootstrap are:
 - Web Applications
 - Restful Applications
 - Batch Applications

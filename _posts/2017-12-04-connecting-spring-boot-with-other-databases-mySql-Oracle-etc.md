@@ -1,11 +1,13 @@
 ---
 layout:     post
 title:   Connecting Spring Boot with databases - MySQL and Oracle
-date:       2020-07-07 12:31:19
+date:       2022-07-07 12:31:19
 summary:  Learn how to connect a Spring Boot application with relational databases like Oracle and MySQL. Learn how to setup a database schema for them and also what to configure in application configuration.
 categories:  SpringBootJPA
 permalink:  /spring-boot-with-mysql-and-oracle
 ---
+
+![Image](/images/SpringBootWebApplication-StaticContent.png "Spring Boot Web Application with jQuery and Bootstrap- All Files") 
 
 This guide will help you understand how to connect Spring Boot with databases like MySql and Oracle.
  

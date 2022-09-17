@@ -8,6 +8,8 @@ permalink:  /rest-api-contRact-first-approach
 ---
 
 Designing Great REST API is important to have great microservices. Contract First approach helps you in designing a great contract before implementing it. However, it does not come easy!
+
+![image info](/images/Capture-018-05.png)
  
 ## You will learn
 - What is Contract First approach of designing REST API?

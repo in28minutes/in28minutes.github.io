@@ -7,6 +7,8 @@ categories:  SpringBootUnitTesting
 permalink:  /integration-testing-for-spring-boot-rest-services
 ---
 
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
 This guide will help you write great integration tests for your Spring Boot Rest Service. We will use a simple code example creating couple of simple rest services. 
  
 ## You will learn

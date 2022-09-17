@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Java Annotation and XML Bean Configurations with Spring Boot
-date:       2020-07-06 12:31:19
+date:       2022-07-06 12:31:19
 summary:    Spring allows you to configure your beans using Java Annotations and XML definitions. In this guide, we will explore how to use XML and Java Annotations to configure your beans with Spring Boot. We will understand how to load these configurations into a Spring Application Context. 
 categories:  SpringFramework
 permalink:  /spring-boot-java-xml-context-configuration

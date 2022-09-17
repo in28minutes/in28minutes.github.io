@@ -7,6 +7,8 @@ categories:  SpringBoot
 permalink:  /creating-rest-service-with-spring-boot
 ---
 
+![Image](/images/ExecutingPostRestServiceUsingPostman.png "Executing Post Rest Service From Postman")   
+
 This guide will help you create a simple REST service using Spring Boot. 
 
 ![Image](/images/SpringBootRestService-ProjectStructure.png "Spring Boot Rest Service - Project Structure") 

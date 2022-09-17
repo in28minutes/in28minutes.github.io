@@ -7,7 +7,12 @@ categories:  SpringBoot
 permalink:  /spring-boot-starter-parent
 ---
 
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
 This guide will help you understand how Spring Boot Starter Parent helps with managing dependency versions, the java version used by project and the default configuration for plug-ins.
+
+![Image](/images/SpringBootStarterWeb-Dependencies.png "Spring Boot Starter Web - Dependencies")
+
  
 ## You will learn
 - What is Spring Boot Starter Parent?

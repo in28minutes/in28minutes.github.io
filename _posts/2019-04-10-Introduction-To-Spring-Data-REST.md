@@ -1,13 +1,15 @@
 ---
 layout:  post
 title: Introduction To Spring Data Rest - Quick Tutorial for Beginners
-date:   2019-04-10 12:31:19
+date:   2022-04-10 12:31:19
 summary: Spring Data project provides common abstractions to integrate with different kinds of data stores. Spring Data Rest is part of the umbrella of Spring Data projects. It makes it easy to build hypermedia-driven REST web services, on top of Spring Data repositories.
 categories:  SpringBoot
 permalink:  /spring-boot-introduction-to-spring-data-rest
 ---
 
 Spring Data project provides common abstractions to integrate with different kinds of data stores. Spring Data Rest is part of the umbrella of Spring Data projects. It makes it easy to build hypermedia-driven REST web services, on top of Spring Data repositories.
+
+![image info](images/Capture-082-03.png)
 
 ## You will learn
 - What is Spring Data Rest?

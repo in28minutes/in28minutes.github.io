@@ -1,11 +1,13 @@
 ---
 layout:     post
 title:      Getting Started with Spring Boot - 7 things a beginner should know!
-date:       2020-07-01 12:31:19
+date:       2022-07-01 12:31:19
 summary:    Spring Boot is a tricky framework to understand. In this tutorial for beginnners with Spring Boot, we will look at the basics of Spring Boot and help you understand the important concepts - Architecture, Starter Projects, Auto Configuration and Starter Parent. We will look at the architecture of Spring Boot and explore a variety of resources - tutorials, courses and videos - we created to help you get started with Spring Boot effectively.
 categories:  SpringBoot
 permalink:  /introduction-to-spring-boot-for-beginners
 ---
+
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
 Spring Boot is a tricky framework to understand. In this tutorial for beginnners with Spring Boot, we will look at the basics of Spring Boot and help you understand the important concepts - Starter Projects, Auto Configuration and Starter Parent. We will explore a variety of resources - tutorials, courses and videos - we created to help you get started with Spring Boot effectively. 
 

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Versioning RESTful Services - Spring Boot REST API
-date:       2020-07-02 12:31:19
+date:       2022-07-02 12:31:19
 summary:    Learn why versioning is needed and how you can version your REST API. We will look at 4 ways of versioning and also compare the different approaches.
 categories:  SpringBoot
 permalink:  /spring-boot-versioning-for-rest-services

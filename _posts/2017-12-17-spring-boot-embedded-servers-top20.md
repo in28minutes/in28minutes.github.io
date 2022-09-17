@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Spring Boot and Embedded Servers - Tomcat, Jetty and Undertow
-date:       2020-07-05 12:31:19
+date:       2022-07-05 12:31:19
 summary:    Let's understand the need for embedded servers. We will understand the default embedded server provided by Spring Boot i.e. Tomcat and discuss the other options that Spring Boot supports - Jetty and Undertow.
 categories:  SpringBoot
 permalink:  /spring-boot-with-embedded-servers-tomcat-jetty

@@ -1,13 +1,17 @@
 ---
 layout:  post
 title:  Designing REST API - What is Code First Approach?
-date:    2019-11-14 12:31:19
+date:    2022-08-14 12:31:19
 summary: Designing Great REST API is important to have great microservices. Code First approach focuses on generating the contract from code. Is it the best possible approach? 
 categories: RestAPI
 permalink:  /rest-api-code-first-approach
 ---
 
+![image info](/images/Capture-021-04.png)
+
 Designing Great REST API is important to have great microservices. Code First approach focuses on generating the contract from code. Is it the best possible approach? 
+
+![image info](/images/Capture-021-05.png)
 
 ## You will learn
 - What is Code First approach of designing REST API?

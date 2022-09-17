@@ -7,9 +7,12 @@ categories:  SpringBoot
 permalink:  /spring-boot-auto-configuration
 ---
 
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
 This guide will help you understand Spring Boot Auto Configuration with examples. We will use a simple code example creating couple of simple rest services. 
 
-![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+![Image](/images/spring-boot-autoconfigure-jar.png "Spring Boot Auto Configure Jar")
+
 
 
  

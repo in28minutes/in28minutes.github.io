@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Spring Interview Questions
-date:       2020-07-04 12:31:19
+date:       2022-07-04 12:31:19
 summary:    Let's take a quick look at some of the important Spring concepts with examples to get ready for a Spring Interview. We will look at defining beans with Spring (@Component, @Service, etc), auto wiring them (@Autowired), @ComponentScan and understand the basics of Application Context and Bean Factory. We will also look a few important Spring MVC interview questions.
 categories:  SpringFramework
 permalink:  /spring-interview-questions

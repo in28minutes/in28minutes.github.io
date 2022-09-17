@@ -1,14 +1,18 @@
 ---
 layout:     post
 title:      Spring Boot - Integrating Static Content -  Javascript (JS) and CSS files 
-date:       2020-07-07 12:31:19
+date:       2022-07-07 12:31:19
 summary:    Learn how to integrate Spring Boot with Static Content -  Javascript (JS) and CSS files . We will set up a simple web application and add the static content for these frameworks. 
 categories:  SpringBoot
 permalink:  /spring-boot-with-static-content-css-and-javascript-js
 ---
 
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
 This guide will help you create a simple web application with Spring Boot. We will add static content (css and js) and use it from a JSP view. 
  
+![Image](/images/SpringBootWebApplication-StaticContent.png "Spring Boot Web Application with jQuery and Bootstrap- All Files") 
+
 ## You will learn
 - How to bootstrap a simple project with Spring Initializr?
 - How to initialize a basic web application for Spring Boot?

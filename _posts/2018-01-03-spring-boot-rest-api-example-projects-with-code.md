@@ -1,16 +1,16 @@
 ---
 layout:     post
 title:      Spring Boot REST API Projects with Code Examples
-date:       2020-07-02 12:31:19
+date:       2022-07-02 12:31:19
 summary:    At in28Minutes, we have created 8 Spring Boot REST API projects with code examples on Github. We have 10+ tutorial articles explaining these projects.  These code examples will help beginners and experts to learn and gain expertise at developing RESTful Services with Spring Boot.
 categories:  SpringBoot
 permalink:  /spring-boot-rest-api-projects-with-code-examples
 ---
 
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
 This guide will help you understand the REST API projects with code examples on Github. We have a number of articles explaining these projects.  These code examples will help beginners and experts to learn and gain expertise at developing RESTful Services with Spring Boot. 
 
-
- 
 
  
 ## Spring Boot REST API Projects - Code Examples on Github

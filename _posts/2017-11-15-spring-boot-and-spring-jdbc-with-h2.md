@@ -7,8 +7,12 @@ categories:  SpringBootJPA
 permalink:  /spring-boot-and-spring-jdbc-with-h2
 ---
 
+![Image](/images/spring-initializer-web-h2-devtools-jdbc.png "Web, JDBC,H2 and Developer Tools")
+
 This guide will help you create a simple project with Spring Boot. You will add code to the project to connect to a database using Spring JDBC. You will learn to write all the CRUD methods.
  
+![Image](/images/H2-Console-Login-Page.png "H2 Console Login PAge") 
+
 ## You will learn
 - How does Spring Boot Started JDBC work? 
 - How to connect a Spring Boot project to a database using Spring JDBC?

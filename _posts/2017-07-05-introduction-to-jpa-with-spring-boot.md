@@ -7,8 +7,12 @@ categories:  SpringBootJPA
 permalink:  /introduction-to-jpa-with-spring-boot-data-jpa
 ---
 
+![Image](/images/JPA_02_Architecture.png "JPA Architecuture")
+
 This guide will help you understand what JPA is and how to setup a simple JPA example using Spring Boot.
  
+![Image](/images/JPA_01_Introduction.png "JPA Introduction")
+
 ## You will learn
 - What is JPA?
 - What is the problem solved by JPA-Object Relational Impedance?

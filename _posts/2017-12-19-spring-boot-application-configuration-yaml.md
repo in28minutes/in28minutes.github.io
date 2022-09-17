@@ -1,13 +1,16 @@
 ---
 layout:     post
 title:      Spring Boot Application Configuration with YAML
-date:       2020-07-05 12:31:19
+date:       2022-07-05 12:31:19
 summary:    YAML stands for Yet Another Markup Language. It makes application configuration human readable. In this tutorial, we will understand what YAML is and how your can configure Spring Boot applications using YAML. 
 categories:  SpringBoot
 permalink:  /spring-boot-application-configuration-with-yaml
 ---
 
 This guide will introduce you to YAML and the YAML support with the various application configuration options that are present in Spring Boot. 
+
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
  
 ## You will learn
 - What is application configuration?

@@ -1,13 +1,15 @@
 ---
 layout:  post
 title:  Introduction To Spring Boot Framework - A Quick Tutorial for Beginners
-date:   2019-04-10 12:31:19
+date:   2022-04-10 12:31:19
 summary: In this article, we understand the basics of Spring Boot framework. We look at the important features of Spring Boot and how it is different from the Spring framework.
 categories:  SpringBoot
 permalink:  /introduction-to-spring-boot
 ---
 
 In this article, we understand the basics of Spring Boot framework. We look at the important features of Spring Boot and how it is different from the Spring framework.
+
+![image info](images/Capture-085-03.png)
 
 ## You will learn
 - What is Spring Boot?

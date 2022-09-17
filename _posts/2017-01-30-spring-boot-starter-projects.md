@@ -7,7 +7,12 @@ categories:  SpringBoot
 permalink:  /spring-boot-starter-projects
 ---
 
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
 This guide will help you understand how Spring Boot Starter Projects enable the key goal of Spring Boot - Quick Start to developing production ready applications. 
+
+![Image](/images/SpringBootStarterWeb-Dependencies.png "Spring Boot Starter Web - Dependencies")
+
  
 ## You will learn
 - What features are provided by Spring Boot Starter Projects?

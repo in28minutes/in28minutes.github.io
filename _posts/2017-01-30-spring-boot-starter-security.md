@@ -1,17 +1,20 @@
 ---
 layout:     post
 title:      Secure Rest Services and Web Applications with Spring Boot Security Starter
-date:       2020-07-07 12:31:19
+date:       2022-07-07 12:31:19
 summary:    Spring Boot Starter Security is the recommended starter for enabling security on web application - including REST services. 
 categories:  SpringBoot
 permalink:  /securing-rest-services-with-spring-boot-starter-security
 ---
 
-This guide will help you understand the different features Spring Boot Starter Security brings in using two examples
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
+This guide will help you understand the different features Spring Boot Starter Security brings in using two examples:
 - A REST Service 
 - A Simple Web Application Page
  
+![Image](/images/SpringBootSecuritySecurity-WebApplication.png "Spring Security - Web Application") 
+
 ## You will learn
 - What is Spring Boot Starter Security?
 - What features are provided by Spring Boot Starter Security?

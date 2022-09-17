@@ -8,6 +8,9 @@ permalink:  /spring-boot-vs-spring-mvc-vs-spring
 ---
 
 What is a Spring boot? What is Spring MVC? What is the Spring Framework? What are their goals? How do they compare?
+
+![Image](/images/SpringBootStarterWeb-Dependencies.png "Spring Boot Starter Web - Dependencies")
+
  
 ## You will learn
 - Get an overview of the Spring Framework

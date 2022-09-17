@@ -1,11 +1,13 @@
 ---
 layout:     post
 title:   Introduction to Spring Data - Spring Data JPA, Spring Data REST and MongoDB
-date:       2020-01-02 12:31:19
+date:       2022-01-02 12:31:19
 summary:  Spring Data's mission is to provide a familiar and consistent, Spring-based programming model for data access. In this tutorial, we will explore the different interfaces provided by Spring Data. We will take a quick peek into Spring Data JPA and Spring Data for MongoDB.
 categories:  SpringBootJPA
 permalink:  /introduction-to-spring-data-with-spring-boot
 ---
+
+![Image](/images/SpringBootWebApplication-StaticContent.png "Spring Boot Web Application with jQuery and Bootstrap- All Files") 
 
 This guide will help you understand the basics of Spring Data. We will look at the various options that Spring Data provides and a couple of examples - Spring Data JPA and Spring Data Mongodb.
  
