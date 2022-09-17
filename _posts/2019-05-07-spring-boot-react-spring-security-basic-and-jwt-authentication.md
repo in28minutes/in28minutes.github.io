@@ -7,7 +7,12 @@ categories:  SpringBootFullStack
 permalink:  /spring-boot-react-full-stack-with-spring-security-basic-and-jwt-authentication
 ---
 
+![Image](/images/full-stack-application-with-spring-boot-view-only-course-listing-page.png "Spring Boot Full Stack Application") 
+
 This guide helps you setup Spring Security with Basic and JWT authentication with a full stack application using React as Frontend framework and  Spring Boot as the backend REST API. We will be using JavaScript as the frontend language and Java as the backend language.
+
+![Image](/images/react_00_architecture.png "Architecture of Spring Boot React Full Stack Application")
+
  
 ## You will learn
 - How do you use React as a Frontend Framework?

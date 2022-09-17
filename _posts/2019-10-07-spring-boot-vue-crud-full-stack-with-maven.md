@@ -7,7 +7,11 @@ categories: SpringBootFullStack
 permalink: /spring-boot-vue-full-stack-crud-maven-application
 ---
 
+![Image](/images/full-stack-application-with-spring-boot-screenshot.png "Spring Boot Full Stack Application")
+
 This guide helps you create a Java full stack application with all the CRUD (Create, Read, Update and Delete) features using Vue as Front end framework and Spring Boot as the backend REST API. We will be using JavaScript as the front end language and Java as the backend language.
+
+![Image](/images/vue_00_architecture.png "Architecture of Spring Boot Vue Full Stack Application")
 
 ## You will learn
 

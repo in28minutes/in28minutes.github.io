@@ -9,6 +9,7 @@ permalink:  /microservices-with-spring-boot-part-5-eureka-naming-server
 
 Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. 
 
+![Image](/images/Spring-Boot-Microservice-1-CCS-FS.png "Spring-Boot-Microservice-1-CCS-FS") 
 
 
 Here is the Microservice Series Outline:

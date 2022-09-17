@@ -7,6 +7,8 @@ categories:  SpringBootMicroservices
 permalink:  /creating-microservices-with-spring-boot-part-2-forex-microservice
 ---
 
+![Image](/images/Spring-Initializr-Web-JPA.png "Web, JPA, Hibernate and Developer Tools")
+
 Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. 
 
 Here is the Microservice Series Outline:

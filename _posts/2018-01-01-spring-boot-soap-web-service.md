@@ -7,8 +7,12 @@ categories:  SpringBoot
 permalink:  /creating-soap-web-service-with-spring-boot-web-services-starter
 ---
 
+![Image](/images/Spring-Initializr-Web-JPA.png "Web, JPA, Hibernate and Developer Tools")
+
 This guide will help you create a SOAP Web Service with Spring Boot Starter Web Services. We will take a Contract First approach by definining an XSD and exposing a WSDL from it.
  
+![Image](/images/ExecutingSOAPRequestsWithWizdler-1.png "ExecutingSOAPRequestsWithWizdler-1")
+
 ## You will learn
 - What is a web service?
 - What are the different types of web services?
@@ -589,6 +593,7 @@ URL of the WSDL - http://localhost:8080/ws/students.wsdl
 > Install the chrome plugin Wizdler.
 
 Once you install wizdler and launch the wsdl url `http://localhost:8080/ws/students.wsdl`, you would see a small icon at the corner of the chrome browser, which you can click to see the services that are part of the wsdl. Go ahead and click the Wizdler icon and click the service `GetStudentDetails`
+
 ![Image](/images/ExecutingSOAPRequestsWithWizdler-1.png "ExecutingSOAPRequestsWithWizdler-1") 
 
 This would launch a window to execute the request. Change the id to 1. Click Go button at the top right corner of the screen.

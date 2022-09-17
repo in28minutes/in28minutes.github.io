@@ -7,7 +7,11 @@ categories:  SpringBootMicroservices
 permalink:  /creating-microservices-with-spring-boot-part-3-currency-conversion-microservice
 ---
 
+![Image](/images/Spring-Boot-Microservice-1-CCS-FS.png "Spring-Boot-Microservice-1-CCS-FS") 
+
 Let's learn the basics of microservices and microservices architectures. We will also start looking at a basic implementation of a microservice with Spring Boot. We will create a couple of microservices and get them to talk to each other using Eureka Naming Server and Ribbon for Client Side Load Balancing. 
+
+![Image](/images/spring-boot-microservice-currency-conversion-service-project-structure.png "Project Structure") 
 
 Here is the Microservice Series Outline:
 Microservices with Spring Boot 
