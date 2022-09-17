@@ -7,10 +7,11 @@ categories:  SpringBootJPA
 permalink:  /spring-boot-and-h2-in-memory-database
 ---
 
+![Image](/images/spring-initializer-web-h2-devtools-jpa.png "Web, JPA, H2 and Developer Tools")
+
 This guide will help you understand the concept of in memory database. We will look at simple JPA example to understand the best practices in using in memory databases.
 
 ![](/images/h2-solution-image.png)
-
  
 ## You will learn
 - What is an in memory database?
