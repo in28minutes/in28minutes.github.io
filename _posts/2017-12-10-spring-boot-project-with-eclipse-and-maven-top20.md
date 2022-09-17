@@ -7,6 +7,8 @@ categories:  SpringBoot
 permalink:  /creating-spring-boot-project-with-eclipse-and-maven
 ---
 
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
 Setting up a basic project with Spring Boot is a cake walk. In this article, we will explore the different options of creating Spring Boot Projects with Maven and Eclipse. 
 
 ![Image](/images/CreatingSpringBootProject-Option1-SpringInitializr-Screen2.png "CreatingSpringBootProject-Option1-SpringInitializr-Screen2")  
@@ -224,6 +226,7 @@ Make sure you choose Maven as Type.
 ![Image](/images/CreatingSpringBootProject-Option2-EclipsePluginSpringStarterProject-Screen2.png "CreatingSpringBootProject-Option2-EclipsePluginSpringStarterProject-Screen2")
 
 In the next screen, you can choose the dependencies that you would want to add to your Spring Boot project. 
+
 ![Image](/images/CreatingSpringBootProject-Option2-EclipsePluginSpringStarterProject-Screen3.png "CreatingSpringBootProject-Option2-EclipsePluginSpringStarterProject-Screen3")
 
 Once you click Finish, Maven would take some time to download all the dependencies and initialize the project. 
