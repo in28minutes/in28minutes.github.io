@@ -7,7 +7,11 @@ categories:  SpringBoot
 permalink:  /spring-boot-with-jquery-and-bootstrap-web-jars
 ---
 
+![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
+
 This guide will help you create a simple web application with Spring Boot. We will add the dependencies for Bootstrap and jQuery webjars. We will create a simple jsp view using jQuery and Bootstrap.
+
+![Image](/images/bootstrap-and-jquery-in-dependencies.png "Bootstrap and jQuery in dependencies") 
  
 ## You will learn
 - How to bootstrap a simple project with Spring Initializr?

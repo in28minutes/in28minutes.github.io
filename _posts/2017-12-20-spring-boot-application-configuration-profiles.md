@@ -8,6 +8,8 @@ permalink:  /spring-boot-profiles
 ---
 
 This guide will introduce you to profiles and help you understand how to use profiles with the various application configuration options that are present in Spring Boot. 
+
+![Image](/images/Spring-Initializr-Web-JPA.png "Web, JPA, Hibernate and Developer Tools")
  
 ## You will learn
 - What is application configuration?

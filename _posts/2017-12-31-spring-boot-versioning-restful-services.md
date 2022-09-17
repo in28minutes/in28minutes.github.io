@@ -7,8 +7,12 @@ categories:  SpringBoot
 permalink:  /spring-boot-versioning-for-rest-services
 ---
 
+![Image](/images/Spring-Initializr-Web-JPA.png "Web, JPA, Hibernate and Developer Tools")
+
 This guide will help you understand why versioning is needed and how you can version your REST API. We will look at 4 ways of versioning and also compare the different approaches.
  
+![Image](/images/Postman-ProvidingRequestHeaders.png "Postman-ProvidingRequestHeaders")   
+
 ## You will learn
 - Why do we need Versioning for  RESTful Web Services?
 - What are the versioning options that are available?

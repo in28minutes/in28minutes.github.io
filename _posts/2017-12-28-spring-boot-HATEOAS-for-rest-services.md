@@ -7,6 +7,8 @@ categories:  SpringBoot
 permalink:  /spring-boot-hateoas-for-rest-services
 ---
 
+![Image](/images/CRUDServiceWithHibernate.png "CRUDServiceWithHibernate") 
+
 This guide will help you implement HATEOAS for a REST API/Service with Spring Boot.
  
 ## You will learn

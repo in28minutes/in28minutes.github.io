@@ -8,6 +8,9 @@ permalink:  /spring-boot-swagger-documentation-for-rest-services
 ---
 
 This guide will help you use Swagger with Spring Boot to document your RESTful services. We will learn how to expose automated swagger documentation from your application. We will also add documentation to the REST API with swagger annotations.
+
+![Image](/images/SwaggerDocumentation-1-HomePage.png "SwaggerDocumentation-1-HomePage") 
+
  
 ## You will learn
 - What is the need for documenting your RESTful services?

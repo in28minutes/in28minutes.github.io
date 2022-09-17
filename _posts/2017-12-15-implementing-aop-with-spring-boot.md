@@ -8,6 +8,8 @@ permalink:  /spring-boot-and-aop-with-spring-boot-starter-aop
 ---
 
 This guide will help you implement AOP with Spring Boot Starter AOP. We will implement 4 different advices using AspectJ and also create a custom annotation to track execution time of a method.
+
+![Image](/images/SpringBootAOPProjectStructure.png "Spring Boot AOP Project Structure") 
  
 ## You will learn
 - What are cross cutting concerns?

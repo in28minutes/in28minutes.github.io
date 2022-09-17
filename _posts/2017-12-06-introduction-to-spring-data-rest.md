@@ -7,8 +7,12 @@ categories:  SpringBoot
 permalink:  /introduction-to-spring-data-rest-using-spring-boot
 ---
 
+![Image](/images/spring-initializer-web-h2-devtools-jpa.png "Web, JPA, H2 and Developer Tools")
+
 This guide will help you expose RESTful API using a combination of Spring Boot, JPA/Hibernate, Spring Data and Spring Data REST. We will use H2 as the in memory database. 
  
+![Image](/images/SpringDataREST-ExectingPostRequest.png "Spring Data Rest with Spring Boot and JPA - Post Request")
+
 ## You will learn
 - How to create a project using Spring Boot, Spring Boot Starter JPA, Spring Boot Data Rest Starter and H2?
 - How to expose RESTful API using Spring Boot Data Rest?
