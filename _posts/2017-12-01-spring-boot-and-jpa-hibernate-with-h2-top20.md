@@ -8,6 +8,8 @@ permalink:  /hibernate-jpa-tutorial-with-spring-boot-starter-jpa
 ---
 
 This guide will help you create a simple project with Spring Boot and connect to a database using Hibernate/JPA. We will use Spring Boot Starter JPA and in memory database H2.
+
+![Image](/images/JPA_02_Architecture.png "JPA Architecuture")
  
 ## You will learn
 - Basics of JPA/Hibernate
