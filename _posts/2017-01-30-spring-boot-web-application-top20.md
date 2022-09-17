@@ -9,7 +9,7 @@ permalink:  /creating-web-application-with-spring-boot
 
 This guide will help you create a simple web application with Spring Boot. We will develop a simple application with login functionality as well as the functionality to show a list of todo's. We will follow MVC pattern using JSP as the view.  
 
-![Image](/images/SpringBootWebApplication-LoginPage.png "Spring Boot Web Application - Login Page")
+![Image](/images/SpringBootWebApplication-AllFiles.png "Spring Boot Web Application - All Files")
 
  
 ## You will learn

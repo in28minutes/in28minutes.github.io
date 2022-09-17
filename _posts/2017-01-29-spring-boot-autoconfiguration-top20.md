@@ -11,8 +11,6 @@ This guide will help you understand Spring Boot Auto Configuration with examples
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-![Image](/images/spring-boot-autoconfigure-jar.png "Spring Boot Auto Configure Jar")
-
 
  
 ## You will learn
