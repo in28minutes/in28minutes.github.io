@@ -9,6 +9,9 @@ permalink:  /spring-boot-react-full-stack-crud-maven-application
 
 This guide helps you create a Java full stack application with all the CRUD (Create, Read, Update and Delete) features using React as Frontend framework and  Spring Boot as the backend REST API. We will be using JavaScript as the frontend language and Java as the backend language.
  
+![Image](/images/full-stack-application-with-spring-boot-screenshot.png "Spring Boot Full Stack Application") 
+
+
 ## You will learn
 
 - What is a full stack application?
