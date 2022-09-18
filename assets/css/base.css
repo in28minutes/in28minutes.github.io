@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Rubik:wght@400;700&display=swap');
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+.ff-sans {
+  font-family: 'Rubik', sans-serif !important;
+}
+
+.ff-serif {
+  font-family: 'Merriweather', Cambria, Cochin, Georgia, Times,
+    'Times New Roman', serif;
+}

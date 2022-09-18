@@ -1,11 +1,19 @@
-# Site settings
-title:       Spring Boot Tutorial
-email:       
-author:      Ranga Karanam
-description: "Spring Boot Tutorials. Hands-on examples. - Basics of Spring Boot. Covers Spring Boot Starter Projects, Spring Initializr, Creating REST Services, Unit and Integration tests, Profiles, Spring Boot Data JPA, Actuator and Security"
-baseurl:     ""
-url:         "https://www.springboottutorial.com"
-date_format: "%b %-d, %Y"
+title: Spring Boot Tutorials
+email: your-email@example.com
+description: Spring Boot Tutorials. Hands-on examples. - Basics of Spring Boot. Covers Spring Boot Starter Projects, Spring Initializr, Creating REST Services, Unit and Integration tests, Profiles, Spring Boot Data JPA, Actuator and Security
+url: 'https://www.springboottutorial.com'
+twitter_username: in28Minutes
+github_username: in28Minutes
+linkedin_username: rangakaranam
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # Google services
 google_verification:
@@ -15,104 +23,12 @@ google_analytics: UA-32942307-5
 google_tag_manager:
 # Bing services
 bing_verification:
-
-# Optional features
-animated:             false
-show_related_posts:   true
-show_post_footers:    true
-show_social_icons:    false
-ajaxify_contact_form: false
-enable_mathjax: false
-extended_fonts: false
-enable_anchorjs: false
-
 # Facebook Page integration
 # (for instant articles and other stuff)
 fb_page: false
-fb_page_id: 
-
-# Disqus post comments
-# (leave blank to disable Disqus)
-disqus_shortname: 
-
+fb_page_id:
 # Facebook Comments plugin
 # (leave blank to disable Facebook Comments, otherwise set it to true)
 facebook_comments:
 facebook_appid:
 facebook_comments_number: 10
-
-# Social icons
-github_username: in28Minutes
-bitbucket_username:
-stackoverflow_id:
-twitter_username: in28Minutes
-skype_username:
-steam_nickname:
-google_plus_id:
-linkedin_username: rangakaranam
-angellist_username:
-medium_id:
-bitcoin_url:
-paypal_url:
-flattr_button:
-
-# Post sharing icons
-show_sharing_icons: false
-# Change to 'true' to enable individual icons
-share_facebook: true
-share_twitter: true
-share_googleplus: false
-share_linkedin: false
-share_digg: false
-share_tumblr: false
-share_reddit: false
-share_stumbleupon: false
-share_hackernews: false
-
-text:
-  pagination:
-    newer: 'Newer'
-    older: 'Older'
-  share_buttons:
-    text:         'Share this post!'
-    facebook:     'Share on Facebook'
-    twitter:      'Share on Twitter'
-    googleplus:   'Share on Google+'
-    linkedin:     'Share on LinkedIn'
-    digg:         'Share on Digg'
-    tumblr:       'Share on Tumblr'
-    reddit:       'Share on Reddit'
-    stumbleupon:  'Share on StumbleUpon'
-    hackernews:   'Share on Hacker News'
-  post:
-    updated:        'Updated'
-    minute_read:    'minute read'
-    related_posts:  'Related Posts'
-  index:
-    coming_soon: 'Coming soon...'
-  contact:
-    email:    'Email Address'
-    content:  'What would you like to say?'
-    subject:  'New submission!'
-    submit:   'Say Hello'
-    ajax:
-      sending:  'sending..'
-      sent:     'Message sent!'
-      error:    'Error!'
-  thanks: 'Thanks for contacting us. We will reply as soon as possible.'
-  og_locale: 'en_US'
-
-# Build settings
-markdown:     kramdown
-redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
-permalink:    pretty
-paginate:     10
-sass:
-  compressed: true
-gems:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-# https://github.com/jekyll/jekyll/issues/2938
-exclude: [vendor]
