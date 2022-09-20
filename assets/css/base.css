@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Rubik:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+body > div.container {
+  max-width: 1024px !important;
 }
 
 .ff-sans {
-  font-family: 'Rubik', sans-serif !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .ff-serif {
-  font-family: 'Merriweather', Cambria, Cochin, Georgia, Times,
-    'Times New Roman', serif;
+  font-family: 'Roboto Slab', Cambria, Cochin, Georgia, Times, 'Times New Roman',
+    serif;
 }

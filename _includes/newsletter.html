@@ -1,0 +1,48 @@
+<div class="row mb-5">
+    <div class="col-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3">
+        <div class="p-3 text-center bg-dark shadow-lg rounded" x-data="subscriptionData">
+            <h3 class="ff-sans fw-bold text-light">Subscribe to our newsletter</h3>
+            <template x-if="message!=null">
+                <div x-text="message" class="text-white"></div>
+            </template>
+            <template x-if="message==null">
+                <div>
+                    <input type="email" x-model="email" placeholder="Email" class="form-control mb-3">
+                    <button class="btn btn-warning" @click="submit">Subscribe</button>
+                </div>
+            </template>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('subscriptionData', () => ({
+            message: null,
+            email: '',
+            submit() {
+                if (!this.email.length) {
+                    return
+                }
+                const formData = new FormData()
+                formData.append('email_address', this.email)
+                formData.append('user', '97656196-385e-42ea-9e90-28742b9bd75b')
+                fetch('https://app.convertkit.com/forms/3586671/subscriptions', {
+                    body: formData,
+                    method: 'POST',
+                    headers: {
+                        'accept': 'application/json'
+                    }
+                }).then((res) => res.json()).then((res) => {
+                    if (res['status'] === 'success') {
+                        this.message = 'Thank you! Now check your email to confirm your subscription.'
+                    }
+                    else {
+                        throw Error('N/A')
+                    }
+                }).catch(e => {
+                    this.message = 'Something went wrong (' + e.toString() + ')'
+                })
+            }
+        }))
+    })
+</script>

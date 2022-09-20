@@ -74,6 +74,7 @@ GEM
 PLATFORMS
   universal-darwin-21
   x64-unknown
+  x64-unknown
 
 DEPENDENCIES
   http_parser.rb (~> 0.6.0)

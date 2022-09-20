@@ -1,10 +1,10 @@
 ---
 layout: home
 # Headlines
-headline: Java, Spring Boot, Cloud and DevOps
+headline: Spring Boot, AWS, Azure, GCP, Docker, Kubernetes and Full Stack
 subhead: Videos, courses, articles and much more…
 # About text
-about: Our goal is to help you learn Java, Spring Boot, Cloud and DevOps with hands-on, practical videos, articles and courses. Happy Learning!
+about: Our goal is to help you learn and re-skill Spring Boot, Microservices, Full Stack, Cloud (AWS), Docker and Kubernetes with hands-on, practical videos, articles and courses. We have more than 100 articles on Spring Boot, JPA, Hibernate, REST API, Microservices and Cloud. Have a wonderful time reading this. Do not forget to checkout our 500+ FREE videos and 30+ Courses. Good Luck and Keep Learning in28Minutes.
 # Feature cards shown on the home page
 features:
   - title: 100+
