@@ -2,58 +2,59 @@
 layout: default
 ---
 <style>
-    h1,
-    h2,
-    h3,
-    p,
-    li {
-        font-family: 'Merriweather', serif;
+    #content {
+        font-family: 'Roboto Slab', serif;
+        line-height: 2em;
     }
 
-    h2 {
+    #content>h2 {
         margin-top: 2em;
         color: #3d3d3d;
         font-weight: bold;
         margin-bottom: 1em;
     }
 
-    h3 {
+    #content>h3 {
         font-weight: bold;
         color: #8d8d8d;
     }
 
     div.highlight {
         padding: 1em;
-        font-family: 'Courier New', Courier, monospace !important;
+        font-family: 'Roboto Mono', monospace !important;
         margin-bottom: 1em;
     }
 </style>
 <div class="container">
-    <div class="row py-5" style="max-width: 1024px;">
+    <div class="row py-5">
         <div class="col">
             <h1 class="fw-bold display-3 mb-3">{{page.title}}</h1>
             {% assign minutes = content | strip_html | number_of_words | divided_by: 180 %}
             {% if minutes == 0 %}
             {% assign minutes = 1 %}
             {% endif %}
-            <div class="mb-5"><small class="text-muted fw-bold">{{page.date | date: "%b %d, %Y"}}</small> -
-                <i class="text-muted">{{minutes}} minutes</i>
+            <div class="mb-5"><small class="text-muted fw-bold">{{page.date | date: "%b %d, %Y"}} -
+                    {{minutes}} minutes</small>
             </div>
-            {{content}}
+            <div id="content">
+                {{content}}
+            </div>
         </div>
     </div>
-    <div class="d-flex justify-content-between align-items-center border-top mb-3 pt-3">
+    {% include newsletter.html %}
+    <div class="d-flex justify-content-between align-items-center border-top mb-3 pt-3 position-relative">
         <h3 class="text-muted fw-bold">Related posts</h3>
         <a href="{{'/all' | relative_url }}#{{category.slug}}" class="stretched-link">View all</a>
     </div>
-    <div class="row mb-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
+    <div class="row mb-5 row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
         {% assign category = page.categories[0] %}
         {% assign posts = site.categories[category]%}
         {% for post in posts limit: 3 %}
         <div class="col">
-            <div class="p-2 border rounded bg-light position-relative">
-                <h5 class="text-dark fw-bold">{{post.title}}</h5>
+            <div class="p-3 border shadow-sm rounded h-100 position-relative">
+                <h5 class="fw-bold ff-serif">{{post.title}}</h5>
                 <p class="text-muted">{{post.summary | truncate: 50}}</p>
+                <small class="text-muted fw-bold">{{post.date | date: "%b %d, %Y"}}</small>
                 <a href="{{post.url | relative_url}}" class="stretched-link"></a>
             </div>
         </div>

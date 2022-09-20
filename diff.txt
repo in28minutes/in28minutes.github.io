@@ -1,0 +1,190 @@
+diff --git a/_layouts/default.html b/_layouts/default.html
+old mode 100755
+new mode 100644
+index 3499ca5..d609d0a
+--- a/_layouts/default.html
++++ b/_layouts/default.html
+@@ -11,7 +11,9 @@
+ 
+ <body>
+     {% include nav.html %}
+-    {{content}}
++    <div class="pt-5">
++        {{content}}
++    </div>
+     {% if site.facebook_comments %}
+     <div id="fb-root"></div>
+     <script>(function (d, s, id) {
+@@ -23,6 +25,7 @@
+         }(document, 'script', 'facebook-jssdk'));</script>
+     {% endif %}
+     {% include footer.html %}
++    <script src="//unpkg.com/alpinejs" defer></script>
+ </body>
+ 
+ </html>
+\ No newline at end of file
+diff --git a/_layouts/home.html b/_layouts/home.html
+old mode 100755
+new mode 100644
+index 076553e..5fa4c4e
+--- a/_layouts/home.html
++++ b/_layouts/home.html
+@@ -25,13 +25,13 @@ layout: default
+ </div>
+ <div class="bg-dark bg-gradient mb-5">
+     <div class="container py-5">
+-        <div class="row d-flex align-items-center">
+-            <div class="col text-light">
++        <div class="row d-flex align-items-center row-cols-1 row-cols-lg-2 g-3">
++            <div class="col text-light order-md-2">
+                 <h3>About <strong>{{site.title}}</strong></h3>
+-                <p>{{page.about | markdownify}}</p>
++                <p class="ff-serif">{{page.about | markdownify}}</p>
+                 <a href="/about/" class="btn btn-success">Read more…</a>
+             </div>
+-            <div class="col">
++            <div class="col order-md-1">
+                 <iframe class="w-100" width="560" height="315" src="https://www.youtube.com/embed/O61gbmYZJmE"
+                     title="YouTube video player" frameborder="0"
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+@@ -45,7 +45,7 @@ layout: default
+         <div class="col">
+             <div class="p-5 rounded text-center border shadow-sm h-100 d-flex flex-column justify-content-center">
+                 <h3 class="text-danger fw-bold">{{page.ads[0].title}}</h3>
+-                <p class="text-dark">{{page.ads[0].description}}</p>
++                <p class="text-dark ff-serif">{{page.ads[0].description}}</p>
+                 <a href="{{page.ads[0].link | relative_url }}" class="btn btn-danger btn-lg">Visit Now!</a>
+             </div>
+         </div>
+@@ -53,7 +53,7 @@ layout: default
+             <div class="p-5 rounded text-center border shadow-sm h-100">
+                 <h3 class="text-success fw-bold">Free courses - Learn in 10 steps!</h3>
+                 {% for course in page.courses %}
+-                <a href="{{course.link | relative_url}}" class="btn btn-link text-dark">{{course.name}}</a><br>
++                <a href="{{course.link | relative_url}}" class="btn btn-link text-dark ff-serif">{{course.name}}</a><br>
+                 {% endfor %}
+             </div>
+         </div>
+@@ -74,7 +74,7 @@ layout: default
+         {% for post in site.categories[category.slug] | limit: 5 %}
+         <div class="col">
+             <div class="p-3 border shadow-sm rounded h-100 position-relative">
+-                <h5 class="fw-bold">{{post.title}}</h5>
++                <h5 class="fw-bold ff-serif">{{post.title}}</h5>
+                 <p class="text-muted">{{post.summary | truncate: 50}}</p>
+                 <small class="text-muted fw-bold">{{post.date | date: "%b %d, %Y"}}</small>
+                 <a href="{{post.url | relative_url}}" class="stretched-link"></a>
+@@ -94,9 +94,12 @@ layout: default
+             <a href="{{'/all' | relative_url}}" class="btn btn-info btn-lg fw-bold">All Articles</a>
+         </div>
+     </div>
++    {% include newsletter.html %}
+ </div>
+ <div class="container-fluid p-5 border-top bg-light position-relative">
+-    <h3 class="fw-bold mb-3 text-center w-100 text-dark">Watch <span style="color:#4CCCDE">IN</span><span style="color:#D5492E">28</span><span style="color:#36BF80">MINUTES</span> on YouTube…
++    <h3 class="fw-bold mb-3 text-center w-100 text-dark">Watch <span style="color:#4CCCDE">IN</span>
++        <span style="color:#D5492E">28</span>
++        <span style="color:#36BF80">MINUTES</span> on YouTube…
+     </h3>
+     <div class="row">
+         <div class="col">
+diff --git a/_layouts/page.html b/_layouts/page.html
+old mode 100755
+new mode 100644
+index 2873b08..1285a22
+--- a/_layouts/page.html
++++ b/_layouts/page.html
+@@ -7,4 +7,5 @@ layout: default
+             {{content}}
+         </div>
+     </div>
++    {% include newsletter.html %}
+ </div>
+\ No newline at end of file
+diff --git a/_layouts/post.html b/_layouts/post.html
+old mode 100755
+new mode 100644
+index 204ea77..9008b35
+--- a/_layouts/post.html
++++ b/_layouts/post.html
+@@ -2,58 +2,59 @@
+ layout: default
+ ---
+ <style>
+-    h1,
+-    h2,
+-    h3,
+-    p,
+-    li {
+-        font-family: 'Merriweather', serif;
++    #content {
++        font-family: 'Roboto Slab', serif;
++        line-height: 2em;
+     }
+ 
+-    h2 {
++    #content>h2 {
+         margin-top: 2em;
+         color: #3d3d3d;
+         font-weight: bold;
+         margin-bottom: 1em;
+     }
+ 
+-    h3 {
++    #content>h3 {
+         font-weight: bold;
+         color: #8d8d8d;
+     }
+ 
+     div.highlight {
+         padding: 1em;
+-        font-family: 'Courier New', Courier, monospace !important;
++        font-family: 'Roboto Mono', monospace !important;
+         margin-bottom: 1em;
+     }
+ </style>
+ <div class="container">
+-    <div class="row py-5" style="max-width: 1024px;">
++    <div class="row py-5">
+         <div class="col">
+             <h1 class="fw-bold display-3 mb-3">{{page.title}}</h1>
+             {% assign minutes = content | strip_html | number_of_words | divided_by: 180 %}
+             {% if minutes == 0 %}
+             {% assign minutes = 1 %}
+             {% endif %}
+-            <div class="mb-5"><small class="text-muted fw-bold">{{page.date | date: "%b %d, %Y"}}</small> -
+-                <i class="text-muted">{{minutes}} minutes</i>
++            <div class="mb-5"><small class="text-muted fw-bold">{{page.date | date: "%b %d, %Y"}} -
++                    {{minutes}} minutes</small>
++            </div>
++            <div id="content">
++                {{content}}
+             </div>
+-            {{content}}
+         </div>
+     </div>
+-    <div class="d-flex justify-content-between align-items-center border-top mb-3 pt-3">
++    {% include newsletter.html %}
++    <div class="d-flex justify-content-between align-items-center border-top mb-3 pt-3 position-relative">
+         <h3 class="text-muted fw-bold">Related posts</h3>
+         <a href="{{'/all' | relative_url }}#{{category.slug}}" class="stretched-link">View all</a>
+     </div>
+-    <div class="row mb-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
++    <div class="row mb-5 row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+         {% assign category = page.categories[0] %}
+         {% assign posts = site.categories[category]%}
+         {% for post in posts limit: 3 %}
+         <div class="col">
+-            <div class="p-2 border rounded bg-light position-relative">
+-                <h5 class="text-dark fw-bold">{{post.title}}</h5>
++            <div class="p-3 border shadow-sm rounded h-100 position-relative">
++                <h5 class="fw-bold ff-serif">{{post.title}}</h5>
+                 <p class="text-muted">{{post.summary | truncate: 50}}</p>
++                <small class="text-muted fw-bold">{{post.date | date: "%b %d, %Y"}}</small>
+                 <a href="{{post.url | relative_url}}" class="stretched-link"></a>
+             </div>
+         </div>
+diff --git a/_layouts/posts.html b/_layouts/posts.html
+old mode 100755
+new mode 100644

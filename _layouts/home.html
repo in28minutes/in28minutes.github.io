@@ -25,13 +25,13 @@ layout: default
 </div>
 <div class="bg-dark bg-gradient mb-5">
     <div class="container py-5">
-        <div class="row d-flex align-items-center">
-            <div class="col text-light">
+        <div class="row d-flex align-items-center row-cols-1 row-cols-lg-2 g-3">
+            <div class="col text-light order-md-2">
                 <h3>About <strong>{{site.title}}</strong></h3>
-                <p>{{page.about | markdownify}}</p>
+                <p class="ff-serif">{{page.about | markdownify}}</p>
                 <a href="/about/" class="btn btn-success">Read more…</a>
             </div>
-            <div class="col">
+            <div class="col order-md-1">
                 <iframe class="w-100" width="560" height="315" src="https://www.youtube.com/embed/O61gbmYZJmE"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -45,7 +45,7 @@ layout: default
         <div class="col">
             <div class="p-5 rounded text-center border shadow-sm h-100 d-flex flex-column justify-content-center">
                 <h3 class="text-danger fw-bold">{{page.ads[0].title}}</h3>
-                <p class="text-dark">{{page.ads[0].description}}</p>
+                <p class="text-dark ff-serif">{{page.ads[0].description}}</p>
                 <a href="{{page.ads[0].link | relative_url }}" class="btn btn-danger btn-lg">Visit Now!</a>
             </div>
         </div>
@@ -53,7 +53,7 @@ layout: default
             <div class="p-5 rounded text-center border shadow-sm h-100">
                 <h3 class="text-success fw-bold">Free courses - Learn in 10 steps!</h3>
                 {% for course in page.courses %}
-                <a href="{{course.link | relative_url}}" class="btn btn-link text-dark">{{course.name}}</a><br>
+                <a href="{{course.link | relative_url}}" class="btn btn-link text-dark ff-serif">{{course.name}}</a><br>
                 {% endfor %}
             </div>
         </div>
@@ -74,7 +74,7 @@ layout: default
         {% for post in site.categories[category.slug] | limit: 5 %}
         <div class="col">
             <div class="p-3 border shadow-sm rounded h-100 position-relative">
-                <h5 class="fw-bold">{{post.title}}</h5>
+                <h5 class="fw-bold ff-serif">{{post.title}}</h5>
                 <p class="text-muted">{{post.summary | truncate: 50}}</p>
                 <small class="text-muted fw-bold">{{post.date | date: "%b %d, %Y"}}</small>
                 <a href="{{post.url | relative_url}}" class="stretched-link"></a>
@@ -94,6 +94,7 @@ layout: default
             <a href="{{'/all' | relative_url}}" class="btn btn-info btn-lg fw-bold">All Articles</a>
         </div>
     </div>
+    {% include newsletter.html %}
 </div>
 <div class="container-fluid p-5 border-top bg-light position-relative">
     <h3 class="fw-bold mb-3 text-center w-100 text-dark">Watch <span style="color:#4CCCDE">IN</span><span style="color:#D5492E">28</span><span style="color:#36BF80">MINUTES</span> on YouTube…

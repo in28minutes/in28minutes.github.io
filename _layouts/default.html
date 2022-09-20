@@ -11,7 +11,9 @@
 
 <body>
     {% include nav.html %}
-    {{content}}
+    <div class="pt-5">
+        {{content}}
+    </div>
     {% if site.facebook_comments %}
     <div id="fb-root"></div>
     <script>(function (d, s, id) {
@@ -23,6 +25,7 @@
         }(document, 'script', 'facebook-jssdk'));</script>
     {% endif %}
     {% include footer.html %}
+    <script src="//unpkg.com/alpinejs" defer></script>
 </body>
 
 </html>
