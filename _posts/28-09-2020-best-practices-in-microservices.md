@@ -28,7 +28,7 @@ In this fast read, we'll take a look at some of the most frequent best practises
 - ***Consider using Domain-Driven Design Technique***
   - As microservices are usually structured around business domains, it is as easy as *Object-oriented programming*, which uses practical principles and concepts to represent the object-oriented model. This design method is frequently used by content delivery network(CDN) services such as Netflix, Hotstar, Amazon Prime, and others.
 
-## Conclusion
+## Wrapping Up
 
 When you begin the process of converting your system to a microservices design, it is critical to have a clear knowledge of the best practises and the true motivation for doing so. In addition to these best practises, the project's capacity to handle end-to-end service-oriented architecture migrations and development must be considered.
 
