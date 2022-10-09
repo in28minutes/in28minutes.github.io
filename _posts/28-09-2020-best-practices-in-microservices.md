@@ -1,9 +1,9 @@
 ﻿---
-layout:  post
-title: Best practices in microservices
-date:    2022-10-07 14:13:27
-summary:  In this post, we will look at the best practises for microservices architecture.
-categories:  SpringBootMicroservices
+layout:     post
+title:      Best Practices in Microservices
+date:       2022-10-07 14:13:27
+summary:    In this post, we will look at the best practises for microservices architecture
+categories: SpringBootMicroservices
 permalink:  /best-practices-in-microservices-architecture
 ---
 
