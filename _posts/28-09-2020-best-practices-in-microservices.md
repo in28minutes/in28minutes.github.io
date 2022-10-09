@@ -1,4 +1,4 @@
-﻿---
+---
 layout:  post
 title: Best practices in microservices
 date:    2022-10-07 14:13:27
