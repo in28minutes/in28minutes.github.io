@@ -1,13 +1,14 @@
 ---
 layout:  post
-title: Best practices in microservices
+title:  Best practices in Microservices
 date:    2022-06-09 12:31:19
-summary:  In this post, we will look at the best practises for microservices architecture.
-categories:  SpringBootMicroservices
+summary: In this post, we will look at best practices for microservices architecture.
+categories: SpringBootMicroservices
 permalink:  /best-practices-in-microservices-architecture
 ---
 
-Let's look at some of the most frequent best practises to keep in mind while establishing or maintaining ***Microservices***. Let's get started.
+
+Let's look at some of the most frequent best practices to keep in mind while establishing or maintaining ***Microservices***. Let's get started.
 
 ## Separate Data Storage
 
@@ -39,4 +40,4 @@ As microservices are usually structured around business domains, it is as easy a
 
 ## Wrapping Up
 
-When you begin the process of converting your system to a microservices design, it is critical to have a clear knowledge of the best practises and the true motivation for doing so. In addition to these best practises, the project's capacity to handle end-to-end service-oriented architecture migrations and development must be considered.
+When you begin the process of converting your system to a microservices design, it is critical to have a clear knowledge of the best practices and the true motivation for doing so. In addition to these best practices, the project's capacity to handle end-to-end service-oriented architecture migrations and development must be considered.
