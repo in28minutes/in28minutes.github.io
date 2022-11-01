@@ -1,0 +1,73 @@
+---
+layout: page
+---
+<section id="about" class="ud-about">
+    <div class="container">
+        <div class="ud-about-wrapper wow fadeInUp" data-wow-delay=".2s">
+            <div class="ud-about-content-wrapper">
+                <div class="ud-about-content">
+                    <span class="tag">About Us</span>
+                    {{content}}
+                </div>
+            </div>
+            <div class="ud-about-image">
+                <img src="{{'assets/images/about/about-image.svg' | relative_url}}" alt="about-image" />
+            </div>
+        </div>
+    </div>
+</section>
+<section id="team" class="ud-team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ud-section-title mx-auto text-center">
+                    <span>Meet Our Instructor</span>
+                    <h2>{{site.author.name}}</h2>
+                    <p>
+                        {{site.author.about}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-md-3 offset-lg-4 text-center">
+                <div class="ud-single-team wow fadeInUp" data-wow-delay=".1s">
+                    <div class="ud-team-image-wrapper">
+                        <div class="ud-team-image">
+                            <img src="{{'/assets/images/about/ranga-karanam-profile-nobg.png' | relative_url}}"
+                                alt="team" />
+                        </div>
+
+                        <img src="{{'assets/images/team/dotted-shape.svg' | relative_url}}" alt="shape"
+                            class="shape shape-1" />
+                        <img src="{{'assets/images/team/shape-2.svg' | relative_url}}" alt="shape"
+                            class="shape shape-2" />
+                    </div>
+                    <div class="ud-team-info">
+                        <h5>{{site.author.description | markdownify}}</h5>
+                    </div>
+                    <ul class="ud-team-socials">
+                        <li>
+                            <a href="https://facebook.com/in28minutes">
+                                <i class="lni lni-facebook-filled"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/in28minutes">
+                                <i class="lni lni-twitter-filled"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com//in28minutes">
+                                <i class="lni lni-instagram-filled"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include newsletter.html %}

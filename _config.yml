@@ -1,34 +1,47 @@
-title: Spring Boot Tutorials
-email: your-email@example.com
-description: Spring Boot Tutorials. Hands-on examples. - Basics of Spring Boot. Covers Spring Boot Starter Projects, Spring Initializr, Creating REST Services, Unit and Integration tests, Profiles, Spring Boot Data JPA, Actuator and Security
-url: 'https://www.springboottutorial.com'
-twitter_username: in28Minutes
-github_username: in28Minutes
-linkedin_username: rangakaranam
+title: in28minutes
+email: ranga@in28minutes.com
+description: Videos, courses and articles on Spring Boot, AWS, Azure, GCP, Docker, Kubernetes and Full Stack
+url: ''
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-sitemap
+  - jekyll-analytics
+
+# Products
+products:
+  - name: Articles
+    url: /blog
+  - name: Videos
+    url: https://www.youtube.com/user/rithustutorials/videos
+  - name: Courses
+    url: https://www.udemy.com/user/in28minutes/
+  - name: Roadmaps
+    url: /roadmaps
+
+collections:
+  blog:
+    output: true
+
+author:
+  name: Ranga Karanam
+  image: assets/images/about/ranga-karanam-profile-nobg.png
+  about: Ranga Karanam, founder of in28minutes, has 2 decades of experience with technology - architecture, design, and programming.  We are helping learners take their first steps into modern cloud native technology and gain expertise on AWS, Azure, Google Cloud, Docker, Kubernetes amongst others.
+  description: 10X certified on AWS, Azure and Google Cloud.
+
+social:
+  twitter: https://twitter.com/in28minutes
+  linkedin: http://linkedin.com/in/rangakaranam/
+  github: http://github.com/in28minutes/roadmaps
+  udemy: http://udemy.com/user/in28minutes
+  facebook: https://www.facebook.com/in28Minutes
+  youtube: https://www.youtube.com/user/rithustutorials
+
+jekyll_analytics:
+  GoogleAnalytics:
+    id: UA-32942307-5
+
 markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-
-# Google services
-google_verification:
-# Use either direct GA implementation or set up GTM account
-# - using both will skew your data (leave blank to not use at all)
-google_analytics: UA-32942307-5
-google_tag_manager:
-# Bing services
-bing_verification:
-# Facebook Page integration
-# (for instant articles and other stuff)
-fb_page: false
-fb_page_id:
-# Facebook Comments plugin
-# (leave blank to disable Facebook Comments, otherwise set it to true)
-facebook_comments:
-facebook_appid:
-facebook_comments_number: 10

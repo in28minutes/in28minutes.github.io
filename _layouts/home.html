@@ -1,108 +1,153 @@
 ---
 layout: default
 ---
-<div class="container mb-5">
-    <div class="row py-5 d-flex align-items-center row-cols-1 row-cols-md-2">
-        <div class="col text-center text-md-start">
-            <h1 class="display-3 fw-bold">{{page.headline}}</h1>
-            <h3 class="text-muted">{{page.subhead}}</h3>
-        </div>
-        <div class="col">
-            <img src="{{ 'assets/img/header.svg' | relative_url}}" alt="" srcset="" class="img-fluid">
-        </div>
-    </div>
-    <div class="row row-cols-1 row-cols-md-3 g-3">
-        {% for feature in page.features %}
-        <div class="col">
-            <div class="p-4 text-center shadow-sm border h-100 d-flex flex-column align-items-center justify-content-center rounded bg-gradient"
-                style="background-color: {{ feature.color }};">
-                <div class="fs-2 text-white">{{feature.title}}</div>
-                <div class="fs-4 fw-bold text-light text-uppercase">{{feature.subtitle}}</div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-<div class="bg-dark bg-gradient mb-5">
-    <div class="container py-5">
-        <div class="row d-flex align-items-center row-cols-1 row-cols-lg-2 g-3">
-            <div class="col text-light order-md-2">
-                <h3>About <strong>{{site.title}}</strong></h3>
-                <p class="ff-serif">{{page.about | markdownify}}</p>
-                <a href="/about/" class="btn btn-success">Read more…</a>
-            </div>
-            <div class="col order-md-1">
-                <iframe class="w-100" width="560" height="315" src="https://www.youtube.com/embed/O61gbmYZJmE"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container mb-5">
-    <div class="row row-cols-1 row-cols-lg-2 g-3">
-        <div class="col">
-            <div class="p-5 rounded text-center border shadow-sm h-100 d-flex flex-column justify-content-center">
-                <h3 class="text-danger fw-bold">{{page.ads[0].title}}</h3>
-                <p class="text-dark ff-serif">{{page.ads[0].description}}</p>
-                <a href="{{page.ads[0].link | relative_url }}" class="btn btn-danger btn-lg">Visit Now!</a>
-            </div>
-        </div>
-        <div class="col">
-            <div class="p-5 rounded text-center border shadow-sm h-100">
-                <h3 class="text-success fw-bold">Free courses - Learn in 10 steps!</h3>
-                {% for course in page.courses %}
-                <a href="{{course.link | relative_url}}" class="btn btn-link text-dark ff-serif">{{course.name}}</a><br>
-                {% endfor %}
+<!-- ====== Hero Start ====== -->
+<section class="ud-hero" id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ud-hero-content wow fadeInUp" data-wow-delay=".2s">
+                    <h1 class="ud-hero-title">
+                        {{page.header.title}}
+                    </h1>
+                    <p class="ud-hero-desc">
+                        {{page.header.description}}
+                    </p>
+                    <ul class="ud-hero-buttons">
+                        <li>
+                            <a href="{{page.header.main_button.url | relative_url}}" rel="nofollow noopener"
+                                target="_blank" class="ud-main-btn ud-white-btn">
+                                {{page.header.main_button.title}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{page.header.secondary_button.url | relative_url}}" rel="nofollow noopener"
+                                target="_blank" class="ud-main-btn ud-link-btn">
+                                {{page.header.secondary_button.title}} <i class="lni lni-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ud-hero-brands-wrapper wow fadeInUp" data-wow-delay=".3s">
+                    <img src="assets/images/hero/brand.svg" alt="brand" />
+                </div>
+                <div class="ud-hero-image wow fadeInUp" data-wow-delay=".25s">
+                    <img src="assets/images/hero/hero-image.png" alt="hero-image" />
+                    <img src="assets/images/hero/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                    <img src="assets/images/hero/dotted-shape.svg" alt="shape" class="shape shape-2" />
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="container mb-5">
-    <div class="row mb-3">
-        <div class="col">
-            <h5 class="text-muted fw-bold">Search</h5>
-            <script async src="https://cse.google.com/cse.js?cx=007125866616784409281:dxpqr0kfc4o"></script>
-            <div class="gcse-search"></div>
-        </div>
-    </div>
-    <h5 class="mb-3">Latest articles</h5>
-    {% for category in page.featured_categories %}
-    <h3 class="fw-bold text-muted mb-3">{{category.name}}</h3>
-    <div class="row mb-5 g-3 row-cols-1 row-cols-md-2 row-cols-lg-3">
-        {% for post in site.categories[category.slug] | limit: 5 %}
-        <div class="col">
-            <div class="p-3 border shadow-sm rounded h-100 position-relative">
-                <h5 class="fw-bold ff-serif">{{post.title}}</h5>
-                <p class="text-muted">{{post.summary | truncate: 50}}</p>
-                <small class="text-muted fw-bold">{{post.date | date: "%b %d, %Y"}}</small>
-                <a href="{{post.url | relative_url}}" class="stretched-link"></a>
+</section>
+<!-- ====== Hero End ====== -->
+
+<!-- ====== Features Start ====== -->
+<section id="features" class="ud-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ud-section-title">
+                    <span>Features</span>
+                    <h2>{{page.features.title}}</h2>
+                    <p>
+                        {{page.features.description}}
+                    </p>
+                </div>
             </div>
         </div>
-        {% endfor %}
-        <div class="col">
-            <div class="p-3 rounded bg-light h-100 position-relative d-flex align-items-center justify-content-center">
-                <div class="text-uppercase">View all</div>
-                <a href="{{'/all' | relative_url }}#{{category.slug}}" class="stretched-link"></a>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            {% for feature in page.features.items %}
+            <div class="col">
+                <div class="ud-single-feature wow fadeInUp" data-wow-delay=".1s">
+                    <div class="ud-feature-icon">
+                        <i class="lni {{feature.icon}}"></i>
+                    </div>
+                    <div class="ud-feature-content">
+                        <h3 class="ud-feature-title">{{feature.title}}</h3>
+                        <p class="ud-feature-desc">
+                            {{feature.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- ====== Features End ====== -->
+
+<!-- ====== About Start ====== -->
+<section id="about" class="ud-about">
+    <div class="container">
+        <div class="ud-about-wrapper wow fadeInUp" data-wow-delay=".2s">
+            <div class="ud-about-content-wrapper">
+                <div class="ud-about-content">
+                    <span class="tag">About Us</span>
+                    <h2>{{page.about.title}}</h2>
+                    <p>{{page.about.description}}</p>
+                    <a href="{{'/about' | relative_url}}" class="ud-main-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="ud-about-image">
+                <img src="assets/images/about/about-image.svg" alt="about-image" />
             </div>
         </div>
     </div>
-    {% endfor %}
-    <div class="row mb-5">
-        <div class="col text-center">
-            <a href="{{'/all' | relative_url}}" class="btn btn-info btn-lg fw-bold">All Articles</a>
+</section>
+<!-- ====== About End ====== -->
+
+
+<!-- ====== Testimonials Start ====== -->
+<section id="testimonials" class="ud-testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ud-section-title mx-auto text-center">
+                    <span>Testimonials</span>
+                    <h2>{{page.testimonials.title}}</h2>
+                    <p>
+                        {{page.testimonials.description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-lg-3 g-3">
+            {% for item in page.testimonials.items %}
+            <div class="col">
+                <div class="ud-single-testimonial wow fadeInUp" data-wow-delay=".1s">
+                    <div class="ud-testimonial-ratings">
+                        <i class="lni lni-star-filled"></i>
+                        <i class="lni lni-star-filled"></i>
+                        <i class="lni lni-star-filled"></i>
+                        <i class="lni lni-star-filled"></i>
+                        <i class="lni lni-star-filled"></i>
+                    </div>
+                    <div class="ud-testimonial-content">
+                        <p>
+                            "{{item.comment}}"
+                        </p>
+                    </div>
+                    <div class="ud-testimonial-info">
+                        <div class="ud-testimonial-image">
+                            <img src="assets/images/testimonials/author-01.png" alt="author" />
+                        </div>
+                        <div class="ud-testimonial-meta">
+                            <h4>{{item.name}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
-    {% include newsletter.html %}
-</div>
-<div class="container-fluid p-5 border-top bg-light position-relative">
-    <h3 class="fw-bold mb-3 text-center w-100 text-dark">Watch <span style="color:#4CCCDE">IN</span><span style="color:#D5492E">28</span><span style="color:#36BF80">MINUTES</span> on YouTube…
-    </h3>
-    <div class="row">
-        <div class="col">
-            <img src="{{'assets/img/yt.png' | relative_url}}" class="img-fluid">
-            <a href="https://www.youtube.com/user/rithustutorials/playlists" target="_blank" class="stretched-link"></a>
-        </div>
-    </div>
-</div>
+</section>
+<!-- ====== Testimonials End ====== -->
+
+
+<!-- ====== Subscribe Start ====== -->
+
+{% include newsletter.html %}
+
+<!-- ====== Subscribe End ====== -->

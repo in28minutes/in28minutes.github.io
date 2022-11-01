@@ -1,0 +1,37 @@
+---
+layout: page
+---
+<!-- ====== Features Start ====== -->
+<div class="container">
+    <div class="row py-5">
+        <div class="col">
+            <p class="fs-5">
+                {{page.description}}
+            </p>
+        </div>
+    </div>
+    <h3 class="mb-5">Roadmaps</h3>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-5">
+        {% for roadmap in page.roadmaps %}
+        <div class="ud-single-blog">
+            <div class="ud-blog-image">
+                <a href="{{roadmap.url | relative_url}}">
+                    <img src="{{roadmap.image}}" alt="Image" />
+                </a>
+            </div>
+            <div class="ud-blog-content text-center">
+                <h3 class="ud-blog-title">
+                    <a href="{{post.url | relative_url}}" class="fw-bold fs-3" style="color: var(--primary-color);">
+                        {{roadmap.name}}
+                    </a>
+                </h3>
+                <p class="ud-blog-desc">
+                    {{roadmap.description}}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- ====== Features End ====== -->
+{% include newsletter.html %}

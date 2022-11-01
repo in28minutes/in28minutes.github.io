@@ -1,51 +1,80 @@
 ---
 layout: home
-# Headlines
-headline: Spring Boot, AWS, Azure, GCP, Docker, Kubernetes and Full Stack
-subhead: Videos, courses, articles and much more…
-# About text
-about: Our goal is to help you learn and re-skill Spring Boot, Microservices, Full Stack, Cloud (AWS), Docker and Kubernetes with hands-on, practical videos, articles and courses. We have more than 100 articles on Spring Boot, JPA, Hibernate, REST API, Microservices and Cloud. Have a wonderful time reading this. Do not forget to checkout our 500+ FREE videos and 30+ Courses. Good Luck and Keep Learning in28Minutes.
-# Feature cards shown on the home page
-features:
-  - title: 100+
-    subtitle: articles
-    icon: ''
-    color: '#4CCCDE'
-  - title: 500+
-    subtitle: videos
-    icon: ''
-    color: '#D5492E'
-  - title: 30+
-    subtitle: courses
-    icon: ''
-    color: '#36BF80'
-# Features categories
-featured_categories:
-  - slug: SpringBoot
-    name: Spring Boot
-  - name: Spring Boot - Full Stack
-    slug: SpringFramework
-  - slug: SpringBootMicroservices
-    name: Spring Boot Microservices
-  - slug: SpringBootJPA
-    name: Spring Boot JPA
-  - slug: SpringBootUnitTesting
-    name: Spring Boot Unit Testing
-# Ads
-ads:
-  - title: Learn Spring, Spring Boot, JPA Design and Architecture!
-    description: Get instant access to 250+ videos…
-    link: /spring-boot-video-tutorials-for-beginners
 
-courses:
-  - name: FREE 5 DAY CHALLENGE - Learn Spring and Spring Boot
-    link: https://links.in28minutes.com/SBT-Page-Top-LearningChallenge-SpringBoot
-  - name: Learn Spring Boot in 10 Steps
-    link: https://links.in28minutes.com/in28minutes-10steps-springboot
-  - name: Learn JPA and Hibernate in 10 Steps
-    link: https://links.in28minutes.com/in28minutes-10steps-jpa
-  - name: Learn Spring Framework in 10 Steps
-    link: https://links.in28minutes.com/in28minutes-10steps-spring
-  - name: Learn Spring MVC in 10 Steps
-    link: https://links.in28minutes.com/in28minutes-10steps-springmvc
+# Header
+header:
+  title: 1 Million Learners - Cloud, DevOps and Microservices
+  description: 7 Amazing Roadmaps - ZERO to EXPERT
+  image:
+  main_button:
+    title: Start learning
+    url: /roadmaps
+  secondary_button:
+    title: Watch on YouTube
+    url: https://www.youtube.com/user/rithustutorials/videos
+
+# Features
+features:
+  title: Take your first step into Cloud and DevOps
+  description: Join 1 MILLION learners
+  items:
+    - title: Cloud Roadmaps
+      description: Get started with AWS, Azure and Google Cloud
+      icon: lni-layout
+    - title: DevOps Roadmaps
+      description: Get started with Docker, Kubernetes and Terraform
+      icon: lni-layout
+    - title: Spring Boot Roadmaps
+      description: Learn Java, Spring Boot, Microservices and Full Stack development
+      icon: lni-layout
+    - title: Hands-on courses designed for absolute beginners
+      description: 50+ Course with almost 250,000+ reviews
+      icon: lni-layout
+
+# About
+about:
+  title: YOUR FIRST STEP into Programming, Cloud & DevOps
+  description: Ranga Karanam, the founder of in28minutes, has 2 decades of experience with technology - architecture, design, and programming.  We are helping learners take their first steps into modern cloud native technology and gain expertise on AWS, Azure, Google Cloud, Docker, Kubernetes amongst others.
+
+# FAQ
+faq:
+  title: FAQ
+  description: There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.
+  items:
+    - title: How to use UIdeck?
+      description: Lorem Ipsum is simply dummy text of the printing and
+        typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown
+        printer took a galley of type and scrambled it to make a
+        type specimen book.
+    - title: How to use UIdeck?
+      description: Lorem Ipsum is simply dummy text of the printing and
+        typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown
+        printer took a galley of type and scrambled it to make a
+        type specimen book.
+    - title: How to use UIdeck?
+      description: Lorem Ipsum is simply dummy text of the printing and
+        typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown
+        printer took a galley of type and scrambled it to make a
+        type specimen book.
+    - title: How to use UIdeck?
+      description: Lorem Ipsum is simply dummy text of the printing and
+        typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown
+        printer took a galley of type and scrambled it to make a
+        type specimen book.
+
+# Testimonials
+testimonials:
+  title: What our students says
+  description: There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.
+  items:
+    - name: Learner - AZ-900 Microsoft Azure Fundamentals in a Weekend
+      comment: Get certified quickly without even looking for other resources. Just watch videos for 2 days and appeared for the exam and cleared the exam.
+    - name: Learner - AWS Certified Cloud Practitioner - AWS Certification
+      comment: Awesome course to get started with AWS. I have started with ZERO AWS knowledge and now I am familiar and confident to talk in AWS terminology. THANK YOU Ranga !!!!
+    - name: Learner -  Master Microservices with Spring Boot and Spring Cloud
+      comment: My respect and admiration for you as a teacher cannot be expressed in words. You did amazing job with full of responsibility. Thank you for the gift I felt I climbed several ladder as a programmer when I completed you great course. Thank you countless time!!
 ---

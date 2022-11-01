@@ -1,0 +1,32 @@
+---
+layout: page
+---
+<section class="ud-blog-grids">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            {% for item in site.blog %} {% if item.layout == 'post' and item.categories[0] == page.slug%}
+            <div class="col">
+                <div class="ud-single-blog">
+                    <div class="ud-blog-image">
+                        <a href="{{item.url | relative_url}}">
+                            <img src="{{item.image | default: 'assets/images/blog/blog-details-01.jpg' | relative_url}}"
+                                alt="Image" />
+                        </a>
+                    </div>
+                    <div class="ud-blog-content text-center">
+                        <h3 class="ud-blog-title">
+                            <a href="{{item.url | relative_url}}" class="fw-bold fs-3">
+                                {{item.title}}
+                            </a>
+                        </h3>
+                        <p class="ud-blog-desc">
+                            {{item.summary | truncate}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endif %} {% endfor %}
+        </div>
+    </div>
+</section>
+{% include newsletter.html %}

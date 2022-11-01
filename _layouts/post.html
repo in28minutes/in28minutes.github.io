@@ -3,67 +3,146 @@ layout: default
 ---
 <style>
     #content {
-        font-family: 'Roboto Slab', serif;
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+
+    #content>p,
+    li {
+        line-height: 2em;
+        color: var(--body-color);
+    }
+
+    #content>p {
         line-height: 2em;
     }
 
-    #content>h2 {
+    #content>h2,
+    h3,
+    h4 {
         margin-top: 2em;
-        color: #3d3d3d;
         font-weight: bold;
         margin-bottom: 1em;
-    }
-
-    #content>h3 {
-        font-weight: bold;
-        color: #8d8d8d;
+        color: var(--heading-color);
     }
 
     div.highlight {
+        margin-top: 2em;
         padding: 1em;
-        font-family: 'Roboto Mono', monospace !important;
+        font-family: monospace !important;
+        margin-bottom: 2em;
+        padding-bottom: 0.25em;
+    }
+
+    pre.highlight {
+        margin-bottom: none !important;
+        padding-bottom: none !important;
+    }
+
+    #content>ul {
+        padding-left: 2em;
         margin-bottom: 1em;
     }
+
+    #content>ul>li {
+        list-style: disc;
+    }
 </style>
-<div class="container">
-    <div class="row py-5">
-        <div class="col">
-            <h1 class="fw-bold display-3 mb-3">{{page.title}}</h1>
-            {% assign minutes = content | strip_html | number_of_words | divided_by: 180 %}
-            {% if minutes == 0 %}
-            {% assign minutes = 1 %}
-            {% endif %}
-            <div class="mb-5"><small class="text-muted fw-bold">{{page.date | date: "%b %d, %Y"}} -
-                    {{minutes}} minutes</small>
-            </div>
-            <div id="content">
-                {{content}}
+<section class="ud-page-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ud-banner-content">
+                    <h1>{{page.title}}</h1>
+                </div>
             </div>
         </div>
     </div>
-    {% include newsletter.html %}
-    <div class="d-flex justify-content-between align-items-center border-top mb-3 pt-3 position-relative">
-        <h3 class="text-muted fw-bold">Related posts</h3>
-        <a href="{{'/all' | relative_url }}#{{category.slug}}" class="stretched-link">View all</a>
-    </div>
-    <div class="row mb-5 row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-        {% assign category = page.categories[0] %}
-        {% assign posts = site.categories[category]%}
-        {% for post in posts limit: 3 %}
-        <div class="col">
-            <div class="p-3 border shadow-sm rounded h-100 position-relative">
-                <h5 class="fw-bold ff-serif">{{post.title}}</h5>
-                <p class="text-muted">{{post.summary | truncate: 50}}</p>
-                <small class="text-muted fw-bold">{{post.date | date: "%b %d, %Y"}}</small>
-                <a href="{{post.url | relative_url}}" class="stretched-link"></a>
+</section>
+<section class="ud-blog-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ud-blog-details-image">
+                    <img src="{{page.image | default: '/images/default-image-wide.png' | relative_url}}"
+                        alt="blog details"/>
+                    <div class="ud-blog-overlay">
+                        <div class="ud-blog-overlay-content">
+                            <div class="ud-blog-author">
+                                <img src="{{site.author.image | relative_url}}" alt="author" />
+                                <i class="lni lni-pencil text-white me-2"></i> <span class="me-2">
+                                    <a href="javascript:void(0)"> {{site.author.name}} </a>
+                                </span>
+                                <i class="lni lni-calendar text-white me-2"></i> <span class="me-2">{{page.date | date:
+                                    '%B
+                                    %d,
+                                    %Y'}}</span>
+                                {% assign minutes = content | strip_html | number_of_words | divided_by: 180 %}
+                                {% if minutes == 0 %}
+                                {% assign minutes = 1 %}
+                                {% endif %}
+                                <i class="lni lni-eye text-white me-2"></i> <span>{{minutes}} minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div id="content">
+                    {{content | markdownify}}
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ud-blog-sidebar">
+
+                    <div class="ud-articles-box">
+                        <h3 class="ud-articles-box-title">Related Articles</h3>
+                        <ul class="ud-articles-list">
+                            {% assign posts = site.blog | where_exp: "post", "post.categories == page.categories"%}
+                            {% for relatedPost in posts  limit: 15 %}
+                            <li>
+                                <div class="ud-article-image">
+                                    <img src="{{relatedPost.image | default: 'assets/images/blog/blog-details-01.jpg' | relative_url}}"
+                                        alt="author" />
+                                </div>
+                                <div class="ud-article-content">
+                                    <h5 class="ud-article-title">
+                                        <a href="{{relatedPost.url | relative_url}}">
+                                            {{relatedPost.title}}
+                                        </a>
+                                    </h5>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+                    <h3 class="ud-articles-box-title">Related Courses</h3>
+                    <div class="ud-banner-ad">
+                        <a href="https://www.udemy.com/course/microservices-with-spring-boot-and-spring-cloud/" target="_blank">
+                            <img src="/images/microservices-course.png" alt="ad banner" />
+                        </a>
+                    </div>
+
+                    <div class="ud-banner-ad">
+                        <a href="https://www.udemy.com/course/cloud-computing-aws/" target="_blank">
+                            <img src="/images/aws-course.png" alt="ad banner" />
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        {% endfor %}
     </div>
-</div>
+</section>
+
+{% include newsletter.html %}
+
 <script>
-    const imgs = document.querySelectorAll("img")
-    imgs.forEach(img => {
-        img.classList.add("img-fluid")
+    document.querySelectorAll('table').forEach(table => {
+        table.classList.add('table');
+    })
+    document.querySelectorAll('p').forEach(p => {
+        p.classList.add('ud-blog-details-para');
     })
 </script>

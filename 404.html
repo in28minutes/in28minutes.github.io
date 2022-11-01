@@ -1,16 +1,86 @@
 ---
 permalink: /404.html
-layout: default
+layout: page
+title: Oops!
 ---
+<style>
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
 
-<div class="container">
-    <div class="row my-5">
-        <div class="col">
-            <div class="p-5 bg-light">
-                <h1>404</h1>
-                <p>The page you requested was not found.</p>
-                <a href="/" class="btn btn-outline-dark">Go Back</a>
-            </div>
-        </div>
+  main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center;
+    text-align: center;
+  }
+
+  h1 {
+    color: #3d3d3d;
+    font-size: 12.5rem;
+    letter-spacing: 0.1em;
+    margin: 0.025em 0;
+    text-shadow: 0.05em 0.05em 0 rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 30rem) {
+    h1 {
+      font-size: 8.5rem;
+    }
+  }
+
+  h1>span {
+    -webkit-animation: spooky 2s alternate infinite linear;
+    animation: spooky 2s alternate infinite linear;
+    color: #528cce;
+    display: inline-block;
+  }
+
+  h2 {
+    color: #e7ebf2;
+    margin-bottom: 0.4em;
+  }
+
+  p {
+    color: #ccc;
+    margin-top: 0;
+  }
+
+  @-webkit-keyframes spooky {
+    from {
+      transform: translatey(0.15em) scaley(0.95);
+    }
+
+    to {
+      transform: translatey(-0.15em);
+    }
+  }
+
+  @keyframes spooky {
+    from {
+      transform: translatey(0.15em) scaley(0.95);
+    }
+
+    to {
+      transform: translatey(-0.15em);
+    }
+  }
+</style>
+<div class="container mb-5">
+  <div class="row">
+    <div class="col text-center">
+      <main>
+        <h1>4<span><i class="lni lni-code"></i></span>4</h1>
+        <h2>OOPSSSSS..: We are searching!</h2>
+        <p>Sorry, the page you're looking for cannot be accessed</p>
+      </main>
     </div>
+  </div>
 </div>
+
+{% include newsletter.html %}

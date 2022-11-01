@@ -2,30 +2,15 @@
 <html lang="en">
 
 <head>
-    {% include head.html %}
-    {% if site.google_tag_manager %}
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager }}" height="0"
-            width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    {% endif %}
+    {%include head.html %}
 </head>
 
 <body>
+    {% if page.layout != "resources" %}
     {% include nav.html %}
-    <div class="pt-5">
-        {{content}}
-    </div>
-    {% if site.facebook_comments %}
-    <div id="fb-root"></div>
-    <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId={{ site.facebook_appid }}";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
     {% endif %}
+    {{content}}
     {% include footer.html %}
-    <script src="//unpkg.com/alpinejs" defer></script>
 </body>
 
 </html>

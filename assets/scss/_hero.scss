@@ -1,0 +1,138 @@
+/* ===== Hero CSS ===== */
+
+.ud-hero {
+  background: var(--primary-color);
+  padding-top: 180px;
+
+  @media #{$md} {
+    padding-top: 160px;
+  }
+
+  @media #{$xs} {
+    padding-top: 130px;
+  }
+}
+
+.ud-hero-content {
+  max-width: 780px;
+  margin: auto;
+  margin-bottom: 30px;
+
+  .ud-hero-title {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @media #{$md} {
+      font-size: 38px;
+      line-height: 50px;
+    }
+
+    @media #{$xs} {
+      font-size: 26px;
+      line-height: 38px;
+    }
+  }
+
+  .ud-hero-desc {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    color: var(--white);
+    opacity: 0.8;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 30px;
+
+    @media #{$xs} {
+      font-size: 16px;
+      line-height: 30px;
+    }
+  }
+}
+
+.ud-hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .ud-main-btn {
+    margin: 8px;
+
+    @media #{$xs} {
+      margin: 5px;
+    }
+  }
+
+  .ud-main-btn {
+    @media #{$xs} {
+      padding: 12px 16px;
+    }
+  }
+
+  .ud-white-btn {
+    background: var(--white);
+    color: var(--heading-color);
+
+    &:hover {
+      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+      background: #fefefe;
+      color: var(--primary-color);
+    }
+  }
+
+  .ud-link-btn {
+    &:hover {
+      color: var(--white);
+      background: transparent;
+      opacity: 0.5;
+    }
+  }
+}
+
+.ud-hero-brands-wrapper {
+  text-align: center;
+  margin-bottom: 40px;
+
+  img {
+    transition: all 0.3s;
+    opacity: 0.5;
+    max-width: 250px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.ud-hero-image {
+  max-width: 845px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  img {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .shape {
+    position: absolute;
+    z-index: -1;
+
+    &.shape-1 {
+      bottom: 0;
+      left: -30px;
+    }
+
+    &.shape-2 {
+      top: -20px;
+      right: -20px;
+    }
+  }
+}

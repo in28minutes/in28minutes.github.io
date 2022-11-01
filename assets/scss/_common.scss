@@ -1,0 +1,179 @@
+/*===========================
+  COMMON css 
+===========================*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --font: "Inter", sans-serif;
+  --body-color: #637381;
+  --heading-color: #212b36;
+  --primary-color: #3056d3;
+  --white: #ffffff;
+}
+
+body {
+  font-family: var(--font);
+  font-weight: normal;
+  font-style: normal;
+  color: var(--body-color);
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  @include box-sizing(border-box);
+}
+
+img {
+  max-width: 100%;
+}
+
+a,
+button,
+input,
+textarea {
+  @include transition(0.3s);
+}
+
+a,
+a:focus,
+input:focus,
+textarea:focus,
+button:focus,
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+i,
+span,
+a {
+  display: inline-block;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: var(--heading-color);
+  margin: 0px;
+}
+
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 22px;
+}
+h5 {
+  font-size: 18px;
+}
+h6 {
+  font-size: 16px;
+}
+
+ul,
+ol {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--body-color);
+  margin: 0px;
+}
+
+.bg_cover {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+/*===== All Button Style =====*/
+
+.ud-main-btn {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 15px 25px;
+  border: 1px solid transparent;
+  color: var(--white);
+  cursor: pointer;
+  z-index: 5;
+  @include transition(0.4s);
+  background: var(--primary-color);
+
+  &:hover {
+    color: var(--white);
+    background: var(--heading-color);
+  }
+}
+
+.container {
+  @media #{$xs} {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media #{$sm} {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.back-to-top {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background: var(--primary-color);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 99;
+  color: var(--white);
+
+  &:hover {
+    color: var(--white);
+    background: var(--heading-color);
+  }
+}

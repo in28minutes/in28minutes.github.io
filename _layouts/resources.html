@@ -1,0 +1,44 @@
+---
+layout: page
+show_header: false
+---
+<div class="container">
+    <div class="row py-5">
+        <div class="col text-center">
+            <div class="fs-3">Thank you for enrolling to this course! We're happy to have you here! Before we start
+                learning some amazing stuff, let's get you set up with the resources for this course.</div>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col border-right">
+
+            <div class="wrapper">
+                <div class="timeline">
+                    {% for item in page.resources %}
+                    <div class="timeline--entry ud-single-feature wow fadeInUp p-3 bg-white" data-wow-delay=".1s"
+                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                        <a href="{{item.url}}" class="btn btn-link">
+                            <div class="ud-feature-icon">
+                                <i class="lni {{item.icon | default: 'lni-download'}}"></i>
+                            </div>
+                        </a>
+                        <div class="ud-feature-content">
+                            <h3 class="ud-feature-title">{{item.title}}</h3>
+                            <p class="ud-feature-desc">
+                                {{item.description}}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h2 class="text-muted">Before you begin, don't forget to subscribe to our newsletter.</h2>
+        </div>
+    </div>
+    {% include newsletter.html %}
+</div>
