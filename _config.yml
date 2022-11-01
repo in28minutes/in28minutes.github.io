@@ -34,6 +34,8 @@ social:
   facebook: https://www.facebook.com/in28Minutes
   youtube: https://www.youtube.com/user/rithustutorials
 
+google_analytics: UA-32942307-5
+
 jekyll_analytics:
   GoogleAnalytics:
     id: UA-32942307-5
