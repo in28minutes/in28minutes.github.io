@@ -10,7 +10,6 @@ layout: page
             </p>
         </div>
     </div>
-    <h3 class="mb-5">Roadmaps</h3>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-5">
         {% for roadmap in page.roadmaps %}
         <div class="ud-single-blog">
@@ -21,7 +20,7 @@ layout: page
             </div>
             <div class="ud-blog-content text-center">
                 <h3 class="ud-blog-title">
-                    <a href="{{post.url | relative_url}}" class="fw-bold fs-3" style="color: var(--primary-color);">
+                    <a href="{{post.url | relative_url}}" class="fw-bold fs-3">
                         {{roadmap.name}}
                     </a>
                 </h3>

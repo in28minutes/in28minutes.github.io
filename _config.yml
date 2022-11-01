@@ -13,8 +13,6 @@ products:
     url: /blog
   - name: Videos
     url: https://www.youtube.com/user/rithustutorials/videos
-  - name: Courses
-    url: https://www.udemy.com/user/in28minutes/
   - name: Roadmaps
     url: /roadmaps
 

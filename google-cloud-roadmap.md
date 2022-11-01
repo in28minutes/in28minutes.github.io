@@ -34,45 +34,36 @@ courses:
     description:
     objectives:
       - Start your journey to become a Google Cloud Digital Leader
-    url: https://www.udemy.com/course/google-cloud-digital-leader-certification/?couponCode=SEP2022
+    url: https://www.udemy.com/course/google-cloud-digital-leader-certification/?couponCode=NOV2022
     rating: 4.6
-    ratingCount: 11,431
-    students: 35,479
+    ratingCount: 6,200
+    students: 30,000
     thumbnail: https://img-c.udemycdn.com/course/240x135/3995372_4064.jpg
   - name: GCP Associate Cloud Engineer - Google Cloud Certification
     thumbnail: https://img-c.udemycdn.com/course/240x135/3995372_4064.jpg
-    description: GCP ACE - Google Cloud Associate Cloud Engineer certification. Begin your Google Cloud Platform - GCP journey!
-    url: https://www.udemy.com/course/google-cloud-certification-associate-cloud-engineer/?couponCode=SEP2022
+    description:
+    url: https://www.udemy.com/course/google-cloud-certification-associate-cloud-engineer/?couponCode=NOV2022
     objectives:
-      - Start your journey to become a Google Cloud Certified Associate Cloud Engineer
-      - Get hands-on with compute, networking, storage, and database services in Google Cloud Platform
-      - Understand how to engineer and deploy secure and robust applications on Google Cloud Platform
-      - Understand the best practices for building secure and reliable applications on the Google Cloud Platform
+      - 
     rating: 4.6
-    ratingCount: 11,431
-    students: 35,479
+    ratingCount: 12,200
+    students: 65,688
   - name: Google Cloud Developer - GCP Professional Certification
-    description: Get Google Cloud Developer Professional Certification. Develop Solutions for Google Cloud Platform - GCP.
-    thumbnail: https://img-c.udemycdn.com/course/240x135/3995372_4064.jpg
-    url: https://www.udemy.com/course/google-cloud-certified-professional-cloud-developer/?couponCode=SEP2022
+    description:
+    thumbnail: https://img-c.udemycdn.com/course/480x270/3827154_aecc_4.jpg
+    url: https://www.udemy.com/course/google-cloud-certified-professional-cloud-developer/?couponCode=NOV2022
     rating: 4.6
-    students: 35,479
-    ratingCount: 11,431
+    students: 8,980
+    ratingCount: 859
     objectives:
-      - Start your journey to become a Google Cloud Certified Professional Cloud Developer
-      - Understand how to develop and deploy secure and robust applications on Google Cloud Platform
-      - Get hands-on with compute, networking, storage, and database services in Google Cloud Platform
-      - Understand the best practices for building secure applications on the Google Cloud Platform
+      - 
   - name: GCP Professional Cloud Architect - Google Cloud Certification
-    description: Become a GCP Cloud Architect. Architect Google Cloud Platform (GCP) Solutions. Includes 4 New Case Studies.
-    url: https://www.udemy.com/course/google-cloud-professional-cloud-architect-certification/?couponCode=SEP2022
+    description:
+    url: https://www.udemy.com/course/google-cloud-professional-cloud-architect-certification/?couponCode=NOV2022
     thumbnail: https://img-c.udemycdn.com/course/240x135/3995372_4064.jpg
     rating: 4.6
-    ratingCount: 11,431
-    students: 35,479
+    ratingCount: 5,184
+    students: 37,227
     objectives:
-      - Start your journey to become a Google Cloud Certified Professional Cloud Architect
-      - Get hands-on with compute, networking, storage, and database services in Google Cloud Platform
-      - Understand how to architect and deploy secure and robust applications on Google Cloud Platform
-      - Understand the best practices for building available, scalable, resilient and secure applications on the Google Cloud Platform
+      - 
 ---

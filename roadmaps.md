@@ -1,10 +1,14 @@
 ---
 layout: roadmaps
 title: Roadmaps
-description: 1 MILLION learners. YOUR first step into Programming, Cloud and DevOps.
+description: Learning made easy with step by step roadmaps. Start learning now!
 roadmaps:
   - name: Google Cloud Roadmap
     url: /google-cloud-roadmap
-    description: Become a Google Cloud (GCP) Certified Cloud Digital Leader. Take your FIRST STEP into Google Cloud!
+    description:
     image: https://img-c.udemycdn.com/course/240x135/3995372_4064.jpg
+  - name: AWS Roadmap
+    url: /aws-roadmap
+    description:
+    image: https://img-c.udemycdn.com/course/480x270/4819470_509b_3.jpg
 ---
