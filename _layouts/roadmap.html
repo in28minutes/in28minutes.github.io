@@ -104,14 +104,7 @@ layout: page
                   <img src="{{course.thumbnail}}" class="img-fluid rounded shadow-lg">
                 </div>
                 <div class="col-10">
-                  <div class="mb-3 text-muted fs-6">{{course.description}}</div>
-                  <div class="fs-4 mb-3 fw-bold">What you will learn</div>
-                  <ul class="mb-5">
-                    {% for objective in course.objectives %}
-                    <li class="mb-3"><i class="lni lni-checkmark"></i> {{objective}}</li>
-                    {% endfor %}
-                  </ul>
-                  <div class="mb-5"><span class="badge bg-warning me-2">Bestseller </span>{{course.rating}} <i
+                  <div class="mb-3"> <i
                       class="lni lni-star-filled"></i><i class="lni lni-star-filled"></i><i
                       class="lni lni-star-filled"></i><i class="lni lni-star-filled"></i><i
                       class="lni lni-star-filled"></i>
