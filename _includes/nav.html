@@ -21,9 +21,6 @@
                                 <a class="ud-menu-scroll" href="{{'/' | relative_url}}">Home</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="ud-menu-scroll" href="{{'/about' | relative_url}}">About</a>
-                            </li>
                             {% for product in site.products %}
                             <li class="nav-item">
                                 <a class="ud-menu-scroll" href="{{product.url | relative_url}}">{{product.name}}</a>
