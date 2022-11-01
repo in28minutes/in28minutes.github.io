@@ -68,8 +68,8 @@ faq:
 
 # Testimonials
 testimonials:
-  title: What our students says
-  description: There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.
+  title: What our students say
+  description: Lots of love from our learners
   items:
     - name: Learner - AZ-900 Microsoft Azure Fundamentals in a Weekend
       comment: Get certified quickly without even looking for other resources. Just watch videos for 2 days and appeared for the exam and cleared the exam.
