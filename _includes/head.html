@@ -27,3 +27,7 @@
    ga('send', 'pageview');
 </script>
 {% endif %}
+{% if site.google_tag_manager %}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager }}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+{% endif %}
