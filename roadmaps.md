@@ -1,14 +1,35 @@
 ---
 layout: roadmaps
 title: Roadmaps
-description: Learning made easy with step by step roadmaps. Start learning now!
+description: 
 roadmaps:
-  - name: Google Cloud Roadmap
-    url: /google-cloud-roadmap
+  - name: Cloud Beginner Roadmap
+    url: /cloud-beginner-roadmap
     description:
-    image: https://img-c.udemycdn.com/course/240x135/3995372_4064.jpg
+    image: /images/cloud-beginner-roadmap.png
+  - name: DevOps Roadmap
+    url: /devops-roadmap
+    description:
+    image: /images/devops-roadmap.png
   - name: AWS Roadmap
     url: /aws-roadmap
     description:
-    image: https://img-c.udemycdn.com/course/480x270/4819470_509b_3.jpg
+    image: /images/aws-roadmap.png
+  - name: Azure Roadmap
+    url: /azure-roadmap
+    description:
+    image: /images/azure-roadmap.png
+  - name: Google Cloud Roadmap
+    url: /google-cloud-roadmap
+    description:
+    image: /images/google-cloud-roadmap.png
+  - name: Java Microservices Roadmap
+    url: /java-microservices-roadmap
+    description:
+    image: /images/java-microservices-roadmap.png
+  - name: Java Full Stack Roadmap
+    url: /java-fullstack-roadmap
+    description:
+    image: /images/java-fullstack-roadmap.png
 ---
+
