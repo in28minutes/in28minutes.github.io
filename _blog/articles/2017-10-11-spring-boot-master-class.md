@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Spring Boot For Beginners in 100 Steps
-date:       2017-10-11 12:31:19
+date:       2022-10-11 12:31:19
 summary:    Understand and love the power of Spring Boot - All its features are illustrated developing a web application managing todos and a basic API for survey questionnaire. Also covers unit testing, mocking and integration testing.
 categories: SpringBoot
 permalink:  /spring-boot-for-beginners-and-experts

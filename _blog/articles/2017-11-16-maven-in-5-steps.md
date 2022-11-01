@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Maven Tutorial for Beginners in 5 Steps
-date:       2020-07-07 12:31:19
+date:       2021-07-07 12:31:19
 summary:    Maven Tutorial for Beginners in 5 Steps. Learn the basics of Maven setting up a basic example with Spring Initializr. 
 categories: SpringBoot
 permalink:  /maven-tutorial-for-beginners
