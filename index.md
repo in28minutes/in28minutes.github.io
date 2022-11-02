@@ -8,7 +8,7 @@ header:
   image:
   main_button:
     title: Start learning
-    url: /roadmaps
+    url: https://www.in28minutes.com/roadmaps
   secondary_button:
     title: Watch on YouTube
     url: https://www.youtube.com/user/rithustutorials/videos

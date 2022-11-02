@@ -1,4 +1,4 @@
-title: in28minutes
+title: Spring Boot Tutorial
 email: ranga@in28minutes.com
 description: 1 MILLION learners learning Programming, Cloud and DevOps. Check out our roadmaps!
 url: ''
@@ -41,11 +41,11 @@ social:
   facebook: https://www.facebook.com/in28Minutes
   youtube: https://www.youtube.com/user/rithustutorials
 
-google_analytics: UA-32942307-3
+google_analytics: UA-32942307-5
 
 jekyll_analytics:
   GoogleAnalytics:
-    id: UA-32942307-3
+    id: UA-32942307-5
 
 markdown: kramdown
 highlighter: rouge
