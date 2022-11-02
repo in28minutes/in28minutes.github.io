@@ -1,7 +1,7 @@
 ---
 layout: roadmap
 title: Java Full Stack Roadmap
-description: Start with Java. End at Full Stack with Angular and Spring Boot. More than a million learners are pursuing our amazing roadmaps.
+description:
 features:
   - name: Access on Mobile and TV
     description: 
@@ -16,12 +16,12 @@ features:
     description: 
     icon: lni-download
 objectives:
-  - Java
-  - Spring
-  - Spring Boot
-  - Angular
-  - Full Stack
-  - REST API
+  - Learn Programming with Java
+  - Understand the Fundamentals of Spring Framework
+  - Explore Spring Boot - No 1 Java Framework
+  - Learn JavaScript and Angular
+  - Go Full Stack with Angular and Spring Boot
+  - Build an Amazing REST API
 testimonials:
   - name: Learner
     comment: It is a great course teaching the fundamentals of Spring Boot and Angular. Integrating the Spring Boot with Angular using Restful services. Finally the author taught important aspects in the Spring Boot with an example. He also taught the JPA and how JPA is used to commit the data and retrieve the data using repository.

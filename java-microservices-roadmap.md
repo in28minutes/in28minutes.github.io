@@ -1,7 +1,7 @@
 ---
 layout: roadmap
 title: Java Microservices Roadmap
-description: Start with Java. End at Microservices and Cloud. More than a million learners are pursuing our amazing roadmaps.
+description:
 features:
   - name: Access on Mobile and TV
     description: 
@@ -16,14 +16,14 @@ features:
     description: 
     icon: lni-download
 objectives:
-  - Java
-  - Spring
-  - Spring Boot
-  - Spring Cloud
-  - Docker
-  - Kubernetes
-  - REST API
-  - Microservices
+  - Learn Programming with Java
+  - Understand the Fundamentals of Spring Framework
+  - Explore Spring Boot - No 1 Java Framework
+  - Learn to Build Great Microservices
+  - Build Cloud Native Applications with Spring Cloud
+  - Build an Amazing REST API
+  - Build and Run Containers using Docker
+  - Perform Container Orchestration using Kubernetes
 testimonials:
   - name: Learner
     comment: Great course on K8s and Spring Boot. I have several in28Minutes course bought on Udemy. They are always of very high quality. I have learned so much and put my trust in every course from in28Minutes.

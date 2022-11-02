@@ -10,21 +10,6 @@ layout: page
       </p>
     </div>
   </div>
-  <div class="row row-cols-1 row-cols-md-2 mb-5 row-cols-lg-4">
-    {% for feature in page.features %}
-    <div class="col">
-      <div class="ud-single-feature wow fadeInUp" data-wow-delay=".1s">
-        <div class="ud-feature-icon">
-          <i class="lni {{feature.icon}}"></i>
-        </div>
-        <div class="ud-feature-content">
-          <h3 class="ud-feature-title">{{feature.name}}</h3>
-          <p>{{feature.description}}</p>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
   <div class="row mb-5">
     <div class="col">
       <div class="ud-about-wrapper wow fadeInUp shadow" data-wow-delay=".2s">
@@ -46,6 +31,69 @@ layout: page
       </div>
     </div>
   </div>
+  <div class="row py-4">
+    <div class="col">
+      <h3>Roadmap - {{page.courses.size}} Course(s)</h3>
+    </div>
+  </div>
+  <div class="row py-5 row-cols-1">
+    {% for course in page.courses %}
+    <div class="col">
+      <div class="ud-single-faq wow fadeInUp" data-wow-delay=".1s">
+        <div class="accordion">
+          <button class="ud-faq-btn collapsed" data-bs-toggle="collapse" data-bs-target="#feature_{{forloop.index}}">
+            <span class="icon flex-shrink-0">
+              <i class="lni lni-chevron-down"></i>
+            </span>
+            <div>{{forloop.index}}. {{course.name}}</div>
+          </button>
+          <div id="feature_{{forloop.index}}" class="accordion-collapse collapse">
+            <div class="ud-faq-body">
+              <div class="row">
+                <div class="col-3 text-center">
+                  <img src="{{course.thumbnail}}" class="img-fluid rounded shadow-lg">
+                </div>
+                <div class="col-9">
+                  <div class="mb-3"><strong>{{course.students}}</strong> Students</div>
+                  <div class="mb-3 course-rating"> <i
+                      class="lni lni-star-filled"></i><i class="lni lni-star-filled"></i><i
+                      class="lni lni-star-filled"></i><i class="lni lni-star-filled"></i><i
+                      class="lni lni-star-filled"></i>
+                    <strong>({{course.ratingCount}})</strong></div>  
+                  <a href="{{course.url}}" class="ud-main-btn fw-bold">View on <strong>Udemy</strong></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="row py-5">
+    <div class="col">
+      <h3>Crafted For You With Love</h3>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-2 mb-5 row-cols-lg-4">
+    {% for feature in page.features %}
+    <div class="col">
+      <div class="ud-single-feature wow fadeInUp" data-wow-delay=".1s">
+        <div class="ud-feature-icon">
+          <i class="lni {{feature.icon}}"></i>
+        </div>
+        <div class="ud-feature-content">
+          <h3 class="ud-feature-title">{{feature.name}}</h3>
+          <p>{{feature.description}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
   {% include trustedby.html %}
   <div class="row py-5">
     <div class="col">
@@ -80,44 +128,8 @@ layout: page
     </div>
     {% endfor %}
   </div>
-  <div class="row py-5">
-    <div class="col">
-      <h3>Roadmap</h3>
-    </div>
-  </div>
-  <div class="row py-5 row-cols-1">
-    {% for course in page.courses %}
-    <div class="col">
-      <div class="ud-single-faq wow fadeInUp" data-wow-delay=".1s">
-        <div class="accordion">
-          <button class="ud-faq-btn collapsed" data-bs-toggle="collapse" data-bs-target="#feature_{{forloop.index}}">
-            <span class="icon flex-shrink-0">
-              <i class="lni lni-chevron-down"></i>
-            </span>
-            <div>{{forloop.index}}. {{course.name}}</div>
-          </button>
-          <div id="feature_{{forloop.index}}" class="accordion-collapse collapse">
-            <div class="ud-faq-body">
-              <div class="row">
-                <div class="col-2 text-center">
-                  <img src="{{course.thumbnail}}" class="img-fluid rounded shadow-lg">
-                </div>
-                <div class="col-10">
-                  <div class="mb-3"> <i
-                      class="lni lni-star-filled"></i><i class="lni lni-star-filled"></i><i
-                      class="lni lni-star-filled"></i><i class="lni lni-star-filled"></i><i
-                      class="lni lni-star-filled"></i>
-                    ({{course.ratingCount}}) - <strong>{{course.students}} Students</strong></div>
-                  <a href="{{course.url}}" class="ud-main-btn fw-bold">View on <strong>Udemy</strong></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
+
+
 </div>
 <!-- ====== Features End ====== -->
 {% include newsletter.html %}

@@ -1,7 +1,7 @@
 ---
 layout: roadmap
 title: Cloud Beginner Roadmap
-description: How about exploring all 3 cloud platforms in a single roadmap?. More than a million learners are pursuing our amazing roadmaps.
+description: 
 features:
   - name: Access on Mobile and TV
     description: 
@@ -16,12 +16,10 @@ features:
     description: 
     icon: lni-download
 objectives:
-  - AWS
-  - Hands-on
-  - Database
-  - Compute
-  - Security
-  - Networking
+  - Get started with AWS, Azure and Google Cloud
+  - Go Hands-On with the 3 Popular Cloud Platforms
+  - Explore the Most Important Services
+  - Prepare for 3 Awesome Certifications
 testimonials:
   - name: Learner
     comment: Awesome course to get started with AWS. I have started with ZERO AWS knowledge and now I am familiar and confident to talk in AWS terminology. THANK YOU Ranga !!!!

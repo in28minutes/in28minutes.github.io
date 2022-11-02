@@ -1,7 +1,7 @@
 ---
 layout: roadmap
 title: Azure Roadmap
-description: Azure is one of the Top 3 cloud platforms. More than a million learners are pursuing our amazing roadmaps.
+description:
 features:
   - name: Access on Mobile and TV
     description: 
@@ -16,12 +16,10 @@ features:
     description: 
     icon: lni-download
 objectives:
-  - Azure
-  - Hands-on
-  - Database
-  - Compute
-  - Security
-  - Networking
+  - Get started with Azure
+  - Go Hands-On 
+  - Learn the Most Important Services
+  - Prepare for 3 Awesome Fundamental Certifications
 testimonials:
   - name: Learner
     comment: Get certified quickly without even looking for other resources. Just watch videos for 2 days and appeared for the exam and cleared the exam.

@@ -1,7 +1,7 @@
 ---
 layout: roadmap
 title: DevOps Roadmap
-description: More than a million learners are pursuing our amazing roadmaps.
+description: 
 features:
   - name: Access on Mobile and TV
     description: 
@@ -16,13 +16,13 @@ features:
     description: 
     icon: lni-download
 objectives:
-  - DevOps
-  - Hands-on
-  - Docker
-  - Kubernetes
-  - Azure DevOps
-  - Terraform
-  - Ansible
+  - Get Started with DevOps
+  - Go Hands-On with 6 Different DevOps Tools
+  - Create Containers with Docker
+  - Orchestrate Kubernetes Cluster
+  - Simplify DevOps with Azure DevOps
+  - Create Cloud Infrastructure with Terraform
+  - Configure Your Cloud VMs using Ansible
 testimonials:
   - name: Learner
     comment: The best instructor of Udemy! This is a great course to understand about DevOps, the involved concepts, and to apply the concepts.

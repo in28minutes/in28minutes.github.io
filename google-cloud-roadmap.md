@@ -1,7 +1,7 @@
 ---
 layout: roadmap
 title: Google Cloud Roadmap
-description: Google Cloud is one of the Top 3 cloud platforms. More than a million learners are pursuing our amazing roadmaps.
+description: 
 features:
   - name: Access on Mobile and TV
     description: 
@@ -16,12 +16,10 @@ features:
     description: 
     icon: lni-download
 objectives:
-  - Google Cloud
-  - Hands-on
-  - Database
-  - Compute
-  - Security
-  - Networking
+  - Get started with Google Cloud
+  - Go Hands-On
+  - Learn the Most Important Services
+  - Prepare for 3 Awesome Certifications
 testimonials:
   - name: Edwin G.
     comment: Wow, what can I say? I just passed my second exam this month (NO PRIOR EXPERIENCE) and now I have two Google Cloud Certs (CDL and ACE). I'm very thankful for Ranga and his amazing content. I'm deeply thankful and excited to continue this journey in the cloud.
