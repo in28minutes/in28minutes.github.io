@@ -26,13 +26,15 @@
                                 <a class="ud-menu-scroll" href="{{product.url | relative_url}}">{{product.name}}</a>
                             </li>
                             {% endfor %}
+
+
                             <!-- <li class="nav-item nav-item-has-children">
-                                <a href="javascript:void(0)"> Roadmaps </a>
+                                <a href="javascript:void(0)"> Articles </a>
                                 <ul class="ud-submenu">
-                                    {% for roadmap in site.roadmaps %}
+                                    {% for article in site.articles %}
                                     <li class="ud-submenu-item">
-                                        <a href="{{roadmap.url | relative_url}}" class="ud-submenu-link">
-                                            {{roadmap.name}}
+                                        <a href="{{article.url | relative_url}}" class="ud-submenu-link">
+                                            {{article.name}}
                                         </a>
                                     </li>
                                     {% endfor %}

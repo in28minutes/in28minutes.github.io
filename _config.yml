@@ -14,7 +14,14 @@ products:
   - name: Videos
     url: https://www.youtube.com/user/rithustutorials/videos
   - name: Roadmaps
-    url: /roadmaps
+    url: https://www.in28minutes.com/roadmaps
+
+# Articles
+articles:
+  - name: Spring Boot
+    url: https://www.springboottutorial.com/blog
+  - name: Cloud
+    url: https://cloud.in28minutes.com/blog
 
 collections:
   blog:
@@ -34,11 +41,11 @@ social:
   facebook: https://www.facebook.com/in28Minutes
   youtube: https://www.youtube.com/user/rithustutorials
 
-google_analytics: UA-32942307-5
+google_analytics: UA-32942307-3
 
 jekyll_analytics:
   GoogleAnalytics:
-    id: UA-32942307-5
+    id: UA-32942307-3
 
 markdown: kramdown
 highlighter: rouge
