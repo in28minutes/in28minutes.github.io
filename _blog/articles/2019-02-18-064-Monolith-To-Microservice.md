@@ -1,7 +1,7 @@
 ---
 layout:  post
 title:  Breaking a Monolith into Microservices - Best Practices and Challenges
-date:    2019-02-18 00:00:00
+date:    2022-11-04 00:00:00
 summary:  In this article, we will describe the first steps, in taking an architecture from monolith to microservice. 
 categories:  SpringBootMicroservices
 permalink:  /breaking-a-monolith-into-microservices
@@ -33,7 +33,7 @@ The salient features of monolith applications are:
 
 A monolithic application would look something like the following:
 
-![image info](/images/Capture-064-02.png)
+![image info](/images/Capture-064-02.PNG)
 
 You have a large application talking to a large database.
 
@@ -43,12 +43,12 @@ In microservices architectures, instead of building a large application, we buil
 
 Here is how you would split up the monolith MovieApplication:
 
-![image info](/images/Capture-064-03.png)
+![image info](/images/Capture-064-03.PNG)
 
 > As you can see here, the databases are also separated out. 
 
 Microservices architecture involves a number of small, well-designed microservices, that exchange messages among themselves:
-![image info](/images/Capture-059-02.png)
+![image info](/images/Capture-059-02.PNG)
 
 ### Microservices Architecture Is Tough
 
@@ -163,7 +163,7 @@ Your business might need more that one of the above. Prioritize them and get sta
 
 Do check out our video on this:
 
-[![image info](/images/Capture-064-01.png)](https://www.youtube.com/watch?v=d_wVZ6sgVbs)
+[![image info](/images/Capture-064-01.PNG)](https://www.youtube.com/watch?v=d_wVZ6sgVbs)
 
 ### Summary
 
