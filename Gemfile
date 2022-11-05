@@ -3,7 +3,7 @@ gem "jekyll", "~> 4.2.2"
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-seo-tag"
-  gem 'jekyll-analytics'
+  # gem 'jekyll-analytics'
 end
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", "~> 1.2"

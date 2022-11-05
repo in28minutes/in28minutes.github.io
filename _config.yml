@@ -1,11 +1,11 @@
 title: Spring Boot Tutorial
 email: ranga@in28minutes.com
 description: 1 MILLION learners learning Programming, Cloud and DevOps. Check out our roadmaps!
-url: ''
+url: 'https://www.in28minutes.com/'
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-analytics
+  # - jekyll-analytics
 
 # Products
 products:
@@ -41,9 +41,9 @@ social:
 
 google_analytics: UA-32942307-5
 
-jekyll_analytics:
-  GoogleAnalytics:
-    id: UA-32942307-5
+# jekyll_analytics:
+#   GoogleAnalytics:
+#     id: UA-32942307-5
 
 markdown: kramdown
 highlighter: rouge

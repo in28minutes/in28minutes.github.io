@@ -11,6 +11,17 @@
 .ud-footer {
   padding-top: 15em !important;
 }
+.ud-header > .navbar-brand {
+  color: white;
+}
+
+.ud-header.sticky > .navbar-brand {
+  color: black;
+}
+
+.course-rating i {
+  color: #fbb040;
+}
 /*- Screen Sizes*/
 /*import fonts*/
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
