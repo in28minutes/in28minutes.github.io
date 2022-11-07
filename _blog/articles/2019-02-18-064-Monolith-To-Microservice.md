@@ -48,7 +48,7 @@ Here is how you would split up the monolith MovieApplication:
 > As you can see here, the databases are also separated out. 
 
 Microservices architecture involves a number of small, well-designed microservices, that exchange messages among themselves:
-![image info](/images/Capture-059-02.PNG)
+![image info](/images/Capture-059-02.png)
 
 ### Microservices Architecture Is Tough
 
