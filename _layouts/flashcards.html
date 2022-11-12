@@ -1,0 +1,16 @@
+---
+layout: page
+---
+<div class="container py-5">
+    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-3">
+        {% for topic in page.topics %}
+        <div class="col">
+            <div class="p-5 bg-dark shadow shadow-sm rounded position-relative">
+                <div class="fs-3 fw-bold text-white">{{topic.name}}</div>
+                <div class="fs-6 text-muted">{{topic.description}}</div>
+                <a href="{{topic.url | relative_url}}" class="stretched-link"></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
