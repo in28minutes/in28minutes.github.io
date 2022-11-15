@@ -1,6 +1,5 @@
 ---
 layout: flashcard-topic
-title: EC2 - Elastic Compute Cloud with 14 flashcards
 # Main card
 main_card_title: EC2 - Elastic Compute Cloud with 14 flashcards
 main_card_bg: '#6586c3'
@@ -29,4 +28,10 @@ cards:
     description: Static public IP address for EC2 instance.
   - title: Launch Templates
     description: Pre-configured templates (AMI ID, instance type, and network settings) simplifying the creation of EC2 instances.
+  - title: Launch Templates
+    description: Pre-configured templates (AMI ID, instance type, and network settings) simplifying the creation of EC2 instances.
+  - title: Userdata
+    description: Used for bootstrapping. Install OS patches or software when an EC2 instance is launched.
+  - title: Elastic IP Addresses
+    description: Static public IP address for EC2 instance.
 ---

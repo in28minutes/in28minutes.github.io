@@ -1,6 +1,5 @@
 ---
 layout: flashcard-topic
-title: EC2 - Elastic Compute Cloud with 10 flashcards
 # Main card
 main_card_title: EC2 - Elastic Compute Cloud with 10 flashcards
 main_card_bg: '#6586c3'
