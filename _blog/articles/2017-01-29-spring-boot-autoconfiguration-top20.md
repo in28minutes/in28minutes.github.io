@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      What is Spring Boot Auto Configuration?
-date:       2022-07-10 12:31:19
+date:       2023-02-17 12:31:19
 summary:    Auto Configuration is the most important feature in Spring Boot. In this tutorial, we will learn important concepts about Auto Configuration with a couple of examples. 
 categories:  SpringBoot
 permalink:  /spring-boot-auto-configuration
@@ -10,21 +10,17 @@ image: /images/spring-framework-category.png
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-This guide will help you understand Spring Boot Auto Configuration with examples. We will use a simple code example creating couple of simple rest services. 
+Through examples, this book will help you grasp Spring Boot Auto Configuration. We will create a few of basic rest services using a simple code sample. 
 
 ![Image](/images/spring-boot-autoconfigure-jar.png "Spring Boot Auto Configure Jar")
 
 
-
- 
 ## You will learn
 - Why do we need Auto Configuration?
 - What is Auto Configuration?
 - A few examples of Spring Boot Auto Configuration
 - How is Auto Configuration implemented in Spring Boot?
 - How to debug Auto Configuration?
-
-
 
 ## Tools you will need
 - Maven 3.0+ is your build tool
@@ -41,7 +37,7 @@ This guide will help you understand Spring Boot Auto Configuration with examples
 
 Spring based applications have a lot of configuration. 
 
-When we use Spring MVC, we need to configure component scan, Dispatcher Servlet, a view resolver, web jars(for delivering static content) among other things.
+Spring MVC requires us to configure component scan, Dispatcher Servlet, a view resolver, and web jars (for serving static content), among other things.
 
 ```xml
   <bean
@@ -58,7 +54,7 @@ When we use Spring MVC, we need to configure component scan, Dispatcher Servlet,
     
 ```
 
-Below code snippet shows typical configuration of a Dispatcher Servlet in a web application.
+A common configuration of a Dispatcher Servlet in a web application is shown in the code snippet below.
 
 ```xml
     <servlet>
@@ -79,7 +75,7 @@ Below code snippet shows typical configuration of a Dispatcher Servlet in a web 
     </servlet-mapping>
 ```
   
-When we use Hibernate/JPA, we would need to configure a data source, an entity manager factory, a transaction manager among a host of other things. 
+While using Hibernate/JPA, we must establish a data source, an entity management factory, and a transaction manager, among other things. 
 
 ```xml
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
@@ -111,7 +107,7 @@ When we use Hibernate/JPA, we would need to configure a data source, an entity m
 
 ``` 
 
-Above examples are typical with any Spring framework implementation or integration with other frameworks.
+The examples presented here are typical of any Spring framework installation or interface with other frameworks.
 
 ## Spring Boot : Can we think different?
 
@@ -124,7 +120,7 @@ Spring Boot brings in new thought process around this.
 
 There would be provisions to override the default auto configuration. 
 
-> Spring Boot looks at a) Frameworks available on the CLASSPATH b) Existing configuration for the application. Based on these, Spring Boot provides basic configuration needed to configure the application with these frameworks. This is called `Auto Configuration`.  
+> Spring Boot examines a) Frameworks in the CLASSPATH b) The application's current settings. Spring Boot offers the fundamental settings required to configure the application with these frameworks based on these. This is known as 'Auto Configuration'. 
 
 To understand Auto Configuration further, lets bootstrap a simple Spring Boot Application using Spring Initializr.
 
@@ -162,17 +158,17 @@ Mapped URL path [/webjars/**] onto handler of type [class org.springframework.we
 
 Above log statements are good examples of `Spring Boot Auto Configuration` in action. 
 
-As soon as we added in the Spring Boot Starter Web as a dependency in our project, Spring Boot Autoconfiguration sees that Spring MVC is on the classpath. It autoconfigures dispatcherServlet, a default error page and webjars.
+Spring Boot Autoconfiguration detects that Spring MVC is on the classpath as soon as we include Spring Boot Starter Web as a dependency in our project. It configures dispatcherServlet, a default error page, and webjars automatically.
 
-If you add Spring Boot Data JPA Starter, you will see that Spring Boot Auto Configuration auto configures a datasource and an Entity Manager. 
+When you add Spring Boot Data JPA Starter, you'll see that Spring Boot Auto Configuration creates a datasource and an Entity Manager for you.
 
 ## Where is Spring Boot Auto Configuration implemented?
 
-All auto configuration logic is implemented in `spring-boot-autoconfigure.jar`. All auto configuration logic for mvc, data, jms and other frameworks is present in a single jar.  
+'spring-boot-autoconfigure.jar' contains all auto configuration logic. A single jar contains all auto configuration logic for mvc, data, jms, and other frameworks.  
 
 ![Image](/images/spring-boot-autoconfigure-jar.png "Spring Boot Auto Configure Jar")
 
-Other important file inside spring-boot-autoconfigure.jar is /META-INF/spring.factories. This file lists all the auto configuration classes that should be imported under the AutoConfigurationImportFilter and AutoConfigurationImportFilter key based on the dependency available in the classpath.
+/META-INF/spring.factories is another crucial file contained within spring-boot-autoconfigure.jar. This file contains a list of all the auto configuration classes that should be imported using the AutoConfigurationImportFilter and AutoConfigurationImportFilter keys, depending on the dependencies found on the classpath.
 
 ```properties
 # Auto Configuration Import Listeners
