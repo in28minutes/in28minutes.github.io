@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Writing Integration Tests for Rest Services with Spring Boot
-date:       2022-07-12 12:31:19
+date:       2023-02-18 12:31:19
 summary:    Setting up a basic REST Service with Spring Boot is a cake walk. We will go one step further and add great integration tests! 
 categories:  SpringBootUnitTesting
 permalink:  /integration-testing-for-spring-boot-rest-services
@@ -10,7 +10,7 @@ image: /images/unit-test-category.png
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-This guide will help you write great integration tests for your Spring Boot Rest Service. We will use a simple code example creating couple of simple rest services. 
+This post will assist you in creating excellent integration tests for your Spring Boot Rest Service. We will create a few of basic rest services using a simple code sample.
  
 ## You will learn
 - What is Integration Testing?
@@ -35,27 +35,27 @@ Following screenshot shows eclipse project with all the files we will create.
 
 ![Image](/images/SpringBootRestService-ProjectStructure.png "Spring Boot Rest Services - Project Structure")
 
-We want to create a integration test for `StudentController` which is a Rest Controller. `StudentController` exposes two service methods - one Get and one Post. We will write integration tests for both these service methods. 
+We want to write an integration test for the 'StudentController' Rest Controller. The 'StudentController' class offers two service methods: Get and Post. Both of these service methods will be subjected to integration testing. 
 
 In the integration test
 
-- We will launch the complete Spring Boot application using `@SpringBootTest`
-- We will invoke the service methods using `TestRestTemplate`
-- We will assert the results using a great JSON assert framework - `org.skyscreamer.jsonassert.JSONAssert`
+- `@SpringBootTest` will be used to launch the whole Spring Boot application.
+- `TestRestTemplate` will be used to call the service methods.
+- The results will be asserted using a fantastic JSON assert framework - `org.skyscreamer.jsonassert.JSONAssert`.
 
-A key part of integration testing is testing all the layers in the application.
+Testing all of the application's levels is an important aspect of integration testing.
 
 ## Overview
 
-Following is the order we do things in this guide:
+In this guide, we perform everything in the following order:
 
-- Bootstrap a project using Spring Initializr.
-- Implement a Business Service for our API - StudentService.
-- Implement the API - using StudentController. First we implement the GET methods and then the POST methods. 
-- Write Integration Tests for our API.
+- Spring Initializr may be used to bootstrap a project.
+- Build a Business Service - StudentService - for our API.
+- Use StudentController to implement the API. The GET methods are implemented first, followed by the POST methods. 
+- Create API integration tests.
 
 
-## Creating REST Services Application with Spring Initializr
+## Using Spring Initializr to Create a REST Services Application
 
 > Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
@@ -74,11 +74,11 @@ As shown in the image above, following steps have to be done
 - Import the project into Eclipse.
 - If you want to understand all the files that are part of this project, you can go here.
 
-## Implementing Business Service for your Application
+## Adding Business Services to Your Application
 
 All applications need data. Instead of talking to a real database, we will use an `ArrayList` - kind of an in-memory data store.
 
-A student can take multiple courses. A course has an id, name, description and a list of steps you need to complete to finish the course. A student has an id, name, description and a list of courses he/she is currently registered for. We have StudentService exposing methods to 
+A student may enrol in many courses. A course contains an id, a name, a description, and a set of actions that must be completed in order to complete the course. A student has an id, a name, a description, and a list of courses for which he or she is presently registered. StudentService is exposing methods to us. 
 
 - `public List<Student> retrieveAllStudents()` - Retrieve details for all students
 - `public Student retrieveStudent(String studentId)` - Retrieve a specific student details
@@ -86,7 +86,7 @@ A student can take multiple courses. A course has an id, name, description and a
 - `public Course retrieveCourse(String studentId, String courseId)` - Retrieve details of a specific course a student is registered for
 - `public Course addCourse(String studentId, Course course)` - Add a course to an existing student
 
- Refer to these files at the bottom of the article for exact implementation of the Service `StudentService` and the model classes `Course` and `Student`. 
+ The precise implementation of the Service `StudentService` and the model classes `Course` and 'Student' may be seen at the bottom of this article.
 
 - src/main/java/com/in28minutes/springboot/model/Course.java
 - src/main/java/com/in28minutes/springboot/model/Student.java
@@ -97,10 +97,10 @@ A student can take multiple courses. A course has an id, name, description and a
 
 The Rest Service `StudentController` exposes couple of get services.
 
-- `@Autowired private StudentService studentService` : We are using Spring Autowiring to wire the student service into the StudentController.
-- `@GetMapping("/students/{studentId}/courses")`: Exposing a Get Service with studentId as a path variable 
-- `@GetMapping("/students/{studentId}/courses/{courseId}")`: Exposing a Get Service for retrieving specific course of a student. 
-- `@PathVariable String studentId`: Value of studentId from the uri will be mapped to this parameter.
+- `@Autowired private StudentService studentService` : Spring Autowiring is being used to connect the student service to the StudentController.
+- `@GetMapping("/students/{studentId}/courses")`: Making a Get Service with studentId available as a route variable 
+- `@GetMapping("/students/{studentId}/courses/{courseId}")`: Introducing a Get Service for fetching a student's individual course. 
+- `@PathVariable String studentId`: This argument will be mapped to the value of studentId from the uri.
 
 ```java
 package com.in28minutes.springboot.controller;
@@ -329,7 +329,7 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.0-M3</version>
+		<version>3.0.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
