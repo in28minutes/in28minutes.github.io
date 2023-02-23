@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Secure Rest Services and Web Applications with Spring Boot Security Starter
-date:       2022-07-07 12:31:19
+date:       2023-02-022 12:31:19
 summary:    Spring Boot Starter Security is the recommended starter for enabling security on web application - including REST services. 
 categories:  SpringBoot
 permalink:  /securing-rest-services-with-spring-boot-starter-security
@@ -25,7 +25,6 @@ This guide will help you understand the different features Spring Boot Starter S
 - We will look at an example of security a simple web application as well as security a REST service with Basic Authentication.
 
 
-
 ## Tools you will need
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
@@ -39,7 +38,7 @@ This guide will help you understand the different features Spring Boot Starter S
 
 ## Bootstrapping web application with Spring Initializr
 
-Creating a Web application with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework for both the web page and the rest service.  
+Using Spring Initializr to create a Web application is a piece of cake. For both the web page and the rest service, we will utilise Spring Web MVC as our web framework. 
 
 > Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
@@ -57,21 +56,21 @@ As shown in the image above, following steps have to be done
 - If you want to understand all the files that are part of this project, you can go here.
 
 ## Setting up a Simple Web Application
-Let's quickly setup a simple web application to secure using Spring Security. We will create one Controller which would redirect to the welcome view - a simple jsp.
+Let's rapidly protect a basic web application with Spring Security. We'll make one Controller that will redirect to the welcome view - just a basic jsp.
 
 ### JSP Support
-We want to use JSP as the view. Default embedded servlet container for Spring Boot Starter Web is tomcat. To enable support for JSP's, we would need to add a dependency on tomcat-embed-jasper.
+As the view, we intend to utilise JSP. Tomcat is the default embedded servlet container for Spring Boot Starter Web. To enable JSP support, we'd need to add a reliance on tomcat-embed-jasper.
 
 ```
 <dependency>
     <groupId>org.apache.tomcat.embed</groupId>
     <artifactId>tomcat-embed-jasper</artifactId>
-    <scope>provided</scope>
+    <scope>provided</scope> // default for IntelliJ IDE
 </dependency>
 ```
 
 ### Adding Login Controller
-LoginController maps the root url "/" to showLoginPage method. A hardcoded name is populated into the model. It returns a view name of "welcome" which maps to welcome.jsp.
+LoginController connects the root url "/" with the showLoginPage function. The model is pre-populated with a hardcoded name. It returns a view with the name "welcome" that maps to welcome.jsp.
 
 ```java
 package com.in28minutes.springboot.web.controller;
@@ -94,7 +93,7 @@ public class LoginController {
 ```
 
 ### Adding welcome.jsp
-welcome.jsp is a simple jsp with a welcome message.
+welcome. jsp is a basic jsp that displays a welcome message.
 
 ```html
 <div class="container">
@@ -103,7 +102,7 @@ welcome.jsp is a simple jsp with a welcome message.
 ```
 
 ### Configure a View Resolver
-Welcome jsp is in folder src/main/webapp/WEB-INF/jsp/. We will configure a view resolver in application.properties to map the view name to the physical jsp
+Welcome.jsp may be found in the folder src/main/webapp/WEB-INF/jsp/. In application.properties, we will configure a view resolver to map the view name to the physical jsp.
 
 ```
 spring.mvc.view.prefix=/WEB-INF/jsp/
@@ -111,20 +110,20 @@ spring.mvc.view.suffix=.jsp
 ```
 
 ### Run the web application
-Launch StudentServicesApplication as a java application. Following screenshot shows the application launched up at http://localhost:8080.
+Start the StudentServicesApplication java programme. The programme is launched at http://localhost:8080 in the screenshot below.
 
 ![Image](/images/SpringBootSecuritySecurity-WebApplication.png "Spring Security - Web Application") 
 
 ## Add a Simple Rest Service
 
-Lets add a simple REST Service as well. We will add
+Let's also provide a basic REST Service. We will include
 
-- Two Model Objects - Course and Student. Student can register for multiple courses.
-- One Business Service - To manage the business logic. Most of the business logic we use is on top of Hard coded data stored in a static ArrayList.
-- One Rest Controller - StudentController. Exposes one Rest service to retrieve the list of courses a student is registered for.
+- There are two model objects: course and student. A student may enrol in many courses.
+- To handle the business logic, there is just one Business Service. The majority of our business logic is built on top of hard coded data saved in a static ArrayList.
+- There is just one rest controller - StudentController. One Rest service is exposed to obtain a list of courses for which a student is registered.
 
 ## Model and Business Logic
-Below snippets show an extract from the model objects Course and Student.
+The following excerpts are taken from the model objects Course and Student.
 
 ```java
 public class Course {
@@ -154,15 +153,15 @@ public class StudentService {
 	static {
 		// Initialize Data
 		Course course1 = new Course("Course1", "Spring", "10 Steps",
-				Arrays.asList("Learn Maven", "Import Project", "First Example",
+				List.of("Learn Maven", "Import Project", "First Example",
 						"Second Example"));
 		Course course2 = new Course("Course2", "Spring MVC", "10 Examples",
-				Arrays.asList("Learn Maven", "Import Project", "First Example",
+				List.of("Learn Maven", "Import Project", "First Example",
 						"Second Example"));
 
 		Student ranga = new Student("Student1", "Ranga Karanam",
 				"Hiker, Programmer and Architect", new ArrayList<>(
-						Arrays.asList(course1, course2)));
+						List.of(course1, course2)));
 
 		students.add(ranga);
 	}
@@ -179,11 +178,8 @@ public class StudentService {
 	public List<Course> retrieveCourses(String studentId) {
 		Student student = retrieveStudent(studentId);
 
-		if (student == null) {
-			return null;
-		}
-
-		return student.getCourses();
+		return student == null > null : student.getCourses(); 
+	
 	}
 }
 ```
@@ -311,22 +307,47 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-	// Authentication : User --> Roles
-	protected void configure(AuthenticationManagerBuilder auth)
-			throws Exception {
-		auth.inMemoryAuthentication().passwordEncoder(org.springframework.security.crypto.password.NoOpPasswordEncoder.getInstance()).withUser("user1").password("secret1")
-				.roles("USER").and().withUser("admin1").password("secret1")
-				.roles("USER", "ADMIN");
+public class SecurityConfig {
+
+	@Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
+	    http.authorizeHttpRequests(
+			auth -> auth.requestMatchers("/students/**")
+			.permitAll().anyRequest().authenticated());
+
+		http.httpBasic(withDefaults());
+		
+		http.csrf().disable();
+	
+		return http.build();
+
 	}
 
-	// Authorization : Role -> Access
-	protected void configure(HttpSecurity http) throws Exception {
-		http.httpBasic().and().authorizeRequests().antMatchers("/students/**")
-				.hasRole("USER").antMatchers("/**").hasRole("ADMIN").and()
-				.csrf().disable().headers().frameOptions().disable();
-	}
+    @Bean
+    public AuthenticationManager authenticationManager(UserDetailsService userDetailsService) {
+        var authenticationProvider = new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(userDetailsService);
 
+        return new ProviderManager(authenticationProvider);
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService() {
+        UserDetails user = User.withUsername("user1")
+                .password("{noop}secret1")
+                .authorities("read")
+                .roles("USER")
+                .build();
+		UserDetails userOne = User.withUsername("admin1")
+                .password("{noop}secret1")
+                .authorities("read")
+                .roles("ADMIN")
+                .build();		
+
+        return new InMemoryUserDetailsManager(user, userOne);
+    }
+	
 }
 ```
 
