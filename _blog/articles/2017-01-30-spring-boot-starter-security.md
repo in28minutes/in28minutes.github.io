@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Secure Rest Services and Web Applications with Spring Boot Security Starter
-date:       2023-02-022 12:31:19
+date:       2023-02-22 12:31:19
 summary:    Spring Boot Starter Security is the recommended starter for enabling security on web application - including REST services. 
 categories:  SpringBoot
 permalink:  /securing-rest-services-with-spring-boot-starter-security
