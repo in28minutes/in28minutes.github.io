@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Initializing Projects with Spring Boot Starters - Web and JPA
-date:       2022-07-09 12:31:19
+date:       2023-02-22 12:31:19
 summary:    Key goal of Spring Boot is to enable a quick start to developing production ready applications. Most important components behind the features of Spring Boot are the Spring Boot Starter Projects. 
 categories:  SpringBoot
 permalink:  /spring-boot-starter-projects
@@ -22,7 +22,6 @@ This guide will help you understand how Spring Boot Starter Projects enable the 
 - Get an overview of different starter projects provided by Spring Boot.
 
 
-
 ## Tools you will need
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
@@ -30,49 +29,48 @@ This guide will help you understand how Spring Boot Starter Projects enable the 
 
 ## Why do we need Spring Boot Starter Projects?
 
-To understand what starter projects provide, let's consider an example project without using a starter.
+Consider an example project that does not use a starter to better grasp what starting projects provide.
 
 ### What if we do not have starter projects?
 
-Let's say we want to develop a web application with Spring MVC.  
+Assume we wish to create a web application using Spring MVC.
 
-First of all we would need to identify the frameworks we want to use, which versions of frameworks to use and how to connect them together. 
+First and foremost, we must decide which frameworks to utilise, which versions of frameworks to employ, and how to link them.
 
-Listed below are some of the dependencies we use in our Spring MVC Course. These include Spring MVC, Jackson Databind (for data binding), Hibernate-Validator (for server side validation using Java Validation API) and Log4j (for logging). When creating this course, we had to choose the compatible versions of all these frameworks.
+Some of the dependencies we utilise in our Spring MVC Course are listed below. Spring MVC, Jackson Databind (for data binding), Hibernate-Validator (for server side validation using Java Validation API), and Log4j are among them (for logging). We had to select compatible versions of all of these frameworks when developing this course.
 
 ```xml
 <dependency>
    <groupId>org.springframework</groupId>
    <artifactId>spring-webmvc</artifactId>
-   <version>6.0.0-M4</version>
+   <version>6.0.4</version>
 </dependency>
 
 <dependency>
     <groupId>com.fasterxml.jackson.core</groupId>
     <artifactId>jackson-databind</artifactId>
-    <version>2.13.3</version>
+    <version>2.14.1</version>
 </dependency>
 
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-validator</artifactId>
-    <version>7.0.4.Final</version>
+    <version>8.0.0.Final</version>
 </dependency>
 
 <dependency>
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-bom</artifactId>
-    <version>2.17.2</version>
+    <version>2.19.0</version>
     <type>pom</type>
     <scope>import</scope>
 </dependency>
     
 ```
 
-We had to add configuration to get all the stuff wired together. Configuration for dispatcher servlet, view resolver, error page, web jars among other configuration.
+To get everything hooked together, we had to add settings. Settings for the dispatcher servlet, view resolver, error page, and web jars, among other things.
 
 ```xml
-
 <bean
     class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="prefix">
@@ -109,7 +107,7 @@ We had to add configuration to get all the stuff wired together. Configuration f
 </servlet-mapping>
 ```
   
-When using JPA, we would need to similar stuff. We need to add the jars and the configuration for datasource, entity manager, transaction manager etc. 
+We would need to do similar things while utilising JPA. We must provide the jars as well as the settings for the datasource, entity manager, transaction manager, and so on. 
 
 ```xml
 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
@@ -172,7 +170,7 @@ As shown in the image above, following steps have to be done.
 
 ## Spring Boot Starter Web
 
-Spring Boot Starter Web brings in 2 important features
+Spring Boot Starter Web has two crucial features.
 
 - Compatible Dependencies that are needed to develop web applications
 - Auto Configuration
@@ -200,10 +198,10 @@ Dependencies can be classified into:
 - Embedded Servlet Container - Tomcat
 - Logging - logback, slf4j
 
-Any typical web application would use all these dependencies. Spring Boot Starter Web comes pre packaged with these. As a developer, I would not need to worry about either these dependencies or their compatible versions.  
+All of these requirements would be used by any regular web application. Spring Boot Starter Site already has them. As a developer, I would not have to be concerned about their dependencies or their compatible version 
 
 ### Auto Configuration
-Spring Boot Starter Web auto configures the basic things that are needed. To understand the features Spring Boot Starter Web brings in, lets run StudentServicesApplication.java as a Java Application and review the log.
+Spring Boot Starter Web automatically configures the essentials. To explore the functionality added by Spring Boot Starter Web, run StudentServicesApplication.java as a Java Application and examine the log.
 
 ```
 Mapping servlet: 'dispatcherServlet' to [/]
@@ -226,7 +224,7 @@ The image below shows the different things that might be auto configured by Spri
 
 ## Spring Boot Starter Project Options
 
-As we see from Spring Boot Starter Web, starter projects help us in quickly getting started with developing specific types of applications. 
+As we can see from Spring Boot Starter Web, starting projects allow us to get started fast with designing various sorts of apps.
 
 - spring-boot-starter-web-services - SOAP Web Services
 - spring-boot-starter-web - Web & RESTful applications
