@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      JUnit Tutorial for Beginners in 5 Steps
-date:       2020-07-08 12:31:19
+date:       2023-03-15 12:31:19
 summary:    JUnit Tutorial for Beginners in 5 Steps. Setting up a basic JUnit example and understanding the basics of junit. 
 categories: SpringBootUnitTesting
 permalink:  /junit-tutorial-for-beginners
@@ -27,15 +27,15 @@ Here is an overview of what we would learn in this section
  - What is Unit Testing?
  - Advantages of Unit Testing
 
-We typically work in large projects  - some of these projects have more than 2000 source files or sometimes it might be as big as 10000 files with one million lines of code. 
+We often work on huge projects, which may have more than 2000 source files or as many as 10,000 files with one million lines of code.
 
-Before unit testing, we depend on deploying the entire app and checking if the screens look great. But that's not very efficient. And it is manual.
+Prior to unit testing, we rely on deploying the full programme and verifying that the displays look nice. Yet, this is inefficient. It is also manual.
 
-Unit Testing focuses on writing automated tests for individual classes and methods. 
+Unit testing is concerned with creating automated tests for specific classes and functions.
 
-JUnit is a framework which will help you call a method and check (or assert) whether the output is as expected. 
+JUnit is a framework that allows you to call a method and verify (or assert) that the result is as anticipated.
 
-The important thing about automation testing is that these tests can be run with continuous integration - as soon as some code changes.
+The crucial aspect of automated testing is that it can be executed with continuous integration - that is, as soon as some code changes.
 
 ### Step 2 : First JUnit Project and Green Bar
  - What is JUnit?
