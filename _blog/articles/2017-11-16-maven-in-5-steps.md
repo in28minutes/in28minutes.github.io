@@ -1,16 +1,16 @@
 ---
 layout:     post
 title:      Maven Tutorial for Beginners in 5 Steps
-date:       2021-07-07 12:31:19
-summary:    Maven Tutorial for Beginners in 5 Steps. Learn the basics of Maven setting up a basic example with Spring Initializr. 
+date:       2023-03-17 12:31:19
+summary:    Maven 5 Step Tutorial for Beginners. Understand the fundamentals of Maven by creating a simple example with Spring Initializr. 
 categories: SpringBoot
 permalink:  /maven-tutorial-for-beginners
 image: /images/java-category.png
 ---
 
-Defining what Maven does is very difficult.
+It is tough to define what Maven accomplishes.
 
-Every Day Developer does a lot of things
+Every day, Developer undertakes a variety of tasks.
 - Manages Dependencies 
 	- Web Layer (Spring MVC)
 	- Data Layer (JPA - Hibernate) etc..                  
@@ -23,7 +23,7 @@ Every Day Developer does a lot of things
 - Generate Projects
 - Create Eclipse Workspace
 
- > Maven helps us do all these and more...
+ > All of this and more is made possible by Maven...
 
 
 
@@ -58,11 +58,11 @@ As shown in the image above, following steps have to be done
 - Import the project into Eclipse.
 - If you want to understand all the files that are part of this project, you can go here.
 
-### Step 2 : Understanding Project Object Model - pom.xml
+### Step 2 : Understanding the `pom.xml` Project Object Model
 
 #### Naming a project
 
-How can other projects use our project? By using our project groupId and artifactId
+How can other projects benefit from our project? Using the `groupId` and `artifactId` from our project
 ```
 	<groupId>com.in28minutes.learning.maven</groupId>
 	<artifactId>maven-in-few-steps</artifactId>
@@ -70,22 +70,22 @@ How can other projects use our project? By using our project groupId and artifac
 
 #### Parent Pom
 
-Similar to Java Inheritance. We inherit a lot of things from starter parent.
+The same as Java Inheritance. We get a lot of things from our parents.
 
 ```
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.1.RELEASE</version>
+		<version>3.0.4/version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 ```
-#### Declaring Dependencies
+#### Declaration of Dependencies
 
-Dependencies are frameworks that you would need to develop your project.
+Dependencies are frameworks required to construct your project.
 
-In the example below we are adding two dependencies.
+In the following example, we will add two dependencies.
 ```
 <dependency>
 	<groupId>org.springframework.boot</groupId>
@@ -99,10 +99,10 @@ In the example below we are adding two dependencies.
 </dependency>
 ```
 
-### Step 3 : Maven Build Life Cycle
-When we run "mvn clean install", we are executing the complete maven build life cycle.
+### Step 3 : Life Cycle Maven Build
+When we execute `mvn clean install` we finish the whole maven build life cycle.
 
-Build LifeCycle is a sequence of steps
+LifeCycle construction is a series of phases.
  - Validate
  - Compile
  - Test
@@ -112,7 +112,7 @@ Build LifeCycle is a sequence of steps
  - Install
  - Deploy
 
-> Maven follows Convention over Configuration.
+> Maven prefers convention to configuration.
 
 Pre defined folder structure
 - Source Code
@@ -123,25 +123,24 @@ Pre defined folder structure
 
 ### Step 4 : How does Maven Work?
 
-Maven Repository contains all the jars indexed by artifact id and group id. 
+All jars in the Maven Repository are indexed by `artifactid` and `group id`. 
 
-Once we add a dependency to our pom.xml, maven asks the maven repository for the jar dependencies giving group id and the artifact id as the input. 
+When we add a dependence to our pom.xml, maven queries the maven repository for jar dependencies, using the group id and artefact id as input. 
 - Maven repository stores all the versions of all dependencies. JUnit 4.2,4.3,4.4
  
-The jar dependencies are stored on your machine in a folder called maven local repository. All our projects would refer to the jars from the maven local repository.
+The jar dependencies are saved on your system in the maven local repository folder. All of our projects would make use of the jars in the maven local repository.
 
-> Local Repository : a temp folder on your machine where maven stores the jar and dependency files that are downloaded from Maven Repository.
+> Local Repository: a temporary folder on your workstation in which Maven keeps jar and dependent files obtained from the Maven Repository.
 
 ### Step 5 : Important Maven Commands
- - mvn --version
- - mvn compile (compiles source files)
- - mvn test-compile (compiles test files) - one thing to observe is this also compiles source files
- - mvn clean - deletes target directory
- - mvn test - run unit tests
- - mvn package - creates the jar
-- help:effective-settings
-- help:effective-pom
-- dependency:tree
-- dependency:sources
-- --debug
-
+ - `mvn --version`
+ - `mvn compile` (compiles source files)
+ - `mvn test-compile` (compiles test files) - one thing to observe is this also compiles source files
+ - `mvn clean` - deletes target directory
+ - `mvn test` - run unit tests
+ - `mvn package` - creates the jar
+- `help:effective-settings`
+- `help:effective-pom`
+- `dependency:tree`
+- `dependency:sources`
+- `--debug`
