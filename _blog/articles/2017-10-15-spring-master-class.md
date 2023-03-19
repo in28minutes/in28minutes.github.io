@@ -1,36 +1,35 @@
 ---
 layout:     post
 title:      Spring Framework Tutorial For Beginners - 100 Steps
-date:       2022-10-15 12:31:19
-summary:    Learn the magic of Spring Framework. From IOC (Inversion of Control), DI (Dependency Injection), Application Context to the world of Spring Boot, AOP, JDBC and JPA. Get set for an incredible journey. 
+date:       2023-03-16 12:31:19
+summary:    Discover the secrets of the Spring Framework. From the worlds of IOC (Inversion of Control), DI (Dependency Injection), and Application Context to Spring Boot, AOP, JDBC, and JPA. Prepare for an amazing adventure.
 categories: SpringFramework
 permalink:  /spring-master-class
 image: /images/spring-framework-category.png
 
 ---
 
-Learn the magic of Spring Framework. From IOC (Inversion of Control), DI (Dependency Injection), Application Context to the world of Spring Boot, AOP, JDBC and JPA. Get set for an incredible journey.
+Discover the secrets of the Spring Framework. From the worlds of IOC (Inversion of Control), DI (Dependency Injection), and Application Context to Spring Boot, AOP, JDBC, and JPA. Prepare for an amazing adventure.
 
-Spring Framework remains as popular today as it was when I first used it 12 years back. 
+Spring Framework is still as popular now as it was 12 years ago when I first used it. 
 
-> How is this possible in the incredibly dynamic world where architectures have completely changed?
+> How is this feasible in a very dynamic environment where designs have altered dramatically?
 
 ## Course Link
 
 [![Image](/images/Course-Spring-Framework-Master-Class---Beginner-to-Expert.png "Spring Master Class - Beginner to Expert")](https://links.in28minutes.com/MISC-SPRING){:target="_blank"}
 
 
-
 ## What You will learn
 
-- You will learn the basics of Spring Framework - Dependency Injection, IOC Container, Application Context and Bean Factory.
-- You will understand how to use Spring Annotations - @Autowired, @Component, @Service, @Repository, @Configuration, @Primary....
-- You will understand Spring MVC in depth - DispatcherServlet , Model, Controllers and ViewResolver
-- You will use a variety of Spring Boot Starters - Spring Boot Starter Web, Starter Data Jpa, Starter Test
-- You will learn the basics of Spring Boot, Spring AOP, Spring JDBC and JPA
-- You will learn the basics of Eclipse, Maven, JUnit and Mockito
-- You will develop a basic Web application step by step using JSP Servlets and Spring MVC
-- You will learn to write unit tests with XML, Java Application Contexts and Mockito
+- Spring Framework fundamentals will be covered, including Dependency Injection, IOC Container, Application Context, and Bean Factory.
+- You will be able to utilise Spring Annotations such as `@Autowired`, @Component, `@Service`, `@Repository`, `@Configuration`, `@Primary`....
+- You will get a thorough understanding of Spring MVC, including `DispatcherServlet, Model, Controllers, and ViewResolver`.
+- Spring Boot Starters such as Spring Boot Starter Web, Starter Data Jpa, and Starter Test will be used.
+- Spring Boot, Spring AOP, Spring JDBC, and JPA fundamentals will be covered.
+- You'll study the fundamentals of `Eclipse, Maven, JUnit, and Mockito`.
+- Step by step, you will create a simple Web application utilising JSP Servlets and Spring MVC.
+- You will learn to construct unit tests with XML, Java Application Contexts and Mockito.
 
 ## Getting Started
 
@@ -45,18 +44,18 @@ Spring Framework remains as popular today as it was when I first used it 12 year
 	
 ### Running Examples
 
-- Download the zip or clone the Git repository.
-- Unzip the zip file (if you downloaded one)
-- Open Command Prompt and Change directory (cd) to folder containing pom.xml
+- Clone the Git repository or download the zip file.
+- Unzip the zip archive (if you downloaded one)
+- Open Command Prompt and go to the folder containing pom.xml.
 - Open Eclipse 
    - File -> Import -> Existing Maven Project -> Navigate to the folder where you unzipped the zip
    - Select the right project
-- Choose the Spring Boot Application file (search for @SpringBootApplication)
-- Right Click on the file and Run as Java Application
+- Search for the Spring Boot Application file (@SpringBootApplication).
+- Right-click the file and select Run as Java Program.
 - You are all Set
 - For help : use our installation guide - https://www.youtube.com/playlist?list=PLBBog2r6uMCSmMVTW_QmDLyASBvovyAO3
 
-## Spring Level 1 to Level 6 Section Overview
+## Spring Level 1 through Level 6 Section Overview
 
 |Title|Category|Github|
 | -------------------- |:------------------:|--------------|
@@ -98,9 +97,9 @@ Spring Framework remains as popular today as it was when I first used it 12 year
 
 #### Step 1 : Setting up a Spring Project using htttp://start.spring.io
 
-One of the most important features of Spring Framework is dependency injection. Spring framework helps in creating loosely coupled applications. To be able to appreciate dependency injection you should understand tight coupling and how to create loosely coupled applications. What we will start with is setting up a simple example to be able to understand tight couplings and also dependency injection. 
+Dependency injection is a crucial element of the Spring Framework. The Spring framework aids in the development of loosely linked applications. To appreciate dependency injection, you must first understand tight coupling and how to build loosely linked programmes. To begin, we will construct a basic example in order to comprehend tight couplings and dependency injection. 
 
-Creating a Spring Project with Spring Initializr is a cake walk. 
+Making a Spring Project using Spring Initializr is a piece of cake. 
 
 > Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
@@ -119,19 +118,19 @@ As shown in the image above, following steps have to be done
 
 #### Step 2 : Understanding Tight Coupling using the Binary Search Algorithm Example
 
-Set up an example of tight coupling with Binary Search and Bubble Sort Algorithm as shown in the picture below.
+Create a tight coupling example using the Binary Search and Bubble Sort Algorithms, as seen in the image below.
 
 ![Image](/images/SpringIn10Steps-BinarySearchTightlyCoupleWithBubbleSort.png "Spring In 10 Steps - Tight Coupling") 
 
-However, we have a problem with above implementation. If we want to use binary search with a different sort algorithm, I would need to change the code. 
+Unfortunately, there is an issue with the aforementioned implementation. I'd have to update the code if we wanted to utilise binary search with a new sort technique. 
 
-We want to make the binary search algorithm loosely coupled so that it can work with any sort algorithm. 
+We wish to loosely link the binary search algorithm such that it can operate with any algorithm. 
 
-> Think about the solution before moving to next step!
+> Consider about the solution before advancing to next stage!
 
 #### Step 3 : Making the Binary Search Algorithm Example Loosely Coupled
 
-Introduce an interface to make the Binary Search loosely coupled to the sort algorithm.
+Provide an interface to loosely tie the Binary Search to the sort algorithm.
 
 ```java
 package com.in28minutes.spring.basics.springin5steps;
@@ -150,11 +149,11 @@ public class BinarySearchImpl {
 
 #### Step 4 : Using Spring to Manage Dependencies - @Component, @Autowired
 
-> In the previous steps - we wrote code to create objects of the bubble sort algorithm and binary search. We also managed the dependencies. It would be great actually if some framework can take control of creation of the beans and autowiring the dependencies.
+> We developed code to construct objects for the bubble sort algorithm and binary search in the previous phases. We also took care of the dependencies. It would be wonderful indeed if some framework can take charge of generation of the beans and autowiring the dependencies.
 
-That's where Spring Framework comes in!
+This is where Spring Framework comes into play!
 
-Let's start using Spring to do autowiring.
+Let's get started with autowiring using Spring.
 
 Notes
 - Sort algorithm is a dependency of the binary search.
@@ -181,14 +180,14 @@ public class BubbleSortAlgorithm implements SortAlgorithm {
 
 #### Step 5 : What is happening in the background?
 
-Enable debug logging and check what's happening in the background.
+Activate debug logging to see what's going on in the background.
 
 /src/main/resources/application.properties
 ```properties
 logging.level.org.springframework = debug
 ```
 
-- Spring does a Component scan on the parent package "com.in28minutes.spring.basics.springin5steps" to find the components - classes that have @Component on them.
+- Spring does a Component scan on the parent package "com.in28minutes.spring.basics.springin5steps" to find the components - classes that have `@Component` on them.
 - It identifies components and dependencies
 - It identifies that BinarySearchImpl has a dependency SortAlgorithm
 - It identifies that SortAlgorithm does not have a dependency. So, it creates an instance of it and autowires it into an instance of BinarySearchImpl
@@ -211,9 +210,9 @@ public class QuickSortAlgorithm implements SortAlgorithm {
 }
 ```
 
-There are now two matching SortAlgorithm instances. Spring throws an exception because it does not know which one to use.
+There are now two SortAlgorithm instances that match. Spring throws an exception because it is unsure which to utilise.
 
-We use @Primary to mark one of the SortAlgorithm implementations is more important!
+We use `@Primary` to indicate which SortAlgorithm implementation is the most critical!
 
 ```java
 package com.in28minutes.spring.basics.springin5steps;
@@ -366,18 +365,18 @@ import com.in28minutes.spring.basics.springin5steps.scope.PersonDAO;
 @SpringBootApplication
 public class SpringIn5StepsScopeApplication {
 	
-	private static Logger LOGGER = 
+	private static final Logger LOGGER = 
 			LoggerFactory.getLogger(SpringIn5StepsScopeApplication.class); 
 	
 	public static void main(String[] args) {
 
-		ApplicationContext applicationContext = 
+		var applicationContext = 
 				SpringApplication.run(SpringIn5StepsScopeApplication.class, args);
 		
-		PersonDAO personDao = 
+		var personDao = 
 				applicationContext.getBean(PersonDAO.class);
 		
-		PersonDAO personDao2 = 
+		var personDao2 = 
 				applicationContext.getBean(PersonDAO.class);
 		
 		LOGGER.info("{}", personDao);
@@ -455,10 +454,10 @@ public class SpringIn5StepsComponentScanApplication {
 	
 	public static void main(String[] args) {
 
-		ApplicationContext applicationContext = 
+		var applicationContext = 
 				SpringApplication.run(SpringIn5StepsComponentScanApplication.class, args);
 		
-		ComponentDAO componentDAO = 
+		var componentDAO = 
 				applicationContext.getBean(ComponentDAO.class);
 		
 		LOGGER.info("{}", componentDAO);
@@ -512,10 +511,10 @@ public class SpringIn5StepsCdiApplication {
 	
 	public static void main(String[] args) {
 
-		ApplicationContext applicationContext = 
+		var applicationContext = 
 				SpringApplication.run(SpringIn5StepsCdiApplication.class, args);
 		
-		SomeCdiBusiness business = 
+		var business = 
 				applicationContext.getBean(SomeCdiBusiness.class);
 		
 		LOGGER.info("{} dao-{}", business, business.getSomeCDIDAO());
@@ -595,7 +594,7 @@ public class SpringIn5StepsBasicApplication {
 
 	public static void main(String[] args) {
 
-		ApplicationContext applicationContext =
+		var applicationContext =
 				new AnnotationConfigApplicationContext(SpringIn5StepsBasicApplication.class);
 
 ```
@@ -616,7 +615,7 @@ public class SpringIn5StepsBasicApplication {
 
 	public static void main(String[] args) {
 
-		try (AnnotationConfigApplicationContext applicationContext = 
+		try (var applicationContext = 
 				new AnnotationConfigApplicationContext(
 				SpringIn5StepsBasicApplication.class)) {
 			//No change in code
@@ -646,10 +645,10 @@ public class SpringIn5StepsXMLContextApplication {
 
 	public static void main(String[] args) {
 
-		try (ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+		try (var applicationContext = new ClassPathXmlApplicationContext(
 				"applicationContext.xml")) {
 
-			XmlPersonDAO personDao = applicationContext.getBean(XmlPersonDAO.class);
+			var personDao = applicationContext.getBean(XmlPersonDAO.class);
 			System.out.println(personDao);
 			System.out.println(personDao.getXmlJdbcConnection());
 		}
@@ -707,11 +706,11 @@ public class XmlPersonDAO {
 ```
 public class SpringIn5StepsXMLContextApplication {
 
-	private static Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsScopeApplication.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsScopeApplication.class);
 
 	public static void main(String[] args) {
 
-		try (ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+		try (var applicationContext = new ClassPathXmlApplicationContext(
 				"applicationContext.xml")) {
 
 			LOGGER.info("Beans Loaded -> {}", (Object) applicationContext.getBeanDefinitionNames());
@@ -773,10 +772,10 @@ public class SpringIn5StepsPropertiesApplication {
 
 	public static void main(String[] args) {
 
-		try (AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(
+		try (var applicationContext = new AnnotationConfigApplicationContext(
 				SpringIn5StepsPropertiesApplication.class)) {
 
-			SomeExternalService service = applicationContext.getBean(SomeExternalService.class);
+			var service = applicationContext.getBean(SomeExternalService.class);
 			System.out.println(service.returnServiceURL());
 		}
 	}
@@ -840,37 +839,39 @@ public class SpringIn5StepsBasicApplicationTests {
 ```java
 package com.in28minutes.spring.basics.springin5steps.basic;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.in28minutes.spring.basics.springin5steps.SpringIn5StepsBasicApplication;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-//Load the context
-@RunWith(SpringRunner.class)
+// Load the context
+// replaced @RunWith with @ExtendWith
+// replaced SpringRunner.class with SpringExtension.class
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = SpringIn5StepsBasicApplication.class)
 public class BinarySearchTest {
 
-	// Get this bean from the context
-	@Autowired
-	BinarySearchImpl binarySearch;
+    // Get this bean from the context
+    @Autowired
+    BinarySearchImpl binarySearch;
 
-	@Test
-	public void testBasicScenario() {
-		
-		// call method on binarySearch
-		int actualResult = binarySearch.binarySearch(new int[] {}, 5);
+    @Test
+    public void testBasicScenario() {
 
-		// check if the value is correct
-		assertEquals(3, actualResult);
+        // call method on binarySearch
+        int actualResult = binarySearch.binarySearch(new int[]{}, 5);
 
-	}
+        // check if the value is correct
+        assertEquals(3, actualResult);
+
+    }
 
 }
+
 ```
 
 #### Step 28 - Spring Unit Testing with an XML Context
@@ -894,35 +895,38 @@ public class BinarySearchTest {
 ```java
 package com.in28minutes.spring.basics.springin5steps.basic;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-//Load the context
-@RunWith(SpringRunner.class)
-@ContextConfiguration(locations="/testContext.xml")
+// Load the context
+// replaced @RunWith with @ExtendWith
+// replaced SpringRunner.class with SpringExtension.class
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(locations = "/testContext.xml")
 public class BinarySearchXMLConfigurationTest {
 
-	// Get this bean from the context
-	@Autowired
-	BinarySearchImpl binarySearch;
+    // Get this bean from the context
+    @Autowired
+    BinarySearchImpl binarySearch;
 
-	@Test
-	public void testBasicScenario() {
-		
-		// call method on binarySearch
-		int actualResult = binarySearch.binarySearch(new int[] {}, 5);
+    @Test
+    public void testBasicScenario() {
 
-		// check if the value is correct
-		assertEquals(3, actualResult);
+        // call method on binarySearch
+        int actualResult = binarySearch.binarySearch(new int[]{}, 5);
 
-	}
+        // check if the value is correct
+        assertEquals(3, actualResult);
+
+    }
 
 }
+
 ```
 
 #### Step 29 - Spring Unit Testing with Mockito
@@ -934,13 +938,14 @@ public class SomeCdiBusiness {
 
 	public int findGreatest() {
 		int greatest = Integer.MIN_VALUE;
-		int[] data = someCdiDao.getData();
-		for (int value : data) {
-			if (value > greatest) {
-				greatest = value;
-			}
-		}
-		return greatest;
+        int[] data = someCdiDao.getData();
+        var result = Arrays.stream(data).max();
+
+        if (result.isPresent()) {
+            greatest = result.getAsInt();
+        }
+
+        return greatest;
 	}
 
 }
@@ -966,45 +971,48 @@ public class SomeCdiDao {
 ```java
 package com.in28minutes.spring.basics.springin5steps.cdi;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-@RunWith(MockitoJUnitRunner.class)
+// replaced @RunWith with @ExtendWith
+// replaced MockitoJUnitRunner.class with MockitoExtension.class
+@ExtendWith(MockitoExtension.class)
 public class SomeCdiBusinessTest {
 
-	// Inject Mock
-	@InjectMocks
-	SomeCdiBusiness business;
+    // Inject Mock
+    @InjectMocks
+    SomeCdiBusiness business;
 
-	// Create Mock
-	@Mock
-	SomeCdiDao daoMock;
+    // Create Mock
+    @Mock
+    SomeCdiDao daoMock;
 
-	@Test
-	public void testBasicScenario() {
-		Mockito.when(daoMock.getData()).thenReturn(new int[] { 2, 4 });
-		assertEquals(4, business.findGreatest());
-	}
+    @Test
+    public void testBasicScenario() {
+        Mockito.when(daoMock.getData()).thenReturn(new int[]{2, 4});
+        assertEquals(4, business.findGreatest());
+    }
 
-	@Test
-	public void testBasicScenario_NoElements() {
-		Mockito.when(daoMock.getData()).thenReturn(new int[] { });
-		assertEquals(Integer.MIN_VALUE, business.findGreatest());
-	}
+    @Test
+    public void testBasicScenario_NoElements() {
+        Mockito.when(daoMock.getData()).thenReturn(new int[]{});
+        assertEquals(Integer.MIN_VALUE, business.findGreatest());
+    }
 
-	@Test
-	public void testBasicScenario_EqualElements() {
-		Mockito.when(daoMock.getData()).thenReturn(new int[] { 2,2});
-		assertEquals(2, business.findGreatest());
-	}
+    @Test
+    public void testBasicScenario_EqualElements() {
+        Mockito.when(daoMock.getData()).thenReturn(new int[]{2, 2});
+        assertEquals(2, business.findGreatest());
+    }
 
 }
+
 ```
 
 ```
@@ -1070,7 +1078,6 @@ Features
 ```java
 package com.in28minutes.springboot.basics.springbootin10steps;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -1080,7 +1087,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BooksController {
 	@GetMapping("/books")
 	public List<Book> getAllBooks() {
-		return Arrays.asList(
+		return List.of(
 				new Book(1l, "Mastering Spring 5.2", "Ranga Karanam"));
 	}
 }
@@ -1131,7 +1138,7 @@ Examples
 
 #### Step 9 : Spring Boot Actuator
 
-Spring Boot starter actuator actually exposes a lot of REST services and these services are compliant with the standard called HAL standard. And we would use a hal browser so that we can browse through the data which is provided by these services.
+Spring Boot starting actuator offers a plethora of REST services, all of which are compatible with the HAL specification. And we would use a hal browser to browse through the data offered by these services.
 
 Spring Boot Actuator exposes a lot of data 
 > application info, metrics, dump, beans, env, config properties, audit events, heap dump, loggers, trace, health mappings and auto config.  
@@ -1187,7 +1194,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class Business1 {
 	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	private Dao1 dao1;
@@ -1258,6 +1265,8 @@ public class Dao2 {
 ```
 public class SpringAopApplication implements CommandLineRunner {
 
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
 	@Autowired
 	private Business1 business1;
 
@@ -1287,7 +1296,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class UseAccessAspect {
 	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	//What kind of method calls I would intercept
 	//execution(* PACKAGE.*.*(..))
@@ -1321,7 +1330,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AfterAopAspect {
 
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@AfterReturning(value = "execution(* com.in28minutes.spring.aop.springaop.business.*.*(..))", 
 			returning = "result")
@@ -1350,7 +1359,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MethodExecutionCalculationAspect {
 
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Around("execution(* com.in28minutes.spring.aop.springaop.business.*.*(..))")
 	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
@@ -1380,7 +1389,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class UserAccessAspect {
 	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	//What kind of method calls I would intercept
 	//execution(* PACKAGE.*.*(..))
@@ -1666,18 +1675,18 @@ Add insert statements into data.sql
 /src/main/resources/data.sql
 ```
 INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) 
-VALUES(10001,  'Ranga', 'Hyderabad',sysdate());
+VALUES(10001,  'Ranga', 'Hyderabad',CURRENT_DATE());
 INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) 
-VALUES(10002,  'James', 'New York',sysdate());
+VALUES(10002,  'James', 'New York',CURRENT_DATE());
 INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) 
-VALUES(10003,  'Pieter', 'Amsterdam',sysdate());
+VALUES(10003,  'Pieter', 'Amsterdam',CURRENT_DATE());
 ```
 #### Step 06 - Execute the findAll method using CommandLineRunner
 
 ```
 public class DatabaseDemoApplication implements CommandLineRunner {
 	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	PersonJbdcDao dao;
@@ -1784,7 +1793,7 @@ DatabaseDemoApplication
 
 Inner class in PersonJbdcDao
 ```
-class PersonRowMapper implements RowMapper<Person>{
+static class PersonRowMapper implements RowMapper<Person>{
 	@Override
 	public Person mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Person person = new Person();
@@ -1814,9 +1823,9 @@ package com.in28minutes.database.databasedemo.entity;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
 @Entity
 public class Person {
@@ -1837,9 +1846,9 @@ DatabaseDemoApplication renamed to SpringJdbcDemoApplication
 ```java
 package com.in28minutes.database.databasedemo.jpa;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
@@ -1889,7 +1898,7 @@ import com.in28minutes.database.databasedemo.jpa.PersonJpaRepository;
 @SpringBootApplication
 public class JpaDemoApplication implements CommandLineRunner {
 
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	PersonJpaRepository repository;
@@ -1940,10 +1949,10 @@ package com.in28minutes.database.databasedemo.jpa;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
-import javax.transaction.Transactional;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
@@ -1958,7 +1967,7 @@ public class PersonJpaRepository {
 	EntityManager entityManager;
 
 	public List<Person> findAll() {
-		TypedQuery<Person> namedQuery = entityManager.createNamedQuery("find_all_persons", Person.class);
+		var namedQuery = entityManager.createNamedQuery("find_all_persons", Person.class);
 		return namedQuery.getResultList();
 	}
 
@@ -1975,7 +1984,7 @@ public class PersonJpaRepository {
 	}
 
 	public void deleteById(int id) {
-		Person person = findById(id);
+		var person = findById(id);
 		entityManager.remove(person);
 	}
 
@@ -2021,7 +2030,7 @@ import com.in28minutes.database.databasedemo.springdata.PersonSpringDataReposito
 @SpringBootApplication
 public class SpringDataDemoApplication implements CommandLineRunner {
 
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	PersonSpringDataRepository repository;
@@ -2131,9 +2140,9 @@ create table person
 Data
 
 ```sql
-INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) VALUES(10001,  'Ranga', 'Hyderabad',sysdate());
-INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) VALUES(10002,  'James', 'New York',sysdate());
-INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) VALUES(10003,  'Pieter', 'Amsterdam',sysdate());
+INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) VALUES(10001,  'Ranga', 'Hyderabad',CURRENT_DATE());
+INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) VALUES(10002,  'James', 'New York',CURRENT_DATE());
+INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) VALUES(10003,  'Pieter', 'Amsterdam',CURRENT_DATE());
 ```
 
 #### Notes
@@ -2206,7 +2215,7 @@ You can copy code from
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
-			<version>6.0</version>
+			<version>8.0.1</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -2525,7 +2534,7 @@ pom.xml
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.2.2.RELEASE</version>
+			<version>6.0.6</version>
 		</dependency>
 ```
 web.xml
@@ -2594,14 +2603,14 @@ todo-servlet.xml
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
-			<version>6.0</version>
+			<version>8.0.1</version>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.2.2.RELEASE</version>
+			<version>6.0.6</version>
 		</dependency>
 	</dependencies>
 

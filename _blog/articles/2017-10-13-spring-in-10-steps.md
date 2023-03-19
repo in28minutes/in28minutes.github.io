@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Spring Framework Tutorial for Beginners - Your First 10 Steps
-date:       2022-07-29 12:31:19
+date:       2023-03-13 12:31:19
 summary:    Learn the basics of Spring Framework setting up a very simple example.
 categories: SpringFramework
 permalink:  /spring-tutorial-for-beginners
@@ -32,7 +32,7 @@ We’ll also understand why the Spring Framework is so popular.
 
 ### The First 10 Steps in Spring
 
-#### Step 1: Create a Spring Project with HTTP: //start.spring.io
+#### Step 1: Create a Spring Project with HTTP: start.spring.io
 
 One of the most important features of the Spring Framework is dependency injection. The Spring framework helps in creating loosely coupled applications. To be able to appreciate dependency injection, you should understand tight coupling and how to create loosely coupled applications. What we will start with is setting up a simple example to be able to understand tight couplings and also dependency injection. 
 
@@ -239,7 +239,7 @@ How did Spring maintain its popularity over the past 15 years?
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.0-M4</version>
+		<version>3.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 

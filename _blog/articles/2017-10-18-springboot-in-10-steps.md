@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Spring Boot Tutorial For Beginners in 10 Steps
-date:       2022-08-01 12:31:19
-summary:    An Introduction to Spring Boot in 10 Steps Learn the basics of Spring Boot by setting up a basic project example with Spring Boot.
+date:       2023-03-17 12:31:19
+summary:    An Overview of Spring Boot in 10 Easy Steps Set up a basic Spring Boot project example to learn the fundamentals of Spring Boot.
 categories: SpringBoot
 permalink:  /spring-boot-introduction-in-10-steps
 image: /images/spring-boot-category.png
@@ -10,7 +10,7 @@ image: /images/spring-boot-category.png
 
 ## Spring Boot Goals:
 
-- Enables building production-ready applications quickly.
+- Allows for the rapid development of production-ready apps.
 - It provides common non-functional features.
 	- Embedded servers
 	- Metrics
@@ -44,7 +44,7 @@ image: /images/spring-boot-category.png
 - Step 4 : Creating a Simple REST Controller
 - Step 5 : What is Spring Boot Auto Configuration?
 	- Recommended Reading-http://www.springboottutorial.com/spring-boot-auto-configuration
-	- Spring-based applications have a lot of configuration. When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, and web jars(for delivering static content), among other things. When we use Hibernate/JPA, we would need to configure a datasource, an entity manager factory, and a transaction manager, among a host of other things. The Spring Boot brings in a new thought process around this: Can we bring more intelligence into this? When a spring mvc jar is added into an application, can we auto configure some beans automatically?
+	- Spring-based apps may be highly customised. Spring MVC requires us to configure component scan, dispatcher servlet, view resolver, and web jars (for serving static content), among other things. We would need to configure a datasource, an entity management factory, and a transaction manager, among other things, when using Hibernate/JPA. The Spring Boot introduces a different way of thinking about this: Can we incorporate more intelligence into this? Can we automatically setup certain beans when a spring mvc jar is introduced to an application?
 - Step 6 : Spring Boot vs. Spring vs. Spring MVC
 	- Recommended Reading-http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring
 	- Spring is about `Dependency Injection`. It makes it easy to develop *loosely coupled applications*. It makes applications *testable*.
@@ -101,7 +101,7 @@ image: /images/spring-boot-category.png
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.0-M4</version>
+		<version>3.0.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -125,7 +125,7 @@ image: /images/spring-boot-category.png
 			<artifactId>spring-data-rest-hal-explorer</artifactId>
 		</dependency>
 
-<!-- 
+        <!-- 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -210,7 +210,6 @@ public record Book(long id, String name, String author) {
 ```java
 package com.in28minutes.springboot.basics.springbootin10steps;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -240,7 +239,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class SpringbootIn10StepsApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = 
+		var applicationContext = 
 				SpringApplication.run(SpringbootIn10StepsApplication.class, args);
 		
 		

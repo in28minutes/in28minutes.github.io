@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Integrating Spring Boot and Spring JDBC with H2 and Starter JDBC
-date:       2022-08-18 01:12:27
-summary:    Learn to use Spring Boot Starter JDBC to connect Spring Boot to H2 (in-memory database) using Spring JDBC. You will create a simple project with Spring Boot. You will add code to the project to connect to a database using Spring JDBC. You will learn to implement the basic CRUD methods.
+date:       2023-03-17 01:12:27
+summary:    Discover how to utilise Spring Boot Starter JDBC to connect Spring Boot to H2 (in-memory database). You will use Spring Boot to develop a basic project. You will add code to the project that will allow you to connect to a database using Spring JDBC. You will learn how to use the fundamental CRUD techniques.
 categories:  SpringBootJPA
 permalink:  /spring-boot-and-spring-jdbc-with-h2
 image: /images/spring-data-category.png
@@ -10,7 +10,7 @@ image: /images/spring-data-category.png
 
 ![Image](/images/spring-initializer-web-h2-devtools-jdbc.png "Web, JDBC,H2 and Developer Tools")
 
-This guide will help you create a simple project with Spring Boot. You will add code to the project to connect to a database using Spring JDBC. You will learn to write all the CRUD methods.
+This article will assist you in creating a basic Spring Boot project. You will add code to the project that will allow you to connect to a database using Spring JDBC. You will learn how to code all of the CRUD procedures.
  
 ![Image](/images/H2-Console-Login-Page.png "H2 Console Login PAge") 
 
@@ -24,7 +24,7 @@ This guide will help you create a simple project with Spring Boot. You will add 
 
 ## Project Code Structure
 
-The following screenshot shows the structure of the project we will create.
+The framework of the project we will construct is seen in the screenshot below.
 
 ![Image](/images/SpringBootwithJDBC-ProjectStructure.png "Spring Boot with JDBC - Project Structure") 
 
@@ -37,22 +37,22 @@ A few details
 - `SpringBoot2JdbcWithH2Application.java` - The main Spring Boot application class which is used to launch the application. We will extend the `CommandLineRunner` interface and implement the `public void run(String... args)` method to launch the spring JDBC code when the server launches.
 - `pom.xml` - This contains all the dependencies needed to build this project. In addition to Developer Tools and H2, we will use Spring Boot Starter JDBC and Web. 
 
-## You will require the following tools:
+## Prerequisites:
 - Maven 3.0+ is your build tool
-- Your favorite IDE. We use Eclipse.
+- Your favorite IDE. We use Eclipse or IntelliJ.
 - JDK 17
 
-## Complete Maven Project With Code Examples
+## Maven Project Completion using Code Samples
 > Our Github repository has all the code examples. - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-jdbc-with-h2
 
-## A little bit of Theory
+## A Little Theoretical
 
 JDBC
-- JDBC stands for Java Database Connectivity.
-- It used concepts like Statement, PreparedStatement, and ResultSet.
-- In the example below, the query used is ```Update todo set user=?, desc=?, target_date=?, is_done=? where id=?```
-- The values needed to execute the query are set into the query using different set methods on the PreparedStatement.
-- Results from the query are populated into the ResultSet. We had to write code to liquidate the ResultSet into objects.
+- JDBC is an abbreviation for Java Database Connectivity.
+- It made use of terms such as Statement, PreparedStatement, and ResultSet.
+- The query used in the sample below is ```Update todo set user=?, desc=?, target_date=?, is_done=? where id=?```
+- The values required to run the query are entered into the query using various set methods on the PreparedStatement.
+- The query's results are added to the ResultSet. To convert the ResultSet into objects, we had to create code.
 
 #### Update Todo
 ```java
@@ -75,16 +75,16 @@ connection.close();
 
 ### Spring JDBC
 
-- Spring JDBC provides a layer on top of JDBC.
-- It used concepts like JDBCTemplate.
-- Typically needs lesser number of lines compared to JDBC as following are simplified
-   - mapping parameters to queries.
+- Spring JDBC is a layer that sits on top of JDBC.
+- It made use of ideas such as JDBCTemplate.
+- Although the following are simplified, it usually requires fewer lines than JDBC.
+   - The mapping of parameters to queries.
    - liquidating yields beans
-   - There is zero exception handling needed because all exceptions are converted to RuntimeExceptions.
+   - Because all exceptions are transformed to RuntimeExceptions, no exception handling is required.
 
 ## Creating the Project with Spring Initializr
 
-Creating a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.  
+Using Spring Initializr to create a REST service is a piece of cake. Our web framework will be Spring Web MVC. 
 
 Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
@@ -136,11 +136,11 @@ Below is the list of starter projects in pom.xml.
 </dependency>
 ```
 
-## Initialize the H2 in-memory database with the schema
+## Set up the H2 in-memory database using the schema.
 
-We will use H2 as the database. 
+H2 will be used as the database.
 
-H2 provides a web interface called H2 Console to see the data. Let's enable the H2 console in the `application.properties`
+To see the data, H2 provides a web interface called H2 Console. Allow the H2 console to be enabled in the 'application.properties' file.
 
 /src/main/resources/application.properties
 ```properties
@@ -157,19 +157,19 @@ logging.level.org.hibernate.type=trace
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.data.jpa.repositories.bootstrap-mode=default
 ```
-When you reload the application, you can launch up H2 Console at http://localhost:8080/h2-console
+You may access H2 Console by reloading the application http://localhost:8080/h2-console
 
 ![Image](/images/H2-Console-Login-Page.png "H2 Console Login PAge") 
 
 > Tip - Make sure that you use `jdbc:h2:mem:testdb` as JDBC URL.
 
-When you use the right JDBC URL given above, you should see an empty schema when you click `Connect` button.
+When you provide the correct JDBC URL, you should see an empty schema when you click the 'Connect' button.
 
 ![Image](/images/H2-Console-Empty-Schema.png "H2 Console Empty Page") 
 
-### Create Schema using schema.sql and Data using data.sql
+### Build a schema using `schema.sql` and a data set with `data.sql`.
 
-We will create a table called "student" with a few simple columns. We can initialise a schema by creating a `schema.sql` file in the resources.
+We'll make a "student" table with a few simple columns. We may start a schema by generating a `schema.sql` file in the resources folder.
 
 /src/main/resources/schema.sql
 
@@ -183,7 +183,7 @@ create table student
 );
 ```
 
-Let's also populate some data into the student table.
+Let's additionally add some information to the student table.
 
 /src/main/resources/data.sql
 
@@ -192,19 +192,20 @@ insert into student values(10001,'Ranga', 'E1234567');
 insert into student values(10002,'Ravi', 'A1234568');
 ```
 
-When the application reloads you would see following statements in the log indicating that the sql files are picked up
+After you refresh the application, you should see the following messages in the log showing that the sql files have been picked up.
 ```
 Executing SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring-boot-2-jdbc-with-h2/target/classes/schema.sql]
 Executing SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring-boot-2-jdbc-with-h2/target/classes/data.sql]
 ```
 
-When you login to H2 Console (http://localhost:8080/h2-console), you will see that the student table is created and the data is populated.
+When you access H2 Console (http://localhost:8080/h2-console), you'll notice that the student table has been created and the data has been loaded.
+
 
 ![Image](/images/H2-Console-With-Student.png "H2 Console With Student")
 
 ## Creating Student Bean
 
-Let's create a simple Student bean with basic student information along with getters, setters, and a toString method.
+Let's make a simple Student bean that has basic student information as well as getters, setters, and a function toString() function.
 
 ```java
 ppackage com.in28minutes.springboot.jdbc.h2.example.student;
@@ -263,9 +264,9 @@ public class Student {
 }
 
 ```
-## Create a repository method to read student information.
+## Build a repository way for reading student data.
 
-We would want to start by creating a simple repository. To talk to the database, we will use a JDBCTemplate.
+We'd want to start by making a basic repository. A JDBCTemplate will be used to communicate with the database.
 ```java
 @Repository
 public class StudentJdbcRepository {
@@ -273,9 +274,9 @@ public class StudentJdbcRepository {
 	JdbcTemplate jdbcTemplate;
 
 ```
-> H2 in the classpath is seen by Spring Boot Auto Configuration. It understands that we would want to talk to an in-memory database. It autoconfigures a datasource and also a JDBCTemplate connecting to that datasource.
+> Spring Boot Auto Configuration detects H2 on the classpath. It recognises that we wish to communicate with an in-memory database. It creates a datasource as well as a JDBCTemplate that connects to that datasource.
 
-Let's create the findById method to retrieve a student by ID in StudentJDBCRepository.
+Create the findById method in StudentJDBCRepository to obtain a student by ID.
 ```java
 	public Student findById(long id) {
 		return jdbcTemplate.queryForObject("select * from student where id=?", new BeanPropertyRowMapper<>(Student.class), id);
@@ -287,7 +288,7 @@ Notes
 - `new BeanPropertyRowMapper<Student>(Student.class)` - We are using a BeanPropertyRowMapper to map the results from ResultSet to the Student bean.
 - `id` - We are passing id as a parameter to the query
 
-We would want to execute the findById method. To keep things simple, we will make the SpringBoot2JdbcWithH2Application class implement CommandLineRunner and implement a run method to call the findById method on the repository.
+We'd want to use the findById function. To keep things simple, we'll create the SpringBoot2JdbcWithH2Application class implement CommandLineRunner and include a run function that calls the repository's findById method.
 
 /src/main/java/com/in28minutes/springboot/jdbc/h2/example/SpringBoot2JdbcWithH2Application.java
 
@@ -312,17 +313,17 @@ public class SpringBoot2JdbcWithH2Application implements CommandLineRunner {
 }
 ```
 Notes
-- `@Autowired StudentJdbcRepository repository;` - We will autowire the StudentJdbcRepository we created earlier.
-- `public void run(String... args) throws Exception {` - Implement the run method defined in the CommandLineRunner interface. This method is executed as soon as the application is launched.
+- `@Autowired StudentJdbcRepository repository;` - We will autowire the StudentJdbcRepository that we previously constructed.
+- `public void run(String... args) throws Exception {` - Implement the commandLineRunner interface's run function. When the application is launched, this method is called.
 - `logger.info("Student id 10001 -> {}", repository.findById(10001L))` - Log all the information about student id 10001.
 
-When the application reloads, you will see this in the log.
+This will be shown in the log when the application reloads.
 ```
 Student id 10001 -> Student [id=10001, name=Ranga, passportNumber=E1234567]
 ```
-> Congratulations on executing the first Spring JDBC method! You can see how easy it is with Spring Boot.
+> Congrats for successfully running the first Spring JDBC method! Spring Boot demonstrates how simple it is.
 
-Let's now add another method to retrieve details of all the students from StudentJdbcRepository.
+Let's now add another method to get information about all of the students from the StudentJdbcRepository.
 
 ```java
 	static class StudentRowMapper implements RowMapper<Student> {
@@ -342,10 +343,10 @@ Let's now add another method to retrieve details of all the students from Studen
 	}
 ```
 Notes
-- `class StudentRowMapper implements RowMapper<Student>` - We are defining a custom row mapper to map the result set to a student bean.
-- `jdbcTemplate.query("select * from student", new StudentRowMapper())` - Since we want to return a list of students, we use the `query` method in JdbcTemplate.
+- `class StudentRowMapper implements RowMapper<Student>` - To map the result set to a student bean, we define a custom row mapper.
+- `jdbcTemplate.query("select * from student", new StudentRowMapper())` - We utilise the 'query' method in JdbcTemplate to retrieve a list of students.
 
-We can add a call to the find all method in the run method of `SpringBoot2JdbcWithH2Application.java`
+In the run method, we may include a call to the find all function.`SpringBoot2JdbcWithH2Application.java`
 
 ```java
 
@@ -353,14 +354,14 @@ logger.info("All users 1 -> {}", repository.findAll());
 
 ```
 
-You can see the following output in the log when the project reloads.
+After you restart the project, you should see the following output in the log.
 ```
 All users 1 -> [Student [id=10001, name=Ranga, passportNumber=E1234567], Student [id=10002, name=Ravi, passportNumber=A1234568]]
 ```
 
 ## Implementing Spring JDBC delete, insert, and update methods
 
-The code below shows the delete, insert, and update methods.
+The following code demonstrates the delete, insert, and update methods.
 
 ```java
 	public void deleteById(long id) {
@@ -380,10 +381,10 @@ The code below shows the delete, insert, and update methods.
 ```
 
 Notes 
-- These methods are relatively straight-forward.
-- All methods use the `update` method in the JdbcTemplate class and set the right query and parameters.
+- These procedures are pretty simple.
+-All methods make use of the JdbcTemplate class's `update` function to specify the appropriate query and parameters.
 
-We can add a call to all the above methods in the run method of `SpringBoot2JdbcWithH2Application.java`
+All of the aforementioned methods can be called in the run method of `SpringBoot2JdbcWithH2Application.java`
 
 ```java
 logger.info("Inserting -> {}", repository.insert(new Student(10010L, "John", "A1234657")));
@@ -396,10 +397,10 @@ logger.info("All users 2 -> {}", repository.findAll());
 
 ```
 
-You can see the following output in the log when the project reloads.
+After you restart the project, you should see the following output in the log.
 ```
 Inserting -> 1
 Update 10003 -> 1
 All users -> [Student [id=10001, name=Name-Updated, passportNumber=New-Passport], Student [id=10010, name=John, passportNumber=A1234657]]
 ```
-> Awesome ! You've implemented all the CRUD methods using Spring JDBC and Spring Boot.
+> That's fantastic! You've used Spring JDBC and Spring Boot to implement all of the CRUD functions.

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      JPA and Hibernate Tutorial using Spring Boot Data JPA
-date:       2022-07-20 12:31:19
+date:       2023-03-13 12:31:19
 summary:    Complete journey starting from JDBC to JPA to Spring Data JPA using an example with Spring Boot Data JPA starter project. We use Hibernate as the JPA Implementation.
 categories:  SpringBootJPA
 permalink:  /introduction-to-jpa-with-spring-boot-data-jpa
@@ -854,7 +854,7 @@ The H2-Console can also be accessed via the web browser.
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.0-M3</version>
+		<version>3.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
