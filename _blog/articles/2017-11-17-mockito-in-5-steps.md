@@ -1,14 +1,14 @@
 ---
 layout:     post
 title:      Mockito Tutorial for Beginner in 5 Steps
-date:       2020-07-07 12:31:19
-summary:    Mockito tutorial for Beginner in 5 Steps. Understand the basics of mocking with the most popular Java mocking framework with a simple mock example in 5 easy steps. 
+date:       2023-03-19 12:31:19
+summary:    Mockito lesson in 5 steps for beginners. In 5 simple stages, learn the fundamentals of mocking with the most popular Java mocking framework using a simple mock example. 
 categories: SpringBootUnitTesting
 permalink:  /mockito-tutorial-for-beginners
 image: /images/unit-test-category.png
 ---
 
-Mockito is the most popular mocking framework in Java.
+Mockito is the most popular Java mocking framework.
 
 
 ### Git Repository 
@@ -60,7 +60,7 @@ Let's also set up a simple business class with a dependency.
 - SomeBusinessImpl depends on DataService for the data
 - findTheGreatestFromAllData has some business logic to find the greatest
 
-```
+```java
 package com.in28minutes.mockito.mockitodemo;
 
 public class SomeBusinessImpl {
@@ -85,7 +85,7 @@ public class SomeBusinessImpl {
 }
 ```
 
-```
+```java
 package com.in28minutes.mockito.mockitodemo;
 
 public interface DataService {
@@ -94,9 +94,9 @@ public interface DataService {
 ```
 ### Step 2 : Using a Stubs - Disadvantages
 
-Let's use a stub to write a unit test for SomeBusinessImpl.
+Let's construct a unit test for SomeBusinessImpl using a stub.
 
-```
+```java
 package com.in28minutes.mockito.mockitodemo;
 
 import static org.junit.Assert.assertEquals;
@@ -106,7 +106,7 @@ import org.junit.Test;
 public class SomeBusinessStubTest {
 	@Test
 	public void testFindTheGreatestFromAllData() {
-		SomeBusinessImpl businessImpl = new SomeBusinessImpl(new DataServiceStub());
+		var businessImpl = new SomeBusinessImpl(new DataServiceStub());
 		int result = businessImpl.findTheGreatestFromAllData();
 		assertEquals(24, result);
 
@@ -122,13 +122,13 @@ class DataServiceStub implements DataService {
 }
 ```
 
-Problems with Stub
-- How do I get DataServiceStub to return different data for different scenaris?
-- Everytime DataService interface is updated with new methods, the DataServiceStub implementations should be updated.
+Issues with Stub
+- How can I get DataServiceStub to return various data depending on the situation?
+- The DataServiceStub implementations should be updated whenever the DataService interface is changed with new methods.
 
-### Step 3 : Your first mock. 
+### Step 3 : This is your first mock. 
 
-```
+```java
 package com.in28minutes.mockito.mockitodemo;
 
 import static org.junit.Assert.assertEquals;
@@ -141,18 +141,18 @@ public class SomeBusinessMockTest {
 
 	@Test
 	public void testFindTheGreatestFromAllData() {
-		DataService dataServiceMock = mock(DataService.class);
+		var dataServiceMock = mock(DataService.class);
 		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] { 24, 15, 3 });
-		SomeBusinessImpl businessImpl = new SomeBusinessImpl(dataServiceMock);
+		var businessImpl = new SomeBusinessImpl(dataServiceMock);
 		int result = businessImpl.findTheGreatestFromAllData();
 		assertEquals(24, result);
 	}
 
 	@Test
 	public void testFindTheGreatestFromAllData_ForOneValue() {
-		DataService dataServiceMock = mock(DataService.class);
+		var dataServiceMock = mock(DataService.class);
 		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] { 15 });
-		SomeBusinessImpl businessImpl = new SomeBusinessImpl(dataServiceMock);
+		var businessImpl = new SomeBusinessImpl(dataServiceMock);
 		int result = businessImpl.findTheGreatestFromAllData();
 		assertEquals(15, result);
 	}
@@ -164,52 +164,53 @@ Notes
 - ```DataService dataServiceMock = mock(DataService.class)``` - We are using the mock method to create a mock.
 - ```when(dataServiceMock.retrieveAllData()).thenReturn(new int[] { 24, 15, 3 })``` - stubbing the mock to return specific data
 
-### Step 4 : Using Mockito Annotations - @Mock, @InjectMocks, @RunWith(MockitoJUnitRunner.class)
+### Step 4 : @Mock, @InjectMocks, and @ExtendWith Mockito Annotations (SpringExtension.class)
 
-```
+```java
 package com.in28minutes.mockito.mockitodemo;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(SpringExtension.class)
 public class SomeBusinessMockAnnotationsTest {
 
-	@Mock
-	DataService dataServiceMock;
+    @Mock
+    DataService dataServiceMock;
 
-	@InjectMocks
-	SomeBusinessImpl businessImpl;
+    @InjectMocks
+    SomeBusinessImpl businessImpl;
 
-	@Test
-	public void testFindTheGreatestFromAllData() {
-		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] { 24, 15, 3 });
-		assertEquals(24, businessImpl.findTheGreatestFromAllData());
-	}
+    @Test
+    public void testFindTheGreatestFromAllData() {
+        when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{24, 15, 3});
+        assertEquals(24, businessImpl.findTheGreatestFromAllData());
+    }
 
-	@Test
-	public void testFindTheGreatestFromAllData_ForOneValue() {
-		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] { 15 });
-		assertEquals(15, businessImpl.findTheGreatestFromAllData());
-	}
+    @Test
+    public void testFindTheGreatestFromAllData_ForOneValue() {
+        when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{15});
+        assertEquals(15, businessImpl.findTheGreatestFromAllData());
+    }
 
-	@Test
-	public void testFindTheGreatestFromAllData_NoValues() {
-		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {});
-		assertEquals(Integer.MIN_VALUE, businessImpl.findTheGreatestFromAllData());
-	}
+    @Test
+    public void testFindTheGreatestFromAllData_NoValues() {
+        when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{});
+        assertEquals(Integer.MIN_VALUE, businessImpl.findTheGreatestFromAllData());
+    }
 }
+
 ```
 Notes
 - ```@Mock DataService dataServiceMock;``` - Create a mock for DataService.
 - ```@InjectMocks SomeBusinessImpl businessImpl;``` - Inject the mocks as dependencies into businessImpl.
-- ```@RunWith(MockitoJUnitRunner.class)``` - The JUnit Runner which causes all the initialization magic with @Mock and @InjectMocks to happen before the tests are run.
+- ```@ExtendWith(SpringExtension.class)``` - SpringExtension integrates the Spring TestContext Framework into JUnit 5's Jupiter programming model. To use this extension, simply annotate a JUnit Jupiter based test class with `@ExtendWith(SpringExtension.class)`
 
 ### Step 5 : Mocking List interface
 
@@ -217,7 +218,7 @@ Mocking a method. Mock returns the same value on multiple calls.
 ```java
 @Test
 public void testSize() {
-	List listMock = mock(List.class);
+	var listMock = mock(List.class);
 	when(listMock.size()).thenReturn(10);
 	assertEquals(10, listMock.size());
 	assertEquals(10, listMock.size());
@@ -228,7 +229,7 @@ Setting the mock to return 10 on first call and 20 on the second call.
 ```java
 @Test
 public void testSize_multipleReturns() {
-	List listMock = mock(List.class);
+	var listMock = mock(List.class);
 	when(listMock.size()).thenReturn(10).thenReturn(20);
 	assertEquals(10, listMock.size());
 	assertEquals(20, listMock.size());
@@ -240,7 +241,7 @@ Customizing the mock based on a specific parameter value.
 ```java
 @Test
 public void testGet_SpecificParameter() {
-	List listMock = mock(List.class);
+	var listMock = mock(List.class);
 	when(listMock.get(0)).thenReturn("SomeString");
 	assertEquals("SomeString", listMock.get(0));
 	assertEquals(null, listMock.get(1));
@@ -251,7 +252,7 @@ Using a generic argument - Mockito.anyInt()
 ```java
 @Test
 public void testGet_GenericParameter() {
-	List listMock = mock(List.class);
+	var listMock = mock(List.class);
 	when(listMock.get(Mockito.anyInt())).thenReturn("SomeString");
 	assertEquals("SomeString", listMock.get(0));
 	assertEquals("SomeString", listMock.get(1));
