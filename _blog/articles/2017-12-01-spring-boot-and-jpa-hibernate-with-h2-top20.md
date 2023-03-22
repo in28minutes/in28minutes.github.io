@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Integrating Hibernate and JPA with Spring Boot
-date:       2022-07-02 07:55:19
-summary:    Learn using Spring Boot Starter JPA to connect Spring Boot to H2 (in memory database) using Hibernate/JPA. You will learn the basics of JPA and Hibernate - Entities and Keys. We will create a simple repository extending JPARepository and explore different methods it exposes.
+date:       2023-03-20 07:55:19
+summary:    Discover how to connect Spring Boot to H2 (in memory database) with Hibernate/JPA by utilising Spring Boot Starter JPA. The fundamentals of JPA and Hibernate - Entities and Keys - will be covered. We will create a simple repository extending JPARepository and explore different methods it exposes.
 categories:  SpringBootJPA
 permalink:  /hibernate-jpa-tutorial-with-spring-boot-starter-jpa
 image: /images/spring-data-category.png
@@ -10,7 +10,7 @@ image: /images/spring-data-category.png
 
 ![Image](/images/spring-initializer-web-h2-devtools-jpa.png)
 
-This guide will help you create a simple project with Spring Boot and connect to a database using Hibernate/JPA. We will use Spring Boot Starter JPA and in memory database H2.
+This post will show you how to establish a simple Spring Boot project and connect to a database using Hibernate/JPA. Spring Boot Starter JPA and the in-memory database H2 will be used.
 
 ![Image](/images/JPA_02_Architecture.png "JPA Architecuture")
  
@@ -28,14 +28,13 @@ This guide will help you create a simple project with Spring Boot and connect to
 [![Image](/images/Course-Master-Hibernate-and-JPA-with-Spring-Boot-in-100-Steps.png "Master Hibernate and JPA with Spring Boot in 100 Steps")](https://links.in28minutes.com/MISC-JPA){:target="_blank"}
 
 
+## Structure of the Project Code
 
-## Project Code Structure
-
-Following screenshot shows the structure of the project we will create.
+The screenshot below depicts the framework of the project we will be creating.
 
 ![Image](/images/SpringBootwithJPA-ProjectStructure.png "Spring Boot with JPA - Project Structure") 
 
-A few details:
+A few specifics:
 
 - `Student.java` - Entity bean to store student details.
 - `StudentRepository.java` - Extends JpaRepository. Acts as a repository to update/retrieve Student entities.
@@ -45,52 +44,49 @@ A few details:
 
 ## Tools you will need
 - Maven 3.0+ is your build tool
-- Your favorite IDE. We use Eclipse.
+- Your favorite IDE. We use Eclipse or IntelliJ.
 - JDK 17+
 
-## Complete Maven Project With Code Examples
+## Maven Project Completion using Code Samples
 > Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-jpa-with-hibernate-and-h2
 
 
+## How Does JPA/Hibernate Function?
 
+Tables/Relations are used to design databases. OOPS is used to develop Java objects. We'd want to save data from objects to tables and vice versa.
 
+Previous techniques required the creation of SQL Queries. Popular techniques included JDBC, Spring JDBC, and myBatis.
 
-## How does JPA/Hibernate Work?
+JPA, on the other hand, arose as a result of a different conceptual process. 
 
-Databases are designed with Tables/Relations. Java objects are designed using OOPS. We would want to store the data from objects into tables and vice-versa.
-
-Earlier approaches involved writing SQL Queries. JDBC, Spring JDBC and myBatis were popular approaches.
-
-However, JPA evolved as a result of a different thought process. 
-
-> How about mapping the objects directly to tables/relationships?
+> What about mapping the objects to tables/relationships directly?
  
-This Mapping is also called ORM - Object Relational Mapping. Before JPA, ORM was the term more commonly used to refer to these frameworks. Thats one of the reasons, Hibernate is called a ORM framework.
+ORM - Object Relational Mapping - is another name for this mapping. Prior to JPA, these frameworks were more generally referred to as ORM. It is one of the reasons Hibernate is referred to as an ORM framework.
 
-## Important Concepts in JPA
+## Key JPA Concepts
 
 ![Image](/images/JPA_02_Architecture.png "JPA Architecuture")
 
 JPA allows to map application classes to tables in database.
-- Entity Manager - Once the mappings are defined, entity manager can manage your entities. Entity Manager handles all interactions with the database
-- JPQL (Java Persistence Query Language) - Provides ways to write queries to execute searches against entities. Important thing to understand is the these are different from SQL queries. JPQL queries already understand the mappings that are defined between entities. We can add additional conditions as needed.
-- Criteria API defines a Java based API to execute searches against databases.
+- `Entity Manager` - Entity manager may manage your entities after the mappings are defined. Entity Manager manages all database interactions.
+- `JPQL (Java Persistence Query Language)` - Offers methods for writing queries to do entity searches. It is critical to recognise that these are not SQL queries. JPQL queries are already aware of the mappings that exist between entities. More criteria can be added as needed.
+- `Criteria API` specifies a Java-based API for doing database searches.
 
-## JPA vs Hibernate
+## Choosing between JPA and Hibernate
 
-Hibernate is one of the most popular ORM frameworks. 
+One of the most popular ORM frameworks is Hibernate.
 
-JPA defines the specification. It is an API. 
+The specification is defined by JPA. It is a programming interface.
  - How do you define entities?
  - How do you map attributes?
  - How do you map relationships between entities?
  - Who manages the entities?
 
-Hibernate is one of the popular implementations of JPA.
- - Hibernate understands the mappings that we add between objects and tables. It ensures that data is stored/retrieved from the database based on the mappings.
- - Hibernate also provides additional features on top of JPA. But depending on them would mean a lock in to Hibernate. You cannot move to other JPA implementations like Toplink.
+Hibernate is a well-known JPA implementation.
+ - Hibernate recognises the mappings we create between objects and tables. It guarantees that data is stored and retrieved from the database in accordance with the mappings.
+ - Hibernate extends JPA with extra functionality. But, relying on them would bind you to Hibernate. You cannot switch to another JPA implementation, such as Toplink.
 
-## Creating the Project with Spring Initializr
+## Spring Initializr is used to create a project.
 
 Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
@@ -149,7 +145,7 @@ Below picture highlights some of the dependencies that are part of the imported 
 
 > Key Question : How did all these dependencies come in?
 
-All these dependencies are defined in spring-boot-starter-jpa. As soon as we include Spring Boot Starter JPA in our project (pom.xml), we get the following features from a wide variety of dependencies
+Spring-boot-starter-jpa defines all of these dependencies. We obtain the following functionalities from a wide range of dependencies as soon as we include Spring Boot Starter JPA in our project (pom.xml).
 - AOP
 - Transaction Management
 - JPA API
@@ -161,33 +157,37 @@ Extract below shows some code from pom.xml of spring-boot-starter-jpa.
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-aop</artifactId>
-  <version>3.0.0-M3</version>
+  <version>3.0.4</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-jdbc</artifactId>
-  <version>3.0.0-M3</version>
+  <version>3.0.4</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
-  <groupId>org.hibernate</groupId>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-jdbc</artifactId>
+  <version>3.0.4</version>
+   <scope>compile</scope>
+</dependency>
+<dependency>
+  <groupId>org.hibernate.orm</groupId>
   <artifactId>hibernate-core</artifactId>
+  <version>6.1.7.Final</version>
   <scope>compile</scope>
 </dependency>
 <dependency>
-  <groupId>jakarta.transaction</groupId>
-  <artifactId>jakarta.transaction-api</artifactId>
-  <scope>compile</scope>
-</dependency>
-<dependency>
-  <groupId>org.springframework.data</groupId>
-  <artifactId>spring-data-jpa</artifactId>
-  <scope>compile</scope>
+   <groupId>org.springframework.data</groupId>
+   <artifactId>spring-data-jpa</artifactId>
+   <version>3.0.3</version>
+   <scope>compile</scope>
 </dependency>
 <dependency>
   <groupId>org.springframework</groupId>
   <artifactId>spring-aspects</artifactId>
+  <version>6.0.6</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -216,9 +216,9 @@ When you use the right JDBC URL given above, you should see an empty schema when
 
 ![Image](/images/H2-Console-Empty-Schema.png "H2 Console Empty Page") 
 
-### Create Your First JPA Entity
+### Make Your Very First JPA Entity
 
-The first step is to create a JPA Entity. Lets create a simple Student Entity with a primary key id.
+The first thing to do is to build a JPA Entity. Let's start with a basic Student Entity with a primary key id.
 
 
 ```java
@@ -293,41 +293,39 @@ Important things to note:
  - ```public Student()```: Default constructor to make JPA Happy
 
 
-When the application reloads, you can launch H2 console at http://localhost:8080/h2-console.
+You may launch H2 console when the programme reloads. http://localhost:8080/h2-console.
 
-You will see that a new table called 'student' is created in H2 Console.
+On H2 Console, you will notice that a new table called `student` is generated.
 
 > How did the Student table get created?
 
 Its because of Spring Boot Auto Configuration. We will talk about this a little later.
 
-Let's now populate some data into the student table.
+Let's now add some information to the student table.
 
 /src/main/resources/data.sql
 
-```
-insert into student
-values(10001,'Ranga', 'E1234567');
+```sql
+insert into student values(10001,'Ranga', 'E1234567');
 
-insert into student
-values(10002,'Ravi', 'A1234568');
+insert into student values(10002,'Ravi', 'A1234568');
 ```
 
-When the application reloads you would see following statements in the log indicating that the sql files are picked up.
+After you refresh the application, you should see the following messages in the log showing that the sql files have been picked up.
 
 ```
 Executing SQL script from URL [file:/in28Minutes/git/spring-boot-examples/spring-boot-2-jdbc-with-h2/target/classes/data.sql]
 ```
 
-After App Reload, When you login to H2 Console (http://localhost:8080/h2-console) you can see that the student table is created and the data is populated.
+When you connect to H2 Console (http://localhost:8080/h2-console) after reloading the app, you will notice that the student table has been created and the data has been loaded.
 
 ![Image](/images/H2-Console-With-Student.png "H2 Console With Student")
 
-## Create Repository class to Read Student information
+## Build a Repository class to read Student data.
 
 /src/main/java/com/in28minutes/springboot/jpa/hibernate/h2/example/student/StudentRepository.java
 
-We create a simple interface StudentRepository extending JpaRepository.
+We extend JpaRepository to create a simple interface called StudentRepository.
 
 ```java
 package com.in28minutes.springboot.jpa.hibernate.h2.example.student;
@@ -341,8 +339,8 @@ public interface StudentRepository extends JpaRepository<Student, Long>{
 }
 ```
 Notes
-- We will talk about all the methods in the JpaRepository a little later.
-- `public interface StudentRepository extends JpaRepository<Student, Long>` - We are extending JpaRepository using two generics - Student & Long. Student is the entity that is being managed and the primary key of Student is Long.
+- We'll go over all of the methods in the JpaRepository later.
+- `public interface StudentRepository extends JpaRepository<Student, Long>` - JpaRepository is being extended with two generics: Student and Long. The entity being handled is Student, and the main key of Student is Long.
 
 ### JpaRepository
 
@@ -412,41 +410,40 @@ Some of the log that is generated (later when we execute queries) when we turn s
 
 Session Level Metrics
 ```
-i.StatisticalLoggingSessionEventListener : Session Metrics {
-    23004 nanoseconds spent acquiring 1 JDBC connections;
+023-03-22T13:37:31.818+05:30  INFO 18636 --- [  restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    25207 nanoseconds spent acquiring 1 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
-    41930 nanoseconds spent preparing 1 JDBC statements;
-    174065 nanoseconds spent executing 1 JDBC statements;
+    1381963 nanoseconds spent preparing 1 JDBC statements;
+    351842 nanoseconds spent executing 1 JDBC statements;
     0 nanoseconds spent executing 0 JDBC batches;
     0 nanoseconds spent performing 0 L2C puts;
     0 nanoseconds spent performing 0 L2C hits;
     0 nanoseconds spent performing 0 L2C misses;
     0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    5125 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+
 ```
 
 Queries and Parameters
 ```
+2023-03-22T13:37:31.819+05:30  INFO 18636 --- [  restartedMain] ibernateAndH2Application$$SpringCGLIB$$0 : Student id 10001 -> Optional[Student [id=10001, name=Ranga, passportNumber=E1234567]]
 Hibernate: 
     select
-        student0_.id as id1_0_,
-        student0_.name as name2_0_,
-        student0_.passport_number as passport3_0_ 
-    from
-        student student0_
-2017-12-05 10:20:59.457 TRACE 26877 --- [  restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_0_] : [BIGINT]) - [1]
-2017-12-05 10:20:59.458 TRACE 26877 --- [  restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name2_0_] : [VARCHAR]) - [John]
-2017-12-05 10:20:59.458 TRACE 26877 --- [  restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([passport3_0_] : [VARCHAR]) - [A1234657]
-2017-12-05 10:20:59.458 TRACE 26877 --- [  restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_0_] : [BIGINT]) - [10001]
-2017-12-05 10:20:59.458 TRACE 26877 --- [  restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name2_0_] : [VARCHAR]) - [Name-Updated]
-2017-12-05 10:20:59.458 TRACE 26877 --- [  restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([passport3_0_] : [VARCHAR]) - [New-Passport]
-2017-12-05 10:20:59.458 DEBUG 26877 --- [  restartedMain] o.h.s.internal.ConcurrentStatisticsImpl  : HHH000117: HQL: select generatedAlias0 from Student as generatedAlias0, time: 1ms, rows: 2
+        next value for student_seq
+Hibernate: 
+    insert 
+    into
+        student
+        (name, passport_number, id) 
+    values
+        (?, ?, ?)
 
 ```
 
 ## Exploring JpaRepository methods
 
-Code belows shows the SpringBoot2JPAWithHibernateAndH2Application class extended to execute some of the StudentRepository methods.
+The code below extends the SpringBoot2JPAWithHibernateAndH2Application class to perform some StudentRepository methods.
 
 ```java
 @SpringBootApplication
@@ -564,7 +561,7 @@ CREATE TABLE employee
 
 #### Example 2 - Inheritance Startegies - InheritanceType.SINGLE_TABLE
 
-Some times multiple classes are mapped to a single table and vice-versa. In these situations, we define a inheritance strategy. In this example, we use a strategy of InheritanceType.SINGLE_TABLE.
+Several classes are sometimes mapped to a single table, and vice versa. In these cases, we devise an inheritance approach. In this example, we employ an InheritanceType technique. SINGLE TABLE.
 
 Objects
 
@@ -606,6 +603,6 @@ CREATE TABLE employee
 
 ```
 
-## Complete Code Example
+## Example of Full Code
 
 Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-jpa-with-hibernate-and-h2
