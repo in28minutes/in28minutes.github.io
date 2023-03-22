@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:   Spring Boot and iBatis with H2 - A Tutorial
-date:       2022-07-07 12:31:19
-summary:    Learn using Spring Boot Starter myBatis to connect Spring Boot to H2 (in memory database) using Object Mapping Framework - myBatis (iBatis).
+date:       2023-03-20 12:31:19
+summary:    Discover how to connect Spring Boot to H2 (in memory database) using Object Mapping Framework - myBatis with Spring Boot Starter (iBatis).
 categories:  SpringBootJPA
 permalink:  /spring-boot-and-iBatis-with-h2-tutorial
 image: /images/spring-data-category.png
@@ -10,7 +10,7 @@ image: /images/spring-data-category.png
 
 ![Image](/images/spring-initializer-web-h2-devtools-jdbc.png "Web, JDBC,H2 and Developer Tools")
 
-This guide will help you create a simple project with Spring Boot. You will add code to the project to connect to H2 Database using myBatis. You will learn to write all the basic CRUD methods using myBatis.
+This article will assist you in creating a basic Spring Boot project. You will add code to the project that will allow you to connect to the H2 Database using myBatis. You will learn how to use myBatis to build all of the core CRUD functions.
 
 ![Image](/images/SpringBootwithmyBatis-ProjectStructure.png "Spring Boot with myBatis - Project Structure") 
 
@@ -31,17 +31,17 @@ Following screenshot shows the structure of the project we will create.
 
 A few details:
 
-- `Student.java` - The bean to store student details.
-- `StudentMyBatisRepository.java` - Contains all the methods to store and retrieve student details to the H2 database.
-- `schema.sql` - Since we are using an in memory database, we define the tables as part of our application code in this file.
-- `data.sql` - We use data.sql to populate the initial student data.
-- SpringBoot2MyBatisWithH2Application.java - The main Spring Boot Application class which is used to launch up the application. We will extend `CommandLineRunner` interface and implement `public void run(String... args)` method to launch the spring jdbc code when the server launches up.
-- `pom.xml` - Contains all the dependencies needed to build this project. We will use Spring Boot Starter myBatis and Web other than Developer Tools and H2 as in memory database.
+- `Student.java` - The bean is used to hold student information.
+- `StudentMyBatisRepository.java` - Includes all of the methods for storing and retrieving student information from the H2 database.
+- `schema.sql` - Because we are utilising an in memory database, we define the tables in this file as part of our application code.
+- `data.sql` - To supply the initial student data, we utilise data.sql.
+- SpringBoot2MyBatisWithH2Application.java - This is the primary Spring Boot Application class that is used to start the application. We will extend the `CommandLineRunner` interface and add the `public void run method (String... args)` method to launch the spring jdbc code when the server launches up.
+- `pom.xml` - This package contains all of the dependencies required to develop this project. In addition to Developer Tools and H2, we will utilise Spring Boot Starter myBatis and Web.
 
 ## Tools you will need
 - Maven 3.0+ is your build tool
-- Your favorite IDE. We use Eclipse.
-- JDK 1.8+
+- Your favorite IDE. We use Eclipse or IntelliJ.
+- JDK 17+
 
 ## Complete Maven Project With Code Examples
 > Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-myBatis-with-h2
@@ -49,11 +49,11 @@ A few details:
 ## A little bit of Theory
 
 JDBC
-- JDBC stands for Java Database Connectivity
-- It used concepts like Statement, PreparedStatement and ResultSet
+- JDBC is an abbreviation for Java Database Connectivity.
+- It made use of concepts such as `Statement, PreparedStatement, and ResultSet`.
 - In the example below, the query used is ```Update todo set user=?, desc=?, target_date=?, is_done=? where id=?```
-- The values needed to execute the query are set into the query using different set methods on the PreparedStatement
-- Results from the query are populated into the ResultSet. We had to write code to liquidate the ResultSet into objects.
+- The values required to run the query are entered into the query using various set methods on the PreparedStatement.
+- The query's results are added to the ResultSet. To convert the ResultSet into objects, we had to create code.
 
 #### Update Todo
 ```java
@@ -87,7 +87,7 @@ connection.close();
 
 ### myBatis
 
-MyBatis removes the need for manually writing code to set parameters and retrieve results. It provides simple XML or Annotation based configuration to map Java POJOs to database.
+MyBatis eliminates the requirement to write code to configure parameters and receive results. It allows you to link Java POJOs to databases using easy XML or Annotation-based setup.
 
 We compare the approaches used to write queries below:
 
@@ -135,17 +135,17 @@ As shown in the image above, following steps have to be done
 
 ## Add the myBatis starter to pom.xml
 
-myBatis is not a standard Spring Boot Starter project. We would need to add it manually to pom.xml.
-```
+myBatis isn't your typical Spring Boot Starter project. We would need to add it manually to pom.xml.
+```xml
 <dependency>
 	<groupId>org.mybatis.spring.boot</groupId>
 	<artifactId>mybatis-spring-boot-starter</artifactId>
-	<version>1.2.1</version>
+	<version>3.0.1</version>
 </dependency>
 
 ```
 
-Rebuild the project to see all the dependencies related to myBatis.
+Rebuild the project to view all the dependencies linked to myBatis.
 
 ![Image](/images/myBatisDependencies.png "my Batis Dependencies")
 
@@ -158,9 +158,18 @@ H2 provides a web interface called H2 Console to see the data. Let's enable h2 c
 /src/main/resources/application.properties
 ```properties
 # Enabling H2 Console
+# Enabling H2 Console
 spring.h2.console.enabled=true
+#Turn Statistics on
+spring.jpa.properties.hibernate.generate_statistics=true
+logging.level.org.hibernate.stat=debug
+# Show all queries
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+logging.level.org.hibernate.type=trace
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.data.jpa.repositories.bootstrap-mode=default
+spring.jpa.defer-datasource-initialization=true
 ```
 When you reload the application, you can launch up H2 Console at http://localhost:8080/h2-console.
 
@@ -172,13 +181,13 @@ When you use the right JDBC URL given above, you should see an empty schema when
 
 ![Image](/images/H2-Console-Empty-Schema.png "H2 Console Empty Page") 
 
-### Create Schema using schema.sql and Data using data.sql
+### Build a schema using schema.sql and a data set with data.sql.
 
-We will create a table called student with few simple columns. We can initialize a schema by create a `schema.sql` file in the resources.
+We'll make a student table with a few simple columns. We may initialise a schema by generating a `schema.sql` file under the resources.
 
 /src/main/resources/schema.sql
 
-```
+```sql
 create table student
 (
    id integer not null,
@@ -188,11 +197,11 @@ create table student
 );
 ```
 
-Let's also populate some data into the student table.
+Let's additionally add some information to the student table.
 
 /src/main/resources/data.sql
 
-```
+```sql
 insert into student
 values(10001,'Ranga', 'E1234567');
 
@@ -200,7 +209,7 @@ insert into student
 values(10002,'Ravi', 'A1234568');
 ```
 
-When the application reloads you would see following statements in the log indicating that the sql files are picked up
+After you refresh the application, you should see the following messages in the log showing that the sql files have been picked up.
 ```
 Executing SQL script from URL [file:PATH/schema.sql]
 Executing SQL script from URL [file:PATH/data.sql]
@@ -212,7 +221,7 @@ When you login to H2 Console (http://localhost:8080/h2-console) you can see that
 
 ## Creating Student Bean
 
-Lets create a simple Student bean with basic student information along with getters, setters and a toString method.
+Let's make a simple Student bean that has basic student information as well as getters, setters, and a function toString() function.
 
 ```java
 package com.in28minutes.springboot.jdbc.h2.example.student;
@@ -270,9 +279,9 @@ public class Student {
 
 }
 ```
-## Create Repository method to Read Student information
+## Develop a technique for reading student information from a repository.
 
-We would want to start with creating a simple repository. `@Mapper` indicates that this is an myBatis mapper class.
+We would like to start with constructing a basic repository. This is a myBatis mapper class with `@Mapper`.
 
 ```java
 @Mapper
@@ -281,7 +290,7 @@ public interface StudentMyBatisRepository {
 }
 
 ```
-> Spring Boot Auto Configuration sees H2 in the classpath. It understands that we would want to talk to an in memory database. It auto configures a datasource and also a JdbcTemplate connecting to that datasource.
+> H2 is seen in the classpath by Spring Boot Auto Configuration. It recognises that we wish to communicate with an in-memory database. It automatically configures a datasource as well as a JdbcTemplate that connects to that datasource.
 
 Let's create the findById method to retrieve a student by id in StudentJdbcRepository.
 ```java
@@ -293,29 +302,50 @@ Notes
 - `@Select("SELECT * FROM student WHERE id = #{id}")` - `@Select` highlights that this is a select query. `#{id}` is used to indicate that id is a parameter to this query.
 - You can observe that are defining a simple interface method without the implementation.
 
-We would want to execute findById method. To keep things simple we will make the SpringBoot2MyBatisWithH2Application class implement CommandLineRunner and implement run method to call the findById method on the repository.
+We'd want to use the findById function. To keep things simple, we'll create the SpringBoot2MyBatisWithH2Application class interface CommandLineRunner and implement a run function that calls the repository's findById method.
 
 /src/main/java/com/in28minutes/springboot/jdbc/h2/example/SpringBoot2JdbcWithH2Application.java
 
 ```java
+package com.in28minutes.springboot.mybatis.h2.example;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.in28minutes.springboot.mybatis.h2.example.student.Student;
+import com.in28minutes.springboot.mybatis.h2.example.student.StudentMyBatisRepository;
+
 @SpringBootApplication
 public class SpringBoot2MyBatisWithH2Application implements CommandLineRunner {
 
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	StudentMyBatisRepository repository;
+    @Autowired
+    StudentMyBatisRepository repository;
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBoot2MyBatisWithH2Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBoot2MyBatisWithH2Application.class, args);
+    }
 
-	@Override
-	public void run(String... args) throws Exception {
+    @Override
+    public void run(String... args) throws Exception {
 
-		logger.info("Student id 10001 -> {}", repository.findById(10001L));
-	}
+        LOGGER.info("Student id 10001 -> {}", repository.findById(10001L));
+
+        LOGGER.info("Inserting -> {}", repository.insert(new Student(10010L, "John", "A1234657")));
+
+        LOGGER.info("Update 10003 -> {}", repository.update(new Student(10001L, "Name-Updated", "New-Passport")));
+
+        repository.deleteById(10002L);
+
+        LOGGER.info("All users -> {}", repository.findAll());
+    }
 }
+
 ```
 Notes
 - `@Autowired StudentMyBatisRepository repository;` - We will autowire StudentMyBatisRepository we created earlier.
