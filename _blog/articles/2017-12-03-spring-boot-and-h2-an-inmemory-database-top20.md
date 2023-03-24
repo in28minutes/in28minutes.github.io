@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:   Spring Boot and H2 in memory database - Why, What and How?
-date:       2022-07-07 12:31:19
-summary:  Learn how to connect a Spring Boot application to H2 in memory database. Understand why in memory databases are needed and the best practices in using them with Spring Boot.
+date:       2023-03-22 12:31:19
+summary:  Discover how to link a Spring Boot application to the H2 in-memory database. Learn why in-memory databases are necessary and how to use them effectively with Spring Boot.
 categories:  SpringBootJPA
 permalink:  /spring-boot-and-h2-in-memory-database
 image: /images/spring-data-category.png
@@ -10,7 +10,7 @@ image: /images/spring-data-category.png
 
 ![Image](/images/spring-initializer-web-h2-devtools-jpa.png "Web, JPA, H2 and Developer Tools")
 
-This guide will help you understand the concept of in memory database. We will look at simple JPA example to understand the best practices in using in memory databases.
+This article will assist you in comprehending the notion of an in memory database. To learn the recommended practises for utilising in memory databases, we will look at a basic JPA example.
 
 ![](/images/h2-solution-image.png)
  
@@ -21,53 +21,53 @@ This guide will help you understand the concept of in memory database. We will l
 - How to connect a Spring Boot project to H2?
 
 
-## What is an in memory database?
+## What exactly is an in memory database?
 
-Typical databases involve a lot of setup. 
+A typical database requires a significant amount of setup. 
 
-For example, with Oracle or mySQL databases, you would need to 
+Using Oracle or mySQL databases, for example, you would need to
 - Install the Database
 - Setup a Schema
 - Setup the tables
 - Populate the data
-- Connect the application to the database by setting up a data source and a lot of other code
+- Set up a data source and a bunch of extra code to connect the application to the database.
 
-Scenario 1 - Let's consider a situation where you would want to do a quick POC. Using a traditional database involves a lot of overhead.
+Case 1: Assume you need to perform a fast proof of concept. Utilizing a standard database incurs significant expense.
 
 Scenario 2 - Consider your unit tests
-- You don't want them to fail when some data/schema in the database changes
-- You would want to be able to run them in parallel - multiple developers might be running the tests in parallel.
+- You don't want them to fail if the database's data or schema changes.
+- You'd want to be able to run them concurrently, as various devs may be running the tests concurrently.
 
-In these kind of scenarios, an in memory database provides an ideal solution.
+In these situations, an in memory database is the best answer.
 
-An in memory database is created when an application starts up and destroyed when the application is stopped. 
+As a programme starts, an in memory database is generated, and it is removed when the application is ended.
 
 Advantages
 - Zero project setup or infrastructure
 - Zero Configuration
 - Zero Maintainance
 - Easy to use for Learning, POCs and Unit Tests
-- Spring Boot provides Simple Configuration to switch between a real database and an in memory database like H2
+- Spring Boot has a Simple Configuration option for switching between a real database and an in memory database, such as H2.
 
 
 ## H2
 
-H2 is one of the popular in memory databases. Spring Boot has very good integration for H2.
+H2 is a well-known in-memory database. Spring Boot provides an excellent interaction with H2.
 
 From https://en.wikipedia.org/wiki/H2_(DBMS)
-> H2 is a relational database management system written in Java. It can be embedded in Java applications or run in the client-server mode.
+> H2 is a Java-based relational database management system. It may be integrated in Java programmes or used as a client-server application.
 
-H2 supports a sub set of the SQL standard.
+H2 is compatible with a subset of the SQL standard.
 
-H2 also provides a web console to maintain the database.
+H2 also has a web console for database management.
 
 ## Spring Boot and H2
 
-You need very little configuration to connect Spring Boot application with H2.
+Spring Boot application and H2 require very minimal setting.
 
-In most situations, just adding the H2 runtime jar into dependencies should be sufficient.
+In most cases, simply including the H2 runtime jar in dependencies should enough.
 
-```
+```xml
 <dependency>
     <groupId>com.h2database</groupId>
     <artifactId>h2</artifactId>
@@ -75,13 +75,13 @@ In most situations, just adding the H2 runtime jar into dependencies should be s
 </dependency>
 ```
 
-## Setting up a Spring Boot Project with H2
+## Creating a Spring Boot Project in H2
 
 Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
 ![Image](/images/spring-initializer-web-h2-devtools-jpa.png "Web, JPA, H2 and Developer Tools")
 
-As shown in the image above, following steps have to be done
+As seen in the graphic above, the following actions must be taken.
 
 - Launch Spring Initializr and choose the following
   - Choose `com.in28minutes.springboot.rest.example` as Group
@@ -94,9 +94,9 @@ As shown in the image above, following steps have to be done
 - Click Generate Project.
 - Import the project into Eclipse. File -> Import -> Existing Maven Project.
 
-> Ensure that H2 is selected in the dependencies.
+> Make sure H2 is checked in the dependencies.
 
-Create a simple Student Entity with a primary key id.
+Create a straightforward Student Entity with a primary key id.
 
 ```java
 @Entity
@@ -110,14 +110,14 @@ public class Student {
 
 
 
-## H2 - A Few Tips
-- An in-memory database is live only during the time of execution of the application. It is an efficient way to learn a framework.
-- This is not how you want your real world applications to behave.
-- We explain how to connect to a database of your choice in the answer to the question "How do we connect to a external database?".
+## H2 - A Few Pointers
+- An in-memory database is only active during the application's operation. It is an effective method for learning a framework.
+- This is not how your real-world apps should behave.
+- In the answer to the question "How do we connect to an external database?" we describe how to connect to a database of your choosing.
 
-## Spring Boot and H2 Magic
+## H2 Magic and Spring Boot
 
-H2 provides a web interface called H2 Console to see the data. Let's enable h2 console in the application.properties.
+To see the data, H2 provides a web interface called H2 Console. Let's activate the h2 console in the app. properties.
 
 /src/main/resources/application.properties
 ```properties
@@ -126,7 +126,7 @@ spring.h2.console.enabled=true
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.data.jpa.repositories.bootstrap-mode=default
 ```
-> When you start the application up now, you would see a lot of magic unfold!
+> If you launch the programme right now, you'll witness a lot of magic happen!
 
 When you reload the application, you can launch up H2 Console at http://localhost:8080/h2-console.
 
@@ -134,13 +134,13 @@ When you reload the application, you can launch up H2 Console at http://localhos
 
 > Tip - Make sure that you use `jdbc:h2:mem:testdb` as JDBC URL.
 
-You will see that a new table called 'student' is created in H2 Console.
+On H2 Console, you will notice that a new table called'student' is generated.
 
-> How did the Student table get created?
+> How did the Student table come to be?
 
 Its because of Spring Boot Auto Configuration. We will talk about this in the next section.
 
-You can also populate some data into student table by adding a file called `data.sql`
+You may alternatively populate the student database with data by including a file called `data.sql`.
 
 /src/main/resources/data.sql
 
@@ -152,33 +152,33 @@ insert into student
 values(10002,'Ravi', 'A1234568');
 ```
 
-When you reload the application, you can launch up H2 Console to see that the student table is populated with the data from `data.sql' 
+When you restart the application, H2 Console will show you that the student table has been populated with the data from `data.sql`
 - http://localhost:8080/h2-console.
 
-How did all the magic happen? Let's look at it question by question in the next section.
+How did all of the magic take place? In the next part, we'll go over it question by question.
 
 ## Frequently asked questions about Spring Boot, JPA, Hibernate and H2
 
 ### Q :  How does H2 and Spring Boot combination work?
 
-First and most important thing - Spring Boot is intelligent.
+The first and most crucial fact is that Spring Boot is clever.
 
-If you are talking to an in memory db, by default, it looks at the entities and creates the database and the tables.
+When you communicate to an in memory database, it looks at the entities and constructs the database and tables by default.
 
-However, if you connect to a mysql database, Spring Boot knows that its a permanent database. By default, it expects you to set up the database, set up the tables and it uses the connection that you established.
+When you connect to a mysql database, Spring Boot recognises that it is a persistent database. It expects you to set up the database and tables by default, and it uses the connection you setup.
 
 ### Q :  How did the Spring Boot Application connect to the database H2?
 
-Its down to Spring Boot Auto Configuration!
+Spring Boot Auto Configuration is the key!
 
-First thing you would need to understand is Spring Boot Auto Configuration. 
+The first concept you must grasp is Spring Boot Auto Configuration.
 
 Here’s a good read 
 - http://www.springboottutorial.com/spring-boot-auto-configuration
 
-As far as H2 is concerned, as soon as Spring Boot sees H2 in the class path, it auto configures a data source similar to what you see below:
+When Spring Boot detects H2 in the class path, it automatically configures a data source similar to the one shown below:
 
-```
+```properties
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
@@ -188,12 +188,12 @@ spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.jpa.defer-datasource-initialization=true
 ```
 
-It knows that you are using an in-memory database H2 and it uses the default url if you don’t provide one.
+It recognises that you are using the H2 in-memory database and will use the default url if you do not specify one.
 
 
-### Q :  Where is the database connection info specified? How does it know to automatically connect to H2?
+### Q :  Where can I get the database connection information? How does it know to connect to H2 automatically?
 
-Thats Spring Boot Auto-configuration magic.
+That's the power of Spring Boot Auto-configuration.
 
 From https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-auto-configuration.html
 
@@ -212,7 +212,7 @@ Cannot determine embedded database driver class for database type NONE
 
 Add H2 to the pom.xml and Restart your server
 
-```
+```xml
 <dependency>
 	<groupId>com.h2database</groupId>
 	<artifactId>h2</artifactId>
@@ -222,15 +222,15 @@ Add H2 to the pom.xml and Restart your server
 
 ### Q :  Why is the data lost between restart?
 
-H2 is an in memory database. Its not a persisted database. 
+H2 is a database that runs in memory. This is not a persistent database.
 
-H2 is a great tool for learning because you need zero setup.
+H2 is an excellent learning tool because it requires no setup.
 
-### Error :  Table is not created automatically in H2 embedded db or I'm unable to see the tables
+### Error :  Tables are not automatically created in H2 embedded database, or I am unable to see them.
 
-Usually, the table's are created but the URL used in H2 GUI Console is wrong.
+The tables are usually produced, however the URL provided in the H2 GUI Console is incorrect.
 
-In the browser, change the database URL to jdbc:h2:mem:testdb (Shown in the screen below).
+Change the database URL in the browser to `jdbc:h2:mem:testdb` (Shown in the screen below).
 
 ![](/images/h2-solution-image.png)
 
@@ -238,7 +238,7 @@ You should be good to go!
 
 ### Error :  H2 Console is not Launched up?
 
-Try enabling it in the application.properties
+Try enabling it in the `application.properties`
 
 ```
 spring.h2.console.enabled=true
@@ -251,12 +251,12 @@ That's part of the Spring Boot startup routine. Any queries in data.sql are run 
 
 ## Running H2 as a persisted database with Spring Boot
 
-While we dont recommend this , it interesting to note that H2 has a persisted database mode
-- With this configuration, the data is not lost even after spring boot restart and computer restart. 
+While we do not encourage it, it is worth noting that H2 includes a persistent database mode.
+- Even after a spring boot restart and a machine restart, the data is not lost with this arrangement. 
 
-You would find H2 being very rarely used in this way. If you are really interested in a persistent database, we recommend exploring MySQL, Oracle or some other relational database.
+H2 is very very infrequently utilised in this manner. If you're looking for a durable database, we recommend looking into MySQL, Oracle, or another relational database.
 
-application.properties
+`application.properties`
 ```
 spring.datasource.name=yourdbname
 spring.datasource.driverClassName=org.h2.Driver
@@ -269,15 +269,15 @@ spring.jpa.hibernate.ddl-auto = update
 
 ## Using H2 for unit tests 
 
-The standard properties file that Spring Boot picks up automatically when running an application is called application.properties and resides in the src/main/resources folder.
+Application.properties is the standard properties file that Spring Boot automatically takes up when executing an application and is located in the src/main/resources folder.
 
-If we want to use different properties for tests, then we can override the properties file in the main folder by placing another file with the same name in src/test/resources.
+If we wish to utilise alternative properties for testing, we may override the properties file in the main folder by adding a similar file in src/test/resources.
 
-The application.properties file in src/test/resources folder should contain the standard key-value pairs necessary for configuring a in memory connection.
+The standard key-value pairs required for setting an in memory connection should be contained in the application.properties file in the src/test/resources folder.
 
-First add the dependencies for your database driver (mysql in the example below) and make the dependency for h2 `test` scoped.
+Then, add the requirements for your database driver (in this case, mysql) and make the h2 dependency `test` scoped.
 
-```
+```xml
 <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
@@ -290,7 +290,7 @@ First add the dependencies for your database driver (mysql in the example below)
 </dependency>
 ```
 
-Use the mysql database for your real code
+For your real code, use the mysql database.
 
 src\main\resources\application.properties
 ```
