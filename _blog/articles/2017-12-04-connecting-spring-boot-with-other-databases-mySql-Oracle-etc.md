@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:   Connecting Spring Boot with databases - MySQL and Oracle
-date:       2022-07-07 12:31:19
-summary:  Learn how to connect a Spring Boot application with relational databases like Oracle and MySQL. Learn how to setup a database schema for them and also what to configure in application configuration.
+date:       2023-03-24 12:31:19
+summary:  Discover how to integrate a Spring Boot application with relational databases such as Oracle and MySQL. Discover how to create a database schema for them as well as what to put up in application configuration.
 categories:  SpringBootJPA
 permalink:  /spring-boot-with-mysql-and-oracle
 image: /images/spring-data-category.png
@@ -10,18 +10,18 @@ image: /images/spring-data-category.png
 
 ![Image](/images/SpringBootWebApplication-StaticContent.png "Spring Boot Web Application with jQuery and Bootstrap- All Files") 
 
-This guide will help you understand how to connect Spring Boot with databases like MySql and Oracle.
+This post will show you how to connect Spring Boot to databases such as MySQL and Oracle.
  
 ## You will learn
-- How to connect Spring Boot, JPA application with MySQL and Oracle?
-- What should you configure in application.properties?
-- How to setup the database schema?
+- How do I link a Spring Boot and JPA application to MySQL and Oracle?
+- What should be set in application.properties?
+- How do I create a database schema?
 
 
 
-## Updating the Spring Boot Project Step By Step
+## Step-by-Step Spring Boot Project Update
 
-Let's look at the 5 steps involved in connecting a Spring Boot application to a database.
+Let's go over the five steps in connecting a Spring Boot application to a database.
 
 > You can use the example we created earlier for connecting to H2 in memory database as the starting point for this article- http://www.springboottutorial.com/hibernate-jpa-tutorial-with-spring-boot-starter-jpa
 
@@ -29,16 +29,16 @@ Let's look at the 5 steps involved in connecting a Spring Boot application to a 
 
 Example for MySQL is shown below.
 
-```
+```xml
 <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
 </dependency>
 ```
 
-If you would want to connect to oracle database, you can use a dependency similar to the one shown below.
+If you wish to connect to an Oracle database, use a dependency like the one shown below.
 
-```
+```xml
 <dependency>
     <groupId>com.oracle</groupId>
     <artifactId>ojdbc7</artifactId>
@@ -50,7 +50,7 @@ If you would want to connect to oracle database, you can use a dependency simila
 ### Step 2 - Remove H2 Dependency from pom.xml
 Or atleast make its scope as test
 
-```
+```xml
 <!--
 <dependency>
     <groupId>com.h2database</groupId>
@@ -62,16 +62,16 @@ Or atleast make its scope as test
 
 ### Step 3 - Setup your My SQL Database
 
-We would need to set up your database with a schema and the tables.
+We would need to create a schema and tables for your database.
 
 > For an example, check out - https://github.com/in28minutes/jpa-with-hibernate#installing-and-setting-up-mysql
 
-### Step 4 - Configure your connection to Your Database
+### Step 4 - Setup your database connection.
 
-Configure application.properties to connect to your database.
+Connect to your database using `application.properties`.
 
-An example for My SQL is shown below:
-```
+Below is an example of My SQL:
+```properties
 spring.jpa.hibernate.ddl-auto=none
 spring.datasource.url=jdbc:mysql://localhost:3306/todo_example
 spring.datasource.username=todouser
@@ -79,7 +79,7 @@ spring.datasource.password=YOUR_PASSWORD
 ```
 
 #### spring.jpa.hibernate.ddl-auto
-Spring Boot chooses a default value for this based on whether you are connecting to an embedded database or not. 
+Spring Boot determines the default value for this based on whether or not you are connecting to an embedded database. 
 - Embedded Databases - default create-drop
 - Other Databases - default none
 
@@ -91,6 +91,6 @@ Here is a quick guide to all the options
 - validate : Validate entites with the database schema
 - update : Update the database schema based on the entities
 
-### Step 5 - Restart and You are ready!
+### Step 5 - Restart, and you're done!
 That's it
 
