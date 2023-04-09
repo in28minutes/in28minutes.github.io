@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Spring Boot - Integrating Static Content -  Javascript (JS) and CSS files 
-date:       2022-07-07 12:31:19
-summary:    Learn how to integrate Spring Boot with Static Content -  Javascript (JS) and CSS files . We will set up a simple web application and add the static content for these frameworks. 
+date:       2023-04-04 12:31:19
+summary:    Discover how to use Spring Boot in conjunction with Static Content - Javascript (JS) and CSS files. We'll create a small web application and populate it with static content for various frameworks. 
 categories:  SpringBoot
 permalink:  /spring-boot-with-static-content-css-and-javascript-js
 image: /images/spring-boot-application.png
@@ -10,7 +10,7 @@ image: /images/spring-boot-application.png
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-This guide will help you create a simple web application with Spring Boot. We will add static content (css and js) and use it from a JSP view. 
+This tutorial will lead you through the steps of developing a tiny web application using Spring Boot. A JSP view will add and utilise static content (css and js). 
  
 ![Image](/images/SpringBootWebApplication-StaticContent.png "Spring Boot Web Application with jQuery and Bootstrap- All Files") 
 
@@ -20,8 +20,6 @@ This guide will help you create a simple web application with Spring Boot. We wi
 - How to add a JSP for web application?
 - How to add static content - JS and CSS?
 
-
-
 ## Tools you will need
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
@@ -29,11 +27,11 @@ This guide will help you create a simple web application with Spring Boot. We wi
 
 ## Overview of the Web application
 
-We will build a static todo page (un-formatted) rendered using a jsp.
+We will create an unformatted static todo page rendered using a jsp.
 
 ### Files
 
-Following screenshot shows eclipse project with all the files we would create.
+The screenshot below displays the eclipse project with all of the files we will be creating.
 
 ![Image](/images/SpringBootWebApplication-StaticContent.png "Spring Boot Web Application with jQuery and Bootstrap- All Files") 
 
@@ -50,13 +48,13 @@ A brief overview of all files
 
 ## Bootstrapping web application with Spring Initializr
 
-Creating a Web application with Spring Initializr is a cake walk.  
+Using Spring Initializr to create a Web application is a piece of cake. 
 
 > Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-As shown in the image above, following steps have to be done
+As seen in the image above, the following actions must be taken.
 
 - Launch Spring Initializr and choose the following
   - Choose `com.in28minutes.springboot.web.application` as Group
@@ -71,28 +69,28 @@ As shown in the image above, following steps have to be done
 
 ## Project Dependencies
 
-Spring Boot Starter Web provides all the dependencies and the auto configuration need to develop web applications. It is the first dependency we would use.
+Spring Boot Starter Web includes all of the dependencies and auto-configuration required to create web apps. That is the first dependence that we would employ.
 
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
 </dependency>
 ```
 
-We want to use JSP as the view. Default embedded servlet container for Spring Boot Starter Web is tomcat. To enable support for JSP's, we would need to add a dependency on tomcat-embed-jasper.
+As the view, we intend to utilise JSP. Tomcat is the default embedded servlet container for Spring Boot Starter Web. To enable JSP support, we'd need to add a reliance on tomcat-embed-jasper.
 
-```
+```xml
 <dependency>
     <groupId>org.apache.tomcat.embed</groupId>
     <artifactId>tomcat-embed-jasper</artifactId>
-    <scope>provided</scope>
+    <scope>provided</scope> // default for IntelliJ IDE
 </dependency>
 ```
 
 ## Configuring a View Resolver
 
-We would have our jsp's in /WEB-INF/jsp/. We would need to configure the view resolver with the prefix and suffix.
+Our jsps would be under /WEB-INF/jsp/. The view resolver would need to be configured with the prefix and suffix.
 
 ```properties
 spring.mvc.view.prefix=/WEB-INF/jsp/
@@ -119,11 +117,11 @@ The url to this controlle method will be http://localhost:8080/welcome
 
 ## Adding a view
 
-Let's create a simple with a basic HTML structure. We will create a basic table which we would want to format a little later. 
+Let's start with a simple HTML structure. We'll start by making a basic table, which we'll prepare later.
 
 /src/main/webapp/WEB-INF/jsp/welcome.jsp
 
-```
+```html
 <html>
 <head>
     <title>Welcome</title>
@@ -163,7 +161,7 @@ Let's create a simple with a basic HTML structure. We will create a basic table 
 
 The recommended folder for static content is `/src/main/resources/static`. 
 
-We will create the css as shown below. It give a light blue background color to the body of the page.
+As stated below, we will generate the CSS. It gives the body of the page a light blue background colour.
 
 /src/main/resources/static/css/custom.css
 ```css
@@ -184,12 +182,12 @@ alert("I'm active");
 
 
 Referring to JS file
-```
+```js
 <script src="js/custom.js"></script>
 ```
 
 Referring to jQuery js
-```
+```js
 <link href="css/custom.css"
         rel="stylesheet">
 ```

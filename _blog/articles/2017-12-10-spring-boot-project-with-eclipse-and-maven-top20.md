@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Creating a Spring Boot Project with Eclipse and Maven
-date:       2022-07-06 12:31:19
-summary:    Setting up a basic project with Spring Boot is a cake walk. In this article, we will explore the different options of creating Spring Boot Projects with Maven and Eclipse. 
+date:       2023-04-05 12:31:19
+summary:    Spring Boot makes it simple to set up a basic project. In this tutorial, we will look at how to create Spring Boot projects with Maven and Eclipse. 
 categories:  SpringBoot
 permalink:  /creating-spring-boot-project-with-eclipse-and-maven
 image: /images/spring-boot-category.png
@@ -10,7 +10,7 @@ image: /images/spring-boot-category.png
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-Setting up a basic project with Spring Boot is a cake walk. In this article, we will explore the different options of creating Spring Boot Projects with Maven and Eclipse. 
+Spring Boot makes it simple to set up a basic project. In this tutorial, we will look at how to create Spring Boot projects with Maven, Eclipse or IntelliJ.
 
 ![Image](/images/CreatingSpringBootProject-Option1-SpringInitializr-Screen2.png "CreatingSpringBootProject-Option1-SpringInitializr-Screen2")  
  
@@ -20,27 +20,27 @@ Setting up a basic project with Spring Boot is a cake walk. In this article, we 
 - How to create a Spring Boot Project manually step by step?
 
 
-
 ## Tools you will need
 - Maven 3.0+ is your build tool
-- Your favorite IDE. We use Eclipse.
-- JDK 1.8+
+- Your favorite IDE. We use Eclipse or IntelliJ.
+- JDK 17+
 
 ## Introduction to Maven
 
 ### Q :  Why Maven?
 
-You don’t want to store all the libraries in your project!
+You do not want to keep all of your libraries in your project!
 
-You want to tell I need A, B, C and you would want the tool to download the libraries and make them available to you.
+You want to tell the tool that I require A, B, and C, and you want it to download the libraries and make them accessible to you.
 
-That's Maven. The tool which you use to manage the libraries.
+Maven is the name. The application that you use to manage your libraries.
 
-If you need a new version of the library, you can change the version and your project is ready!
+Whenever you require a new version of the library, simply change the version number and your project is complete!
 
-Also, You don't need to worry about what libraries your library needs to work. For example, Spring might need other libaries - logging, xml etc. 
+You also don't have to worry about which libraries your library need to function. Spring, for example, may require additional libraries like as logging, xml, and so on.
 
-Once you declare a dependency on Spring, Maven would download
+When you declare Spring as a dependency, Maven will download it.
+
 - Spring
 - And all dependencies of Spring
 
@@ -48,9 +48,9 @@ Isn't that cool?
 
 ## Big Picture of Maven
 
-Defining what Maven does is very difficult.
+It is tough to define what Maven accomplishes.
 
-Every Day Developer does a lot of things
+Every day, Developer undertakes a variety of tasks.
 - Manages Dependencies 
     - Web Layer (Spring MVC)
     - Data Layer (JPA - Hibernate) etc.                  
@@ -61,33 +61,34 @@ Every Day Developer does a lot of things
 - Add new dependencies to a project
 - Run Unit Tests
 - Generate Projects
-- Create Eclipse Workspace
+- Create Eclipse or IntelliJ Workspace
 
  > Maven helps us do all these and more...
 
 #### Naming a project
 
-You define dependencies in your pom.xml. 
+Dependencies are specified in your `pom.xml` file.
 
-Maven would download the dependencies and make them available for use in your project.
+Maven would fetch the dependencies and include them in your project.
 
-But, how does Maven know what dependency to download?
+Yet, how does Maven know which dependencies to download?
 
-You need to tell it by giving the details of the dependency. 
+You must explain it by providing specifics about the dependency.
 
-Just like you can identify a Java class with a class name and a package name, you can identify a maven artifact by a GroupId and an ArtifactId.
+A maven artefact may be identified by a GroupId and an ArtifactId, much way a Java class can be identified by a class name and a package name.
 
-```
+```xml
     <groupId>com.in28minutes.learning.maven</groupId>
     <artifactId>maven-in-few-steps</artifactId>
 ```
 
 #### Declaring Dependencies
 
-Dependencies are frameworks that you would need to develop your project.
+Dependencies are frameworks required to construct your project.
 
 In the example below we are adding two dependencies.
-```
+
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
@@ -101,9 +102,9 @@ In the example below we are adding two dependencies.
 ```
 
 ### Maven Build Life Cycle
-When we run "mvn clean install", we are executing the complete maven build life cycle.
+When we execute "mvn clean install," we finish the whole maven build life cycle.
 
-Build LifeCycle is a sequence of steps
+LifeCycle construction is a series of phases.
  - Validate
  - Compile
  - Test
@@ -124,12 +125,12 @@ Pre defined folder structure
 
 ### How does Maven Work?
 
-Maven Repository contains all the jars indexed by artifact id and group id. 
+All jars in the Maven Repository are indexed by artefact id and group id.
 
-Once we add a dependency to our pom.xml, maven asks the maven repository for the jar dependencies giving group id and the artifact id as the input. 
+When we add a dependence to our `pom.xml`, maven queries the maven repository for jar dependencies, using the group id and artefact id as input. 
 - Maven repository stores all the versions of all dependencies. JUnit 4.2,4.3,4.4
  
-The jar dependencies are stored on your machine in a folder called maven local repository. All our projects would refer to the jars from the maven local repository.
+The jar dependencies are saved on your system in the maven local repository folder. All of our projects would make use of the jars in the maven local repository.
 
 > Local Repository : a temp folder on your machine where maven stores the jar and dependency files that are downloaded from Maven Repository.
 
@@ -151,9 +152,6 @@ The jar dependencies are stored on your machine in a folder called maven local r
 <a href="https://links.in28minutes.com/in28minutes-Microservices" ><img src="https://www.springboottutorial.com/images/Course-Master-Microservices-with-Spring-Boot-and-Spring-Cloud.png" alt="Image" title="Master Microservices with Spring Boot and Spring Cloud"></a>
 
 ---
-
-
-
 
 ## Creating Spring Boot Projects with Eclipse and Maven
 
@@ -203,9 +201,9 @@ That's it. Your first Spring Project is Ready.
 
 ### Option 2 - Using STS or STS Eclipse Plugin to create Spring Boot Maven Project
 
-With Spring tool suite, you can directly create a spring boot project from Eclipse. 
+You may create a spring boot project straight from Eclipse using the Spring tool suite.
 
-You should either download the complete installation of STS or You can install the STS Eclipse plugin 
+You need either download the entire STS installer or install the STS Eclipse plugin.
 
 > https://spring.io/tools/sts/all provides the complete download of STS as well as the Update Sites for STS Eclipse Plugin.
 
@@ -228,21 +226,21 @@ Make sure you choose Maven as Type.
 
 ![Image](/images/CreatingSpringBootProject-Option2-EclipsePluginSpringStarterProject-Screen2.png "CreatingSpringBootProject-Option2-EclipsePluginSpringStarterProject-Screen2")
 
-In the next screen, you can choose the dependencies that you would want to add to your Spring Boot project. 
+In the following page, you may specify the dependencies you wish to include in your Spring Boot project.
 
 ![Image](/images/CreatingSpringBootProject-Option2-EclipsePluginSpringStarterProject-Screen3.png "CreatingSpringBootProject-Option2-EclipsePluginSpringStarterProject-Screen3")
 
-Once you click Finish, Maven would take some time to download all the dependencies and initialize the project. 
+Maven will need some time to download all the dependencies and initialise the project when you click Complete. 
 
-That's it. Your first Spring Project is Ready.
+That's all. Your first Spring project is complete.
 
 ### Option 3 - Manually Create a Maven Spring Boot Project
 
-The last option is to create the project manually.
+The final option is to develop the project by hand.
 
-In Eclipse, start with File > New > Maven Project
+Begin by selecting File > Create > Maven Project in Eclipse.
 
-Choose Create a simple project as shown in the screenshot below:
+Choose Make a basic craft like the one illustrated below:
 
 ![Image](/images/CreatingSpringBootProject-Option3-Manually.png "CreatingSpringBootProject-Option3-Manually")
 
@@ -255,7 +253,7 @@ This would create a basic Maven project with Zero dependencies.
 
 Next add in the appropriate Spring Boot Starters into the pom.xml
 
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
@@ -274,14 +272,14 @@ Next add in the appropriate Spring Boot Starters into the pom.xml
 </dependency>
 ```
 
-Starter Web is used for developing Spring Boot Web Applications or RESTful Services.
+Starter Web is used to create Spring Boot Web Apps or RESTful Services.
 
-Starter Test provides unit testing and integration test capablities with Spring Test, Mockito and JUnit.
+Starter Test supports unit and integration testing with Spring Test, Mockito, and JUnit.
 
-One this we are missing is the version for these dependencies.
+The version for these dependencies is one thing we are missing.
 
-We will add Spring Boot Starter Parent as the parent pom in the pom.xml
-```
+Spring Boot Starter Parent will be added as the parent pom in the `pom.xml` file.
+```xml
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -291,18 +289,18 @@ We will add Spring Boot Starter Parent as the parent pom in the pom.xml
 
 ```
 
-Let's configure the Java version to use as 1.8
+Let's configure the Java version to use as 17
 
-```
+```xml
 <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <java.version>1.8</java.version>
+    <java.version>17</java.version>
     <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 </properties>
 ```
 
-Next step is to create a Spring Boot Application class which will be launching point of the web application.
+The next step is to create a Spring Boot Application class that will be used to run the web application.
 
 /src/main/java/com/in28minutes/springboot/tutorial/SpringBootWebApplication.java
 ```java
@@ -322,8 +320,8 @@ public class SpringBootWebApplication {
 
 All that you need to do is to add `@SpringBootApplication` and use `SpringApplication.run()` static method to launch the Spring Application context.
 
-When you launch this class a java application, you would see that an embedded tomcat server would launch up and you are ready to add in features to this application.
+When you run this class as a java programme, you will see that an embedded Tomcat server will start up, and you will be able to add functionality to this application.
 
-## Summary
+## Conclusion
 
-In this article, we looked at the different options to creating Spring Boot Projects with Maven and Eclipse. I love option 2 of creating the project directly from Eclipse using STS plugin. But, you might have your own preference.
+In this post, we looked at how to create Spring Boot projects with Maven and Eclipse. Option 2 of generating the project straight from Eclipse using the STS plugin is my favourite. But, you may have a preference.

@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Spring Boot - Integrating with Bootstrap & jQuery using Web Jars
-date:       2022-07-07 12:31:19
-summary:    Learn how to integrate Spring Boot with Bootstrap and jQuery using Web Jars. We will set up a simple web application and add the web jars for these frameworks. 
+date:       2023-04-04 12:31:19
+summary:    Discover how to use Web Jars to combine Spring Boot with Bootstrap and jQuery. We will create a basic web application and include the web jars for these frameworks. 
 categories:  SpringBoot
 permalink:  /spring-boot-with-jquery-and-bootstrap-web-jars
 image: /images/spring-boot-application.png
@@ -10,7 +10,7 @@ image: /images/spring-boot-application.png
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-This guide will help you create a simple web application with Spring Boot. We will add the dependencies for Bootstrap and jQuery webjars. We will create a simple jsp view using jQuery and Bootstrap.
+This post will walk you through the process of creating a small web application with Spring Boot. We will include the Bootstrap and jQuery webjar requirements. Using jQuery and Bootstrap, we will build a basic jsp view.
 
 ![Image](/images/bootstrap-and-jquery-in-dependencies.png "Bootstrap and jQuery in dependencies") 
  
@@ -22,7 +22,6 @@ This guide will help you create a simple web application with Spring Boot. We wi
 - How to create a simple view using jQuery and Bootstrap?
 
 
-
 ## Tools you will need
 - Maven 3.0+ is your build tool
 - Your favorite IDE. We use Eclipse.
@@ -30,11 +29,11 @@ This guide will help you create a simple web application with Spring Boot. We wi
 
 ## Overview of the Web application
 
-We will build a static todo page (un-formatted) rendered using a jsp.
+We will create an unformatted static todo page rendered using a jsp.
 
 ### Files
 
-Following screenshot shows eclipse project with all the files we would create.
+The screenshot below displays the eclipse project with all of the files we will be creating.
 
 ![Image](/images/SpringBootWebApplicationWithjQueryAndBootStrap-AllFiles.png "Spring Boot Web Application with jQuery and Bootstrap- All Files") 
 
@@ -50,7 +49,7 @@ A brief overview of all files
 
 ## Bootstrapping web application with Spring Initializr
 
-Creating a Web application with Spring Initializr is a cake walk.  
+Using Spring Initializr to create a Web application is a piece of cake.  
 
 > Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
 
@@ -71,28 +70,28 @@ As shown in the image above, following steps have to be done
 
 ## Project Dependencies
 
-Spring Boot Starter Web provides all the dependencies and the auto configuration need to develop web applications. It is the first dependency we would use.
+Spring Boot Starter Web includes all of the dependencies and auto-configuration required to create web apps. That is the first dependence that we would employ.
 
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
 </dependency>
 ```
 
-We want to use JSP as the view. Default embedded servlet container for Spring Boot Starter Web is tomcat. To enable support for JSP's, we would need to add a dependency on tomcat-embed-jasper.
+As the view, we intend to utilise JSP. Tomcat is the default embedded servlet container for Spring Boot Starter Web. To enable JSP support, we'd need to add a reliance on tomcat-embed-jasper.
 
 ```
 <dependency>
     <groupId>org.apache.tomcat.embed</groupId>
     <artifactId>tomcat-embed-jasper</artifactId>
-    <scope>provided</scope>
+    <scope>provided</scope> // default while using IntelliJ IDE
 </dependency>
 ```
 
 ## Configuring a View Resolver
 
-We would have our jsp's in /WEB-INF/jsp/. We would need to configure the view resolver with the prefix and suffix.
+Our jsps would be under /WEB-INF/jsp/. The view resolver would need to be configured with the prefix and suffix.
 
 ```properties
 spring.mvc.view.prefix=/WEB-INF/jsp/
@@ -101,7 +100,7 @@ spring.mvc.view.suffix=.jsp
 
 ## Controller
 
-Lets add in a simple controller redirecting to the view.
+Let's build a basic controller that redirects to the view.
 
 /src/main/java/com/in28minutes/springboot/tutorial/basics/application/configuration/WelcomeController.java
 
@@ -119,11 +118,11 @@ The url to this controlle method will be http://localhost:8080/welcome
 
 ## Adding a view
 
-Let's create a simple with a basic HTML structure. We will create a basic table which we would want to format a little later. 
+Let's start with a simple HTML structure. We'll start by making a basic table, which we'll prepare later. 
 
 /src/main/webapp/WEB-INF/jsp/welcome.jsp
 
-```
+```jsp
 <html>
 <head>
     <title>Welcome</title>
@@ -161,9 +160,9 @@ Let's create a simple with a basic HTML structure. We will create a basic table 
 ```
 ## Webjars for jQuery and Bootstrap
 
-Let's now add in the webjars to our pom.xml
+Let's now include the webjars in our `pom.xml` file.
 
-```
+```xml
 <dependency>
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap</artifactId>
@@ -185,34 +184,34 @@ Let's now add in the webjars to our pom.xml
 
 ## Using Web Jars in View
 
-Make sure that you restart the application and we are ready to use jquery and bootstrap in our project.
+Restart the application, and we're ready to use jquery and bootstrap in our project.
 
-If you expand your dependencies you should see the dependencies.
+You should be able to view the dependencies if you increase your dependencies.
 
 ![Image](/images/bootstrap-and-jquery-in-dependencies.png "Bootstrap and jQuery in dependencies") 
 
 Referring to bootstrap css
-```
+```html
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
         rel="stylesheet">
 ```
 
 Referring to Bootstrap js
-```
+```js
 
 <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 ```
 
 Referring to jQuery js
-```
+```html
 <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 ```
 Update view using jQuery and Bootstrap is shown below.
 
 /src/main/webapp/WEB-INF/jsp/welcome.jsp
 
-```
+```html
 <html>
 <head>
     <title>Welcome</title>
@@ -253,8 +252,8 @@ Update view using jQuery and Bootstrap is shown below.
 </html>
 ```
 
-Spring Boot would auto configure the webjars resource mapping. So you DON'T need to do this anymore.
+Spring Boot would configure the webjars resource mapping automatically. Therefore you NO LONGER NEED TO DO THIS.
 
-```
+```xml
     <mvc:resources mapping="/webjars/**" location="/webjars/"/>
 ```
