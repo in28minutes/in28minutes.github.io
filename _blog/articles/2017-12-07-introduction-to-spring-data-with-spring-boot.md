@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:   Introduction to Spring Data - Spring Data JPA, Spring Data REST and MongoDB
-date:       2022-01-02 12:31:19
-summary:  Spring Data's mission is to provide a familiar and consistent, Spring-based programming model for data access. In this tutorial, we will explore the different interfaces provided by Spring Data. We will take a quick peek into Spring Data JPA and Spring Data for MongoDB.
+date:       2023-04-04 12:31:19
+summary:  The objective of Spring Data is to provide a familiar and consistent Spring-based programming model for data access. In this article, we will look at the various APIs offered by Spring Data. We'll look at Spring Data JPA and Spring Data for MongoDB briefly.
 categories:  SpringBootJPA
 permalink:  /introduction-to-spring-data-with-spring-boot
 image: /images/spring-data-category.png
@@ -10,7 +10,7 @@ image: /images/spring-data-category.png
 
 ![Image](/images/SpringBootWebApplication-StaticContent.png "Spring Boot Web Application with jQuery and Bootstrap- All Files") 
 
-This guide will help you understand the basics of Spring Data. We will look at the various options that Spring Data provides and a couple of examples - Spring Data JPA and Spring Data Mongodb.
+This article will teach you the fundamentals of Spring Data. We will look at the different Spring Data alternatives as well as two examples: Spring Data JPA and Spring Data Mongodb.
  
 ## You will learn
 - Basics of Spring Data
@@ -22,26 +22,26 @@ This guide will help you understand the basics of Spring Data. We will look at t
 
 ## What is Spring Data?
 
-Think about the evolution of databases in the last few years.
+Consider the progress of databases in recent years.
 
-When Spring Framework was created, in early 2000s, the only kind of database was relational database - Oracle, MS SQL Server, My SQL etc. In the last few years, there are a wide variety of databases that are getting popular - most of them not relational and not using SQL. Wide variety of terminology is used to refer to these databases. NoSQL, for example. 
+When Spring Framework was built in the early 2000s, the only type of database available was relational databases such as Oracle, MS SQL Server, My SQL, and others. In recent years, a broad range of databases have gained popularity, the majority of which are not relational and do not use SQL. These databases are referred to using a wide range of words. For instance, consider NoSQL. 
 
-ORM frameworks (Hibernate) and specifications(JPA) were good fit for the relational databases. But, the newer databases, have different needs.
+ORM frameworks (Hibernate) and standards (JPA) suited relational databases well. Nevertheless, modern databases have different requirements.
 
 From http://projects.spring.io/spring-data/
-> Spring Data's mission is to provide a familiar and consistent, Spring-based programming model for data access while still retaining the special traits of the underlying data store. It makes it easy to use data access technologies, relational and non-relational databases, map-reduce frameworks, and cloud-based data services.
+> The objective of Spring Data is to provide a familiar and consistent Spring-based programming model for data access while keeping the unique characteristics of the underlying data store. It makes data access technologies, relational and non-relational databases, map-reduce frameworks, and cloud-based data services simple to utilise.
 
-To make it simpler, Spring Data provides Abstractions (interfaces) you can use irrespective of underlying data source. 
+To make things easier, Spring Data provides Abstractions (interfaces) that may be used regardless of the underlying data source. 
 
 ## Spring Data Commons
 
-Spring Data Commons provides all the common abstractions that enable you to connect with different data stores. 
+Spring Data Commons offers all of the common abstractions needed to connect to various data storage. 
 
 
 ### Crud Repository
-The key interface in Spring Data Commons is `CrudRepository`. It provides generic CRUD operations irrespective of the underlying data store. It extends Repository which is the base class for all the repositories providing access to data stores. 
+`CrudRepository` is the main interface in Spring Data Commons. It offers general CRUD activities regardless of the underlying data storage. It extends Repository, which is the foundation class for all repositories that provide data store access. 
 
-All the methods in the `CrudRepository` interface are shown below
+The methods of the `CrudRepository` interface are all listed below.
 
 ```
 public interface CrudRepository<T, ID> extends Repository<T, ID> {
@@ -69,11 +69,11 @@ public interface CrudRepository<T, ID> extends Repository<T, ID> {
 }
 ```
 
-The methods in the CrudRepository are self explanatory.
+The CrudRepository's methods are self-explanatory.
 
 ### PagingAndSortingRepository
 
-The other important interface in Spring Data is PagingAndSortingRepository. PagingAndSortingRepository provides options to 
+PagingAndSortingRepository is another key Spring Data interface. PagingAndSortingRepository allows you to
 - Sort your data using `Sort` interface
 - Paginate your data using `Pageable` interface, which provides methods for pagination - getPageNumber(), getPageSize(), next(), previousOrFirst() etc. 
 
@@ -87,7 +87,7 @@ public abstract interface PagingAndSortingRepository extends CrudRepository {
 
 ### Defining Custom Repositories
 
-You can create a custom repository extending any of the repository classes - Repository, PagingAndSortingRepository or CrudRepository.
+You may build your own repository by extending one of the repository classes: Repository, PagingAndSortingRepository, or CrudRepository.
 
 An example is shown below
 ```java
@@ -95,23 +95,23 @@ interface PersonRepository extends CrudRepository<User, Long> {
 ```
 
 ### Defining custom queries
-Spring Data also provides the feature of query creation from interface method names.
+Spring Data also supports query generation from interface method names.
 
-Look at the example below:
+Consider the following example:
 
 ```java
   List<Person> findByFirstNameAndLastname(String firstName, String lastname);
 ```
 
-Above method helps you search a data store by passing in the first name and last name of a person. This would generate the appropriate query for the data store to return the person details.
+The approach described above allows you to search a data store by entering a person's first and last name. This would construct the proper query for the data store, which would yield the person's information.
 
 > You can find more details in the spring data documentation - https://docs.spring.io/spring-data/commons/docs/current/reference/html/#repositories.query-methods.query-creation
 
 ### Auditing with Spring Data
 
-Spring Data also provides auditing capabilities through simple annotations.
+Spring Data also supports auditing with simple annotations.
 
-```
+```java
 class Student {
 
   @CreatedBy
@@ -120,7 +120,7 @@ class Student {
   @CreatedDate
   private DateTime createdDate;
 
-  // … further properties omitted
+  // further properties omitted
 }
 ```
 
@@ -130,19 +130,19 @@ There are corresponding annotations for updates as well
 
 ## Spring Data Implementations
 
-There are Spring Data Modules specific to the data store you would want to use.
-- Spring Data JPA - Connect to relational databases using ORM frameworks.
+There are Spring Data Modules for any data store you want to utilise.
+- Spring Data JPA - ORM frameworks are used to connect to relational databases.
 - Spring Data MongoDB - Repositories for MongoDB.
-- Spring Data REST - Exposes HATEOAS RESTful resources around Spring Data repositories.
+- Spring Data REST - HATEOAS RESTful resources are exposed around Spring Data repositories.
 - Spring Data Redis - Repositories for Redis.
 
 ### Spring Data JPA
 
-Spring Data JPA helps you to connect to relational databases using ORM frameworks.
+Spring Data JPA makes it possible to connect to relational databases through ORM frameworks.
 
 The dependency is shown below:
 
-```
+```xml
 <dependencies>
   <dependency>
     <groupId>org.springframework.data</groupId>
@@ -151,17 +151,17 @@ The dependency is shown below:
 <dependencies>
 ```
 
-The default JPA implementation used is Hibernate.
+Hibernate is the default JPA implementation.
 
 The core interface is the JpaRepository.
 
-```
+```java
 public interface JpaRepository<T, ID> 
 	extends PagingAndSortingRepository<T, ID>, 
 	        QueryByExampleExecutor<T>
 ```
 
-Some of the additional methods it provides (compared to PagingAndSortingRepository) are shown below. As you can see, all these methods are specific to JPA.
+Some of the extra methods it provides (in comparison to PagingAndSortingRepository) are listed below. As you can see, all of these methods are JPA-specific.
 
 ```
 /**
@@ -192,7 +192,7 @@ void deleteAllInBatch();
 
 ### Spring Data REST
 
-Spring Data REST can be used to expose HATEOAS RESTful resources around Spring Data repositories.
+Spring Data REST may be used to deliver HATEOAS RESTful resources that are nested within Spring Data repositories.
 
 An example using JPA is shown below
 
@@ -219,7 +219,7 @@ Request Content
 }
 ```
 Response Content
-```
+```json
 {
   "user": "Jill",
   "desc": "Learn Hibernate",
@@ -295,7 +295,7 @@ GET to http://localhost:8080/todos/1
 }
 ```
 
-Spring Data Rest also supports search using column names
+Spring Data REST also allows you to search by column name.
 - Example - http://localhost:8080/todos?user=Jill
 
 Spring Data Rest can be extended by defining custom methods in the repositories.
@@ -322,7 +322,7 @@ Spring Data REST supports
 
 ### Spring Data MongoDB
 
-Spring Data MongoDB provides support for using MongoDB as data store.
+Spring Data MongoDB supports the use of MongoDB as a data storage.
 
 The key interface is MongoRepository.
 
@@ -330,9 +330,9 @@ The key interface is MongoRepository.
 public interface MongoRepository<T, ID> extends PagingAndSortingRepository<T, ID>, QueryByExampleExecutor<T> 
 ```
 
-Some of the important methods (provided in addition to PagingAndSortingRepository) are shown below. You can see examples of search by example.
+Some of the most significant methods (in addition to PagingAndSortingRepository) are listed below. Search samples may be found here.
 
-```
+```java
 
 	/* 
 	 * (non-Javadoc)
