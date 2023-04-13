@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Spring Boot - HATEOAS for RESTful Services
-date:       2022-07-03 12:31:19
-summary:    HATEOAS stands for "Hypermedia as the engine of application state". Its a complicated acronym. In this article, we decode HATEOAS for you and help you learn how to implement HATEOAS for a REST API/Service with Spring Boot.
+date:       2023-04-10 12:31:19
+summary:    "Hypermedia as the engine of application state" is abbreviated as HATEOAS. It's a lengthy acronym. In this tutorial, we will decode HATEOAS and show you how to implement it for a REST API/Service using Spring Boot.
 categories:  SpringBoot
 permalink:  /spring-boot-hateoas-for-rest-services
 image: /images/spring-boot-feature.png
@@ -11,7 +11,7 @@ image: /images/spring-boot-feature.png
 
 ![Image](/images/CRUDServiceWithHibernate.png "CRUDServiceWithHibernate") 
 
-This guide will help you implement HATEOAS for a REST API/Service with Spring Boot.
+This post will walk you through the process of implementing HATEOAS for a REST API/Service using Spring Boot.
  
 ## You will learn
 - What is HATEOAS?
@@ -20,10 +20,9 @@ This guide will help you implement HATEOAS for a REST API/Service with Spring Bo
 - What are the HATEOAS best practices?
 
 
-
 ## Project Code Structure
 
-Following screenshot shows the structure of the project we will create.
+The screenshot below depicts the framework of the project we will be creating.
 
 ![Image](/images/CRUDServiceWithHibernate.png "CRUDServiceWithHibernate") 
 
@@ -37,54 +36,55 @@ A few details:
 
 ## Tools you will need
 - Maven 3.0+ is your build tool
-- Your favorite IDE. We use Eclipse.
-- JDK 1.8+
+- Your favorite IDE. We use Eclipse or IntelliJ.
+- JDK 17
 
-## Complete Maven Project With Code Examples
-> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-hateoas
+## Maven Project Completion using Code Examples
+
+> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-with-hateoas
 
 ## Richardson Maturity Model 
 
-Richardson Maturity Model defines the maturity level of a Restful Web Service. Following are the different levels and their characteristics.
-- Level 0 : Expose SOAP web services in REST style. Expose action based services (http://server/getPosts, http://server/deletePosts, http://server/doThis, http://server/doThat etc) using REST.
-- Level 1 : Expose Resources with proper URI’s (using nouns). Ex: http://server/accounts, http://server/accounts/10. However, HTTP Methods are not used.
-- Level 2 : Resources use proper URI's + HTTP Methods. For example, to update an account, you do a PUT to . The create an account, you do a POST to . Uri’s look like posts/1/comments/5 and accounts/1/friends/1.
-- Level 3 : HATEOAS (Hypermedia as the engine of application state). You will tell not only about the information being requested but also about the next possible actions that the service consumer can do. When requesting information about a facebook user, a REST service can return user details along with information about how to get his recent posts, how to get his recent comments and how to retrieve his friend’s list.
+A Restful Web Service's maturity level is defined by the Richardson Maturity Model. The following are the various levels and their features.
+- **Level 0** : Expose SOAP web services in REST style. Expose action based services (http://server/getPosts, http://server/deletePosts, http://server/doThis, http://server/doThat etc) using REST.
+- **Level 1** : Expose Resources with proper URI’s (using nouns). Ex: http://server/accounts, http://server/accounts/10. However, HTTP Methods are not used.
+- **Level 2** : Resources use proper URI's + HTTP Methods. For example, to update an account, you do a PUT to . The create an account, you do a POST to . Uri’s look like posts/1/comments/5 and accounts/1/friends/1.
+- **Level 3** : HATEOAS (Hypermedia as the engine of application state). You will tell not only about the information being requested but also about the next possible actions that the service consumer can do. When requesting information about a facebook user, a REST service can return user details along with information about how to get his recent posts, how to get his recent comments and how to retrieve his friend’s list.
 
 ## What is HATEOAS?
 
-> HATEOAS stands for "Hypermedia as the engine of application state"
+> "Hypermedia as the engine of application state" is abbreviated as HATEOAS.
 
-Its a complicated acronym. Let's decode it for you.
+It's a lengthy acronym. Let us decipher it for you.
 
-What do you see when you visit a web page?
+What do you see when you go to a website?
 
-The data that you would want to see. Is that all? You would also see links and buttons to see related data.
+The information that you are looking for. Is that it? There would also be links and buttons for viewing relevant data.
 
-For example, if you go to a student page, you will see 
+If you go to a student page, for example, you will observe 
 - Student profile
 - Links to Edit and Delete Student details
 - Links to see details of other students
 - Link to see details of the courses and grades of the student
 
-HATEOAS brings the same concepts to RESTful Web Services.
+HATEOAS applies the same ideas to RESTful Web Services.
 
-When some details of a resource are requested, you will provide the resource details as well as details of related resources and the possible actions you can perform on the resource. For example, when requesting information about a facebook user, a REST service can return the following
+When certain information about a resource is requested, you will supply that information as well as information about related resources and various actions you may do with the resource. A REST service, for example, can return the following information when asked for information on a Facebook user.
 - User details 
 - Links to get his recent posts
 - Links to get his recent comments 
 - Links to retrieve his friend’s list.
 
-## Bootstrapping a Project with a REST Resource
+## Using a REST Resource to Launch a Project
 
 In the previous article in the series - http://www.springboottutorial.com/spring-boot-crud-rest-service-with-jpa-hibernate, we set up a simple restful service with a resource exposing CRUD methods. 
 
-> We will use the same example to discuss about HATEOAS.
+> The same example will be used to discuss HATEOAS.
 
 ## Implementing HATEOAS with Spring Boot
 
-Spring Boot provides a Starter for HATEOAS. Include the dependency in your pom.xml
-```
+Spring Boot serves as a starting point for HATEOAS. Include the dependency in the `pom.xml` file.
+```xml
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-hateoas</artifactId>
@@ -93,43 +93,37 @@ Spring Boot provides a Starter for HATEOAS. Include the dependency in your pom.x
 
 ### Components in Spring Boot HATEOAS Starter
 
-Listed below are some of the important dependencies from `spring-boot-starter-hateoas`.
+Some of the most critical dependencies from are listed here. `spring-boot-starter-hateoas`.
 
-```
+```xml
   <dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
-    <version>2.3.1.RELEASE</version>
-    <scope>compile</scope>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>3.0.2</version>
+      <scope>compile</scope>
   </dependency>
   <dependency>
-    <groupId>org.springframework.hateoas</groupId>
-    <artifactId>spring-hateoas</artifactId>
-    <version>0.24.0.RELEASE</version>
-    <scope>compile</scope>
-  </dependency>
-  <dependency>
-    <groupId>org.springframework.plugin</groupId>
-    <artifactId>spring-plugin-core</artifactId>
-    <version>1.2.0.RELEASE</version>
-    <scope>compile</scope>
+      <groupId>org.springframework.hateoas</groupId>
+      <artifactId>spring-hateoas</artifactId>
+      <version>2.0.1</version>
+      <scope>compile</scope>
   </dependency>
 
 ```
 
-Most important dependency is `spring-hateoas`.
+'spring-hateoas' is the most crucial dependent.
 
-### Enhancing the resource to return HATEOAS response
+### Improving the resource's ability to return HATEOAS responses
 
-To implement HATEOAS, we would need to include related resources in the response.
+We would need to add associated materials in the answer to implement HATEOAS.
 
 Instead of Student we use a return type of `EntityModel<Student>`. 
 
-> EntityModel is a simple class wrapping a domain object and allows adding links to it.
+> EntityModel is a basic class that wraps a domain object and allows you to add connections to it.
 
-```
+```java
 @GetMapping("/students/{id}")
-  public EntityModel<Student> retrieveStudent(@PathVariable long id) {
+public EntityModel<Student> retrieveStudent(@PathVariable long id) {
     Optional<Student> student = studentRepository.findById(id);
 
     if (!student.isPresent())
@@ -146,12 +140,12 @@ Instead of Student we use a return type of `EntityModel<Student>`.
 ```
 
 We create a new resource.
-```
+```java
   EntityModel<Student> resource = EntityModel.of(student.get());
 ```
 
 We add the link to retrieve all students method to the links.
-```
+```java
       WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllStudents());
 
     resource.add(linkTo.withRel("all-students"));
@@ -177,13 +171,12 @@ You can see that there is a new section `_links` with a link to all students Res
 
 ### Enhance Other Resources with HATEOAS
 
-Above example covers important concepts in enhancing resources with HATEOAS. 
+The above example illustrates key aspects in increasing resources using HATEOAS. 
 
-However, you have to make the important decision: 
-- What are the important resources related to a specific resource?
+However, you must make a critical decision: 
+- What are the most significant resources for a certain resource?
 
 Go ahead and enhance the application with more HATEOAS links.
 
-
-## Complete Maven Project With Code Examples
-> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-hateoas
+## Maven Project Completion using Code Examples
+> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-with-hateoas
