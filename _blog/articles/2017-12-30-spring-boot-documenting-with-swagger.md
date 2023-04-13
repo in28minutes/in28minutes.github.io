@@ -1,14 +1,14 @@
 ---
 layout:     post
 title:      Spring Boot and Swagger - Documenting RESTful Services (REST API)
-date:       2022-07-02 12:31:19
-summary:    Learn how to use Swagger with Spring Boot to document your RESTful services. We will learn how to expose automated swagger documentation from your REST API. We will also add documentation to the REST API with swagger annotations.
+date:       2023-04-10 12:31:19
+summary:    Learn how to document your RESTful services with Swagger and Spring Boot. We'll look at how to use your REST API to offer automatic swagger documentation. We will also use swagger annotations to add documentation to the REST API.
 categories:  SpringBoot
 permalink:  /spring-boot-swagger-documentation-for-rest-services
 image: /images/rest-api-category.png
 ---
 
-This guide will help you use Swagger with Spring Boot to document your RESTful services. We will learn how to expose automated swagger documentation from your application. We will also add documentation to the REST API with swagger annotations.
+This post will show you how to document your RESTful services using Swagger and Spring Boot. We'll look at how to expose automatic swagger documentation from your app. We will also use swagger annotations to add documentation to the REST API.
 
 ![Image](/images/SwaggerDocumentation-1-HomePage.png "SwaggerDocumentation-1-HomePage") 
 
@@ -21,7 +21,6 @@ This guide will help you use Swagger with Spring Boot to document your RESTful s
 - How do you automate generation of Swagger Documentation from RESTful Web Services?
 - How do you add custom information to Swagger Documentation generated from RESTful Web Services?
 - What is Swagger-UI?
-
 
 
 ## Project Code Structure
@@ -42,13 +41,13 @@ A few details:
 
 ## Tools you will need
 - Maven 3.0+ is your build tool
-- Your favorite IDE. We use Eclipse.
-- JDK 1.8+
+- Your favorite IDE. We use Eclipse or IntelliJ.
+- JDK 17
 
 ## Complete Maven Project With Code Examples
-> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-swagger
+> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-with-swagger
 
-## Why do we need to document your RESTful API?
+## Why should we describe your RESTful API?
 
 The most important design principle for RESTful Services is 
 > Think about consumer of the API.
@@ -61,48 +60,48 @@ How does the consumer know
 - How to test your API?
 - What kind of security mechanism you use?
 
-REST does not specify a documentation standard or a contract like SOAP (WSDL). REST gives you the flexibility to choose your documentation format and approach. But that does not mean "No documentation"
+REST, unlike SOAP (WSDL), does not establish a documentation standard or contract. REST allows you to select your documentation format and strategy. However, this does not imply that "no documentation" exists.
 
-> It's a misconception that REST means No documentation. You need to document your API.
+> It is a common misperception that REST implies no documentation. Your API must be documented.
 
 ## How do you document your RESTful API?
 
-One option is to maintain documentation manually. But that gets outdated quickly.
+One alternative is to manually maintain documentation. But that rapidly becomes obsolete.
 
-Other option is to generate documentation from code. And that's the approach we would discuss in this guide.
+An alternative is to produce documentation from code. That is the strategy we will use in this tutorial.
 
 There are multiple approaches to documenting your RESTful API
 - WADL
 - RESTDocs
 - Swagger or OpenDocs
 
-Swagger has picked up momentum in the last couple of years and is now the most popular REST API documentation standard. We will use Swagger in this guide.
+Swagger has gained traction in recent years and is now the most widely used REST API description standard. This guide will make use of Swagger.
 
 ## Bootstrapping a Project with a REST Resource
 
-In the previous article in the series - http://www.springboottutorial.com/spring-boot-crud-rest-service-with-jpa-hibernate, we set up a simple restful service with a resource exposing CRUD methods. 
+We set up a basic restful service with a resource exposing CRUD methods in the previous post in the series - http://www.springboottutorial.com/spring-boot-crud-rest-service-with-jpa-hibernate. 
 
 > We will use the same example to generate Swagger Documentation.
 
-## Generating Swaggger Documentation with Spring Boot
+## Spring Boot Documentation Generation for Swaggger
 
-We would need to add a couple of dependencies related to Swagger and configure a Docket to generate Swagger Documentation. We will also use Swagger UI to have a visual representation of the Documentation and execute Test Requests.
+To produce Swagger documentation, we would need to add a few Swagger-related dependencies and establish a Docket. We will also utilise Swagger UI to visualise the documentation and to conduct Test Requests.
 
 ### Adding Swagger Dependencies
 
 Let's add a couple of dependencies to our Swagger Project pom.xml.
 
-```
+```xml
     <dependency>
       <groupId>io.springfox</groupId>
       <artifactId>springfox-boot-starter</artifactId>
-      <version>3.0.0-SNAPSHOT</version>
+      <version>3.0.5</version>
     </dependency>
 ```
 
-As we are using a SNAPSHOT version, you would need to add a repository for jfrog-snapshots in your pom.xml.
+Because we're utilising a SNAPSHOT version, you'll need to include a jfrog-snapshots repository in your pom.xml.
 
-```
+```xml
 <repository>
       <id>jfrog-snapshots</id>
       <name>JFROG Snapshots</name>
@@ -110,83 +109,43 @@ As we are using a SNAPSHOT version, you would need to add a repository for jfrog
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
-    </repository>
+</repository>
 ```
 
 
-### Adding Swagger Spring Configuration Docket
+### Docket for Swagger Spring Configuration
 
-Let's now add the Spring configuration needed to generate Swagger Documentation. 
+Add the Spring setup required to produce Swagger documentation today. 
 
-/src/main/java/com/in28minutes/springboot/rest/example/swagger/SwaggerConfig.java
+/src/main/java/com/in28minutes/springboot/rest/example/swagger/OpenApiConfig.java
 
 ```java
 @Configuration
-@EnableSwagger2WebMvc
-public class SwaggerConfig {
+public class OpenApiConfig {
 
-  public static final Contact DEFAULT_CONTACT = new Contact(
-      "Ranga Karanam", "http://www.in28minutes.com", "in28minutes@gmail.com");
-  
-  public static final ApiInfo DEFAULT_API_INFO = new ApiInfo(
-      "Awesome API Title", "Awesome API Description", "1.0",
-      "urn:tos", DEFAULT_CONTACT, 
-      "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0",Arrays.asList());
+    @Bean
+    public OpenAPI awesomeAPI() {
+        return new OpenAPI()
+                .info(new Info().title("Awesome API Title")
+                        .description("Awesome API Description")
+                        .version("1.0")
+                        .license(new License().name("Apache 2.0").url("http://www.apache.org/licenses/LICENSE-2.0")))
+                .externalDocs(new ExternalDocumentation()
+                        .description("Ranga Karanam, in28minutes@gmail.com")
+                        .url("http://www.in28minutes.com"));
+    }
 
-  private static final Set<String> DEFAULT_PRODUCES_AND_CONSUMES = 
-      new HashSet<String>(Arrays.asList("application/json",
-          "application/xml"));
-
-  @Bean
-  public Docket api() {
-    return new Docket(DocumentationType.SWAGGER_2)
-        .apiInfo(DEFAULT_API_INFO)
-        .produces(DEFAULT_PRODUCES_AND_CONSUMES)
-        .consumes(DEFAULT_PRODUCES_AND_CONSUMES);
-  }
 }
 ```
 Notes
 - `@Configuration` - This file contains Spring configuration.
-- `@EnableSwagger2WebMvc` - Annotation to Enable Swagger Documentation on the API
-- `public static final Contact DEFAULT_CONTACT` - Has the contact information of the API. This will be exposed as part of the Swagger Documentation.
-- `public static final ApiInfo DEFAULT_API_INFO` - Meta information about the API - Description, Licensing etc. This will be exposed as part of the Swagger Documentation.
-- `private static final Set<String> DEFAULT_PRODUCES_AND_CONSUMES` - What content types does your API support?
-- `public Docket api() {` - Docket to decide what kind of APIs you would want to document. In this example, we are documenting all APIs. You can filter out APIs you do not want to document with Swagger.
 
 ### Exposing meta API information using @SwaggerDefinition
 
-You can also expose meta API information using @SwaggerDefinition as shown below. The information in the class is self explanatory.
 
-```
-@SwaggerDefinition(
-        info = @Info(
-                description = "Awesome Resources",
-                version = "V12.0.12",
-                title = "Awesome Resource API",
-                contact = @Contact(
-                   name = "Ranga Karanam", 
-                   email = "ranga@in28minutes.com", 
-                   url = "http://www.in28minutes.com"
-                ),
-                license = @License(
-                   name = "Apache 2.0", 
-                   url = "http://www.apache.org/licenses/LICENSE-2.0"
-                )
-        ),
-        consumes = {"application/json", "application/xml"},
-        produces = {"application/json", "application/xml"},
-        schemes = {SwaggerDefinition.Scheme.HTTP, SwaggerDefinition.Scheme.HTTPS},
-        externalDocs = @ExternalDocs(value = "Read This For Sure", url = "http://in28minutes.com")
-)
-public interface ApiDocumentationConfig {
+### Swagger documentation generated
 
-}
-```
-
-### Generated Swagger Documentation
-
-When you restart the application, you are all set to view the documentation that is generated.
+When you restart the program, you will be able to see the created documentation.
 
 Go to URL `http://localhost:8080/v2/api-docs`
 
@@ -556,24 +515,27 @@ You can use the 'Try it out' button to execute a request and see the response.
 
 ### Customizing Swagger Documentation with Annotations
 You can add notes on the resource method to add more documentation
-```
-  @GetMapping("/students/{id}")
-  @ApiOperation(value = "Find student by id",
-    notes = "Also returns a link to retrieve all students with rel - all-students")
-  public Resource<Student> retrieveStudent(@PathVariable long id) {
+```java
+  	@GetMapping("/students/{id}")
+	@Operation(summary = "Find student by id, also returns a link to retrieve all students with rel - all-students")
+	public EntityModel<Student> retrieveStudent(@PathVariable long id) {
 
 ```
 
 Also supported is enhancing the documentation on the Request and Response Beans. 
-```
+```java
 @Entity
-@ApiModel(description="All details about the student. ")
+@Schema(description = "All details about the student. ")
 public class Student {
-  
-  @ApiModelProperty(notes="Name should have atleast 2 characters")
-  @Size(min=2, message="Name should have atleast 2 characters")
-  private String name;
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Schema(name = "Name should have atleast 2 characters")
+    @Size(min = 2, message = "Name should have atleast 2 characters")
+    private String name;
+
 ```
 
-## Complete Maven Project With Code Examples
-> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-swagger
+## Maven Project Completion using Code Examples
+> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-rest-service-with-swagger
