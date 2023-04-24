@@ -155,3 +155,63 @@
     }
   }
 }
+
+.row.no-gutters {
+  margin: -5px !important;
+}
+
+.row.no-gutters > * {
+  padding: 5px !important;
+}
+
+.flipper {
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  -webkit-perspective: 800px;
+  -ms-perspective: 800px;
+  perspective: 800px;
+}
+
+@media (min-width: 576px) {
+  .ratio-not-1-1 {
+    padding-bottom: calc(50% - 5px);
+  }
+}
+
+.flipper-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flipper-front,
+.flipper-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  background: #c1c3c5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flipper-back {
+  background: #fff;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.flipper-card.flipper-is-flipped {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}

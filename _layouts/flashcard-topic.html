@@ -1,0 +1,52 @@
+---
+layout: page
+---
+<div class="container py-5 mb-5">
+    <div class="row no-gutters">
+        <div class="col-12 col-lg-6">
+            <div class="flipper flipper-xl">
+                <div class="flipper-front text-white" style="background-color: {{page.main_card_bg}};">
+                    <div class="d-flex flex-column p-5">
+                        <div class="fs-1 fw-bold">
+                            {{page.main_card_title}}</div>
+                        <div class="fs-6 mb-3">{{page.main_card_description}}</div>
+                        <small>Click to toggle all cards</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="row no-gutters">
+                {% for card in page.cards | limit: 4 %}
+                <div class="col-12 col-sm-6">
+                    <div class="flipper">
+                        <div class="flipper-card shadow shadow-sm">
+                            <div class="flipper-front p-5 fs-4 fw-bold text-center text-white"
+                                style="background-color: {{page.card_bg}};">
+                                {{card.title}}</div>
+                            <div class="flipper-back border p-5 fs-6 text-center">{{card.description}}</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% for card in page.cards | offset: 4 %}
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="flipper">
+                <div class="flipper-card shadow shadow-sm">
+                    <div class="flipper-front text-center fs-3 p-5 text-white fw-bold"
+                        style="background-color: {{page.card_bg}};">{{card.title}}</div>
+                    <div class="flipper-back border p-5 fs-6 text-center">{{card.description}}</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ 'assets/js/flashcards.js' | relative_url }}"></script>
+
+{% include newsletter.html %}

@@ -1,15 +1,20 @@
 ---
 layout: default
 ---
+{% if page.title %}
 <section class="ud-page-banner">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="ud-banner-content">
                     <h1>{{page.title}}</h1>
+                    <p class="text-white">{{page.subtitle}}</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+{% else %}
+<section class="ud-page-banner" style="padding-top: 0em;"></section>
+{% endif %}
 {{content}}
