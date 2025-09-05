@@ -1,220 +1,354 @@
 ---
 layout: post
 title: Creating a REST Service with Spring Boot
-date: 2022-07-09 07:14:13
+date: 2025-03-09 07:14:13
 summary: Setting up a basic example REST Service with Spring Boot. Its a cake walk.
 categories: SpringBoot
 permalink: /creating-rest-service-with-spring-boot
 image: /images/rest-api-category.png
 ---
 
-![Image](/images/ExecutingPostRestServiceUsingPostman.png 'Executing Post Rest Service From Postman')
+![Image](/images/ExecutingPostRestServiceUsingPostman.png "'Executing Post Rest Service From Postman'")
 
-This guide will help you create a simple REST service using Spring Boot.
+In this guide, you’ll learn how to build a simple **REST service** with **Spring Boot**.
 
 ![Image](/images/SpringBootRestService-ProjectStructure.png 'Spring Boot Rest Service - Project Structure')
 
 ## You will learn
 
-- What is a REST Service?
-- How to bootstrap a Rest Service application with Spring Initializr?
-- How to create a Get REST Service for retrieving the courses that a student registered for?
-- How to create a Post REST Service for registering a course for student?
-- How to execute Rest Services from Postman?
+- **What is a REST Service?**
+- **How to bootstrap a REST service application with Spring Initializr?**
+- **How to create a GET REST service** for retrieving the courses that a student is registered for?
+- **How to create a POST REST service** for registering a course for a student?
+- **How to execute REST services using Postman?**
 
 ## Rest Services in this Guide
 
 In this guide, we will create three services using proper URIs and HTTP methods:
 
-- `@GetMapping("/students/{studentId}/courses")`: You can ask the courses a specific student has registered for using request method Get and example uri /students/Student1/courses.
-- `@GetMapping("/students/{studentId}/courses/{courseId}")`: You can ask a specific course for a specific student using request method Get and example uri /students/Student1/courses/Course1.
-- `@PostMapping("/students/{studentId}/courses")` : You can register a student for a course by sending a POST request to URI /students/Student1/courses
+- **`@GetMapping("/students/{studentId}/courses")`**  
+  Retrieve all the courses a specific student has registered for.
+    - **HTTP Method:** GET
+    - **Example URI:** `/students/Student1/courses`
 
-## Tools you will need
+- **`@GetMapping("/students/{studentId}/courses/{courseId}")`**  
+  Retrieve details of a specific course for a specific student.
+    - **HTTP Method:** GET
+    - **Example URI:** `/students/Student1/courses/Course1`
 
-- Maven 3.0+ is your build tool
-- Your favorite IDE. We use Eclipse.
-- JDK 17
+- **`@PostMapping("/students/{studentId}/courses")`**  
+  Register a student for a new course.
+    - **HTTP Method:** POST
+    - **Example URI:** `/students/Student1/courses`
 
-## Complete Maven Project With Code Examples
+## Tools You Will Need
 
-> Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="\_blank"}
+- **Maven 3.0+** – Build tool for managing dependencies and building the project
+- **IDE of your choice** – We recommend *Eclipse* or *IntelliJ IDEA*
+- **JDK 17+** – Required to run the Spring Boot application
 
-- Rest Services with Unit and Integration Tests
-  - Website-springbootrestservices-simplerestserviceswithunitandintegrationtests.zip
+## Complete Maven Project with Code Examples
+
+You can find the complete project with code samples in our GitHub repository:  
+👉 [Browse Code Examples](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files)
+
+### Available Project
+
+- **REST Services with Unit and Integration Tests**  
+  Download: `Website-springbootrestservices-simplerestserviceswithunitandintegrationtests.zip`
 
 ## What is REST?
 
-REST stands for REpresentational State Transfer. REST specifies a set of architectural constraints. Any service which satisfies these constraints is called RESTful Service.
+REST stands for **REpresentational State Transfer**.  
+It is an architectural style that defines a set of constraints for building scalable web services.  
+Any service following these rules is called a **RESTful Service**.
 
-The five important constraints for RESTful Web Service are
+### Key Constraints of REST
 
-- Client - Server : There should be a service producer and a service consumer.
-- The interface (URL) is uniform and exposing resources.
-- The service is stateless.
-- The service results should be Cacheable. HTTP cache, for example.
-- Service should assume a Layered architecture. Client should not assume direct connection to server - it might be getting info from a middle layer - cache.
+- **Client–Server**: Clear separation between the service provider (server) and the consumer (client).
+- **Uniform Interface**: Resources are identified using URIs (e.g., `/students/1/courses`).
+- **Stateless**: Each request is independent; the server does not store client state.
+- **Cacheable**: Responses can be cached (e.g., using HTTP caching).
+- **Layered System**: Clients don’t need to know if they are talking directly to the server or through intermediaries (
+  like caches, proxies, or load balancers).
 
 ## Richardson Maturity Model
 
-Richardson Maturity Model is used to identify the maturity level of a Restful Web Service. Following are the different levels and their characteristics:
+The **Richardson Maturity Model (RMM)** helps identify how mature a RESTful Web Service is, based on how well it follows
+REST principles.  
+It defines four levels (0–3):
 
-- Level 0 : Expose SOAP web services in REST style. Expose action based services (http://server/getPosts, http://server/deletePosts, http://server/doThis, http://server/doThat etc) using REST.
-- Level 1 : Expose Resources with proper URI’s (using nouns). Ex: http://server/accounts, http://server/accounts/10. However, HTTP Methods are not used.
-- Level 2 : Resources use proper URI's + HTTP Methods. For example, to update an account, you do a PUT to . The create an account, you do a POST to . Uri’s look like posts/1/comments/5 and accounts/1/friends/1.
-- Level 3 : HATEOAS (Hypermedia as the engine of application state). You will tell not only about the information being requested but also about the next possible actions that the service consumer can do. When requesting information about a facebook user, a REST service can return user details along with information about how to get his recent posts, how to get his recent comments and how to retrieve his friend’s list.
+- **Level 0: The Swamp of POX**
+    - REST in name only — action-based URIs.
+    - Example:
+        - `http://server/getPosts`
+        - `http://server/deletePosts`
+        - `http://server/doThis`
 
-## Using appropriate Request Methods
+- **Level 1: Resources**
+    - Use of resource-based URIs (nouns instead of actions).
+    - Still missing proper use of HTTP methods.
+    - Example:
+        - `http://server/accounts`
+        - `http://server/accounts/10`
 
-Always use HTTP Methods. Best practices with respect to each HTTP method is described below:
+- **Level 2: HTTP Verbs**
+    - Combine resources with proper HTTP methods (GET, POST, PUT, DELETE).
+    - Example:
+        - `GET /accounts/10` → Retrieve account
+        - `POST /accounts` → Create account
+        - `PUT /accounts/10` → Update account
+        - `DELETE /accounts/10` → Delete account
+    - URIs can look like:
+        - `/posts/1/comments/5`
+        - `/accounts/1/friends/1`
 
-- GET : Should not update anything. Should be idempotent (same result in multiple calls). Possible Return Codes 200 (OK) + 404 (NOT FOUND) + 400 (BAD REQUEST)
-- POST : Should create new resource. Ideally return JSON with link to newly created resource. Same return codes as get possible. In addition : Return code 201 (CREATED) is possible.
-- PUT : Update a known resource. for example: update client details. Possible Return Codes : 200(OK)
-- DELETE : Used to delete a resource.
+- **Level 3: HATEOAS (Hypermedia as the Engine of Application State)**
+    - Responses include not just data, but also links to possible next actions.
+    - Example (Facebook user resource):
+        - Returns user details **plus links** for:
+            - Recent posts
+            - Recent comments
+            - Friend list
+
+## Using Appropriate Request Methods
+
+When designing RESTful APIs, always use the correct **HTTP methods** for clarity and consistency.  
+Best practices for each method:
+
+- **GET**
+    - Purpose: Retrieve data (read-only).
+    - Should not update anything.
+    - Should be **idempotent** (multiple identical requests return the same result).
+    - Possible Response Codes:
+        - `200 OK` → Success
+        - `404 Not Found` → Resource not found
+        - `400 Bad Request` → Invalid request
+
+- **POST**
+    - Purpose: Create a **new resource**.
+    - Response should ideally include JSON with a link to the newly created resource.
+    - Possible Response Codes:
+        - `200 OK` → Success (less common)
+        - `201 Created` → Resource successfully created
+        - `400 Bad Request` → Invalid input
+
+- **PUT**
+    - Purpose: Update an **existing known resource**.
+    - Example: Update client details.
+    - Possible Response Codes:
+        - `200 OK` → Successfully updated
+        - `404 Not Found` → Resource not found
+
+- **DELETE**
+    - Purpose: Delete a resource.
+    - Possible Response Codes:
+        - `200 OK` → Successfully deleted
+        - `404 Not Found` → Resource not found
 
 ## Project Structure
 
-Following screenshot shows the structure of the project we will create.
+The following screenshot shows the structure of the project we will create:
 
 ![Image](/images/SpringBootRestService-ProjectStructure.png 'Spring Boot Rest Service - Project Structure')
 
-A few details:
+### A Few Details
 
-- `StudentController.java` - Rest controller exposing all the three service methods discussed above.
-- `Course.java, Student.java, StudentService.java` - Business Logic for the application. StudentService exposes a couple of methods we would consume from our Rest Controller.
-- `StudentControllerIT.java` - Integration Tests for the Rest Services.
-- `StudentControllerTest.java` - Unit Tests for the Rest Services.
-- `StudentServicesApplication.java` - Launcher for the Spring Boot Application. To run the application, just launch this file as Java Application.
-- `pom.xml` - Contains all the dependencies needed to build this project. We will use Spring Boot Starter Web.
+- **`StudentController.java`** – REST controller exposing the three service methods discussed earlier.
+- **`Course.java`, `Student.java`, `StudentService.java`** – Business logic for the application. `StudentService`
+  provides methods consumed by the REST controller.
+- **`StudentControllerIT.java`** – Integration tests for the REST services.
+- **`StudentControllerTest.java`** – Unit tests for the REST services.
+- **`StudentServicesApplication.java`** – Launcher for the Spring Boot application. Run this file as a Java Application
+  to start the service.
+- **`pom.xml`** – Maven build file containing all dependencies. We use **Spring Boot Starter Web** here.
 
-## Bootstrapping REST Services with Spring Initializr
+## Bootstrapping Spring Boot REST API with Spring Initializr
 
-Creating a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.
+Creating a REST service with **Spring Initializr** is very simple.  
+We will use **Spring Web MVC** as our web framework.
 
-Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="\_blank"} is great tool to bootstrap your Spring Boot projects.
+[Spring Initializr](http://start.spring.io/) is a great tool to quickly bootstrap your Spring Boot projects.
 
 ![Image](/images/Spring-Initializr-Web.png 'Web, Actuator and Developer Tools')
 
-As shown in the image above, following steps have to be done
+As shown in the image above, follow these steps:
 
-- Launch Spring Initializr and choose the following
-  - Choose `com.in28minutes.springboot` as Group
-  - Choose `student-services` as Artifact
-  - Choose following dependencies
-    - Web
-    - Actuator
-    - DevTools
-- Click Generate Project.
-- Import the project into Eclipse. File -> Import -> Existing Maven Project.
-- If you want to understand all the files that are part of this project, you can go here.
+- Launch **Spring Initializr** and choose the following:
+    - **Group**: `com.in28minutes.springboot`
+    - **Artifact**: `student-services`
+    - **Dependencies**:
+        - Spring Web
+        - Spring Boot Actuator
+        - Spring Boot DevTools
+- Click **Generate Project**.
+- Import the project into **Eclipse**:  
+  `File -> Import -> Existing Maven Project`
+- If you want to explore all the files that are part of this project, you can go here: [Project Files](#)
 
-## Implementing Business Service for your Application
+## Implementing Business Service for Your Application
 
-All applications need data. Instead of talking to a real database, we will use an `ArrayList` - kind of an in-memory data store.
+Every application needs data. Instead of connecting to a real database, we will use an `ArrayList` as an **in-memory
+data store**.
 
-A student can take multiple courses. A course has an id, name, description and a list of steps you need to complete to finish the course. A student has an id, name, description and a list of courses he/she is currently registered for. We have StudentService exposing methods to
+### Domain Model
 
-- `public List<Student> retrieveAllStudents()` - Retrieve details for all students
-- `public Student retrieveStudent(String studentId)` - Retrieve a specific student details
-- `public List<Course> retrieveCourses(String studentId)` - Retrieve all courses a student is registered for
-- `public Course retrieveCourse(String studentId, String courseId)` - Retrieve details of a specific course a student is registered for
-- `public Course addCourse(String studentId, Course course)` - Add a course to an existing student
+- A **Student** can register for multiple **Courses**.
+- A **Course** has:
+    - `id`
+    - `name`
+    - `description`
+    - a list of steps to complete the course
+- A **Student** has:
+    - `id`
+    - `name`
+    - `description`
+    - a list of courses they are currently registered for
 
-Refer to these files at the bottom of the article for exact implementation of the Service `StudentService` and the model classes `Course` and `Student`.
+### StudentService Methods
 
-- src/main/java/com/in28minutes/springboot/model/Course.java
-- src/main/java/com/in28minutes/springboot/model/Student.java
-- src/main/java/com/in28minutes/springboot/service/StudentService.java
+The `StudentService` provides the following methods:
 
-## Adding Couple of GET Rest Services
+- `public List<Student> retrieveAllStudents()` → Retrieve details of all students
+- `public Student retrieveStudent(String studentId)` → Retrieve details of a specific student
+- `public List<Course> retrieveCourses(String studentId)` → Retrieve all courses for a student
+- `public Course retrieveCourse(String studentId, String courseId)` → Retrieve details of a specific course for a
+  student
+- `public Course addCourse(String studentId, Course course)` → Add a new course for a student
 
-The Rest Service `StudentController` exposes couple of get services.
+### Reference Implementation
 
-- `@Autowired private StudentService studentService` : We are using Spring Autowiring to wire the student service into the StudentController.
-- `@GetMapping("/students/{studentId}/courses")`: Exposing a Get Service with studentId as a path variable
-- `@GetMapping("/students/{studentId}/courses/{courseId}")`: Exposing a Get Service for retrieving specific course of a student.
-- `@PathVariable String studentId`: Value of studentId from the uri will be mapped to this parameter.
+Check the exact implementation of the `StudentService` and model classes in the following files:
+
+- `src/main/java/com/in28minutes/springboot/model/Course.java`
+- `src/main/java/com/in28minutes/springboot/model/Student.java`
+- `src/main/java/com/in28minutes/springboot/service/StudentService.java`
+
+## Adding a Couple of GET REST Services
+
+The `StudentController` exposes two GET services:
+
+```java
+  private final StudentService studentService;
+
+public StudentController(StudentService studentService) {
+    this.studentService = studentService;
+}
+```  
+
+- Uses Spring **Dependency Injection** to wire the `StudentService` into the controller.
+
+- `@GetMapping("/students/{studentId}/courses")`  
+  Exposes a GET service to retrieve all courses for a given student, where `studentId` is provided as a path variable.
+
+- `@GetMapping("/students/{studentId}/courses/{courseId}")`  
+  Exposes a GET service to retrieve details of a **specific course** for a given student.
+
+- `@PathVariable String studentId`  
+  The `studentId` from the URI is automatically mapped to this parameter in the controller method.
 
 ```java
 package com.in28minutes.springboot.controller;
 
 import com.in28minutes.springboot.model.Course;
 import com.in28minutes.springboot.service.StudentService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/students/{studentId}/courses")
 public class StudentController {
-  @Autowired
-  private StudentService studentService;
 
-  @GetMapping("/students/{studentId}/courses")
-  public List<Course> retrieveCoursesForStudent(
-    @PathVariable String studentId
-  ) {
-    return studentService.retrieveCourses(studentId);
-  }
+    private final StudentService studentService;
 
-  @GetMapping("/students/{studentId}/courses/{courseId}")
-  public Course retrieveDetailsForCourse(
-    @PathVariable String studentId,
-    @PathVariable String courseId
-  ) {
-    return studentService.retrieveCourse(studentId, courseId);
-  }
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
+
+    @GetMapping()
+    public List<Course> retrieveCoursesForStudent(@PathVariable String studentId) {
+        return studentService.retrieveCourses(studentId);
+    }
+
+    @GetMapping("/{courseId}")
+    public Course retrieveDetailsForCourse(
+            @PathVariable String studentId,
+            @PathVariable String courseId) {
+
+        return studentService.retrieveCourse(studentId, courseId);
+    }
 }
 ```
 
 ## Executing the Http Get Operation Using Postman
 
-We will access a request to http://localhost:8080/students/Student1/courses/Course1 to test the service. And will receive the following response shown in the below.
+We will access a request to http://localhost:8080/students/Student1/courses/Course1 to test the service. And will
+receive the following response shown in the below.
 
 ```json
 {
   "id": "Course1",
   "name": "Spring",
   "description": "10 Steps",
-  "steps": ["Learn Maven", "Import Project", "First Example", "Second Example"]
+  "steps": [
+    "Learn Maven",
+    "Import Project",
+    "First Example",
+    "Second Example"
+  ]
 }
 ```
 
-Below picture shows how we can execute this Get Service from Postman - my favorite tool to run rest services.
+The screenshot below shows how you can execute this **GET service** in **Postman** — my favorite tool for testing REST
+APIs.
 
 ![Image](/images/ExecutingGetRestServiceUsingPostman.png 'Executing Rest Service From Postman')
 
-## Adding a Http POST Operation Rest Service
+## Adding an HTTP POST Operation REST Service
 
-A Http POST Operation should return a status of created (201) when the resource creation is successful.
+An **HTTP POST** operation should return a **201 (Created)** status when the resource is successfully created.
 
-`@PostMapping("/students/{studentId}/courses")`: Mapping a url for the POST Request
-`@RequestBody Course newCourse`: Using Binding to bind the body of the request to Course object.
-`ResponseEntity.created(location).build()`: Return a status of created. Also return the location of created resource as a Response Header.
+Key elements in our implementation:
+
+- `@PostMapping("/students/{studentId}/courses")`  
+  Maps the URI for handling **POST requests**.
+
+- `@RequestBody Course newCourse`  
+  Binds the request body to a `Course` object.
+
+- `ResponseEntity.created(location).build()`  
+  Returns a **201 Created** response along with the **Location** header pointing to the newly created resource.
 
 ```java
-	@PostMapping("/students/{studentId}/courses")
-	public ResponseEntity<Void> registerStudentForCourse(
-			@PathVariable String studentId, @RequestBody Course newCourse) {
 
-		Course course = studentService.addCourse(studentId, newCourse);
+@PostMapping()
+public ResponseEntity<Void> registerStudentForCourse(@PathVariable String studentId,
+        @RequestBody Course newCourse) {
 
-		if (course == null)
-			return ResponseEntity.noContent().build();
+    var course = studentService.addCourse(studentId, newCourse);
 
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(
-				"/{id}").buildAndExpand(course.getId()).toUri();
+    if (course == null)
+        return ResponseEntity.noContent().build();
 
-		return ResponseEntity.created(location).build();
-	}
+    URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+            .path("/{id}")
+            .buildAndExpand(course.id())
+            .toUri();
+
+    return ResponseEntity.created(location)
+            .build();
+}
 
 ```
 
 ## Executing a Http POST Operation Rest Service
 
-Example request is shown below. It contains all the details to register a course to a student.
+The example request below demonstrates how to register a new course for a student.  
+It includes all the required course details in the request body.
 
 ```json
 {
@@ -228,7 +362,15 @@ Example request is shown below. It contains all the details to register a course
 }
 ```
 
-Below picture shows how we can execute this Post operation from Postman - my favorite tool to run rest services. Make sure you go to the Body tab and select raw. Select JSON from the dropdown. Copy above request into body.
+The screenshot below shows how to execute this **POST operation** in **Postman** — my favorite tool for testing REST
+services.
+
+Make sure to:
+
+- Go to the **Body** tab.
+- Select **raw**.
+- Choose **JSON** from the dropdown.
+- Copy the request JSON (shown above) into the body.
 
 The URL we use is http://localhost:8080/students/Student1/courses.
 
@@ -236,4 +378,5 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 
 ## Complete Code Example
 
-Our Github repository has all the code examples - [https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-rest-services-with-unit-and-integration-tests](https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-rest-services-with-unit-and-integration-tests){:target="\_blank"}
+Our GitHub repository has all the code
+examples - [https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-rest-services-with-unit-and-integration-tests](https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-rest-services-with-unit-and-integration-tests)

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      TODO
-date:       2016-01-01 12:31:19
+date:       2025-03-09 12:31:19
 summary:    TODO
 categories: SpringBootMicroservices
 permalink:  /url
@@ -34,55 +34,60 @@ A few details:
 
 ## Tools you will need
 - Maven 3.0+ is your build tool
-- Your favorite IDE. We use Eclipse.
-- JDK 1.8+
+- Your favorite IDE. We use IntelliJ, Eclipse.
+- JDK 17+
 
 ## Complete Maven Project With Code Examples
-> Our Github repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/TODO_URL
+> Our GitHub repository has all the code examples - https://github.com/in28minutes/spring-boot-examples/tree/master/TODO_URL
 
 ## Article Begins
 Some theory
 
 ## Bootstrapping with Spring Initializr
 
-Creating a REST service with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.  
-
-Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
+Creating a REST service with **Spring Initializr** is quick and efficient. In this example, we will use **Spring Web MVC** as our web framework.  
+The [Spring Initializr](http://start.spring.io/) provides an excellent way to bootstrap Spring Boot projects, enabling developers to generate a fully functional application setup in just a few steps.
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
 ![Image](/images/Spring-Initializr-Web-JPA.png "Web, JPA, Hibernate and Developer Tools")
 
-As shown in the image above, following steps have to be done
+As illustrated in the image above, the following steps need to be performed:
 
-- Launch Spring Initializr and choose the following
-  - Choose `TODO` as Group
-  - Choose `TODO` as Artifact
-  - Choose following dependencies
-    - Web
-    - DevTools
-    - TODO
-- Click Generate Project.
-- Import the project into Eclipse. File -> Import -> Existing Maven Project.
-- If you want to understand all the files that are part of this project, you can go here TODO.
+- Launch **Spring Initializr** and configure the project:
+    - Set **Group** as `TODO`
+    - Set **Artifact** as `TODO`
+    - Add the following dependencies:
+        - Spring Web
+        - Spring Boot DevTools
+        - `TODO`
+- Click **Generate Project** to download the starter zip.
+- Import the project into your IDE (Eclipse or IntelliJ IDEA):
+    - `File` → `Import` → `Existing Maven Project`
+- To explore and understand all the files included in this project, refer to: `TODO`
+
 
 ## STEP 1 : TODO
 
 
 ## Step N : Executing the TODO Service 
 
-Below picture shows how we can execute this Get Service from Postman - my favorite tool to run rest services.
+The image below demonstrates how to execute this **GET service** using **Postman**, a popular tool for testing REST APIs.
 
 ![Image](/images/ExecutingGetRestServiceUsingPostman.png "Executing Rest Service From Postman")   
 
 ## Executing a POST Rest Service
 
-Example Request is shown below. 
+An example request is shown below: 
 
 ```json
 ```
 
-Below picture shows how we can execute this Post Service from Postman - my favorite tool to run rest services. Make sure you go to the Body tab and select raw. Select JSON from the dropdown. Copy above request into body.
+The image below demonstrates how to execute this **POST service** using **Postman**, a popular tool for testing REST APIs.  
+Make sure to:
+- Go to the **Body** tab and select **raw**.
+- Choose **JSON** from the dropdown menu.
+- Copy the above request into the request body.
 
 ![Image](/images/ExecutingPostRestServiceUsingPostman.png "Executing Post Rest Service From Postman")   
 
