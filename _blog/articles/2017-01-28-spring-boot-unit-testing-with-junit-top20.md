@@ -1,106 +1,159 @@
 ---
 layout:     post
 title:      Unit Testing Rest Services with Spring Boot and JUnit
-date:       2023-02-17 12:31:19
+date:       2025-09-06 12:31:19
 summary:    It's a piece of cake to set up a basic REST service with Spring Boot. We'll take it a step further and add excellent unit tests to our RESTful Service.
 categories:  SpringBootUnitTesting
 permalink:  /unit-testing-for-spring-boot-rest-services
 image: /images/unit-test-category.png
 ---
 
-This article will assist you in writing excellent unit tests for your Spring Boot Rest Service. We will create a few of basic rest services using a simple code sample.
+This article will guide you through writing **effective unit tests** for your Spring Boot REST services.
+
+To keep things simple and practical, we’ll start by creating a few basic REST endpoints using a sample Spring Boot project. Once the services are ready, we’ll explore how to write **clean, reliable unit tests** for them.
 
 ![Image](/images/SpringBootRestService-ProjectStructure.png "Spring Boot Rest Services - Project Structure")
- 
-## You will learn
-- What is Unit Testing?
-- How to create a Get REST Service for retrieving the courses that a student registered for?
-- How to write a unit test for Get REST Service?
-- How to create a Post REST Service for registering a course for student?
-- How to write a unit test for POST Service?
 
+## You will learn
+
+- What Unit Testing is and why it matters
+- How to create a **GET REST Service** to retrieve the courses registered by a student
+- How to write a **Unit Test** for the GET REST Service
+- How to create a **POST REST Service** to register a course for a student
+- How to write a **Unit Test** for the POST REST Service
 
 ## Tools you will need
-- Maven 3.0+ is your build tool
-- Your favorite IDE. We use Eclipse or IntellIJ.
-- JDK 17
+
+- **Maven 3.0+** – Build and dependency management tool
+- **An IDE of your choice** – Eclipse, IntelliJ IDEA, or any other Java IDE
+- **JDK 17+** – Java Development Kit to compile and run the application
+
 
 ## Complete Maven Project With Code Examples
 
-> Our Github repository has all the code examples - [https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files){:target="_blank"}
+You can find all the code examples in our GitHub repository:  
+[https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files](https://github.com/in28minutes/in28minutes.github.io/tree/master/code-zip-files)
 
-- Rest Services with Unit and Integration Tests
-    - Website-springbootrestservices-simplerestserviceswithunitandintegrationtests.zip
+- **REST Services with Unit and Integration Tests**  
+  👉 Download: `Website-springbootrestservices-simplerestserviceswithunitandintegrationtests.zip`
+
 
 ## Unit Testing
 
-Following screenshot shows eclipse project with all the files we will create.
+The following screenshot shows the Eclipse project structure with all the files we will create as part of this tutorial.
+
+We will cover:
+- Writing a simple **GET REST Service** and its **unit test**
+- Writing a **POST REST Service** and its **unit test**
+
 
 ![Image](/images/SpringBootRestService-ProjectStructure.png "Spring Boot Rest Services - Project Structure")
 
-We want to write a unit test for the 'StudentController' Rest Controller. The 'StudentController' class offers two service methods: Get and Post. Unit tests will be written for both of these service methods.
+## Writing Unit Tests for `StudentController`
 
-In the unit test
+The `StudentController` exposes two service methods — **GET** and **POST**.  
+We will create unit tests for both of these methods.
 
-- We will mock out the StudentService using Mockito
-- We will use Mock MVC framework to launch only StudentController. 
+In the unit tests:
+- The `StudentService` dependency will be **mocked using Mockito**.
+- We will use the **MockMvc** framework to launch only the `StudentController`.
 
-A critical component of unit testing is keeping the scope as small as possible. We only want to test the methods in 'StudentController' in this unit test.
+⚡ Key Principle:  
+A critical aspect of unit testing is **limiting the scope**.  
+Here, we only want to test the logic inside `StudentController`, without involving the actual `StudentService` implementation or other layers.
+
 
 ## Overview
 
-Following is the order we do things in this guide:
+In this guide, we will walk through the process of building and testing a simple Spring Boot REST API.  
+The steps we will follow are:
 
-- Bootstrap a project using Spring Initializr.
-- Implement a Business Service for our API - StudentService.
-- Implement the API - using StudentController. First we implement the GET methods and then the POST methods. 
-- Unit Test the API.
+1. **Bootstrap the Project**  
+   Use **Spring Initializr** to quickly set up the base project.
+
+2. **Implement the Business Service**  
+   Create the `StudentService` class to provide business logic for our API.
+
+3. **Build the REST API**  
+   Develop the `StudentController`:
+    - First, implement the **GET endpoints**.
+    - Then, implement the **POST endpoint**.
+
+4. **Write Unit Tests**  
+   Use **Mockito** and **MockMvc** to unit test the `StudentController`.
 
 ## Bootstrap REST Services Application with Spring Initializr
-> Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="\_blank"} is great tool to bootstrap your Spring Boot projects.
+
+> [Spring Initializr](http://start.spring.io/) is an excellent tool for bootstrapping Spring Boot projects with just a few clicks.
+
+With Spring Initializr, you can quickly generate a project structure by selecting:
+
+- **Group**: `com.in28minutes.springboot`
+- **Artifact**: `student-services`
+- **Dependencies**:
+    - Spring Web
+    - Spring Boot Actuator
+    - Spring Boot DevTools
+
+Once generated, download the project, unzip it, and import it into your favorite IDE (Eclipse, IntelliJ, or VS Code).
+
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-As shown in the image above, following steps have to be done
+As shown in the image above, follow these steps to create your project:
 
-- Launch Spring Initializr and choose the following
-  - Choose `com.in28minutes.springboot` as Group
-  - Choose `student-services` as Artifact
-  - Choose following dependencies
-    - Web
-    - Actuator
-    - DevTools
-- Click Generate Project.
-- Import the project into Eclipse.
-- If you want to understand all the files that are part of this project, you can go here.
+- Launch **Spring Initializr** and choose the following:
+    - **Group**: `com.in28minutes.springboot`
+    - **Artifact**: `student-services`
+    - **Dependencies**:
+        - Spring Web
+        - Spring Boot Actuator
+        - Spring Boot DevTools
+- Click **Generate Project** to download the starter project.
+- Import the project into Eclipse (**File → Import → Existing Maven Project**).
+- To explore and understand all the files generated by Spring Initializr, you can refer [here](#).
 
 ## Adding Business Services to Your Application
 
-Data is required by all apps. Instead of a true database, we'll utilise an `ArrayList`, which is similar to an in-memory data store.
+Every application needs data. In this example, instead of connecting to a real database, we’ll use an `ArrayList` as an in-memory data store.
 
-A student may enrol in many courses. A course contains an id, a name, a description, and a set of actions that must be completed in order to complete the course. A student has an id, a name, a description, and a list of courses for which he or she is presently registered. StudentService is exposing methods to us.
+- A **student** can enroll in multiple **courses**.
+- A **course** has an `id`, `name`, `description`, and a list of `steps` to complete the course.
+- A **student** has an `id`, `name`, `description`, and a list of registered courses.
 
-- `public List<Student> retrieveAllStudents()` - Retrieve details for all students
-- `public Student retrieveStudent(String studentId)` - Retrieve a specific student details
-- `public List<Course> retrieveCourses(String studentId)` - Retrieve all courses a student is registered for
-- `public Course retrieveCourse(String studentId, String courseId)` - Retrieve details of a specific course a student is registered for
-- `public Course addCourse(String studentId, Course course)` - Add a course to an existing student
+We’ll implement a `StudentService` that provides the following methods:
 
-The precise implementation of the Service 'StudentService' and the model classes 'Course' and 'Student' may be seen at the bottom of this article.
+- `public List<Student> retrieveAllStudents()` – Retrieve details for all students
+- `public Student retrieveStudent(String studentId)` – Retrieve details of a specific student
+- `public List<Course> retrieveCourses(String studentId)` – Retrieve all courses a student is registered for
+- `public Course retrieveCourse(String studentId, String courseId)` – Retrieve a specific course for a student
+- `public Course addCourse(String studentId, Course course)` – Add a new course for an existing student
 
-- src/main/java/com/in28minutes/springboot/model/Course.java
-- src/main/java/com/in28minutes/springboot/model/Student.java
-- src/main/java/com/in28minutes/springboot/service/StudentService.java
+You can find the actual implementation of the service and models in these files:
+
+- `src/main/java/com/in28minutes/springboot/model/Course.java`
+- `src/main/java/com/in28minutes/springboot/model/Student.java`
+- `src/main/java/com/in28minutes/springboot/service/StudentService.java`
+
+---
+
+## Adding a Couple of GET Operations
+
+The `StudentController` exposes two GET REST endpoints:
+
+```java
+private final StudentService studentService;
+
+public StudentController(StudentService studentService) {
+    this.studentService = studentService;
+}
+```
+-  Uses Spring **Dependency Injection** to wire the `StudentService` into the controller.
+- `@GetMapping("/students/{studentId}/courses")` – Retrieves all courses for a given student (`studentId` is passed as a path variable).
+- `@GetMapping("/students/{studentId}/courses/{courseId}")` – Retrieves details of a specific course (`courseId`) for a student.
+- `@PathVariable String studentId` – Maps the value of `studentId` from the URI to this parameter.
 
 
-## Adding the couple of Http GET Operations
-
-The Rest Service `StudentController` exposes couple of get services.
-
-- `@Autowired private StudentService studentService` : We are using Spring Autowiring to wire the student service into the StudentController.
-- `@GetMapping("/students/{studentId}/courses")`: Exposing a Get Service with studentId as a path variable 
-- `@GetMapping("/students/{studentId}/courses/{courseId}")`: Exposing a Get Service for retrieving specific course of a student. 
-- `@PathVariable String studentId`: Value of studentId from the uri will be mapped to this parameter.
 
 ```java
 package com.in28minutes.springboot.controller;
@@ -118,19 +171,22 @@ import com.in28minutes.springboot.service.StudentService;
 @RestController
 public class StudentController {
 
-	@Autowired
-	private StudentService studentService;
+    private final StudentService studentService;
 
-	@GetMapping("/students/{studentId}/courses")
-	public List<Course> retrieveCoursesForStudent(@PathVariable String studentId) {
-		return studentService.retrieveCourses(studentId);
-	}
-	
-	@GetMapping("/students/{studentId}/courses/{courseId}")
-	public Course retrieveDetailsForCourse(@PathVariable String studentId,
-			@PathVariable String courseId) {
-		return studentService.retrieveCourse(studentId, courseId);
-	}
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
+
+    @GetMapping("/students/{studentId}/courses")
+    public List<Course> retrieveCoursesForStudent(@PathVariable String studentId) {
+        return studentService.retrieveCourses(studentId);
+    }
+    
+    @GetMapping("/students/{studentId}/courses/{courseId}")
+    public Course retrieveDetailsForCourse(@PathVariable String studentId,
+            @PathVariable String courseId) {
+        return studentService.retrieveCourse(studentId, courseId);
+    }
 
 }
 
@@ -153,7 +209,8 @@ We will fire a request to http://localhost:8080/students/Student1/courses/Course
 }
 ```
 
-Below picture shows how we can execute this Get Operation from Postman - my favorite tool to run rest services.
+Below screenshot demonstrates how to execute this **GET** operation using Postman — a popular tool for testing RESTful services.
+
 
 ![Image](/images/ExecutingGetRestServiceUsingPostman.png "Executing Rest Service From Postman")   
 
@@ -169,17 +226,44 @@ Below picture shows how we can execute this Get Operation from Postman - my favo
 
 ## Unit Testing Http Get Operation
 
-While unit testing a rest service, we want to launch only the relevant controller and the associated MVC Components. The annotation WebMvcTest is used to unit test the Spring MVC application. This is useful when a test exclusively focuses on Spring MVC components. When this annotation is used, complete auto-configuration is disabled and just configuration relevant to MVC tests is used. 
+## Unit Testing a Spring MVC Controller
 
-- `@ExtendWith(SpringExtension.class)` : `@ExtendWith` is a repeating annotation for registering extensions for the annotated test class, test interface/method/parameter/field. Test class constructors, test methods, and @BeforeAll, @BeforeEach, @AfterAll, and @AfterEach all allow annotated arguments.
-`SpringExtension` integrates the Spring TestContext Framework into JUnit 5's Jupiter programming model.
-- `@WebMvcTest(value = StudentController.class)`: The annotation WebMvcTest is used to unit test the Spring MVC application. This is useful when a test exclusively focuses on Spring MVC components. In this test, we simply want to run StudentController. While this unit test is run, no other controllers or mappings will be started.
-- `@Autowired private MockMvc mockMvc`: MockMvc is the primary point of entry for server-side Spring MVC test support. It enables us to run commands against the test context.
-- `@MockBean private StudentService studentService`: MockBeans are used to populate a Spring ApplicationContext with mocks. A studentService fake is constructed and auto-wired into the StudentController.
-- `Mockito.when(studentService.retrieveCourse(Mockito.anyString(),Mockito.anyString())).thenReturn(mockCourse)`:When called, the method retrieveCourse is mocked to return the particular mockCourse.
-- `MockMvcRequestBuilders.get("/students/Student1/courses/Course1").accept(MediaType.APPLICATION_JSON)`: Creating a Request builder to be able to execute a get request to uri "/students/Student1/courses/Course1" with accept header as "application/json"
-- `mockMvc.perform(requestBuilder).andReturn()`: mockMvc is used to perform the request and return the response back.
-- `JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false)`: We are using org.skyscreamer.jsonassert.JSONAssert. This allows us to do partial asserts against a JSON String. We are passing strict as false since we do not want to check for all fields in the response.
+When unit testing a REST service, we want to **launch only the relevant controller** and the associated MVC components.  
+The annotation `@WebMvcTest` is used for this purpose. It focuses the test exclusively on Spring MVC components. Using this annotation disables full auto-configuration and loads only the configuration relevant for MVC tests.
+
+Key components in our test setup:
+
+- `@ExtendWith(SpringExtension.class)`
+    - Registers Spring extensions with JUnit 5.
+    - Integrates the Spring TestContext Framework into JUnit Jupiter.
+    - Supports annotated arguments in constructors, test methods, and lifecycle methods (`@BeforeAll`, `@BeforeEach`, `@AfterAll`, `@AfterEach`).
+
+- `@WebMvcTest(value = StudentController.class)`
+    - Used to unit test Spring MVC components.
+    - Launches only `StudentController` for testing.
+    - No other controllers or mappings are started.
+
+- `@Autowired private MockMvc mockMvc`
+    - Entry point for server-side Spring MVC test support.
+    - Allows executing HTTP requests against the test context.
+
+- `@MockBean private StudentService studentService`
+    - Mocks the `StudentService` and injects it into `StudentController`.
+    - Ensures the unit test only focuses on controller behavior.
+
+- `Mockito.when(studentService.retrieveCourse(Mockito.anyString(), Mockito.anyString())).thenReturn(mockCourse)`
+    - Mocks the behavior of `retrieveCourse()` to return a predefined `mockCourse`.
+
+- `MockMvcRequestBuilders.get("/students/Student1/courses/Course1").accept(MediaType.APPLICATION_JSON)`
+    - Creates a GET request to the specified URI with an `Accept` header of `application/json`.
+
+- `mockMvc.perform(requestBuilder).andReturn()`
+    - Executes the request using `MockMvc` and returns the response.
+
+- `JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false)`
+    - Uses `org.skyscreamer.jsonassert.JSONAssert` to assert JSON responses.
+    - Passing `strict=false` allows partial checks without requiring all fields to match.
+
 
 ```java
 package com.in28minutes.springboot.controller;
@@ -249,11 +333,23 @@ public class StudentControllerTest {
 
 ## Adding Http POST Operation
 
-A Http POST Operation should return a status of created (201) when the resource creation is successful. 
+## Implementing a HTTP POST Operation
 
-`@PostMapping("/students/{studentId}/courses")`: Mapping a url for the POST Request
-`@RequestBody Course newCourse`: Using Binding to bind the body of the request to Course object.
-`ResponseEntity.created(location).build()`: Return a status of created. Also return the location of created resource as a Response Header.
+An HTTP POST operation should return a **201 Created** status when the resource is successfully created.
+
+Key components of the POST implementation:
+
+- `@PostMapping("/students/{studentId}/courses")`  
+  Maps the URL to handle POST requests for adding a course to a student.
+
+- `@RequestBody Course newCourse`  
+  Binds the JSON body of the request to a `Course` object.
+
+- `ResponseEntity.created(location).build()`  
+  Returns a **201 Created** status and sets the **Location header** pointing to the URI of the newly created resource.
+
+Example:  
+When adding a course to `Student1`, the POST request might look like:
 
 ```java
 	@PostMapping("/students/{studentId}/courses")
@@ -288,7 +384,18 @@ An example request is shown below. It provides all of the information needed to 
 }
 ```
 
-The image below demonstrates how we may do this Http POST Operation with Postman, my preferred tool for running rest services. Make sure you choose raw under the Body tab. Choose JSON from the dropdown menu. Copy and paste the above request into the body.
+## Executing the HTTP POST Operation Using Postman
+
+The image below demonstrates how to perform this POST operation using Postman — my preferred tool for testing REST services.
+
+Steps to follow:
+1. Go to the **Body** tab in Postman.
+2. Select **raw**.
+3. From the dropdown menu, choose **JSON**.
+4. Copy and paste the JSON request (shown above) into the body.
+5. Click **Send** to execute the POST request.
+
+If successful, the server will return a **201 Created** status along with the location of the newly created resource in the response headers.
 
 The URL we use is http://localhost:8080/students/Student1/courses.
 
@@ -296,18 +403,31 @@ The URL we use is http://localhost:8080/students/Student1/courses.
 
 ## Writing Unit Test for the Http POST Operation
 
-In the unit test, we would want to post the request body to the url `/students/Student1/courses`. In the response, we check for HttpStatus of Created and that the location header contains the url of the created resource.
+## Unit Testing the HTTP POST Operation
 
-- `MockMvcRequestBuilders.post("/students/Student1/courses").accept(MediaType.APPLICATION_JSON)`: Create a post request with an accept header for `application\json`
-- `content(exampleCourseJson).contentType(MediaType.APPLICATION_JSON)`: Use the specified content as body of the request and set content type header.
-- `assertEquals(HttpStatus.CREATED.value(), response.getStatus())`: Assert that the return status is CREATED.
-- `response.getHeader(HttpHeaders.LOCATION)`: Get the location from response header and later assert that it contains the URI of the created resource.
+In the unit test, we want to send a POST request to `/students/Student1/courses` and validate that:
+
+1. The HTTP status returned is **201 Created**.
+2. The **Location** header contains the URI of the newly created resource.
+
+Key components in the test:
+
+- `MockMvcRequestBuilders.post("/students/Student1/courses").accept(MediaType.APPLICATION_JSON)`  
+  Creates a POST request with an `Accept` header set to `application/json`.
+
+- `content(exampleCourseJson).contentType(MediaType.APPLICATION_JSON)`  
+  Sets the request body to `exampleCourseJson` and specifies the content type as JSON.
+
+- `assertEquals(HttpStatus.CREATED.value(), response.getStatus())`  
+  Verifies that the response status is **201 Created**.
+
+- `response.getHeader(HttpHeaders.LOCATION)`  
+  Retrieves the **Location** header from the response. You can then assert that it contains the URI of the newly created course.
 
 ```java
 	@Test
 	public void createStudentCourse() throws Exception {
-		Course mockCourse = new Course("1", "Smallest Number", "1",
-				Arrays.asList("1", "2", "3", "4"));
+		var mockCourse = new Course("1", "Smallest Number", "1", Arrays.asList("1", "2", "3", "4"));
 
 		// studentService.addCourse to respond back with mockCourse
 		Mockito.when(studentService.addCourse(Mockito.anyString(),
