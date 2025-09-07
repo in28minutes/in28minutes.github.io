@@ -229,7 +229,7 @@ Check the exact implementation of the `StudentService` and model classes in the 
 The `StudentController` exposes two GET services:
 
 ```java
-  private final StudentService studentService;
+private final StudentService studentService;
 
 public StudentController(StudentService studentService) {
     this.studentService = studentService;
