@@ -352,20 +352,20 @@ Example:
 When adding a course to `Student1`, the POST request might look like:
 
 ```java
-	@PostMapping("/students/{studentId}/courses")
-	public ResponseEntity<Void> registerStudentForCourse(
-			@PathVariable String studentId, @RequestBody Course newCourse) {
+@PostMapping("/students/{studentId}/courses")
+public ResponseEntity<Void> registerStudentForCourse(
+        @PathVariable String studentId, @RequestBody Course newCourse) {
 
-		Course course = studentService.addCourse(studentId, newCourse);
+    Course course = studentService.addCourse(studentId, newCourse);
 
-		if (course == null)
-			return ResponseEntity.noContent().build();
+    if (course == null)
+        return ResponseEntity.noContent().build();
 
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(
-				"/{id}").buildAndExpand(course.getId()).toUri();
+    URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(
+            "/{id}").buildAndExpand(course.getId()).toUri();
 
-		return ResponseEntity.created(location).build();
-	}
+    return ResponseEntity.created(location).build();
+}
 
 ```
 

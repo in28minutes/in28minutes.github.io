@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Initializing Projects with Spring Boot Starters - Web and JPA
-date:       2023-02-22 12:31:19
+date:       2025-09-07 12:31:19
 summary:    Key goal of Spring Boot is to enable a quick start to developing production ready applications. Most important components behind the features of Spring Boot are the Spring Boot Starter Projects. 
 categories:  SpringBoot
 permalink:  /spring-boot-starter-projects
@@ -10,65 +10,84 @@ image: /images/spring-boot-feature.png
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-This guide will help you understand how Spring Boot Starter Projects enable the key goal of Spring Boot - Quick Start to developing production ready applications. 
+# Spring Boot Starter Projects
+
+This guide will help you understand how **Spring Boot Starter Projects** enable the key goal of Spring Boot — *a quick start to developing production-ready applications*.
 
 ![Image](/images/SpringBootStarterWeb-Dependencies.png "Spring Boot Starter Web - Dependencies")
 
- 
 ## You will learn
 - What features are provided by Spring Boot Starter Projects?
-- We will look at an example of Starter Projects
-- We will look at Spring Boot Starter Web
-- Get an overview of different starter projects provided by Spring Boot.
-
+- Example of a Starter Project
+- Introduction to Spring Boot Starter Web
+- Overview of different Starter Projects provided by Spring Boot
 
 ## Tools you will need
-- Maven 3.0+ is your build tool
-- Your favorite IDE. We use Eclipse.
-- JDK 17
+- Maven 3.0+ as your build tool
+- Your favorite IDE (Eclipse or IntelliJ IDEA recommended)
+- JDK 17+
 
 ## Why do we need Spring Boot Starter Projects?
 
-Consider an example project that does not use a starter to better grasp what starting projects provide.
+To understand the value of starter projects, let’s first imagine a project **without them**.
 
 ### What if we do not have starter projects?
 
-Assume we wish to create a web application using Spring MVC.
+Suppose we want to build a **Spring MVC web application**.
 
-First and foremost, we must decide which frameworks to utilise, which versions of frameworks to employ, and how to link them.
+- First, we need to decide **which frameworks** to use.
+- Then, we need to figure out **compatible versions** of those frameworks.
+- Finally, we have to manage linking and configuration manually.
 
-Some of the dependencies we utilise in our Spring MVC Course are listed below. Spring MVC, Jackson Databind (for data binding), Hibernate-Validator (for server side validation using Java Validation API), and Log4j are among them (for logging). We had to select compatible versions of all of these frameworks when developing this course.
+Some of the dependencies we typically use in a Spring MVC project are:
+
+- **Spring MVC** – Core web framework
+- **Jackson Databind** – For JSON data binding
+- **Hibernate Validator** – For server-side validation using Java Validation API
+- **Log4j** – For logging
+
+👉 The challenge: We must carefully select versions that are compatible with each other, which adds complexity and slows down development.
+
 
 ```xml
 <dependency>
    <groupId>org.springframework</groupId>
    <artifactId>spring-webmvc</artifactId>
-   <version>6.0.4</version>
+   <version>7.0.0-M7</version>
 </dependency>
 
 <dependency>
     <groupId>com.fasterxml.jackson.core</groupId>
     <artifactId>jackson-databind</artifactId>
-    <version>2.14.1</version>
+    <version>2.19.2</version>
+    <scope>compile</scope>
 </dependency>
 
 <dependency>
-    <groupId>org.hibernate</groupId>
+    <groupId>org.hibernate.validator</groupId>
     <artifactId>hibernate-validator</artifactId>
-    <version>8.0.0.Final</version>
+    <version>9.0.1.Final</version>
 </dependency>
 
 <dependency>
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-bom</artifactId>
-    <version>2.19.0</version>
+    <version>2.25.1</version>
     <type>pom</type>
     <scope>import</scope>
 </dependency>
     
 ```
 
-To get everything hooked together, we had to add settings. Settings for the dispatcher servlet, view resolver, error page, and web jars, among other things.
+To get everything working together, we also had to add **manual configurations**, such as:
+
+- Dispatcher Servlet
+- View Resolver
+- Error Page
+- Web Jars (for serving static content)
+- And other supporting settings
+
+👉 As you can see, without starter projects, setting up even a simple Spring MVC application involves a lot of **boilerplate configuration**.
 
 ```xml
 <bean
@@ -106,8 +125,16 @@ To get everything hooked together, we had to add settings. Settings for the disp
     <url-pattern>/</url-pattern>
 </servlet-mapping>
 ```
-  
-We would need to do similar things while utilising JPA. We must provide the jars as well as the settings for the datasource, entity manager, transaction manager, and so on. 
+
+We would need to do **similar setup tasks when using JPA**.
+
+- Provide the required JPA and Hibernate jars
+- Configure the **DataSource**
+- Configure the **EntityManagerFactory**
+- Configure the **TransactionManager**
+- Add other related settings manually
+
+👉 As with Spring MVC, this becomes **time-consuming and error-prone**.
 
 ```xml
 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
@@ -141,47 +168,95 @@ We would need to do similar things while utilising JPA. We must provide the jars
 
 ## Spring Boot Starter Projects
 
-Here's what the Spring Boot documentations says about starters.
+Here’s how the official Spring Boot documentation defines starters:
 
-> Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop-shop for all the Spring and related technology that you need, without having to hunt through sample code and copy paste loads of dependency descriptors. For example, if you want to get started using Spring and JPA for database access, just include the spring-boot-starter-data-jpa dependency in your project, and you are good to go.
+> **Starters are a set of convenient dependency descriptors that you can include in your application.**  
+> You get a one-stop shop for all the Spring and related technologies you need, without having to hunt through sample code or copy-paste loads of dependency descriptors.  
+> For example, if you want to get started using Spring and JPA for database access, just include the `spring-boot-starter-data-jpa` dependency in your project, and you are good to go.
 
-Let's consider an example starter - Spring Boot Starter Web.
+### Example: Spring Boot Starter Web
 
-If you want to develop a web application or an application to expose restful services, Spring Boot Start Web is the starter to pick. Lets create a quick project with Spring Boot Starter Web using Spring Initializr.
+If you want to:
+- Build a **web application**
+- Or expose **RESTful services**
 
-## Creating REST Services Application with Spring Initializr
+👉 `spring-boot-starter-web` is the starter you should pick.
 
-> Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
+Let’s create a simple project with **Spring Boot Starter Web** using **Spring Initializr**.
+
+---
+
+# Creating REST Services Applications with Spring Initializr
+
+## What is Spring Initializr?
+
+[Spring Initializr](https://start.spring.io/) is an invaluable web-based tool designed to **bootstrap your Spring Boot projects quickly and efficiently**. It eliminates the complexity of manual project setup by providing an intuitive interface for generating production-ready Spring Boot applications.
+
+## Key Configuration Options
+
+When creating your REST services project, you can customize several essential parameters:
+
+### Project Configuration
+- **Project Type**: Choose your preferred build automation tool
+    - **Maven** - XML-based configuration, widely adopted
+    - **Gradle** - Groovy/Kotlin DSL, modern build system
+
+- **Programming Language**: Select the language that fits your team's expertise
+    - **Java** - Industry standard, extensive ecosystem
+    - **Kotlin** - Concise syntax, 100% Java interoperability
+    - **Groovy** - Dynamic language with Java compatibility
+
+- **Spring Boot Version**: Pick the appropriate framework version
+    - Latest stable release (recommended for new projects)
+    - LTS versions for enterprise applications
+    - Snapshot versions for bleeding-edge features
+
+This saves a lot of time by generating a ready-to-use project structure.
+
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-As shown in the image above, following steps have to be done.
+### Steps to Create a Spring Boot Starter Web Project
 
-- Launch Spring Initializr and choose the following
-  - Choose `com.in28minutes.springboot` as Group
-  - Choose `student-services` as Artifact
-  - Choose following dependencies
-    - Web
-    - Actuator
-    - DevTools
-- Click Generate Project.
-- Import the project into Eclipse.
-- If you want to understand all the files that are part of this project, you can go here.
+As shown in the image above, follow these steps:
+
+1. **Launch Spring Initializr** and choose the following options:
+    - **Group:** `com.in28minutes.springboot`
+    - **Artifact:** `student-services`
+    - **Dependencies:**
+        - Web
+        - Actuator
+        - DevTools
+
+2. **Click "Generate Project"** to download the project as a `.zip` file.
+
+3. **Import the project into Eclipse** (or your preferred IDE).
+    - In Eclipse, use:  
+      `File > Import > Existing Maven Projects`
+
+4. If you want to **understand all the files** that are part of this generated project, you can check the detailed explanation [here](#) _(link to explanation or documentation)_.
+
 
 ## Spring Boot Starter Web
 
-Spring Boot Starter Web has two crucial features.
+Spring Boot Starter Web has two crucial features:
 
-- Compatible Dependencies that are needed to develop web applications
-- Auto Configuration
+- **Compatible Dependencies** that are needed to develop web applications
+- **Auto Configuration** to automatically set up common configurations (DispatcherServlet, Jackson, Validation, Embedded Tomcat, etc.)
 
-Dependency for Spring Boot Starter Web
+### Dependency for Spring Boot Starter Web
+
+If you are using **Maven**, add this to your `pom.xml`:
 
 ```xml
 <dependency>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-web</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
 </dependency>
+```
+If you are using Gradle, add this to your `build.gradle`:
+```gradle
+implementation 'org.springframework.boot:spring-boot-starter-web'
 ```
 
 ### Dependencies
@@ -224,21 +299,22 @@ The image below shows the different things that might be auto configured by Spri
 
 ## Spring Boot Starter Project Options
 
-As we can see from Spring Boot Starter Web, starting projects allow us to get started fast with designing various sorts of apps.
+As we can see from **Spring Boot Starter Web**, starter projects allow us to get started quickly with designing various types of applications.
 
-- spring-boot-starter-web-services - SOAP Web Services
-- spring-boot-starter-web - Web & RESTful applications
-- spring-boot-starter-test - Unit testing and Integration Testing
-- spring-boot-starter-jdbc - Traditional JDBC
-- spring-boot-starter-hateoas - Add HATEOAS features to your services
-- spring-boot-starter-security - Authentication and Authorization using Spring Security
-- spring-boot-starter-data-jpa -  Spring Data JPA with Hibernate
-- spring-boot-starter-cache - Enabling Spring Framework’s caching support
-- spring-boot-starter-data-rest - Expose Simple REST Services using Spring Data REST
+### Application Starters
+- `spring-boot-starter-web-services` - SOAP Web Services
+- `spring-boot-starter-web` - Web & RESTful applications
+- `spring-boot-starter-test` - Unit testing and Integration Testing
+- `spring-boot-starter-jdbc` - Traditional JDBC
+- `spring-boot-starter-hateoas` - Add HATEOAS features to your services
+- `spring-boot-starter-security` - Authentication and Authorization using Spring Security
+- `spring-boot-starter-data-jpa` - Spring Data JPA with Hibernate
+- `spring-boot-starter-cache` - Enabling Spring Framework’s caching support
+- `spring-boot-starter-data-rest` - Expose Simple REST Services using Spring Data REST
 
-There are a few starters for technical stuff as well
+### Technical Starters
+- `spring-boot-starter-actuator` - Advanced features like monitoring & tracing out of the box
+- `spring-boot-starter-undertow`, `spring-boot-starter-jetty`, `spring-boot-starter-tomcat` - Choose your specific Embedded Servlet Container
+- `spring-boot-starter-logging` - Logging using Logback
+- `spring-boot-starter-log4j2` - Logging using Log4j2  
 
-- spring-boot-starter-actuator - To use advanced features like monitoring &amp; tracing to your application out of the box
-- spring-boot-starter-undertow, spring-boot-starter-jetty, spring-boot-starter-tomcat - To pick your specific choice of Embedded Servlet Container 
-- spring-boot-starter-logging - For Logging using logback
-- spring-boot-starter-log4j2 - Logging using Log4j2
