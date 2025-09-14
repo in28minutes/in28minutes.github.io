@@ -1,51 +1,61 @@
 ---
 layout:     post
 title:      Creating a Web Application with Spring Boot with JSP
-date:       2022-07-08 12:31:19
+date:       2025-09-13 12:31:19
 summary:    Setting up a basic web application with Spring Boot is a cake walk. We will create a simple web application using Spring Initializr and add JSP features to it. 
 categories:  SpringBoot
 permalink:  /creating-web-application-with-spring-boot
 image: /images/spring-boot-application.png
 ---
 
-This guide will help you create a simple web application with Spring Boot. We will develop a simple application with login functionality as well as the functionality to show a list of todo's. We will follow MVC pattern using JSP as the view.  
+This guide will help you create a simple web application with Spring Boot. We will develop an application that includes login functionality and the ability to display a list of todos. The application will follow the MVC pattern, using JSP as the view.
 
 ![Image](/images/SpringBootWebApplication-AllFiles.png "Spring Boot Web Application - All Files")
 
- 
+
 ## You will learn
-- How to bootstrap a simple project with Spring Initializr?
-- How to initialize a basic web application for Spring Boot?
-- How to add a JSP for web application?
-- How to build basic login functionality?
-- How to add functionality to show a list of todo's?
-- How to auto-wire components using Spring Framework?
-- What if you want to learn more?
+- How to bootstrap a simple Spring Boot project using Spring Initializr.
+- How to initialize a basic web application with Spring Boot.
+- How to add JSP pages to your web application.
+- How to implement basic login functionality.
+- How to display a list of todos.
+- How to auto-wire components using the Spring Framework.
+- Next steps if you want to explore further.
+
+## Tools You Will Need
+- Maven 3.0+ as your build tool
+- Your preferred IDE (Eclipse or IntelliJ IDEA recommended)
+- JDK 17 or higher
 
 
+## Overview of the Web Application
 
-## Tools you will need
-- Maven 3.0+ is your build tool
-- Your favorite IDE. We use Eclipse.
-- JDK 1.8+
+We will build a simple **To-Do list page** (unformatted) with a basic **login feature**.
 
-## Overview of the Web application
+### Project Files
 
-We will build a list todo page (un-formatted) with basic login feature.
+The screenshot below shows the Eclipse project with all the files we will create.
 
-### Files
-
-Following screenshot shows eclipse project with all the files we would create.
 
 ![Image](/images/SpringBootWebApplication-AllFiles.png "Spring Boot Web Application - All Files") 
 
-A brief overview of all files
+## Brief Overview of All Files
 
-- `LoginService, TodoService` - Contain the business logic. LoginService has simple hardcoded validation for userid and password. TodoService contains a service method to retrieve a list of todos. 
-- `login.jsp, welcome.jsp, list-todos.jsp` - The name clearly explains what each of these views contain.
-- `LoginController, TodoController` - Act as Controllers in the MVC patter. LoginController has a little bit of flow. If user enters valid user id and password combination, he would be redirected to the welcome page. Otherwise, login page will be shown with the error message.
-- `pom.xml` - Important depedencies are Spring Boot Starter Web and  tomcat-embed-jasper. We will talk about these later.
-- `application.properties` - This is typically used to configure frameworks in Spring Boot. In this example, we would configure our view resolver in application.properties.
+- `LoginService` and `TodoService`  
+  Contain the business logic. `LoginService` provides simple hardcoded validation for user ID and password. `TodoService` contains a method to retrieve a list of todos.
+
+- `login.jsp`, `welcome.jsp`, `list-todos.jsp`  
+  The names clearly indicate the content of each view.
+
+- `LoginController` and `TodoController`  
+  Act as controllers in the MVC pattern. `LoginController` handles login flow: if the user enters a valid ID and password, they are redirected to the welcome page; otherwise, the login page is shown with an error message.
+
+- `pom.xml`  
+  Contains important dependencies such as Spring Boot Starter Web and `tomcat-embed-jasper`.
+
+- `application.properties`  
+  Typically used to configure frameworks in Spring Boot. In this example, it is used to configure the view resolver.
+
 
 ### Screenshots of the application
 
@@ -66,68 +76,74 @@ List Todos Page
 ![Image](/images/SpringBootWebApplication-TodoPage.png "Spring Boot Web Application - Todo Page")
 
 
-## Bootstrapping web application with Spring Initializr
+## Bootstrapping a Web Application with Spring Initializr
 
-Creating a Web application with Spring Initializr is a cake walk. We will use Spring Web MVC as our web framework.  
+Creating a web application with Spring Initializr is a cakewalk. We will use Spring Web MVC as our web framework.
 
-> Spring Initializr [http://start.spring.io/](http://start.spring.io/){:target="_blank"} is great tool to bootstrap your Spring Boot projects.
+> Spring Initializr [http://start.spring.io/](http://start.spring.io/) is a great tool to bootstrap your Spring Boot projects.
+
 
 ![Image](/images/Spring-Initializr-Web.png "Web, Actuator and Developer Tools")   
 
-As shown in the image above, following steps have to be done
+As shown in the image above, follow these steps:
 
-- Launch Spring Initializr and choose the following
-  - Choose `com.in28minutes.springboot` as Group
-  - Choose `student-services` as Artifact
-  - Choose following dependencies
-    - Web
-    - Actuator
-    - DevTools
-- Click Generate Project.
-- Import the project into Eclipse.
-- If you want to understand all the files that are part of this project, you can go here.
+- Launch Spring Initializr and choose the following:
+    - **Group**: `com.in28minutes.springboot`
+    - **Artifact**: `student-services`
+    - **Dependencies**:
+        - Web
+        - Actuator
+        - DevTools
+- Click **Generate Project**.
+- Import the project into **Eclipse** or **IntelliJ IDEA**.
+- To understand all the files included in this project, you can refer [here](#).
+
 
 ## Project Dependencies
 
-Spring Boot Starter Web provides all the dependencies and the auto configuration need to develop web applications. It is the first dependency we would use.
+Spring Boot Starter Web provides all the necessary dependencies and auto-configuration required to develop web applications. This is the first dependency we will use in our project.
 
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
 </dependency>
 ```
 
-We want to use JSP as the view. Default embedded servlet container for Spring Boot Starter Web is tomcat. To enable support for JSP's, we would need to add a dependency on tomcat-embed-jasper.
+We want to use JSP as the view. The default embedded servlet container for Spring Boot Starter Web is Tomcat. To enable JSP support, we need to add a dependency on `tomcat-embed-jasper`.
 
-```
+```xml
 <dependency>
     <groupId>org.apache.tomcat.embed</groupId>
     <artifactId>tomcat-embed-jasper</artifactId>
-    <scope>provided</scope>
+    <scope>provided</scope> // default for IntelliJ IDE
 </dependency>
 ```
 
 ### Spring Boot Starter Web Dependencies
-Following screenshot shows the different dependencies that are added in to our application because of Spring Boot Starter Web.
+
+The following screenshot shows the dependencies that are automatically added to our application by including Spring Boot Starter Web.
+
 
 ![Image](/images/SpringBootStarterWeb-Dependencies.png "Spring Boot Starter Web - Dependencies")
 
-Dependencies can be classified into:
+Dependencies can be categorized as follows:
 
-- Spring - core, beans, context, aop
-- Web MVC - (Spring MVC)
-- Jackson - for JSON Binding 
-- Validation - Hibernate Validator, Validation API
-- Embedded Servlet Container - Tomcat
-- Logging - logback, slf4j
+- **Spring** – core, beans, context, AOP
+- **Web MVC** – Spring MVC
+- **Jackson** – for JSON binding
+- **Validation** – Hibernate Validator, Validation API
+- **Embedded Servlet Container** – Tomcat
+- **Logging** – Logback, SLF4J
 
-Any typical web application would use all these dependencies. Spring Boot Starter Web comes pre packaged with these. As a developer, I would not need to worry about either these dependencies or their compatible versions.  
+
+Any typical web application would use all these dependencies. Spring Boot Starter Web comes pre-packaged with them. As a developer, you don’t need to worry about these dependencies or their compatible versions.
 
 ### Auto Configuration
-Spring Boot Starter Web auto configures the basic things that are needed. To understand the features Spring Boot Starter Web brings in, lets run StudentServicesApplication.java as a Java Application and review the log.
+Spring Boot Starter Web also auto-configures the basic components required for a web application. To see the features it provides, run `StudentServicesApplication.java` as a Java application and review the log.
 
-```
+
+```logs
 Mapping servlet: 'dispatcherServlet' to [/]
 
 Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
@@ -135,16 +151,18 @@ Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.uti
 Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 
 ```
-Spring Boot Starter Web auto-configures 
+Spring Boot Starter Web auto-configures the following components:
 
-- Dispatcher Servlet
-- Error Page
-- Web Jars to manage your static dependencies
-- Embedded Servlet Container - Tomcat is the default
+- **Dispatcher Servlet**
+- **Error Page**
+- **Web Jars** to manage static dependencies
+- **Embedded Servlet Container** – Tomcat is used by default
+
 
 ## Configuring a View Resolver
 
-We would have our jsp's in /WEB-INF/jsp/. We would need to configure the view resolver with the prefix and suffix.
+Our JSP files will be located in `/WEB-INF/jsp/`. We need to configure a view resolver with the appropriate **prefix** and **suffix** to map view names to these JSP files.
+
 
 ```properties
 spring.mvc.view.prefix=/WEB-INF/jsp/
@@ -153,9 +171,9 @@ spring.mvc.view.suffix=.jsp
 
 ## Login Controller
 
-- `public String showLoginPage(ModelMap model)`: Mapped to the \login Get Method, this method shows the login page.
--  `@Autowired LoginService service`: LoginService has the validation logic
-- `showWelcomePage(ModelMap model, @RequestParam String name, @RequestParam String password)`: Mapped to the \login Post Method, this method validates the userid and password. Redirects to welcome page if login is successful.
+- `public String showLoginPage(ModelMap model)`: Mapped to the `\login` GET method; displays the login page.
+- `@Autowired LoginService service`: Injects `LoginService`, which contains the validation logic.
+- `showWelcomePage(ModelMap model, @RequestParam String name, @RequestParam String password)`: Mapped to the `\login` POST method; validates the user ID and password, and redirects to the welcome page if login is successful.
 
 ```java
 package com.in28minutes.springboot.web.controller;
@@ -203,7 +221,7 @@ public class LoginController {
 
 ## Login Service
 
-Has the basic logic for authentication. Hardcoded business logic.
+Contains the basic authentication logic. Uses hardcoded credentials for simplicity.
 
 ```java
 package com.in28minutes.springboot.web.service;
@@ -223,12 +241,14 @@ public class LoginService {
 }
 ```
 
-## Login view - JSP
+## Login View - JSP
 
-Simple login page with userid and password form fields. If error message is populated into model, `${errorMessage}` will show the authentication failure error message. 
+A simple login page with fields for `userid` and `password`.  
+If an error message is set in the model, `${errorMessage}` will display the authentication failure message.
+
 
 ```html
-<html>
+<html lang="en">
 
 <head>
 <title>First Web Application</title>
@@ -246,11 +266,14 @@ Simple login page with userid and password form fields. If error message is popu
 </html>
 ```
 
-## Welcome View - JSP
-Welcome page is shown on successful authentication. Shows the name of the login user and a link to manage todo's.
+## Welcome-View - JSP
+
+This page is displayed upon successful authentication.  
+It shows the name of the logged-in user and provides a link to manage the todo list.
+
 
 ```html
-<html>
+<html lang="en">
 
 <head>
 <title>First Web Application</title>
@@ -263,10 +286,11 @@ Welcome page is shown on successful authentication. Shows the name of the login 
 </html>
 ```
 
-
 ## Todo Model and Business Service
 
-We are using a basic todo with id, user, description and a target date.
+The `Todo` model contains the following fields: `id`, `user`, `description`, and `targetDate`.  
+The `TodoService` provides basic business logic to manage and retrieve todo items.
+
 
 ```java
 package com.in28minutes.springboot.web.model;
@@ -284,7 +308,7 @@ public class Todo {
 } 
 ```
 
-Todoservice uses a simple ArrayList to store a list of todo's in memory. It offers a method to retrieve the todo's.
+`TodoService` uses a simple `ArrayList` to store todos in memory. It provides a method to retrieve the list of todos.
 
 ```java
 package com.in28minutes.springboot.web.service;
@@ -300,7 +324,7 @@ import com.in28minutes.springboot.web.model.Todo;
 
 @Service
 public class TodoService {
-    private static List<Todo> todos = new ArrayList<Todo>();
+    private static List<Todo> todos = new ArrayList<>();
     private static int todoCount = 3;
 
     static {
@@ -312,7 +336,7 @@ public class TodoService {
     }
 
     public List<Todo> retrieveTodos(String user) {
-        List<Todo> filteredTodos = new ArrayList<Todo>();
+        List<Todo> filteredTodos = new ArrayList<>();
         for (Todo todo : todos) {
             if (todo.getUser().equals(user)) {
                 filteredTodos.add(todo);
@@ -323,9 +347,9 @@ public class TodoService {
 }
 ```
 
-## List Todo JSP
+## List Todos JSP
 
-List todos pages shows the list of todo's. This is completely unformatted page. During the subsequest steps of our course, we beautify this page and add more functionality to add, delete and update todo's.
+The List Todos page displays all the todos. This page is currently unformatted. In subsequent steps of the course, we will enhance this page by styling it and adding functionality to add, delete, and update todos.
 
 ```jsp
 <html>
@@ -346,7 +370,7 @@ List todos pages shows the list of todo's. This is completely unformatted page. 
 
 ## Todo Controller
 
-Todo Controller has a simple method to retrieve the list of todos and populate it into model. It redirects to list-todos view.
+The TodoController has a simple method that retrieves the list of todos and adds them to the model. It then redirects to the `list-todos` view.
 
 ```java
 package com.in28minutes.springboot.web.controller;
@@ -378,8 +402,10 @@ public class TodoController {
 }
 ```
 
-## Running the application
-We use a Spring Boot Application class to launch our application
+## Running the Application
+
+We use a Spring Boot application class to launch our web application.
+
 
 ```java
 package com.in28minutes.springboot.web;
@@ -392,15 +418,21 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.in28minutes.springboot.web")
 public class SpringBootFirstWebApplication {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         SpringApplication.run(SpringBootFirstWebApplication.class, args);
     }
 }
 ```
 
-Complete code is on Github repository : https://github.com/in28minutes/SpringBootWebApplicationStepByStep. You can download Step12.zip and import as a maven project to be able to run it.
+Complete code is available on the GitHub repository: [https://github.com/in28minutes/SpringBootWebApplicationStepByStep](https://github.com/in28minutes/SpringBootWebApplicationStepByStep). You can download `Step12.zip` and import it as a Maven project to run it.
 
-You can run this as a simple java application. When you run this you would see the application starting up. Below is some of the extract from the log. You can see that all the request mappings are properly mapped. You can launch the application at http://localhost:8080/login and enter userid/password combination of in28Minutes/dummy.
+Run the application as a simple Java application. Upon startup, you will see the application initializing in the logs. All request mappings will be properly configured.
+
+You can access the application at [http://localhost:8080/login](http://localhost:8080/login) and log in using the credentials:
+
+- **UserID**: in28Minutes
+- **Password**: dummy
+
 
 ```
 
@@ -410,7 +442,7 @@ You can run this as a simple java application. When you run this you would see t
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v1.4.3.RELEASE)
+ :: Spring Boot ::        (v4.0.0-M2)
 
 2017-01-30 10:02:01.775  INFO 6070 --- [  restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
 2017-01-30 10:02:01.798  INFO 6070 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
@@ -432,4 +464,4 @@ You can run this as a simple java application. When you run this you would see t
 
 ```
 
-Complete code is on Github repository : https://github.com/in28minutes/SpringBootWebApplicationStepByStep. You can download Step12.zip and import as a maven project to be able to run it.
+Complete code is available on the GitHub repository: [https://github.com/in28minutes/SpringBootWebApplicationStepByStep](https://github.com/in28minutes/SpringBootWebApplicationStepByStep). You can download `Step12.zip` and import it as a Maven project to run the application.
